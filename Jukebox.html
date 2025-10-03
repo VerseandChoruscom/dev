@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Jukebox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <a href="index.html">Home (Stage)</a>
+        <a href="lyrics.html">Lyrics & Music</a>
+        <a href="jukebox.html">Jukebox</a>
+        <a href="articles.html">Articles & Insight</a>
+        <a href="contact.html">Contact / Licensing</a>
+    </nav>
+    
+    <div class="content-wrapper">
+        <h1 style="text-align: center; color: var(--red); text-shadow: 0 0 10px var(--red);">The Digital Jukebox</h1>
+        
+        <div class="jukebox">
+            <div id="jukebox-player" style="margin-bottom: 20px;">
+                <p style="color: var(--blue-gray);">Click a song to start the music!</p>
+            </div>
+            
+            <div id="jukebox-screen">
+                WELCOME. SELECT YOUR SONG.
+            </div>
+
+            <div class="jukebox-list">
+                <h3>Song List:</h3>
+                <button class="jukebox-song-button" data-title="The Midnight Verse" data-src="audio/midnight_verse.mp3">1. The Midnight Verse</button>
+                <button class="jukebox-song-button" data-title="Red Hot Rhyme" data-src="audio/red_hot_rhyme.mp3">2. Red Hot Rhyme</button>
+                <button class="jukebox-song-button" data-title="Blue-Gray Lament" data-src="audio/blue_gray_lament.mp3">3. Blue-Gray Lament</button>
+                <button class="jukebox-song-button" data-title="White Noise Groove" data-src="audio/white_noise_groove.mp3">4. White Noise Groove</button>
+                <button class="jukebox-song-button" data-title="The Heavy Curtain" data-src="audio/heavy_curtain.mp3">5. The Heavy Curtain</button>
+                </div>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2025 Your Name. All Rights Reserved. | Designed with Red, Black, White, & Blue-Gray.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
