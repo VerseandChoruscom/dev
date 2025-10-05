@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Kellie Larson | Verse and Chorus</title>
+    <meta name="description" content="Contact Kellie Larson for business inquiries, feedback, or questions about a specific song.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main id="main-stage-content" style="opacity: 1;">
+        <nav class="stage-nav">
+            <a href="index.html" class="nav-button">HOME</a>
+            <a href="bio.html" class="nav-button">BIO</a>
+            <a href="lyrics.html" class="nav-button">LYRICS</a>
+            <a href="jukebox.html" class="nav-button flashing-text">DIGITAL JUKEBOX</a>
+            <a href="articles.html" class="nav-button">ARTICLES & PODCASTS</a>
+        </nav>
+
+        <div class="contact-form-container">
+            <h1 class="act-heading" style="text-align: center;">Contact the Stage Manager</h1>
+            <p style="text-align: center; color: #BBB;">Send a message to Kellie Larson.</p>
+
+            <form action="submit-form-endpoint" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">Your Name (First & Last)</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="business">Inquiry Type / Business Name (Optional)</label>
+                    <select id="business" name="business">
+                        <option value="fan">Fan Feedback</option>
+                        <option value="business">Business Inquiry</option>
+                        <option value="press">Press/Media</option>
+                        <option value="songwriting">Songwriting/Collab</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="song">Choose Song to Ask About</label>
+                    <select id="song" name="song">
+                        <option value="">-- Select a Song (Optional) --</option>
+                        <option value="The Aftermath">The Aftermath</option>
+                        <option value="Wildflower">Wildflower</option>
+                        <option value="Gen X Anthem">Gen X Anthem</option>
+                        <option value="Fury">Fury</option>
+                        </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Contact Method:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="call" name="contact_method" value="call" required>
+                        <label for="call">Call</label>
+                        <input type="radio" id="text" name="contact_method" value="text">
+                        <label for="text">Text</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="best_time">Best Time to be Called or Texted</label>
+                    <input type="text" id="best_time" name="best_time" placeholder="E.g., Weekdays after 5 PM EST">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Send Curtain Call</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
