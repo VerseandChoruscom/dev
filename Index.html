@@ -3,52 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Spotlight Stage - Home</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Verse and Chorus | Kellie Larson - Official Stage</title>
+    <meta name="description" content="Welcome to VerseandChorus.com, the official stage for songwriter and lyricist Kellie Larson. Explore dramatic lyrics, articles, and the digital jukebox.">
+    <meta name="keywords" content="Kellie Larson songwriter, Verse and Chorus music, indie pop-rock lyrics, social commentary, digital jukebox">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <nav class="nav-bar">
-        <a href="index.html">Home (Stage)</a>
-        <a href="lyrics.html">Lyrics & Music</a>
-        <a href="jukebox.html">Jukebox</a>
-        <a href="articles.html">Articles & Insight</a>
-        <a href="contact.html">Contact / Licensing</a>
-    </nav>
+<body class="stage-dark">
 
-    <div class="stage-container">
-        <div class="curtain curtain-left"></div>
-        <div class="curtain curtain-right"></div>
-
-        <div class="stage">
-            <div class="seat-group">
-                <div class="seat"></div><div class="instrument guitar"></div>
-                <div class="seat"></div><div class="instrument bass"></div>
-                <div class="seat"></div><div class="instrument drums"></div>
-                <div class="seat"></div><div class="instrument keyboard"></div>
-                <div class="seat"></div><div class="instrument mic-stand"></div>
-                <div class="seat"></div><div class="instrument cello"></div>
-            </div>
-
-            <div class="grand-piano"></div>
-
-            <div class="microphone-container">
-                <div class="microphone-pole"></div>
-                <div class="microphone-head"></div>
-            </div>
-            
-            <div style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); text-align: center; color: var(--red);">
-                <h1 style="text-shadow: 0 0 10px var(--red);">FEATURED: Song Title Here</h1>
-                <a href="lyrics.html" class="primary-button">Listen Now</a>
-            </div>
+    <div id="curtain-container">
+        <div id="curtain-left" class="curtain"></div>
+        <div id="curtain-right" class="curtain"></div>
+        <div id="welcome-message">
+            <h1 class="script-text">Welcome to VerseandChorus.com</h1>
+            <p class="script-text sub-text">A Stage for Kellie Larson</p>
+            <button id="enter-button" onclick="openCurtains()">Click Here to Come In</button>
         </div>
     </div>
 
-    <div class="cursor-light"></div>
-    
-    <footer>
-        &copy; 2025 Your Name. All Rights Reserved. | Designed with Red, Black, White, & Blue-Gray.
-    </footer>
+    <main id="main-stage-content">
+        <div class="stage-prop left-chairs">
+            **Empty Chairs & Instruments** (Left)
+            <br>Guitar, Bass, Drum Kit, Keys, Violin, Cello
+        </div>
+        <div class="stage-prop right-piano">
+            **Grand Piano** (Right)
+        </div>
+        <div class="stage-prop center-mic">
+            <div class="mic-pole"></div>
+            <div class="mic-head"></div>
+            Hanging Mic (5ft from floor)
+        </div>
 
-    <script src="script.js"></script>
+        <nav class="stage-nav">
+            <a href="bio.html" class="nav-button">BIO</a>
+            <a href="lyrics.html" class="nav-button">LYRICS</a>
+            <a href="jukebox.html" class="nav-button flashing-text">DIGITAL JUKEBOX</a>
+            <a href="articles.html" class="nav-button">ARTICLES & PODCASTS</a>
+            <a href="contact.html" class="nav-button">CONTACT FORM</a>
+        </nav>
+
+        <div class="welcome-letter-placeholder" style="text-align: center; max-width: 700px; margin: 0 auto; padding-top: 100px;">
+            <h2 class="script-text" style="font-size: 2.5em;">A Note From the Artist</h2>
+            <p style="font-size: 1.1em; line-height: 1.6; color: #BBB;">
+                *Placeholder for your personalized welcome letter in fancy script writing.*
+                <br>Welcome to my stage. This space is built on raw narrative and emotional honesty—a place where every verse and every chorus holds a story waiting to be told. Thank you for listening.
+                <br>— **Kellie Larson**
+            </p>
+        </div>
+
+        <div id="music-player-bar">
+            **EMBEDDED MUSIC PLAYER**
+            <br>*Currently Playing: The Aftermath*
+            <br>*Placeholder for SoundCloud/Spotify Widget*
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ensure main content is hidden on load
+            document.getElementById('main-stage-content').style.opacity = '0';
+        });
+
+        function openCurtains() {
+            document.getElementById('curtain-left').classList.add('open-left');
+            document.getElementById('curtain-right').classList.add('open-right');
+            document.getElementById('welcome-message').style.opacity = '0';
+
+            setTimeout(() => {
+                document.getElementById('curtain-container').style.pointerEvents = 'none';
+                document.getElementById('main-stage-content').style.opacity = '1';
+                document.getElementById('curtain-container').style.opacity = '0'; /* Completely fade out curtain div */
+            }, 1000);
+        }
+    </script>
 </body>
 </html>
