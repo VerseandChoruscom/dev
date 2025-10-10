@@ -128,6 +128,18 @@ h1, h2, h3 {
 
 /* --- DIGITAL JUKEBOX STYLING (Flashy and Colorful) --- */
 
+.logo-container {
+  /* This turns the container into a flex item */
+  display: flex; 
+  /* This centers the content (the logo) horizontally */
+  justify-content: center;
+  /* Optional: gives it a max width */
+  width: 100%; 
+  /* Optional: adds a little space above and below */
+  padding: 20px 0; 
+}
+
+
 #jukebox-page-content {
     background-color: var(--color-black); 
     padding: 30px;
