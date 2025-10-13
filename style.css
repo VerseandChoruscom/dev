@@ -1,0 +1,21 @@
+/* ... (existing code for body, .landing-page, .stage-center, .logo, .gold-script) ... */
+
+/* --- Contact Info Styling --- */
+
+#contact-info, #contact-info-footer {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    font-size: 0.8em;
+    color: #aaa; 
+}
+/* Style for links within the contact info */
+#contact-info a, #contact-info-footer a {
+    color: #C9B575; /* Gold color for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s;
+}
+#contact-info a:hover, #contact-info-footer a:hover {
+    color: #FFD700; /* Brighter gold on hover */
+}
+
+/* ... (rest of the code for .stage-center, .welcome-script, .enter-button) ... */
