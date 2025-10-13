@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Room | Kellie Larson, Cinematic Songwriter</title>
+    <meta name="description" content="Relax and play creative games in the Green Room, featuring the Lyric Turnstile and Cinematic Mad Libs.">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="main-site" class="green-room-style">
+    
+    <header id="main-nav">
+        <nav>
+            <a href="main.html#bio" class="nav-link">Bio</a>
+            <a href="lyrics.html" class="nav-link">Lyrics</a>
+            <a href="lyrics.html#jukebox" class="nav-link">Digital Jukebox</a>
+            <a href="articles.html" class="nav-link">Articles/Podcast</a>
+            <a href="contact.html" class="nav-link">Contact Form</a>
+        </nav>
+        <a href="lyrics.html" class="stage-prop microphone-link">
+            <img src="microphone-hanging-photo.png" alt="Microphone - Click for Lyrics" class="microphone-icon">
+            <span class="screen-reader-text">Click for Lyrics Page</span>
+        </a>
+    </header>
+
+    <main id="green-room-area">
+        <h1 class="green-room-header">Welcome to The Green Room</h1>
+        <p class="tagline">Relax, play a game, and let your creative side unwind before the show.</p>
+
+        <section class="game-section turnstile">
+            <h2>Lyric Turnstile (Randomizer) 🔄</h2>
+            <p>Spin the turnstile to get a random line of lyric from Kellie's catalog. Perfect for a quick creative prompt!</p>
+            <div id="lyric-display-box">
+                <p id="random-lyric-output">Click the button below to generate a cinematic line...</p>
+            </div>
+            <button id="spin-turnstile-btn">Spin the Turnstile!</button>
+        </section>
+
+        <section class="game-section mad-libs">
+            <h2>Cinematic Mad Libs 📝</h2>
+            <p>Fill in the blanks below to create your own hilarious, high-drama lyric synopsis!</p>
+            <form id="mad-libs-form">
+                <p>
+                    A new song is about a **(Adjective)** hero who must save a **(Noun)** from a **(Adjective) (Adjective)** villain. 
+                    They **(Verb)** through the city while carrying a **(Plural Noun)**. 
+                    The chorus demands that we **(Verb)** the silence and **(Adverb)** celebrate the final **(Noun)**.
+                </p>
+
+                <div class="input-group">
+                    <label for="adjective1">Adjective:</label>
+                    <input type="text" id="adjective1" required>
+                    <label for="noun1">Noun:</label>
+                    <input type="text" id="noun1" required>
+                </div>
+                <div class="input-group">
+                    <label for="adjective2">Adjective:</label>
+                    <input type="text" id="adjective2" required>
+                    <label for="adjective3">Adjective:</label>
+                    <input type="text" id="adjective3" required>
+                </div>
+                <div class="input-group">
+                    <label for="verb1">Verb:</label>
+                    <input type="text" id="verb1" required>
+                    <label for="plural-noun1">Plural Noun:</label>
+                    <input type="text" id="plural-noun1" required>
+                </div>
+                <div class="input-group">
+                    <label for="verb2">Verb (Present):</label>
+                    <input type="text" id="verb2" required>
+                    <label for="adverb1">Adverb:</label>
+                    <input type="text" id="adverb1" required>
+                    <label for="noun2">Noun (Abstract):</label>
+                    <input type="text" id="noun2" required>
+                </div>
+
+                <button type="submit">Generate Synopsis</button>
+            </form>
+            <div id="mad-libs-output" class="hidden"></div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>
+            © Verse and Chorus | **Kellie Larson** | **Lyrics with a Cinematic Pulse**<br>
+            **info@verseandchorus.com** | **760-537-0222** | VerseandChorus.com
+        </p>
+    </footer>
+
+</div>
+
+<script src="green-room.js"></script>
+</body>
+  </html>
+                  
