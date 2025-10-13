@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyric Catalog & Industry Vault | Kellie Larson</title>
+    <meta name="description" content="Kellie Larson's complete lyric catalog and Industry Pro search vault. Find sync-ready lyrics searchable by genre, mood, and occasion.">
+    <meta name="keywords" content="lyric vault, industry pros, digital jukebox, sync licensing, genre search, Kellie Larson lyrics, songwriting catalog">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="main-site" class="lyrics-page-style">
+    
+    <header id="main-nav">
+        <nav>
+            <a href="main.html#bio" class="nav-link">Bio</a>
+            <a href="lyrics.html" class="nav-link active">Lyrics</a>
+            <a href="lyrics.html#jukebox" class="nav-link">Digital Jukebox</a>
+            <a href="articles.html" class="nav-link">Articles/Podcast</a>
+            <a href="contact.html" class="nav-link">Contact Form</a>
+        </nav>
+        <a href="lyrics.html" class="stage-prop microphone-link">
+            <img src="microphone-hanging-photo.png" alt="Microphone - Click for Lyrics" class="microphone-icon">
+            <span class="screen-reader-text">Click for Lyrics Page</span>
+        </a>
+    </header>
+
+    <main id="lyrics-stage-area">
+        <div id="content-display">
+            <h1 class="script-text page-header" style="color: var(--color-gold);">The Lyric Catalog</h1>
+            
+            <section id="jukebox" class="jukebox-section">
+                <h2 class="section-title">Digital Jukebox 🎶</h2>
+                <p>Search song titles to play demos of Kellie's latest works. Don't forget to use the **Applause Meter**!</p>
+
+                <div class="jukebox-search-bar">
+                    <input type="text" id="song-search" placeholder="Search song titles (e.g., Wildflower, Too Much)">
+                    <button id="search-button">Search</button>
+                </div>
+                
+                <div class="jukebox-grid" id="jukebox-song-list">
+                    <p style="text-align:center;">Loading songs...</p>
+                </div>
+
+                <div class="whiteboard-categories">
+                    <h3>Explore by Act:</h3>
+                    <button class="whiteboard-btn" data-category="Story">Story</button>
+                    <button class="whiteboard-btn" data-category="Independence">Independence</button>
+                    <button class="whiteboard-btn" data-category="Love">Love</button>
+                    <button class="whiteboard-btn" data-category="Heartbreak">Heartbreak</button>
+                    <button class="whiteboard-btn" data-category="Healing">Healing</button>
+                    <button class="whiteboard-btn" data-category="Starting Over">Starting Over</button>
+                </div>
+
+            </section>
+            
+            <section id="industry-pros" class="industry-pros-section">
+                <h2 class="section-title">Industry Vault: Search by Metadata 🔍</h2>
+                <p>Intricate search capabilities for industry professionals to find **sync-ready** assets. Filter Kellie's full catalog by industry standard metadata.</p>
+                
+                <form id="metadata-search-form">
+                    <div class="search-filters">
+                        <select name="genre" id="genre-filter">
+                            <option value="">Genre / Subgenre</option>
+                            </select>
+                        <select name="mood" id="mood-filter">
+                            <option value="">Mood / Feeling</option>
+                            </select>
+                        <select name="use" id="use-filter">
+                            <option value="">Occasion / Use</option>
+                            </select>
+                    </div>
+                    <button type="submit" class="search-submit-btn">Search Vault</button>
+                    <button type="button" id="print-all-setlists-btn">Print All Setlists by Group</button>
+                </form>
+                
+                <div id="search-results-display" class="clean-results-area">
+                    <p style="text-align:center;">Use the filters above to search the vault.</p>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            © Verse and Chorus | **Kellie Larson** | **Lyrics with a Cinematic Pulse**<br>
+            **info@verseandchorus.com** | **760-537-0222** | VerseandChorus.com
+        </p>
+    </footer>
+
+</div>
+
+<script src="data.js"></script> 
+<script src="lyrics.js"></script> 
+
+</body>
+  </html>
+                  
