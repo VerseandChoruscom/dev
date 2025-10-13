@@ -1,21 +1,502 @@
-/* ... (existing code for body, .landing-page, .stage-center, .logo, .gold-script) ... */
-
-/* --- Contact Info Styling --- */
-
-#contact-info, #contact-info-footer {
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8); 
-    font-size: 0.8em;
-    color: #aaa; 
+/* --- Global Variables and Base Styling --- */
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gold: #ffd700;
+    --color-red: #cc0000;
+    --color-gray-blue: #3a4750;
+    --color-light-gray: #f4f4f4;
 }
-/* Style for links within the contact info */
-#contact-info a, #contact-info-footer a {
-    color: #C9B575; /* Gold color for links */
-    text-decoration: none; /* Remove underline */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+/* Custom/Theatrical Font for Headers */
+.script-text {
+    font-family: 'Playfair Display', serif;
+}
+
+/* --- LANDING PAGE STYLING (index.html) --- */
+#landing-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    position: relative;
+    padding: 20px;
+}
+
+#landing-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 800px;
+    padding-bottom: 50px;
+}
+
+.landing-header {
+    font-size: 5rem;
+    color: var(--color-red);
+    margin-bottom: 20px;
+}
+
+.tagline-confirmed {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 40px;
+    color: var(--color-gold);
+}
+
+#enter-site-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    border: 2px solid var(--color-gold);
+}
+
+#enter-site-button:hover {
+    background-color: #a00000;
+    transform: scale(1.05);
+}
+
+/* --- MAIN SITE & NAVIGATION STYLING --- */
+#main-site {
+    background-color: var(--color-black);
+    min-height: 100vh;
+}
+
+#main-nav {
+    background-color: var(--color-white);
+    padding: 15px 20px;
+    border-bottom: 3px solid var(--color-gold);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+}
+
+#main-nav nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: var(--color-black);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--color-red);
+}
+
+.nav-link.active {
+    color: var(--color-red);
+    border-bottom: 2px solid var(--color-red);
+}
+
+/* --- MAIN STAGE AREA --- */
+#stage-area {
+    position: relative;
+    background-color: #1a1a1a; /* Dark stage background */
+    min-height: 80vh;
+    padding-top: 50px; 
+}
+
+#content-display {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--color-white); /* White area for bio content */
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    color: var(--color-black);
+}
+
+/* --- STAGE PROPS (Microphone, Amp, Green Room) --- */
+#stage-props-container {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none; 
+}
+
+.stage-prop {
+    position: absolute;
+    pointer-events: auto;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.stage-prop:hover {
+    transform: translateY(-5px); 
+}
+
+/* Microphone Link Styling */
+.microphone-link {
+    top: -20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.microphone-icon {
+    width: 60px; 
+    height: auto;
+    display: block;
+}
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Amp/Setlist Styling */
+.amp-setlist-link {
+    bottom: 50px; 
+    left: 10%;
+    width: 150px;
+    z-index: 15;
+}
+
+.amp-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.setlist-paper {
+    position: absolute;
+    top: 35%;
+    right: -10%; 
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 5px 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 1px solid var(--color-black);
+    transform: rotate(5deg);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Green Room Styling */
+.green-room-link {
+    bottom: 50px; 
+    right: 10%;
+    width: 200px;
+    z-index: 15;
+}
+
+.green-room-box {
+    background-color: #5d8e5d; 
+    color: var(--color-white);
+    border: 3px solid #333;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+.green-room-text {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+    font-family: 'Playfair Display', serif;
+}
+
+.fun-icons {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+/* --- BIO PAGE STYLING (The default content load) --- */
+#bio-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.bio-text-area {
+    padding: 20px;
+    line-height: 1.6;
+    color: var(--color-black);
+}
+
+.bio-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid var(--color-red);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.bio-text-area h3 {
+    color: var(--color-red);
+    margin-top: 20px;
+    border-bottom: 2px solid var(--color-gray-blue);
+    padding-bottom: 5px;
+}
+
+.bio-text-area p {
+    margin-bottom: 15px;
+}
+
+/* Desktop layout: Side-by-side photo and text */
+@media (min-width: 768px) {
+    #bio-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .bio-photo {
+        margin-right: 30px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+}
+
+/* Style for the Print PDF button */
+#print-pdf-button {
+    background-color: var(--color-gray-blue);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block; /* Center the button */
+    transition: background-color 0.3s;
+}
+
+#print-pdf-button:hover {
+    background-color: var(--color-red);
+}
+
+/* --- Spotlight Section Styling (Top 5 Lists & Fun Facts) --- */
+.spotlight-section {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 1px dashed var(--color-gray-blue);
+    border-bottom: 1px dashed var(--color-gray-blue);
+}
+
+.spotlight-column {
+    padding: 15px;
+    background-color: var(--color-light-gray);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: var(--color-black);
+}
+
+.spotlight-column h3 {
+    color: var(--color-red);
+    margin-top: 0;
+    font-size: 1.25em;
+    border-bottom: 1px solid var(--color-gray-blue);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.spotlight-column ol,
+.spotlight-column ul {
+    list-style: none; 
+    padding-left: 0;
+    margin: 0;
+}
+
+.spotlight-column li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #ccc;
+    font-size: 0.95em;
+}
+
+.spotlight-column li:last-child {
+    border-bottom: none;
+}
+
+.spotlight-column a {
+    color: var(--color-black);
+    text-decoration: none;
     transition: color 0.3s;
 }
-#contact-info a:hover, #contact-info-footer a:hover {
-    color: #FFD700; /* Brighter gold on hover */
+
+.spotlight-column a:hover {
+    color: var(--color-red);
+    text-decoration: underline;
 }
 
-/* ... (rest of the code for .stage-center, .welcome-script, .enter-button) ... */
+/* Desktop layout: Side-by-side columns */
+@media (min-width: 768px) {
+    .spotlight-section {
+        flex-direction: row; 
+        justify-content: space-between;
+    }
+    .spotlight-column {
+        flex: 1; 
+        min-width: 30%;
+    }
+    .fun-facts {
+        list-style-type: none; 
+    }
+}
+
+/* --- Green Room Specific Styling --- */
+.green-room-style {
+    background-color: #f7f7f7; 
+    color: var(--color-black);
+}
+
+#green-room-area {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 70vh;
+}
+
+.green-room-header {
+    font-size: 3em;
+    color: #5d8e5d; 
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 5px;
+}
+
+/* General Styling for Game Sections */
+.game-section {
+    background-color: var(--color-white);
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.game-section h2 {
+    color: var(--color-black);
+    border-bottom: 2px solid #5d8e5d;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Turnstile Specific */
+#lyric-display-box {
+    min-height: 80px;
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+#spin-turnstile-btn {
+    background-color: #5d8e5d;
+    color: var(--color-white);
+    border: none;
+    padding: 10px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#spin-turnstile-btn:hover {
+    background-color: #4a774a;
+}
+
+/* Mad Libs Form Styling */
+#mad-libs-form p {
+    background-color: #fff0f5; 
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px dashed #5d8e5d;
+    line-height: 1.8;
+}
+
+#mad-libs-form .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+#mad-libs-form label {
+    font-weight: bold;
+    margin-right: 5px;
+    color: #5d8e5d;
+}
+
+#mad-libs-form input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+    min-width: 120px;
+}
+
+#mad-libs-output {
+    margin-top: 20px;
+    background-color: #e6ffe6;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+.hidden {
+    display: none;
+}
+
+/* --- FOOTER STYLING (Applies to all pages) --- */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--color-gray-blue);
+    color: var(--color-white);
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Specific footer adjustment for landing page (index.html) */
+#landing-page footer {
+    background-color: var(--color-black);
+    color: var(--color-gray-blue);
+    position: absolute;
+    bottom: 0;
+}
