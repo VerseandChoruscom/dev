@@ -56,6 +56,12 @@ body {
     margin-bottom: 40px;
     color: var(--color-gold);
 }
+#site-logo {
+    max-width: 100%; /* Ensures it scales down on small screens */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Centers block-level element */
+    margin: 0 auto 20px auto; /* Centers it and adds space below */
+}
 
 #enter-site-button {
     display: inline-block;
