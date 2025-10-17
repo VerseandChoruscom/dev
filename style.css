@@ -21,7 +21,109 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
-/* --- LANDING PAGE STYLING (index.html) --- */
+//* --- LANDING PAGE STYLING (index.html) --- */
+#landing-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    position: relative;
+    padding: 20px;
+    overflow: hidden; /* Crucial for hiding the initial position of the curtains */
+}
+
+/* NEW: Theatrical Curtain Styles */
+.curtain {
+    position: fixed;
+    top: 0;
+    width: 50vw; /* Half the screen width */
+    height: 100vh;
+    /* Using the color-red variable for a classic theatre look */
+    background-color: var(--color-red); 
+    z-index: 100; /* Ensure curtains are on top of all other content */
+    transition: transform 1.5s ease-in-out; /* Animation speed for closing */
+}
+
+#curtain-left {
+    left: 0;
+    /* Start off-screen to the left (open state) */
+    transform: translateX(-100%); 
+}
+
+#curtain-right {
+    right: 0;
+    /* Start off-screen to the right (open state) */
+    transform: translateX(100%); 
+}
+/* END NEW CURTAINS */
+
+
+/* Landing Content Styling */
+#landing-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center the content vertically within the flex container */
+    max-width: 800px;
+    padding-bottom: 50px;
+    z-index: 1; /* Keep content above background but under curtains */
+    transition: opacity 0.5s ease-in-out; /* Fade out content before curtains close */
+}
+
+/* Logo Styling */
+#site-logo {
+    width: 250px; /* Adjusted size for prominence */
+    height: auto;
+    margin-bottom: 20px;
+    /* Add a subtle drop shadow for elegance against the black background */
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5)); 
+}
+
+.landing-header {
+    font-size: 4rem; /* Adjusted size */
+    /* Using the color-gold variable for an elegant welcome message */
+    color: var(--color-gold); 
+    margin-bottom: 10px;
+}
+
+.tagline-confirmed {
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin-bottom: 40px;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* Button Styling (Enhanced for elegance) */
+#enter-site-button {
+    display: block;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-white);
+    background-color: var(--color-red); 
+    border: 2px solid var(--color-gold);
+    border-radius: 5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+    /* Glowing effect to make it feel like a stage spotlight */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); 
+}
+
+#enter-site-button:hover {
+    background-color: var(--color-black);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 25px rgba(255, 215, 0, 0.8);
+}
+* --- LANDING PAGE STYLING (index.html) --- */
 #landing-page {
     height: 100vh;
     display: flex;
