@@ -235,7 +235,74 @@ body {
     transform: rotate(5deg);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
+/* --- BIO PAGE STYLING (The default content load) --- */
 
+#bio-content {
+    display: flex;
+    flex-direction: column; /* Stacked on mobile */
+    align-items: center;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.bio-text-area {
+    padding: 20px;
+    line-height: 1.6;
+    color: var(--color-black); /* Text on the white stage area */
+}
+
+.bio-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid var(--color-red);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.bio-text-area h3 {
+    color: var(--color-red);
+    margin-top: 20px;
+    border-bottom: 2px solid var(--color-gray-blue);
+    padding-bottom: 5px;
+}
+
+.bio-text-area p {
+    margin-bottom: 15px;
+}
+
+/* Desktop layout: Side-by-side photo and text */
+@media (min-width: 768px) {
+    #bio-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .bio-photo {
+        margin-right: 30px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+}
+
+/* Style for the Print PDF button (hidden by default) */
+#print-pdf-button {
+    background-color: var(--color-gray-blue);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: background-color 0.3s;
+}
+
+#print-pdf-button:hover {
+    background-color: var(--color-red);
+        }
+        
 /* Green Room Styling */
 .green-room-link {
     bottom: 50px; 
