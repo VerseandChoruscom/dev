@@ -119,6 +119,30 @@ body {
     color: var(--color-red);
     border-bottom: 2px solid var(--color-red);
 }
+/* --- Commission Link Highlight --- */
+.commission-link {
+    /* Use a contrasting color, like a strong gold or red, from your palette */
+    color: var(--color-gold); 
+    font-weight: bold;
+    border: 1px solid var(--color-gold);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.commission-link:hover {
+    background-color: var(--color-gold);
+    color: var(--color-black); /* Text color changes on hover */
+}
+
+/* Ensure all nav links have a similar look for consistency */
+#main-nav nav a {
+    text-decoration: none;
+    color: var(--color-white);
+    padding: 8px 12px;
+    margin: 0 5px;
+    /* ... other existing styles ... */
+}
 
 /* --- MAIN STAGE AREA --- */
 #stage-area {
