@@ -17,10 +17,12 @@
     <header id="main-nav">
         <nav>
             <a href="main.html#bio" class="nav-link">Bio</a>
-            <a href="lyrics.html" class="nav-link active">Lyrics</a>
-            <a href="lyrics.html#jukebox" class="nav-link">Digital Jukebox</a>
+            <a href="lyrics.html" class="nav-link active">Lyric Vault</a>
             <a href="articles.html" class="nav-link">Articles/Podcast</a>
-            <a href="contact.html" class="nav-link">Contact Form</a>
+            <a href="consultation.html" class="nav-link">1:1 Consultation</a> 
+            <a href="lyric-critque.html" class="nav-link">Lyric Critique ✍️</a>
+            <a href="custom-commissions.html" class="nav-link commission-link">Commissions ✨</a>
+            <a href="contact.html" class="nav-link">Contact</a>
         </nav>
         <a href="lyrics.html" class="stage-prop microphone-link">
             <img src="microphone-hanging-photo.png" alt="Microphone - Click for Lyrics" class="microphone-icon">
@@ -30,10 +32,204 @@
 
     <main id="lyrics-stage-area">
         <div id="content-display">
-            <h1 class="script-text page-header" style="color: var(--color-gold);">The Lyric Catalog</h1>
+            <h1 class="script-text page-header" style="color: var(--color-gold);">The Kellie Larson Lyric Catalog</h1> 
             
             <section id="jukebox" class="jukebox-section">
                 <h2 class="section-title">Digital Jukebox 🎶</h2>
+                <p>Browse cover art and click to view the song's listing, metadata, and licensing link on Songbay.</p>
+
+                <div class="jukebox-search-bar">
+                    <input type="text" id="song-search" placeholder="Search song titles, genre, or mood...">
+                    <button id="search-button">Search</button>
+                </div>
+                
+                <div class="jukebox-grid" id="jukebox-song-list">
+
+                    <div class="jukebox-song-card" data-song-id="the-aftermath">
+                        <img src="the-aftermath-cover-art.jpg" alt="Cover art for the song The Aftermath." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">The Aftermath</h3>
+                            <p class="song-genre">Emotional Pop</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="beautiful-beat">
+                        <img src="beautiful-beat-cover-art.jpg" alt="Cover art for the song Beautiful Beat." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">Beautiful Beat</h3>
+                            <p class="song-genre">Dance Pop</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="broken-record">
+                        <img src="broken-record-cover-art.jpg" alt="Cover art for the song Broken Record." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">Broken Record</h3>
+                            <p class="song-genre">Pop / Breakup</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+                    
+                    <div class="jukebox-song-card" data-song-id="concrete-under-our-feet">
+                        <img src="concrete-under-our-feet-cover-art.jpg" alt="Cover art for the song Concrete Under Our Feet." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">Concrete Under Our Feet</h3>
+                            <p class="song-genre">Cinematic Rock</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="dont-be-jelly">
+                        <img src="don't-be-jelly-cover-art.jpg" alt="Cover art for the song Don't Be Jelly." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">Don't Be Jelly</h3>
+                            <p class="song-genre">Sassy Pop</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="first-step">
+                        <img src="first-step-cover-art.jpg" alt="Cover art for the song First Step." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">First Step</h3>
+                            <p class="song-genre">R&B / Soul</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="hard-no">
+                        <img src="hard-no-cover-art.jpg" alt="Cover art for the song Hard No." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">Hard No</h3>
+                            <p class="song-genre">Pop / Empowerment</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="heartbreak-and-trouble">
+                        <img src="heartbreak-and-trouble-cover-art.jpg" alt="Cover art for the song Heartbreak and Trouble (also known as Hubba Bubba)." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">Heartbreak and Trouble <span class="alias-note">(Hubba Bubba)</span></h3>
+                            <p class="song-genre">Pop / Emotional Story</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="hit-the-road">
+                        <img src="hit-the-road-jack-cover-art.jpg" alt="Cover art for the song Hit The Road (Also known as Showdown At My Door, I'm Not The Girl, Alone In My Room, and Miss Your Stupid Face)." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">Hit The Road <span class="alias-note">(Showdown At My Door, etc.)</span></h3>
+                            <p class="song-genre">Country Pop / Breakup</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="my-girl-karma">
+                        <img src="my-girl-karma-cover-art.jpg" alt="Cover art for the song My Girl Karma." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">My Girl Karma</h3>
+                            <p class="song-genre">Alt Pop / Vengeance</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="one-small-wrong">
+                        <img src="one-small-wrong-cover-art.jpg" alt="Cover art for the song One Small Wrong." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">One Small Wrong</h3>
+                            <p class="song-genre">Cinematic Ballad</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="showdown-at-my-door">
+                        <img src="showdown-at-my-door-cover-art.jpg" alt="Cover art for the song Showdown At My Door (Also known as Hit The Road, I'm Not The Girl, Alone In My Room, and Miss Your Stupid Face)." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">Showdown At My Door</h3>
+                            <p class="song-genre">Country Pop / Breakup</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="sick-one">
+                        <img src="sick-one-cover-art.jpg" alt="Cover art for the song Sick One." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">Sick One</h3>
+                            <p class="song-genre">Pop / Indie-Pop</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="solid-shifting-ground">
+                        <img src="solid-shifting-ground-cover-art.jpg" alt="Cover art for the song Solid Shifting Ground." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">Solid Shifting Ground</h3>
+                            <p class="song-genre">Folk Pop / Indie</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="sweet-mary-jane">
+                        <img src="sweet-mary-jane-cover-art.jpg" alt="Cover art for the song Sweet Mary Jane." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">Sweet Mary Jane</h3>
+                            <p class="song-genre">Indie Rock</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+
+                    <div class="jukebox-song-card" data-song-id="tick-tok">
+                        <img src="tick-tok-cover-art.jpg" alt="Cover art for the song Tick Tok." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">Tick Tok</h3>
+                            <p class="song-genre">R&B / Pop</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+                    
+                    <div class="jukebox-song-card" data-song-id="wildflower">
+                        <img src="wildflower-cover-art.jpg" alt="Cover art for the song Wildflower." class="song-cover-art">
+                        <div class="song-info">
+                            <h3 class="song-title">Wildflower</h3>
+                            <p class="song-genre">Country Crossover / Pop</p>
+                            <a href="YOUR_SONGBAY_LINK_HERE" class="play-demo-btn">View on Songbay 🎧</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                </section>
+            
+            <section id="industry-vault" class="industry-vault-section">
+                <h2 class="section-title">Industry Pro Vault Search 📊</h2>
+                <p>For music supervisors, producers, and publishers: Use the filters below to search Kellie Larson's catalog by exact metadata.</p>
+                
+                <form id="metadata-search-form">
+                    </form>
+                
+                <div id="search-results-display" class="clean-results-area">
+                    <p style="text-align:center;">Use the filters above to search the vault.</p>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            © Verse and Chorus | **Kellie Larson** | **Lyrics with a Cinematic Pulse**<br>
+            **info@verseandchorus.com** | **760-537-0222** | VerseandChorus.com
+        </p>
+    </footer>
+
+</div>
+
+<script src="data.js"></script> 
+<script src="lyrics.js"></script> 
+
+</body>
+  </html>
                 <p>Search song titles to play demos of Kellie's latest works. Don't forget to use the **Applause Meter**!</p>
 
                 <div class="jukebox-search-bar">
