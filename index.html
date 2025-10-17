@@ -1,4 +1,4 @@
-6<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,6 @@
     <title>KELLIE LARSON | Cinematic Songwriter and Lyricist</title>
     <meta name="description" content="Kellie Larson: Cinematic Songwriter and Lyricist. Crafting sync-ready, emotionally raw, narrative-driven lyrics for film, TV, and advertising.">
     <meta name="keywords" content="Kellie Larson, Cinematic Songwriter, Lyricist, sync-ready content, songwriter, lyrics, country song, pop, B2B music, songbay lyrics">
-<img src="https://www.verseandchorus.com/logo-verseandchorus-photo.jpg" alt="Verse and Chorus Logo - Kellie Larson" id="site-logo">
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -15,9 +14,13 @@
 
 <div id="landing-page" class="active">
     
+    <div id="curtain-left" class="curtain"></div>
+    <div id="curtain-right" class="curtain"></div>
+
     <div id="landing-content">
-        <h1 class="script-text landing-header">Verse and Chorus</h1>
-        <h2 class="tagline-confirmed">"A single word piques the interest of the ear while a great line shelters a worm for eternity"</h2>
+        <img src="logo-verseandchorus-photo.jpg" alt="Verse and Chorus Logo - Kellie Larson" id="site-logo">
+        <h1 class="script-text landing-header">Welcome to Verse and Chorus</h1>
+        <h2 class="tagline-confirmed">The Stage is Set. Please Be Seated.</h2>
         
         <div class="landing-cta">
             <a href="main.html" id="enter-site-button">Please Be Seated</a>
@@ -26,11 +29,32 @@
     
     <footer>
         <p>
-            © Verse and Chorus | **Kellie Larson** | **info@verseandchorus.com**760-537-0222
+            © Verse and Chorus | **Kellie Larson** | **Lyrics with a Cinematic Pulse**<br>
+            **info@verseandchorus.com** | **760-537-0222** | VerseandChorus.com
         </p>
     </footer>
-
 </div>
 
+<script>
+document.getElementById('enter-site-button').addEventListener('click', function(e) {
+    e.preventDefault();
+    const leftCurtain = document.getElementById('curtain-left');
+    const rightCurtain = document.getElementById('curtain-right');
+    const landingContent = document.getElementById('landing-content');
+    const targetUrl = e.target.getAttribute('href');
+
+    // Make content disappear first
+    landingContent.style.opacity = '0';
+    
+    // Animate curtains closing (transform: translateX(0) is the closed state)
+    leftCurtain.style.transform = 'translateX(0)';
+    rightCurtain.style.transform = 'translateX(0)';
+
+    // Wait for the curtains to close, then navigate to the main page
+    setTimeout(function() {
+        window.location.href = targetUrl;
+    }, 1500); // 1.5 seconds, matching the CSS transition time
+});
+</script>
 </body>
 </html>
