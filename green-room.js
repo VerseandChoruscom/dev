@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Data for the Turnstile (Lyric Randomizer) ---
+    // Check if songData is available (linked via data.js)
+    if (typeof songData === 'undefined' || songData.length === 0) {
+        console.warn("songData not found. Turnstile will use internal demo lyrics.");
+    }
+    
+    // --- Data for the Turnstile (Lyric Randomizer) ---\
+    // Uses a mix of internal demos and real song titles as fallbacks/examples
     const cinematicLyrics = [
         "You rewrite the stars, you rewrite the past, playing fast and loose.",
         "Oh, she's Wildflower, dancing in the wind. She's got the spirit of a rebel.",
@@ -20,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Logic for Mad Libs ---
+    // --- Logic for Mad Libs ---\
     const madLibsForm = document.getElementById('mad-libs-form');
     const madLibsOutput = document.getElementById('mad-libs-output');
 
@@ -51,4 +57,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-                                     
