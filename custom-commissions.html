@@ -1,112 +1,71 @@
-<style>
-    /* Custom Commission Styling */
-    .commission-container {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 30px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        border: 2px solid #1a1a1a;
-        border-radius: 10px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        background-color: #ffffff;
-    }
-    .commission-container h1 {
-        text-align: center;
-        color: #8b0000;
-        margin-bottom: 5px;
-        font-size: 2.2em;
-    }
-    .commission-container h2 {
-        color: #1a1a1a;
-        border-bottom: 2px solid #dcdcdc;
-        padding-bottom: 5px;
-        margin-top: 30px;
-    }
-    .fee-box {
-        background-color: #fffacd;
-        padding: 25px;
-        border-radius: 8px;
-        text-align: center;
-        margin: 30px 0;
-        border: 1px solid #ffcc00;
-    }
-    .fee-price {
-        font-size: 3em;
-        font-weight: bold;
-        color: #8b0000;
-        display: block;
-        margin-bottom: 5px;
-    }
-    .fee-box input[type="submit"] {
-        background-color: #8b0000;
-        color: white;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 1.2em;
-        font-weight: bold;
-        transition: background-color 0.3s;
-        margin-top: 15px;
-    }
-    .fee-box input[type="submit"]:hover {
-        background-color: #a52a2a;
-    }
-    .site-footer {
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid #e0e0e0;
-        text-align: center;
-        font-size: 0.9em;
-        color: #777;
-    }
-    .site-footer a {
-        color: #007bff;
-        text-decoration: none;
-    }
-    .site-footer a:hover {
-        text-decoration: underline;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Commissions | Kellie Larson</title>
+    <meta name="description" content="Hire Kellie Larson for custom lyric commissions for film, TV, or a specific project. Start with a $50 scoping fee.">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
 
-<div class="commission-container">
-
-    <h1>Exclusive Custom Lyrics Commissions</h1>
-    <p style="text-align: center; font-size: 1.2em; color: #555; font-style: italic;">Your project is unique. Let's build a cinematic, story-driven lyric that only your track can hold.</p>
-
-    <h2>The Professional Gateway</h2>
-    <p>Custom commissions are reserved for producers, supervisors, and artists seeking specialized, high-quality **Pop, Country, or emotional narrative lyrics**.</p>
+<div id="main-site" class="commission-page-style">
     
-    <p style="font-size: 1.1em; font-weight: bold; color: #8b0000;">NOTE: Full custom projects have a significant rate minimum. We do not accept low-budget inquiries.</p>
+    <header id="main-nav">
+        <nav>
+            <a href="main.html#bio" class="nav-link">Bio</a>
+            <a href="lyrics.html" class="nav-link">Lyric Vault</a>
+            <a href="articles.html" class="nav-link">Articles/Podcast</a>
+            <a href="consultation.html" class="nav-link">1:1 Consultation</a> 
+            <a href="lyric-critque.html" class="nav-link">Lyric Critique ✍️</a>
+            <a href="custom-commissions.html" class="nav-link commission-link active">Commissions ✨</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <a href="lyrics.html" class="stage-prop microphone-link">
+            <img src="microphone-hanging-photo.png" alt="Microphone - Click for Lyrics" class="microphone-icon">
+            <span class="screen-reader-text">Click for Lyrics Page</span>
+        </a>
+    </header>
 
-    <div class="fee-box">
-        <p><strong>First Step: The Project Scoping Fee</strong></p>
-        <span class="fee-price">$50</span>
-        <p>This is a **non-refundable retainer** that covers my time to review your project brief, assess the scope, and ensure a mutual fit for your high-value project.</p>
+    <main class="container">
+        <div class="commission-container">
+            <h1 class="script-text">Custom Lyric Commissions</h1>
+            <p style="text-align: center; color: #1a1a1a;">**High-Concept, Narrative-Driven Lyrics for Your Project**</p>
 
-        <form action="YOUR_PAYPAL_SCOPING_LINK_HERE" method="post" target="_top">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="YOUR_SCOPING_BUTTON_ID">
-            <input type="hidden" name="item_name" value="Custom Lyric Scoping Fee">
-            <input type="hidden" name="amount" value="50.00">
-            <input type="submit" value="Pay $50 Scoping Fee to Start" >
-        </form>
-    </div>
+            <h2>Project Scoping Fee</h2>
+            
+            <p>For high-value projects, we begin with a dedicated scoping fee. This reserves my time to review your project brief, assess the scope, and ensure a mutual fit for your high-value project.</p>
 
-    <h2>The Process After Payment:</h2>
-    <ol>
-        <li>**Project Brief:** You will be immediately redirected to a detailed form to submit your beat link, genre, deadline, and creative vision.</li>
-        <li>**Assessment:** I will review the brief to confirm I can deliver the high-level quality required.</li>
-        <li>**Strategy Call:** We will schedule a brief call to align on the narrative and commercial goals.</li>
-        <li>**Proposal:** If we proceed, the **$50 fee is credited toward the final proposal**, which includes the estimated cost and timeline for the full custom lyric.</li>
-    </ol>
+            <div class="fee-box">
+                <span class="fee-price">$50.00</span>
+                <p>Scoping Fee</p>
+                <form action="YOUR_PAYPAL_SCOPING_LINK_HERE" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="YOUR_SCOPING_BUTTON_ID">
+                    <input type="hidden" name="item_name" value="Custom Lyric Scoping Fee">
+                    <input type="hidden" name="amount" value="50.00">
+                    <input type="submit" value="Pay $50 Scoping Fee to Start" >
+                </form>
+            </div>
+
+            <h2>The Process After Payment:</h2>
+            <ol>
+                <li>**Project Brief:** You will be immediately redirected to a detailed form to submit your beat link, genre, deadline, and creative vision.</li>
+                <li>**Assessment:** I will review the brief to confirm I can deliver the high-level quality required.</li>
+                <li>**Strategy Call:** We will schedule a brief call to align on the narrative and commercial goals.</li>
+                <li>**Proposal:** If we proceed, the **$50 fee is credited toward the final proposal**, which includes the estimated cost and timeline for the full custom lyric.</li>
+            </ol>
+        </div>
+    </main>
     
     <footer class="site-footer">
         <p>
-            **Kellie Larson** | Cinematic Songwriter and Lyricist<br>
-            Phone: <a href="tel:7605370222">760-537-0222</a> | Email: <a href="mailto:info@verseandchorus.com">info@verseandchorus.com</a>
+            © Verse and Chorus | **Kellie Larson** | **Lyrics with a Cinematic Pulse**<br>
+            Phone: <a href="tel:7605370222">760-537-0222</a> | Email: <a href="mailto:info@verseandchorus.com">info@verseandchorus.com</a> | VerseandChorus.com
         </p>
     </footer>
 
 </div>
+
+</body>
+</html>
