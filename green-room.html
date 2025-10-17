@@ -16,10 +16,12 @@
     <header id="main-nav">
         <nav>
             <a href="main.html#bio" class="nav-link">Bio</a>
-            <a href="lyrics.html" class="nav-link">Lyrics</a>
-            <a href="lyrics.html#jukebox" class="nav-link">Digital Jukebox</a>
+            <a href="lyrics.html" class="nav-link">Lyric Vault</a>
             <a href="articles.html" class="nav-link">Articles/Podcast</a>
-            <a href="contact.html" class="nav-link">Contact Form</a>
+            <a href="consultation.html" class="nav-link">1:1 Consultation</a> 
+            <a href="lyric-critque.html" class="nav-link">Lyric Critique ✍️</a>
+            <a href="custom-commissions.html" class="nav-link commission-link">Commissions ✨</a>
+            <a href="contact.html" class="nav-link">Contact</a>
         </nav>
         <a href="lyrics.html" class="stage-prop microphone-link">
             <img src="microphone-hanging-photo.png" alt="Microphone - Click for Lyrics" class="microphone-icon">
@@ -28,28 +30,24 @@
     </header>
 
     <main id="green-room-area">
-        <h1 class="green-room-header">Welcome to The Green Room</h1>
-        <p class="tagline">Relax, play a game, and let your creative side unwind before the show.</p>
+        <h1 class="script-text page-header" style="color: var(--color-red);">The Green Room: Creative Tools</h1>
 
-        <section class="game-section turnstile">
-            <h2>Lyric Turnstile (Randomizer) 🔄</h2>
-            <p>Spin the turnstile to get a random line of lyric from Kellie's catalog. Perfect for a quick creative prompt!</p>
-            <div id="lyric-display-box">
-                <p id="random-lyric-output">Click the button below to generate a cinematic line...</p>
+        <section id="lyric-turnstile" class="green-room-section">
+            <h2>Lyric Turnstile (Randomizer)</h2>
+            <p>Need a quick dose of inspiration? Hit the button to spin up a random, cinematic line from **Kellie Larson's** vault.</p>
+            
+            <div class="turnstile-output-box">
+                <p id="random-lyric-output">Click the button to generate a line.</p>
             </div>
-            <button id="spin-turnstile-btn">Spin the Turnstile!</button>
+            
+            <button id="spin-turnstile-btn" class="gold-btn">Spin for a Line 🎰</button>
         </section>
 
-        <section class="game-section mad-libs">
-            <h2>Cinematic Mad Libs 📝</h2>
-            <p>Fill in the blanks below to create your own hilarious, high-drama lyric synopsis!</p>
+        <section id="cinematic-mad-libs" class="green-room-section">
+            <h2>Cinematic Mad Libs</h2>
+            <p>Plug in your words and generate a high-concept song synopsis! Fill in the blanks below:</p>
+            
             <form id="mad-libs-form">
-                <p>
-                    A new song is about a **(Adjective)** hero who must save a **(Noun)** from a **(Adjective) (Adjective)** villain. 
-                    They **(Verb)** through the city while carrying a **(Plural Noun)**. 
-                    The chorus demands that we **(Verb)** the silence and **(Adverb)** celebrate the final **(Noun)**.
-                </p>
-
                 <div class="input-group">
                     <label for="adjective1">Adjective:</label>
                     <input type="text" id="adjective1" required>
@@ -95,5 +93,4 @@
 
 <script src="green-room.js"></script>
 </body>
-  </html>
-                  
+</html>
