@@ -11,20 +11,19 @@
 
 <div id="main-site" class="critique-page-style">
     
-    <header id="main-nav">
+    <header id="main-nav-bar">
+        <a href="index.html" class="logo-link">
+            <span class="script-text">Kellie Larson</span>
+        </a>
         <nav>
-            <a href="main.html#bio" class="nav-link">Bio</a>
+            <a href="main.html" class="nav-link">Bio</a>
             <a href="lyrics.html" class="nav-link">Lyric Vault</a>
-            <a href="articles.html" class="nav-link">Articles/Podcast</a>
-            <a href="consultation.html" class="nav-link">1:1 Consultation</a> 
-            <a href="lyric-critque.html" class="nav-link active">Lyric Critique ✍️</a>
-            <a href="custom-commissions.html" class="nav-link commission-link">Commissions ✨</a>
+            <a href="lyric-critque.html" class="nav-link active">Critique Services</a>
+            <a href="custom-commissions.html" class="nav-link commission-link">Commissions</a>
+            <a href="green-room.html" class="nav-link">Green Room</a>
+            <a href="articles.html" class="nav-link">Media/Articles</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
-        <a href="lyrics.html" class="stage-prop microphone-link">
-            <img src="microphone-hanging-photo.png" alt="Microphone - Click for Lyrics" class="microphone-icon">
-            <span class="screen-reader-text">Click for Lyrics Page</span>
-        </a>
     </header>
 
     <main class="container">
@@ -42,18 +41,18 @@
                     <p class="price">$25.00</p>
                     <form action="YOUR_PAYPAL_CRITIQUE_LINK_HERE" method="post" target="_top">
                         <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="hosted_button_id" value="YOUR_REPORT_BUTTON_ID">
-                        <input type="hidden" name="item_name" value="Standard Lyric Critique Report">
+                        <input type="hidden" name="hosted_button_id" value="YOUR_STANDARD_BUTTON_ID">
+                        <input type="hidden" name="item_name" value="Standard Critique Report">
                         <input type="hidden" name="amount" value="25.00">
-                        <input type="submit" value="Buy Report ($25.00)" class="option-report">
+                        <input type="submit" value="Purchase Standard Critique ($25.00)">
                     </form>
                 </div>
                 
                 <div class="option-box">
-                    <h3>Report + Audio Summary Bundle</h3>
-                    <p>Includes the full written report plus a personal 5-min audio summary of the key takeaways.</p>
+                    <h3>Critique + Audio Summary Bundle</h3>
+                    <p>Standard Report plus a 5-minute personal voice note summary of key takeaways.</p>
                     <p class="price">$30.98</p>
-                    <form action="YOUR_PAYPAL_BUNDLE_LINK_HERE" method="post" target="_top">
+                    <form action="YOUR_PAYPAL_CRITIQUE_LINK_HERE" method="post" target="_top">
                         <input type="hidden" name="cmd" value="_s-xclick">
                         <input type="hidden" name="hosted_button_id" value="YOUR_COMBINED_BUTTON_ID">
                         <input type="hidden" name="item_name" value="Report + Audio Bundle">
@@ -78,134 +77,20 @@
     </main>
     
     <footer class="site-footer">
-        <p>
-            © Verse and Chorus | **Kellie Larson** | **Lyrics with a Cinematic Pulse**<br>
-            Phone: <a href="tel:7605370222">760-537-0222</a> | Email: <a href="mailto:info@verseandchorus.com">info@verseandchorus.com</a> | VerseandChorus.com
-        </p>
+        <div class="footer-content">
+            <p class="copyright">
+                © 2025 Verse and Chorus | **Kellie Larson**, Cinematic Songwriter
+            </p>
+            <p class="contact-info">
+                Email: <a href="mailto:info@verseandchorus.com" class="footer-link">info@verseandchorus.com</a> | Phone: <a href="tel:7605370222" class="footer-link">760-537-0222</a>
+            </p>
+            <div class="footer-links">
+                <a href="legal.html" class="footer-link">Legal & Terms</a>
+            </div>
+        </div>
     </footer>
 
 </div>
 
 </body>
 </html>
-        border: 1px solid #e0e0e0;
-    }
-    .price {
-        font-size: 2em;
-        font-weight: bold;
-        color: #4CAF50;
-        display: block;
-        margin-bottom: 10px;
-    }
-    .option-box button, .option-box input[type="submit"] {
-        padding: 12px 20px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 1.05em;
-        font-weight: bold;
-        transition: background-color 0.3s;
-        width: 100%;
-        margin-top: 15px;
-    }
-    .option-report {
-        background-color: #4CAF50;
-        color: white;
-    }
-    .option-report:hover {
-        background-color: #45a049;
-    }
-    .option-audio {
-        background-color: #007bff;
-        color: white;
-    }
-    .option-audio:hover {
-        background-color: #0056b3;
-    }
-    .feature-list {
-        list-style-type: none;
-        padding: 0;
-    }
-    .feature-list li {
-        margin-bottom: 10px;
-        padding-left: 25px;
-        position: relative;
-    }
-    .feature-list li:before {
-        content: "⭐";
-        position: absolute;
-        left: 0;
-    }
-    .site-footer {
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid #e0e0e0;
-        text-align: center;
-        font-size: 0.9em;
-        color: #777;
-    }
-    .site-footer a {
-        color: #007bff;
-        text-decoration: none;
-    }
-    .site-footer a:hover {
-        text-decoration: underline;
-    }
-</style>
-
-<div class="critique-container">
-
-    <h1>Expert Songwriting & Lyric Critique Report</h1>
-    <p style="text-align: center; font-size: 1.2em; color: #555;">Get the **professional, multi-genre analysis** needed to elevate your song from draft to deal. Stop guessing, start selling.</p>
-
-    <div class="purchase-options">
-        
-        <div class="option-box">
-            <h2>The Full Report</h2>
-            <span class="price">$24.99</span>
-            <p><strong>Multi-Page PDF Expert Analysis.</strong> Includes craft critique, market fit, professional branding check, and step-by-step action plan.</p>
-            
-            <form action="YOUR_PAYPAL_REPORT_LINK_HERE" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="YOUR_REPORT_BUTTON_ID">
-                <input type="hidden" name="item_name" value="Songwriting Critique Report">
-                <input type="hidden" name="amount" value="24.99">
-                <input type="submit" value="Get My Analysis ($24.99)" class="option-report">
-            </form>
-        </div>
-
-        <div class="option-box" style="border-color: #007bff;">
-            <h2>Report + Audio Summary</h2>
-            <span class="price" style="color: #007bff;">$30.98</span>
-            <p><strong>BEST VALUE:</strong> Everything in the Report, PLUS the engaging **3.5-7 min Podcast Summary** for conversational, accessible feedback.</p>
-            
-            <form action="YOUR_PAYPAL_COMBINED_LINK_HERE" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="YOUR_COMBINED_BUTTON_ID">
-                <input type="hidden" name="item_name" value="Report + Audio Bundle">
-                <input type="hidden" name="amount" value="30.98">
-                <input type="submit" value="Bundle & Save ($30.98)" class="option-audio">
-            </form>
-        </div>
-        
-    </div>
-    
-    <p style="text-align: center; font-style: italic; font-size: 0.9em; color: #777;">**Note:** The Audio Summary can be purchased separately later for $5.99.</p>
-
-    <h2>What Your Report Covers (All Genres):</h2>
-    <ul class="feature-list">
-        <li>**Universal Craft Assessment:** Detailed critique of rhyme, rhythm, and song structure.</li>
-        <li>**Emotional Storytelling:** Deep analysis of the narrative arc and core concept clarity.</li>
-        <li>**Market Proximity Check:** How marketable your lyric is against current industry trends.</li>
-        <li>**Catalogue Metadata:** Essential data fields for professional song listing and selling (for Songbay/publishers).</li>
-        <li>**Competition Analysis & Next Steps:** Ensuring your work is unique and providing a clear path forward.</li>
-    </ul>
-    
-    <footer class="site-footer">
-        <p>
-            **Kellie Larson** | Cinematic Songwriter and Lyricist<br>
-            Phone: <a href="tel:7605370222">760-537-0222</a> | Email: <a href="mailto:info@verseandchorus.com">info@verseandchorus.com</a>
-        </p>
-    </footer>
-
-</div>
