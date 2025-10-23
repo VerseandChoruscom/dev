@@ -3,76 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Kellie Larson | Cinematic Songwriter</title>
-    <meta name="description" content="Get in touch with Kellie Larson for inquiries regarding licensing, commissions, or collaborations.">
-    <link rel="stylesheet" href="style.css"> 
+    <title>Contact & Inquiry Form | Kellie Larson</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <meta name="description" content="Contact Kellie Larson for lyric licensing, artist collaboration, general inquiries, or feedback.">
+    <meta name="keywords" content="contact songwriter, lyric licensing, artist collaboration form, Kellie Larson email, book session">
+    <style>
+        .contact-form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: var(--color-gray);
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        .contact-form-container label {
+            display: block;
+            margin-bottom: 5px;
+            margin-top: 15px;
+            color: var(--color-baby-blue);
+            font-weight: bold;
+        }
+        .contact-form-container input[type="text"], 
+        .contact-form-container input[type="email"],
+        .contact-form-container input[type="tel"],
+        .contact-form-container select,
+        .contact-form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid var(--color-gold);
+            background-color: var(--color-black);
+            color: var(--color-white);
+            border-radius: 4px;
+        }
+        .contact-form-container textarea {
+            height: 150px;
+        }
+    </style>
 </head>
 <body>
 
-<div id="main-site" class="contact-page-style">
-    
-    <header id="main-nav">
-        <nav>
-            <a href="main.html#bio" class="nav-link">Bio</a>
-            <a href="lyrics.html" class="nav-link">Lyric Vault</a>
-            <a href="articles.html" class="nav-link">Articles/Podcast</a>
-            <a href="consultation.html" class="nav-link">1:1 Consultation</a> 
-            <a href="lyric-critque.html" class="nav-link">Lyric Critique ✍️</a>
-            <a href="custom-commissions.html" class="nav-link commission-link">Commissions ✨</a>
-            <a href="contact.html" class="nav-link active">Contact</a>
+    <header id="main-header">
+        <div id="logo-branding">
+            <a href="/index.html"><img src="/assets/images/logo-main.jpg" alt="Verse and Chorus Logo - Kellie Larson" class="logo-top-left" style="max-width: 150px;"></a>
+            <p class="tagline">"A single word hooks the worm to the ear. A great line shelters the worm for eternity."</p>
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="/bio.html">SPOTLIGHT</a></li>
+                <li><a href="/lyrics.html">SETLIST</a></li>
+                <li><a href="/green-room.html">GREEN ROOM</a></li>
+                <li><a href="/media.html">MEDIA</a></li>
+                <li><a href="/industry-pros.html">INDUSTRY PROS</a></li>
+                <li><a href="/reports.html">LYRIC REPORTS</a></li>
+                <li><a href="/collab.html">COLLAB/COMMISSION</a></li>
+                <li><a href="/contact.html" class="active">CONTACT</a></li>
+                <li><a href="/legal.html">LEGAL</a></li>
+            </ul>
         </nav>
-        <a href="lyrics.html" class="stage-prop microphone-link">
-            <img src="microphone-hanging-photo.png" alt="Microphone - Click for Lyrics" class="microphone-icon">
-            <span class="screen-reader-text">Click for Lyrics Page</span>
-        </a>
     </header>
 
-    <main class="container">
-        <h1 class="script-text page-header" style="color: var(--color-red);">Contact Verse and Chorus</h1>
-        
-        <div class="contact-info-block">
-            <p>Thank you for your interest in the Cinematic Lyrics of **Kellie Larson**.</p>
-            
-            <div class="contact-details">
-                <p><strong>Email:</strong> <a href="mailto:info@verseandchorus.com">info@verseandchorus.com</a></p>
-                <p><strong>Phone:</strong> <a href="tel:7605370222">760-537-0222</a></p>
-                <p><strong>Inquiries:</strong> Licensing, Custom Commissions, Press, and Collaborations.</p>
-            </div>
-        </div>
-
-        <div class="contact-form-section">
-            <h2>Send a Message</h2>
-            <form action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST" class="site-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="subject">Subject:</label>
-                <select id="subject" name="subject">
-                    <option value="licensing">Licensing Inquiry (Songbay)</option>
-                    <option value="commission">Custom Commission Request</option>
-                    <option value="consultation">1:1 Consultation Follow-Up</option>
-                    <option value="other">General Inquiry</option>
+    <main>
+        <div class="contact-form-container">
+            <h2 class="script-text" style="text-align: center;">Direct Contact</h2>
+            <form action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST">
+                
+                <label for="inquiry_type">Inquiry Type (Required):</label>
+                <select id="inquiry_type" name="inquiry_type" required>
+                    <option value="">-- Select Inquiry Type --</option>
+                    <option value="Lyric Licensing">Lyric Licensing</option>
+                    <option value="Artist Collaboration">Artist Collaboration</option>
+                    <option value="Lyric Portfolio Questions">Lyric Portfolio Questions</option>
+                    <option value="Lyric Report Purchase">Lyric Report Purchase</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Comments/Suggestion">Comments/Suggestion</option>
+                    <option value="Legal/Other">Legal/Other</option>
                 </select>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <label for="song_choice">Optional Song Choice (If Applicable):</label>
+                <select id="song_choice" name="song_choice">
+                    <option value="Other">-- Select a Song Title (Optional) --</option>
+                    <option value="The Aftermath">The Aftermath</option>
+                    <option value="Alone In Our Home">Alone In Our Home</option>
+                    <option value="Author of a Lie">Author of a Lie</option>
+                    <option value="The Back of Me">The Back of Me</option>
+                    <option value="Beautiful Beat">Beautiful Beat</option>
+                    <option value="Boys Boys Boys">Boys Boys Boys</option>
+                    <option value="Broken Record">Broken Record</option>
+                    <option value="Children of War">Children of War</option>
+                    <option value="Concrete Under the Feet">Concrete Under the Feet</option>
+                    <option value="Craving the Cru,bs">Craving the Cru,bs</option>
+                    <option value="Cupids Heart (Shot by Cupid's Dart)">Cupids Heart (Shot by Cupid's Dart)</option>
+                    <option value="Don't Be Jelly">Don't Be Jelly</option>
+                    <option value="Don't Want You Back">Don't Want You Back</option>
+                    <option value="Ephemeral Moment">Ephemeral Moment</option>
+                    <option value="Etched in Every Space">Etched in Every Space</option>
+                    <option value="First Step">First Step</option>
+                    <option value="Fury">Fury</option>
+                    <option value="Gen X Anthem">Gen X Anthem</option>
+                    <option value="Hard No">Hard No</option>
+                    <option value="Heart Song">Heart Song</option>
+                    <option value="Heartbreak and Trouble (Hubba Bubba)">Heartbreak and Trouble (Hubba Bubba)</option>
+                    <option value="Hit the Road">Hit the Road</option>
+                    <option value="How Many Chances">How Many Chances</option>
+                    <option value="How's It Feel, Bro?">How's It Feel, Bro?</option>
+                    <option value="I Can Be Your Everything">I Can Be Your Everything</option>
+                    <option value="I Know Your Damn Pin Code">I Know Your Damn Pin Code</option>
+                    <option value="I'm Not That Girl">I'm Not That Girl</option>
+                    <option value="In My Dreams">In My Dreams</option>
+                    <option value="Just Too Much">Just Too Much</option>
+                    <option value="Little Things">Little Things</option>
+                    <option value="Miss Your Stupid Face">Miss Your Stupid Face</option>
+                    <option value="Misty Cries">Misty Cries</option>
+                    <option value="Murderers Heart">Murderers Heart</option>
+                    <option value="My Girl Karma">My Girl Karma</option>
+                    <option value="Not Clever">Not Clever</option>
+                    <option value="One Small Wrong">One Small Wrong</option>
+                    <option value="Real Dream Team (Tick Tok)">Real Dream Team (Tick Tok)</option>
+                    <option value="Show Is Through">Show Is Through</option>
+                    <option value="Showdown at My Door">Showdown at My Door</option>
+                    <option value="Sick One">Sick One</option>
+                    <option value="Solid Shifting Ground">Solid Shifting Ground</option>
+                    <option value="Stood by my Side">Stood by my Side</option>
+                    <option value="Sweet Mary Jane">Sweet Mary Jane</option>
+                    <option value="Thought You Should Know">Thought You Should Know</option>
+                    <option value="Top Shelf Queen">Top Shelf Queen</option>
+                    <option value="Two Hearts Meet">Two Hearts Meet</option>
+                    <option value="Welcome to Jukes">Welcome to Jukes</option>
+                    <option value="Wildflower">Wildflower</option>
+                    <option value="Year in the Rearview">Year in the Rearview</option>
+                    <option value="Other">Other (Not listed)</option>
+                </select>
 
-                <button type="submit" class="gold-btn">Send Message</button>
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex: 1;">
+                        <label for="business_name">Business Name (Optional):<input type="text" id="business_name" name="business_name"></label>
+                        <label for="first_name">First Name (Required):<input type="text" id="first_name" name="first_name" required></label>
+                        <label for="last_name">Last Name (Required):<input type="text" id="last_name" name="last_name" required></label>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="email">Email (Required):<input type="email" id="email" name="email" required></label>
+                        <label for="phone">Phone (Optional):<input type="tel" id="phone" name="phone"></label>
+                        <label style="margin-top: 25px;">Contact Preference:</label>
+                        <div style="display: flex; gap: 20px;">
+                            <label><input type="radio" name="contact_preference" value="Call" checked> Call</label>
+                            <label><input type="radio" name="contact_preference" value="Text"> Text</label>
+                            <label><input type="radio" name="contact_preference" value="Email"> Email</label>
+                        </div>
+                    </div>
+                </div>
+
+                <label for="message">Your Message (Required):</label>
+                <textarea id="message" name="message" required placeholder="Please provide details about your inquiry."></textarea>
+
+                <button type="submit" style="width: 100%; padding: 15px; background-color: var(--color-gold); color: var(--color-black); font-size: 1.2em; font-weight: bold; border: none; margin-top: 20px; cursor: pointer;">Send Inquiry</button>
             </form>
         </div>
-
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>
-            © Verse and Chorus | **Kellie Larson** | **Lyrics with a Cinematic Pulse**<br>
-            **info@verseandchorus.com** | **760-537-0222** | VerseandChorus.com
+            <span class="link-light-blue">www.VerseandChorus.com</span> ** ** <span class="script-text">Kellie Larson</span> ** Email <a href="mailto:info@verseandchorus.com" class="link-light-blue">info@verseandchorus.com</a> ** 760-537-0222. <span class="link-light-blue">@2025 Kellie Larson</span>
         </p>
     </footer>
-</div>
+
+</body>
+</html>
 
 </body>
   </html>
