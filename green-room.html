@@ -4,57 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Room - Lyrical Activities | Kellie Larson</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
     <meta name="description" content="Creative activities and games in the Green Room: Lyrical Mad Libs and the Turnstile for Kellie Larson's fans.">
     <meta name="keywords" content="lyrical mad libs, songwriting games, green room, Kellie Larson fun, lyric turnstile">
 </head>
 <body>
 
-    <header id="main-header">
-        <div id="logo-branding">
-            <a href="/index.html"><img src="/assets/images/logo-main.jpg" alt="Verse and Chorus Logo - Kellie Larson" class="logo-top-left" style="max-width: 150px;"></a>
-            <p class="tagline">"A single word hooks the worm to the ear. A great line shelters the worm for eternity."</p>
-        </div>
-        <nav id="main-nav">
-            <ul>
-                <li><a href="/bio.html">SPOTLIGHT</a></li>
-                <li><a href="/lyrics.html">SETLIST</a></li>
-                <li><a href="/green-room.html" class="active">GREEN ROOM</a></li>
-                <li><a href="/media.html">MEDIA</a></li>
-                <li><a href="/industry-pros.html">INDUSTRY PROS</a></li>
-                <li><a href="/reports.html">LYRIC REPORTS</a></li>
-                <li><a href="/collab.html">COLLAB/COMMISSION</a></li>
-                <li><a href="/contact.html">CONTACT</a></li>
-                <li><a href="/legal.html">LEGAL</a></li>
-            </ul>
+    <header id="main-nav-bar">
+        <a href="index.html" class="logo-link">
+            <span class="script-text">Kellie Larson</span>
+        </a>
+        <nav>
+            <a href="main.html" class="nav-link">Bio</a>
+            <a href="lyrics.html" class="nav-link">Lyric Vault</a>
+            <a href="lyric-critque.html" class="nav-link">Critique Services</a>
+            <a href="custom-commissions.html" class="nav-link commission-link">Commissions</a>
+            <a href="green-room.html" class="nav-link active">Green Room</a>
+            <a href="articles.html" class="nav-link">Media/Articles</a>
+            <a href="contact.html" class="nav-link">Contact</a>
         </nav>
     </header>
 
-    <main class="content-section" id="green-room-area">
-        <h2 class="script-text">Welcome to the Green Room (Activities)</h2>
-        <img src="/assets/images/green-room-photo.jpg" alt="Photo of a comfortable stage green room" style="max-width: 100%; height: auto; margin-bottom: 30px; border: 2px solid var(--color-baby-blue);">
-        
-        <section class="activity-box">
-            <h3 class="script-text" style="color: var(--color-gold);">The Turnstile: Random Lyrical Pulse</h3>
-            <p>Need inspiration? Click the button to get a random, powerful line from Kellie's catalog—the "best two lines in every 10 songs."</p>
-            <button id="spin-turnstile-btn" style="background-color: var(--color-red); color: var(--color-white); padding: 10px 20px; border: none; margin-top: 15px; font-weight: bold;">Spin the Turnstile</button>
-            <div id="random-lyric-output" class="link-light-blue">Click above to generate a lyric.</div>
-        </section>
+    <main class="main-content">
+        <h1 class="page-header script-text" style="color: var(--color-red);">The Green Room: Activities and Fun</h1>
+        <p style="text-align: center; margin-bottom: 40px;">Step behind the curtain and play with the words!</p>
 
         <section class="activity-box">
-            <h3 class="script-text" style="color: var(--color-gold);">Cinematic Mad Libs</h3>
-            <p>Fill in the blanks to create a new, wild movie synopsis using elements from Kellie's lyrics.</p>
-            <form id="mad-libs-form" class="mad-libs-form" style="max-width: 500px; margin: 0 auto; text-align: left;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                    <label for="adjective1">Adjective (Ex: Dark): <input type="text" id="adjective1" required></label>
-                    <label for="noun1">Noun (Ex: Ghost): <input type="text" id="noun1" required></label>
-                    <label for="adjective2">Adjective (Ex: Lost): <input type="text" id="adjective2" required></label>
-                    <label for="adjective3">Adjective (Ex: Flimsy): <input type="text" id="adjective3" required></label>
-                    <label for="verb1">Verb (Ex: Haunt): <input type="text" id="verb1" required></label>
-                    <label for="plural-noun1">Plural Noun (Ex: Chains): <input type="text" id="plural-noun1" required></label>
-                    <label for="verb2">Verb (Present, Ex: Break): <input type="text" id="verb2" required></label>
-                    <label for="adverb1">Adverb (Ex: Slowly): <input type="text" id="adverb1" required></label>
-                    <label for="noun2">Abstract Noun (Ex: Freedom): <input type="text" id="noun2" required></label>
+            <h3 class="script-text" style="color: var(--color-gold);">Lyrical Mad Libs: Create a Song Synopsis</h3>
+            <p>Fill in the blanks and create a ridiculous, cinematic synopsis for a fake song!</p>
+            <form id="mad-libs-form" style="margin-top: 20px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <label>Adjective (Ex: Silly): <input type="text" id="adj1" required></label>
+                    <label>Verb, Past Tense (Ex: Danced): <input type="text" id="verb1" required></label>
+                    <label>Adjective (Ex: Broken): <input type="text" id="adj2" required></label>
+                    <label>Noun, Plural (Ex: Tigers): <input type="text" id="noun1" required></label>
+                    <label>Type of Place (Ex: Ballroom): <input type="text" id="place1" required></label>
+                    <label>Noun, Singular (Ex: Shadow): <input type="text" id="noun2" required></label>
                 </div>
 
                 <button type="submit" style="background-color: var(--color-baby-blue); color: var(--color-black); padding: 10px 20px; border: none; margin-top: 20px; font-weight: bold; width: 100%;">Generate Synopsis</button>
@@ -71,11 +56,19 @@
     </main>
 
     <footer class="site-footer">
-        <p>
-            <span class="link-light-blue">www.VerseandChorus.com</span> ** ** <span class="script-text">Kellie Larson</span> ** Email <a href="mailto:info@verseandchorus.com" class="link-light-blue">info@verseandchorus.com</a> ** 760-537-0222. <span class="link-light-blue">@2025 Kellie Larson</span>
-        </p>
+        <div class="footer-content">
+            <p class="copyright">
+                © 2025 Verse and Chorus | **Kellie Larson**, Cinematic Songwriter
+            </p>
+            <p class="contact-info">
+                Email: <a href="mailto:info@verseandchorus.com" class="footer-link">info@verseandchorus.com</a> | Phone: <a href="tel:7605370222" class="footer-link">760-537-0222</a>
+            </p>
+            <div class="footer-links">
+                <a href="legal.html" class="footer-link">Legal & Terms</a>
+            </div>
+        </div>
     </footer>
 
-    <script src="/assets/js/green-room.js"></script>
 </body>
-</html>
+    </html>
+                           
