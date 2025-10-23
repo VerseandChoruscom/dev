@@ -1,0 +1,169 @@
+/* --- Imports (Placeholder for Gold Script Font) --- */
+/* @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&display=swap'); */
+
+:root {
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-gold: #FFD700;
+    --color-baby-blue: #ADD8E6; /* Light Baby Blue */
+    --color-dark-blue: #00008B; /* Bright Dark Blue */
+    --font-script: 'Great Vibes', cursive; /* Elegant script placeholder */
+    --font-bold: 'Cinzel', serif; /* Bold font placeholder */
+}
+
+/* --- Global & Body Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll from transitions */
+}
+
+/* --- Thematic Styles --- */
+.gold-script {
+    font-family: var(--font-script);
+    color: var(--color-gold);
+    font-weight: 400;
+}
+
+/* Standard Link Styling */
+a, button {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.link-light-blue {
+    color: var(--color-baby-blue);
+    text-decoration: none;
+}
+
+a:hover, button:hover .link-light-blue {
+    color: var(--color-dark-blue);
+}
+
+/* --- Landing Page Specific Layout --- */
+.landing-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#landing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    text-align: center;
+}
+
+#main-logo {
+    width: 75%; /* As requested */
+    max-width: 700px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#script-text h1 { font-size: 3em; }
+#script-text h2 { font-size: 2em; }
+#script-text h3 { font-size: 1.5em; margin-bottom: 40px;}
+
+/* PLEASE BE SEATED Button */
+#enter-button {
+    background: none;
+    border: 3px solid var(--color-gold);
+    padding: 15px 30px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-family: var(--font-bold);
+    letter-spacing: 5px;
+}
+
+#enter-button:hover {
+    background-color: rgba(255, 215, 0, 0.1); /* Subtle gold hover */
+}
+
+/* --- Curtain Styling --- */
+.curtain {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--color-black);
+    z-index: 20; /* Above all content */
+    transition: transform 2s cubic-bezier(0.8, 0, 0.2, 1); /* Elegant slow transition */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.7)), 
+                      radial-gradient(circle at top, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.9)); /* Black curtain texture */
+    background-size: cover;
+}
+
+.left-curtain {
+    left: 0;
+    transform: translateX(0);
+}
+
+.right-curtain {
+    right: 0;
+    transform: translateX(0);
+}
+
+/* State when curtains are 'opened' */
+.curtains-open .left-curtain {
+    transform: translateX(-100%);
+}
+
+.curtains-open .right-curtain {
+    transform: translateX(100%);
+}
+
+/* --- Spotlight Cursor Styling (Desktop Only) --- */
+#spotlight-cursor {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.6) 0%, rgba(255, 255, 0, 0.1) 40%, rgba(0, 0, 0, 0.1) 70%);
+    pointer-events: none; /* Allows clicks to pass through */
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen; /* For a dramatic glow effect */
+    transition: width 0.1s, height 0.1s; /* Smooth movement transition */
+    z-index: 50;
+    display: block; /* Default to visible on desktop */
+}
+
+/* --- Footer Styling --- */
+.footer-landing {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.8em;
+    z-index: 10;
+}
+
+/* --- Mobile/Small Screen Overrides (Disabling spotlight on mobile) --- */
+@media (hover: none) or (pointer: coarse) {
+    #spotlight-cursor {
+        display: none !important;
+    }
+}
+@media (max-width: 768px) {
+    #main-logo {
+        width: 90%;
+    }
+    #script-text h1 { font-size: 2em; }
+    #script-text h2 { font-size: 1.5em; }
+    #script-text h3 { font-size: 1em; }
+    .footer-landing {
+        font-size: 0.6em;
+    }
+}
