@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collab & Commission | Kellie Larson, Cinematic Songwriter</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <meta name="description" content="Custom lyric commissions and collaboration opportunities with cinematic songwriter Kellie Larson. Professional B2B songwriting services.">
+    <meta name="keywords" content="custom lyrics, songwriter for hire, artist collaboration, professional songwriting commission, Kellie Larson collab">
+    <style>
+        /* Custom styles for the Collab page for a slightly different aesthetic */
+        .commission-container {
+            background-color: var(--color-gray);
+            border: 2px solid var(--color-baby-blue);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            margin: 40px auto;
+            max-width: 900px;
+        }
+        .commission-container h3 {
+            color: var(--color-gold);
+            border-bottom: 1px solid var(--color-red);
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+        .fee-box {
+            background-color: rgba(255, 215, 0, 0.15);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px 0;
+            border: 1px solid var(--color-gold);
+        }
+        .fee-price {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--color-red);
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header">
+        <div id="logo-branding">
+            <a href="/index.html"><img src="/assets/images/logo-main.jpg" alt="Verse and Chorus Logo - Kellie Larson" class="logo-top-left" style="max-width: 150px;"></a>
+            <p class="tagline">"A single word hooks the worm to the ear. A great line shelters the worm for eternity."</p>
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="/bio.html">SPOTLIGHT</a></li>
+                <li><a href="/lyrics.html">SETLIST</a></li>
+                <li><a href="/green-room.html">GREEN ROOM</a></li>
+                <li><a href="/media.html">MEDIA</a></li>
+                <li><a href="/industry-pros.html">INDUSTRY PROS</a></li>
+                <li><a href="/reports.html">LYRIC REPORTS</a></li>
+                <li><a href="/collab.html" class="active">COLLAB/COMMISSION</a></li>
+                <li><a href="/contact.html">CONTACT</a></li>
+                <li><a href="/legal.html">LEGAL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="commission-container">
+            <h2 class="script-text" style="text-align: center;">Custom Lyrical Commissions & Collaboration</h2>
+            
+            <p style="text-align: center; margin-bottom: 30px;">
+                Looking for a sync-ready narrative, a killer hook, or a complete lyrical framework for your next production? I specialize in crafting lyrics tailored to your specific genre, mood, and commercial goal.
+            </p>
+
+            <div class="fee-box">
+                <h3 style="color: var(--color-red); border: none; margin: 0; padding: 0;">Start the Conversation: Project Scoping Fee</h3>
+                <span class="fee-price">$50.00</span>
+                <p>This fee initiates the process, allowing time to review your project brief, assess the scope, and ensure a mutual fit for your high-value project.</p>
+                <form action="YOUR_PAYPAL_SCOPING_LINK_HERE" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="YOUR_SCOPING_BUTTON_ID">
+                    <input type="hidden" name="item_name" value="Custom Lyric Scoping Fee">
+                    <input type="hidden" name="amount" value="50.00">
+                    <input type="submit" value="Pay $50 Scoping Fee to Start" style="margin-top: 15px; padding: 10px 30px; background-color: var(--color-gold); color: var(--color-black); font-weight: bold; border: none; cursor: pointer;">
+                </form>
+            </div>
+
+            <h3>The Commission Process:</h3>
+            <ol>
+                <li>**Project Brief:** Upon payment, you submit a detailed form with your beat link, genre, deadline, and creative vision.</li>
+                <li>**Assessment:** I review the brief to confirm I can deliver the high-level quality required.</li>
+                <li>**Strategy Call:** We schedule a brief call to align on the narrative and commercial goals.</li>
+                <li>**Proposal:** If we proceed, the **$50 fee is credited toward the final proposal**, which includes the estimated cost and timeline for the full custom lyric.</li>
+            </ol>
+            
+            <h3 style="margin-top: 40px;">Lyric Consultation & Strategy Sessions</h3>
+            <p>Need guidance on your existing portfolio or a specific line? Book a one-on-one session.</p>
+            <div style="background-color: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 5px; margin-top: 15px;">
+                <ul style="list-style-type: none; padding: 0; text-align: center;">
+                    <li>**Cost:** **$25.00** (30-Minute Session) | **$50.00** (1-Hour Session)</li>
+                </ul>
+                <div style="text-align: center; margin-top: 20px;">
+                    <p>Use the calendar below to view my availability and book your session:</p>
+                    <div style="border: 2px dashed var(--color-gray); padding: 50px; text-align: center; margin-top: 20px; color: var(--color-gray);">
+                        **[PASTE YOUR SCHEDULING WIDGET EMBED CODE HERE (e.g., Calendly)]**
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            <span class="link-light-blue">www.VerseandChorus.com</span> ** ** <span class="script-text">Kellie Larson</span> ** Email <a href="mailto:info@verseandchorus.com" class="link-light-blue">info@verseandchorus.com</a> ** 760-537-0222. <span class="link-light-blue">@2025 Kellie Larson</span>
+        </p>
+    </footer>
+
+</body>
+</html>
