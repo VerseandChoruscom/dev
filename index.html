@@ -3,58 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KELLIE LARSON | Cinematic Songwriter and Lyricist</title>
-    <meta name="description" content="Kellie Larson: Cinematic Songwriter and Lyricist. Crafting sync-ready, emotionally raw, narrative-driven lyrics for film, TV, and advertising.">
-    <meta name="keywords" content="Kellie Larson, Cinematic Songwriter, Lyricist, sync-ready content, songwriter, lyrics, country song, pop, B2B music, songbay lyrics">
-
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Main Stage - Kellie Larson, Cinematic Songwriter & Lyricist</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <meta name="description" content="The Main Stage for Kellie Larson, Cinematic Songwriter. Explore lyrics, bio, media, and professional resources.">
+    <meta name="keywords" content="Kellie Larson, cinematic songwriter, lyricist website, setlist, lyrics for sync, industry pros">
 </head>
-<body>
+<body class="main-stage-page">
 
-<div id="landing-page" class="active">
-    
-    <div id="curtain-left" class="curtain"></div>
-    <div id="curtain-right" class="curtain"></div>
-
-    <div id="landing-content">
-        <img src="logo-verseandchorus-photo.jpg" alt="Verse and Chorus Logo - Kellie Larson" id="site-logo">
-        <h1 class="script-text landing-header">Welcome to Verse and Chorus</h1>
-        <h2 class="tagline-confirmed">The Stage is Set. Please Be Seated.</h2>
-        
-        <div class="landing-cta">
-            <a href="main.html" id="enter-site-button">Please Be Seated</a>
+    <header id="main-header">
+        <div id="logo-branding">
+            <a href="/index.html">
+                <img src="/assets/images/logo-main.jpg" alt="Verse and Chorus Logo - Kellie Larson" class="logo-top-left" style="max-width: 150px;">
+            </a>
+            <p class="tagline">"A single word hooks the worm to the ear. A great line shelters the worm for eternity."</p>
         </div>
-    </div>
-    
-    <footer>
+        
+        <nav id="main-nav">
+            <ul>
+                <li><a href="/bio.html">SPOTLIGHT</a></li>
+                <li><a href="/lyrics.html">SETLIST</a></li>
+                <li><a href="/green-room.html">GREEN ROOM</a></li>
+                <li><a href="/media.html">MEDIA</a></li>
+                <li><a href="/industry-pros.html">INDUSTRY PROS</a></li>
+                <li><a href="/reports.html">LYRIC REPORTS</a></li>
+                <li><a href="/collab.html">COLLAB/COMMISSION</a></li>
+                <li><a href="/contact.html">CONTACT</a></li>
+                <li><a href="/legal.html">LEGAL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="stage-area">
+        <h1 style="display: none;">Kellie Larson Main Stage</h1>
+
+        <a href="/lyrics.html" class="stage-prop clickable-mic" aria-label="Click to view all lyrics">
+            <img src="/assets/images/microphone-hanging.jpg" alt="Hanging Stage Microphone" id="hanging-mic">
+        </a>
+        
+        <div id="action-props">
+            <a href="/lyrics.html" class="prop-link amp-link" aria-label="View the Setlist on the Amp">
+                <img src="/assets/images/amp-music.jpg" alt="Musical Amp with Taped Setlist">
+                <span class="prop-text">VIEW SETLIST</span>
+            </a>
+            
+            <a href="/lyrics.html" class="prop-link jukebox-link" aria-label="Play songs on the Digital Jukebox">
+                <img src="/assets/images/jukebox-photo.jpg" alt="Digital Jukebox">
+                <span class="prop-text">JUKEBOX</span>
+            </a>
+        </div>
+
+        <img src="/assets/images/stage-chairs-instruments.jpg" alt="Empty stage chairs with instruments" class="stage-prop" style="left: 5%; bottom: 10px; width: 300px;">
+        <img src="/assets/images/stage-grand-piano.jpg" alt="Grand Stage Piano" class="stage-prop" style="right: 5%; bottom: 10px; width: 350px;">
+    </main>
+
+    <footer class="site-footer">
         <p>
-            © Verse and Chorus | **Kellie Larson** | **Lyrics with a Cinematic Pulse**<br>
-            **info@verseandchorus.com** | **760-537-0222** | VerseandChorus.com
+            <span class="link-light-blue">www.VerseandChorus.com</span> ** ** <span class="script-text">Kellie Larson</span> ** Email <a href="mailto:info@verseandchorus.com" class="link-light-blue">info@verseandchorus.com</a> ** 760-537-0222. <span class="link-light-blue">@2025 Kellie Larson</span>
         </p>
     </footer>
-</div>
 
-<script>
-document.getElementById('enter-site-button').addEventListener('click', function(e) {
-    e.preventDefault();
-    const leftCurtain = document.getElementById('curtain-left');
-    const rightCurtain = document.getElementById('curtain-right');
-    const landingContent = document.getElementById('landing-content');
-    const targetUrl = e.target.getAttribute('href');
-
-    // Make content disappear first
-    landingContent.style.opacity = '0';
-    
-    // Animate curtains closing (transform: translateX(0) is the closed state)
-    leftCurtain.style.transform = 'translateX(0)';
-    rightCurtain.style.transform = 'translateX(0)';
-
-    // Wait for the curtains to close, then navigate to the main page
-    setTimeout(function() {
-        window.location.href = targetUrl;
-    }, 1500); // 1.5 seconds, matching the CSS transition time
-});
-</script>
 </body>
 </html>
