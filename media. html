@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media: Articles, Podcasts, and News | Kellie Larson</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <meta name="description" content="Songwriting articles, lyric analysis, and podcast insights from Cinematic Songwriter Kellie Larson.">
+    <meta name="keywords" content="songwriting articles, lyric critique, music industry podcast, Kellie Larson news, professional lyric formatting">
+</head>
+<body>
+
+    <header id="main-header">
+        <div id="logo-branding">
+            <a href="/index.html"><img src="/assets/images/logo-main.jpg" alt="Verse and Chorus Logo - Kellie Larson" class="logo-top-left" style="max-width: 150px;"></a>
+            <p class="tagline">"A single word hooks the worm to the ear. A great line shelters the worm for eternity."</p>
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="/bio.html">SPOTLIGHT</a></li>
+                <li><a href="/lyrics.html">SETLIST</a></li>
+                <li><a href="/green-room.html">GREEN ROOM</a></li>
+                <li><a href="/media.html" class="active">MEDIA</a></li>
+                <li><a href="/industry-pros.html">INDUSTRY PROS</a></li>
+                <li><a href="/reports.html">LYRIC REPORTS</a></li>
+                <li><a href="/collab.html">COLLAB/COMMISSION</a></li>
+                <li><a href="/contact.html">CONTACT</a></li>
+                <li><a href="/legal.html">LEGAL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-section">
+        <h2 class="script-text">Songwriting Insights & The Podcast Vault</h2>
+        
+        <p style="text-align: center; margin-bottom: 30px;">
+            Explore articles and podcast episodes covering lyric critiques, structure analysis, and business strategies for songwriters.
+        </p>
+
+        <h3 class="script-text" style="text-align: left; color: var(--color-baby-blue); margin-bottom: 15px;">Articles (The Columnist)</h3>
+        <div class="media-grid">
+            
+            <div class="article-card">
+                <h3>Beyond the Rhyme: How to Professionally Format Lyrics for Producers</h3>
+                <p class="byline">By Kellie Larson | 2025</p>
+                <p>A well-formatted lyric sheet is more than just words on a page – it's a professional calling card. Learn how to structure your submission for optimal impact and clarity in the B2B music world.</p>
+                <a href="#article-1-detail" class="link-light-blue">Read Article &raquo;</a>
+            </div>
+
+            <div class="article-card">
+                <h3>Lyrical Critique of 'Too Much': The Three Elements of Songwriting (Story, Emotion, Imagery)</h3>
+                <p class="byline">By Kellie Larson | 2025</p>
+                <p>An analysis reveals that while 'Too Much' excels in story and emotion, its power is limited by a lack of vivid, sensory imagery—a critical weakness for cinematic lyrics.</p>
+                <a href="#article-2-detail" class="link-light-blue">Read Article &raquo;</a>
+            </div>
+
+            <div class="article-card">
+                <h3>Deconstructing the 20-Song Portfolio: A Deep Dive into Genre and Mood</h3>
+                <p class="byline">Placeholder | Oct 1, 2025</p>
+                <p>We break down the final 20 songs of the portfolio, analyzing how a diverse range of genres and moods creates high sync utility for music libraries and publishers.</p>
+                <a href="#article-3-detail" class="link-light-blue">Read Article &raquo;</a>
+            </div>
+            
+            <div class="article-card">
+                <h3>The Songwriter's B2B Strategy: Crafting Lyrics for Sync Utility</h3>
+                <p class="byline">Placeholder | Sep 15, 2025</p>
+                <p>Focusing on the 'Use' and 'Mood' categories is essential for music licensing. Learn how to craft lyrics that align with high-demand commercial placements.</p>
+                <a href="#article-4-detail" class="link-light-blue">Read Article &raquo;</a>
+            </div>
+
+            <div class="article-card">
+                <h3>Understanding Metadata: Essential Tags for Music Licensing Success</h3>
+                <p class="byline">Placeholder | Aug 20, 2025</p>
+                <p>A breakdown of the essential data fields for professional song listing and selling (for Songbay/publishers).</p>
+                <a href="#article-5-detail" class="link-light-blue">Read Article &raquo;</a>
+            </div>
+            
+            <div class="article-card">
+                <h3>The Art of the Defiant Anthem: How to Write an Empowering Narrative</h3>
+                <p class="byline">Placeholder | Jul 1, 2025</p>
+                <p>A look into the narrative arc of songs like 'Wildflower,' focusing on the journey from heartbreak to liberation.</p>
+                <a href="#article-6-detail" class="link-light-blue">Read Article &raquo;</a>
+            </div>
+
+        </div>
+
+        <h3 class="script-text" style="text-align: left; color: var(--color-baby-blue); margin-top: 50px; margin-bottom: 15px;">The Podcast Vault (5 Episodes)</h3>
+        <div class="media-grid">
+
+            <div class="podcast-card">
+                <h3>Podcast S1 E3: The Anatomy of a Crossover Country Hit</h3>
+                <p class="byline">Episode Focus: Wildflower</p>
+                <div class="audio-player-placeholder">[Audio Player Embed Placeholder]</div>
+                <a href="#podcast-1-detail" class="link-light-blue">Listen Now &raquo;</a>
+            </div>
+
+            <div class="podcast-card">
+                <h3>The Power of the Hook: Analyzing the Immediate Impact of 'Hit the Road'</h3>
+                <p class="byline">Episode Focus: Commercial Pop Hooks</p>
+                <div class="audio-player-placeholder">[Audio Player Embed Placeholder]</div>
+                <a href="#podcast-2-detail" class="link-light-blue">Listen Now &raquo;</a>
+            </div>
+
+            <div class="podcast-card">
+                <h3>Filmic Narration: Creating Visual Lyrics for the Cinematic Ear</h3>
+                <p class="byline">Episode Focus: Lyrical Imagery</p>
+                <div class="audio-player-placeholder">[Audio Player Embed Placeholder]</div>
+                <a href="#podcast-3-detail" class="link-light-blue">Listen Now &raquo;</a>
+            </div>
+
+            <div class="podcast-card">
+                <h3>Negotiating Your First Sync License: A Q&A for Lyricists</h3>
+                <p class="byline">Episode Focus: Business & Legal</p>
+                <div class="audio-player-placeholder">[Audio Player Embed Placeholder]</div>
+                <a href="#podcast-4-detail" class="link-light-blue">Listen Now &raquo;</a>
+            </div>
+
+            <div class="podcast-card">
+                <h3>The Emotional Core: From Personal Grief to Universal Ballad (The Story of 'Oh My Love')</h3>
+                <p class="byline">Episode Focus: Emotional Storytelling</p>
+                <div class="audio-player-placeholder">[Audio Player Embed Placeholder]</div>
+                <a href="#podcast-5-detail" class="link-light-blue">Listen Now &raquo;</a>
+            </div>
+        </div>
+        
+        <div style="text-align: center; background-color: rgba(255, 215, 0, 0.1); padding: 20px; border-radius: 5px; margin-top: 40px;">
+            <h3 class="script-text" style="color: var(--color-gold);">Join the Chorus (Newsletter)</h3>
+            <p>Get Kellie's insights directly in your inbox.</p>
+            <form action="/subscribe" method="POST" style="margin-top: 15px;">
+                <input type="email" name="email" placeholder="Your Email Address" required style="padding: 10px; width: 250px; margin-right: 10px; border: 1px solid var(--color-gold);">
+                <button type="submit" class="link-light-blue" style="background-color: var(--color-black); border: 2px solid var(--color-baby-blue); padding: 10px 20px;">Subscribe</button>
+            </form>
+            <p style="font-size: 0.8em; margin-top: 10px; color: var(--color-gray);">**Disclaimer:** No more than 3 a year will be sent and you can opt out anytime.</p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            <span class="link-light-blue">www.VerseandChorus.com</span> ** ** <span class="script-text">Kellie Larson</span> ** Email <a href="mailto:info@verseandchorus.com" class="link-light-blue">info@verseandchorus.com</a> ** 760-537-0222. <span class="link-light-blue">@2025 Kellie Larson</span>
+        </p>
+    </footer>
+
+</body>
+</html>
