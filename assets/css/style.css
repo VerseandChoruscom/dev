@@ -28,7 +28,7 @@ body {
     font-size: 2.5em;
 }
 
-/* --- LANDING PAGE STYLING (index.html) --- */
+/* --- LANDING PAGE STYLING (landing.html) --- */
 #landing-page {
     height: 100vh;
     display: flex;
@@ -405,4 +405,60 @@ body {
     padding: 30px;
     border-radius: 10px;
     margin-bottom: 30px;
+}
+
+/* Search bar on lyrics.html */
+.jukebox-search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.jukebox-search-bar input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: var(--color-white);
+}
+
+.jukebox-search-bar button {
+    padding: 10px 20px;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-filters {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-filters select {
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #333;
+    color: var(--color-white);
+    border: 1px solid #555;
+    flex: 1;
+}
+
+.search-submit-btn, #print-all-setlists-btn {
+    padding: 10px 15px;
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.search-submit-btn:hover, #print-all-setlists-btn:hover {
+    background-color: #ffe87c;
 }
