@@ -1,1 +1,43 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+    const body = document.body;
+    const isLandingPage = body.classList.contains('landing-page');
+
+    /* =======================================
+       1. Spotlight Cursor Effect (Landing Page Only)
+       ======================================= */
+    if (isLandingPage && window.innerWidth > 768) { // Only run on non-mobile/larger screens
+        const spotlight = document.getElementById('spotlight-cursor');
+
+        document.addEventListener('mousemove', (e) => {
+            // Position the spotlight at the cursor coordinates
+            spotlight.style.left = `${e.clientX}px`;
+            spotlight.style.top = `${e.clientY}px`;
+        });
+    }
+
+
+    /* =======================================
+       2. Curtain Opening and Page Transition
+       ======================================= */
+    if (isLandingPage) {
+        const enterButton = document.getElementById('enter-button');
+        
+        enterButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // 1. Disable the button immediately to prevent multiple clicks
+            enterButton.disabled = true;
+
+            // 2. Add a class to the body to start the CSS curtain transition
+            document.body.classList.add('curtains-open');
+
+            // 3. Wait for the transition to complete (2 seconds, matching CSS transition time)
+            setTimeout(() => {
+                // 4. Navigate to the main stage page
+                window.location.href = '/index.html'; 
+            }, 2000); 
+        });
+    }
+});
 
