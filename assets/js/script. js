@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     /* =======================================
        1. Spotlight Cursor Effect (Landing Page Only)
        ======================================= */
-    if (isLandingPage && window.innerWidth > 768) { // Only run on non-mobile/larger screens
-        const spotlight = document.getElementById('spotlight-cursor');
-
+    const spotlight = document.getElementById('spotlight-cursor');
+    // Check for pointer type to disable on touch devices (mobile)
+    if (spotlight && (window.matchMedia('(hover: hover)').matches && window.matchMedia('(pointer: fine)').matches)) {
         document.addEventListener('mousemove', (e) => {
             // Position the spotlight at the cursor coordinates
             spotlight.style.left = `${e.clientX}px`;
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         enterButton.addEventListener('click', (e) => {
             e.preventDefault();
             
-            // 1. Disable the button immediately to prevent multiple clicks
+            // 1. Disable the button immediately
             enterButton.disabled = true;
 
             // 2. Add a class to the body to start the CSS curtain transition
@@ -40,4 +40,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
