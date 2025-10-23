@@ -1,169 +1,408 @@
-/* --- Imports (Placeholder for Gold Script Font) --- */
-/* @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&display=swap'); */
-
+/* --- Global Variables and Base Styling --- */
 :root {
+    --color-white: #ffffff;
     --color-black: #000000;
-    --color-white: #FFFFFF;
-    --color-gold: #FFD700;
-    --color-baby-blue: #ADD8E6; /* Light Baby Blue */
-    --color-dark-blue: #00008B; /* Bright Dark Blue */
-    --font-script: 'Great Vibes', cursive; /* Elegant script placeholder */
-    --font-bold: 'Cinzel', serif; /* Bold font placeholder */
-}
-
-/* --- Global & Body Styles --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    --color-gold: #ffd700;
+    --color-red: #cc0000;
+    --color-gray-blue: #3a4750;
+    --color-light-gray: #f4f4f4;
 }
 
 body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: var(--color-black);
     color: var(--color-white);
-    font-family: sans-serif;
-    overflow-x: hidden; /* Prevent horizontal scroll from transitions */
 }
 
-/* --- Thematic Styles --- */
-.gold-script {
-    font-family: var(--font-script);
-    color: var(--color-gold);
-    font-weight: 400;
+/* Custom/Theatrical Font for Headers */
+.script-text {
+    font-family: 'Playfair Display', serif;
 }
 
-/* Standard Link Styling */
-a, button {
-    cursor: pointer;
-    transition: color 0.3s ease;
+/* Standard Header and Footer Styles */
+.page-header {
+    margin: 40px auto 20px auto;
+    text-align: center;
+    font-size: 2.5em;
 }
 
-.link-light-blue {
-    color: var(--color-baby-blue);
-    text-decoration: none;
-}
-
-a:hover, button:hover .link-light-blue {
-    color: var(--color-dark-blue);
-}
-
-/* --- Landing Page Specific Layout --- */
-.landing-page {
+/* --- LANDING PAGE STYLING (index.html) --- */
+#landing-page {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    background-color: var(--color-black);
+    color: var(--color-white);
     position: relative;
-    overflow: hidden;
+    padding: 20px;
 }
 
 #landing-content {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    z-index: 10;
-    text-align: center;
+    justify-content: center;
+    max-width: 800px;
+    padding-bottom: 50px;
 }
 
-#main-logo {
-    width: 75%; /* As requested */
-    max-width: 700px;
-    height: auto;
-    margin-bottom: 20px;
+.landing-header {
+    font-size: 5rem;
+    color: var(--color-red);
+    margin-bottom: 10px;
 }
 
-#script-text h1 { font-size: 3em; }
-#script-text h2 { font-size: 2em; }
-#script-text h3 { font-size: 1.5em; margin-bottom: 40px;}
+.tagline-confirmed {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--color-gold);
+    margin-bottom: 50px;
+}
 
-/* PLEASE BE SEATED Button */
-#enter-button {
-    background: none;
-    border: 3px solid var(--color-gold);
+#enter-site-button {
+    background-color: var(--color-gold);
+    color: var(--color-black);
     padding: 15px 30px;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    font-family: var(--font-bold);
-    letter-spacing: 5px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-#enter-button:hover {
-    background-color: rgba(255, 215, 0, 0.1); /* Subtle gold hover */
+#enter-site-button:hover {
+    background-color: #ffe87c;
 }
 
-/* --- Curtain Styling --- */
-.curtain {
-    position: fixed;
-    top: 0;
-    width: 50%;
-    height: 100%;
+/* --- MAIN SITE NAV & LAYOUT (Applies to all inner HTML pages) --- */
+#main-site {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* NEW: Standardized Navigation Bar */
+#main-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--color-gray-blue);
     background-color: var(--color-black);
-    z-index: 20; /* Above all content */
-    transition: transform 2s cubic-bezier(0.8, 0, 0.2, 1); /* Elegant slow transition */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.7)), 
-                      radial-gradient(circle at top, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.9)); /* Black curtain texture */
-    background-size: cover;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.left-curtain {
-    left: 0;
-    transform: translateX(0);
+#main-nav-bar .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
-.right-curtain {
-    right: 0;
-    transform: translateX(0);
+#main-nav-bar .logo-link .script-text {
+    font-size: 1.5em;
+    color: var(--color-gold);
 }
 
-/* State when curtains are 'opened' */
-.curtains-open .left-curtain {
-    transform: translateX(-100%);
+#main-nav-bar nav {
+    display: flex;
+    gap: 15px;
 }
 
-.curtains-open .right-curtain {
-    transform: translateX(100%);
+.nav-link {
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.2s, border-bottom 0.2s;
+    font-size: 1.0em;
 }
 
-/* --- Spotlight Cursor Styling (Desktop Only) --- */
-#spotlight-cursor {
-    position: fixed;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 0, 0.6) 0%, rgba(255, 255, 0, 0.1) 40%, rgba(0, 0, 0, 0.1) 70%);
-    pointer-events: none; /* Allows clicks to pass through */
-    transform: translate(-50%, -50%);
-    mix-blend-mode: screen; /* For a dramatic glow effect */
-    transition: width 0.1s, height 0.1s; /* Smooth movement transition */
-    z-index: 50;
-    display: block; /* Default to visible on desktop */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-gold);
+    border-bottom: 2px solid var(--color-red);
 }
 
-/* --- Footer Styling --- */
-.footer-landing {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 10px 0;
+.commission-link {
+    font-weight: bold;
+    color: var(--color-red);
+}
+
+/* NEW: Standardized Footer */
+.site-footer {
+    border-top: 1px solid var(--color-gray-blue);
+    padding: 20px 0;
+    margin-top: 40px;
     text-align: center;
-    font-size: 0.8em;
-    z-index: 10;
+    color: #aaa; /* Lighter color for footer text */
+    font-size: 0.9em;
 }
 
-/* --- Mobile/Small Screen Overrides (Disabling spotlight on mobile) --- */
-@media (hover: none) or (pointer: coarse) {
-    #spotlight-cursor {
-        display: none !important;
-    }
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-@media (max-width: 768px) {
-    #main-logo {
-        width: 90%;
-    }
-    #script-text h1 { font-size: 2em; }
-    #script-text h2 { font-size: 1.5em; }
-    #script-text h3 { font-size: 1em; }
-    .footer-landing {
-        font-size: 0.6em;
-    }
+
+.copyright, .contact-info {
+    margin: 5px 0;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-link {
+    color: var(--color-gold);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-link:hover {
+    color: var(--color-red);
+}
+
+/* --- BIO PAGE SPECIFIC STYLING (main.html) --- */
+#bio-page {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+#bio-content {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.bio-photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--color-gold);
+    flex-shrink: 0;
+}
+
+.bio-text-area p {
+    margin-bottom: 15px;
+}
+
+.spotlight-section {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 20px;
+    border: 1px solid var(--color-gray-blue);
+    border-radius: 8px;
+}
+
+.spotlight-column {
+    flex: 1;
+}
+
+.spotlight-column h3 {
+    color: var(--color-red);
+    border-bottom: 1px dashed var(--color-red);
+    padding-bottom: 5px;
+}
+
+.spotlight-column ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#print-pdf-button {
+    display: block;
+    width: 80%;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 15px;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#print-pdf-button:hover {
+    background-color: #e60000;
+}
+
+/* ========================================================================= */
+/* 4. DIGITAL JUKEBOX (LYRIC CATALOG) STYLES */
+/* ========================================================================= */
+.jukebox-section {
+    padding: 20px;
+}
+
+.jukebox-grid {
+    display: grid;
+    /* Creates a responsive grid of at least 200px wide cards */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.jukebox-song-card {
+    background-color: var(--color-gray-blue);
+    border: 3px solid var(--color-gold);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+.jukebox-song-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+}
+
+.song-cover-art {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.song-info {
+    padding: 15px 10px;
+}
+
+.song-title {
+    color: var(--color-white);
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.song-genre {
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.play-demo-btn {
+    display: inline-block;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.play-demo-btn:hover {
+    background-color: #e60000;
+}
+
+/* ========================================================================= */
+/* 5. CRITIQUE AND COMMISSION STYLES */
+/* ========================================================================= */
+.critique-container, .commission-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--color-gray-blue);
+    border-radius: 10px;
+}
+
+.critique-container h2, .commission-container h2 {
+    color: var(--color-gold);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.purchase-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.option-box {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid var(--color-red);
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+}
+
+.option-box h3 {
+    color: var(--color-white);
+    margin-top: 0;
+}
+
+.price {
+    font-size: 1.8em;
+    color: var(--color-gold);
+    font-weight: bold;
+    margin: 10px 0 20px 0;
+}
+
+.option-box form input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.option-box form input[type="submit"]:hover {
+    background-color: #e60000;
+}
+
+.option-audio {
+    background-color: var(--color-gold) !important;
+    color: var(--color-black) !important;
+    margin-top: 10px;
+}
+
+.option-audio:hover {
+    background-color: #ffe87c !important;
+}
+
+.feature-list {
+    max-width: 700px;
+    margin: 30px auto;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+    text-align: left;
+    border-bottom: 1px dotted #444;
+    padding-bottom: 5px;
+}
+
+/* ========================================================================= */
+/* 6. REPORTS / LEGAL / GREEN ROOM STYLES */
+/* ========================================================================= */
+.main-content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.activity-box {
+    background-color: var(--color-gray-blue);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
 }
