@@ -12,7 +12,7 @@
             max-width: 600px;
             margin: 40px auto;
             padding: 30px;
-            background-color: var(--color-gray);
+            background-color: var(--color-gray-blue); /* Updated from snippet to a variable */
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
@@ -31,13 +31,19 @@
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
-            border: 1px solid var(--color-gold);
+            border: 1px solid var(--color-baby-blue);
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't affect total width */
             background-color: var(--color-black);
             color: var(--color-white);
-            border-radius: 4px;
         }
-        .contact-form-container textarea {
-            height: 150px;
+        .two-columns {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .two-columns > div {
+            flex: 1;
         }
     </style>
 </head>
@@ -58,92 +64,43 @@
                 <li><a href="/reports.html">LYRIC REPORTS</a></li>
                 <li><a href="/collab.html">COLLAB/COMMISSION</a></li>
                 <li><a href="/contact.html" class="active">CONTACT</a></li>
-                <li><a href="/legal.html">LEGAL</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content" class="page-content contact-page">
+        <h1 class="page-header script-text" style="color: var(--color-gold);">Contact Kellie Larson</h1>
+        
         <div class="contact-form-container">
-            <h2 class="script-text" style="text-align: center;">Direct Contact</h2>
-            <form action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST">
+            <p style="text-align: center; margin-bottom: 20px;">For licensing, collaboration, or general inquiries.</p>
+            
+            <form action="/submit-form" method="POST">
                 
-                <label for="inquiry_type">Inquiry Type (Required):</label>
-                <select id="inquiry_type" name="inquiry_type" required>
-                    <option value="">-- Select Inquiry Type --</option>
-                    <option value="Lyric Licensing">Lyric Licensing</option>
-                    <option value="Artist Collaboration">Artist Collaboration</option>
-                    <option value="Lyric Portfolio Questions">Lyric Portfolio Questions</option>
-                    <option value="Lyric Report Purchase">Lyric Report Purchase</option>
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Comments/Suggestion">Comments/Suggestion</option>
-                    <option value="Legal/Other">Legal/Other</option>
-                </select>
-
-                <label for="song_choice">Optional Song Choice (If Applicable):</label>
-                <select id="song_choice" name="song_choice">
-                    <option value="Other">-- Select a Song Title (Optional) --</option>
-                    <option value="The Aftermath">The Aftermath</option>
-                    <option value="Alone In Our Home">Alone In Our Home</option>
-                    <option value="Author of a Lie">Author of a Lie</option>
-                    <option value="The Back of Me">The Back of Me</option>
-                    <option value="Beautiful Beat">Beautiful Beat</option>
-                    <option value="Boys Boys Boys">Boys Boys Boys</option>
-                    <option value="Broken Record">Broken Record</option>
-                    <option value="Children of War">Children of War</option>
-                    <option value="Concrete Under the Feet">Concrete Under the Feet</option>
-                    <option value="Craving the Cru,bs">Craving the Cru,bs</option>
-                    <option value="Cupids Heart (Shot by Cupid's Dart)">Cupids Heart (Shot by Cupid's Dart)</option>
-                    <option value="Don't Be Jelly">Don't Be Jelly</option>
-                    <option value="Don't Want You Back">Don't Want You Back</option>
-                    <option value="Ephemeral Moment">Ephemeral Moment</option>
-                    <option value="Etched in Every Space">Etched in Every Space</option>
-                    <option value="First Step">First Step</option>
-                    <option value="Fury">Fury</option>
-                    <option value="Gen X Anthem">Gen X Anthem</option>
-                    <option value="Hard No">Hard No</option>
-                    <option value="Heart Song">Heart Song</option>
-                    <option value="Heartbreak and Trouble (Hubba Bubba)">Heartbreak and Trouble (Hubba Bubba)</option>
-                    <option value="Hit the Road">Hit the Road</option>
-                    <option value="How Many Chances">How Many Chances</option>
-                    <option value="How's It Feel, Bro?">How's It Feel, Bro?</option>
-                    <option value="I Can Be Your Everything">I Can Be Your Everything</option>
-                    <option value="I Know Your Damn Pin Code">I Know Your Damn Pin Code</option>
-                    <option value="I'm Not That Girl">I'm Not That Girl</option>
-                    <option value="In My Dreams">In My Dreams</option>
-                    <option value="Just Too Much">Just Too Much</option>
-                    <option value="Little Things">Little Things</option>
-                    <option value="Miss Your Stupid Face">Miss Your Stupid Face</option>
-                    <option value="Misty Cries">Misty Cries</option>
-                    <option value="Murderers Heart">Murderers Heart</option>
-                    <option value="My Girl Karma">My Girl Karma</option>
-                    <option value="Not Clever">Not Clever</option>
-                    <option value="One Small Wrong">One Small Wrong</option>
-                    <option value="Real Dream Team (Tick Tok)">Real Dream Team (Tick Tok)</option>
-                    <option value="Show Is Through">Show Is Through</option>
-                    <option value="Showdown at My Door">Showdown at My Door</option>
-                    <option value="Sick One">Sick One</option>
-                    <option value="Solid Shifting Ground">Solid Shifting Ground</option>
-                    <option value="Stood by my Side">Stood by my Side</option>
-                    <option value="Sweet Mary Jane">Sweet Mary Jane</option>
-                    <option value="Thought You Should Know">Thought You Should Know</option>
-                    <option value="Top Shelf Queen">Top Shelf Queen</option>
-                    <option value="Two Hearts Meet">Two Hearts Meet</option>
-                    <option value="Welcome to Jukes">Welcome to Jukes</option>
-                    <option value="Wildflower">Wildflower</option>
-                    <option value="Year in the Rearview">Year in the Rearview</option>
-                    <option value="Other">Other (Not listed)</option>
-                </select>
-
-                <div style="display: flex; gap: 20px;">
-                    <div style="flex: 1;">
-                        <label for="business_name">Business Name (Optional):<input type="text" id="business_name" name="business_name"></label>
-                        <label for="first_name">First Name (Required):<input type="text" id="first_name" name="first_name" required></label>
-                        <label for="last_name">Last Name (Required):<input type="text" id="last_name" name="last_name" required></label>
+                <div class="two-columns">
+                    <div>
+                        <label for="name">Your Full Name (Required):</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
                     </div>
-                    <div style="flex: 1;">
-                        <label for="email">Email (Required):<input type="email" id="email" name="email" required></label>
-                        <label for="phone">Phone (Optional):<input type="tel" id="phone" name="phone"></label>
+                    <div>
+                        <label for="email">Your Email (Required):</label>
+                        <input type="email" id="email" name="email" required placeholder="name@example.com">
+                    </div>
+                </div>
+
+                <label for="inquiry_type">Inquiry Type:</label>
+                <select id="inquiry_type" name="inquiry_type">
+                    <option value="Licensing">Lyric Licensing Inquiry</option>
+                    <option value="Collaboration">Artist/Producer Collaboration</option>
+                    <option value="Critique">Lyric Critique/Report</option>
+                    <option value="General">General Inquiry/Feedback</option>
+                </select>
+
+                <div class="two-columns">
+                    <div>
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="760-555-1212">
+                    </div>
+                    <div>
                         <label style="margin-top: 25px;">Contact Preference:</label>
                         <div style="display: flex; gap: 20px;">
                             <label><input type="radio" name="contact_preference" value="Call" checked> Call</label>
@@ -169,142 +126,3 @@
 
 </body>
 </html>
-            border-radius: 4px;
-        }
-        .contact-form-container textarea {
-            height: 150px;
-        }
-    </style>
-</head>
-<body>
-
-    <header id="main-header">
-        <div id="logo-branding">
-            <a href="/index.html"><img src="/assets/images/logo-main.jpg" alt="Verse and Chorus Logo - Kellie Larson" class="logo-top-left" style="max-width: 150px;"></a>
-            <p class="tagline">"A single word hooks the worm to the ear. A great line shelters the worm for eternity."</p>
-        </div>
-        <nav id="main-nav">
-            <ul>
-                <li><a href="/bio.html">SPOTLIGHT</a></li>
-                <li><a href="/lyrics.html">SETLIST</a></li>
-                <li><a href="/green-room.html">GREEN ROOM</a></li>
-                <li><a href="/media.html">MEDIA</a></li>
-                <li><a href="/industry-pros.html">INDUSTRY PROS</a></li>
-                <li><a href="/reports.html">LYRIC REPORTS</a></li>
-                <li><a href="/collab.html">COLLAB/COMMISSION</a></li>
-                <li><a href="/contact.html" class="active">CONTACT</a></li>
-                <li><a href="/legal.html">LEGAL</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <div class="contact-form-container">
-            <h2 class="script-text" style="text-align: center;">Direct Contact</h2>
-            <form action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST">
-                
-                <label for="inquiry_type">Inquiry Type (Required):</label>
-                <select id="inquiry_type" name="inquiry_type" required>
-                    <option value="">-- Select Inquiry Type --</option>
-                    <option value="Lyric Licensing">Lyric Licensing</option>
-                    <option value="Artist Collaboration">Artist Collaboration</option>
-                    <option value="Lyric Portfolio Questions">Lyric Portfolio Questions</option>
-                    <option value="Lyric Report Purchase">Lyric Report Purchase</option>
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Comments/Suggestion">Comments/Suggestion</option>
-                    <option value="Legal/Other">Legal/Other</option>
-                </select>
-
-                <label for="song_choice">Optional Song Choice (If Applicable):</label>
-                <select id="song_choice" name="song_choice">
-                    <option value="Other">-- Select a Song Title (Optional) --</option>
-                    <option value="The Aftermath">The Aftermath</option>
-                    <option value="Alone In Our Home">Alone In Our Home</option>
-                    <option value="Author of a Lie">Author of a Lie</option>
-                    <option value="The Back of Me">The Back of Me</option>
-                    <option value="Beautiful Beat">Beautiful Beat</option>
-                    <option value="Boys Boys Boys">Boys Boys Boys</option>
-                    <option value="Broken Record">Broken Record</option>
-                    <option value="Children of War">Children of War</option>
-                    <option value="Concrete Under the Feet">Concrete Under the Feet</option>
-                    <option value="Craving the Cru,bs">Craving the Cru,bs</option>
-                    <option value="Cupids Heart (Shot by Cupid's Dart)">Cupids Heart (Shot by Cupid's Dart)</option>
-                    <option value="Don't Be Jelly">Don't Be Jelly</option>
-                    <option value="Don't Want You Back">Don't Want You Back</option>
-                    <option value="Ephemeral Moment">Ephemeral Moment</option>
-                    <option value="Etched in Every Space">Etched in Every Space</option>
-                    <option value="First Step">First Step</option>
-                    <option value="Fury">Fury</option>
-                    <option value="Gen X Anthem">Gen X Anthem</option>
-                    <option value="Hard No">Hard No</option>
-                    <option value="Heart Song">Heart Song</option>
-                    <option value="Heartbreak and Trouble (Hubba Bubba)">Heartbreak and Trouble (Hubba Bubba)</option>
-                    <option value="Hit the Road">Hit the Road</option>
-                    <option value="How Many Chances">How Many Chances</option>
-                    <option value="How's It Feel, Bro?">How's It Feel, Bro?</option>
-                    <option value="I Can Be Your Everything">I Can Be Your Everything</option>
-                    <option value="I Know Your Damn Pin Code">I Know Your Damn Pin Code</option>
-                    <option value="I'm Not That Girl">I'm Not That Girl</option>
-                    <option value="In My Dreams">In My Dreams</option>
-                    <option value="Just Too Much">Just Too Much</option>
-                    <option value="Little Things">Little Things</option>
-                    <option value="Miss Your Stupid Face">Miss Your Stupid Face</option>
-                    <option value="Misty Cries">Misty Cries</option>
-                    <option value="Murderers Heart">Murderers Heart</option>
-                    <option value="My Girl Karma">My Girl Karma</option>
-                    <option value="Not Clever">Not Clever</option>
-                    <option value="One Small Wrong">One Small Wrong</option>
-                    <option value="Real Dream Team (Tick Tok)">Real Dream Team (Tick Tok)</option>
-                    <option value="Show Is Through">Show Is Through</option>
-                    <option value="Showdown at My Door">Showdown at My Door</option>
-                    <option value="Sick One">Sick One</option>
-                    <option value="Solid Shifting Ground">Solid Shifting Ground</option>
-                    <option value="Stood by my Side">Stood by my Side</option>
-                    <option value="Sweet Mary Jane">Sweet Mary Jane</option>
-                    <option value="Thought You Should Know">Thought You Should Know</option>
-                    <option value="Top Shelf Queen">Top Shelf Queen</option>
-                    <option value="Two Hearts Meet">Two Hearts Meet</option>
-                    <option value="Welcome to Jukes">Welcome to Jukes</option>
-                    <option value="Wildflower">Wildflower</option>
-                    <option value="Year in the Rearview">Year in the Rearview</option>
-                    <option value="Other">Other (Not listed)</option>
-                </select>
-
-                <div style="display: flex; gap: 20px;">
-                    <div style="flex: 1;">
-                        <label for="business_name">Business Name (Optional):<input type="text" id="business_name" name="business_name"></label>
-                        <label for="first_name">First Name (Required):<input type="text" id="first_name" name="first_name" required></label>
-                        <label for="last_name">Last Name (Required):<input type="text" id="last_name" name="last_name" required></label>
-                    </div>
-                    <div style="flex: 1;">
-                        <label for="email">Email (Required):<input type="email" id="email" name="email" required></label>
-                        <label for="phone">Phone (Optional):<input type="tel" id="phone" name="phone"></label>
-                        <label style="margin-top: 25px;">Contact Preference:</label>
-                        <div style="display: flex; gap: 20px;">
-                            <label><input type="radio" name="contact_preference" value="Call" checked> Call</label>
-                            <label><input type="radio" name="contact_preference" value="Text"> Text</label>
-                            <label><input type="radio" name="contact_preference" value="Email"> Email</label>
-                        </div>
-                    </div>
-                </div>
-
-                <label for="message">Your Message (Required):</label>
-                <textarea id="message" name="message" required placeholder="Please provide details about your inquiry."></textarea>
-
-                <button type="submit" style="width: 100%; padding: 15px; background-color: var(--color-gold); color: var(--color-black); font-size: 1.2em; font-weight: bold; border: none; margin-top: 20px; cursor: pointer;">Send Inquiry</button>
-            </form>
-        </div>
-    </main>
-
-    <footer class="site-footer">
-        <p>
-            <span class="link-light-blue">www.VerseandChorus.com</span> ** ** <span class="script-text">Kellie Larson</span> ** Email <a href="mailto:info@verseandchorus.com" class="link-light-blue">info@verseandchorus.com</a> ** 760-537-0222. <span class="link-light-blue">@2025 Kellie Larson</span>
-        </p>
-    </footer>
-
-</body>
-</html>
-
-</body>
-  </html>
-                      
