@@ -1,86 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lyric Catalog & Industry Vault | Kellie Larson</title>
-    <meta name="description" content="Kellie Larson's complete lyric catalog and Industry Pro search vault. Find sync-ready lyrics searchable by genre, mood, and occasion.">
-    <meta name="keywords" content="lyric vault, industry pros, digital jukebox, sync licensing, genre search, Kellie Larson lyrics, songwriting catalog">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lyric Catalog & Industry Vault | Kellie Larson</title>
+  <meta name="description" content="Kellie Larson's complete lyric catalog and Industry Pro search vault. Find sync-ready lyrics searchable by genre, mood, and occasion.">
+  <meta name="keywords" content="lyric vault, industry pros, digital jukebox, sync licensing, genre search, Kellie Larson lyrics, songwriting catalog">
 
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div id="main-site" class="lyrics-page-style">
-    
-    <header id="main-nav">
-        <nav>
-            <a href="main.html#bio" class="nav-link">Bio</a>
-            <a href="lyrics.html" class="nav-link active">Lyric Vault</a>
-            <a href="articles.html" class="nav-link">Articles/Podcast</a>
-            <a href="consultation.html" class="nav-link">1:1 Consultation</a> 
-            <a href="lyric-critque.html" class="nav-link">Lyric Critique ✍️</a>
-            <a href="custom-commissions.html" class="nav-link commission-link">Commissions ✨</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-        </nav>
-        <a href="lyrics.html" class="stage-prop microphone-link">
-            <img src="microphone-hanging-photo.png" alt="Microphone - Click for Lyrics" class="microphone-icon">
-            <span class="screen-reader-text">Click for Lyrics Page</span>
-        </a>
-    </header>
-
-    <main>
-        <div class="lyric-content-area">
-            <h1 class="page-header script-text" style="color: var(--color-gold);">The Setlist: Lyric Catalog</h1>
-            
-            <section id="jukebox-section">
-                <h2 class="script-text">Digital Jukebox</h2>
-                <p>Listen to clips, view lyrics, and filter the entire catalog. (Jukebox UI/JS not included in this code)</p>
-                <div style="border: 2px dashed var(--color-gold); padding: 50px; text-align: center; margin-top: 20px;">
-                    [Interactive Digital Jukebox Player/Listing Placeholder]
-                </div>
-            </section>
-
-            <section id="vault-section" style="margin-top: 50px;">
-                <h2 class="script-text" style="color: var(--color-baby-blue);">Industry Pro Vault: Search by Metadata</h2>
-                <p>Music Supervisors and Producers: Find the perfect sync-ready lyric by searching Kellie Larson's professional metadata.</p>
-                
-                <form id="metadata-search-form">
-                    <div class="search-filters">
-                        <select name="genre" id="genre-filter">
-                            <option value="">Genre / Subgenre</option>
-                            </select>
-                        <select name="mood" id="mood-filter">
-                            <option value="">Mood / Feeling</option>
-                            </select>
-                        <select name="use" id="use-filter">
-                            <option value="">Occasion / Use</option>
-                            </select>
-                    </div>
-                    <button type="submit" class="search-submit-btn">Search Vault</button>
-                    <button type="button" id="print-all-setlists-btn">Print All Setlists by Group</button>
-                </form>
-                
-                <div id="search-results-display" class="clean-results-area">
-                    <p style="text-align:center;">Use the filters above to search the vault.</p>
-                </div>
-            </section>
-            
-        </div>
-    </main>
-
-    <footer>
-        <p>
-            © Verse and Chorus | **Kellie Larson** | **Lyrics with a Cinematic Pulse**<br>
-            **info@verseandchorus.com** | **760-537-0222** | VerseandChorus.com
-        </p>
-    </footer>
-
-</div>
-
-<script src="data.js"></script> 
-<script src="lyrics.js"></script> 
-
-</body>
-</html>
+  <!-- 🔗 Header & Navigation -->
+  <header id="main-header">
+    <div id="logo-branding">
+      <a href="/index.html">
+        <img src="/assets/images/logo-main.jpg" alt="Verse and Chorus Logo - Kellie Larson" class="logo-top-left" style="max-width: 150px;">
+      </a>
+      <p class="tagline">"A single word hooks the worm to the ear. A great line shelters the worm for eternity."</p>
+    </div>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="/bio.html">SPOTLIGHT</a></li>
+        <li><a href="/lyrics.html" class="active">SETLIST</a></li>
+        <li><a href="/green-room.html">GREEN ROOM</a></li>
+        <li><a href="/media.html">MEDIA</a></li>
+        <li><a href="/industry-pros.html">INDUSTRY PROS</a></li>
+        <li><a href="/reports.html">LYRIC REPORTS</a></li>
+        <li><a href="/collab.html">COLLAB/COMMISSION</a></li>
+        <li><a href="/contact.html">CONTACT</a></li>
+      </ul>
