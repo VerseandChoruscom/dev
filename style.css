@@ -1,124 +1,156 @@
-/* Typography & Layout */
+/* Global Styles */
 body {
+  font-family: 'Helvetica Neue', sans-serif;
   margin: 0;
-  font-family: 'Playfair Display', serif;
-  background-color: #f8f8f8;
-  color: #000;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
 }
 
-h1, h2, h3 {
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-}
-
-.script-text {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
+:root {
+  --color-burgundy: #800020;
+  --color-gold: #d4af37;
+  --color-bluegray: #6c7a89;
 }
 
 /* Header */
 #main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: var(--color-burgundy);
+  color: #fff;
   padding: 10px 20px;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo-top-left {
-  max-height: 80px;
+  height: 50px;
 }
 
-/* Hamburger Menu */
 .hamburger {
-  display: block;
   cursor: pointer;
-}
-
-.hamburger div {
-  width: 30px;
-  height: 4px;
-  background-color: #000;
-  margin: 6px 0;
-}
-
-#nav-menu {
-  display: none;
+  display: flex;
   flex-direction: column;
+  gap: 5px;
+}
+.hamburger div {
+  width: 25px;
+  height: 3px;
   background-color: #fff;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  border: 1px solid #ccc;
-  z-index: 1000;
 }
 
+/* Navigation */
+#nav-menu {
+  display: flex;
+  gap: 15px;
+}
 #nav-menu a {
-  padding: 10px;
+  color: #fff;
   text-decoration: none;
-  color: #000;
-  border-bottom: 1px solid #eee;
+  font-weight: bold;
+}
+#nav-menu a.active {
+  text-decoration: underline;
 }
 
-/* Burgundy Boxes */
-.box-grid {
+/* Page Content */
+.page-content {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  font-size: 2em;
+  color: var(--color-burgundy);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.script-text {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+}
+
+/* Setlist Cards */
+.setlist-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
-  padding: 20px;
-}
-
-.box-link {
-  width: 280px;
-  height: 280px;
-  background-color: #800020;
-  border: 4px solid #6c7a89;
-  color: #000;
-  text-align: center;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
+  margin-bottom: 30px;
+}
+.setlist-card {
+  background: #fff;
+  border: 2px solid #ccc;
+  width: 150px;
+  height: 150px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.setlist-card:hover {
+  border-color: var(--color-gold);
 }
 
-.box-link img {
-  max-width: 100px;
-  margin-bottom: 10px;
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.filter-bar select {
+  padding: 8px;
+  font-size: 1em;
 }
 
-.box-link h3 {
-  margin: 0;
-  font-size: 1.2em;
+/* Song Grid */
+.song-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
 }
 
-/* Teleprompter */
-.teleprompter {
-  background-color: #000;
-  color: #fff;
-  font-size: 1.2em;
-  line-height: 1.6;
-  padding: 20px;
-  max-width: 800px;
-  margin: 40px auto;
-  border: 2px solid #444;
-  border-radius: 8px;
-  overflow-y: auto;
-  max-height: 400px;
+.song-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #f9f9f9;
+  text-align: center;
+}
+.song-card img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+}
+.song-meta {
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+/* Download Button */
+.button-download {
+  padding: 12px 20px;
+  background-color: var(--color-gold);
+  color: #000;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
 /* Footer */
 .site-footer {
-  background-color: #fff;
+  background-color: var(--color-bluegray);
+  color: #fff;
   text-align: center;
   padding: 20px;
   font-size: 0.9em;
-  border-top: 1px solid #ccc;
 }
-
 .site-footer a {
-  color: #000;
+  color: #fff;
   text-decoration: underline;
 }
