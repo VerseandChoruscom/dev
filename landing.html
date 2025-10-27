@@ -1,39 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Verse and Chorus - Kellie Larson, Cinematic Songwriter</title>
-  <meta name="description" content="Welcome to the official site of Kellie Larson, Cinematic Songwriter and Lyricist. Please be seated for the show.">
-  <meta name="keywords" content="Kellie Larson, Cinematic Songwriter, Lyricist, Verse and Chorus, new music, sync licensing">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome | Verse and Chorus</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+    body.landing-page {
+      margin: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-  <link rel="stylesheet" href="/assets/css/style.css">
+    #curtain-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .curtain {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #800020;
+      z-index: 1;
+    }
+
+    .left-curtain {
+      left: 0;
+    }
+
+    .right-curtain {
+      right: 0;
+    }
+
+    #landing-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+    }
+
+    #landing-content img {
+      max-width: 300px;
+      height: auto;
+      border: 4px solid #6c7a89;
+      border-radius: 8px;
+    }
+
+    .site-footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+      border-top: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body class="landing-page">
-
   <div id="curtain-container">
     <div class="curtain left-curtain"></div>
     <div class="curtain right-curtain"></div>
 
-    <div id="landing-content" style="text-align: center;">
-      <!-- 🎭 Logo Photo with Curtain & Spotlight -->
-      <a href="/index.html" aria-label="Please be seated and enter the main stage">
-        <img src="/assets/images/verse-and-chorus-logo-photo.jpg" alt="Welcome to Verse & Chorus - Kellie Larson" style="max-width: 700px; width: 100%; height: auto; margin-top: 40px;">
+    <div id="landing-content">
+      <a href="/index.html">
+        <img src="/images/logo/verseandchorus-logo-large-photo.jpg" alt="Verse and Chorus Logo" />
       </a>
     </div>
 
-    <!-- 📞 Footer -->
     <footer class="site-footer">
       <p>
-        <span class="script-text">www.VerseandChorus.com</span> ** ** 
-        <span class="script-text">Kellie Larson</span> ** 
-        Email <a href="mailto:info@verseandchorus.com" class="link-light-blue">info@verseandchorus.com</a> ** 
-        760-537-0222. 
-        <span class="link-light-blue">@2025 Kellie Larson</span>
+        Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝<a href="/legal.html">Terms and Conditions</a>
       </p>
     </footer>
   </div>
-
-  <script src="/assets/js/landing-script.js"></script>
+</body>
+</html>  <script src="/assets/js/landing-script.js"></script>
 </body>
 </html>
