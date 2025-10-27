@@ -1,77 +1,52 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- 1. Curtain Entrance and Stage Activation ---
-    const curtainOverlay = document.getElementById('curtain-overlay');
-    const openCurtainBtn = document.getElementById('open-curtain-btn');
-    const stage = document.getElementById('stage');
+function toggleMenu() {
+  const menu = document.getElementById('nav-menu');
+  menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+}
 
-    openCurtainBtn.addEventListener('click', () => {
-        // Hide the welcome message immediately for a clean transition
-        document.querySelector('.welcome-message').style.opacity = '0';
+function playTrack(title) {
+  const player = document.getElementById('audio-player');
+  player.src = `/audio/${title}.mp3`;
+  player.play();
+}
 
-        // Start the curtain animation
-        curtainOverlay.classList.remove('closed');
-        
-        // Wait for the animation (2 seconds) to finish before removing the overlay
-        setTimeout(() => {
-            curtainOverlay.classList.add('hidden');
-            stage.classList.remove('hidden');
-            // Allow scrolling on the body once the stage is visible
-            document.body.style.overflow = 'auto'; 
-        }, 2000); 
-    });
+function generateMadlib(event) {
+  event.preventDefault();
+  const emotion = document.getElementById('emotion').value;
+  const object = document.getElementById('object').value;
+  const place = document.getElementById('place').value;
 
-    // --- 2. Custom Spotlight Cursor ---
-    const customCursor = document.getElementById('custom-cursor');
+  const result = `I just want to go hide in my ${place} and be left alone today.<br>
+  Yes, it's true right now my words, my words don't matter to you.<br>
+  You're pretty ${emotion}, just repeating yourself.<br>
+  Like my feelings are cheap, like my words are just worn.<br>
+  You're shouting things out about that ${object} again...`;
 
-    document.addEventListener('mousemove', (e) => {
-        // Move the custom cursor to follow the mouse position
-        customCursor.style.left = `${e.clientX}px`;
-        customCursor.style.top = `${e.clientY}px`;
-    });
+  document.getElementById('madlib-result').innerHTML = result;
+}
 
-    // --- 3. Simple Page Navigation ---
-    const navLinks = document.querySelectorAll('.nav-link');
-    const contentPages = document.querySelectorAll('.content-page');
+function generateScene(event) {
+  event.preventDefault();
+  const mood = document.getElementById('mood').value;
+  const location = document.getElementById('location').value;
+  const prop = document.getElementById('prop').value;
 
-    const showPage = (targetId) => {
-        // Hide all pages
-        contentPages.forEach(page => {
-            page.classList.add('hidden');
-            page.classList.remove('active');
-        });
+  const scene = `I’m feeling ${mood} in this ${location}, staring at the ${prop} like it knows the truth.<br>
+  The silence is louder than your voice ever was.<br>
+  I could walk out, but I stay — because this is the scene where I rewrite the ending.`;
 
-        // Show the targeted page
-        const targetPage = document.getElementById(targetId);
-        if (targetPage) {
-            targetPage.classList.remove('hidden');
-            targetPage.classList.add('active');
-            
-            // Optional: Scroll to the top of the content area
-            document.getElementById('content-area').scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+  document.getElementById('scene-result').innerHTML = scene;
+}
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = e.target.getAttribute('href').substring(1);
-            showPage(targetId);
-        });
-    });
-
-    // --- 4. Contact Form Placeholder Logic ---
-    const form = document.getElementById('licensing-form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // This alert serves as a placeholder for a server-side submission process
-            alert('Inquiry sent! We will be in touch shortly regarding your licensing interest.');
-            form.reset();
-        });
-    }
-
-});
-
-// Note: Future development will include dynamic population of the lyric list and 
-// the full Teleprompter functionality for individual lyric pages.
+function generateRandomLyric() {
+  const lyrics = [
+    "I just want to go hide in my room and be left alone today.",
+    "You're pretty lit, just repeating yourself.",
+    "If I scream what I know, it's wasted on the man who can't genuinely feel.",
+    "Smiling dumbly at you, with more red on my teeth than on my lips.",
+    "This fight has a forecast, this moment will pass.",
+    "You're shouting things out that are certain to pass.",
+    "I'm trading my strength for a sip of your fear."
+  ];
+  const randomLine = lyrics[Math.floor(Math.random() * lyrics.length)];
+  document.getElementById('random-lyric-result').innerHTML = randomLine;
+}
