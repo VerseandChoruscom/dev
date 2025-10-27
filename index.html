@@ -1,82 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main Stage - Kellie Larson, Cinematic Songwriter & Lyricist</title>
-  <meta name="description" content="The Main Stage for Kellie Larson, Cinematic Songwriter. Explore lyrics, bio, media, and professional resources.">
-  <meta name="keywords" content="Kellie Larson, cinematic songwriter, lyricist website, setlist, lyrics for sync, industry pros">
-
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verse and Chorus | Kellie Larson</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script src="/assets/js/scripts.js" defer></script>
 </head>
-<body class="main-stage-page">
-
-  <!-- 🔗 Header & Navigation -->
+<body>
   <header id="main-header">
-    <div id="logo-branding">
-      <a href="/index.html">
-        <img src="/assets/images/logo-main.jpg" alt="Verse and Chorus Logo - Kellie Larson" class="logo-top-left" style="max-width: 150px;">
-      </a>
-      <p class="tagline">"A single word hooks the worm to the ear. A great line shelters the worm for eternity."</p>
+    <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
     </div>
-    <nav id="main-nav">
-      <ul>
-        <li><a href="/bio.html">SPOTLIGHT</a></li>
-        <li><a href="/lyrics.html">SETLIST</a></li>
-        <li><a href="/green-room.html">GREEN ROOM</a></li>
-        <li><a href="/media.html">MEDIA</a></li>
-        <li><a href="/industry-pros.html">INDUSTRY PROS</a></li>
-        <li><a href="/reports.html">LYRIC REPORTS</a></li>
-        <li><a href="/collab.html">COLLAB/COMMISSION</a></li>
-        <li><a href="/contact.html">CONTACT</a></li>
-        <li><a href="/legal.html">LEGAL</a></li>
-      </ul>
+    <nav id="nav-menu">
+      <a href="/bio.html">Bio</a>
+      <a href="/industry-pros.html">Industry Pro</a>
+      <a href="/lyrics.html">Lyrics</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/collab.html">Collab</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/legal.html">Legal</a>
     </nav>
   </header>
 
-  <!-- 🎭 Main Content -->
-  <main id="main-stage-content">
-    <!-- Microphone Link to Lyrics -->
-    <a href="/lyrics.html" class="stage-prop microphone-link" aria-label="Click to view all lyrics">
-      <img src="/assets/images/microphone-hanging.jpg" alt="Hanging Stage Microphone" id="hanging-mic">
-    </a>
+  <main class="page-content">
+    <h1 class="page-header script-text">VERSE AND CHORUS</h1>
+    <h2 class="script-text">Kellie Larson — Cinematic Songwriter & Lyricist</h2>
+    <p style="max-width: 800px; margin: 20px auto; text-align: center;">
+      Welcome to the official site of Kellie Larson. Explore lyrics, creative tools, industry resources, and interactive features designed to showcase Kellie’s voice and vision.
+    </p>
 
-    <div id="action-props">
-      <!-- Amp Link to Industry Pro Vault -->
-      <a href="/industry-pros.html" class="prop-link amp-link" aria-label="Search lyrics by metadata">
-        <img src="/assets/images/amp-music.jpg" alt="Amp with Metadata Vault">
-        <span class="prop-text">INDUSTRY VAULT</span>
+    <div class="box-grid">
+      <a href="/bio.html" class="box-link">
+        <img src="/images/cover/bio-box-photo.jpg" alt="Bio" />
+        <h3>Spotlight</h3>
       </a>
-
-      <!-- Jukebox Link to Lyrics -->
-      <a href="/lyrics.html" class="prop-link jukebox-link" aria-label="Play songs on the Digital Jukebox">
-        <img src="/assets/images/jukebox-photo.jpg" alt="Digital Jukebox">
-        <span class="prop-text">JUKEBOX</span>
+      <a href="/lyrics.html" class="box-link">
+        <img src="/images/cover/lyrics-box-photo.jpg" alt="Lyrics" />
+        <h3>Setlist</h3>
       </a>
-
-      <!-- Placeholder Link to Bio -->
-      <a href="/bio.html" class="prop-link bio-link" aria-label="View Kellie Larson's Bio">
-        <img src="/assets/images/bio-placeholder.jpg" alt="Bio Placeholder Image">
-        <span class="prop-text">SPOTLIGHT</span>
+      <a href="/green-room.html" class="box-link">
+        <img src="/images/cover/green-room-box-photo.jpg" alt="Green Room" />
+        <h3>Green Room</h3>
+      </a>
+      <a href="/industry-pros.html" class="box-link">
+        <img src="/images/cover/industry-pros-box-photo.jpg" alt="Industry Pro" />
+        <h3>Industry Vault</h3>
+      </a>
+      <a href="/articles.html" class="box-link">
+        <img src="/images/cover/articles-box-photo.jpg" alt="Articles" />
+        <h3>Articles</h3>
+      </a>
+      <a href="/reports.html" class="box-link">
+        <img src="/images/cover/reports-box-photo.jpg" alt="Reports" />
+        <h3>Lyric Reports</h3>
+      </a>
+      <a href="/collab.html" class="box-link">
+        <img src="/images/cover/collab-box-photo.jpg" alt="Collab" />
+        <h3>Collab / Commission</h3>
       </a>
     </div>
-
-    <!-- Optional Stage Props -->
-    <img src="/assets/images/stage-chairs-instruments.jpg" alt="Empty stage chairs with instruments" class="stage-prop" style="left: 5%; bottom: 10px; width: 300px;">
-    <img src="/assets/images/stage-grand-piano.jpg" alt="Grand Stage Piano" class="stage-prop" style="right: 5%; bottom: 10px; width: 350px;">
   </main>
 
-  <!-- 📞 Footer -->
   <footer class="site-footer">
     <p>
-      <span class="link-light-blue">www.VerseandChorus.com</span> ** ** 
-      <span class="script-text">Kellie Larson</span> ** 
-      Email <a href="mailto:info@verseandchorus.com" class="link-light-blue">info@verseandchorus.com</a> ** 
-      760-537-0222. 
-      <span class="link-light-blue">@2025 Kellie Larson</span>
+      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝 <a href="/legal.html">Terms and Conditions</a>
     </p>
   </footer>
-
 </body>
 </html>
