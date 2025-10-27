@@ -1,45 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lyric Catalog | Kellie Larson</title>
-  <meta name="description" content="Explore Kellie Larson's complete lyric catalog. Listen, browse, and discover cinematic songwriting.">
-  <meta name="keywords" content="lyric vault, jukebox, Kellie Larson lyrics, cinematic songwriter, sync-ready songs">
-
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Setlist | Kellie Larson</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+    .teleprompter {
+      background-color: #000;
+      color: #fff;
+      font-size: 1.2em;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      border: 2px solid #444;
+      border-radius: 8px;
+      overflow-y: auto;
+      max-height: 400px;
+    }
+    .song-snippet {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .industry-link {
+      display: block;
+      margin: 40px auto;
+      text-align: center;
+    }
+    .industry-link img {
+      max-width: 300px;
+      height: auto;
+      border: 3px solid #6c7a89;
+      border-radius: 6px;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- 🔗 Header & Navigation -->
   <header id="main-header">
-    <div id="logo-branding">
-      <a href="/index.html">
-        <img src="/assets/images/logo-main.jpg" alt="Verse and Chorus Logo - Kellie Larson" class="logo-top-left" style="max-width: 150px;">
-      </a>
-      <p class="tagline">"A single word hooks the worm to the ear. A great line shelters the worm for eternity."</p>
+    <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
     </div>
-    <nav id="main-nav">
-      <ul>
-        <li><a href="/bio.html">SPOTLIGHT</a></li>
-        <li><a href="/lyrics.html" class="active">SETLIST</a></li>
-        <li><a href="/green-room.html">GREEN ROOM</a></li>
-        <li><a href="/media.html">MEDIA</a></li>
-        <li><a href="/industry-pros.html">INDUSTRY PROS</a></li>
-        <li><a href="/reports.html">LYRIC REPORTS</a></li>
-        <li><a href="/collab.html">COLLAB/COMMISSION</a></li>
-        <li><a href="/contact.html">CONTACT</a></li>
-        <li><a href="/legal.html">LEGAL</a></li>
-      </ul>
+    <nav id="nav-menu">
+      <a href="/bio.html">Bio</a>
+      <a href="/industry-pros.html">Industry Pro</a>
+      <a href="/lyrics.html">Lyrics</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/collab.html">Collab</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/legal.html">Legal</a>
     </nav>
   </header>
 
-  <!-- 🎭 Main Content -->
-  <main class="page-content lyrics-page-style">
-    <div class="lyric-content-area">
-      <h1 class="page-header script-text" style="color: var(--color-gold);">The Setlist: Lyric Catalog</h1>
+  <main class="page-content">
+    <h1 class="page-header script-text">SETLIST</h1>
 
-      <!-- 🎧 Digital Jukebox -->
-      <section id="jukebox-section" style="margin-top: 40px;">
-        <h2 class="script-text">Digital Jukebox</h2>
+    <!-- Teleprompter Lyrics -->
+    <div class="teleprompter">
+      <p>I stop right there, my hand on the glass.<br>
+      This fight has a forecast, this moment will pass.<br>
+      I turn from the exit and I walk back to my seat,<br>
+      Because shouting the truth is the sound of defeat.<br>
+      My words still matter, even when I'm lit,<br>
+      But I will keep them in my head, and I just sit.</p>
+    </div>
+
+    <!-- Song Snippet -->
+    <div class="song-snippet">
+      <audio controls>
+        <source src="/audio/my-words-dont-matter-to-you.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <!-- Link to Industry Pros -->
+    <div class="industry-link">
+      <a href="/industry-pros.html">
+        <img src="/images/cover/industry-pros-link-photo.jpg" alt="Go to Industry Pros Vault" />
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝<a href="/legal.html">Terms and Conditions</a>
+    </p>
+  </footer>
+
+  <script src="/assets/js/menu.js"></script>
+</body>
+</html>
