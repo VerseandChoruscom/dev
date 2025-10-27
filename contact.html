@@ -1,128 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact & Inquiry Form | Kellie Larson</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <meta name="description" content="Contact Kellie Larson for lyric licensing, artist collaboration, general inquiries, or feedback.">
-    <meta name="keywords" content="contact songwriter, lyric licensing, artist collaboration form, Kellie Larson email, book session">
-    <style>
-        .contact-form-container {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: var(--color-gray-blue); /* Updated from snippet to a variable */
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-        }
-        .contact-form-container label {
-            display: block;
-            margin-bottom: 5px;
-            margin-top: 15px;
-            color: var(--color-baby-blue);
-            font-weight: bold;
-        }
-        .contact-form-container input[type="text"], 
-        .contact-form-container input[type="email"],
-        .contact-form-container input[type="tel"],
-        .contact-form-container select,
-        .contact-form-container textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid var(--color-baby-blue);
-            border-radius: 4px;
-            box-sizing: border-box; /* Ensures padding doesn't affect total width */
-            background-color: var(--color-black);
-            color: var(--color-white);
-        }
-        .two-columns {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        .two-columns > div {
-            flex: 1;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Kellie Larson</title>
+  <meta name="description" content="Reach out to Kellie Larson for collaborations, commissions, or sync licensing inquiries.">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
 
-    <header id="main-header">
-        <div id="logo-branding">
-            <a href="/index.html"><img src="/assets/images/logo-main.jpg" alt="Verse and Chorus Logo - Kellie Larson" class="logo-top-left" style="max-width: 150px;"></a>
-            <p class="tagline">"A single word hooks the worm to the ear. A great line shelters the worm for eternity."</p>
-        </div>
-        <nav id="main-nav">
-            <ul>
-                <li><a href="/bio.html">SPOTLIGHT</a></li>
-                <li><a href="/lyrics.html">SETLIST</a></li>
-                <li><a href="/green-room.html">GREEN ROOM</a></li>
-                <li><a href="/media.html">MEDIA</a></li>
-                <li><a href="/industry-pros.html">INDUSTRY PROS</a></li>
-                <li><a href="/reports.html">LYRIC REPORTS</a></li>
-                <li><a href="/collab.html">COLLAB/COMMISSION</a></li>
-                <li><a href="/contact.html" class="active">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header id="main-header">
+    <div id="logo-branding">
+      <a href="/index.html">
+        <img src="/assets/images/logo-main.jpg" alt="Verse and Chorus Logo - Kellie Larson" class="logo-top-left">
+      </a>
+    </div>
+    <div class="site-tagline">
+      <p class="tagline">"A single word hooks the worm to the ear. A great line shelters the worm for eternity."</p>
+    </div>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="/bio.html">SPOTLIGHT</a></li>
+        <li><a href="/lyrics.html">SETLIST</a></li>
+        <li><a href="/green-room.html">GREEN ROOM</a></li>
+        <li><a href="/media.html">MEDIA</a></li>
+        <li><a href="/industry-pros.html">INDUSTRY PROS</a></li>
+        <li><a href="/reports.html">LYRIC REPORTS</a></li>
+        <li><a href="/collab.html">COLLAB/COMMISSION</a></li>
+        <li><a href="/contact.html" class="active">CONTACT</a></li>
+        <li><a href="/legal.html">LEGAL</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main id="main-content" class="page-content contact-page">
-        <h1 class="page-header script-text" style="color: var(--color-gold);">Contact Kellie Larson</h1>
-        
-        <div class="contact-form-container">
-            <p style="text-align: center; margin-bottom: 20px;">For licensing, collaboration, or general inquiries.</p>
-            
-            <form action="/submit-form" method="POST">
-                
-                <div class="two-columns">
-                    <div>
-                        <label for="name">Your Full Name (Required):</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
-                    </div>
-                    <div>
-                        <label for="email">Your Email (Required):</label>
-                        <input type="email" id="email" name="email" required placeholder="name@example.com">
-                    </div>
-                </div>
+  <main class="page-content">
+    <h1 class="page-header script-text">Contact Kellie Larson</h1>
+    <p>For sync licensing, collaborations, or commissions, please email <a href="mailto:info@verseandchorus.com">info@verseandchorus.com</a> or call 760-537-0222.</p>
+  </main>
 
-                <label for="inquiry_type">Inquiry Type:</label>
-                <select id="inquiry_type" name="inquiry_type">
-                    <option value="Licensing">Lyric Licensing Inquiry</option>
-                    <option value="Collaboration">Artist/Producer Collaboration</option>
-                    <option value="Critique">Lyric Critique/Report</option>
-                    <option value="General">General Inquiry/Feedback</option>
-                </select>
-
-                <div class="two-columns">
-                    <div>
-                        <label for="phone">Phone Number:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="760-555-1212">
-                    </div>
-                    <div>
-                        <label style="margin-top: 25px;">Contact Preference:</label>
-                        <div style="display: flex; gap: 20px;">
-                            <label><input type="radio" name="contact_preference" value="Call" checked> Call</label>
-                            <label><input type="radio" name="contact_preference" value="Text"> Text</label>
-                            <label><input type="radio" name="contact_preference" value="Email"> Email</label>
-                        </div>
-                    </div>
-                </div>
-
-                <label for="message">Your Message (Required):</label>
-                <textarea id="message" name="message" required placeholder="Please provide details about your inquiry."></textarea>
-
-                <button type="submit" style="width: 100%; padding: 15px; background-color: var(--color-gold); color: var(--color-black); font-size: 1.2em; font-weight: bold; border: none; margin-top: 20px; cursor: pointer;">Send Inquiry</button>
-            </form>
-        </div>
-    </main>
-
-    <footer class="site-footer">
-        <p>
-            <span class="link-light-blue">www.VerseandChorus.com</span> ** ** <span class="script-text">Kellie Larson</span> ** Email <a href="mailto:info@verseandchorus.com" class="link-light-blue">info@verseandchorus.com</a> ** 760-537-0222. <span class="link-light-blue">@2025 Kellie Larson</span>
-        </p>
-    </footer>
+  <footer class="site-footer">
+    <p>
+      <span class="link-light-blue">www.VerseandChorus.com</span> ** ** 
+      <span class="script-text">Kellie Larson</span> ** 
+      Email <a href="mailto:info@verseandchorus.com" class="link-light-blue">info@verseandchorus.com</a> ** 
+      760-537-0222. 
+      <span class="link-light-blue">@2025 Kellie Larson</span>
+    </p>
+  </footer>
 
 </body>
 </html>
