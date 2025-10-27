@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Kellie Larson</title>
-  <meta name="description" content="Reach out to Kellie Larson for collaborations, commissions, or sync licensing inquiries.">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
-
   <header id="main-header">
-    <div id="logo-branding">
-      <a href="/index.html">
-        <img src="/assets/images/logo-main.jpg" alt="Verse and Chorus Logo - Kellie Larson" class="logo-top-left">
-      </a>
+    <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
     </div>
-    <div class="site-tagline">
-      <p class="tagline">"A single word hooks the worm to the ear. A great line shelters the worm for eternity."</p>
-    </div>
-    <nav id="main-nav">
-      <ul>
-        <li><a href="/bio.html">SPOTLIGHT</a></li>
-        <li><a href="/lyrics.html">SETLIST</a></li>
-        <li><a href="/green-room.html">GREEN ROOM</a></li>
-        <li><a href="/media.html">MEDIA</a></li>
-        <li><a href="/industry-pros.html">INDUSTRY PROS</a></li>
-        <li><a href="/reports.html">LYRIC REPORTS</a></li>
-        <li><a href="/collab.html">COLLAB/COMMISSION</a></li>
-        <li><a href="/contact.html" class="active">CONTACT</a></li>
-        <li><a href="/legal.html">LEGAL</a></li>
-      </ul>
+    <nav id="nav-menu">
+      <a href="/bio.html">Bio</a>
+      <a href="/industry-pros.html">Industry Pro</a>
+      <a href="/lyrics.html">Lyrics</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/collab.html">Collab</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/legal.html">Legal</a>
     </nav>
   </header>
 
   <main class="page-content">
-    <h1 class="page-header script-text">Contact Kellie Larson</h1>
-    <p>For sync licensing, collaborations, or commissions, please email <a href="mailto:info@verseandchorus.com">info@verseandchorus.com</a> or call 760-537-0222.</p>
+    <h1 class="page-header script-text">CONTACT FORM</h1>
+    <h2 class="script-text">THANK YOU FOR VISITING!!</h2>
+    <p>Please complete the form below. If your message is urgent or time-sensitive, be sure to mention that clearly in the message box. Responses are typically sent within 24 to 48 hours, depending on the nature of your request.</p>
+
+    <form action="/submit-form" method="POST" style="margin-top: 20px;">
+      <label for="name">Name:</label><br/>
+      <input type="text" id="name" name="name" required><br/><br/>
+
+      <label for="email">Email:</label><br/>
+      <input type="email" id="email" name="email" required><br/><br/>
+
+      <label for="subject">Subject:</label><br/>
+      <input type="text" id="subject" name="subject"><br/><br/>
+
+      <label for="message">Message:</label><br/>
+      <textarea id="message" name="message" rows="6" required></textarea><br/><br/>
+
+      <button type="submit">Send Message</button>
+    </form>
   </main>
 
   <footer class="site-footer">
     <p>
-      <span class="link-light-blue">www.VerseandChorus.com</span> ** ** 
-      <span class="script-text">Kellie Larson</span> ** 
-      Email <a href="mailto:info@verseandchorus.com" class="link-light-blue">info@verseandchorus.com</a> ** 
-      760-537-0222. 
-      <span class="link-light-blue">@2025 Kellie Larson</span>
+      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝<a href="/legal.html">Terms and Conditions</a>
     </p>
   </footer>
 
+  <script src="/assets/js/menu.js"></script>
 </body>
 </html>
