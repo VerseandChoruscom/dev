@@ -1,95 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Room - Lyrical Activities | Kellie Larson</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <meta name="description" content="Creative activities and games in the Green Room: Lyrical Mad Libs and the Turnstile for Kellie Larson's fans.">
-    <meta name="keywords" content="lyrical mad libs, songwriting games, green room, Kellie Larson fun, lyric turnstile">
-    <script>
-        // Placeholder for the Mad Libs script. 
-        // The actual logic would go here, which was not provided.
-        function generateMadLibs(event) {
-            event.preventDefault();
-            const adjective1 = document.getElementById('adjective1').value;
-            const verb = document.getElementById('verb').value;
-            const noun1 = document.getElementById('noun1').value;
-            const adjective2 = document.getElementById('adjective2').value;
-            const noun2 = document.getElementById('noun2').value;
-
-            const story = `The songwriter, feeling **${adjective1}**, decided to **${verb}** the **${noun1}**. 
-                           This experience resulted in a new track about a **${adjective2}** **${noun2}** which she hopes will be her next hit single.`;
-
-            const outputDiv = document.getElementById('mad-libs-output');
-            outputDiv.innerHTML = `<p class="script-text" style="color: var(--color-red); font-size: 1.2em;">Your Song Synopsis:</p><p style="padding: 10px; border: 1px solid var(--color-gold); background-color: var(--color-gray-blue);">${story}</p>`;
-            outputDiv.style.display = 'block';
-        }
-
-        // Attach the function to the form submit event
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('mad-libs-form');
-            if(form) {
-                form.addEventListener('submit', generateMadLibs);
-            }
-        });
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Green Room | Kellie Larson</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
+  <header id="main-header">
+    <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+    <nav id="nav-menu">
+      <a href="/bio.html">Bio</a>
+      <a href="/industry-pros.html">Industry Pro</a>
+      <a href="/lyrics.html">Lyrics</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/collab.html">Collab</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/legal.html">Legal</a>
+    </nav>
+  </header>
 
-    <header id="main-header">
-        <div id="logo-branding">
-            <a href="/index.html"><img src="/assets/images/logo-main.jpg" alt="Verse and Chorus Logo - Kellie Larson" class="logo-top-left" style="max-width: 150px;"></a>
-            <p class="tagline">"A single word hooks the worm to the ear. A great line shelters the worm for eternity."</p>
-        </div>
-        <nav id="main-nav">
-            <ul>
-                <li><a href="/bio.html">SPOTLIGHT</a></li>
-                <li><a href="/lyrics.html">SETLIST</a></li>
-                <li><a href="/green-room.html" class="active">GREEN ROOM</a></li>
-                <li><a href="/media.html">MEDIA</a></li>
-                <li><a href="/industry-pros.html">INDUSTRY PROS</a></li>
-                <li><a href="/reports.html">LYRIC REPORTS</a></li>
-                <li><a href="/collab.html">COLLAB/COMMISSION</a></li>
-                <li><a href="/contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
+  <main class="page-content">
+    <h1 class="page-header script-text">GREEN ROOM</h1>
+    <h2 class="script-text">Try Lyrical Madlibs, Rewrite the Scene, Random Lyric Generator, or Digital Jukebox</h2>
+    <img src="/images/cover/green-room-main-photo.jpg" alt="Green Room Main Photo" style="max-width: 100%; height: auto; margin-top: 20px;" />
 
-    <main id="main-content" class="page-content green-room-page">
-        <h1 class="page-header script-text" style="color: var(--color-gold);">The Green Room</h1>
-        <p style="text-align: center; margin-bottom: 40px;">A space for creative play and collaboration.</p>
+    <!-- Lyrical Madlibs -->
+    <section style="margin-top: 40px;">
+      <h3 class="script-text">Lyrical Madlibs</h3>
+      <form id="madlibs-form" onsubmit="generateMadlib(event)">
+        <label for="emotion">Emotion:</label><br/>
+        <input type="text" id="emotion" name="emotion" required><br/><br/>
+        <label for="object">Object:</label><br/>
+        <input type="text" id="object" name="object" required><br/><br/>
+        <label for="place">Place:</label><br/>
+        <input type="text" id="place" name="place" required><br/><br/>
+        <button type="submit">Enter</button>
+      </form>
+      <div id="madlib-result" style="margin-top: 20px; font-style: italic;"></div>
+    </section>
 
-        <section class="activity-box">
-            <h3 class="script-text" style="color: var(--color-gold);">Lyrical Mad Libs</h3>
-            <p>Help Kellie write a synopsis for her next cinematic song!</p>
-            <form id="mad-libs-form" style="margin-top: 20px; display: grid; gap: 10px;">
-                <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <label>Adjective (Ex: Loud, Secretive): <input type="text" id="adjective1" required></label>
-                    <label>Verb (Ex: Jump, Imagine): <input type="text" id="verb" required></label>
-                    <label>Noun (Ex: Microphone, Lover): <input type="text" id="noun1" required></label>
-                    <label>Adjective (Ex: Golden, Sad): <input type="text" id="adjective2" required></label>
-                    <label>Noun (Ex: Storm, Cat): <input type="text" id="noun2" required></label>
-                </div>
+    <!-- Rewrite the Scene -->
+    <section style="margin-top: 60px;">
+      <h3 class="script-text">Rewrite the Scene</h3>
+      <form id="scene-form" onsubmit="generateScene(event)">
+        <label for="mood">Mood:</label><br/>
+        <input type="text" id="mood" name="mood" required><br/><br/>
+        <label for="location">Location:</label><br/>
+        <input type="text" id="location" name="location" required><br/><br/>
+        <label for="prop">Prop:</label><br/>
+        <input type="text" id="prop" name="prop" required><br/><br/>
+        <button type="submit">Enter</button>
+      </form>
+      <div id="scene-result" style="margin-top: 20px; font-style: italic;"></div>
+    </section>
 
-                <button type="submit" style="background-color: var(--color-baby-blue); color: var(--color-black); padding: 10px 20px; border: none; margin-top: 20px; font-weight: bold; width: 100%;">Generate Synopsis</button>
-            </form>
-            <div id="mad-libs-output" style="display: none;"></div>
-        </section>
-        
-        <section class="activity-box">
-            <h3 class="script-text" style="color: var(--color-gold);">Song Merge Challenge</h3>
-            <p>Pick two songs from the Setlist and propose a title and concept for how they could be merged!</p>
-            <textarea placeholder="Ex: Wildflower meets Sick One: 'The Toxic Rebel Anthem'" style="width: 100%; height: 100px; padding: 10px; margin-top: 15px;"></textarea>
-            <button style="background-color: var(--color-gold); color: var(--color-black); padding: 10px 20px; border: none; margin-top: 15px; font-weight: bold;">Submit Concept</button>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <p>
-            <span class="link-light-blue">www.VerseandChorus.com</span> ** ** <span class="script-text">Kellie Larson</span> ** Email <a href="mailto:info@verseandchorus.com" class="link-light-blue">info@verseandchorus.com</a> ** 760-537-0222. <span class="link-light-blue">@2025 Kellie Larson</span>
-        </p>
-    </footer>
-
-</body>
-</html>
+    <!-- Random Lyric Generator -->
+    <section style="margin-top: 60px;">
