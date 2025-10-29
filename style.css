@@ -154,3 +154,35 @@ body {
   color: #fff;
   text-decoration: underline;
 }
+/* --- NEW ARTICLE-SPECIFIC STYLES FOR REQUESTED FEATURES --- */
+
+/* 1. Underlined Titles (using a class to target article headlines specifically) */
+.article-title {
+    text-decoration: underline; 
+}
+
+/* 2. Burgundy Line Between Stories */
+.story-separator {
+    border: none;
+    border-top: 2px solid var(--color-burgundy); /* Uses the burgundy variable #800020 */
+    margin: 40px auto; /* Adds vertical spacing */
+}
+
+/* 3. Back to Top Link Styling */
+.back-to-top-container {
+    text-align: center;
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+
+.back-to-top-link {
+    display: inline-block;
+    color: var(--color-burgundy); /* Burgundy color for the link text */
+    text-decoration: none; 
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 10px;
+}
+.back-to-top-link:hover {
+    color: #a00030; /* Slightly darker burgundy on hover */
+}
