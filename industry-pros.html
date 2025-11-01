@@ -64,99 +64,7 @@
         </div>
       
     </section>
-    ```
 
----
-
-## 🎨 CSS Code Integration (`styles.css` Addition)
-
-Append the following styles to your external CSS file (`style.css` in your example) to ensure the white background, responsive layout, and the "pop-out" effect are properly implemented.
-
-```css
-/* ==================================== */
-/* 6 CARD GRID LAYOUT & POP-OUT EFFECT */
-/* ==================================== */
-
-.concept-cards-grid {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 20px; /* Space between cards */
-    padding: 30px 10px;
-    margin-bottom: 40px;
-    max-width: 1200px; /* Constrain the width for large screens */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- BASE CARD STYLES --- */
-.concept-card {
-    /* Required Style: White Background */
-    background-color: white; 
-    
-    /* Structure */
-    border-radius: 12px;
-    padding: 25px;
-    
-    /* Responsive Sizing (Default to 2 cards per row on mobile/tablet) */
-    width: calc(50% - 20px); 
-    min-width: 250px;
-    
-    /* Required Style: Initial Pop-Out Effect (Subtle Lift) */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    
-    /* Smooth Animation for the Pop-Out */
-    transition: all 0.3s ease-in-out; 
-    cursor: pointer;
-    box-sizing: border-box; /* Include padding/border in the width */
-}
-
-/* --- THE POP-OUT/LIFT EFFECT (ON HOVER/TOUCH) --- */
-/* :focus is critical for mobile accessibility/touch devices */
-.concept-card:hover,
-.concept-card:focus {
-    /* Enhance the Shadow to make it "pop" more */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
-    
-    /* Lift the card slightly */
-    transform: translateY(-8px); 
-    
-    /* Optional: Small border highlight */
-    border: 1px solid #1e3a8a; 
-}
-
-/* --- CARD CONTENT STYLES --- */
-.concept-card h3 {
-    color: #1e3a8a; /* Use the brand blue */
-    margin-top: 0;
-    font-size: 1.25em;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 15px;
-}
-
-.concept-card p {
-    color: #555;
-    font-size: 0.95em;
-}
-
-/* --- MEDIA QUERY FOR DESKTOP LAYOUT (3 cards per row) --- */
-@media (min-width: 992px) {
-    .concept-card {
-        width: calc(33.333% - 20px); /* Three cards per row */
-        max-width: 350px;
-    }
-}
-
-/* --- MEDIA QUERY FOR SMALLEST MOBILE (1 card per row) --- */
-@media (max-width: 576px) {
-    .concept-card {
-        width: 95%; /* Almost full width on smallest screens */
-        margin: 0 auto;
-    }
-}
-
-    <!-- LICENSING ASSURANCE SECTION -->
     <section class="licensing-assurance" style="max-width: 900px; margin: 20px auto 40px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
         <h2 style="font-size: 1.2rem; margin-bottom: 15px; text-align: center; color: #1e3a8a;">Licensing Assurance for A&R & Publishers</h2>
         <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: space-around;">
@@ -167,7 +75,6 @@ Append the following styles to your external CSS file (`style.css` in your examp
         </ul>
     </section>
 
-    <!-- Setlist Cards -->
     <section class="setlist-grid">
       <div class="setlist-card" onclick="filterBySetlist('empowerment')">Empowerment</div>
       <div class="setlist-card" onclick="filterBySetlist('heartbreak')">Heartbreak</div>
@@ -176,7 +83,6 @@ Append the following styles to your external CSS file (`style.css` in your examp
       <div class="setlist-card" onclick="filterBySetlist('sync')">Sync-Ready</div>
     </section>
 
-    <!-- Search Filters -->
     <section class="filter-bar">
       <select id="genreFilter" onchange="applyFilters()">
         <option value="">Genre</option>
@@ -206,9 +112,7 @@ Append the following styles to your external CSS file (`style.css` in your examp
       </select>
     </section>
 
-    <!-- Song Catalog -->
-<section id="songCatalog" class="song-grid">
-  <!-- START OF SONG CATALOG -->
+    <section id="songCatalog" class="song-grid">
   <div class="song-card" data-genre="pop" data-mood="defiant" data-theme="identity" data-setlist="empowerment">
     <img src="/images/covers/author-of-a-lie.jpg" alt="Author of a Lie Cover Art" />
     <div class="song-meta">
@@ -218,10 +122,8 @@ Append the following styles to your external CSS file (`style.css` in your examp
       <a href="https://songbay.co/song/author-of-a-lie" target="_blank">🎧 License on Songbay</a>
     </div>
   </div>
-  <!-- Continue with all 43 cards -->
-</section>
+  </section>
 
-    <!-- Download Press Kit -->
     <section style="text-align: center; margin-top: 40px;">
       <a href="/downloads/kellie-larson-press-kit.pdf" class="button-download">📄 Download Press Kit</a>
     </section>
@@ -234,4 +136,3 @@ Append the following styles to your external CSS file (`style.css` in your examp
   </footer>
 </body>
 </html>
-
