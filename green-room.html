@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Green Room | Kellie Larson</title>
+  <title>Green Room Activities | Kellie Larson</title>
   <link rel="stylesheet" href="/assets/css/style.css" />
+  <!-- Link to the dedicated script for the Green Room Games -->
+  <script src="/assets/js/green-room-scripts.js" defer></script> 
 </head>
 <body>
   <header id="main-header">
@@ -14,7 +16,9 @@
     </div>
     <nav id="nav-menu">
       <a href="/bio.html">Bio</a>
+      <a href="/main-stage.html">Main Stage</a>
       <a href="/industry-pros.html">Industry Pro</a>
+      <a href="/green-room.html" class="active">Green Room</a>
       <a href="/lyrics.html">Lyrics</a>
       <a href="/articles.html">Articles</a>
       <a href="/reports.html">Reports</a>
@@ -25,39 +29,98 @@
   </header>
 
   <main class="page-content">
-    <h1 class="page-header script-text">GREEN ROOM</h1>
-    <h2 class="script-text">Try Lyrical Madlibs, Rewrite the Scene, Random Lyric Generator, or Digital Jukebox</h2>
-    <img src="/images/cover/green-room-main-photo.jpg" alt="Green Room Main Photo" style="max-width: 100%; height: auto; margin-top: 20px;" />
+    <h1 class="page-header script-text">THE GREEN ROOM</h1>
+    <!-- New Cinematic Songwriter Header -->
+    <h2 style="text-align: center; font-size: 1.25rem; font-weight: 400; color: #555; margin-top: -10px;">Kellie Larson | Cinematic Songwriter & Lyricist</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+      Welcome to the interactive space! Play with Kellie's lyrics, mix and match concepts, and generate new creative inspiration.
+    </p>
 
-    <!-- Lyrical Madlibs -->
-    <section style="margin-top: 40px;">
-      <h3 class="script-text">Lyrical Madlibs</h3>
-      <form id="madlibs-form" onsubmit="generateMadlib(event)">
-        <label for="emotion">Emotion:</label><br/>
-        <input type="text" id="emotion" name="emotion" required><br/><br/>
-        <label for="object">Object:</label><br/>
-        <input type="text" id="object" name="object" required><br/><br/>
-        <label for="place">Place:</label><br/>
-        <input type="text" id="place" name="place" required><br/><br/>
-        <button type="submit">Enter</button>
+    <!-- 1. LYRICAL MADLIBS (UPDATED) -->
+    <section class="game-section">
+      <h3 class="game-title">1. Lyrical Madlibs</h3>
+      <p>Enter six words/phrases to rewrite a classic Kellie Larson lyric!</p>
+      <form id="madlibs-form">
+        <div class="input-group">
+            <label for="madlib-adjective">Adjective:</label>
+            <input type="text" id="madlib-adjective" required placeholder="e.g., sparkling">
+        </div>
+        <div class="input-group">
+            <label for="madlib-noun">Noun (Singular):</label>
+            <input type="text" id="madlib-noun" required placeholder="e.g., guitar">
+        </div>
+        <div class="input-group">
+            <label for="madlib-verb">Verb (Past Tense):</label>
+            <input type="text" id="madlib-verb" required placeholder="e.g., screamed">
+        </div>
+        <div class="input-group">
+            <label for="madlib-adverb">Adverb:</label>
+            <input type="text" id="madlib-adverb" required placeholder="e.g., awkwardly">
+        </div>
+        <div class="input-group">
+            <label for="madlib-plural-noun">Plural Noun:</label>
+            <input type="text" id="madlib-plural-noun" required placeholder="e.g., ghosts">
+        </div>
+        <div class="input-group">
+            <label for="madlib-place">Place:</label>
+            <input type="text" id="madlib-place" required placeholder="e.g., stadium">
+        </div>
+        <button type="submit" onclick="generateMadlib(event)">Rewrite Lyric</button>
       </form>
-      <div id="madlib-result" style="margin-top: 20px; font-style: italic;"></div>
+      <div id="madlib-result" class="game-result-box"></div>
     </section>
 
-    <!-- Rewrite the Scene -->
-    <section style="margin-top: 60px;">
-      <h3 class="script-text">Rewrite the Scene</h3>
-      <form id="scene-form" onsubmit="generateScene(event)">
-        <label for="mood">Mood:</label><br/>
-        <input type="text" id="mood" name="mood" required><br/><br/>
-        <label for="location">Location:</label><br/>
-        <input type="text" id="location" name="location" required><br/><br/>
-        <label for="prop">Prop:</label><br/>
-        <input type="text" id="prop" name="prop" required><br/><br/>
-        <button type="submit">Enter</button>
-      </form>
-      <div id="scene-result" style="margin-top: 20px; font-style: italic;"></div>
+    <!-- 2. 2 SONG TURN STYLE (NOW RANDOM) -->
+    <section class="game-section">
+      <h3 class="game-title">2. 2 Song Turn Style</h3>
+      <p>Press the button to **randomly 'mix'** the themes and concepts from two distinct songs in the catalog to create a new concept summary!</p>
+      <div class="turnstyle-container">
+          <div class="turnstyle-center">Random Mix Generator</div>
+      </div>
+      <button onclick="mixSongs()">Spin The Decks!</button>
+      <div id="turnstyle-result" class="game-result-box"></div>
     </section>
 
-    <!-- Random Lyric Generator -->
-    <section style="margin-top: 60px;">
+    <!-- 3. CINEMATIC SCENE GENERATOR -->
+    <section class="game-section">
+      <h3 class="game-title">3. Cinematic Scene Generator (AI Powered)</h3>
+      <p>Provide 12 random concepts. The AI will write a unique, cinematic lyric line based on your choices! (This game uses your input, not random lines).</p>
+      <form id="scene-form">
+        <div class="scene-inputs">
+            <div class="input-group"><label>Person:</label><input type="text" id="scene-person" required placeholder="A firefighter"></div>
+            <div class="input-group"><label>Place:</label><input type="text" id="scene-place" required placeholder="In a bookstore"></div>
+            <div class="input-group"><label>Thing:</label><input type="text" id="scene-thing" required placeholder="An old photograph"></div>
+            <div class="input-group"><label>Number:</label><input type="number" id="scene-number" required placeholder="73"></div>
+            <div class="input-group"><label>Color:</label><input type="text" id="scene-color" required placeholder="Neon green"></div>
+            <div class="input-group"><label>Fun Place:</label><input type="text" id="scene-fun-place" required placeholder="Roller rink"></div>
+            <div class="input-group"><label>Fav Celebrity:</label><input type="text" id="scene-celeb" required placeholder="Dwayne Johnson"></div>
+            <div class="input-group"><label>Animal:</label><input type="text" id="scene-animal" required placeholder="Jaguar"></div>
+            <div class="input-group"><label>Transport:</label><input type="text" id="scene-transport" required placeholder="Unicycle"></div>
+            <div class="input-group"><label>Place to Live:</label><input type="text" id="scene-live" required placeholder="Lighthouse"></div>
+            <div class="input-group"><label>U.S. State:</label><input type="text" id="scene-state" required placeholder="Alaska"></div>
+            <div class="input-group"><label>Life Problem:</label><input type="text" id="scene-problem" required placeholder="Can't trust anyone"></div>
+        </div>
+        <button type="submit" onclick="generateCinematicScene(event)">Generate Lyric</button>
+      </form>
+      <div id="scene-result" class="game-result-box"></div>
+    </section>
+
+    <!-- 4. LIGHTNING LYRICS -->
+    <section class="game-section">
+      <h3 class="game-title">4. Lightning Lyrics</h3>
+      <p>Press the button to instantly pull one of Kellie's most powerful, licensing-ready lyric lines!</p>
+      <button onclick="lightningLyrics()">Get Inspired!</button>
+      <div id="lightning-result" class="game-result-box"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝<a href="/legal.html">Terms and Conditions</a>
+    </p>
+  </footer>
+
+</body>
+</html>
+
