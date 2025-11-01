@@ -1,6 +1,4 @@
-/    /* Fix for navigation links: changing from presumed white to dark gray for contrast */
-    #nav-menu a {
-        color: #333 !important;  Global Styles */
+
 body {
   font-family: 'Helvetica Neue', sans-serif;
   margin: 0;
