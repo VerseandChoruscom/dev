@@ -71,6 +71,16 @@ body {
   font-family: 'Georgia', serif;
   font-style: italic;
 }
+/* Ensure song cards are displayed as flex items by default */
+.song-card {
+    display: flex; /* Or 'block', depending on your final card layout */
+    /* Add any other styling for layout and appearance here */
+}
+
+/* Example: Hiding the card when JavaScript sets display to none */
+.song-card[style*="display: none"] {
+    display: none !important;
+}
 
 /* Setlist Cards */
 .setlist-grid {
