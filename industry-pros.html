@@ -31,6 +31,130 @@
     <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem;">
       Explore Kellie Larson’s licensing-ready catalog. Use the filters below to find the perfect lyric-driven concept for your next artist or Sync placement.
     </p>
+    <section class="concept-cards-grid">
+      
+        <div class="card concept-card" tabindex="0">
+            <h3>1. Social Commentary and World-Building 🌍</h3>
+            <p><strong>The Power of the Pen:</strong> Exploring how speculative fiction can critique modern inequality, shaping new societal blueprints by imagining better (or worse) futures.</p>
+        </div>
+
+        <div class="card concept-card" tabindex="0">
+            <h3>2. The Empowerment Arc 🚀</h3>
+            <p><strong>The Journey to Agency:</strong> Tracking the protagonist’s transformation from passive recipient of fate to active master of their destiny. This is the narrative of **taking control.**</p>
+        </div>
+
+        <div class="card concept-card" tabindex="0">
+            <h3>3. The Narrative of Disenchantment 🥀</h3>
+            <p><strong>The Weight of Reality:</strong> Focusing on the loss of innocence or idealism as the protagonist confronts corrupt systems or disappointing truths. The disillusionment that often **precedes the Empowerment Arc.**</p>
+        </div>
+
+        <div class="card concept-card" tabindex="0">
+            <h3>4. Mutual Value Proposition ❤️</h3>
+            <p><strong>Sustained Partnership:</strong> Defining a relationship where both parties bring equal, recognized **worth** and actively work to maintain shared goals and emotional investment. The relationship is a positive **value exchange.**</p>
+        </div>
+
+        <div class="card concept-card" tabindex="0">
+            <h3>5. Loss of Market Share 💔</h3>
+            <p><strong>The Devaluation Event:</strong> Analyzing a significant personal or professional setback (heartbreak) where an asset (**self-worth, time**) was spent without an equivalent return. The other party failed to retain the "business."</p>
+        </div>
+
+        <div class="card concept-card" tabindex="0">
+            <h3>6. The Iterative Protagonist ✨</h3>
+            <p><strong>Refining the Self:</strong> Highlighting the continual process of learning from failures and adapting one's identity and strategy to succeed in the next narrative cycle—always improving with each "version."</p>
+        </div>
+      
+    </section>
+    ```
+
+---
+
+## 🎨 CSS Code Integration (`styles.css` Addition)
+
+Append the following styles to your external CSS file (`style.css` in your example) to ensure the white background, responsive layout, and the "pop-out" effect are properly implemented.
+
+```css
+/* ==================================== */
+/* 6 CARD GRID LAYOUT & POP-OUT EFFECT */
+/* ==================================== */
+
+.concept-cards-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+    padding: 30px 10px;
+    margin-bottom: 40px;
+    max-width: 1200px; /* Constrain the width for large screens */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- BASE CARD STYLES --- */
+.concept-card {
+    /* Required Style: White Background */
+    background-color: white; 
+    
+    /* Structure */
+    border-radius: 12px;
+    padding: 25px;
+    
+    /* Responsive Sizing (Default to 2 cards per row on mobile/tablet) */
+    width: calc(50% - 20px); 
+    min-width: 250px;
+    
+    /* Required Style: Initial Pop-Out Effect (Subtle Lift) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    
+    /* Smooth Animation for the Pop-Out */
+    transition: all 0.3s ease-in-out; 
+    cursor: pointer;
+    box-sizing: border-box; /* Include padding/border in the width */
+}
+
+/* --- THE POP-OUT/LIFT EFFECT (ON HOVER/TOUCH) --- */
+/* :focus is critical for mobile accessibility/touch devices */
+.concept-card:hover,
+.concept-card:focus {
+    /* Enhance the Shadow to make it "pop" more */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
+    
+    /* Lift the card slightly */
+    transform: translateY(-8px); 
+    
+    /* Optional: Small border highlight */
+    border: 1px solid #1e3a8a; 
+}
+
+/* --- CARD CONTENT STYLES --- */
+.concept-card h3 {
+    color: #1e3a8a; /* Use the brand blue */
+    margin-top: 0;
+    font-size: 1.25em;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.concept-card p {
+    color: #555;
+    font-size: 0.95em;
+}
+
+/* --- MEDIA QUERY FOR DESKTOP LAYOUT (3 cards per row) --- */
+@media (min-width: 992px) {
+    .concept-card {
+        width: calc(33.333% - 20px); /* Three cards per row */
+        max-width: 350px;
+    }
+}
+
+/* --- MEDIA QUERY FOR SMALLEST MOBILE (1 card per row) --- */
+@media (max-width: 576px) {
+    .concept-card {
+        width: 95%; /* Almost full width on smallest screens */
+        margin: 0 auto;
+    }
+}
 
     <!-- LICENSING ASSURANCE SECTION -->
     <section class="licensing-assurance" style="max-width: 900px; margin: 20px auto 40px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
