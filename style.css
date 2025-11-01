@@ -6,6 +6,18 @@ body {
   background-color: #fff;
   color: #333;
 }
+/* --- NAVIGATION SEPARATOR STYLES --- */
+#nav-menu .nav-separator {
+    color: #fff; /* Ensures the separator | is visible (white) */
+    margin: 0 5px;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+/* Ensures the emoji and text stay together without wrapping */
+#nav-menu a {
+    white-space: nowrap; 
+}
 
 :root {
   --color-burgundy: #800020;
