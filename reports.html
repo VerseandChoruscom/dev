@@ -6,84 +6,118 @@
   <title>Lyric Critque Reports | Kellie Larson</title>
   <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
-        /* Fix for navigation links: changing from presumed white to dark gray for contrast */
+    /* GLOBAL DARK MODE STYLES */
+    body {
+        background-color: #000;
+        color: #FFF;
+    }
+    .page-content {
+        color: #FFF;
+    }
+    /* Headings Gold */
+    h1, h2, h3, h4, .page-header {
+        color: #FFD700 !important; /* Gold */
+    }
+    /* Default Links (for links outside of buttons) */
+    a {
+        color: #FFD700;
+    }
+    /* Header/Footer Text Color Fix for Dark Background */
+    #main-header, .site-footer {
+        color: #FFF;
+    }
     #nav-menu a {
-        color: #333 !important; 
-    /* Basic styling for the sales sheets for presentation consistency */
+        color: #FFF !important; /* Ensure navigation links are readable */
+        padding: 0 10px; /* Add space between nav links */
+    }
+    /* Separator for sections (Blue-Gray) */
+    .section-separator {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        border: 0;
+        border-top: 1px solid #778899; /* Blue-Gray */
+    }
+    /* Sales Sheet Container for Contrast */
     .sales-sheet {
-        border: 2px solid #ccc;
-        padding: 20px;
-        margin-bottom: 30px;
+        border: 2px solid #FFD700;
+        padding: 25px;
+        margin-bottom: 40px;
         border-radius: 8px;
-        background-color: #f9f9f9;
+        background-color: #1A1A1A; /* Dark Gray Card Background */
     }
     .sales-sheet h2 {
-        color: #004d99;
-        margin-top: 0;
-        border-bottom: 2px solid #004d99;
+        border-bottom: 2px solid #FFD700; /* Gold divider */
         padding-bottom: 10px;
-        font-size: 1.8em;
+        font-size: 2em;
     }
     .sales-sheet h3 {
-        color: #333;
-        font-size: 1.2em;
-        font-style: italic;
-        margin-bottom: 15px;
+        color: #FFF;
+        font-style: normal;
+        margin-bottom: 20px;
     }
+    /* Tables for Pricing/Metrics */
     .sales-sheet table {
         width: 100%;
         border-collapse: collapse;
-        margin: 15px 0;
+        margin: 20px 0;
     }
     .sales-sheet th, .sales-sheet td {
-        border: 1px solid #ddd;
-        padding: 10px;
+        border: 1px solid #333;
+        padding: 12px;
         text-align: left;
+        color: #FFF;
     }
     .sales-sheet th {
-        background-color: #e6e6e6;
+        background-color: #333;
+        color: #FFD700;
+    }
+    .sales-sheet td {
+        background-color: #0A0A0A;
     }
     .sales-sheet ul {
         list-style-type: disc;
-        margin: 10px 0 15px 20px;
+        margin: 15px 0 20px 25px;
         padding: 0;
     }
     .sales-sheet li {
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
 
-    /* Styling for the PayPal button to match the desired CTA look */
-    .paypal-form input[type="submit"] {
+    /* SUNSET ORANGE CALL-TO-ACTION BUTTONS (Larger) */
+    .paypal-form input[type="submit"], .cta-button {
         display: block;
         width: 100%;
-        padding: 12px 20px;
-        color: white;
+        padding: 15px 25px;
+        background-color: #FF7F50; /* Sunset Orange */
+        color: #000 !important; /* Black Lettering */
         text-align: center;
         text-decoration: none;
         font-weight: bold;
         border: none;
         border-radius: 5px;
-        margin-top: 20px;
-        font-size: 1.1em;
+        margin-top: 25px;
+        font-size: 1.2em;
         cursor: pointer;
+        transition: background-color 0.3s;
     }
-    .paypal-form.standard input[type="submit"] {
-        background-color: #ff6600; /* Start Your Audit Now ➡️ */
+    .paypal-form input[type="submit"]:hover, .cta-button:hover {
+        background-color: #E66A42;
     }
-    .paypal-form.standard input[type="submit"]:hover {
-        background-color: #e65c00;
+    .back-to-top {
+        display: block;
+        text-align: right;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        font-size: 1.1em;
     }
-    .paypal-form.professional input[type="submit"] {
-        background-color: #009933; /* Upgrade to Professional Analysis 📈 */
+
+    .cta-links p {
+        margin-bottom: 15px;
     }
-    .paypal-form.professional input[type="submit"]:hover {
-        background-color: #00802b;
-    }
-    .paypal-form.executive input[type="submit"] {
-        background-color: #990099; /* Get The Executive A&R Report 👑 */
-    }
-    .paypal-form.executive input[type="submit"]:hover {
-        background-color: #800080;
+    .cta-links a {
+        display: inline-block;
+        margin-left: 10px;
+        color: #FF7F50; /* Orange links for consistency */
     }
   </style>
 </head>
@@ -94,119 +128,172 @@
       <div></div><div></div><div></div>
     </div>
     <nav id="nav-menu">
-      <a href="/bio.html">Bio</a>
-      <a href="/industry-pros.html">Industry Pro</a>
-      <a href="/lyrics.html">Lyrics</a>
-      <a href="/articles.html">Articles</a>
-      <a href="/reports.html">Reports</a>
-      <a href="/collab.html">Collab</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/legal.html">Legal</a>
+      <a href="/index.html">🏠 Stage</a><span class="nav-separator">|</span>
+      <a href="/bio.html">👤 Bio</a><span class="nav-separator">|</span>
+      <a href="/industry-pros.html">💼 Industry Pro</a><span class="nav-separator">|</span>
+      <a href="/lyrics.html">🎤 Lyrics</a><span class="nav-separator">|</span>
+      <a href="/reports.html">📈 Reports</a><span class="nav-separator">|</span>
+      <a href="/collab.html">🤝 Collab</a><span class="nav-separator">|</span>
+      <a href="/green-room.html">🎮 Green Room</a><span class="nav-separator">|</span>
+      <a href="/legal.html">⚖️ Legal</a><span class="nav-separator">|</span>
+      <a href="/contact.html">📧 Contact</a>
     </nav>
   </header>
 
-  <main class="page-content">
-    <h1 class="page-header script-text">PROFESSIONAL AI LYRIC'S CRITIQUE</h1>
+  <main class="page-content" id="top">
+    <h1 class="page-header script-text">PROFESSIONAL AI LYRIC CRITIQUE & A&R METADATA REPORTS</h1>
     <img src="/images/headers/lyric-critque-teport-photo.jpg" alt="Lyric Critique Report Header" style="max-width: 100%; height: auto; margin-top: 20px;" />
     <p style="margin-top: 20px;">Submit your lyrics for detailed AI-powered analysis focused on emotional tone, structure, and cinematic impact.</p>
 
-    <hr style="margin-top: 40px; border: 0; border-top: 1px solid #ccc;">
+    <hr class="section-separator">
+
+    <h2 style="text-align: center; margin-bottom: 40px;">I. AI LYRIC CRITIQUE TIERS (A&R METADATA REPORTS)</h2>
 
     <div class="sales-sheet">
-        <h2>🛑 Stop Guessing. Start Submitting. Get the Basic Integrity Check Your Lyrics Need.</h2>
-        <h3>Your creative foundation is valuable. Ensure your lyric portfolio meets the fundamental standards of structure, clarity, and market appeal before you pitch your best work.</h3>
+        <h2>METADATA STARTER</h2>
+        <h3>The essential, rapid audit that turns a collection of ideas into a structurally sound portfolio.</h3>
         <table>
             <tr>
-                <th>Price: $29.99</th>
-                <th>Max Lyrics: Up to 10 Lyrics</th>
-                <th>Focus: Foundational Structure & Trending Hook Identification</th>
+                <th>Price: $39.99</th>
+                <th>Max Lyrics: Up to 5 Lyrics</th>
+                <th>Focus: Foundational Structure & Lyrical Flow</th>
             </tr>
         </table>
-        <h4>What You Get (Core Deliverables)</h4>
+        <h4>Core Deliverables</h4>
         <ul>
-            <li>**Up to 10 Lyrics Analyzed:** The most cost-effective way to audit your backlog and prioritize your next steps.</li>
-            <li>**Core Structure Review:** A rigorous AI check on your verses, choruses, and bridges to confirm proper structural integrity.</li>
+            <li>**Up to 5 Lyrics Analyzed:** The most cost-effective way to audit your backlog and prioritize your next steps.</li>
+            <li>**Core Metrics:** Fundamental, quantifiable data on rhyme density, line length consistency, and emotional tone/sentiment polarity.</li>
+            <li>**Lyrical Flow:** Analysis of the syllable count and stress patterns to ensure the lyric supports natural, commercially viable melodic phrasing.</li>
+            <li>**Basic Genre Tagging:** AI classification of the lyric's style into top-level commercial genres (e.g., Pop, Country, R&B).</li>
             <li>**Spelling & Grammar Assurance:** Eliminate amateur mistakes before they reach a publisher's desk.</li>
-            <li>**Quantitative Rating:** Receive an objective score (1-10) for the basic structural soundness of each lyric.</li>
-            <li>**Trending Hook Suggestion:** AI pinpoints the most impactful lines for use as a title, social media hook, or primary chorus phrase.</li>
         </ul>
-        <p><strong>Value Proposition:</strong> The essential, rapid audit that turns a collection of ideas into a structurally sound portfolio. Know which 10 songs are worth your time and revision cycles.</p>
-
-        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" class="paypal-form standard">
+        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" class="paypal-form starter">
             <input type="hidden" name="cmd" value="_cart">
-            <input type="hidden" name="business" value="WPCYK24RSY4AN"> <input type="hidden" name="add" value="1">
-            <input type="hidden" name="item_name" value="Standard AI Insight Report">
-            <input type="hidden" name="amount" value="29.99">
+            <input type="hidden" name="business" value="WPCYK24RSY4AN">
+            <input type="hidden" name="add" value="1">
+            <input type="hidden" name="item_name" value="METADATA STARTER Report">
+            <input type="hidden" name="amount" value="39.99">
             <input type="hidden" name="currency_code" value="USD">
-            <input type="submit" value="Start Your Audit Now ➡️">
+            <input type="submit" value="Start Your Basic Audit ⭐️">
         </form>
     </div>
 
     <div class="sales-sheet">
-        <h2>🚀 Move from 'Good' to 'Pitched.' Get the Metadata and Market Context Executives Demand.</h2>
-        <h3>You have strong songs. Now, get the professional-grade analysis to understand where they fit in the industry and exactly how to pitch them for maximum impact.</h3>
+        <h2>A&R INSIGHT</h2>
+        <h3>Get the professional-grade analysis to understand where your songs fit in the industry and exactly how to pitch them.</h3>
         <table>
             <tr>
-                <th>Price: $59.99</th>
-                <th>Max Lyrics: Up to 5 Lyrics</th>
+                <th>Price: $79.99</th>
+                <th>Max Lyrics: Up to 10 Lyrics</th>
                 <th>Focus: Strategic Positioning & Industry Benchmarks</th>
             </tr>
         </table>
-        <h4>What You Get (Everything in Standard, PLUS)</h4>
+        <h4>Core Deliverables (All Starter features, PLUS)</h4>
         <ul>
-            <li>**Max 5 Lyric Deep Dive:** Focused, high-value analysis for your top five commercial assets.</li>
-            <li>**Industry Metadata Package:** Receive suggested metadata (e.g., Mood, Theme, Tempo, Target Audience) to attach to your files for effective executive and music supervisor pitching.</li>
-            <li>**Current Artist Comparison:** AI benchmarks your lyric's style and themes against current successful artists and provides a suggested best-fit commercial genre(s) (e.g., Pop-Country Crossover).</li>
-            <li>**The Artistic-Commercial Index:** A dual-axis ranking (1-10) for each lyric:
-                <ul>
-                    <li>Commercial Potential: Likelihood of mass appeal and radio-readiness.</li>
-                    <li>Critical Acclaim: Lyrical depth, innovation, and artistic integrity score.</li>
-                </ul>
-            </li>
-            <li>**Strategic Positioning:** Understand the Unique Selling Proposition (USP) of your lyric to target the most lucrative markets.</li>
+            <li>**Up to 10 Lyrics Deep Dive:** Focused, high-value analysis for your top commercial assets.</li>
+            <li>**Structural Pacing Audit:** Feedback on the song's commercial runtime viability and suggestions for optimizing timings (2:30–3:30).</li>
+            <li>**Market Category:** Identifies the specific, profitable sub-niche the lyric belongs to (e.g., "Uplifting Road Trip Song").</li>
+            <li>**Competitor Match Index:** A score indicating how well the lyric aligns with the lyrical themes and structure of recent chart-topping hits.</li>
+            <li>**Quantitative Rating:** Receive an objective score (1-10) for the commercial soundness of each lyric.</li>
         </ul>
-        <p><strong>Value Proposition:</strong> This is the critical step to package your IP like a pro. Use objective data and the Artistic-Commercial Index to guide your outreach and instantly prove market awareness.</p>
-
-        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" class="paypal-form professional">
+        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" class="paypal-form insight">
             <input type="hidden" name="cmd" value="_cart">
-            <input type="hidden" name="business" value="WPCYK24RSY4AN"> <input type="hidden" name="add" value="1">
-            <input type="hidden" name="item_name" value="Professional AI Analysis Report">
-            <input type="hidden" name="amount" value="59.99">
+            <input type="hidden" name="business" value="WPCYK24RSY4AN">
+            <input type="hidden" name="add" value="1">
+            <input type="hidden" name="item_name" value="A&R INSIGHT Report">
+            <input type="hidden" name="amount" value="79.99">
             <input type="hidden" name="currency_code" value="USD">
-            <input type="submit" value="Upgrade to Professional Analysis 📈">
+            <input type="submit" value="Get A&R INSIGHT 💡">
         </form>
     </div>
 
     <div class="sales-sheet">
-        <h2>💎 The Final Polish. Receive the A&R Ranking and Legal Assurance for High-Stakes Deals.</h2>
-        <h3>This is the executive-level report that confirms your best work is ready for immediate publishing submissions, sync placements, and top-tier co-writing opportunities. This analysis is modeled after the rigorous standards used by industry leaders.</h3>
+        <h2>SYNC STRATEGIST</h2>
+        <h3>The executive-level report that confirms your best work is ready for immediate publishing submissions and high-stakes sync placements.</h3>
         <table>
             <tr>
-                <th>Price: $129.99</th>
-                <th>Max Lyrics: Up to 5 Lyrics</th>
-                <th>Focus: Full A&R Readiness & Commercial IP Hygiene</th>
+                <th>Price: $199.99</th>
+                <th>Max Lyrics: Up to 20 Lyrics</th>
+                <th>Focus: Sync Readiness & Portfolio Review</th>
             </tr>
         </table>
-        <h4>What You Get (The Ultimate A&R Readiness Package)</h4>
+        <h4>Core Deliverables (All A&R Insight features, PLUS)</h4>
         <ul>
-            <li>**Max 5 Lyric High-Value Optimization:** Prepare your most critical assets for immediate pitching.</li>
-            <li>**Full Comprehensive A&R Report:** A multi-section summary detailing the overall commercial viability of each lyric.</li>
-            <li>**Commercial Ranking (1-10):** Receive the ultimate quantitative ranking to confirm your Tier A (High-Priority) assets.</li>
-            <li>**Best Verse Selection:** AI identifies the strongest, most memorable verse to showcase in pitches.</li>
-            <li>**Optimized Title Suggestions:** Detailed options for "The Hook in the Title" to maximize searchability.</li>
-            <li>**IP Hygiene Primer:** A final reminder of critical contractual needs, including the imperative to formalize a **Song Split Sheet** before any collaboration.</li>
+            <li>**Up to 20 Lyrics High-Value Optimization:** Prepare your most critical assets for immediate pitching.</li>
+            <li>**Visual Imagery Score:** A metric that scores the lyric's potential for visual interpretation, crucial for music video production and Film/TV sync pitching.</li>
+            <li>**Advanced Sync Strategy:** Actionable advice on which specific media projects (e.g., Film trailers, TV drama placement) the lyric is best suited for.</li>
+            <li>**Full Portfolio Review:** High-level analysis of the commercial themes and quality consistency across all 20 submitted lyrics to identify the writer's strongest IP.</li>
+            <li>**IP Hygiene Primer:** A final reminder of critical contractual needs, including the imperative to formalize a **Song Split Sheet**.</li>
         </ul>
-        <p><strong>Value Proposition:</strong> Eliminate structural and legal risk. Use this Executive AI Summary to justify your asking price and demonstrate professional-grade market readiness to any publisher or A&R.</p>
-
-        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" class="paypal-form executive">
+        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" class="paypal-form sync">
             <input type="hidden" name="cmd" value="_cart">
-            <input type="hidden" name="business" value="WPCYK24RSY4AN"> <input type="hidden" name="add" value="1">
-            <input type="hidden" name="item_name" value="Executive AI A&R Prep Report">
-            <input type="hidden" name="amount" value="129.99">
+            <input type="hidden" name="business" value="WPCYK24RSY4AN">
+            <input type="hidden" name="add" value="1">
+            <input type="hidden" name="item_name" value="SYNC STRATEGIST Report">
+            <input type="hidden" name="amount" value="199.99">
             <input type="hidden" name="currency_code" value="USD">
-            <input type="submit" value="Get The Executive A&R Report 👑">
+            <input type="submit" value="Prepare for Sync Placement 📺">
         </form>
     </div>
+    <a href="#top" class="back-to-top">Back to the top ↑</a>
+    <hr class="section-separator">
+
+    <h2 style="text-align: center; margin-bottom: 40px;">II. PREMIUM EXECUTIVE PACKAGE</h2>
+    <div class="sales-sheet">
+        <h2>CATALOG EXECUTIVE AUDIT</h2>
+        <h3>The premium, single-client professional analysis for an entire catalog. Includes all features from the SYNC STRATEGIST tier, culminating in a strategic blueprint for monetization.</h3>
+        <table>
+            <tr>
+                <th>Price: $499.99</th>
+                <th>Service Type: Comprehensive Strategic Report</th>
+                <th>Max Lyrics: Up to 20 Lyrics</th>
+            </tr>
+        </table>
+        <p>This package delivers the highest level of detail and strategy, offering a comprehensive blueprint for monetization and brand alignment for your entire body of work. It is the final word in A&R readiness.</p>
+        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" class="paypal-form executive">
+            <input type="hidden" name="cmd" value="_cart">
+            <input type="hidden" name="business" value="WPCYK24RSY4AN">
+            <input type="hidden" name="add" value="1">
+            <input type="hidden" name="item_name" value="CATALOG EXECUTIVE AUDIT">
+            <input type="hidden" name="amount" value="499.99">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="submit" value="Start Executive Catalog Audit 👑">
+        </form>
+    </div>
+    <a href="#top" class="back-to-top">Back to the top ↑</a>
+    <hr class="section-separator">
+
+    <h2 style="text-align: center; margin-bottom: 40px;">III. CONSULTATION & DIGITAL SERVICES</h2>
+    <div class="sales-sheet" style="background-color: #0A0A0A;">
+        
+        <h3 style="color: #FFD700;">One-on-One Consulting Sessions</h3>
+        
+        <p><strong>30 Minute Strategy Session ($49.99)</strong></p>
+        <p>Focused 30-minute session (via Zoom/Teams) to discuss career paths, review A&R report findings, or get live feedback on a specific lyric.</p>
+        <a href="/collab.html" class="cta-button" style="width: auto; padding: 10px 20px;">Explore Consultation & Commission options 📞</a>
+        
+        <p style="margin-top: 20px;"><strong>1 Hour Deep Dive Session ($99.99)</strong></p>
+        <p>Full 60-minute personalized deep dive into career strategy, comprehensive feedback on multiple songs, or development of a project plan.</p>
+        <a href="/collab.html" class="cta-button" style="width: auto; padding: 10px 20px;">Explore Consultation & Commission options ⏰</a>
+
+        <h3 style="color: #FFD700; margin-top: 40px;">Custom Lyric Commission</h3>
+        <p>$50 Project Review Fee (Non-refundable fee to assess project scope and creative brief) + $50 Consultation Down Payment (Credited toward final commission price). Final price determined after consultation.</p>
+        <a href="/collab.html" class="cta-button" style="width: auto; padding: 10px 20px;">Start a Commission Project ✍️</a>
+
+        <hr style="margin-top: 40px; border: 0; border-top: 1px solid #333;">
+
+        <h3 style="color: #FFD700; margin-top: 40px;">Essential Digital Tools</h3>
+        
+        <p><strong>The Lyricist's Launchpad E-book ($5.99)</strong></p>
+        <p>The essential guide to selling your words in the modern music market, featuring exclusive A&R strategies and commercial insights.</p>
+        <a href="/reports.html" class="cta-button" style="width: auto; padding: 10px 20px;">Download the E-book 📚</a>
+
+        <p style="margin-top: 20px;"><strong>Report-Based Podcast Summary ($5.99)</strong></p>
+        <p>Conversational, AI-generated audio summary of your critique report. Includes choice of AI voice models or the exclusive Kellie Larson Voice Model.</p>
+        <a href="/reports.html" class="cta-button" style="width: auto; padding: 10px 20px;">Get the Podcast Summary 🎧</a>
+
+    </div>
+    <a href="#top" class="back-to-top">Back to the top ↑</a>
 
     <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="WPCYK24RSY4AN"></script>
 
@@ -214,5 +301,8 @@
 
   <footer class="site-footer">
     <p>
-      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝<a href="/legal.html">Terms and Conditions</a>
-    </
+      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝<a href="/legal.html">Terms and Conditions</a> | <a href="/contact.html">Contact Us</a>
+    </p>
+  </footer>
+</body>
+</html>
