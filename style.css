@@ -13,6 +13,21 @@ body {
     font-weight: normal;
     font-size: 0.9em;
 }
+    /* Add this CSS */
+    .curtain {
+      /* Keep existing styles, just add the transition */
+      transition: all 2s ease-out; /* Makes the opening smooth and cinematic */
+    }
+
+    .left-curtain.open {
+      /* Move the left curtain completely off-screen to the left */
+      transform: translateX(-100%);
+    }
+
+    .right-curtain.open {
+      /* Move the right curtain completely off-screen to the right */
+      transform: translateX(100%);
+    }
 
 /* Ensures the emoji and text stay together without wrapping */
 #nav-menu a {
