@@ -40,6 +40,7 @@ body {
 }
 
 /* Header */
+/* Header */
 #main-header {
   background-color: var(--color-burgundy);
   color: #fff;
@@ -50,8 +51,24 @@ body {
 }
 
 .logo-top-left {
-  height: 50px;
+  /* --- 1. SET SIZE (adjust 'height' to define the overall logo area size) --- */
+  height: 70px; /* Example: Sets the header area height for the logo */
+
+  /* --- 2. SET TO LOWEST LAYER (z-index) --- */
+  position: relative; /* REQUIRED: z-index only works on positioned elements */
+  z-index: -1;      /* Pushes the logo to the back layer, behind elements with z-index 0 or higher */
 }
+
+/* ADD THIS NEW RULE to size the image itself relative to the container height */
+.logo-top-left img {
+  height: 100%; /* Makes the image height the same as the container (70px in this example) */
+  width: auto;  /* Maintains the original aspect ratio */
+}
+
+.hamburger {
+  cursor: pointer;
+/* ... rest of your styles ... */
+
 
 .hamburger {
   cursor: pointer;
