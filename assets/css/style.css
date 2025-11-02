@@ -2,269 +2,214 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fff;
-  color: #333;
-}
-/* --- NAVIGATION SEPARATOR STYLES --- */
-#nav-menu .nav-separator {
-    color: #fff; /* Ensures the separator | is visible (white) */
-    margin: 0 5px;
-    font-weight: normal;
-    font-size: 0.9em;
+  background-color: #000; 
+  color: #fff;
 }
 
-/* --- CURTAIN STYLES (REQUIRED FOR LANDING PAGE ANIMATION) --- */
-.curtain {
-    /* Set the duration of the animation */
-    transition: transform 2s ease-in-out; 
-}
-
-.left-curtain.open {
-    /* Move left curtain off-screen */
-    transform: translateX(-100%);
-}
-
-.right-curtain.open {
-    /* Move right curtain off-screen */
-    transform: translateX(100%);
-}
-
-/* Ensures the emoji and text stay together without wrapping */
-#nav-menu a {
-    white-space: nowrap; 
-}
-
+/* ---------------------------------------------------- */
+/* --- COLOR VARIABLES --- */
+/* ---------------------------------------------------- */
 :root {
   --color-burgundy: #800020;
   --color-gold: #d4af37;
   --color-bluegray: #6c7a89;
+  --color-dark-text: #333; 
 }
 
-/* Header */
+/* ---------------------------------------------------- */
+/* --- BACKGROUND OVERRIDE (For pages like Industry Pro & Articles) --- */
+/* ---------------------------------------------------- */
+.body-white {
+    background-color: #fff;
+    color: var(--color-dark-text); 
+}
+
+/* Ensure content on white pages is readable */
+.body-white .page-header, 
+.body-white h1, 
+.body-white h2, 
+.body-white h3 {
+    color: var(--color-burgundy) !important;
+}
+
+/* ---------------------------------------------------- */
+/* --- HEADER & NAVIGATION (Consistent on ALL Pages) --- */
+/* ---------------------------------------------------- */
 #main-header {
-  background-color: var(--color-burgundy);
-  color: #fff;
+  background-color: var(--color-burgundy); 
+  color: #fff; 
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
-  z-index: 50; /* Ensure header is above page content */
-}
-.logo-top-left {
-  height: 40px;
-  width: auto;
+  z-index: 50; 
 }
 
-/* Navigation Menu (Desktop) */
+/* FIX: Logo 3x Bigger and 2x Longer */
+.logo-top-left {
+  height: 120px; /* 3x the likely original 40px */
+  width: 200px;  /* 2x longer */
+  object-fit: contain; 
+}
+
+/* Hamburger Icon (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px; 
+    color: #fff;
+    padding: 5px; /* Added padding for easier clicking */
+}
+
+
+/* Navigation Links */
 #nav-menu {
   display: flex;
   gap: 15px;
+  transition: max-height 0.3s ease-out; 
 }
 #nav-menu a {
-  color: #fff;
+  color: #fff; 
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 4px;
   transition: background-color 0.3s;
+  white-space: nowrap; 
 }
 #nav-menu a:hover, #nav-menu a.active {
   background-color: rgba(255, 255, 255, 0.2);
   color: var(--color-gold);
 }
-
-/* Hamburger Menu (Mobile - Hidden on Desktop) */
-.hamburger {
-  display: none; 
-  cursor: pointer;
+#nav-menu .nav-separator {
+    color: #fff; 
+    margin: 0 5px;
+    font-weight: normal;
+    font-size: 0.9em;
 }
 
-/* Page Content */
+/* ---------------------------------------------------- */
+/* --- MOBILE RESPONSIVENESS FIXES (Hamburger & Wrapping) --- */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+    /* Header Layout for Mobile */
+    #main-header {
+        justify-content: space-between; 
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    /* FIX: Show the hamburger icon */
+    .hamburger {
+        display: block;
+    }
+
+    /* FIX: Initial state of the menu on mobile (hidden/collapsed) */
+    #nav-menu {
+        flex-direction: column;
+        width: 100%; 
+        position: absolute;
+        top: 140px; /* Aligned below the new logo height */
+        left: 0;
+        background-color: var(--color-burgundy);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        max-height: 0; 
+        overflow: hidden;
+        gap: 0;
+    }
+
+    /* FIX: Menu open state triggered by JS */
+    #nav-menu.open {
+        max-height: 500px; 
+    }
+    
+    /* Navigation Links take full width */
+    #nav-menu a {
+        width: 100%; 
+        text-align: left;
+        padding: 10px 20px;
+        border-radius: 0;
+    }
+
+    /* Navigation Separator (Hide the '|' on mobile when stacked) */
+    #nav-menu .nav-separator {
+        display: none;
+    }
+}
+
+
+/* ---------------------------------------------------- */
+/* --- FOOTER (Consistent on ALL Pages) --- */
+/* ---------------------------------------------------- */
+.site-footer {
+  background-color: var(--color-burgundy); 
+  color: #fff; 
+  text-align: center;
+  padding: 15px 20px;
+  margin-top: 40px;
+}
+.site-footer a {
+    color: var(--color-gold); 
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------- */
+/* --- GENERAL PAGE CONTENT --- */
+/* ---------------------------------------------------- */
+.page-header, h1, h2, h3 {
+  color: var(--color-gold);
+}
 .page-content {
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
 }
-.page-header {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5em;
-  text-align: center;
-  color: var(--color-burgundy);
-  margin-bottom: 20px;
-}
+
+/* --- OTHER UTILITY STYLES --- */
 .script-text {
-  font-family: 'Times New Roman', Times, serif; /* Example script-like font */
+  font-family: 'Times New Roman', Times, serif; 
   font-style: italic;
 }
 
-/* Footer */
-.site-footer {
-  background-color: var(--color-burgundy);
-  color: #fff;
-  text-align: center;
-  padding: 15px 20px;
-  margin-top: 40px;
+/* ---------------------------------------------------- */
+/* --- LANDING PAGE CURTAIN ANIMATION (FIX) --- */
+/* ---------------------------------------------------- */
+.curtain {
+    /* FIX: Set transition for the opening animation */
+    transition: transform 2s ease-in-out; /* 2 seconds matches the JS timeout */
 }
 
-/* Jukebox & Song List Styles (from lyrics.html context) */
-.jukebox-container {
-    display: flex;
-    gap: 30px;
-    margin-top: 30px;
+.left-curtain.open {
+    /* Opens to the left */
+    transform: translateX(-100%);
 }
 
-#song-list {
-    flex: 0 0 300px; /* Fixed width for the list */
-    border: 1px solid #ccc;
-    padding: 20px;
-    background: #f9f9f9;
+.right-curtain.open {
+    /* Opens to the right */
+    transform: translateX(100%);
 }
 
-#jukebox-display {
-    flex-grow: 1;
-    border: 1px solid var(--color-gold);
-    padding: 20px;
-    background: #fff;
+/* ---------------------------------------------------- */
+/* --- SPOTLIGHT CURSOR EFFECT (Desktop Only) --- */
+/* ---------------------------------------------------- */
+
+#spotlight-overlay {
+    display: none; 
 }
 
-.song-display-area {
-    display: flex;
-    gap: 20px;
-}
-
-#song-cover-art {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border: 4px solid var(--color-burgundy);
-}
-
-.teleprompter {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    background-color: #f5f5f5;
-    white-space: pre-wrap; /* Keeps formatting of lyrics */
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-/* Song List Items */
-.jukebox-song-card {
-    cursor: pointer;
-    padding: 8px;
-    border-bottom: 1px dashed #ccc;
-    transition: background-color 0.2s;
-}
-.jukebox-song-card:hover {
-    background-color: #eee;
-}
-.jukebox-song-card.selected {
-    background-color: var(--color-gold);
-    color: #000;
-    font-weight: bold;
-}
-
-/* Setlist Categories (from lyrics.html) */
-.setlist-category-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 30px;
-}
-.setlist-card {
-  background: #fff;
-  border: 2px solid #ccc;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.setlist-card:hover {
-  border-color: var(--color-gold);
-}
-
-/* Filter Bar (from industry-pros.html) */
-.filter-bar {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 30px;
-}
-.filter-bar select {
-  padding: 8px;
-  font-size: 1em;
-}
-
-/* Song Grid (from industry-pros.html) */
-.song-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.song-card {
-  border: 1px solid #ccc;
-  padding: 10px;
-  background: #f9f9f9;
-  text-align: center;
-}
-.song-card img {
-  width: 100%;
-  height: auto;
-  max-height: 200px;
-  object-fit: cover;
-}
-.song-meta {
-  margin-top: 10px;
-}
-
-/* MEDIA QUERIES for Responsiveness */
-@media (max-width: 900px) {
-  .jukebox-container {
-    flex-direction: column;
-  }
-  #song-list {
-    flex: none;
-    width: auto;
-  }
-  .song-display-area {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Mobile Menu Toggle */
-  .hamburger {
-    display: block;
-  }
-  #nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px; /* Below the header */
-    left: 0;
-    width: 100%;
-    background-color: var(--color-burgundy);
-    z-index: 40;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  #nav-menu.active {
-    display: flex;
-  }
-  #nav-menu a {
-    padding: 10px 20px;
-    border-radius: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  #nav-menu a:last-child {
-    border-bottom: none;
-  }
+@media (min-width: 769px) {
+    /* FIX: Only activate the effect on desktop screens */
+    #spotlight-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none; /* Allows clicking through */
+        background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+        z-index: 9999; 
+        cursor: none; 
+    }
 }
