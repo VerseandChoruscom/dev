@@ -11,16 +11,19 @@ body {
     margin: 0 5px;
     font-weight: normal;
     font-size: 0.9em;
+}.curtain {
+    /* Set the duration of the animation */
+    transition: transform 2s ease-in-out; 
 }
-    /* Add this CSS */
-    .curtain {
-      /* Keep existing styles, just add the transition */
-      transition: all 2s ease-out; /* Makes the opening smooth and cinematic */
-    }
 
-    .left-curtain.open {
-      /* Move the left curtain completely off-screen to the left */
-      transform: translateX(-100%);
+.left-curtain.open {
+    /* Move left curtain off-screen */
+    transform: translateX(-100%);
+}
+
+.right-curtain.open {
+    /* Move right curtain off-screen */
+    transform: translateX(100%);
     }
 
     .right-curtain.open {
