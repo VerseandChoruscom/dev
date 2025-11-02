@@ -2,6 +2,7 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
+  /* NEW: Default to black background and white text for most pages */
   background-color: #000; 
   color: #fff;
 }
@@ -13,7 +14,8 @@ body {
   --color-burgundy: #800020;
   --color-gold: #d4af37;
   --color-bluegray: #6c7a89;
-  --color-dark-text: #333; 
+  --color-dark-text: #333; /* For use on white backgrounds */
+  --color-sunset-orange: #FF8E47; /* NEW: Sunset Orange Link Color */
 }
 
 /* ---------------------------------------------------- */
@@ -21,7 +23,7 @@ body {
 /* ---------------------------------------------------- */
 .body-white {
     background-color: #fff;
-    color: var(--color-dark-text); 
+    color: var(--color-dark-text); /* Restore dark text color on white background */
 }
 
 /* Ensure content on white pages is readable */
@@ -36,8 +38,8 @@ body {
 /* --- HEADER & NAVIGATION (Consistent on ALL Pages) --- */
 /* ---------------------------------------------------- */
 #main-header {
-  background-color: var(--color-burgundy); 
-  color: #fff; 
+  background-color: var(--color-burgundy); /* Burgundy background */
+  color: #fff; /* White text */
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -60,9 +62,8 @@ body {
     cursor: pointer;
     font-size: 30px; 
     color: #fff;
-    padding: 5px; /* Added padding for easier clicking */
+    padding: 5px;
 }
-
 
 /* Navigation Links */
 #nav-menu {
@@ -71,7 +72,7 @@ body {
   transition: max-height 0.3s ease-out; 
 }
 #nav-menu a {
-  color: #fff; 
+  color: var(--color-sunset-orange); /* FIX: Sunset Orange Link Color */
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 4px;
@@ -110,7 +111,7 @@ body {
         flex-direction: column;
         width: 100%; 
         position: absolute;
-        top: 140px; /* Aligned below the new logo height */
+        top: 140px; 
         left: 0;
         background-color: var(--color-burgundy);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -143,21 +144,29 @@ body {
 /* --- FOOTER (Consistent on ALL Pages) --- */
 /* ---------------------------------------------------- */
 .site-footer {
-  background-color: var(--color-burgundy); 
-  color: #fff; 
+  background-color: var(--color-burgundy); /* Burgundy background */
+  color: #fff; /* White text */
   text-align: center;
   padding: 15px 20px;
   margin-top: 40px;
 }
+/* Ensure links in the footer are visible on the burgundy background */
 .site-footer a {
-    color: var(--color-gold); 
+    color: var(--color-sunset-orange); /* FIX: Sunset Orange Link Color */
+    text-decoration: none;
+}
+
+/* Global Link Color Change (Sunset Orange) */
+a {
+    color: var(--color-sunset-orange);
     text-decoration: none;
 }
 
 /* ---------------------------------------------------- */
-/* --- GENERAL PAGE CONTENT --- */
+/* --- GENERAL PAGE CONTENT (Headings Gold on Black Background) --- */
 /* ---------------------------------------------------- */
 .page-header, h1, h2, h3 {
+  /* Default heading color on black background */
   color: var(--color-gold);
 }
 .page-content {
@@ -177,7 +186,7 @@ body {
 /* ---------------------------------------------------- */
 .curtain {
     /* FIX: Set transition for the opening animation */
-    transition: transform 2s ease-in-out; /* 2 seconds matches the JS timeout */
+    transition: transform 2s ease-in-out; 
 }
 
 .left-curtain.open {
