@@ -4,18 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sync Catalog | Kellie Larson</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
+    .body-white {
       background-color: #fff;
       color: #333;
-      margin: 0;
-      padding: 20px;
     }
-    h1 {
-      color: #800020;
-      text-align: center;
-      margin-bottom: 30px;
+    .body-white .page-header, 
+    .body-white h1, 
+    .body-white h2, 
+    .body-white h3 {
+      color: #800020 !important;
     }
     .filter-bar {
       display: flex;
@@ -67,49 +66,6 @@
       background-color: #a52a2a;
     }
   </style>
-</head>
-<body>
-
-  <h1>🎙️ Sync Licensing Catalog</h1>
-
-  <div class="filter-bar">
-    <select id="genreFilter">
-      <option value="">Genre</option>
-      <option>Pop</option><option>Rock</option><option>Indie</option><option>Country</option>
-      <option>Folk</option><option>Americana</option><option>Electronic</option>
-    </select>
-    <select id="moodFilter">
-      <option value="">Mood</option>
-      <option>Uplifting</option><option>Melancholy</option><option>Defiant</option>
-      <option>Hopeful</option><option>Aggressive</option><option>Triumphant</option>
-    </select>
-    <select id="themeFilter">
-      <option value="">Theme</option>
-      <option>Identity</option><option>Loss</option><option>Redemption</option>
-      <option>Coming of Age</option><option>Road Trip</option><option>Heartbreak</option>
-    </select>
-    <select id="vocalFilter">
-      <option value="">Vocal Type</option>
-      <option>Female Vocal</option><option>Male Vocal</option><option>Duet</option><option>Instrumental</option>
-    </select>
-    <input type="text" id="keywordSearch" placeholder="Search lyrics, phrases, or titles" />
-  </div>
-
-  <section class="song-grid" id="songCatalog">
-    <div class="song-card" data-genre="Pop" data-mood="Defiant" data-theme="Identity" data-vocal="Female Vocal" data-keywords="truth, deception, empowerment">
-      <h3>Author of a Lie</h3>
-      <div class="song-meta">
-        Genre: Pop | Mood: Defiant | Theme: Identity | Vocal: Female<br/>
-        A bold lyric confronting deception and reclaiming personal truth.<br/>
-        <a href="https://songbay.co/song/author-of-a-lie" target="_blank">🎧 License on Songbay</a>
-      </div>
-      <div class="lyric-text">I won’t wear your version of me / I rewrite the script you buried deep...</div>
-      <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
-    </div>
-
-    <!-- Add more song cards here -->
-  </section>
-
   <script>
     function printLyric(button) {
       const lyric = button.previousElementSibling.textContent;
@@ -118,12 +74,66 @@
       win.document.close();
       win.print();
     }
+  </script>
+</head>
+<body class="body-white">
+  <header id="main-header">
+    <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <nav id="nav-menu">
+      <a href="/bio.html">Bio</a>
+      <a href="/industry-pros.html" class="active">Industry Pro</a>
+      <a href="/lyrics.html">Lyrics</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/collab.html">Collab</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/legal.html">Legal</a>
+    </nav>
+  </header>
 
-    function applyFilters() {
-      const genre = document.getElementById('genreFilter').value.toLowerCase();
-      const mood = document.getElementById('moodFilter').value.toLowerCase();
-      const theme = document.getElementById('themeFilter').value.toLowerCase();
-      const vocal = document.getElementById('vocalFilter').value.toLowerCase();
-      const keyword = document.getElementById('keywordSearch').value.toLowerCase();
+  <main class="page-content">
+    <h1 class="page-header script-text">🎙️ Sync Licensing Catalog</h1>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+      Explore Kellie Larson’s cinematic catalog—strategically built for sync, storytelling, and emotional impact.
+    </p>
 
-      const
+    <div class="filter-bar">
+      <select id="genreFilter">
+        <option value="">Genre</option>
+        <option>Pop</option><option>Rock</option><option>Indie</option><option>Country</option>
+        <option>Folk</option><option>Americana</option><option>Electronic</option>
+      </select>
+      <select id="moodFilter">
+        <option value="">Mood</option>
+        <option>Uplifting</option><option>Melancholy</option><option>Defiant</option>
+        <option>Hopeful</option><option>Aggressive</option><option>Triumphant</option>
+      </select>
+      <select id="themeFilter">
+        <option value="">Theme</option>
+        <option>Identity</option><option>Loss</option><option>Redemption</option>
+        <option>Coming of Age</option><option>Road Trip</option><option>Heartbreak</option>
+      </select>
+      <select id="vocalFilter">
+        <option value="">Vocal Type</option>
+        <option>Female Vocal</option><option>Male Vocal</option><option>Duet</option><option>Instrumental</option>
+      </select>
+      <input type="text" id="keywordSearch" placeholder="Search lyrics, phrases, or titles" />
+    </div>
+
+    <section class="song-grid" id="songCatalog">
+      <!-- Paste all 10 song cards here -->
+      <!-- You already have Author of a Lie. Add Big Hard No through Etched in Every Space below this comment -->
+      <!-- See previous message for full card HTML blocks -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝 <a href="/legal.html">Legal</a>
+    </p>
+  </footer>
+
+  <div id="spotlight-overlay"></div>
+</body>
+</html>
