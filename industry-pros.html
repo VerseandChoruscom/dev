@@ -33,27 +33,30 @@
     </p>
 
     <!-- 🔍 Filter Bar -->
-    <section class="filter-bar" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 30px;">
-      <select id="genreFilter"><option value="">Genre</option><option>Pop</option><option>Rock</option><option>Indie</option><option>Country</option><option>Folk</option><option>Americana</option></select>
-      <select id="moodFilter"><option value="">Mood</option><option>Uplifting</option><option>Melancholy</option><option>Defiant</option><option>Hopeful</option><option>Aggressive</option><option>Triumphant</option></select>
-      <select id="themeFilter"><option value="">Theme</option><option>Identity</option><option>Loss</option><option>Redemption</option><option>Coming of Age</option><option>Road Trip</option><option>Heartbreak</option></select>
-      <select id="vocalFilter"><option value="">Vocal Type</option><option>Female Vocal</option><option>Male Vocal</option><option>Duet</option><option>Instrumental</option></select>
-      <select id="lyricFilter"><option value="">Lyric Specificity</option><option>Universal</option><option>No Profanity</option><option>Exact Phrase</option><option>Lyric Sheet Available</option></select>
-      <select id="licenseFilter"><option value="">Licensing</option><option>Pre-Cleared</option><option>Songbay Registered</option><option>Royalty-Free Demo</option><option>Master Rights Available</option><option>Publishing Splits Available</option></select>
-      <input type="text" id="keywordSearch" placeholder="Search lyrics, phrases, or titles" style="padding: 8px; font-size: 1rem;" />
-    </section>
+    <<!-- 🔍 Filter Bar -->
+<section class="filter-bar" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 30px;">
+  <select id="genreFilter"><option value="">Genre</option><option>Pop</option><option>Rock</option><option>Indie</option><option>Country</option><option>Folk</option><option>Americana</option><option>Alternative</option><option>Gospel</option></select>
+  <select id="moodFilter"><option value="">Mood</option><option>Uplifting</option><option>Melancholy</option><option>Defiant</option><option>Hopeful</option><option>Aggressive</option><option>Triumphant</option><option>Dreamy</option><option>Sad</option><option>Confident</option></select>
+  <select id="themeFilter"><option value="">Theme</option><option>Identity</option><option>Loss</option><option>Redemption</option><option>Coming of Age</option><option>Road Trip</option><option>Heartbreak</option><option>Faith</option><option>Empowerment</option></select>
+  <select id="vocalFilter"><option value="">Vocal Type</option><option>Female Vocal</option><option>Male Vocal</option><option>Duet</option><option>Instrumental</option><option>Spoken Word</option></select>
+  <select id="lyricFilter"><option value="">Lyric Specificity</option><option>Universal</option><option>No Profanity</option><option>Exact Phrase</option><option>Lyric Sheet Available</option></select>
+  <select id="licenseFilter"><option value="">Licensing</option><option>Pre-Cleared</option><option>Songbay Registered</option><option>Royalty-Free Demo</option><option>Master Rights Available</option><option>Publishing Splits Available</option></select>
+  <select id="useCaseFilter"><option value="">Use Case</option><option>Sync Brief Match</option><option>Artist Pitch</option><option>Film/TV Placement</option><option>Ad Campaign</option><option>Festival Circuit</option><option>Streaming Playlist</option></select>
+  <input type="text" id="keywordSearch" placeholder="Search lyrics, phrases, or titles" style="padding: 8px; font-size: 1rem;" />
+  <button onclick="applyFilters()" style="padding: 8px 12px; background-color: #800020; color: #fff; border: none; border-radius: 4px;">Filter Results</button>
+</section>
 
-    <!-- 📜 Legal Assurance Section -->
-    <section style="max-width: 900px; margin: 0 auto 40px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
-      <h2 style="font-size: 1.2rem; margin-bottom: 15px; text-align: center; color: #1e3a8a;">Rights & Licensing Assurance (For Industry Use)</h2>
-      <ul style="list-style: none; padding: 0;">
-        <li>✅ &nbsp; <strong>Royalty-Free Composition:</strong> Donna AI demos are covered by a Lifetime Royalty-Free Commercial License.</li>
-        <li>✅ &nbsp; <strong>Guaranteed Lyric Ownership:</strong> All lyrics are 100% human-authored and registered via Songbay.</li>
-        <li>✅ &nbsp; <strong>Zero Future Royalties from AI:</strong> No mechanical or performance royalties owed to Donna AI or Mobiversite.</li>
-        <li>✅ &nbsp; <strong>Simple Path to Full Copyright:</strong> Re-recording grants your company full master and publishing rights.</li>
-        <li>✅ &nbsp; <strong>Immediate Clearance:</strong> All material is pre-cleared for Sync Licensing. PoC available upon request.</li>
-      </ul>
-    </section>
+<!-- 📜 Legal Assurance Section -->
+<section style="max-width: 900px; margin: 0 auto 40px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
+  <h2 style="font-size: 1.2rem; margin-bottom: 15px; text-align: center; color: #1e3a8a;">Rights & Licensing Assurance (For Industry Use)</h2>
+  <ul style="list-style: none; padding: 0;">
+    <li>✅ &nbsp; <strong>Royalty-Free Composition:</strong> Donna AI demos are covered by a Lifetime Royalty-Free Commercial License.</li>
+    <li>✅ &nbsp; <strong>Guaranteed Lyric Ownership:</strong> All lyrics are 100% human-authored and registered via Songbay.</li>
+    <li>✅ &nbsp; <strong>Zero Future Royalties from AI:</strong> No mechanical or performance royalties owed to Donna AI or Mobiversite.</li>
+    <li>✅ &nbsp; <strong>Simple Path to Full Copyright:</strong> Re-recording grants your company full master and publishing rights.</li>
+    <li>✅ &nbsp; <strong>Immediate Clearance:</strong> All material is pre-cleared for Sync Licensing. PoC available upon request.</li>
+  </ul>
+</section>
 
     <!-- 🎵 Song Catalog -->
     <section id="songCatalog" class="song-grid">
