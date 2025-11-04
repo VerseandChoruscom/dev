@@ -12,7 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('open');
         });
     }
-
+document.querySelector('.reset-button').addEventListener('click', () => {
+  document.getElementById('genreFilter').value = '';
+  document.getElementById('moodFilter').value = '';
+  document.getElementById('themeFilter').value = '';
+  document.getElementById('vocalFilter').value = '';
+  document.getElementById('lyricFilter').value = '';
+  document.getElementById('licenseFilter').value = '';
+  document.getElementById('useCaseFilter').value = '';
+  document.getElementById('keywordSearch').value = '';
+  applyFilters();
+});
     // --- SPOTLIGHT CURSOR LOGIC (FIX: Desktop-Only Spotlight) ---
     const spotlightOverlay = document.getElementById('spotlight-overlay');
 
