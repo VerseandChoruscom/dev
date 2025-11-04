@@ -3,264 +3,304 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Industry Pro | Kellie Larson</title>
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <script src="/assets/js/scripts.js" defer></script>
+  <title>Industry Pro Vault | Verse and Chorus</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { font-family: 'Helvetica Neue', sans-serif; margin: 0; padding: 0; background: #fff; color: #111; }
+    header, footer { background: #111; color: #fff; padding: 20px; text-align: center; }
+    .page-content { padding: 40px 20px; max-width: 1200px; margin: auto; }
+    .filter-bar select, .filter-bar input, .filter-bar button {
+      margin: 5px; padding: 8px; font-size: 1rem;
+    }
+    .song-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+    .song-card { border: 1px solid #ccc; border-radius: 8px; padding: 15px; background: #fefefe; }
+    .song-card h3 { margin-top: 0; }
+    .song-meta { font-size: 0.9rem; margin-bottom: 10px; }
+    .lyric-text { font-style: italic; margin-bottom: 10px; }
+    .print-btn { background: #800020; color: #fff; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; }
+  </style>
 </head>
-<body class="body-white">
-  <header id="main-header">
-    <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div><div></div><div></div>
-    </div>
-    <nav id="nav-menu">
-      <a href="/bio.html">Bio</a>
-      <a href="/industry-pros.html" class="active">Industry Pro</a>
-      <a href="/lyrics.html">Lyrics</a>
-      <a href="/articles.html">Articles</a>
-      <a href="/reports.html">Reports</a>
-      <a href="/collab.html">Collab</a>
-      <a href="/green-room.html">Green Room</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/legal.html">Legal</a>
-    </nav>
+<body>
+  <header>
+    <h1>Verse and Chorus | Industry Pro Vault</h1>
+    <p>Curated catalog for A&R and sync professionals</p>
   </header>
 
   <main class="page-content">
-    <h1 class="page-header script-text">Industry Pro Vault</h1>
-    <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem;">
-      Explore Kellie Larson’s licensing-ready catalog. Use the filters below to find the perfect lyric-driven concept for your next artist or Sync placement.
-    </p>
-
     <!-- 🔍 Filter Bar -->
-    <<!-- 🔍 Filter Bar -->
-<section class="filter-bar" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 30px;">
-  <select id="genreFilter"><option value="">Genre</option><option>Pop</option><option>Rock</option><option>Indie</option><option>Country</option><option>Folk</option><option>Americana</option><option>Alternative</option><option>Gospel</option></select>
-  <select id="moodFilter"><option value="">Mood</option><option>Uplifting</option><option>Melancholy</option><option>Defiant</option><option>Hopeful</option><option>Aggressive</option><option>Triumphant</option><option>Dreamy</option><option>Sad</option><option>Confident</option></select>
-  <select id="themeFilter"><option value="">Theme</option><option>Identity</option><option>Loss</option><option>Redemption</option><option>Coming of Age</option><option>Road Trip</option><option>Heartbreak</option><option>Faith</option><option>Empowerment</option></select>
-  <select id="vocalFilter"><option value="">Vocal Type</option><option>Female Vocal</option><option>Male Vocal</option><option>Duet</option><option>Instrumental</option><option>Spoken Word</option></select>
-  <select id="lyricFilter"><option value="">Lyric Specificity</option><option>Universal</option><option>No Profanity</option><option>Exact Phrase</option><option>Lyric Sheet Available</option></select>
-  <select id="licenseFilter"><option value="">Licensing</option><option>Pre-Cleared</option><option>Songbay Registered</option><option>Royalty-Free Demo</option><option>Master Rights Available</option><option>Publishing Splits Available</option></select>
-  <select id="useCaseFilter"><option value="">Use Case</option><option>Sync Brief Match</option><option>Artist Pitch</option><option>Film/TV Placement</option><option>Ad Campaign</option><option>Festival Circuit</option><option>Streaming Playlist</option></select>
-  <input type="text" id="keywordSearch" placeholder="Search lyrics, phrases, or titles" style="padding: 8px; font-size: 1rem;" />
-  <button onclick="applyFilters()" style="padding: 8px 12px; background-color: #800020; color: #fff; border: none; border-radius: 4px;">Filter Results</button>
-</section>
+    <section class="filter-bar">
+      <select id="genreFilter"><option value="">Genre</option><option>Pop</option><option>Rock</option><option>Country</option><option>Indie</option><option>Alternative</option><option>Gospel</option></select>
+      <select id="moodFilter"><option value="">Mood</option><option>Uplifting</option><option>Melancholy</option><option>Defiant</option><option>Hopeful</option><option>Dreamy</option><option>Sad</option><option>Confident</option><option>Bitter</option><option>Romantic</option><option>Frustrated</option><option>Peaceful</option><option>Heavy</option></select>
+      <select id="themeFilter"><option value="">Theme</option><option>Identity</option><option>Loss</option><option>Redemption</option><option>Coming of Age</option><option>Heartbreak</option><option>Faith</option><option>Empowerment</option><option>Gaslighting</option><option>Love</option><option>Reunion</option><option>War</option></select>
+      <select id="vocalFilter"><option value="">Vocal Type</option><option>Female Vocal</option><option>Male Vocal</option><option>Duet</option><option>Instrumental</option><option>Mixed Vocal</option></select>
+      <select id="lyricFilter"><option value="">Lyric Specificity</option><option>Universal</option><option>No Profanity</option><option>Exact Phrase</option><option>Explicit</option><option>Lyric Sheet Available</option></select>
+      <select id="licenseFilter"><option value="">Licensing</option><option>Pre-Cleared</option><option>Songbay Registered</option><option>Royalty-Free Demo</option><option>Master Rights Available</option><option>Publishing Splits Available</option></select>
+      <select id="useCaseFilter"><option value="">Use Case</option><option>Sync Brief Match</option><option>Artist Pitch</option><option>Film/TV Placement</option><option>Ad Campaign</option><option>Festival Circuit</option><option>Streaming Playlist</option></select>
+      <input type="text" id="keywordSearch" placeholder="Search lyrics, phrases, or titles" />
+      <button onclick="applyFilters()">Filter Results</button>
+    </section>
 
-<!-- 📜 Legal Assurance Section -->
-<section style="max-width: 900px; margin: 0 auto 40px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
-  <h2 style="font-size: 1.2rem; margin-bottom: 15px; text-align: center; color: #1e3a8a;">Rights & Licensing Assurance (For Industry Use)</h2>
-  <ul style="list-style: none; padding: 0;">
-    <li>✅ &nbsp; <strong>Royalty-Free Composition:</strong> Donna AI demos are covered by a Lifetime Royalty-Free Commercial License.</li>
-    <li>✅ &nbsp; <strong>Guaranteed Lyric Ownership:</strong> All lyrics are 100% human-authored and registered via Songbay.</li>
-    <li>✅ &nbsp; <strong>Zero Future Royalties from AI:</strong> No mechanical or performance royalties owed to Donna AI or Mobiversite.</li>
-    <li>✅ &nbsp; <strong>Simple Path to Full Copyright:</strong> Re-recording grants your company full master and publishing rights.</li>
-    <li>✅ &nbsp; <strong>Immediate Clearance:</strong> All material is pre-cleared for Sync Licensing. PoC available upon request.</li>
-  </ul>
-</section>
+    <!-- 📜 Legal Assurance Section -->
+    <section style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 8px;">
+      <h2 style="text-align:center;">Rights & Licensing Assurance</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li>✅ <strong>
 
-    <!-- 🎵 Song Catalog -->
-    <section id="songCatalog" class="song-grid">
-     <div class="song-card" data-genre="Rock" data-mood="Bitter" data-theme="Heartbreak" data-vocal="Female Vocal" data-lyric="Explicit" data-license="Songbay Registered" data-usecase="Sync Brief Match">
-  <img src="/Images/covers/not-clever-photo.jpg" alt="I Know Your Damn Pin Code Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
+          <div class="song-card" data-genre="Rock" data-mood="Bitter" data-theme="Heartbreak" data-vocal="Female Vocal" data-lyric="Explicit" data-license="Songbay Registered" data-usecase="Sync Brief Match">
+  <img src="/Images/covers/not-clever-photo.jpg" alt="I Know Your Damn Pin Code" />
   <h3>I Know Your Damn Pin Code</h3>
-  <div class="song-meta">
-    Genre: Rock | Mood: Bitter | Theme: Heartbreak | Vocal: Female<br/>
-    A vengeful anthem of betrayal and triumph. Raw, direct, and emotionally explosive.<br/>
-    <a href="https://songbay.co/view-music/[SONGBAY ID HERE]" target="_blank">🎧 License on Songbay</a>
-  </div>
+  <div class="song-meta">Genre: Rock | Mood: Bitter | Theme: Heartbreak | Vocal: Female</div>
   <div class="lyric-text">You think you're clever? And I can't get in your phone. You're not clever. I know your damn pin code.</div>
   <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
 </div>
 
 <div class="song-card" data-genre="Pop" data-mood="Confident" data-theme="Empowerment" data-vocal="Female Vocal" data-lyric="Universal" data-license="Pre-Cleared" data-usecase="Artist Pitch">
-  <img src="/Images/covers/hit-the-road-photo.jpg" alt="Hit the Road Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
+  <img src="/Images/covers/hit-the-road-photo.jpg" alt="Hit the Road" />
   <h3>Hit the Road</h3>
-  <div class="song-meta">
-    Genre: Pop | Mood: Confident | Theme: Empowerment | Vocal: Female<br/>
-    A powerful anthem of self-liberation and moving on from a toxic relationship.<br/>
-    <a href="https://songbay.co/view-music/[SONGBAY ID HERE]" target="_blank">🎧 License on Songbay</a>
-  </div>
+  <div class="song-meta">Genre: Pop | Mood: Confident | Theme: Empowerment | Vocal: Female</div>
   <div class="lyric-text">Don't stop, don't look back, Hit the road, Jack, I don't want you back!</div>
   <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
 </div>
 
 <div class="song-card" data-genre="Pop" data-mood="Melancholy" data-theme="Loss" data-vocal="Female Vocal" data-lyric="Universal" data-license="Songbay Registered" data-usecase="Film/TV Placement">
-  <img src="/Images/covers/in-my-dreams-photo.jpg" alt="In My Dreams Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
+  <img src="/Images/covers/in-my-dreams-photo.jpg" alt="In My Dreams" />
   <h3>In My Dreams</h3>
-  <div class="song-meta">
-    Genre: Pop | Mood: Melancholy | Theme: Loss | Vocal: Female<br/>
-    A haunting ballad about grief and the comfort found in dreams.<br/>
-    <a href="https://songbay.co/view-music/[SONGBAY ID HERE]" target="_blank">🎧 License on Songbay</a>
-  </div>
+  <div class="song-meta">Genre: Pop | Mood: Melancholy | Theme: Loss | Vocal: Female</div>
   <div class="lyric-text">In my dreams — I long to be — together in my dreams.</div>
   <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
 </div>
 
 <div class="song-card" data-genre="Country" data-mood="Romantic" data-theme="Love" data-vocal="Male Vocal" data-lyric="Universal" data-license="Royalty-Free Demo" data-usecase="Ad Campaign">
-  <img src="/Images/covers/when-misty-cries-photo.jpg" alt="Your Forever Man Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
+  <img src="/Images/covers/when-misty-cries-photo.jpg" alt="Your Forever Man" />
   <h3>Your Forever Man</h3>
-  <div class="song-meta">
-    Genre: Country | Mood: Romantic | Theme: Love | Vocal: Male<br/>
-    A heartfelt ballad about healing, support, and steadfast love.<br/>
-    <a href="https://songbay.co/view-music/[SONGBAY ID HERE]" target="_blank">🎧 License on Songbay</a>
-  </div>
-  <div class="lyric-text">She knows how much I love her, and I'm always thinking of her.</div>
-  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
-</div>
-<div class="song-card" data-genre="Gospel" data-mood="Peaceful" data-theme="Faith" data-vocal="Female Vocal" data-lyric="Universal" data-license="Songbay Registered" data-usecase="Film/TV Placement">
-  <img src="/Images/covers/stood-by-my-side-photo.jpg" alt="Stood by My Side Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
-  <h3>Stood by My Side</h3>
-  <div class="song-meta">
-    Genre: Gospel | Mood: Peaceful | Theme: Faith | Vocal: Female<br/>
-    A deeply emotional testament to healing through divine love and presence.<br/>
-    <a href="https://songbay.co/view-music/[SONGBAY ID HERE]" target="_blank">🎧 License on Songbay</a>
-  </div>
-  <div class="lyric-text">When the world walked away, You stood by my side.</div>
+<div class="song-card" data-genre="Pop" data-mood="Empowered" data-theme="New Beginnings" data-vocal="Female Vocal" data-license="Songbay Registered">
+  <img src="/Images/covers/first-step-photo.jpg" alt="First Step" />
+  <h3>First Step</h3>
+  <div class="song-meta">Genre: Pop | Mood: Empowered | Theme: New Beginnings | Vocal: Female</div>
+  <div class="lyric-text">[Placeholder for exact lyric snippet from “First Step”]</div>
   <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
 </div>
 
-<div class="song-card" data-genre="Pop" data-mood="Romantic" data-theme="Reunion" data-vocal="Female Vocal" data-lyric="Universal" data-license="Royalty-Free Demo" data-usecase="Ad Campaign">
-  <img src="/Images/covers/heart-song-photo.jpg" alt="Boom Boom Beat Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
-  <h3>Boom Boom Beat</h3>
-  <div class="song-meta">
-    Genre: Pop | Mood: Romantic | Theme: Reunion | Vocal: Female<br/>
-    A yodeling love song with a heartbeat rhythm and joyful anticipation.<br/>
-    <a href="https://songbay.co/view-music/[SONGBAY ID HERE]" target="_blank">🎧 License on Songbay</a>
-  </div>
-  <div class="lyric-text">Boom boom boom da boom boom boom, Ah-yo-delay-ee-hoo!</div>
+<div class="song-card" data-genre="Rock" data-mood="Furious" data-theme="Revenge" data-vocal="Female Vocal" data-license="Songbay Registered">
+  <img src="/Images/covers/fury-photo.jpg" alt="Fury (I'm the monster)" />
+  <h3>Fury (I'm the monster)</h3>
+  <div class="song-meta">Genre: Rock | Mood: Furious | Theme: Revenge | Vocal: Female</div>
+  <div class="lyric-text">[Placeholder for exact lyric snippet from “Fury (I'm the monster)”]</div>
   <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
 </div>
 
-<div class="song-card" data-genre="Pop" data-mood="Confident" data-theme="Empowerment" data-vocal="Female Vocal" data-lyric="Explicit" data-license="Songbay Registered" data-usecase="Artist Pitch">
-  <img src="/Images/covers/big-hard-no-photo.jpg" alt="Big Hard No Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
-  <h3>Big Hard No</h3>
-  <div class="song-meta">
-    Genre: Pop | Mood: Confident | Theme: Empowerment | Vocal: Female<br/>
-    A fiery anthem of independence and self-worth. Built for a commanding vocal performance.<br/>
-    <a href="https://songbay.co/view-music/235609978" target="_blank">🎧 License on Songbay</a>
-  </div>
-  <div class="lyric-text">That's a big hard NO!</div>
+<div class="song-card" data-genre="Pop Rock" data-mood="Nostalgic" data-theme="Youth" data-vocal="Female Vocal" data-license="Songbay Registered">
+  <img src="/Images/covers/genx-80s-anthem-photo.jpg" alt="GenX 80s Anthem" />
+  <h3>GenX 80s Anthem</h3>
+  <div class="song-meta">Genre: Pop Rock | Mood: Nostalgic | Theme: Youth | Vocal: Female</div>
+  <div class="lyric-text">[Placeholder for exact lyric snippet from “GenX 80s Anthem”]</div>
   <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
 </div>
 
-<div class="song-card" data-genre="Pop" data-mood="Frustrated" data-theme="Gaslighting" data-vocal="Female Vocal" data-lyric="Exact Phrase" data-license="Songbay Registered" data-usecase="Sync Brief Match">
-  <img src="/Images/covers/author-of-a-lie-photo.jpg" alt="Author of a Lie Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
-  <h3>Author of a Lie</h3>
-  <div class="song-meta">
-    Genre: Pop | Mood: Frustrated | Theme: Gaslighting | Vocal: Female<br/>
-    A punchy, rhythm-driven track confronting deceit and manipulation.<br/>
-    <a href="https://songbay.co/view-music/[SONGBAY ID HERE]" target="_blank">🎧 License on Songbay</a>
-  </div>
-  <div class="lyric-text">You're the author of a lie, a master of deceit.</div>
+<div class="song-card" data-genre="Pop" data-mood="Playful" data-theme="Breakup" data-vocal="Female Vocal" data-license="Songbay Registered">
+  <img src="/Images/covers/heartbreak-and-trouble-photo.jpg" alt="Heartbreak and Trouble (hubba bubba song)" />
+  <h3>Heartbreak and Trouble (hubba bubba song)</h3>
+  <div class="song-meta">Genre: Pop | Mood: Playful | Theme: Breakup | Vocal: Female</div>
+  <div class="lyric-text">[Placeholder for exact lyric snippet from “Heartbreak and Trouble”]</div>
   <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
 </div>
 
-<div class="song-card" data-genre="Alternative" data-mood="Heavy" data-theme="War" data-vocal="Mixed Vocal" data-lyric="Universal" data-license="Pre-Cleared" data-usecase="Film/TV Placement">
-  <img src="/Images/covers/children-of-war-photo.jpg" alt="Children of War Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
-  <h3>Children of War</h3>
-  <div class="song-meta">
-    Genre: Alternative | Mood: Heavy | Theme: War | Vocal: Mixed<br/>
-    A cinematic and emotional track exploring the trauma and resilience of war-torn youth.<br/>
-    <a href="https://songbay.co/view-music/[SONGBAY ID HERE]" target="_blank">🎧 License on Song
-<div class="song-card" data-genre="Rock" data-mood="Introspective" data-theme="Toxic Love" data-vocal="Female Vocal" data-lyric="Explicit" data-license="Publishing Splits Available" data-usecase="Streaming Playlist">
-  <img src="/Images/covers/sick-one-photo.jpg" alt="Sick One Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
-  <h3>Sick One</h3>
-  <div class="song-meta">
-    Genre: Rock | Mood: Introspective | Theme: Toxic Love | Vocal: Female<br/>
-    A raw confessional about a destructive relationship cycle. Brutal, honest, and unforgettable.<br/>
-    <a href="https://songbay.co/view-music/[SONGBAY ID HERE]" target="_blank">🎧 License on Songbay</a>
-  </div>
+<div class="song-card" data-genre="Pop/R&B" data-mood="Confident" data-theme="Moving On" data-vocal="Female Vocal" data-license="Songbay Registered">
+  <img src="/Images/covers/hit-the-road-photo.jpg" alt="Hit the Road" />
+  <h3>Hit the Road</h3>
+  <div class="song-meta">Genre: Pop/R&B | Mood: Confident | Theme: Moving On | Vocal: Female</div>
+  <div class="lyric-text">Don't stop, don't look back, Hit the road, Jack, I don't want you back!</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-genre="Pop" data-mood="Sarcastic" data-theme="Confrontation" data-vocal="Female Vocal" data-license="Songbay Registered">
+  <img src="/Images/covers/hows-it-feel-bro-photo.jpg" alt="How's It Feel, Bro?" />
+  <h3>How's It Feel, Bro?</h3>
+  <div class="song-meta">Genre: Pop | Mood: Sarcastic | Theme: Confrontation | Vocal: Female</div>
+  <div class="lyric-text">[Placeholder for exact lyric snippet from “How's It Feel, Bro?”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-genre="Rock" data-mood="Bitter" data-theme="Betrayal" data-vocal="Female Vocal" data-license="Songbay Registered">
+  <img src="/Images/covers/not-clever-photo.jpg" alt="I Know Your Damn Pin Code" />
+  <h3>I Know Your Damn Pin Code</h3>
+  <div class="song-meta">Genre: Rock | Mood: Bitter | Theme: Betrayal | Vocal: Female</div>
+  <div class="lyric-text">You think you're clever? And I can't get in your phone. You're not clever. I know your damn pin code.</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-genre="Pop Ballad" data-mood="Melancholy" data-theme="Loss" data-vocal="Female Vocal" data-license="Songbay Registered">
+  <img src="/Images/covers/in-my-dreams-photo.jpg" alt="In My Dreams (When I Wake)" />
+  <h3>In My Dreams (When I Wake)</h3>
+  <div class="song-meta">Genre: Pop Ballad | Mood: Melancholy | Theme: Loss | Vocal: Female</div>
+  <div class="lyric-text">In my dreams — I long to be — together in my dreams.</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-genre="Pop" data-mood="Overwhelmed" data-theme="Emotional Burnout" data-vocal="Female Vocal" data-license="Songbay Registered">
+  <img src="/Images/covers/just-too-much-photo.jpg" alt="Just Too Much" />
+  <h3>Just Too Much</h3>
+  <div class="song-meta">Genre: Pop | Mood: Overwhelmed | Theme: Emotional Burnout | Vocal: Female</div>
+  <div class="lyric-text">[Placeholder for exact lyric snippet from “Just Too Much”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-genre="Pop" data-mood="Lonely" data-theme="Isolation" data-vocal="Female Vocal" data-license="Songbay Registered">
+  <img src="/Images/covers/just-a-little-lonely-photo.jpg" alt="Just a Little Lonely" />
+  <h3>Just a Little Lonely</h3>
+  <div class="song-meta">Genre: Pop | Mood: Lonely | Theme: Isolation | Vocal: Female</div>
+  <div class="lyric-text">[Placeholder for exact lyric snippet from “Just a Little Lonely”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+<div class="song-card" data-title="Little Things" data-genre="Pop" data-mood="Tender" data-theme="Gratitude" data-vocal="Female Vocal">
+  <img src="/Images/covers/little-things-photo.jpg" alt="Little Things" />
+  <h3>Little Things</h3>
+  <div class="song-meta">Genre: Pop | Mood: Tender | Theme: Gratitude | Vocal: Female</div>
+  <div class="lyric-text">[Exact lyric snippet from “Little Things”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-title="Murderers Heart" data-genre="Rock" data-mood="Dark" data-theme="Obsession" data-vocal="Female Vocal">
+  <img src="/Images/covers/murderers-heart-photo.jpg" alt="Murderers Heart" />
+  <h3>Murderers Heart</h3>
+  <div class="song-meta">Genre: Rock | Mood: Dark | Theme: Obsession | Vocal: Female</div>
+  <div class="lyric-text">[Exact lyric snippet from “Murderers Heart”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-title="My Girl Karma" data-genre="Pop" data-mood="Playful" data-theme="Justice" data-vocal="Female Vocal">
+  <img src="/Images/covers/my-girl-karma-photo.jpg" alt="My Girl Karma" />
+  <h3>My Girl Karma</h3>
+  <div class="song-meta">Genre: Pop | Mood: Playful | Theme: Justice | Vocal: Female</div>
+  <div class="lyric-text">[Exact lyric snippet from “My Girl Karma”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-title="My Words Matter" data-genre="Pop" data-mood="Empowered" data-theme="Voice" data-vocal="Female Vocal">
+  <img src="/Images/covers/my-words-matter-photo.jpg" alt="My Words Matter" />
+  <h3>My Words Matter</h3>
+  <div class="song-meta">Genre: Pop | Mood: Empowered | Theme: Voice | Vocal: Female</div>
+  <div class="lyric-text">[Exact lyric snippet from “My Words Matter”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-title="Not That Girl Anymore" data-genre="Pop" data-mood="Defiant" data-theme="Transformation" data-vocal="Female Vocal">
+  <img src="/Images/covers/not-that-girl-anymore-photo.jpg" alt="Not That Girl Anymore" />
+  <h3>Not That Girl Anymore</h3>
+  <div class="song-meta">Genre: Pop | Mood: Defiant | Theme: Transformation | Vocal: Female</div>
+  <div class="lyric-text">[Exact lyric snippet from “Not That Girl Anymore”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-title="One Small Wrong" data-genre="Pop" data-mood="Regretful" data-theme="Mistake" data-vocal="Female Vocal">
+  <img src="/Images/covers/one-small-wrong-photo.jpg" alt="One Small Wrong" />
+  <h3>One Small Wrong</h3>
+  <div class="song-meta">Genre: Pop | Mood: Regretful | Theme: Mistake | Vocal: Female</div>
+  <div class="lyric-text">[Exact lyric snippet from “One Small Wrong”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-title="Real Dream Team (Tick Tok)" data-genre="Pop" data-mood="Fun" data-theme="Friendship" data-vocal="Female Vocal">
+  <img src="/Images/covers/real-dream-team-photo.jpg" alt="Real Dream Team (Tick Tok)" />
+  <h3>Real Dream Team (Tick Tok)</h3>
+  <div class="song-meta">Genre: Pop | Mood: Fun | Theme: Friendship | Vocal: Female</div>
+  <div class="lyric-text">[Exact lyric snippet from “Real Dream Team”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-title="Shot by Cupid's Dart" data-genre="Pop" data-mood="Romantic" data-theme="Love" data-vocal="Female Vocal">
+  <img src="/Images/covers/shot-by-cupids-dart-photo.jpg" alt="Shot by Cupid's Dart" />
+  <h3>Shot by Cupid's Dart</h3>
+  <div class="song-meta">Genre: Pop | Mood: Romantic | Theme: Love | Vocal: Female</div>
+  <div class="lyric-text">[Exact lyric snippet from “Shot by Cupid's Dart”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-title="Showdown at My Door" data-genre="Rock" data-mood="Confrontational" data-theme="Betrayal" data-vocal="Female Vocal">
+  <img src="/Images/covers/showdown-at-my-door-photo.jpg" alt="Showdown at My Door" />
+  <h3>Showdown at My Door</h3>
+  <div class="song-meta">Genre: Rock | Mood: Confrontational | Theme: Betrayal | Vocal: Female</div>
+  <div class="lyric-text">[Exact lyric snippet from “Showdown at My Door”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-title="Sick One (s1c)" data-genre="Rock" data-mood="Intense" data-theme="Toxic Love" data-vocal="Female Vocal">
+  <img src="/Images/covers/sick-one-photo.jpg" alt="Sick One (s1c)" />
+  <h3>Sick One (s1c)</h3>
+  <div class="song-meta">Genre: Rock | Mood: Intense | Theme: Toxic Love | Vocal: Female</div>
   <div class="lyric-text">Our love is on a sick one. It's good for no one.</div>
   <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
 </div>
-      <div class="song-card" data-genre="Pop" data-mood="Defiant" data-theme="Identity" data-vocal="Female Vocal" data-lyric="Universal" data-license="Songbay Registered" data-keywords="truth, deception, empowerment">
-        <h3>Author of a Lie</h3>
-        <div class="song-meta">
-          Genre: Pop | Mood: Defiant | Theme: Identity | Vocal: Female<br/>
-          A bold lyric confronting deception and reclaiming personal truth.<br/>
-          <a href="https://songbay.co/song/author-of-a-lie" target="_blank">🎧 License on Songbay</a>
-        </div>
-        <div class="lyric-text">I won’t wear your version of me / I rewrite the script you buried deep...</div>
-        <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
-      </div>
+  <div class="song-card" data-title="Solid Shifting Ground" data-genre="Pop" data-mood="Unstable" data-theme="Emotional Turmoil" data-vocal="Female Vocal">
+  <img src="/Images/covers/solid-shifting-ground-photo.jpg" alt="Solid Shifting Ground" />
+  <h3>Solid Shifting Ground</h3>
+  <div class="song-meta">Genre: Pop | Mood: Unstable | Theme: Emotional Turmoil | Vocal: Female</div>
+  <div class="lyric-text">[Exact lyric snippet from “Solid Shifting Ground”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
 
-      
-    </section>
+<div class="song-card" data-title="Stood by my Side" data-genre="Gospel" data-mood="Peaceful" data-theme="Faith and Survival" data-vocal="Female Vocal">
+  <img src="/Images/covers/stood-by-my-side-photo.jpg" alt="Stood by my Side" />
+  <h3>Stood by my Side</h3>
+  <div class="song-meta">Genre: Gospel | Mood: Peaceful | Theme: Faith and Survival | Vocal: Female</div>
+  <div class="lyric-text">When the world walked away, You stood by my side.</div>
+<div class="song-card" data-title="Your Forever Man" data-genre="Country" data-mood="Romantic" data-theme="Devotion" data-vocal="Male Vocal">
+  <img src="/Images/covers/when-misty-cries-photo.jpg" alt="Your Forever Man" />
+  <h3>Your Forever Man</h3>
+  <div class="song-meta">Genre: Country | Mood: Romantic | Theme: Devotion | Vocal: Male</div>
+  <div class="lyric-text">I'm the anchor, her helping hand. She's my future, I'm her forever man.</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
 
-    <section style="text-align: center; margin-top: 40px;">
-      <a href="/downloads/kellie-larson-press-kit.pdf" class="button-download">📄 Download Press Kit</a>
-    </section>
-  </main>
+<div class="song-card" data-title="My Girl Karma" data-genre="Pop" data-mood="Playful" data-theme="Justice" data-vocal="Female Vocal">
+  <img src="/Images/covers/my-girl-karma-photo.jpg" alt="My Girl Karma" />
+  <h3>My Girl Karma</h3>
+  <div class="song-meta">Genre: Pop | Mood: Playful | Theme: Justice | Vocal: Female</div>
+  <div class="lyric-text">[Exact lyric snippet from “My Girl Karma”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
 
-  <footer class="site-footer">
-    <p>
-      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝 <a href="/legal.html">Terms and Conditions</a>
-    </p>
-  </footer>
+<div class="song-card" data-title="Craving Those Crumbs" data-genre="Pop" data-mood="Hungry" data-theme="Desperation" data-vocal="Female Vocal">
+  <img src="/Images/covers/craving-those-crumbs-photo.jpg" alt="Craving Those Crumbs" />
+  <h3>Craving Those Crumbs</h3>
+  <div class="song-meta">Genre: Pop | Mood: Hungry | Theme: Desperation | Vocal: Female</div>
+  <div class="lyric-text">[Exact lyric snippet from “Craving Those Crumbs”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
 
-  <!-- 🔧 Embedded JS for Filtering & Printing -->
-  <script>
+<div class="song-card" data-title="Married to the Drug" data-genre="Rock" data-mood="Dark" data-theme="Addiction" data-vocal="Female Vocal">
+  <img src="/Images/covers/married-to-the-drug-photo.jpg" alt="Married to the Drug" />
+  <h3>Married to the Drug</h3>
+  <div class="song-meta">Genre: Rock | Mood: Dark | Theme: Addiction | Vocal: Female</div>
+  <div class="lyric-text">[Exact lyric snippet from “Married to the Drug”]</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+  
+  
+
+<div class="song-card" data-genre="Pop" data-mood="Empowered" data-theme="Identity" data-vocal="Female Vocal" data-lyric="Universal" data-license="Songbay Registered" data-usecase="Artist Pitch"></section> <!-- End of songCatalog -->
+
     <script>
-  function printLyric(button) {
-    const lyric = button.previousElementSibling.textContent;
-    const win = window.open('', '', 'width=600,height=400');
-    win.document.write('<pre style="font-family:Helvetica Neue; font-size:1rem;">' + lyric + '</pre>');
-    win.document.close();
-    win.print();
-  }
+      function printLyric(button) {
+        const lyric = button.previousElementSibling.textContent;
+        const win = window.open('', '', 'width=600,height=400');
+        win.document.write('<pre style="font-family:Helvetica Neue; font-size:1rem;">' + lyric + '</pre>');
+        win.document.close();
+        win.print();
+      }
 
-  function applyFilters() {
-    const genre = document.getElementById('genreFilter').value.toLowerCase();
-    const mood = document.getElementById('moodFilter').value.toLowerCase();
-    const theme = document.getElementById('themeFilter').value.toLowerCase();
-    const vocal = document.getElementById('vocalFilter').value.toLowerCase();
-    const lyric = document.getElementById('lyricFilter').value.toLowerCase();
-    const license = document.getElementById('licenseFilter').value.toLowerCase();
-    const usecase = document.getElementById('useCaseFilter').value.toLowerCase();
-    const keyword = document.getElementById('keywordSearch').value.toLowerCase();
+      function applyFilters() {
+        const genre = document.getElementById('genreFilter').value.toLowerCase();
+        const mood = document.getElementById('moodFilter').value.toLowerCase();
+        const theme = document.getElementById('themeFilter').value.toLowerCase();
+        const vocal = document.getElementById('vocalFilter').value.toLowerCase();
+        const lyric = document.getElementById('lyricFilter').value.toLowerCase();
+        const license = document.getElementById('licenseFilter').value.toLowerCase();
+        const usecase = document.getElementById('useCaseFilter').value.toLowerCase();
+        const keyword = document.getElementById('keywordSearch').value.toLowerCase();
 
-    const cards = document.querySelectorAll('.song-card');
-    cards.forEach(card => {
-      const matchesGenre = !genre || card.dataset.genre.toLowerCase().includes(genre);
-      const matchesMood = !mood || card.dataset.mood.toLowerCase().includes(mood);
-      const matchesTheme = !theme || card.dataset.theme.toLowerCase().includes(theme);
-      const matchesVocal = !vocal || card.dataset.vocal.toLowerCase().includes(vocal);
-      const matchesLyric = !lyric || card.dataset.lyric.toLowerCase().includes(lyric);
-      const matchesLicense = !license || card.dataset.license.toLowerCase().includes(license);
-      const matchesUseCase = !usecase || card.dataset.usecase.toLowerCase().includes(usecase);
-      const matchesKeyword = !keyword || card.textContent.toLowerCase().includes(keyword);
-
-      card.style.display = (matchesGenre && matchesMood && matchesTheme && matchesVocal &&
-                            matchesLyric && matchesLicense && matchesUseCase && matchesKeyword)
-                            ? 'block' : 'none';
-    });
-  }
-</script>
-    }
-
-    function applyFilters() {
-      const genre = document.getElementById('genreFilter').value.toLowerCase();
-      const mood = document.getElementById('moodFilter').value.toLowerCase();
-      const theme = document.getElementById('themeFilter').value.toLowerCase();
-      const vocal = document.getElementById('vocalFilter').value.toLowerCase();
-      const lyric = document.getElementById('lyricFilter').value.toLowerCase();
-      const license = document.getElementById('licenseFilter').value.toLowerCase();
-      const keyword = document.getElementById('keywordSearch').value.toLowerCase();
-
-      const cards = document.querySelectorAll('.song-card');
-      cards.forEach(card => {
-        const matchesGenre = !genre || card.dataset.genre.toLowerCase() === genre;
-        const matchesMood = !mood || card.dataset.mood.toLowerCase() === mood;
-        const matchesTheme = !theme || card.dataset.theme.toLowerCase() === theme;
-        const matchesVocal = !vocal || card.dataset.vocal.toLowerCase() === vocal;
-        const matchesLyric = !lyric || card.dataset.lyric.toLowerCase().includes(lyric);
-        const matchesLicense = !license || card.dataset.license.toLowerCase().includes(license);
-        const matchesKeyword = !keyword || card.textContent.toLowerCase().includes(keyword);
-
-        card.style.display = (matchesGenre && matchesMood && matchesTheme && matchesVocal &&
-                              matchesLyric && matchesLicense && matchesKeyword)
-                              ? 'block' : 'none';
-      });
-    }
-
-    document.querySelectorAll('.filter-bar select, #
+        const cards = document.querySelectorAll('.song-card');
+        cards.forEach(card => {
+          const matchesGenre = !genre || card.dataset.genre.toLowerCase().includes(genre);
+          const matchesMood = !mood || card.dataset.mood.toLowerCase().includes(mood);
+          const matchesTheme = !theme || card.dataset.theme.toLowerCase().includes(theme);
