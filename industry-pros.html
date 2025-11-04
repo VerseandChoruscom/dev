@@ -25,7 +25,13 @@
     <h1>Verse and Chorus | Industry Pro Vault</h1>
     <p>Curated catalog for A&R and sync professionals</p>
   </header>
-
+<div class="legal-rights-info">
+  <h4>Rights & Licensing Assurance</h4>
+  <p>All lyrics, recordings, and metadata in this catalog are the exclusive intellectual property of Kellie Larson. Each entry is verified against the original lyric PDF and registered with Songbay for licensing.</p>
+  <p>No paraphrasing, improvisation, or AI-generated substitutions are permitted. All lyric excerpts are quoted verbatim from the original works.</p>
+  <p>Licensing tiers are clearly listed per song: Digital Download, Cover Version, Standard License, Extended License, and Buy Copyright. For sync, commercial, or editorial use, please refer to the licensing options provided or contact directly for clearance.</p>
+  <p>This catalog is curated for A&R and sync professionals seeking authentic, emotionally resonant, and instantly licensable tracks. All entries are formatted for metadata search and filter compatibility.</p>
+</div>
   <main class="page-content">
     <!-- 🔍 Filter Bar -->
     <section class="filter-bar">
@@ -41,10 +47,36 @@
     </section>
 
     <!-- 📜 Legal Assurance Section -->
-    <section style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 8px;">
-      <h2 style="text-align:center;">Rights & Licensing Assurance</h2>
-      <ul style="list-style: none; padding-left: 0;">
-        <li>✅ <strong>
+    <section class="catalog-section">
+  <h2>Rights & Licensing Assurance</h2>
+  <div class="catalog-grid">
+
+    <div class="song-card" data-title="I Know Your Damn Pin Code" data-genre="Rock" data-mood="Bitter" data-theme="Heartbreak" data-vocal="Female Vocal">
+      <img src="/Images/covers/not-clever-photo.jpg" alt="I Know Your Damn Pin Code" />
+      <h3>I Know Your Damn Pin Code</h3>
+      <div class="song-meta">Genre: Rock | Mood: Bitter | Theme: Heartbreak | Vocal: Female</div>
+      <div class="lyric-text">You think you're clever? And I can't get in your phone. You're not clever. I know your damn pin code.</div>
+      <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+    </div>
+
+    <div class="song-card" data-title="Hit the Road" data-genre="Pop" data-mood="Confident" data-theme="Empowerment" data-vocal="Female Vocal">
+      <img src="/Images/covers/hit-the-road-photo.jpg" alt="Hit the Road" />
+      <h3>Hit the Road</h3>
+      <div class="song-meta">Genre: Pop | Mood: Confident | Theme: Empowerment | Vocal: Female</div>
+      <div class="lyric-text">Don't stop, don't look back, Hit the road, Jack, I don't want you back!</div>
+      <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+    </div>
+
+    <div class="song-card" data-title="In My Dreams (When I Wake)" data-genre="Pop Ballad" data-mood="Melancholy" data-theme="Loss" data-vocal="Female Vocal">
+      <img src="/Images/covers/in-my-dreams-photo.jpg" alt="In My Dreams (When I Wake)" />
+      <h3>In My Dreams (When I Wake)</h3>
+      <div class="song-meta">Genre: Pop Ballad | Mood: Melancholy | Theme: Loss | Vocal: Female</div>
+      <div class="lyric-text">In my dreams — I long to be — together in my dreams.</div>
+      <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+    </div>
+
+  </div>
+</section>
 
   <div class="song-card" data-genre="Rock" data-mood="Bitter" data-theme="Heartbreak" data-vocal="Female Vocal" data-lyric="Explicit" data-license="Songbay Registered" data-usecase="Sync Brief Match">
   <img src="/Images/covers/not-clever-photo.jpg" alt="I Know Your Damn Pin Code" />
@@ -230,6 +262,8 @@
   <div class="lyric-text">Our love is on a sick one. It's good for no one.</div>
   <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
 </div>
+
+    
   <div class="song-card" data-title="Solid Shifting Ground" data-genre="Pop" data-mood="Unstable" data-theme="Emotional Turmoil" data-vocal="Female Vocal">
   <img src="/Images/covers/solid-shifting-ground-photo.jpg" alt="Solid Shifting Ground" />
   <h3>Solid Shifting Ground</h3>
@@ -243,6 +277,8 @@
   <h3>Stood by my Side</h3>
   <div class="song-meta">Genre: Gospel | Mood: Peaceful | Theme: Faith and Survival | Vocal: Female</div>
   <div class="lyric-text">When the world walked away, You stood by my side.</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
 
   <div class="song-card" data-title="Your Forever Man" data-genre="Country" data-mood="Romantic" data-theme="Devotion" data-vocal="Male Vocal">
   <img src="/Images/covers/when-misty-cries-photo.jpg" alt="Your Forever Man" />
@@ -275,11 +311,8 @@
   <div class="lyric-text">[Exact lyric snippet from “Married to the Drug”]</div>
   <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
 </div>
+  /section 
   
-  
-
-<div class="song-card" data-genre="Pop" data-mood="Empowered" data-theme="Identity" data-vocal="Female Vocal" data-lyric="Universal" data-license="Songbay Registered" data-usecase="Artist Pitch"></section> <!-- End of songCatalog -->
-
     <script>
       function printLyric(button) {
         const lyric = button.previousElementSibling.textContent;
