@@ -425,6 +425,32 @@ function printLyric(button) {
   win.document.write('<pre style="font-family:Helvetica Neue; font-size:1rem;">' + lyric + '</pre>');
   win.document.close();
   win.print();
+}function applyFilters() {
+  const genre = document.getElementById('genreFilter').value.toLowerCase();
+  const mood = document.getElementById('moodFilter').value.toLowerCase();
+  const theme = document.getElementById('themeFilter').value.toLowerCase();
+  const vocal = document.getElementById('vocalFilter').value.toLowerCase();
+  const lyric = document.getElementById('lyricFilter')?.value.toLowerCase() || '';
+  const license = document.getElementById('licenseFilter')?.value.toLowerCase() || '';
+  const usecase = document.getElementById('useCaseFilter')?.value.toLowerCase() || '';
+  const keyword = document.getElementById('keywordSearch').value.toLowerCase();
+
+  const cards = document.querySelectorAll('.song-card');
+  cards.forEach(card => {
+    const matchesGenre = !genre || card.dataset.genre?.toLowerCase().includes(genre);
+    const matchesMood = !mood || card.dataset.mood?.toLowerCase().includes(mood);
+    const matchesTheme = !theme || card.dataset.theme?.toLowerCase().includes(theme);
+    const matchesVocal = !vocal || card.dataset.vocal?.toLowerCase().includes(vocal);
+    const matchesLyric = !lyric || card.dataset.lyric?.toLowerCase().includes(lyric);
+    const matchesLicense = !license || card.dataset.license?.toLowerCase().includes(license);
+    const matchesUsecase = !usecase || card.dataset.usecase?.toLowerCase().includes(usecase);
+    const matchesKeyword = !keyword || card.textContent.toLowerCase().includes(keyword);
+
+    const isVisible = matchesGenre && matchesMood && matchesTheme && matchesVocal &&
+                      matchesLyric && matchesLicense && matchesUsecase && matchesKeyword;
+
+    card.style.display = isVisible ? 'block' : 'none';
+  });
 }
 
 function applyFilters() {
