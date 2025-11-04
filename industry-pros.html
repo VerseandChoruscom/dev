@@ -60,7 +60,13 @@
       <select id="useCaseFilter"><option value="">Use Case</option><option>Sync Brief Match</option><option>Artist Pitch</option><option>Film/TV Placement</option><option>Ad Campaign</option><option>Festival Circuit</option><option>Streaming Playlist</option></select>
       <input type="text" id="keywordSearch" placeholder="Search lyrics, phrases, or titles" />
       <button onclick="applyFilters()">Filter Results</button>
-    </section>
+   <form id="filter-form">
+  <!-- your filters here -->
+  <div class="button-group">
+    <button type="submit" class="submit-button">Submit</button>
+    <button type="reset" class="reset-button">Reset</button>
+  </div>
+</form> </section>
 <section>
   <div class="song-card" data-title="Author of a Lie" data-genre="Pop" data-mood="Frustrated" data-theme="Gaslighting" data-vocal="Female Vocal">
   <img src="/Images/covers/author-of-a-lie-photo.jpg" alt="Author of a Lie" />
