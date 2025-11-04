@@ -107,7 +107,61 @@
   <div class="lyric-text">She knows how much I love her, and I'm always thinking of her.</div>
   <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
 </div>
+<div class="song-card" data-genre="Gospel" data-mood="Peaceful" data-theme="Faith" data-vocal="Female Vocal" data-lyric="Universal" data-license="Songbay Registered" data-usecase="Film/TV Placement">
+  <img src="/Images/covers/stood-by-my-side-photo.jpg" alt="Stood by My Side Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
+  <h3>Stood by My Side</h3>
+  <div class="song-meta">
+    Genre: Gospel | Mood: Peaceful | Theme: Faith | Vocal: Female<br/>
+    A deeply emotional testament to healing through divine love and presence.<br/>
+    <a href="https://songbay.co/view-music/[SONGBAY ID HERE]" target="_blank">🎧 License on Songbay</a>
+  </div>
+  <div class="lyric-text">When the world walked away, You stood by my side.</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
 
+<div class="song-card" data-genre="Pop" data-mood="Romantic" data-theme="Reunion" data-vocal="Female Vocal" data-lyric="Universal" data-license="Royalty-Free Demo" data-usecase="Ad Campaign">
+  <img src="/Images/covers/heart-song-photo.jpg" alt="Boom Boom Beat Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
+  <h3>Boom Boom Beat</h3>
+  <div class="song-meta">
+    Genre: Pop | Mood: Romantic | Theme: Reunion | Vocal: Female<br/>
+    A yodeling love song with a heartbeat rhythm and joyful anticipation.<br/>
+    <a href="https://songbay.co/view-music/[SONGBAY ID HERE]" target="_blank">🎧 License on Songbay</a>
+  </div>
+  <div class="lyric-text">Boom boom boom da boom boom boom, Ah-yo-delay-ee-hoo!</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-genre="Pop" data-mood="Confident" data-theme="Empowerment" data-vocal="Female Vocal" data-lyric="Explicit" data-license="Songbay Registered" data-usecase="Artist Pitch">
+  <img src="/Images/covers/big-hard-no-photo.jpg" alt="Big Hard No Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
+  <h3>Big Hard No</h3>
+  <div class="song-meta">
+    Genre: Pop | Mood: Confident | Theme: Empowerment | Vocal: Female<br/>
+    A fiery anthem of independence and self-worth. Built for a commanding vocal performance.<br/>
+    <a href="https://songbay.co/view-music/235609978" target="_blank">🎧 License on Songbay</a>
+  </div>
+  <div class="lyric-text">That's a big hard NO!</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-genre="Pop" data-mood="Frustrated" data-theme="Gaslighting" data-vocal="Female Vocal" data-lyric="Exact Phrase" data-license="Songbay Registered" data-usecase="Sync Brief Match">
+  <img src="/Images/covers/author-of-a-lie-photo.jpg" alt="Author of a Lie Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
+  <h3>Author of a Lie</h3>
+  <div class="song-meta">
+    Genre: Pop | Mood: Frustrated | Theme: Gaslighting | Vocal: Female<br/>
+    A punchy, rhythm-driven track confronting deceit and manipulation.<br/>
+    <a href="https://songbay.co/view-music/[SONGBAY ID HERE]" target="_blank">🎧 License on Songbay</a>
+  </div>
+  <div class="lyric-text">You're the author of a lie, a master of deceit.</div>
+  <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
+</div>
+
+<div class="song-card" data-genre="Alternative" data-mood="Heavy" data-theme="War" data-vocal="Mixed Vocal" data-lyric="Universal" data-license="Pre-Cleared" data-usecase="Film/TV Placement">
+  <img src="/Images/covers/children-of-war-photo.jpg" alt="Children of War Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
+  <h3>Children of War</h3>
+  <div class="song-meta">
+    Genre: Alternative | Mood: Heavy | Theme: War | Vocal: Mixed<br/>
+    A cinematic and emotional track exploring the trauma and resilience of war-torn youth.<br/>
+    <a href="https://songbay.co/view-music/[SONGBAY ID HERE]" target="_blank">🎧 License on Song
 <div class="song-card" data-genre="Rock" data-mood="Introspective" data-theme="Toxic Love" data-vocal="Female Vocal" data-lyric="Explicit" data-license="Publishing Splits Available" data-usecase="Streaming Playlist">
   <img src="/Images/covers/sick-one-photo.jpg" alt="Sick One Cover Art" style="width:100%; border-radius:6px; margin-bottom:10px;" />
   <h3>Sick One</h3>
@@ -129,6 +183,8 @@
         <div class="lyric-text">I won’t wear your version of me / I rewrite the script you buried deep...</div>
         <button class="print-btn" onclick="printLyric(this)">🖨️ Print Lyric</button>
       </div>
+
+      
     </section>
 
     <section style="text-align: center; margin-top: 40px;">
@@ -144,12 +200,42 @@
 
   <!-- 🔧 Embedded JS for Filtering & Printing -->
   <script>
-    function printLyric(button) {
-      const lyric = button.previousElementSibling.textContent;
-      const win = window.open('', '', 'width=600,height=400');
-      win.document.write('<pre style="font-family:Helvetica Neue; font-size:1rem;">' + lyric + '</pre>');
-      win.document.close();
-      win.print();
+    <script>
+  function printLyric(button) {
+    const lyric = button.previousElementSibling.textContent;
+    const win = window.open('', '', 'width=600,height=400');
+    win.document.write('<pre style="font-family:Helvetica Neue; font-size:1rem;">' + lyric + '</pre>');
+    win.document.close();
+    win.print();
+  }
+
+  function applyFilters() {
+    const genre = document.getElementById('genreFilter').value.toLowerCase();
+    const mood = document.getElementById('moodFilter').value.toLowerCase();
+    const theme = document.getElementById('themeFilter').value.toLowerCase();
+    const vocal = document.getElementById('vocalFilter').value.toLowerCase();
+    const lyric = document.getElementById('lyricFilter').value.toLowerCase();
+    const license = document.getElementById('licenseFilter').value.toLowerCase();
+    const usecase = document.getElementById('useCaseFilter').value.toLowerCase();
+    const keyword = document.getElementById('keywordSearch').value.toLowerCase();
+
+    const cards = document.querySelectorAll('.song-card');
+    cards.forEach(card => {
+      const matchesGenre = !genre || card.dataset.genre.toLowerCase().includes(genre);
+      const matchesMood = !mood || card.dataset.mood.toLowerCase().includes(mood);
+      const matchesTheme = !theme || card.dataset.theme.toLowerCase().includes(theme);
+      const matchesVocal = !vocal || card.dataset.vocal.toLowerCase().includes(vocal);
+      const matchesLyric = !lyric || card.dataset.lyric.toLowerCase().includes(lyric);
+      const matchesLicense = !license || card.dataset.license.toLowerCase().includes(license);
+      const matchesUseCase = !usecase || card.dataset.usecase.toLowerCase().includes(usecase);
+      const matchesKeyword = !keyword || card.textContent.toLowerCase().includes(keyword);
+
+      card.style.display = (matchesGenre && matchesMood && matchesTheme && matchesVocal &&
+                            matchesLyric && matchesLicense && matchesUseCase && matchesKeyword)
+                            ? 'block' : 'none';
+    });
+  }
+</script>
     }
 
     function applyFilters() {
