@@ -1,7 +1,6 @@
-// /assets/js/green-room-scripts.js - All four game activities and the navigation toggle.
+// /assets/js/green-room-scripts.js - Updated to use user's lyrics/data
 
 // --- HTML Utility Function: Toggles the navigation menu ---
-// This function is called by the 'hamburger' div in green-room.html
 function toggleMenu() {
     const navMenu = document.getElementById('nav-menu');
     if (navMenu) {
@@ -9,7 +8,7 @@ function toggleMenu() {
     }
 }
 
-// --- 1. LYRICAL MADLIBS ---
+// --- 1. LYRICAL MADLIBS (CUSTOM TEMPLATE) ---
 function generateMadlib(event) {
   event.preventDefault(); 
   const adj = document.getElementById("madlib-adjective").value;
@@ -19,28 +18,37 @@ function generateMadlib(event) {
   const plural = document.getElementById("madlib-plural-noun").value;
   const place = document.getElementById("madlib-place").value;
 
-  const template = `**Lyrical Rewind:** In the **${adj}** silence, your **${noun}** **${verb}** **${adv}**, chasing **${plural}** through the heart of **${place}**.`;
+  // 🚨 ACTION REQUIRED: REPLACE THIS LINE WITH YOUR OWN LYRIC TEMPLATE!
+  // Use the variables ${adj}, ${noun}, ${verb}, ${adv}, ${plural}, and ${place}.
+  const template = `**Lyrical Rewind:** The **${adj}** wind whispered through the **${noun}** as it **${verb}** **${adv}**, chasing **${plural}** past the old **${place}**.`;
+
   document.getElementById("madlib-result").innerHTML = template;
 }
 
-// --- 2. 2 SONG TURN STYLE DATA & LOGIC ---
-const songThemes = [
-  { title: "Echoes in the Fog", theme: "Loss and memory" },
-  { title: "Neon Promises", theme: "Hope in chaos" },
-  { title: "Glass Parade", theme: "Vulnerability and strength" },
-  { title: "Static Hearts", theme: "Disconnection and longing" },
-  { title: "Velvet Revolver", theme: "Rebellion and desire" }
-];
-
+// --- Helper function for random selection ---
 function getTwoRandom(arr) {
   // Sort randomly and return the first two elements
   const shuffled = arr.sort(() => 0.5 - Math.random());
   return [shuffled[0], shuffled[1]];
 }
 
+// --- 2. 2 SONG TURN STYLE (PULLS from data.js) ---
 function mixSongs() {
-  const [a, b] = getTwoRandom(songThemes);
-  const result = `🎶 **New Concept:** Blending "${a.title}" (**${a.theme}**) with "${b.title}" (**${b.theme}**) creates a new concept: *${a.theme} collides with ${b.theme} in a cinematic storm of emotion.*`;
+  // Check if songCatalog from data.js is loaded and has songs
+  if (typeof songCatalog === 'undefined' || songCatalog.length < 2) {
+      document.getElementById("turnstyle-result").innerText = "⚠️ Error: Song catalog not loaded or has too few songs. Check data.js file.";
+      return;
+  }
+  
+  // Use the songCatalog data for mixing
+  const [a, b] = getTwoRandom(songCatalog);
+  
+  // Use 'title' and 'mood' (as a theme) from the songCatalog objects
+  const themeA = a.mood || a.genre; // Use mood, or genre if mood is missing
+  const themeB = b.mood || b.genre; // Use mood, or genre if mood is missing
+
+  const result = `🎶 **New Concept:** Blending "${a.title}" (**${themeA}**) with "${b.title}" (**${themeB}**) creates a new concept: *${themeA} collides with ${themeB} in a cinematic storm of emotion.*`;
+  
   document.getElementById("turnstyle-result").innerHTML = result;
 }
 
@@ -53,18 +61,19 @@ function generateCinematicScene(event) {
     "scene-live", "scene-state", "scene-problem"
   ].map(id => document.getElementById(id).value);
 
-  // Generates the lyric line using all 12 user inputs
+  // This template remains fixed as per the game's current design
   const line = `🎬 **The Scene:** ${inputs[0]} stood ${inputs[3]} steps from the ${inputs[1]}, clutching ${inputs[2]} as ${inputs[10]} whispered through the ${inputs[4]} sky. Somewhere between ${inputs[5]} and ${inputs[9]}, trust broke like a ${inputs[8]} chasing a ${inputs[7]} past ${inputs[6]}. "${inputs[11]}" echoed in the silence.`;
   document.getElementById("scene-result").innerHTML = line;
 }
 
-// --- 4. LIGHTNING LYRICS ---
+// --- 4. LIGHTNING LYRICS (CUSTOM LINES) ---
+// 🚨 ACTION REQUIRED: REPLACE THESE FIVE LINES with your actual lyric lines!
 const lightningLines = [
-  "I loved you like a storm loves the sea.",
-  "Your shadow kissed the edge of my resolve.",
-  "We danced on broken promises and called it grace.",
-  "The silence between us was louder than goodbye.",
-  "I stitched my hope into the hem of your leaving."
+  "// 1. Put your first favorite lyric line here!",
+  "// 2. Put your second favorite lyric line here!",
+  "// 3. Put your third favorite lyric line here!",
+  "// 4. Put your fourth favorite lyric line here!",
+  "// 5. Put your fifth favorite lyric line here!"
 ];
 
 function lightningLyrics() {
