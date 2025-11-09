@@ -191,6 +191,20 @@ a {
   font-family: 'Times New Roman', Times, serif; 
   font-style: italic;
 }
+.legal-box {
+    border: 1px solid #ccc; /* A light grey border */
+    padding: 20px;          /* Space inside the box */
+    margin: 30px 0;         /* Space above and below the box */
+    background-color: #f9f9f9; /* A very light grey background */
+    border-radius: 8px;     /* Optional: Rounds the corners */
+    line-height: 1.6;       /* Improves readability */
+}
+
+/* Make the title stand out */
+.legal-box h4 { 
+    color: #333;
+    margin-top: 0;
+}
 
 /* ---------------------------------------------------- */
 /* --- LANDING PAGE CURTAIN ANIMATION (FIX) --- */
@@ -232,4 +246,35 @@ a {
         z-index: 9999; 
         cursor: none; 
     }
+/* --- Song Grid Layout --- */
+.song-grid {
+    display: grid;
+    /* Create a grid with columns that automatically adjust. 
+       This makes it responsive: 3 columns for large screens, 2 for medium, etc. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px 20px; /* Space between the rows and columns */
+    margin-top: 50px;
 }
+
+/* --- Fixing Huge Pictures --- */
+.song-item {
+    text-align: left; /* Keep text aligned within the item */
+}
+
+.song-item img {
+    /* Set a fixed size for the cover art */
+    width: 100%;       /* Make the image responsive to its container */
+    max-width: 250px;  /* Set the maximum width for desktop view */
+    height: auto;
+    display: block;    /* Remove extra space below the image */
+    margin-bottom: 10px; /* Space below the image */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: A subtle shadow */
+}
+
+.song-item h3 {
+    font-size: 1.4em;
+    margin-top: 0;
+  }
+  
+
+      }
