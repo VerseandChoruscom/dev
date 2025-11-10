@@ -1,6 +1,37 @@
 <?php 
-// Include configuration file
-include 'config.php'; 
+// =======================================================
+// SITE CONFIGURATION AND COLOR PALETTE
+// (Consolidated from config.php, as it is not allowed)
+// =======================================================
+
+// SITE METADATA
+define('SITE_NAME', 'Verse and Chorus');
+define('SITE_SLOGAN', 'Cinematic Songwriter and Lyricist');
+define('SITE_OWNER', 'Kellie Larson');
+define('SITE_PHONE', '760-537-0222');
+define('SITE_EMAIL', 'info@verseandchorus.com');
+
+// CORE COLOR PALETTE (Hex Codes)
+define('COLOR_BURGUNDY_HEX', '#800020');     // Header/Footer Background
+define('COLOR_BLACK_HEX', '#000000');        // Body Background
+define('COLOR_LIGHT_TEXT_HEX', '#e0e0e0');   // Secondary Text
+define('COLOR_MAIN_TEXT_HEX', '#ffffff');    // Primary Text/Nav Default
+define('COLOR_SUNSET_ORANGE_HEX', '#f97316'); // Links, CTAs, Hover
+define('COLOR_GOLD_HEX', '#fcd34d');         // Main Headers
+
+// NAVIGATION LINKS ARRAY
+$nav_links = [
+    'HOME' => '/index.html',
+    'BIO' => '/bio.html',
+    'INDUSTRY PROS' => '/industry-pros.html',
+    'MUSIC' => '/lyrics.html',
+    'GREEN ROOM' => '/green-room.html',
+    'ARTICLES' => '/articles.html',
+    'LYRIC CRITIQUE' => '/lyric-critque.html',
+    'COLLAB/CONSULT' => '/collab.html',
+    'CONTACT' => '/contact.html',
+    'LEGAL' => '/legal.html',
+];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +47,7 @@ include 'config.php';
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Define Custom Colors & Fonts - Using PHP variables for the root CSS variables */
+        /* Define Custom Colors & Fonts using PHP constants for the root CSS variables */
         :root {
             --burgundy: <?php echo COLOR_BURGUNDY_HEX; ?>; 
             --light-text: <?php echo COLOR_LIGHT_TEXT_HEX; ?>;
@@ -44,13 +75,13 @@ include 'config.php';
             padding: 0 1.5rem;
         }
 
-        /* Custom Styles for Colors/Interactions */
+        /* Custom Styles for Colors/Interactions (Sunset Orange) */
         .link-orange {
             color: var(--sunset-orange);
             transition: color 200ms;
         }
         .link-orange:hover {
-            color: #fca5a5; /* Light Red/Pink Hover */
+            color: #fca5a5; 
         }
         .btn-orange {
             background-color: var(--sunset-orange);
@@ -58,14 +89,14 @@ include 'config.php';
             transition: background-color 200ms;
         }
         .btn-orange:hover {
-            background-color: #ea580c; /* Darker orange for hover */
+            background-color: #ea580c;
         }
-        /* Gold Header Style (for headers between boxes) */
+        /* Gold Header Style */
         .header-gold {
             color: <?php echo COLOR_GOLD_HEX; ?>; 
         }
 
-        /* Page-specific styles (e.g., vertical divider for main title) */
+        /* Page-specific styles */
         .page-title-block {
             display: flex;
             align-items: center;
