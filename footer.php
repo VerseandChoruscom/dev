@@ -1,6 +1,14 @@
 <?php 
-// Include configuration file
-include 'config.php'; 
+// =======================================================
+// RE-DEFINE REQUIRED CONFIGURATION FOR FOOTER
+// (Constants are redefined as config.php is not allowed)
+// =======================================================
+define('SITE_NAME', 'Verse and Chorus');
+define('SITE_SLOGAN', 'Cinematic Songwriter and Lyricist');
+define('SITE_OWNER', 'Kellie Larson');
+define('SITE_PHONE', '760-537-0222');
+define('SITE_EMAIL', 'info@verseandchorus.com');
+define('CURRENT_YEAR', date('Y'));
 ?>
         </div>
     </main>
