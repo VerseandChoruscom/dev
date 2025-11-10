@@ -3,48 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Industry Professionals | Your Website Name</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <title>Industry Pro Vault | Verse and Chorus</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter (main font) and Parisienne (script font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define Custom Colors & Fonts */
+        :root {
+            --burgundy: #800020; /* Deep Burgundy */
+            --light-text: #e0e0e0;
+            --main-text: #ffffff;
+        }
+
+        /* Apply global styles */
+        body {
+            background-color: #000000;
+            color: var(--light-text);
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth; /* For smooth scrolling to the top */
+        }
+
+        /* Script font for the main site title */
+        .script-font {
+            font-family: 'Parisienne', cursive;
+        }
+
+        /* The unique page title block style */
+        .page-title-block {
+            display: flex;
+            align-items: center;
+            border-left: 2px solid var(--light-text); /* The vertical line divider */
+            padding-left: 1rem;
+        }
+        
+        /* General content wrapper for centering */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Legal Box Styling - Border added here */
+        .legal-box {
+            border: 4px solid #9ca3af; /* Blue-Gray Border for Legal Box */
+            background-color: #1a1a1a;
+            border-radius: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Song Grid Image Sizing */
+        .song-item img {
+            width: 100%;
+            max-width: 200px; /* Constrain image size */
+            height: auto;
+            border-radius: 0.5rem;
+        }
+        
+        /* Spacing for bullet points */
+        .legal-box li {
+            margin-bottom: 1.25rem;
+        }
+
+        /* Custom Scratched/Distressed Border Effect */
+        .scratched-border {
+            /* Remove standard border width */
+            border: 0px solid transparent; 
+            
+            /* Apply custom border image properties */
+            border-width: 5px; /* Thicker border to hold the effect */
+            border-style: solid;
+            border-radius: 0.5rem; /* Ensure rounded corners are maintained */
+            
+            /* Using a repeating linear gradient to simulate distressed lines (scratches) */
+            /* This pattern alternates between transparent/dark (black) and white (light) stripes */
+            border-image-source: repeating-linear-gradient(
+                90deg,
+                #000000 0px,
+                #000000 3px,
+                #ffffff 3px,
+                #ffffff 5px,
+                #000000 5px
+            );
+            /* Slice and repeat the image over the entire border */
+            border-image-slice: 1;
+            border-image-repeat: repeat;
+        }
+
+    </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col">
 
-    <header>
-        <div class="logo">
-            <a href="index.html">Your Site Logo/Name</a>
+    <!-- 1. BURGUNDY HEADER (Now only holds Logo and Navigation) -->
+    <header class="bg-[var(--burgundy)] text-white shadow-xl sticky top-0 z-50">
+        <div class="content-container py-3 flex justify-between items-center">
+            
+            <!-- Logo (Left Side) -->
+            <div class="flex items-center space-x-4">
+                <a href="/index.html" class="flex items-center space-x-2">
+                    <!-- Placeholder Logo -->
+                    <img src="/Images/logo.svg" alt="Verse and Chorus Logo" class="h-8 w-8">
+                </a>
+            </div>
+
+            <!-- Navigation (Right Side - Hamburger Menu) -->
+            <nav id="nav-desktop" class="hidden md:block">
+                <ul class="flex space-x-6 text-sm font-semibold tracking-wider">
+                    <!-- Updated hover color to text-slate-300 -->
+                    <li><a href="/index.html" class="hover:text-slate-300 transition duration-200">HOME</a></li>
+                    <li><a href="/catalog.html" class="hover:text-slate-300 transition duration-200">CATALOG</a></li>
+                    <li><a href="/industry-pros.html" class="hover:text-slate-300 transition duration-200">INDUSTRY PROS</a></li>
+                    <li><a href="/articles.html" class="hover:text-slate-300 transition duration-200">ARTICLES</a></li>
+                    <li><a href="/contact.html" class="hover:text-slate-300 transition duration-200">CONTACT</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="hamburger-menu" class="md:hidden text-white focus:outline-none p-2 rounded-md hover:bg-black/20 transition duration-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="industry-pros.html" class="active">Industry Professionals</a></li> 
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="landing.html">Landing (Special)</a></li>
+        
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-[var(--burgundy)] transition-all duration-300 shadow-lg">
+            <ul class="flex flex-col text-center pb-2 text-sm font-semibold tracking-wider">
+                <!-- Links updated with explicit text-white and hover:bg-slate-700 for better contrast and color coordination -->
+                <li><a href="/index.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">HOME</a></li>
+                <li><a href="/catalog.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">CATALOG</a></li>
+                <li><a href="/industry-pros.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">INDUSTRY PROS</a></li>
+                <li><a href="/articles.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">ARTICLES</a></li>
+                <li><a href="/contact.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">CONTACT</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
-    <main class="content-area">
-        <h1>Industry Professionals</h1>
 
-        <section class="song-list">
-            <div class="song-box">Song Name 1</div>
-            <div class="song-box">Song Name 2</div>
-            <div class="song-box">Song Name 3</div>
-            </section>
+    <!-- 1.5. SITE TITLE BANNER (MOVED HERE) -->
+    <div class="bg-black py-4 border-b border-gray-800 shadow-lg">
+        <div class="content-container text-center">
+            <!-- Text color is gold (text-amber-400) -->
+            <h1 class="script-font text-5xl sm:text-6xl font-bold tracking-wider text-amber-400">Verse and Chorus</h1>
+        </div>
+    </div>
 
+    <!-- Main Content Area -->
+    <main class="flex-grow py-10">
+        <div class="content-container">
+
+            <!-- 2. UNIQUE PAGE TITLE BLOCK -->
+            <div class="mb-10 pt-4">
+                <div class="page-title-block">
+                    <!-- Main Title (All Caps, Left Justified, with vertical divider) -->
+                    <h2 class="text-4xl font-extrabold tracking-widest text-white ml-4">INDUSTRY PRO VAULT</h2>
+                </div>
+                <!-- Subtitle (Smaller writing, Left Justified) - COLOR CHANGED TO text-gray-300 (lighter blue-gray) -->
+                <p class="text-lg mt-2 text-gray-300 ml-4">Curated catalog for A&R and sync professionals</p>
+            </div>
+            
+            <!-- BURGUNDY CALLOUT BOX (Center Justified) - BORDER THICKNESS INCREASED TO BORDER-6 -->
+            <div class="bg-[var(--burgundy)] p-8 mb-12 rounded-xl shadow-2xl text-center border-6 border-gray-400">
+                <h3 class="text-2xl font-bold text-white mb-3">Welcome to the Vault</h3>
+                <p class="text-gray-100 max-w-3xl mx-auto">
+                    This exclusive section provides fully licensed, pre-cleared assets ready for immediate commercial development. Our system ensures clear IP ownership and royalty-free composition for all placeholder demos, streamlining your path to full copyright.
+                </p>
+                <button class="mt-5 bg-white text-[var(--burgundy)] font-bold py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300">
+                    Explore Licensing Options
+                </button>
+            </div>
+
+
+            <!-- 3. LEGAL TEXT BOX (Border is controlled by .legal-box in <style> block) -->
+            <div class="legal-box p-6 mb-10">
+                <h4 class="text-xl font-bold text-white mb-4">Rights & Licensing Assurance (For Industry Use)</h4>
+                
+                <p class="mb-6 text-gray-300">To ensure a seamless, low-risk process for A&R and Sync partners, we offer the following guarantees for all placeholder demos:</p>
+
+                <ul class="text-sm text-gray-300">
+                    <li><strong class="text-white">✅ Royalty-Free Composition:</strong> The instrumental and vocal placeholder track generated by Donna AI is covered by a Lifetime Royalty-Free Commercial License. This eliminates all recurring sync or master use fees for the underlying AI composition.</li>
+                    
+                    <li><strong class="text-white">✅ Guaranteed Lyric Ownership:</strong> The lyrics are 100% human-authored and registered via Songbay, providing clear, verifiable intellectual property (IP) protection and ownership before any further development.</li>
+                    
+                    <li><strong class="text-white">✅ Zero Future Royalties from AI:</strong> Your label/production company will never owe performance or mechanical royalties to the AI platform owner (Mobiversite/Donna AI) for the use of the demo.</li>
+                    
+                    <li><strong class="text-white">✅ Simple Path to Full Copyright:</strong> Once you sign the song and re-record the music (replacing the AI vocals/instruments), the song becomes a new, fully human-authored derivative work based on our copyrighted lyrics, providing your company with full, traditional copyright ownership over the final master and publishing.</li>
+                    
+                    <li><strong class="text-white">✅ Immediate Clearance:</strong> All material is pre-cleared for commercial development and Sync Licensing under the terms of our active PRO subscription. Proof of License (PoC) available instantly upon request.</li>
+                </ul>
+            </div>
+            
+            <!-- 4. FILTER BAR (Border added here) -->
+            <div class="flex flex-wrap justify-between items-center bg-gray-900 p-4 rounded-lg mb-10 text-white shadow-lg border-4 border-gray-400">
+                <div class="text-lg font-semibold text-white mb-4 sm:mb-0">Filter Catalog:</div>
+                <div class="flex flex-wrap gap-2 text-sm">
+                    <!-- Dropdowns are white background, black text -->
+                    <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option>Genre</option>
+                        <option>Pop</option>
+                        <option>Rock</option>
+                    </select>
+                    <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option>Mood</option>
+                        <option>Uplifting</option>
+                        <option>Melancholy</option>
+                    </select>
+                    <!-- Buttons maintain contrast -->
+                    <button class="bg-[var(--burgundy)] hover:bg-red-800 text-white font-semibold py-2 px-4 rounded-md transition duration-200">Filter</button>
+                    <button class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition duration-200">Reset</button>
+                </div>
+            </div>
+
+            <!-- 5. SONG GRID -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- START: Example Song Item 1 - Title text color updated to slate-200 -->
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="https://placehold.co/250x250/800020/ffffff?text=Author+of+a+Lie" alt="Author of a Lie cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1">Author of a Lie</h3>
+                    <p class="text-xs text-gray-400 mb-3">Genre: Pop | Mood: Frustrated | Theme: Gaslighting</p>
+                    <p class="text-sm italic text-gray-300">"You're the author of a lie, a master of deceit. And I'm tired of this story on repeat."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+                <!-- END: Example Song Item 1 -->
+                
+                <!-- START: Example Song Item 2 - Title text color updated to slate-200 -->
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="https://placehold.co/250x250/800020/ffffff?text=Big+Hard+No" alt="Big Hard No cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1">Big Hard No</h3>
+                    <p class="text-xs text-gray-400 mb-3">Genre: Pop | Mood: Defiant | Theme: Empowerment</p>
+                    <p class="text-sm italic text-gray-300">"That's a big hard NO! I'm not playing your game."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+                <!-- END: Example Song Item 2 -->
+                
+                <!-- START: Example Song Item 3 - Title text color updated to slate-200 -->
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="https://placehold.co/250x250/800020/ffffff?text=Boom+Boom+Beat" alt="Boom Boom Beat cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1">Boom Boom Beat</h3>
+                    <p class="text-xs text-gray-400 mb-3">Genre: Pop | Mood: Romantic | Theme: Reunion</p>
+                    <p class="text-sm italic text-gray-300">"Boom boom boom da boom boom boom, Ah-yo-delay-ee-hoo!"</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+                <!-- END: Example Song Item 3 -->
+
+                <!-- You will repeat the .song-item block for every song in your catalog -->
+                
+            </div>
+            
+        </div>
     </main>
 
+    <!-- 3. BURGUNDY FOOTER -->
+    <footer class="bg-[var(--burgundy)] py-6 mt-auto">
+        <div class="content-container text-center text-sm text-gray-200">
+            
+            <!-- Contact Information with Dividers (border-b) -->
+            <p class="mb-0 w-fit mx-auto">Kellie Larson</p>
+            <!-- CAPITALIZATION FIXED HERE -->
+            <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1 text-xs">Cinematic songwriter and Lyricist</p>
+            <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1">760-537-0222</p>
+            <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1">
+                <a href="mailto:info@verseandchorus.com" class="hover:underline">info@verseandchorus.com</a>
+            </p>
+            
+            <!-- Legal Links (Inline with Pipe Separator) -->
+            <p class="pt-2">
+                <a href="/contact.html" class="hover:underline mx-2">Contact</a>
+                <span class="mx-1">|</span>
+                <a href="#" class="hover:underline mx-2">Terms</a>
+            </p>
 
-    <footer>
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a> | 
-            <a href="terms.html">Terms of Use</a> | 
-            <a href="contact.html">Contact Us</a>
-        </div>
-        <p>&copy; 2025 Your Website Name. All Rights Reserved.</p>
-        <div class="social-media">
-            <a href="#">[Facebook]</a>
-            <a href="#">[Instagram]</a>
+            <!-- Copyright -->
+            <p class="mt-4 text-xs text-gray-400">&copy; 2025 Verse and Chorus</p>
         </div>
     </footer>
-    </body>
+
+    <!-- Back to Top Button (Hidden by default) -->
+    <button id="back-to-top-btn" 
+            class="fixed bottom-5 right-5 z-40 p-3 rounded-full 
+                   bg-slate-500 text-white shadow-lg hover:bg-slate-600 
+                   transition-opacity duration-300 opacity-0 cursor-pointer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
+
+    <!-- JavaScript for mobile menu and Back to Top button -->
+    <script>
+        // Mobile Hamburger Menu Toggle
+        document.getElementById('hamburger-menu').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to Top Button Logic
+        const backToTopBtn = document.getElementById('back-to-top-btn');
+        const scrollThreshold = 400; // Pixels to scroll before the button appears
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > scrollThreshold) {
+                backToTopBtn.classList.remove('opacity-0');
+                backToTopBtn.classList.add('opacity-100');
+            } else {
+                backToTopBtn.classList.remove('opacity-100');
+                backToTopBtn.classList.add('opacity-0');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
 </html>
+
