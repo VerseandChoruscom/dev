@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Industry Pro Vault | Verse and Chorus</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter (main font) and Parisienne (script font) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -91,27 +89,29 @@
             border-image-slice: 1;
             border-image-repeat: repeat;
         }
+        
+        /* New custom class for the filter container to manage responsiveness and gap */
+        .music-filter-container .select-input {
+            /* Ensures dropdowns and input fill space but don't get too small */
+            flex-grow: 1;
+            min-width: 120px;
+        }
 
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <!-- 1. BURGUNDY HEADER (Now only holds Logo and Navigation) -->
     <header class="bg-[var(--burgundy)] text-white shadow-xl sticky top-0 z-50">
         <div class="content-container py-3 flex justify-between items-center">
             
-            <!-- Logo (Left Side) -->
             <div class="flex items-center space-x-4">
                 <a href="/index.html" class="flex items-center space-x-2">
-                    <!-- Placeholder Logo -->
                     <img src="/Images/logo.svg" alt="Verse and Chorus Logo" class="h-8 w-8">
                 </a>
             </div>
 
-            <!-- Navigation (Right Side - Hamburger Menu) -->
             <nav id="nav-desktop" class="hidden md:block">
                 <ul class="flex space-x-6 text-sm font-semibold tracking-wider">
-                    <!-- UPDATED DESKTOP LINKS -->
                     <li><a href="/index.html" class="hover:text-slate-300 transition duration-200">HOME</a></li>
                     <li><a href="/bio.html" class="hover:text-slate-300 transition duration-200">BIO</a></li>
                     <li><a href="/industry-pros.html" class="hover:text-slate-300 transition duration-200">INDUSTRY PROS</a></li>
@@ -125,16 +125,13 @@
                 </ul>
             </nav>
 
-            <!-- Mobile Hamburger Button -->
             <button id="hamburger-menu" class="md:hidden text-white focus:outline-none p-2 rounded-md hover:bg-black/20 transition duration-200">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
         
-        <!-- Mobile Dropdown Menu -->
         <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-[var(--burgundy)] transition-all duration-300 shadow-lg">
             <ul class="flex flex-col text-center pb-2 text-sm font-semibold tracking-wider">
-                <!-- UPDATED MOBILE LINKS -->
                 <li><a href="/index.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">HOME</a></li>
                 <li><a href="/bio.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">BIO</a></li>
                 <li><a href="/industry-pros.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">INDUSTRY PROS</a></li>
@@ -149,29 +146,22 @@
         </div>
     </header>
 
-    <!-- 1.5. SITE TITLE BANNER (MOVED HERE) -->
     <div class="bg-black py-4 border-b border-gray-800 shadow-lg">
         <div class="content-container text-center">
-            <!-- Text color is gold (text-amber-400) -->
             <h1 class="script-font text-5xl sm:text-6xl font-bold tracking-wider text-amber-400">Verse and Chorus</h1>
         </div>
     </div>
 
-    <!-- Main Content Area -->
     <main class="flex-grow py-10">
         <div class="content-container">
 
-            <!-- 2. UNIQUE PAGE TITLE BLOCK -->
             <div class="mb-10 pt-4">
                 <div class="page-title-block">
-                    <!-- Main Title (All Caps, Left Justified, with vertical divider) -->
                     <h2 class="text-4xl font-extrabold tracking-widest text-white ml-4">INDUSTRY PRO VAULT</h2>
                 </div>
-                <!-- Subtitle (Smaller writing, Left Justified) - COLOR CHANGED TO text-gray-300 (lighter blue-gray) -->
                 <p class="text-lg mt-2 text-gray-300 ml-4">Curated catalog for A&R and sync professionals</p>
             </div>
             
-            <!-- BURGUNDY CALLOUT BOX (Center Justified) - BORDER THICKNESS INCREASED TO BORDER-6 -->
             <div class="bg-[var(--burgundy)] p-8 mb-12 rounded-xl shadow-2xl text-center border-6 border-gray-400">
                 <h3 class="text-2xl font-bold text-white mb-3">Welcome to the Vault</h3>
                 <p class="text-gray-100 max-w-3xl mx-auto">
@@ -183,7 +173,6 @@
             </div>
 
 
-            <!-- 3. LEGAL TEXT BOX (Border is controlled by .legal-box in <style> block) -->
             <div class="legal-box p-6 mb-10">
                 <h4 class="text-xl font-bold text-white mb-4">Rights & Licensing Assurance (For Industry Use)</h4>
                 
@@ -202,30 +191,59 @@
                 </ul>
             </div>
             
-            <!-- 4. FILTER BAR (Border added here) -->
-            <div class="flex flex-wrap justify-between items-center bg-gray-900 p-4 rounded-lg mb-10 text-white shadow-lg border-4 border-gray-400">
-                <div class="text-lg font-semibold text-white mb-4 sm:mb-0">Filter Catalog:</div>
-                <div class="flex flex-wrap gap-2 text-sm">
-                    <!-- Dropdowns are white background, black text -->
-                    <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
-                        <option>Genre</option>
-                        <option>Pop</option>
-                        <option>Rock</option>
+            <div class="music-filter-container bg-gray-900 p-6 rounded-lg mb-10 text-white shadow-lg border-4 border-gray-400">
+
+                <h3 class="text-2xl font-bold text-white mb-4 w-full text-center">Filter Catalog: Detailed Search</h3>
+                
+                <div class="flex flex-wrap w-full gap-3">
+                    <select id="filter-genre" name="genre" class="p-3 bg-white border border-gray-400 rounded-md text-black text-sm select-input focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option value="">All Genres (Primary)</option>
+                        <option value="Pop">Pop</option>
+                        <option value="Country">Country</option>
+                        <option value="Rock">Rock</option>
+                        <option value="Gospel/Religious">Gospel/Religious</option>
+                        <option value="Hip-Hop">Hip-Hop</option>
                     </select>
-                    <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
-                        <option>Mood</option>
-                        <option>Uplifting</option>
-                        <option>Melancholy</option>
+
+                    <select id="filter-mood" name="mood" class="p-3 bg-white border border-gray-400 rounded-md text-black text-sm select-input focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option value="">All Moods/Themes</option>
+                        <option value="Empowerment">Anthem/Empowerment</option>
+                        <option value="Romantic">Romantic/Love</option>
+                        <option value="Grief">Grief/Loss</option>
+                        <option value="Revenge">Revenge/Betrayal</option>
+                        <option value="Toxic">Toxic Relationships</option>
+                        <option value="Faith">Faith/Inspirational</option>
                     </select>
-                    <!-- Buttons maintain contrast -->
-                    <button class="bg-[var(--burgundy)] hover:bg-red-800 text-white font-semibold py-2 px-4 rounded-md transition duration-200">Filter</button>
-                    <button class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition duration-200">Reset</button>
+
+                    <select id="filter-tempo" name="tempo" class="p-3 bg-white border border-gray-400 rounded-md text-black text-sm select-input focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option value="">All Tempos</option>
+                        <option value="Slow">Slow</option>
+                        <option value="Mid-Tempo">Mid-Tempo</option>
+                        <option value="Fast">Fast</option>
+                    </select>
+                    
+                    <select id="filter-vocals" name="vocals" class="p-3 bg-white border border-gray-400 rounded-md text-black text-sm select-input focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option value="">All Vocal Types</option>
+                        <option value="Female">Female Lead</option>
+                        <option value="Male">Male Lead</option>
+                        <option value="Mixed">Duet/Mixed</option>
+                        <option value="Adaptable">Gender Fluid/Adaptable</option>
+                    </select>
+
+                    <select id="filter-explicit" name="explicit" class="p-3 bg-white border border-gray-400 rounded-md text-black text-sm select-input focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option value="">All Content</option>
+                        <option value="Clean">Clean/Non-Explicit</option>
+                        <option value="Explicit">Explicit Lyrics</option>
+                    </select>
+
+                    <input type="text" id="filter-search" name="search" placeholder="Search title, genre, or lyrics..." class="p-3 border border-gray-400 rounded-md text-black text-sm flex-grow w-full focus:ring-1 focus:ring-[var(--burgundy)]">
+
+                    <button class="bg-[var(--burgundy)] hover:bg-red-800 text-white font-semibold py-2 px-6 rounded-md transition duration-200 flex-grow sm:flex-grow-0 min-w-[48%]">Apply Filter</button>
+                    <button class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-6 rounded-md transition duration-200 flex-grow sm:flex-grow-0 min-w-[48%]">Reset Filters</button>
                 </div>
             </div>
 
-            <!-- 5. SONG GRID -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- START: Example Song Item 1 - Title text color updated to slate-200 -->
                 <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
                     <img src="https://placehold.co/250x250/800020/ffffff?text=Author+of+a+Lie" alt="Author of a Lie cover art" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold text-slate-200 mb-1">Author of a Lie</h3>
@@ -235,9 +253,6 @@
                         <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
                     </div>
                 </div>
-                <!-- END: Example Song Item 1 -->
-                
-                <!-- START: Example Song Item 2 - Title text color updated to slate-200 -->
                 <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
                     <img src="https://placehold.co/250x250/800020/ffffff?text=Big+Hard+No" alt="Big Hard No cover art" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold text-slate-200 mb-1">Big Hard No</h3>
@@ -247,9 +262,6 @@
                         <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
                     </div>
                 </div>
-                <!-- END: Example Song Item 2 -->
-                
-                <!-- START: Example Song Item 3 - Title text color updated to slate-200 -->
                 <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
                     <img src="https://placehold.co/250x250/800020/ffffff?text=Boom+Boom+Beat" alt="Boom Boom Beat cover art" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold text-slate-200 mb-1">Boom Boom Beat</h3>
@@ -259,41 +271,31 @@
                         <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
                     </div>
                 </div>
-                <!-- END: Example Song Item 3 -->
-
-                <!-- You will repeat the .song-item block for every song in your catalog -->
-                
-            </div>
+                </div>
             
         </div>
     </main>
 
-    <!-- 3. BURGUNDY FOOTER -->
     <footer class="bg-[var(--burgundy)] py-6 mt-auto">
         <div class="content-container text-center text-sm text-gray-200">
             
-            <!-- Contact Information with Dividers (border-b) -->
             <p class="mb-0 w-fit mx-auto">Kellie Larson</p>
-            <!-- CAPITALIZATION FIXED HERE -->
-            <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1 text-xs">Cinematic songwriter and Lyricist</p>
+            <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1 text-xs">Cinematic Songwriter and Lyricist</p>
             <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1">760-537-0222</p>
             <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1">
                 <a href="mailto:info@verseandchorus.com" class="hover:underline">info@verseandchorus.com</a>
             </p>
             
-            <!-- Legal Links (Inline with Pipe Separator) -->
             <p class="pt-2">
                 <a href="/contact.html" class="hover:underline mx-2">Contact</a>
                 <span class="mx-1">|</span>
                 <a href="#" class="hover:underline mx-2">Terms</a>
             </p>
 
-            <!-- Copyright -->
             <p class="mt-4 text-xs text-gray-400">&copy; 2025 Verse and Chorus</p>
         </div>
     </footer>
 
-    <!-- Back to Top Button (Hidden by default) -->
     <button id="back-to-top-btn" 
             class="fixed bottom-5 right-5 z-40 p-3 rounded-full 
                    bg-slate-500 text-white shadow-lg hover:bg-slate-600 
@@ -301,7 +303,6 @@
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
     </button>
 
-    <!-- JavaScript for mobile menu and Back to Top button -->
     <script>
         // Mobile Hamburger Menu Toggle
         document.getElementById('hamburger-menu').addEventListener('click', function() {
@@ -326,7 +327,10 @@
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+        
+        // NOTE: You will need to add custom JavaScript here to handle the 'change' 
+        // and 'input' events on the filter elements to dynamically search and update 
+        // your song cards in the grid.
     </script>
 </body>
 </html>
-
