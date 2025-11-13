@@ -1,48 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Verse and Chorus | Professional Lyric Reports, A&R Talent Vault, and Songwriting Tools</title>
+  <title>Verse and Chorus | Professional Lyric Reports, A&R Talent Vault, and Songwriting Tools</title>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <meta name="description" content="Find professional lyric reports and songwriting analysis for new writers. A&R reps and sync agents can explore our curated Industry Pro Vault for new talent and cinematic lyrics.">
+
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script src="/assets/js/scripts.js" defer></script>
+  
+  <style>
+    /* 1. CSS for White Navigation Links */
+    #nav-menu a {
+        color: #FFFFFF !important; /* Forces the navigation text color to white */
+    }
+
+    /* 2. New CSS for Gold Script Category Titles */
+    .gold-script {
+        color: #FFD700; /* Gold color */
+        /* Assuming 'script-text' is defined elsewhere, if not, you may need to add font-family here */
+        font-family: 'YourScriptFont', cursive; 
+        font-size: 1.3em;
+        margin: 0;
+    }
+
+    /* Existing Box Grid Styles (Retained) */
+    .box-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .box-link {
+      width: 280px;
+      height: 280px;
+      background-color: #800020; /* Retaining existing color */
+      border: 4px solid #6c7a89;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease;
+      padding: 10px;
+    }
+
+    .box-link:hover {
+      transform: scale(1.05);
+    }
+
+    /* Updated Image Size for Larger Boxes */
+    .box-link img {
+      max-width: 140px; /* Increased from 100px to 140px for a larger look */
+      height: auto;
+      margin-bottom: 10px;
+    }
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="description" content="Find professional lyric reports and songwriting analysis for new writers. A&R reps and sync agents can explore our curated Industry Pro Vault for new talent and cinematic lyrics.">
-    
-    <link rel="stylesheet" href="path/to/your/styles.css"> 
-    
-    <style>
-        /* CRITICAL: Change these selectors (.header-nav a, .hamburger-menu-container a) 
-           to match the exact ones used in your site's navigation. 
-           This sets the link text color to white (#FFFFFF). */
-        .header-nav a, 
-        .hamburger-menu-container a {
-            color: #FFFFFF !important; /* White */
-        }
-    </style>
-    
+    /* Style for SEO Description in Boxes */
+    .box-description {
+        font-size: 0.8em;
+        margin-top: 5px;
+        line-height: 1.2;
+        opacity: 0.9;
+        font-weight: 300;
+    }
+
+  </style>
 </head>
 <body>
+  <header id="main-header">
+    <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+    <nav id="nav-menu">
+      <a href="/bio.html">Bio</a>
+      <a href="/industry-pros.html">Industry Pro</a>
+      <a href="/lyrics.html">Lyrics</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/collab.html">Collab</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/legal.html">Legal</a>
+    </nav>
+  </header>
 
-    <header>
-        <nav class="header-nav">
-            <a href="bio.html">Bio</a>
-            <a href="lyrics.html">Lyrics</a>
-            <a href="reports.html">Reports</a>
-            <a href="green-room.html">Green-room</a>
-            <a href="industry-pro.html">Industry Pro</a>
-            <a href="articles.html">Articles</a>
-            <a href="collab.html">Collab</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <main class="page-content">
+    <h1 class="page-header script-text">VERSE AND CHORUS | Professional Lyric Reports & A&R Talent Vault</h1>
+    <h2 class="script-text">Kellie Larson — Cinematic Songwriter & Lyricist</h2>
+    <p style="max-width: 800px; margin: 20px auto; text-align: center;">
+      Welcome to the official site of Kellie Larson. Explore lyrics, creative tools, industry resources, and interactive features designed to showcase Kellie’s voice and vision.
+    </p>
 
-    <main>
-        <h1>Cinematic Songwriter & Lyricist: Lyric Reports and A&R Talent Scouting Vault</h1>
-        
-        </main>
-    
-    <footer>
-        </footer>
+    <div class="box-grid">
+      <a href="/bio.html" class="box-link">
+        <img src="/images/cover/bio-box-photo.jpg" alt="Kellie Larson Songwriter Bio and Profile" />
+        <h3 class="gold-script">Spotlight</h3>
+        <span class="box-description">Meet the **Cinematic Lyricist**</span>
+      </a>
+      <a href="/lyrics.html" class="box-link">
+        <img src="/images/cover/lyrics-box-photo.jpg" alt="Lyrics Catalog for Sale and Licensing" />
+        <h3 class="gold-script">Setlist</h3>
+        <span class="box-description">View Lyrics for Sale & Licensing</span>
+      </a>
+      <a href="/green-room.html" class="box-link">
+        <img src="/images/cover/green-room-box-photo.jpg" alt="Songwriting Tools and Resources" />
+        <h3 class="gold-script">Green Room</h3>
+        <span class="box-description">Creative Tools for New Songwriters</span>
+      </a>
+      <a href="/industry-pros.html" class="box-link">
+        <img src="/images/cover/industry-pros-box-photo.jpg" alt="A&R Talent Scouting Vault" />
+        <h3 class="gold-script">Industry Vault</h3>
+        <span class="box-description">Curated Catalog for **A&R & Sync Reps**</span>
+      </a>
+      <a href="/articles.html" class="box-link">
+        <img src="/images/cover/articles-box-photo.jpg" alt="Songwriting and Music Industry Articles" />
+        <h3 class="gold-script">Articles</h3>
+        <span class="box-description">Tips and Trends for the Music Industry</span>
+      </a>
+      <a href="/reports.html" class="box-link">
+        <img src="/images/cover/reports-box-photo.jpg" alt="Professional Lyric Report Service" />
+        <h3 class="gold-script">Lyric Reports</h3>
+        <span class="box-description">**Professional Lyric Analysis & Critique**</span>
+      </a>
+      <a href="/collab.html" class="box-link">
+        <img src="/images/cover/collab-box-photo.jpg" alt="Commission Lyrics for Collaboration" />
+        <h3 class="gold-script">Collab / Commission</h3>
+        <span class="box-description">Request Lyrics or Start a Collaboration</span>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝 <a href="/legal.html">Legal</a>
+    </p>
+  </footer>
 
 </body>
 </html>
