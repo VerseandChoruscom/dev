@@ -1022,12 +1022,19 @@
         </div>
     </main>
 
+</div>
+            
+        </div>
+    </main>
+
     <footer class="bg-[var(--burgundy)] py-6 mt-auto">
         <div class="content-container text-center text-sm text-gray-200">
             
             <p class="mb-0 w-fit mx-auto">Kellie Larson</p>
             <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1 text-xs">Cinematic songwriter and Lyricist</p>
-            <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1">760-537-0222</p>
+            <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1">
+                <a href="tel:7605370222" class="hover:underline">760-537-0222</a>
+            </p>
             <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1">
                 <a href="mailto:info@verseandchorus.com" class="hover:underline">info@verseandchorus.com</a>
             </p>
@@ -1035,7 +1042,7 @@
             <p class="pt-2">
                 <a href="/contact.html" class="hover:underline mx-2">Contact</a>
                 <span class="mx-1">|</span>
-                <a href="#" class="hover:underline mx-2">Terms</a>
+                <a href="/legal.html" class="hover:underline mx-2">Terms</a>
             </p>
 
             <p class="mt-4 text-xs text-gray-400">&copy; 2025 Verse and Chorus</p>
@@ -1044,58 +1051,52 @@
 
     <button id="back-to-top-btn" 
             class="fixed bottom-5 right-5 z-40 p-3 rounded-full 
-                   bg-slate-500 text-white shadow-lg hover:bg-slate-600 
+                   bg-[var(--burgundy)] text-white shadow-lg hover:bg-red-800 
                    transition-opacity duration-300 opacity-0 cursor-pointer">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
     </button>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Web Page</title>
-    <link rel="stylesheet" href="styles.css"> 
-</head>
-<body>
-
-    <button id="backToTopBtn">Back to Top</button>
-    <audio controls src="audio/track1.mp3"></audio>
-    <audio controls src="audio/track2.mp3"></audio>
-    
     <script>
-        // Assuming your script variable declarations are here
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle'); 
-        // ... (rest of your existing script remains) ...
+        const backToTopBtn = document.getElementById('back-to-top-btn');
+        const mobileMenuToggle = document.getElementById('hamburger-menu'); 
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Toggle Mobile Menu
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
         
         // Back to Top Button Logic
-        // ... (rest of your existing script remains) ...
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0');
+                backToTopBtn.classList.add('opacity-100');
+            } else {
+                backToTopBtn.classList.remove('opacity-100');
+                backToTopBtn.classList.add('opacity-0');
+            }
+        });
         
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         
-        // --- NEW/UPDATED: Disable Right-Click on Audio Elements and Controls ---
-        const audioElements = document.querySelectorAll('audio');
+        // --- NEW: Disable Right-Click (Context Menu) on Entire Page ---
+        document.addEventListener('contextmenu', e => {
+            e.preventDefault();
+        });
+        // ------------------------------------------------------------------------
         
+        // Additionally, disable right-click specifically on audio elements 
+        // as some browsers might override the global contextmenu event for media.
+        const audioElements = document.querySelectorAll('audio');
         audioElements.forEach(audio => {
-            // 1. Prevent right-click on the audio element itself
             audio.addEventListener('contextmenu', e => {
                 e.preventDefault();
             });
-
-            // 2. Prevent right-click on the controls panel (more reliable for some browsers)
-            // Note: The shadowRoot/controls part is often inconsistent across browsers/devices 
-            // and often fails for custom controls, but the first part (on the element itself) is key.
-            const controls = audio.shadowRoot ? audio.shadowRoot.querySelector('div.play-bar') : null;
-            if (controls) {
-                controls.addEventListener('contextmenu', e => {
-                    e.preventDefault();
-                });
-            }
         });
-        // ------------------------------------------------------------------------
+
     </script>
-    </body>
+</body>
 </html>
+
