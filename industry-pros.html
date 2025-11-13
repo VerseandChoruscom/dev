@@ -89,13 +89,6 @@
             border-image-slice: 1;
             border-image-repeat: repeat;
         }
-        
-        /* New custom class for the filter container to manage responsiveness and gap */
-        .music-filter-container .select-input {
-            /* Ensures dropdowns and input fill space but don't get too small */
-            flex-grow: 1;
-            min-width: 120px;
-        }
 
     </style>
 </head>
@@ -191,87 +184,192 @@
                 </ul>
             </div>
             
-            <div class="music-filter-container bg-gray-900 p-6 rounded-lg mb-10 text-white shadow-lg border-4 border-gray-400">
-
-                <h3 class="text-2xl font-bold text-white mb-4 w-full text-center">Filter Catalog: Detailed Search</h3>
-                
-                <div class="flex flex-wrap w-full gap-3">
-                    <select id="filter-genre" name="genre" class="p-3 bg-white border border-gray-400 rounded-md text-black text-sm select-input focus:ring-1 focus:ring-[var(--burgundy)]">
-                        <option value="">All Genres (Primary)</option>
-                        <option value="Pop">Pop</option>
-                        <option value="Country">Country</option>
-                        <option value="Rock">Rock</option>
-                        <option value="Gospel/Religious">Gospel/Religious</option>
-                        <option value="Hip-Hop">Hip-Hop</option>
+            <div class="flex flex-wrap justify-between items-center bg-gray-900 p-4 rounded-lg mb-10 text-white shadow-lg border-4 border-gray-400">
+                <div class="text-lg font-semibold text-white mb-4 sm:mb-0">Filter Catalog:</div>
+                <div class="flex flex-wrap gap-2 text-sm">
+                    <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option>Genre</option>
+                        <option>Pop</option>
+                        <option>Alternative and Punk</option>
+                        <option>Rock</option>
+                        <option>Easy Listening</option>
+                        <option>Gospel and Religious</option>
+                        <option>Country</option>
                     </select>
-
-                    <select id="filter-mood" name="mood" class="p-3 bg-white border border-gray-400 rounded-md text-black text-sm select-input focus:ring-1 focus:ring-[var(--burgundy)]">
-                        <option value="">All Moods/Themes</option>
-                        <option value="Empowerment">Anthem/Empowerment</option>
-                        <option value="Romantic">Romantic/Love</option>
-                        <option value="Grief">Grief/Loss</option>
-                        <option value="Revenge">Revenge/Betrayal</option>
-                        <option value="Toxic">Toxic Relationships</option>
-                        <option value="Faith">Faith/Inspirational</option>
+                    <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option>Mood</option>
+                        <option>Anthemic</option>
+                        <option>Confident</option>
+                        <option>Determined</option>
+                        <option>Dreamy</option>
+                        <option>Playful</option>
+                        <option>Romantic</option>
+                        <option>Bitter</option>
+                        <option>Introspective</option>
+                        <option>Revenge</option>
+                        <option>Melancholic</option>
+                        <option>Sad</option>
+                        <option>Cool</option>
+                        <option>Dramatic</option>
+                        <option>Heavy</option>
+                        <option>Peaceful</option>
+                        <option>Soft</option>
+                        <option>Mellow</option>
+                        <option>Proud</option>
+                        <option>Slow</option>
                     </select>
-
-                    <select id="filter-tempo" name="tempo" class="p-3 bg-white border border-gray-400 rounded-md text-black text-sm select-input focus:ring-1 focus:ring-[var(--burgundy)]">
-                        <option value="">All Tempos</option>
-                        <option value="Slow">Slow</option>
-                        <option value="Mid-Tempo">Mid-Tempo</option>
-                        <option value="Fast">Fast</option>
-                    </select>
-                    
-                    <select id="filter-vocals" name="vocals" class="p-3 bg-white border border-gray-400 rounded-md text-black text-sm select-input focus:ring-1 focus:ring-[var(--burgundy)]">
-                        <option value="">All Vocal Types</option>
-                        <option value="Female">Female Lead</option>
-                        <option value="Male">Male Lead</option>
-                        <option value="Mixed">Duet/Mixed</option>
-                        <option value="Adaptable">Gender Fluid/Adaptable</option>
-                    </select>
-
-                    <select id="filter-explicit" name="explicit" class="p-3 bg-white border border-gray-400 rounded-md text-black text-sm select-input focus:ring-1 focus:ring-[var(--burgundy)]">
-                        <option value="">All Content</option>
-                        <option value="Clean">Clean/Non-Explicit</option>
-                        <option value="Explicit">Explicit Lyrics</option>
-                    </select>
-
-                    <input type="text" id="filter-search" name="search" placeholder="Search title, genre, or lyrics..." class="p-3 border border-gray-400 rounded-md text-black text-sm flex-grow w-full focus:ring-1 focus:ring-[var(--burgundy)]">
-
-                    <button class="bg-[var(--burgundy)] hover:bg-red-800 text-white font-semibold py-2 px-6 rounded-md transition duration-200 flex-grow sm:flex-grow-0 min-w-[48%]">Apply Filter</button>
-                    <button class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-6 rounded-md transition duration-200 flex-grow sm:flex-grow-0 min-w-[48%]">Reset Filters</button>
+                    <button class="bg-[var(--burgundy)] hover:bg-red-800 text-white font-semibold py-2 px-4 rounded-md transition duration-200">Filter</button>
+                    <button class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition duration-200">Reset</button>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
                 <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
-                    <img src="https://placehold.co/250x250/800020/ffffff?text=Author+of+a+Lie" alt="Author of a Lie cover art" class="mx-auto mb-4">
-                    <h3 class="text-xl font-bold text-slate-200 mb-1">Author of a Lie</h3>
-                    <p class="text-xs text-gray-400 mb-3">Genre: Pop | Mood: Frustrated | Theme: Gaslighting</p>
+                    <img src="/assets/covers/author-of-a-lie-cover-art.jpg" alt="AUTHOR OF A LIE cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1">AUTHOR OF A LIE</h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, Hip-Hop | Mood: Anthemic, Confident | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Deceit, Lies, Gaslighting</p>
+                    <div class="mb-4">
+                        <audio controls class="w-full">
+                            <source src="/assets/music/author-of-a-lie-audio.mp3" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
                     <p class="text-sm italic text-gray-300">"You're the author of a lie, a master of deceit. And I'm tired of this story on repeat."</p>
-                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
+                        <span class="text-white font-bold text-lg">$0.99</span>
                         <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
                     </div>
                 </div>
+
                 <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
-                    <img src="https://placehold.co/250x250/800020/ffffff?text=Big+Hard+No" alt="Big Hard No cover art" class="mx-auto mb-4">
-                    <h3 class="text-xl font-bold text-slate-200 mb-1">Big Hard No</h3>
-                    <p class="text-xs text-gray-400 mb-3">Genre: Pop | Mood: Defiant | Theme: Empowerment</p>
-                    <p class="text-sm italic text-gray-300">"That's a big hard NO! I'm not playing your game."</p>
-                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
-                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    <img src="/assets/covers/boom-boom-beat-cover-art.jpg" alt="BOOM BOOM BEAT (HEART SONG) cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1">BOOM BOOM BEAT (HEART SONG)</h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Alternative, Rock | Mood: Romantic, Playful | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Yodeling Love Song, Reunion</p>
+                    <div class="mb-4">
+                        <audio controls class="w-full">
+                            <source src="/assets/music/boom-boom-beat-audio.mp3" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
                     </div>
-                </div>
-                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
-                    <img src="https://placehold.co/250x250/800020/ffffff?text=Boom+Boom+Beat" alt="Boom Boom Beat cover art" class="mx-auto mb-4">
-                    <h3 class="text-xl font-bold text-slate-200 mb-1">Boom Boom Beat</h3>
-                    <p class="text-xs text-gray-400 mb-3">Genre: Pop | Mood: Romantic | Theme: Reunion</p>
                     <p class="text-sm italic text-gray-300">"Boom boom boom da boom boom boom, Ah-yo-delay-ee-hoo!"</p>
-                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
+                        <span class="text-white font-bold text-lg">$0.99</span>
                         <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
                     </div>
                 </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/hit-the-road-cover-art.jpg" alt="HIT THE ROAD cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1">HIT THE ROAD</h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, General Dance | Mood: Anthemic, Revenge | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Self-Liberation, Moving On</p>
+                    <div class="mb-4">
+                        <audio controls class="w-full">
+                            <source src="/assets/music/hit-the-road-audio.mp3" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Vengeful anthem about moving on from a toxic relationship. Empowerment-focused pop."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
+                        <span class="text-white font-bold text-lg">$0.75</span>
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
                 </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/i-know-your-damn-pin-code-cover-art.jpg" alt="I KNOW YOUR DAMN PIN CODE (NOT CLEVER) cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1">I KNOW YOUR DAMN PIN CODE (NOT CLEVER)</h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Rock, Alt Country | Mood: Bitter, Revenge | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Betrayal, Triumph, Hard Rock</p>
+                    <div class="mb-4">
+                        <audio controls class="w-full">
+                            <source src="/assets/music/i-know-your-damn-pin-code-audio.mp3" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Breakup anthem of uncovering a partner's deceit and finding empowerment."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
+                        <span class="text-white font-bold text-lg">$0.99</span>
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/in-my-dreams-when-i-wake-cover-art.jpg" alt="IN MY DREAMS (WHEN I WAKE) cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1">IN MY DREAMS (WHEN I WAKE)</h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Easy Listening, Pop | Mood: Melancholic, Sad | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Loss, Grief, Enduring Love</p>
+                    <div class="mb-4">
+                        <audio controls class="w-full">
+                            <source src="/assets/music/in-my-dreams-when-i-wake-audio.mp3" type="audio/mp3">
+                            Your browser does does not support the audio element.
+                        </audio>
+                    </div>
+                    <p class="text-sm italic text-gray-300">"A haunting, heartfelt pop-ballad dealing with the grief of loss."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
+                        <span class="text-white font-bold text-lg">$0.99</span>
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/sick-one-s1c-cover-art.jpg" alt="SICK ONE (S1C) cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1">SICK ONE (S1C)</h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Rock, Alternative | Mood: Bitter, Cool | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Toxic Love, Self-Destructive, Drug</p>
+                    <div class="mb-4">
+                        <audio controls class="w-full">
+                            <source src="/assets/music/sick-one-s1c-audio.mp3" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <p class="text-sm italic text-gray-300">"A raw, brutal confessional exploring a chaotic and self-destructive toxic love."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
+                        <span class="text-white font-bold text-lg">$0.99</span>
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/stood-by-my-side-cover-art.jpg" alt="STOOD BY MY SIDE cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1">STOOD BY MY SIDE</h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Gospel, Religious | Mood: Peaceful, Soft | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Emotional Testament, Faith, Hope</p>
+                    <div class="mb-4">
+                        <audio controls class="w-full">
+                            <source src="/assets/music/stood-by-my-side-audio.mp3" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <p class="text-sm italic text-gray-300">"An emotional Christian ballad about finding peace and healing through faith."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
+                        <span class="text-white font-bold text-lg">$0.50</span>
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/your-forever-man-cover-art.jpg" alt="YOUR FOREVER MAN (WHEN MISTY CRIES) cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1">YOUR FOREVER MAN (WHEN MISTY CRIES)</h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Country | Mood: Romantic, Mellow | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Key: B major | Theme: Heartfelt Ballad, Support</p>
+                    <div class="mb-4">
+                        <audio controls class="w-full">
+                            <source src="/assets/music/your-forever-man-audio.mp3" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Contemporary folk-pop country song about unconditional love and support."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
+                        <span class="text-white font-bold text-lg">$0.99</span>
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+            
+            </div>
             
         </div>
     </main>
@@ -280,7 +378,7 @@
         <div class="content-container text-center text-sm text-gray-200">
             
             <p class="mb-0 w-fit mx-auto">Kellie Larson</p>
-            <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1 text-xs">Cinematic Songwriter and Lyricist</p>
+            <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1 text-xs">Cinematic songwriter and Lyricist</p>
             <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1">760-537-0222</p>
             <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1">
                 <a href="mailto:info@verseandchorus.com" class="hover:underline">info@verseandchorus.com</a>
@@ -327,10 +425,6 @@
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-        
-        // NOTE: You will need to add custom JavaScript here to handle the 'change' 
-        // and 'input' events on the filter elements to dynamically search and update 
-        // your song cards in the grid.
     </script>
 </body>
 </html>
