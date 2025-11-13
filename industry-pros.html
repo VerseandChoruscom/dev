@@ -187,37 +187,69 @@
             <div class="flex flex-wrap justify-between items-center bg-gray-900 p-4 rounded-lg mb-10 text-white shadow-lg border-4 border-gray-400">
                 <div class="text-lg font-semibold text-white mb-4 sm:mb-0">Filter Catalog:</div>
                 <div class="flex flex-wrap gap-2 text-sm">
+                    
                     <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
                         <option>Genre</option>
-                        <option>Pop</option>
                         <option>Alternative and Punk</option>
-                        <option>Rock</option>
+                        <option>Blues</option>
+                        <option>Country</option>
                         <option>Easy Listening</option>
                         <option>Gospel and Religious</option>
-                        <option>Country</option>
+                        <option>Jazz</option>
+                        <option>Metal</option>
+                        <option>Pop</option>
+                        <option>Punk</option>
+                        <option>R&B</option>
+                        <option>Rock</option>
+                        <option>World</option>
                     </select>
+
                     <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
                         <option>Mood</option>
                         <option>Anthemic</option>
-                        <option>Confident</option>
-                        <option>Determined</option>
-                        <option>Dreamy</option>
-                        <option>Playful</option>
-                        <option>Romantic</option>
                         <option>Bitter</option>
-                        <option>Introspective</option>
-                        <option>Revenge</option>
-                        <option>Melancholic</option>
-                        <option>Sad</option>
+                        <option>Confident</option>
                         <option>Cool</option>
+                        <option>Determined</option>
                         <option>Dramatic</option>
+                        <option>Dreamy</option>
+                        <option>Hard</option>
                         <option>Heavy</option>
-                        <option>Peaceful</option>
-                        <option>Soft</option>
+                        <option>Introspective</option>
                         <option>Mellow</option>
+                        <option>Melancholic</option>
+                        <option>Peaceful</option>
+                        <option>Playful</option>
                         <option>Proud</option>
+                        <option>Romantic</option>
+                        <option>Revenge</option>
+                        <option>Sad</option>
+                        <option>Slow</option>
+                        <option>Soft</option>
+                    </select>
+
+                    <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option>Tempo</option>
+                        <option>Fast</option>
+                        <option>Mid Tempo</option>
                         <option>Slow</option>
                     </select>
+                    
+                    <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option>Sub Genre/Style</option>
+                        <option>Americana</option>
+                        <option>Ballad</option>
+                        <option>Bedroom Pop</option>
+                        <option>Contemporary</option>
+                        <option>Country</option>
+                        <option>Crunk</option>
+                        <option>Dancehall</option>
+                        <option>Horror</option>
+                        <option>Pop</option>
+                        <option>Rock</option>
+                    </select>
+
+
                     <button class="bg-[var(--burgundy)] hover:bg-red-800 text-white font-semibold py-2 px-4 rounded-md transition duration-200">Filter</button>
                     <button class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition duration-200">Reset</button>
                 </div>
@@ -229,7 +261,7 @@
                     <img src="/assets/covers/author-of-a-lie-cover-art.jpg" alt="AUTHOR OF A LIE cover art" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold text-slate-200 mb-1">AUTHOR OF A LIE</h3>
                     <p class="text-xs text-gray-400 mb-1">Genre: Pop, Hip-Hop | Mood: Anthemic, Confident | Tempo: Mid Tempo</p>
-                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Deceit, Lies, Gaslighting</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Deceit, Lies, Gaslighting</p>
                     <div class="mb-4">
                         <audio controls class="w-full">
                             <source src="/assets/music/author-of-a-lie-audio.mp3" type="audio/mp3">
@@ -237,8 +269,7 @@
                         </audio>
                     </div>
                     <p class="text-sm italic text-gray-300">"You're the author of a lie, a master of deceit. And I'm tired of this story on repeat."</p>
-                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
-                        <span class="text-white font-bold text-lg">$0.99</span>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
                         <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
                     </div>
                 </div>
@@ -247,7 +278,7 @@
                     <img src="/assets/covers/boom-boom-beat-cover-art.jpg" alt="BOOM BOOM BEAT (HEART SONG) cover art" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold text-slate-200 mb-1">BOOM BOOM BEAT (HEART SONG)</h3>
                     <p class="text-xs text-gray-400 mb-1">Genre: Alternative, Rock | Mood: Romantic, Playful | Tempo: Fast</p>
-                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Yodeling Love Song, Reunion</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Yodeling Love Song, Reunion</p>
                     <div class="mb-4">
                         <audio controls class="w-full">
                             <source src="/assets/music/boom-boom-beat-audio.mp3" type="audio/mp3">
@@ -255,8 +286,7 @@
                         </audio>
                     </div>
                     <p class="text-sm italic text-gray-300">"Boom boom boom da boom boom boom, Ah-yo-delay-ee-hoo!"</p>
-                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
-                        <span class="text-white font-bold text-lg">$0.99</span>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
                         <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
                     </div>
                 </div>
@@ -265,7 +295,7 @@
                     <img src="/assets/covers/hit-the-road-cover-art.jpg" alt="HIT THE ROAD cover art" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold text-slate-200 mb-1">HIT THE ROAD</h3>
                     <p class="text-xs text-gray-400 mb-1">Genre: Pop, General Dance | Mood: Anthemic, Revenge | Tempo: Mid Tempo</p>
-                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Self-Liberation, Moving On</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Self-Liberation, Moving On</p>
                     <div class="mb-4">
                         <audio controls class="w-full">
                             <source src="/assets/music/hit-the-road-audio.mp3" type="audio/mp3">
@@ -273,8 +303,7 @@
                         </audio>
                     </div>
                     <p class="text-sm italic text-gray-300">"Vengeful anthem about moving on from a toxic relationship. Empowerment-focused pop."</p>
-                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
-                        <span class="text-white font-bold text-lg">$0.75</span>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
                         <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
                     </div>
                 </div>
@@ -283,7 +312,7 @@
                     <img src="/assets/covers/i-know-your-damn-pin-code-cover-art.jpg" alt="I KNOW YOUR DAMN PIN CODE (NOT CLEVER) cover art" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold text-slate-200 mb-1">I KNOW YOUR DAMN PIN CODE (NOT CLEVER)</h3>
                     <p class="text-xs text-gray-400 mb-1">Genre: Rock, Alt Country | Mood: Bitter, Revenge | Tempo: Fast</p>
-                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Betrayal, Triumph, Hard Rock</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Betrayal, Triumph, Hard Rock</p>
                     <div class="mb-4">
                         <audio controls class="w-full">
                             <source src="/assets/music/i-know-your-damn-pin-code-audio.mp3" type="audio/mp3">
@@ -291,8 +320,7 @@
                         </audio>
                     </div>
                     <p class="text-sm italic text-gray-300">"Breakup anthem of uncovering a partner's deceit and finding empowerment."</p>
-                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
-                        <span class="text-white font-bold text-lg">$0.99</span>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
                         <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
                     </div>
                 </div>
@@ -301,7 +329,7 @@
                     <img src="/assets/covers/in-my-dreams-when-i-wake-cover-art.jpg" alt="IN MY DREAMS (WHEN I WAKE) cover art" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold text-slate-200 mb-1">IN MY DREAMS (WHEN I WAKE)</h3>
                     <p class="text-xs text-gray-400 mb-1">Genre: Easy Listening, Pop | Mood: Melancholic, Sad | Tempo: Slow</p>
-                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Loss, Grief, Enduring Love</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Loss, Grief, Enduring Love</p>
                     <div class="mb-4">
                         <audio controls class="w-full">
                             <source src="/assets/music/in-my-dreams-when-i-wake-audio.mp3" type="audio/mp3">
@@ -309,8 +337,7 @@
                         </audio>
                     </div>
                     <p class="text-sm italic text-gray-300">"A haunting, heartfelt pop-ballad dealing with the grief of loss."</p>
-                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
-                        <span class="text-white font-bold text-lg">$0.99</span>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
                         <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
                     </div>
                 </div>
@@ -319,7 +346,7 @@
                     <img src="/assets/covers/sick-one-s1c-cover-art.jpg" alt="SICK ONE (S1C) cover art" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold text-slate-200 mb-1">SICK ONE (S1C)</h3>
                     <p class="text-xs text-gray-400 mb-1">Genre: Rock, Alternative | Mood: Bitter, Cool | Tempo: Fast</p>
-                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Toxic Love, Self-Destructive, Drug</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Toxic Love, Self-Destructive, Drug</p>
                     <div class="mb-4">
                         <audio controls class="w-full">
                             <source src="/assets/music/sick-one-s1c-audio.mp3" type="audio/mp3">
@@ -327,8 +354,7 @@
                         </audio>
                     </div>
                     <p class="text-sm italic text-gray-300">"A raw, brutal confessional exploring a chaotic and self-destructive toxic love."</p>
-                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
-                        <span class="text-white font-bold text-lg">$0.99</span>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
                         <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
                     </div>
                 </div>
@@ -337,7 +363,7 @@
                     <img src="/assets/covers/stood-by-my-side-cover-art.jpg" alt="STOOD BY MY SIDE cover art" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold text-slate-200 mb-1">STOOD BY MY SIDE</h3>
                     <p class="text-xs text-gray-400 mb-1">Genre: Gospel, Religious | Mood: Peaceful, Soft | Tempo: Slow</p>
-                    <p class="text-xs text-gray-400 mb-3">Key: N/A | Theme: Emotional Testament, Faith, Hope</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Emotional Testament, Faith, Hope</p>
                     <div class="mb-4">
                         <audio controls class="w-full">
                             <source src="/assets/music/stood-by-my-side-audio.mp3" type="audio/mp3">
@@ -345,8 +371,7 @@
                         </audio>
                     </div>
                     <p class="text-sm italic text-gray-300">"An emotional Christian ballad about finding peace and healing through faith."</p>
-                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
-                        <span class="text-white font-bold text-lg">$0.50</span>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
                         <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
                     </div>
                 </div>
@@ -355,7 +380,7 @@
                     <img src="/assets/covers/your-forever-man-cover-art.jpg" alt="YOUR FOREVER MAN (WHEN MISTY CRIES) cover art" class="mx-auto mb-4">
                     <h3 class="text-xl font-bold text-slate-200 mb-1">YOUR FOREVER MAN (WHEN MISTY CRIES)</h3>
                     <p class="text-xs text-gray-400 mb-1">Genre: Country | Mood: Romantic, Mellow | Tempo: Mid Tempo</p>
-                    <p class="text-xs text-gray-400 mb-3">Key: B major | Theme: Heartfelt Ballad, Support</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Heartfelt Ballad, Support</p>
                     <div class="mb-4">
                         <audio controls class="w-full">
                             <source src="/assets/music/your-forever-man-audio.mp3" type="audio/mp3">
@@ -363,8 +388,7 @@
                         </audio>
                     </div>
                     <p class="text-sm italic text-gray-300">"Contemporary folk-pop country song about unconditional love and support."</p>
-                    <div class="mt-4 text-gray-400 font-semibold flex justify-between items-center">
-                        <span class="text-white font-bold text-lg">$0.99</span>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
                         <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
                     </div>
                 </div>
