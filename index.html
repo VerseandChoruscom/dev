@@ -9,7 +9,6 @@
   <meta name="description" content="Find professional lyric reports and songwriting analysis for new writers. A&R reps and sync agents can explore our curated Industry Pro Vault for new talent and cinematic lyrics.">
 
   <link rel="stylesheet" href="/assets/css/style.css" />
-  <script src="/assets/js/scripts.js" defer></script>
   
   <style>
     /* 1. CSS for White Navigation Links */
@@ -17,12 +16,12 @@
         color: #FFFFFF !important; /* Forces the navigation text color to white */
     }
 
-    /* 2. New CSS for Gold Script Category Titles */
+    /* 2. New CSS for Gold Script Category Titles (NOW BIGGER) */
     .gold-script {
         color: #FFD700; /* Gold color */
         /* Assuming 'script-text' is defined elsewhere, if not, you may need to add font-family here */
         font-family: 'YourScriptFont', cursive; 
-        font-size: 1.3em;
+        font-size: 1.8em; /* INCREASED SIZE */
         margin: 0;
     }
 
@@ -62,7 +61,7 @@
       margin-bottom: 10px;
     }
     
-    /* Style for SEO Description in Boxes */
+    /* Style for SEO Description 1 in Boxes (Retained) */
     .box-description {
         font-size: 0.8em;
         margin-top: 5px;
@@ -71,7 +70,33 @@
         font-weight: 300;
     }
 
+    /* NEW Style for SEO Description 2 in Boxes */
+    .box-description-seo {
+        font-size: 0.7em; /* Slightly smaller for the secondary line */
+        margin-top: 2px;
+        line-height: 1.2;
+        opacity: 0.7;
+        font-style: italic;
+    }
+
+    /* --- HAMBURGER MENU FIX CSS --- */
+    @media (max-width: 768px) {
+        #nav-menu {
+            display: none; 
+        }
+        #nav-menu.active {
+            display: flex;
+            flex-direction: column;
+        }
+    }
   </style>
+
+  <script>
+    function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('active'); 
+    }
+  </script>
 </head>
 <body>
   <header id="main-header">
@@ -103,36 +128,43 @@
         <img src="/images/cover/bio-box-photo.jpg" alt="Kellie Larson Songwriter Bio and Profile" />
         <h3 class="gold-script">Spotlight</h3>
         <span class="box-description">Meet the **Cinematic Lyricist**</span>
+        <span class="box-description-seo">Read the official songwriter profile.</span>
       </a>
       <a href="/lyrics.html" class="box-link">
         <img src="/images/cover/lyrics-box-photo.jpg" alt="Lyrics Catalog for Sale and Licensing" />
         <h3 class="gold-script">Setlist</h3>
         <span class="box-description">View Lyrics for Sale & Licensing</span>
+        <span class="box-description-seo">Lyrics available for sync and publication.</span>
       </a>
       <a href="/green-room.html" class="box-link">
         <img src="/images/cover/green-room-box-photo.jpg" alt="Songwriting Tools and Resources" />
         <h3 class="gold-script">Green Room</h3>
         <span class="box-description">Creative Tools for New Songwriters</span>
+        <span class="box-description-seo">Resources to inspire your next song.</span>
       </a>
       <a href="/industry-pros.html" class="box-link">
         <img src="/images/cover/industry-pros-box-photo.jpg" alt="A&R Talent Scouting Vault" />
         <h3 class="gold-script">Industry Vault</h3>
         <span class="box-description">Curated Catalog for **A&R & Sync Reps**</span>
+        <span class="box-description-seo">Discover pre-vetted music talent here.</span>
       </a>
       <a href="/articles.html" class="box-link">
         <img src="/images/cover/articles-box-photo.jpg" alt="Songwriting and Music Industry Articles" />
         <h3 class="gold-script">Articles</h3>
         <span class="box-description">Tips and Trends for the Music Industry</span>
+        <span class="box-description-seo">Songwriting insights and advice.</span>
       </a>
       <a href="/reports.html" class="box-link">
         <img src="/images/cover/reports-box-photo.jpg" alt="Professional Lyric Report Service" />
         <h3 class="gold-script">Lyric Reports</h3>
         <span class="box-description">**Professional Lyric Analysis & Critique**</span>
+        <span class="box-description-seo">Get your song lyrics professionally reviewed.</span>
       </a>
       <a href="/collab.html" class="box-link">
         <img src="/images/cover/collab-box-photo.jpg" alt="Commission Lyrics for Collaboration" />
         <h3 class="gold-script">Collab / Commission</h3>
         <span class="box-description">Request Lyrics or Start a Collaboration</span>
+        <span class="box-description-seo">Hire a lyricist for your next project.</span>
       </a>
     </div>
   </main>
