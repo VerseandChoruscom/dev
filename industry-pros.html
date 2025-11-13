@@ -90,6 +90,39 @@
             border-image-repeat: repeat;
         }
 
+        /* --- NEW STYLES TO REMOVE DOWNLOAD BUTTON --- */
+        /* Targets Chrome, Safari, Edge */
+        audio::-webkit-media-controls-panel {
+            display: flex !important;
+        }
+        
+        audio::-webkit-media-controls-enclosure {
+            overflow: hidden;
+            width: 100%; /* Ensures controls fill the space */
+        }
+        
+        audio::-webkit-media-controls-timeline,
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display,
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-volume-slider {
+            display: block; /* Ensure standard controls are visible */
+        }
+
+        /* Targets the download/right-click menu on Chrome/Safari/Edge */
+        audio::-webkit-media-controls-panel {
+            grid-template-columns: auto 1fr auto !important; /* Forces the panel to reorganize */
+        }
+        
+        audio::-webkit-media-controls-overflow-button {
+            display: none !important; /* Hides the three-dot menu */
+        }
+
+        /* Targets Firefox: No official way, relies on preventing right-click or custom player */
+        audio {
+            pointer-events: auto; /* Re-enable pointer events */
+        }
+        
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -1043,6 +1076,14 @@
 
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Disable Right-Click on Audio Elements (for a non-CSS/non-JS controlled solution)
+        const audioElements = document.querySelectorAll('audio');
+        audioElements.forEach(audio => {
+            audio.addEventListener('contextmenu', e => {
+                e.preventDefault();
+            });
         });
     </script>
 </body>
