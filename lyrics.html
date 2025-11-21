@@ -19,129 +19,148 @@
             color: #FFFFFF !important;
         }
         .gold-script {
-            color: #FFD700; /* Gold color */
+            color: #FF4081; /* Hot Pink Primary Accent */
             font-family: 'YourScriptFont', cursive; 
             font-size: 1.8em; 
             margin: 0;
+            text-shadow: 2px 2px 0 #7C4DFF; /* Purple Shadow for Pop Effect */
         }
         /* End of inherited styles */
         
-        /* --- DIGITAL JUKEBOX STYLES --- */
+        /* --- FUN DIGITAL JUKEBOX PALETTE --- */
         :root {
-            --primary-accent: #FFD700; /* Gold */
-            --secondary-dark: #800020; /* Deep Maroon (from your box-link) */
-            --background-light: #f5f5f5;
-            --text-color: #333;
-            --card-border: #6c7a89; /* Border from your box-link */
+            --primary-accent: #FF4081; /* Hot Pink */
+            --secondary-accent: #7C4DFF; /* Electric Purple */
+            --background-light: #f5f5f5; /* Light Base */
+            --jukebox-body: #4FC3F7; /* Vibrant Light Blue for Jukebox Body */
+            --text-color: #111;
+            --card-base: #FFFFFF;
         }
 
+        /* 1. JUKEBOX CONTAINER (The Fun Machine Body) */
         .jukebox-container {
             width: 100%;
             max-width: 1200px;
             margin: 30px auto;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: var(--jukebox-body);
+            border-radius: 20px; /* Highly Rounded Corners */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 
+                        0 0 50px var(--secondary-accent); /* Shadow with Purple Glow */
             overflow: hidden;
             padding: 20px;
+            border: 8px solid var(--primary-accent); /* Hot Pink Border */
         }
 
         .jukebox-header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: linear-gradient(to right, #fff, #eee);
+            border-radius: 10px;
+            border-bottom: 3px solid var(--secondary-accent);
         }
 
-        .jukebox-header h1 {
-            font-size: 2.5em;
-            color: var(--secondary-dark);
-            margin-bottom: 10px;
+        .jukebox-header h2 {
+            font-size: 2em;
+            color: var(--primary-accent); 
+            margin-bottom: 5px;
         }
 
-        /* Category Filter Styles */
+        .jukebox-header p {
+            color: var(--text-color);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* 2. CATEGORY BUTTONS (The Colorful Selection Panel) */
         #category-nav {
-            background-color: var(--secondary-dark);
+            background-color: var(--secondary-accent); /* Electric Purple Background */
             padding: 15px 10px;
             text-align: center;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 8px;
-            border-radius: 5px;
+            gap: 12px;
+            border-radius: 30px; /* Pill Shape */
             margin-bottom: 20px;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
         }
 
         .category-button {
-            background-color: #a04050; 
+            background-color: #6136d9; /* Darker Purple */
             color: #fff;
-            border: 1px solid #FFD700; 
-            padding: 8px 14px;
-            border-radius: 20px;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 25px; /* Pill Shape */
             cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.2s, transform 0.1s;
-            font-size: 0.85em;
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            font-size: 1em;
+            letter-spacing: 0.5px;
         }
 
         .category-button:hover {
-            background-color: #FFD700; 
-            color: var(--secondary-dark);
+            background-color: var(--primary-accent); /* Hover to Hot Pink */
+            transform: translateY(-2px);
         }
 
         .category-button.active {
-            background-color: #FFD700;
-            color: var(--secondary-dark);
+            background-color: var(--primary-accent); 
+            color: #fff;
+            box-shadow: 0 0 15px var(--primary-accent), 0 0 5px #fff; /* Neon Glow */
             transform: scale(1.05);
-            box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
         }
 
-        /* Song List Grid Styles */
+        /* 3. SONG LIST GRID (The Display Screen) */
         .song-list {
-            padding: 0;
+            background-color: var(--card-base);
+            padding: 20px;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
+        /* 4. SONG CARDS (The Displayed Data) */
         .song-card {
-            background-color: var(--background-light);
-            border: 1px solid var(--card-border);
-            border-left: 5px solid var(--primary-accent);
-            border-radius: 6px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            transition: box-shadow 0.3s;
+            background-color: var(--background-light); 
+            border: 2px solid var(--secondary-accent);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 4px 4px 0 var(--secondary-accent); /* Pop-Art Offset Shadow */
+            transition: box-shadow 0.3s, transform 0.3s;
         }
 
         .song-card:hover {
-            box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 0 var(--primary-accent); /* Shift to Hot Pink Shadow on Hover */
         }
 
         .song-title {
-            color: var(--secondary-dark);
-            font-size: 1.3em;
+            color: var(--primary-accent); 
+            font-size: 1.5em;
             margin-top: 0;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 900;
         }
 
         .song-metadata {
-            font-size: 0.9em;
-            color: #555;
+            font-size: 1em;
+            color: #555; 
             margin-bottom: 4px;
         }
 
         .song-metadata span {
-            font-weight: bold;
-            color: var(--text-color);
+            font-weight: 700;
+            color: var(--text-color); 
         }
 
         .song-description {
-            margin-top: 10px;
+            color: #333;
+            margin-top: 15px;
             padding-top: 10px;
-            border-top: 1px dashed #ccc;
+            border-top: 2px dashed #ccc;
             font-style: italic;
             font-size: 0.9em;
-            color: #555;
         }
     </style>
 </head>
@@ -154,8 +173,8 @@
         
         <div class="jukebox-container">
             <div class="jukebox-header">
-                <h2>44 Original Songs Available for A&R & Sync Pitching</h2>
-                <p>Use the mood and genre filters below to explore the complete catalog by key metadata.</p>
+                <h2>44 Original Songs Available for A&R & Sync Pitching 🎶</h2>
+                <p>Select a Mood or Theme to instantly filter Kellie's complete catalog. Every song is a hit waiting to happen!</p>
             </div>
 
             <div id="category-nav">
@@ -177,7 +196,7 @@
     <?php include 'footer.php'; ?>
 
     <script>
-        /* --- JAVASCRIPT LOGIC (The Song Data and Filtering Engine) --- */
+        /* --- JAVASCRIPT LOGIC (Unchanged Data and Functionality) --- */
         const songData = [
             // Songs with rich metadata (Featured Tracks)
             { title: "I Know Your Damn Pin Code", genre: "Rock, Alt Country", mood: "Bitter, Revenge, Confident", description: "A vengeful anthem of betrayal and triumph with an unbridled hard rock/alternative sound.", category: "Vengeance & Empowerment" },
@@ -229,7 +248,6 @@
 
         const songListElement = document.getElementById('song-list');
         const categoryNavElement = document.getElementById('category-nav');
-        // Sorts categories and adds 'All Songs' first
         const allCategories = ['All Songs', ...new Set(songData.map(song => song.category))].sort();
 
         // Renders the individual song cards
