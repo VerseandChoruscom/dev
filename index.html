@@ -2,12 +2,12 @@
 <html lang="en">
 <head><?php include 'header.php'; ?>
   
-  <title>Verse and Chorus | Professional Lyric Reports, A&R Talent Vault, and Songwriting Tools</title>
+  <title>Cinematic Lyricist Talent Vault | Professional Songwriter, A&R Scouting, and Sync Licensing</title>
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
-  <meta name="description" content="Find professional lyric reports and songwriting analysis for new writers. A&R reps and sync agents can explore our curated Industry Pro Vault for new talent and cinematic lyrics.">
+  <meta name="description" content="Industry Pro Vault: Exclusive, Vetted Talent & Cinematic Lyrics for A&R, Sync, and Music Supervisors. Discover professional, high-concept themes.">
 
   <link rel="stylesheet" href="/assets/css/style.css" />
   
@@ -17,14 +17,49 @@
         color: #FFFFFF !important; /* Forces the navigation text color to white */
     }
 
-    /* 2. New CSS for Gold Script Category Titles (NOW BIGGER) */
+    /* 2. CSS for the main songwriter heading (White and Bold) */
+    .white-bold-header {
+        color: #FFFFFF; /* White color */
+        font-weight: bold; /* Bolded text */
+        /* Retaining original font style if 'script-text' applies it, otherwise add font-family here */
+    }
+    
+    /* 3. New CSS for Gold Script Category Titles (NOW BIGGER) */
     .gold-script {
-        color: #FFD700; /* Gold color */
+        color: #FFD700; /* Gold color, ensuring consistency */
         /* Assuming 'script-text' is defined elsewhere, if not, you may need to add font-family here */
         font-family: 'YourScriptFont', cursive; 
         font-size: 1.8em; /* INCREASED SIZE */
         margin: 0;
     }
+
+    /* 4. Hamburger Menu Line Color (White) */
+    .hamburger div {
+        background-color: #FFFFFF; /* Makes the hamburger lines white */
+    }
+
+    /* 5. Scroll-to-Top Button CSS (Sunrise Orange) */
+    #scroll-to-top-btn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 20px; /* Place the button at the bottom of the page */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap other elements */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: #FF8C00; /* Sunrise Orange */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 10px; /* Rounded corners */
+        font-size: 18px; /* Increase font size */
+        transition: opacity 0.3s;
+    }
+
+    #scroll-to-top-btn:hover {
+        background-color: #e67e00; /* Darker orange on hover */
+    }
+
 
     /* Existing Box Grid Styles (Retained) */
     .box-grid {
@@ -93,9 +128,30 @@
   </style>
 
   <script>
+    // Existing function to toggle the navigation menu
     function toggleMenu() {
         const navMenu = document.getElementById('nav-menu');
         navMenu.classList.toggle('active'); 
+    }
+
+    // NEW JavaScript for Scroll-to-Top functionality
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        const btn = document.getElementById("scroll-to-top-btn");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    }
+
+    // Function to scroll to the top with soft scrolling
+    function topFunction() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // This enables soft/smooth scrolling
+        });
     }
   </script>
 </head>
@@ -118,15 +174,15 @@
   </header>
 
   <main class="page-content">
-    <h1 class="page-header script-text">VERSE AND CHORUS | Professional Lyric Reports & A&R Talent Vault</h1>
-    <h2 class="script-text">Kellie Larson — Cinematic Songwriter & Lyricist</h2>
+    <h1 class="page-header script-text">VERSE AND CHORUS | A&R Talent Vault & Cinematic Concept Lyrics for Sync</h1>
+    <h2 class="white-bold-header">Kellie Larson — Cinematic Songwriter & Lyricist</h2>
     <p style="max-width: 800px; margin: 20px auto; text-align: center;">
       Welcome to the official site of Kellie Larson. Explore lyrics, creative tools, industry resources, and interactive features designed to showcase Kellie’s voice and vision.
     </p>
 
     <div class="box-grid">
       <a href="/bio.html" class="box-link">
-        <img src="/images/cover/bio-box-photo.jpg" alt="Kellie Larson Songwriter Bio and Profile" />
+        <img src="/images/cover/bio-box-photo.jpg" alt="Kellie Larson Profile: Cinematic Songwriter" />
         <h3 class="gold-script">Spotlight</h3>
         <span class="box-description">Meet the **Cinematic Lyricist**</span>
         <span class="box-description-seo">Read the official songwriter profile.</span>
@@ -146,8 +202,8 @@
       <a href="/industry-pros.html" class="box-link">
         <img src="/images/cover/industry-pros-box-photo.jpg" alt="A&R Talent Scouting Vault" />
         <h3 class="gold-script">Industry Vault</h3>
-        <span class="box-description">Curated Catalog for **A&R & Sync Reps**</span>
-        <span class="box-description-seo">Discover pre-vetted music talent here.</span>
+        <span class="box-description">Curated Catalog for **A&R Scouts** & **Music Supervisors**</span>
+        <span class="box-description-seo">Discover **Vetted Lyricists** and **High-Concept Themes** for Film/TV.</span>
       </a>
       <a href="/articles.html" class="box-link">
         <img src="/images/cover/articles-box-photo.jpg" alt="Songwriting and Music Industry Articles" />
@@ -158,17 +214,19 @@
       <a href="/reports.html" class="box-link">
         <img src="/images/cover/reports-box-photo.jpg" alt="Professional Lyric Report Service" />
         <h3 class="gold-script">Lyric Reports</h3>
-        <span class="box-description">**Professional Lyric Analysis & Critique**</span>
-        <span class="box-description-seo">Get your song lyrics professionally reviewed.</span>
+        <span class="box-description">**Professional Lyric Analysis & Song Critique**</span>
+        <span class="box-description-seo">Get expert **Songwriter Consultation** and **Critique**.</span>
       </a>
       <a href="/collab.html" class="box-link">
         <img src="/images/cover/collab-box-photo.jpg" alt="Commission Lyrics for Collaboration" />
         <h3 class="gold-script">Collab / Commission</h3>
-        <span class="box-description">Request Lyrics or Start a Collaboration</span>
-        <span class="box-description-seo">Hire a lyricist for your next project.</span>
+        <span class="box-description">**Lyric Collaboration** or **Custom Commission**</span>
+        <span class="box-description-seo">Hire a **Cinematic Lyricist** for your next collaboration.</span>
       </a>
     </div>
   </main>
+
+  <button onclick="topFunction()" id="scroll-to-top-btn" title="Go to top">⬆️</button>
 
   <footer class="site-footer">
     <p>
