@@ -1,150 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Kellie Larson Songwriting Catalog | Original Songs for Pitching & A&R Supervisors</title>
-    
-    <meta name="description" content="Explore Kellie Larson's professional songwriting catalog of 44 original songs. Demos available for A&R supervisors and music pitches. Pop, Rock, Country, and Alternative lyrics covering Vengeance, Empowerment, and Love.">
-    <meta name="keywords" content="Kellie Larson, songwriting catalog, A&R supervisors, new lyricists, original songs, music pitch, pop rock demos, alternative country lyrics, vengeance songs, empowerment anthems">
-    
-    <style>
-        /* --- CSS STYLES --- */
-        :root {
-            --primary-color: #e94e77; /* Deep Pink */
-            --secondary-color: #3b5998; /* Dark Blue/Purple */
-            --text-color: #333;
-            --light-bg: #f5f5f5;
-            --dark-bg: #2c3e50;
-            --highlight-text: #fff;
-            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+<?php include 'header.php'; ?>
+  
+    <title>Kellie Larson Songwriting Catalog | Digital Jukebox, Setlist, and Lyric Pitches</title>
+  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+    <meta name="description" content="Kellie Larson's full digital songwriting catalog (44 songs). Browse the setlist by Genre and Mood for A&R reviews, sync licensing, and music pitches. All lyrics available for collaboration.">
+    <meta name="keywords" content="Kellie Larson lyrics, songwriting catalog, digital jukebox, A&R review, sync licensing, original song setlist, cinematic lyricist">
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--text-color);
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  
+    <style>
+        /* CSS from your homepage template */
+        #nav-menu a {
+            color: #FFFFFF !important;
+        }
+        .gold-script {
+            color: #FFD700; /* Gold color */
+            font-family: 'YourScriptFont', cursive; 
+            font-size: 1.8em; 
             margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        }
+        /* End of inherited styles */
+        
+        /* --- DIGITAL JUKEBOX STYLES --- */
+        :root {
+            --primary-accent: #FFD700; /* Gold */
+            --secondary-dark: #800020; /* Deep Maroon (from your box-link) */
+            --background-light: #f5f5f5;
+            --text-color: #333;
+            --card-border: #6c7a89; /* Border from your box-link */
         }
 
         .jukebox-container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 30px auto;
-            background-color: var(--highlight-text);
-            border-radius: 15px;
-            box-shadow: var(--box-shadow);
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            border: 5px solid var(--dark-bg);
+            padding: 20px;
         }
 
-        header {
-            background-color: var(--primary-color);
-            color: var(--highlight-text);
-            padding: 20px 30px;
+        .jukebox-header {
             text-align: center;
-            border-bottom: 3px solid var(--secondary-color);
+            margin-bottom: 20px;
         }
 
-        header h1 {
-            margin: 0;
+        .jukebox-header h1 {
             font-size: 2.5em;
-            letter-spacing: 2px;
-        }
-
-        /* New section for targeting A&R and Lyricists (H2/H3 for SEO) */
-        .intro-pitch {
-            padding: 20px 30px;
-            background-color: #eee;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .intro-pitch h2 {
-            color: var(--secondary-color);
-            margin-top: 0;
-            font-size: 1.6em;
-        }
-
-        .intro-pitch p {
-            font-size: 1.1em;
-            line-height: 1.5;
+            color: var(--secondary-dark);
+            margin-bottom: 10px;
         }
 
         /* Category Filter Styles */
         #category-nav {
-            background-color: var(--dark-bg);
+            background-color: var(--secondary-dark);
             padding: 15px 10px;
             text-align: center;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
+            border-radius: 5px;
+            margin-bottom: 20px;
         }
 
         .category-button {
-            background-color: #5d748f;
-            color: var(--highlight-text);
-            border: none;
-            padding: 10px 15px;
+            background-color: #a04050; 
+            color: #fff;
+            border: 1px solid #FFD700; 
+            padding: 8px 14px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
             transition: background-color 0.2s, transform 0.1s;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
 
         .category-button:hover {
-            background-color: var(--primary-color);
+            background-color: #FFD700; 
+            color: var(--secondary-dark);
         }
 
         .category-button.active {
-            background-color: var(--secondary-color);
+            background-color: #FFD700;
+            color: var(--secondary-dark);
             transform: scale(1.05);
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
         }
 
-        /* Song List Styles */
+        /* Song List Grid Styles */
         .song-list {
-            padding: 20px;
+            padding: 0;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
 
         .song-card {
-            background-color: var(--highlight-text);
-            border: 1px solid #ddd;
-            border-left: 5px solid var(--primary-color);
-            border-radius: 8px;
+            background-color: var(--background-light);
+            border: 1px solid var(--card-border);
+            border-left: 5px solid var(--primary-accent);
+            border-radius: 6px;
             padding: 15px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             transition: box-shadow 0.3s;
         }
 
         .song-card:hover {
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
         }
 
         .song-title {
-            color: var(--secondary-color);
-            font-size: 1.4em;
+            color: var(--secondary-dark);
+            font-size: 1.3em;
             margin-top: 0;
             margin-bottom: 5px;
             font-weight: 900;
         }
 
-        .song-genre, .song-mood {
+        .song-metadata {
             font-size: 0.9em;
-            color: #666;
+            color: #555;
             margin-bottom: 4px;
         }
 
-        .song-genre span, .song-mood span {
+        .song-metadata span {
             font-weight: bold;
             color: var(--text-color);
         }
@@ -152,7 +138,7 @@
         .song-description {
             margin-top: 10px;
             padding-top: 10px;
-            border-top: 1px dashed #eee;
+            border-top: 1px dashed #ccc;
             font-style: italic;
             font-size: 0.9em;
             color: #555;
@@ -160,139 +146,152 @@
     </style>
 </head>
 <body>
+    <header id="main-header">
+        </header>
 
-<div class="jukebox-container">
-    <header>
-        <h1>Kellie Larson Songwriting Catalog 🎤</h1>
-    </header>
+    <main class="page-content">
+        <h1 class="page-header gold-script">Kellie Larson Songwriting Setlist: Digital Jukebox</h1>
+        
+        <div class="jukebox-container">
+            <div class="jukebox-header">
+                <h2>44 Original Songs Available for A&R & Sync Pitching</h2>
+                <p>Use the mood and genre filters below to explore the complete catalog by key metadata.</p>
+            </div>
 
-    <div class="intro-pitch">
-        <h2>Pitching Original Songs to A&R Supervisors & Music Teams</h2>
-        <p>This interactive **digital jukebox** presents **Kellie Larson's** collection of **44 original songs** ready for **music pitches** and **licensing**. **A&R supervisors** and **new lyricists** can quickly browse our professionally categorized **songwriting catalog** by theme and genre to find the perfect track, from **Empowerment Anthems** to **Pop-Rock Demos**.</p>
-        <p>Click a category below to filter the music. Key metadata like **Mood** and **Genre** is included with every song description.</p>
-    </div>
+            <div id="category-nav">
+                </div>
 
-    <div id="category-nav">
+            <div class="song-list" id="song-list">
+                <p style="text-align: center; width: 100%; color: #888;">Loading songs...</p>
+            </div>
         </div>
 
-    <div class="song-list" id="song-list">
-        <p style="text-align: center; width: 100%; color: #888;">Loading songs...</p>
-    </div>
-</div>
+    </main>
 
-<script>
-    /* --- JAVASCRIPT LOGIC --- */
-    const songData = [
-        // Songs with rich metadata (Featured Tracks)
-        { title: "I Know Your Damn Pin Code", genre: "Rock, Alt Country", mood: "Bitter, Revenge, Confident", description: "A vengeful anthem of betrayal and triumph with an unbridled hard rock/alternative sound.", category: "Vengeance & Empowerment" },
-        { title: "Hit the Road", genre: "Pop, Dance, Rock", mood: "Anthemic, Confident, Revenge", description: "A powerful anthem of self-liberation and moving on from a toxic relationship.", category: "Vengeance & Empowerment" },
-        { title: "In My Dreams (When I Wake)", genre: "Pop-Ballad", mood: "Dreamy, Melancholic, Sad", description: "A heartfelt and haunting pop-ballad that explores the pain of loss and the comfort found in dreams.", category: "Love, Loss, & Longing" },
-        { title: "Your Forever Man", genre: "Country, Contemporary", mood: "Mellow, Romantic, Proud", description: "A powerful, heartfelt ballad about love, healing, and support.", category: "Love, Loss, & Longing" },
-        { title: "Sick One (s1c)", genre: "Rock, General Alternative", mood: "Bitter, Cool, Revenge", description: "A raw, unflinching exploration of a toxic, self-destructive relationship that feels like a drug.", category: "Vengeance & Empowerment" },
-        { title: "Stood by my Side", genre: "Gospel, Christian", mood: "Dramatic, Peaceful, Anthemic", description: "A deeply emotional testament to finding hope and healing through faith and divine love.", category: "Introspection & Faith" },
-        { title: "Welcome to Jukes", genre: "Blues Rock, Country Blues", mood: "Dark, Haunting", description: "A track set in a mysterious bayou juke joint that hides a sinister, supernatural secret.", category: "Dark & Narrative" },
-        { title: "Top Shelf Queen", genre: "Country-Rock, General Rock", mood: "Fun, Happy, Lively", description: "A country-rock track about a 'full-bodied Goddess' (Mary Jane).", category: "Fun, Party & Nostalgia" },
-        { title: "Boom Boom Beat", genre: "General Alternative", mood: "Determined, Romantic", description: "A heartfelt, pop-driven yodeling love song.", category: "Rock & Alternative Jams" },
-        { title: "Author of a Lie", genre: "Pop, Hip-Hop", mood: "Confrontational, Empowered", description: "A punchy, rhythm-driven track about a partner who is a 'master of deceit'.", category: "Vengeance & Empowerment" },
-        { title: "Big Hard No", genre: "High-energy Pop", mood: "Fiery, Unapologetic", description: "A high-energy pop track and a fiery anthem of empowerment.", category: "Vengeance & Empowerment" },
-        
-        // Remaining songs (using default category/metadata for structure)
-        { title: "Broken Record", category: "Dark & Narrative" },
-        { title: "CEO, not babysitting tree", category: "Dark & Narrative" },
-        { title: "Children of War", category: "Introspection & Faith" },
-        { title: "Concrete Under the Feet", category: "Rock & Alternative Jams" },
-        { title: "Don't Be Jelly", category: "Fun, Party & Nostalgia" },
-        { title: "Ephemeral Moment", category: "Introspection & Faith" },
-        { title: "Etched in every Space", category: "Introspection & Faith" },
-        { title: "First Step", category: "Introspection & Faith" },
-        { title: "Fury (I'm the monster)", category: "Rock & Alternative Jams" },
-        { title: "GenX 80s Anthem", category: "Fun, Party & Nostalgia" },
-        { title: "Heartbreak and Trouble (hubba bubba song)", category: "Love, Loss, & Longing" },
-        { title: "How's It Feel, Bro?", category: "Vengeance & Empowerment" },
-        { title: "Just Too Much", category: "Introspection & Faith" },
-        { title: "Just a little lonely", category: "Love, Loss, & Longing" },
-        { title: "Little Things", category: "Love, Loss, & Longing" },
-        { title: "Murderers Heart", category: "Rock & Alternative Jams" },
-        { title: "My Girl Karma", category: "Dark & Narrative" },
-        { title: "My Words Matter", category: "Introspection & Faith" },
-        { title: "Not that Girl Anymore", category: "Vengeance & Empowerment" },
-        { title: "One Small Wrong", category: "Introspection & Faith" },
-        { title: "Real Dream Team (Tick Tok)", category: "Fun, Party & Nostalgia" },
-        { title: "Shot by Cupids Dart", category: "Love, Loss, & Longing" },
-        { title: "Showdown at My Door", category: "Rock & Alternative Jams" },
-        { title: "Solid Shifting Ground", category: "Rock & Alternative Jams" },
-        { title: "The Aftermath", category: "Dark & Narrative" },
-        { title: "The Back of Me", category: "Vengeance & Empowerment" },
-        { title: "The Show Is Through", category: "Vengeance & Empowerment" },
-        { title: "Thought You Should Know", category: "Dark & Narrative" },
-        { title: "Wildflower", category: "Fun, Party & Nostalgia" },
-        { title: "Year in the Rearview", category: "Dark & Narrative" },
-        { title: "Craving Those Crumbs", category: "Love, Loss, & Longing" },
-        { title: "Married to the Drug", category: "Love, Loss, & Longing" },
-    ];
+    <footer class="site-footer">
+        <p>
+            Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝 <a href="/legal.html">Legal</a>
+        </p>
+    </footer>
 
-    const songListElement = document.getElementById('song-list');
-    const categoryNavElement = document.getElementById('category-nav');
-    const allCategories = ['All Songs', ...new Set(songData.map(song => song.category))].sort();
+    <?php include 'footer.php'; ?>
 
-    function renderSongs(songs) {
-        songListElement.innerHTML = ''; 
-        if (songs.length === 0) {
-            songListElement.innerHTML = '<p style="text-align: center; width: 100%; color: #888;">No songs found in this category.</p>';
-            return;
-        }
+    <script>
+        /* --- JAVASCRIPT LOGIC (The Song Data and Filtering Engine) --- */
+        const songData = [
+            // Songs with rich metadata (Featured Tracks)
+            { title: "I Know Your Damn Pin Code", genre: "Rock, Alt Country", mood: "Bitter, Revenge, Confident", description: "A vengeful anthem of betrayal and triumph with an unbridled hard rock/alternative sound.", category: "Vengeance & Empowerment" },
+            { title: "Hit the Road", genre: "Pop, Dance, Rock", mood: "Anthemic, Confident, Revenge", description: "A powerful anthem of self-liberation and moving on from a toxic relationship.", category: "Vengeance & Empowerment" },
+            { title: "In My Dreams (When I Wake)", genre: "Pop-Ballad", mood: "Dreamy, Melancholic, Sad", description: "A heartfelt and haunting pop-ballad that explores the pain of loss and the comfort found in dreams.", category: "Love, Loss, & Longing" },
+            { title: "Your Forever Man", genre: "Country, Contemporary", mood: "Mellow, Romantic, Proud", description: "A powerful, heartfelt ballad about love, healing, and support.", category: "Love, Loss, & Longing" },
+            { title: "Sick One (s1c)", genre: "Rock, General Alternative", mood: "Bitter, Cool, Revenge", description: "A raw, unflinching exploration of a toxic, self-destructive relationship that feels like a drug.", category: "Vengeance & Empowerment" },
+            { title: "Stood by my Side", genre: "Gospel, Christian", mood: "Dramatic, Peaceful, Anthemic", description: "A deeply emotional testament to finding hope and healing through faith and divine love.", category: "Introspection & Faith" },
+            { title: "Welcome to Jukes", genre: "Blues Rock, Country Blues", mood: "Dark, Haunting", description: "A track set in a mysterious bayou juke joint that hides a sinister, supernatural secret.", category: "Dark & Narrative" },
+            { title: "Top Shelf Queen", genre: "Country-Rock, General Rock", mood: "Fun, Happy, Lively", description: "A country-rock track about a 'full-bodied Goddess' (Mary Jane).", category: "Fun, Party & Nostalgia" },
+            { title: "Boom Boom Beat", genre: "General Alternative", mood: "Determined, Romantic", description: "A heartfelt, pop-driven yodeling love song.", category: "Rock & Alternative Jams" },
+            { title: "Author of a Lie", genre: "Pop, Hip-Hop", mood: "Confrontational, Empowered", description: "A punchy, rhythm-driven track about a partner who is a 'master of deceit'.", category: "Vengeance & Empowerment" },
+            { title: "Big Hard No", genre: "High-energy Pop", mood: "Fiery, Unapologetic", description: "A high-energy pop track and a fiery anthem of empowerment.", category: "Vengeance & Empowerment" },
+            
+            // Remaining songs (using default category/metadata for structure)
+            { title: "Broken Record", category: "Dark & Narrative" },
+            { title: "CEO, not babysitting tree", category: "Dark & Narrative" },
+            { title: "Children of War", category: "Introspection & Faith" },
+            { title: "Concrete Under the Feet", category: "Rock & Alternative Jams" },
+            { title: "Don't Be Jelly", category: "Fun, Party & Nostalgia" },
+            { title: "Ephemeral Moment", category: "Introspection & Faith" },
+            { title: "Etched in every Space", category: "Introspection & Faith" },
+            { title: "First Step", category: "Introspection & Faith" },
+            { title: "Fury (I'm the monster)", category: "Rock & Alternative Jams" },
+            { title: "GenX 80s Anthem", category: "Fun, Party & Nostalgia" },
+            { title: "Heartbreak and Trouble (hubba bubba song)", category: "Love, Loss, & Longing" },
+            { title: "How's It Feel, Bro?", category: "Vengeance & Empowerment" },
+            { title: "Just Too Much", category: "Introspection & Faith" },
+            { title: "Just a little lonely", category: "Love, Loss, & Longing" },
+            { title: "Little Things", category: "Love, Loss, & Longing" },
+            { title: "Murderers Heart", category: "Rock & Alternative Jams" },
+            { title: "My Girl Karma", category: "Dark & Narrative" },
+            { title: "My Words Matter", category: "Introspection & Faith" },
+            { title: "Not that Girl Anymore", category: "Vengeance & Empowerment" },
+            { title: "One Small Wrong", category: "Introspection & Faith" },
+            { title: "Real Dream Team (Tick Tok)", category: "Fun, Party & Nostalgia" },
+            { title: "Shot by Cupids Dart", category: "Love, Loss, & Longing" },
+            { title: "Showdown at My Door", category: "Rock & Alternative Jams" },
+            { title: "Solid Shifting Ground", category: "Rock & Alternative Jams" },
+            { title: "The Aftermath", category: "Dark & Narrative" },
+            { title: "The Back of Me", category: "Vengeance & Empowerment" },
+            { title: "The Show Is Through", category: "Vengeance & Empowerment" },
+            { title: "Thought You Should Know", category: "Dark & Narrative" },
+            { title: "Wildflower", category: "Fun, Party & Nostalgia" },
+            { title: "Year in the Rearview", category: "Dark & Narrative" },
+            { title: "Craving Those Crumbs", category: "Love, Loss, & Longing" },
+            { title: "Married to the Drug", category: "Love, Loss, & Longing" },
+        ];
 
-        songs.forEach(song => {
-            const card = document.createElement('div');
-            card.className = 'song-card';
+        const songListElement = document.getElementById('song-list');
+        const categoryNavElement = document.getElementById('category-nav');
+        // Sorts categories and adds 'All Songs' first
+        const allCategories = ['All Songs', ...new Set(songData.map(song => song.category))].sort();
 
-            const genreText = song.genre ? `<p class="song-genre">Genre: <span>${song.genre}</span></p>` : '';
-            const moodText = song.mood ? `<p class="song-mood">Mood: <span>${song.mood}</span></p>` : '';
-            const descriptionText = song.description ? `<div class="song-description">${song.description}</div>` : '';
-            const categoryLabel = `<p class="song-mood" style="margin-bottom:0;">Category: <span>${song.category || 'Uncategorized'}</span></p>`;
-
-            card.innerHTML = `
-                <h3 class="song-title">${song.title}</h3>
-                ${genreText}
-                ${moodText}
-                ${categoryLabel}
-                ${descriptionText}
-            `;
-            songListElement.appendChild(card);
-        });
-    }
-
-    function filterSongs(category) {
-        document.querySelectorAll('.category-button').forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.textContent === category) {
-                btn.classList.add('active');
+        // Renders the individual song cards
+        function renderSongs(songs) {
+            songListElement.innerHTML = ''; 
+            if (songs.length === 0) {
+                songListElement.innerHTML = '<p style="text-align: center; width: 100%; color: #888;">No songs found in this category.</p>';
+                return;
             }
-        });
 
-        if (category === 'All Songs') {
-            renderSongs(songData);
-        } else {
-            const filtered = songData.filter(song => song.category === category);
-            renderSongs(filtered);
+            songs.forEach(song => {
+                const card = document.createElement('div');
+                card.className = 'song-card';
+
+                const genreText = song.genre ? `<p class="song-metadata">Genre: <span>${song.genre}</span></p>` : '';
+                const moodText = song.mood ? `<p class="song-metadata">Mood: <span>${song.mood}</span></p>` : '';
+                const descriptionText = song.description ? `<div class="song-description">${song.description}</div>` : '';
+                const categoryLabel = `<p class="song-metadata" style="margin-bottom:0;">Category: <span>${song.category || 'Uncategorized'}</span></p>`;
+
+                card.innerHTML = `
+                    <h3 class="song-title">${song.title}</h3>
+                    ${genreText}
+                    ${moodText}
+                    ${categoryLabel}
+                    ${descriptionText}
+                `;
+                songListElement.appendChild(card);
+            });
         }
-    }
 
-    function initJukebox() {
-        allCategories.forEach(category => {
-            const button = document.createElement('button');
-            button.className = 'category-button';
-            button.textContent = category;
-            button.addEventListener('click', () => filterSongs(category));
-            categoryNavElement.appendChild(button);
-        });
+        // Handles button clicks and filtering
+        function filterSongs(category) {
+            document.querySelectorAll('.category-button').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === category) {
+                    btn.classList.add('active');
+                }
+            });
 
-        filterSongs('All Songs');
-    }
+            if (category === 'All Songs') {
+                renderSongs(songData);
+            } else {
+                const filtered = songData.filter(song => song.category === category);
+                renderSongs(filtered);
+            }
+        }
 
-    initJukebox();
+        // Initialization function to build buttons and load default view
+        function initJukebox() {
+            allCategories.forEach(category => {
+                const button = document.createElement('button');
+                button.className = 'category-button';
+                button.textContent = category;
+                button.addEventListener('click', () => filterSongs(category));
+                categoryNavElement.appendChild(button);
+            });
 
-</script>
+            filterSongs('All Songs');
+        }
 
+        initJukebox();
+
+    </script>
 </body>
 </html>
