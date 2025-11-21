@@ -1,2286 +1,1073 @@
-[
-  {
-    "id": 1,
-    "title": "AUTHOR OF A LIE",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/author-of-a-lie-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235611415/",
-    "songbayPlayerUrl": "https://songbay.co/player/235611415",
-    "genre1": "Pop",
-    "genre2": "Hip-Hop",
-    "moodTone": "Anthemic, Confident, Determined, Energetic, Introspective",
-    "category": "Betrayal / Storytelling",
-    "tempo": "Mid Tempo",
-    "internalRating": "Placeholder",
-    "placementType": "Punchy Track / Commercial Sync",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals, Mixed",
-    "pov": "1st Person Female",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Bass Drum",
-      "Drum Kit",
-      "Guitar-Electric",
-      "Piano-Electric",
-      "Strings",
-      "Vocals-Backing Vocals",
-      "Vocals-spoken",
-      "Vocals-Rap",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "\"Author of a Lie\" is a punchy, rhythm-driven track focused on deceit, gaslighting, and the process of moving on.",
-    "shortDescription": "This rhythm-driven Pop/Hip-Hop fusion tracks the dismantling of a partner's false narrative. The song is highly confrontational and sarcastic, perfect for a vocalist ready to call out a 'master of deceit.'",
-    "longDescription": "\"Author of a Lie\" is a punchy, rhythm-driven track Genre: Pop, Hip-Hop, R&B. Mood: Confrontational, Frustrated, Empowered, Sarcastic, Up-Tempo. Keywords: Deceit, Lies, Gaslighting, Storytelling, Broken Record, Betrayal, Moving On, Self-Worth, Toxic Relationships.",
-    "snippetA": "You're the author of a lie, a master of deceit",
-    "snippetB": "And i'm tired of this story on repeat",
-    "commercialPotential": "High",
-    "keywords": [
-      "Deceit",
-      "Lies",
-      "Gaslighting",
-      "Storytelling",
-      "Broken Record",
-      "Betrayal",
-      "Moving On",
-      "Self-Worth",
-      "Toxic Relationships"
-    ],
-    "hashtags": [
-      "No More Lies",
-      "KellieLarson",
-      "PopHipHop",
-      "Deceit"
-    ],
-    "relatedSearchTerms": [
-      "Sarcastic",
-      "Confrontational",
-      "Up-Tempo",
-      "Empowered",
-      "Frustrated",
-      "R&B",
-      "HipHop",
-      "Revenge"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "[Verse 1]\nYou tell a story, i pick it apart\nYour timeline is whacked, you're playing a part\nSaid you were dancing on the beach in july\nand the tide was high and the moon was in the sky\nI'm like, \"wait a minute, that don't add up to me\"\nYour whole memory's a movie fantasy\nThe sun was out, the clouds were gray\nAnd you were playing video games all day\nBut when i start to get angry and vent\nThen you deflect, make up stuff and rewrite events\nYou rewrite the stars, you rewrite the past\nPlaying fast and loose, nothin's built to last\n\n[Chorus]\nYou're the author of a lie, a master of deceit\nAnd i'm tired of this story on repeat\n\n[Verse 2]\nYou sent a text at 2 am\nSaid you were home, busy working late again but\nI saw a picture tagged in front of a neon bar\nAn arm over a shoulder, in your co-workers car\nYa said \"oh, that wasn't me, that was a look-alike, babe!\"\nMan, your excuses are all just a big charade\nYou look me in the eye and sell me this line\nYou're a broken record, wasting my time\n\n[Pre-Chorus]\n'Cause when i start to get angry and vent\nThen you deflect, make up stuff and rewrite events\nYou rewrite the stars, you rewrite the past\nPlaying fast and loose, nothin's built to last\n\n[Repeat Chorus]\nYou're the author of a lie, a master of deceit\nAnd i'm tired of this story on repeat\n\n[Bridge]\nOne little lie leads to a house of glass\nTrying to fool me, but you're running out of gas\nI see the cracks, the holes in your alibi\nEvery time you open your mouth, boom, another lie\nI'm over it, i'm done, i'm walking away\nFrom this little game you're playing every single day\n\n[Outro]\nYeah, tired of this fiction, tired of the pretense\nNo more of your stories, they lack common sense\nRewrite this, lie, rewrite that, yeah, you rewrite events\nLooking real bad\n(I'm not buying it, no, not ever again)\n(Not ever again)\nfantasy world has come to an end\n(Fade out)",
-    "audioUrl": "/assets/music/author-of-a-lie-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$100.00",
-      "extendedLicensePrice": "$200.00",
-      "fullCopyrightPrice": "Not listed"
-    }
-  },
-  {
-    "id": 2,
-    "title": "BIG HARD NO",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/big-hard-no-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235609978/",
-    "songbayPlayerUrl": "https://songbay.co/player/235609978",
-    "genre1": "Country",
-    "genre2": "Contemporary Country",
-    "moodTone": "Anthemic, Confident, Determined, Introspective",
-    "category": "Empowerment / Defiance",
-    "tempo": "Mid Tempo",
-    "internalRating": "5/5",
-    "placementType": "Fiery Anthem / Potential Single",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person Female",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Bass-Electric",
-      "Drum Machine",
-      "Guitar-Electric",
-      "Piano-Electric",
-      "Vocals-Sung"
-    ],
-    "seoSnippet": "A fiery, high-energy pop track with a catchy hook, 'Big Hard No' is an unapologetic anthem of female empowerment and definitive independence.",
-    "shortDescription": "This compelling pop/country-rock crossover delivers a fierce, definitive response to a past lover, combining a story of betrayal with a triumphant declaration of self-worth. It's a relatable story of moving on, finding self-worth, and taking back control.",
-    "longDescription": "Looking for a fiery anthem of empowerment? This is it. \"Big Hard No\" is a high-energy pop track with an unapologetic message. It's perfect for a female vocalist ready to deliver a fierce, definitive response to a past lover who's trying to come back. The verses tell a story of betrayal and hurt, but the pre-chorus and powerful chorus build into a defiant declaration of independence. The structure is dynamic, moving from reflective verses to a powerful, memorable chorus, and the bridge adds a raw, emotional layer that makes the final rejection feel earned and cathartic. The outro delivers a final, triumphant blow, declaring a newfound strength and happiness. This track is ready for a polished production with driving drums, pulsating synths, and a commanding vocal performance that will have listeners singing along with their own 'big hard NO'.",
-    "snippetA": "That's a big hard NO, not playing your game!",
-    "snippetB": "My story's written, and you don't fit in it well.",
-    "commercialPotential": "High potential for placement in TV/Film as a dramatic soundtrack or for promotional sync in feminist/empowerment campaigns. The repeatable hook is built to be an instant earworm.",
-    "keywords": [
-      "empowerment",
-      "defiance",
-      "breakup anthem",
-      "fierce female vocal",
-      "mid tempo pop",
-      "country rock crossover",
-      "heartbreak"
-    ],
-    "hashtags": [
-      "#BigHardNo",
-      "#KellieLarson",
-      "#PopAnthem",
-      "#SelfWorth",
-      "#MovingOn"
-    ],
-    "relatedSearchTerms": [
-      "Fierce",
-      "Pop",
-      "Country-Rock",
-      "Breakup",
-      "Rejection",
-      "Triumphant",
-      "Feminist Anthem",
-      "Strong Vocal"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Verse 1:\nSo sad, heard she had enough\n\"Don't want ya anymore,\" and you're taking it rough\nThat's too bad, I know what you're going through\nYeah, it's tough\nNow you're here, with that sad look on your face\nTrying to get back in my good grace\nYou wanna apologize? Talkin' 'bout a second chance\nHonestly, I'm past that desperate dance\nLook, the answer on my face screams \"hell no,\"\nBut let me say it real clear before I go...\n\nChorus:\n'Cause that's a big hard NO, not playing your game!\nNothing you could whisper can ever douse this flame\nYou can't mess with my day, no way, not anymore!\nSo move on, I'm closing this door!\n\nVerse 2:\nYou think I'm dumb, said it yourself\n'Cause I didn't know you had someone else\nYou think I'm weak, no x-ray eyes\nCouldn't see through your disguise\nLemme tell ya, you're wrong\nMaybe I wasn't strong, but I knew it all along\nOohh, and still stayed. Hopin' it would change\nBut it didn't go my way\nLook, the answer on my face screams \"hell no,\"\nBut let me say it real clear before I go...\n\nRepeat Chorus:\n'Cause that's a big hard NO, not playing your game!\nNothing you could whisper can ever douse this flame\nYou can't mess with my day, no way, not anymore!\nSo time to move on, I've locked that door!\n\nBridge:\nYou say you're sorry, 'cause it happened to you, now you understand?\nBut I remember all the times I held your stiff, cold hand\nI got my reasons, etched within my soul\nYou left me shattered, lost all control\nFor someone else, you walked right out the door\nLeft me calling out your name, as I lay crying on the floor\nLook, the answer on my face screams \"hell no,\"\nBut let me say it real clear before I goooo...\n\nRepeat Chorus:\n'Cause that's a big hard NO, not playing your game!\nNothing you could ever say will douse this flame\nYou can't mess with me, no way, not anymore!\nSo get gone, I sealed this door!\n\nOutro:\nI'm happier now, more than I've ever been\nFound my own light, a peace from deep within\nMy desire in something bigger, and better, guiding me\nI'm glad I'm finally free\nThere's nothing you could say, no magic spell\nMy story's written, and you don't fit in it well\n(No, you don't fit in it well.)\nYeah, you're wrong, I'm not weak, I've grown strong\nHappier now, more than ever...\nThere's no us. Can't tempt me, devil, I love Jesus.",
-    "audioUrl": "/assets/music/big-hard-no-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$220.00",
-      "fullCopyrightPrice": "$6,000.00"
-    }
-  },
-  {
-    "id": 3,
-    "title": "BOOM BOOM BEAT",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/boom-boom-beat-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235611871/",
-    "songbayPlayerUrl": "https://songbay.co/player/235611871",
-    "genre1": "Pop",
-    "genre2": "General Dance",
-    "moodTone": "Bouncy, Fun, Romantic, Thoughtful",
-    "category": "Love / Reunion / Upbeat",
-    "tempo": "Mid Tempo",
-    "internalRating": "Placeholder",
-    "placementType": "Catchy Hook / Commercial Sync",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Gender Fluid (either/or)",
-    "pov": "1st Person (Ambiguous)",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Vocals-Backing Vocals",
-      "Vocals-spoken",
-      "Vocals-Rap",
-      "Vocals-Sung",
-      "Vocals-Choir",
-      "Voice-synth"
-    ],
-    "seoSnippet": "\"BOOM BOOM BEAT\" is an optimistic and high-energy pop song that celebrates the themes of love and reunion with a distinct, yodeled hook.",
-    "shortDescription": "An upbeat pop song with a strong, feel-good message centered on the anticipation of reuniting with a loved one. The infectious 'Boom, boom, boom' and joyful, yodeled ad-libs are lyrical hooks designed for a big, collective sing-along moment.",
-    "longDescription": "\"BOOM BOOM BEAT\" is an optimistic and high-energy pop song with a strong, feel-good message. The lyrical content is centered on the themes of love and reunion, creating a powerful and emotionally resonant anthem. The verses are built on intimate and relatable storytelling, focusing on personal experiences and emotional anticipation. The chorus is the focal point of the song, designed for a big, collective sing-along moment. The \"Boom, boom, boom\" and the joyful, yodeled ad-libs are lyrical hooks that are both playful and powerful, embodying a euphoric, celebratory spirit. The bridge provides a change of pace, offering a simple and heartfelt lyrical message (\"You are loved, you are worth it\") that reaffirms the song's core theme. This section brings a layer of deep emotion to the track.",
-    "snippetA": "Boom, boom, boom, da boom, boom, boom",
-    "snippetB": "Yodel-ay-hee-hoo!",
-    "commercialPotential": "High sync potential for romantic comedies, commercials, or motivational scenes.",
-    "keywords": [
-      "Pop",
-      "Love Song",
-      "Heartbeat",
-      "Romantic",
-      "Uplifting",
-      "Reunion",
-      "Modern Pop",
-      "Catchy"
-    ],
-    "hashtags": [
-      "#BoomBoomBeat",
-      "#KellieLarson",
-      "#HeartSong",
-      "#YodelPop"
-    ],
-    "relatedSearchTerms": [
-      "Yodeling",
-      "Euphoric",
-      "Celebratory",
-      "Longing",
-      "Alternative",
-      "Upbeat",
-      "Pop-Rock"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "(Verse 1)\nEphemeral moment, I should've stretched it out\nFelt you wanted the same, without any doubt\nBut all good things come to an end, it's true\nDoesn't mean you can't pick it up again, me and you\n\n(Pre-Chorus)\nSo I will wait till the morning, for our love to reunite\nWhen the darkness disperses, through the sliver of light\nDon't wanna be away for too long, 'cause I miss you, babe\nBut when we meet, my heart song plays a beautiful beat\n\n(Chorus)\nBoom, boom, boom, da boom, boom, boom\nYodel-ay-hee-hoo!\nBoom, boom, boom, da boom, boom, boom\nOh-lay-ee-dee!\n\n(Verse 2)\nCruisin' down Coast Highway, sun in the sky so bright\nThinking 'bout you, baby, everything feels right\nOn the beautiful beach with the pier's cool breeze\nWaiting for that moment, gonna bring me to my knee [in a forever way, you know!]\nYeah, the time apart is tough, but the reunion's sweet\nCounting down the hours 'til our two hearts meet.\n\n(Pre-Chorus)\nSo I will wait till the morning, for our love to reunite\nWhen the darkness disperses, through the sliver of light\nDon't wanna be away for too long, 'cause I miss you, babe\nBut when we meet, my heart song plays a beautiful beat\n\n(Chorus)\nBoom, boom, boom, da boom, boom, boom\nYodel-ay-hee-hoo!\nBoom, boom, boom, da boom, boom, boom\nOh-lay-ee-dee!\n\n(Bridge)\nYou are loved, you are worth it\nYou are somebody, you are amazing\nYou are funny, you are good for me\nI know this isn't wrong\nTogether, we always got that sweet song\nYou, me, you, me you!\nHo-la-dee-yo!\nOh-no-o-o-0!\nEe-odel-ay-oh!\n\n(Chorus)\nBoom, boom, boom, da boom, boom, boom\nYodel-ay-hee-hoo!\nBoom, boom, boom, da boom, boom, boom\nOh-lay-ee-dee!\n\n(Outro)\nFeeling like a lifetime apart, you have my heart and it plays [boom boom boom] a beautiful [boom da boom] beat\nYo-dee-lay eeeeeeiiiiiooooiooooiooiouii\nyo dee lay eeedeeoooooohhhhh",
-    "audioUrl": "/assets/music/boom-boom-beat-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$200.00",
-      "fullCopyrightPrice": "Not listed"
-    }
-  },
-  {
-    "id": 4,
-    "title": "BROKEN RECORD",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/broken-record-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235611340/",
-    "songbayPlayerUrl": "https://songbay.co/player/235611340",
-    "genre1": "Rock",
-    "genre2": "Alt-Rock",
-    "moodTone": "Anthemic, Bitter, Confident, Dramatic, Tension",
-    "category": "Self-Reclamation / Heartbreak",
-    "tempo": "Mid Tempo",
-    "internalRating": "Placeholder",
-    "placementType": "Visceral Anthem / Film/TV Placement",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Gender Fluid (either/or)",
-    "pov": "1st Person (Ambiguous)",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Band",
-      "Bass Drum",
-      "Drum Kit",
-      "Drums",
-      "Piano-Electric",
-      "Strings",
-      "Synthesizers",
-      "Turntables/DJ",
-      "Vocals-Backing Vocals",
-      "Vocals-spoken",
-      "Vocals-Rap",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "A raw and visceral anthem of self-reclamation, 'Broken Record' blends introspective, angsty lyrics with a powerful, driving alt-rock sound.",
-    "shortDescription": "This track moves from bitter defeat and social alienation, symbolized by the protagonist being 'the deceased,' to a defiant turning point where they finally break free from a one-sided relationship. The chorus is a hook-laden declaration of independence.",
-    "longDescription": "A raw and visceral anthem of self-reclamation. \"Broken Record\" is for fans of artists who blend introspective, angsty lyrics with a powerful, driving sound. The song builds from a place of bitter defeat and social alienation, symbolized by \"worthless ain't a feeling, it's the air I choose.\" The narrative moves from a state of being \"the deceased\" in a one-sided relationship to a defiant turning point, where the protagonist finally breaks free. The chorus is a hook-laden, emotionally charged declaration of independence. The bridge offers a moment of quiet reflection before the final, triumphant outburst. Perfect for a gritty, authentic female or male vocalist with a dynamic range, this track is suitable for film, TV, or album placement, capturing the universal struggle of finding strength after a devastating emotional blow.",
-    "snippetA": "I'm a broken record, skipping on repeat,",
-    "snippetB": "this ain't a cry for help, it's the bitter taste of defeat.",
-    "commercialPotential": "Excellent for dramatic film/TV placement due to its raw, authentic emotional arc.",
-    "keywords": [
-      "Alt-Rock",
-      "Indie",
-      "Heartbreak",
-      "Defiance",
-      "Self-Reclamation",
-      "Angst",
-      "Emotional"
-    ],
-    "hashtags": [
-      "#BrokenRecord",
-      "#KellieLarson",
-      "#AltRock",
-      "#BreakupAnthem"
-    ],
-    "relatedSearchTerms": [
-      "Visceral",
-      "Angsty",
-      "Defiant",
-      "Self-worth",
-      "Alienation",
-      "Emotional Anthem",
-      "Indie"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Yeah, a goddamn mess, that's the headline news,\nworthless ain't a feeling, it's the air I choose to breathe these days.\nThe table's set for one, it's true, surrounded by the ghosts of me and you.\nEveryone's eyes, like lasers, judging every flaw,\nbut middle fingers up, I ain't playing by their law.\n'Cause when I'm crashing down, they won't be sticking 'round,\ntoo busy walking off without a single sound.\nYou can't outrun the dark when your spirit's seized,\nalways the leaver, and I'm always the deceased in this damn game of hearts.\nSo tell me, who the hell cares?\nYour silence screams the answer in the empty air.\nYou got your shiny life, your perfect little scene,\nguess being around me just makes your picture unclean.\n'Cause I'm a broken record, skipping on repeat,\nthis ain't a cry for help, it's the bitter taste of defeat.\nYeah, my eyes are open now, the venom starts to fade,\na promise to myself I've made.\nSo watch me walk away, into the fading light,\ntonight's the night I break free and finally feel alright.\nUsed to crave a touch, a whisper in the dark,\nnow the silence is a comfort, leaving its own mark.\nSickening to be me?\nWell, baby, now you're free, no more heavy baggage clinging to your pedigree.\nThis ain't a threat, it's the truth I spill,\nthis one-sided chapter gives me a chill.\nYou can't outrun the dark when your spirit's seized,\nalways the leaver, and I'm always the deceased.\nIn this damn game of hearts.\nSo tell me, who the hell cares?\nYour silence screams the answer in the empty air.\n\n[Outro]\nYou got your shiny life, your perfect little scene,\nguess being around me just makes your picture unclean.\n'Cause I'm a broken record, skipping on repeat,\nthis ain't a cry for help, it's the bitter taste of defeat.\nYeah, my eyes are open wide now, and you treated me so foul.\nAnd I'm gonna keep a promise to myself I've made.\nI owe you nothing, my worthless debt is paid.\nTurning the page fast, leaving you in the dust and us in the past.\nSo watch me walk away, into the fading light,\ntonight's the night I break free, and finally feel alright.\nMaybe down the road, the dust will start to clear,\nmaybe this heavy load won't feel so severe.\nBut right here, right now, the only way to mend,\nis to walk away and let this bitter story end.\n'Cause I'm a broken record, skipping on repeat.\n'Cause I'm a broken record.\n'Cause I'm broken and your song is overplayed.",
-    "audioUrl": "/assets/music/broken-record-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$200.00",
-      "fullCopyrightPrice": "$5,000.00"
-    }
-  },
-  {
-    "id": 5,
-    "title": "CEO, NOT BABYSITTING TREE",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/ceo-not-babysitting-tree-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235608851/",
-    "songbayPlayerUrl": "https://songbay.co/player/235608851",
-    "genre1": "Pop",
-    "genre2": "R&B",
-    "moodTone": "Confident, Fun, Introspective, Playful",
-    "category": "Female Empowerment / Dating",
-    "tempo": "Fast",
-    "internalRating": "Placeholder",
-    "placementType": "Viral / Streaming Hit",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person Female",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Drum Kit",
-      "Keyboard/Synthesizer",
-      "Vocals-Sung"
-    ],
-    "seoSnippet": "\"Boys Boys Boys\" is a high-impact, pop/R&B fusion track and an empowering anthem for the modern woman who demands a capable man, not an immature boy.",
-    "shortDescription": "This track contrasts the frustrations of dating immature 'boys' with the desire for a sophisticated 'man,' featuring sharp wit and empowering directness. The infectious 'Boys, boys, boys' hook is instantly memorable.",
-    "longDescription": "\"Boys Boys Boys\" - An Empowering Anthem for the Modern Woman. This high-impact, pop/R&B fusion track offers a unique blend of sharp wit and empowering directness, making it an ideal acquisition for artists seeking a relatable and commercially viable hit. The song features a highly infectious \"Boys, boys, boys\" hook that's instantly memorable, ensuring strong replay value. Lyrically, it's a bold narrative contrasting the frustrations of dating immature \"boys\" with the desire for a sophisticated, capable \"man.\" The verses are rich with specific, humorous anecdotes that resonate deeply with contemporary dating experiences, offering ample opportunity for dynamic vocal delivery and engaging visuals. This track isn't just a song; it's a powerful statement of female independence and self-worth, poised to become an an them.",
-    "snippetA": "Honey, I'm a CEO, not a babysitting tree.",
-    "snippetB": "Please, take your tiny hearts and find some other toys.",
-    "commercialPotential": "Extremely high for commercial use and viral social media campaigns dueosithe catchy hook and relatable dating themes.",
-    "keywords": [
-      "Female Empowerment",
-      "Dating Frustration",
-      "Pop",
-      "R&B",
-      "Sassy",
-      "Confident"
-    ],
-    "hashtags": [
-      "#CEONotBabysittingTree",
-      "#BoysBoysBoys",
-      "#KellieLarson",
-      "#GirlBoss"
-    ],
-    "relatedSearchTerms": [
-      "Sassy",
-      "Witty",
-      "Humorous",
-      "Girl Boss",
-      "Independence",
-      "Contemporary Dating",
-      "Viral",
-      "Commercial"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "(Verse 1)\nI don't want no boys, I ain't got time for...\n(Sighs dramatically)\nSeriously, like, are you lost?\nDid your mom pack your lunch?\n'Cause I ain't got time for tantrums,\nwhat you have for breakfast, lemme guess: Captain Crunch?\nYou're texting me with emojis, and asking if I'm \"free\"?\nHoney, I'm a CEO, not a babysitting tree.\n\n(Chorus)\nBoys, boys, boys, boys, boys, boys, boys, boys, boys...\nPlease, take your tiny hearts and find some other toys.\nI need a man who knows his way, around a dinner date,\nNot someone asking to chill at my crib 'cause their parents are still awake at 8 PM.\nLike, seriously? When's your bedtime, dude?\n\n(Verse 2)\nYou're flexing muscles in your selfies, with a pouty little face,\nWhile I'm hustling, racking stacks, running a fast-paced race.\nYou think a \"like\" is foreplay?\nHoney, you're so wrong,\nI need a man who whispers sweet nothings, all night long.\nNot \"wyd?\" at 2 AM, with a picture of your feet.\nI'm busy dreaming of a man, with a sensual, sweet heat.\n\n(Chorus)\nBoys, boys, boys, boys, boys, boys, boys, boys, boys...\nPlease, take your tiny hearts and find some other toys.\nI need a man who knows his way, around a dinner date,\nHe opens all doors, turns the heater on to keep me warm, and calls if he's going to be late.\nNot a boy, who doesn't show, and sends a \"my bad\" the next day.\n\n(Bridge)\nA real man values my time,\nwhen he makes plans with me, he keeps them.\nYou're asking for my Snapchat?\nDarling, I used that back in the day.\nCall me over and hand me a controller?\nNo, I don't wanna play.\nI need a man who can fix a sink, and then fix me, you know?\nA little bit of dirty talk, and a really strong glow.\nI need a man who knows his wine, and knows just how to tease,\nNot someone asking \"are you sure?\" when I'm begging on my knees.\n\n(Chorus)\nBoys, boys, boys, boys, boys, boys, boys, boys, boys...\nPlease, take your tiny hearts and find some other toys.\nI need a man who knows his way, around a dinner date,\nHe opens all doors, turns the heater on to keep me warm, and calls if he's going to be late.\nNot a boy, who doesn't show, and sends a \"my bad\" the next day.\nYou're asking for my Snapchat?\nDarling, I used that back in the day.\nCall me over and hand me a controller?\nNo, I don't wanna play!\n\n(Outro)\nBoys, bless their little hearts, they just don't understand.\nI need a man who's got the goods, and a confident, strong hand.\nSo, boys, go play your video games, 'cause you're not in a real women's league.\nYou think the proper way to behave is to have a woman wait while you get to the next town so you can save?",
-    "audioUrl": "/assets/music/ceo-not-babysitting-tree-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$240.00",
-      "fullCopyrightPrice": "$5,000.00"
-    }
-  },
-  {
-    "id": 6,
-    "title": "CHILDREN OF WAR",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/children-of-war-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235609973/",
-    "songbayPlayerUrl": "https://songbay.co/player/235609973",
-    "genre1": "Folk",
-    "genre2": "Contemporary Folk",
-    "moodTone": "Anthemic, Dark, Haunting, Patriotic, Sad",
-    "category": "Social Commentary / Political",
-    "tempo": "Slow",
-    "internalRating": "Placeholder",
-    "placementType": "Dramatic Soundtrack / Narrative Ballad",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Choir, Spoken Word",
-    "pov": "3rd Person / Social Commentary",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Band",
-      "Guitar-Accoustic",
-      "Vocals-Backing Vocals",
-      "Vocals-spoken",
-      "Vocals-Rap",
-      "Vocals-Sung",
-      "Vocals-Choir",
-      "Voice-synth"
-    ],
-    "seoSnippet": "A powerful, urgent, and deeply moving lyric focused on the devastating impact of global conflict and political failure on the lives of innocent children.",
-    "shortDescription": "This song of social commentary uses raw, vivid imagery—running from rubble, dust-filled air—to build a heartbreaking narrative. The Chorus delivers a bold, cinematic challenge to the leadership that allows this tragedy to continue.",
-    "longDescription": "Title: Children of War. Theme: A powerful, urgent, and deeply moving lyric focused on the devastating impact of global conflict and political failure on the lives of innocent children. The verses use raw, vivid imagery-running from rubble, dust-filled air, and the loss of family-to build an intimate, heartbreaking narrative. The Chorus widens the scope, delivering a bold, cinematic challenge to the leadership that allows this tragedy to continue. This is a song of social commentary and emotional protest. Pace & Genre Suitability: This lyric structure and heavy theme make it highly suitable for a slow, powerful easy listening ballad or a mid-tempo narrative Country or Folk track. The pace must be deliberate and heavy, allowing the weight of the words and the dramatic tension of the story to fully resonate with the listener.",
-    "snippetA": "Run, little children! there's nothing left here!",
-    "snippetB": "When everyone has nukes and buttons are pressed / If everyone dies, then who cares who is best",
-    "commercialPotential": "High potential for dramatic documentaries, war films, or social impact campaigns.",
-    "keywords": [
-      "War",
-      "Children",
-      "Folk",
-      "Social Commentary",
-      "Political",
-      "Dramatic Soundtrack",
-      "Haunting"
-    ],
-    "hashtags": [
-      "#ChildrenOfWar",
-      "#KellieLarson",
-      "#FolkBallad",
-      "#PoliticalSong"
-    ],
-    "relatedSearchTerms": [
-      "Urgent",
-      "Devastating",
-      "Conflict",
-      "Protest",
-      "Narrative Ballad",
-      "Cinematic",
-      "Sorrow",
-      "Global Conflict"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "[Verse 1]\nThe laughter is now replaced by sad sounds you hear\nFor children caught in war, living in fear\nNo more bedtime stories, no soft songs to sing\nJust a terror on the face of every young thing\n\n[Hook]\nRun, little children! there's nothing left here!\nOnly shattered memories of what was once dear\n\n[Chorus]\nCause the talks have all failed, the peace is now gone\nNo way to go back, the fighting moves on\nWhen everyone has nukes and buttons are pressed\nIf everyone dies, then who cares who is best\n\n[Verse 2]\nNow small feet are running, from blasts they take flight\nIn broken-down houses, there is no light;\ndust-filled air turns the day into night\nThey used to run to their daddy, when he walked through the door\nNow running from rubble, from echoes of family no more\n\n[Hook]\nRun, little children, into the night!\nDon't look back and stay out of sight!\n\n[Repeat Chorus]\nCause the talks have all failed, the peace is now gone\nNo way to go back, the fighting moves on\nWhen everyone has nukes and buttons are pressed\nIf everyone dies, then who cares who is best\n\n[Bridge]\nA loud boom, a bright flash;\nsafe places all vanish, dreams turn to ash\nThe world holds its breath as some of those children take their last\nThe others' futures are broken, from a shadow now cast\nAll the innocent suffer, stuck in these fights\nCause leaders clash hard, and walk away as they turn out the lights\n\n[Outro]\nWhat about the children, so helpless and small?\nThe burden they will carry, as they watch it all fall\nWatch it all fall...\nWhat about the children?\nThe children... of war",
-    "audioUrl": "/assets/music/children-of-war-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$250.00",
-      "fullCopyrightPrice": "Not listed"
-    }
-  },
-  {
-    "id": 7,
-    "title": "CONCRETE UNDER THE FEET",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "Placeholder",
-    "coverImageUrl": "/assets/covers/concrete-under-the-feet-cover-art.jpg",
-    "songbayWebpageUrl": "Placeholder",
-    "songbayPlayerUrl": "Placeholder",
-    "genre1": "Placeholder",
-    "genre2": "Placeholder",
-    "moodTone": "Placeholder",
-    "category": "General / Placeholder",
-    "tempo": "Placeholder",
-    "internalRating": "Placeholder",
-    "placementType": "Placeholder",
-    "keySignature": "N/A",
-    "timeSignature": "N/A",
-    "vocalType": "Placeholder",
-    "pov": "Placeholder",
-    "fileType": "Placeholder",
-    "instrumentation": [],
-    "seoSnippet": "Placeholder",
-    "shortDescription": "Placeholder",
-    "longDescription": "Placeholder",
-    "snippetA": "Placeholder",
-    "snippetB": "Placeholder",
-    "commercialPotential": "Placeholder",
-    "keywords": [],
-    "hashtags": [],
-    "relatedSearchTerms": [],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Placeholder",
-    "audioUrl": "/assets/music/concrete-under-the-feet-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "Placeholder",
-      "coverSongPrice": "Placeholder",
-      "standardLicensePrice": "Placeholder",
-      "extendedLicensePrice": "Placeholder",
-      "fullCopyrightPrice": "Placeholder"
-    }
-  },
-  {
-    "id": 8,
-    "title": "DON'T BE JELLY",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/dont-be-jelly-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235610343/",
-    "songbayPlayerUrl": "https://songbay.co/player/235610343",
-    "genre1": "Country",
-    "genre2": "Country-Dance",
-    "moodTone": "Anthemic, Dancing, Fun, Lively, Playful",
-    "category": "Defiance / Dance / Viral",
-    "tempo": "Fast",
-    "internalRating": "Placeholder",
-    "placementType": "Viral Dance / Chart Hit",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person Female",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Vocals-spoken",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "A defiant anthem of fierce independence, 'Don't Be Jelly' masterfully blends pop swagger with a country-dance kick and features built-in viral choreography.",
-    "shortDescription": "This high-octane track is a call to action for anyone living life on their own terms, boldly rejecting drama and insecurity. The true genius lies in its simple, memorable dance guide: 'hips left, hips right, stomp kick slide'.",
-    "longDescription": "The true genius of \"Don't Be Jelly\" lies in its built-in viral choreography. The lyrics are a direct dance guide, featuring simple, memorable moves like \"hips left, hips right, stomp kick slide\" and \"knees in, kick back, hips attack.\" This clever design makes it easy for listeners to create and share their own dance videos, perfectly positioning the song for platforms like Tik Tok and Instagram Reels. This isn't just a song; it's a defiant anthem of fierce independence, masterfully blending pop swagger with a country-dance kick. The high-octane track is more than a beat; it's a call to action for anyone living life on their own terms. It boldly rejects drama and insecurity, packaging its message in a track ready to dominate the charts and the dance floor.",
-    "snippetA": "Don't be all jelly. (Jelly! Jelly!)",
-    "snippetB": "Baby, I'm a wild, untamed machine. Yee Haw!",
-    "commercialPotential": "Extremely high commercial potential, designed as a viral dance hit for social media platforms.",
-    "keywords": [
-      "country rock",
-      "linedance",
-      "confident",
-      "dontbejelly",
-      "viraldance",
-      "anthem",
-      "pop"
-    ],
-    "hashtags": [
-      "#Don'tBeJelly",
-      "#KellieLarson",
-      "#ViralDance",
-      "#CountryPop"
-    ],
-    "relatedSearchTerms": [
-      "Sassy",
-      "Witty",
-      "Humorous",
-      "Girl Boss",
-      "Independence",
-      "Contemporary Dating",
-      "Viral",
-      "Commercial",
-      "High-octane",
-      "Party",
-      "Uptempo"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "(Verse 1)\nWait what?\nHold me down?\nNah!\nCan't hold me down, no one can slow me down.\nI don't even walk slow, I stay running around.\nNo time for drama, no rodeo clowns.\nI'm having way too much fun on my own now. Woo!\nGotta keep up if you want something more.\nJust know I don't do detours.\nWanna be with me?\n(shhhh) Ready?\nThis is how.\n\n(Pre-Chorus)\nDon't be all jelly.\n(Jelly! Jelly!)\nGot no room for that petty scene.\nDon't assume I'm your property.\n(Nope!)\nBaby, I'm a wild, untamed machine.\nYee Haw!\nAnd here's a disclaimer, I don't come with a guarantee\nAnd this ain't no simple trade.\n(Yep!)\nI'm a high-stakes game, a move you gotta make,\nNot a promise easily laid.\n(All in)\n\n(Chorus)\nOh, and I need to mention,\nI crave attention, real devotion,\nSo no hesitation, throw affection.\nWith true intention, it'll be a sweet reflection\nOf our love's perfection.\nAnd I'll be your ride or die, your deepest inspiration,\nNo temptation, you're my cowboy, no other flirtations.\n\n(Dance Break/Instrumental)\nHips left, hips right, stomp, kick, slide.\nKnees in, kick back, smack, make hips attack!\n\n(Verse 2)\nDon't try and stop me or tell me no.\n(Na-a!)\nYou ain't my daddy, (I'm grown) and this ain't some petty show.\nThis ain't a suggestion, it's the only way we go.\n(Let's roll!)\nDon't disrespect me or treat me bad, (Don't do it!)\n'Cause my love and loyalty's the best thing you'll wish you still had.\n(C-YA!)\nDon't ever cross that line or forget who's standing right next to you.\n(ALL YOU NEED) ME.\nDon't yell or scream or not let me talk.\n(Hater!)\n'Cause I've got legs and away I'll walk.\n(Later!)\n\n(Pre-Chorus)\nDon't be all jelly.\n(Jelly!)\nThat insecure vibe just brings me down.\nThey look my way 'cause I'm the baddest babe on both sides of town,\nQueen in all domains.\n(So expect it)\nI don't tolerate drama or play these childish games.\n(I'M GROWN)\n\n(Chorus)\nOh, did I forget to mention,\nThat I crave attention, real devotion,\nSo no hesitation, throw affection.\nWith true intention, it'll be a sweet reflection\nOf our love's perfection.\nAnd I'll be your ride or die, your deepest inspiration,\nNo temptation, you're my cowboy, no other flirtations.\n\n(Bridge)\nYou and me create synergy.\nNo chains on this body, baby, just pure energy.\nI live my truth, unfreaking-apologetically.\nEvery move a statement, a raw symphony.\nSo if you're stepping to me, know what you're stepping into.\nLadies!\n\n(Outro/Dance Break)\nHips left, then hips right.\nStomp, kick and then slide.\nKnees in, kick back, smack, make hips attack.\nLeft, right, left.\nThen right, left, right.\nTake a step back and shoulders fight.\nTo the left, now to the right, throw your boots up high.\nSlap the thigh!\nNod to the left and then to the right.\nFront step, full turn.\nWink over your shoulder.\nNice!",
-    "audioUrl": "/assets/music/dont-be-jelly-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$250.00",
-      "fullCopyrightPrice": "$8,000.00"
-    }
-  },
-  {
-    "id": 9,
-    "title": "EPHEMERAL MOMENT",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/ephemeral-moment-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235610553/",
-    "songbayPlayerUrl": "https://songbay.co/player/235610553",
-    "genre1": "Alternative and Punk",
-    "genre2": "Alternative Rock",
-    "moodTone": "Determined, Dreamy, Hard, Playful, Romantic",
-    "category": "Love / Longing / Upbeat",
-    "tempo": "Fast",
-    "internalRating": "Placeholder",
-    "placementType": "Romantic Comedy Soundtrack / Advertisement",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Gender Fluid (either/or)",
-    "pov": "1st Person (Ambiguous)",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "\"EPHEMERAL MOMENT\" is a heartfelt, pop-driven yodeling love song that captures the bittersweet feeling of being apart from the one you love and the anticipation of reunion.",
-    "shortDescription": "This upbeat track is a reminder that even when things end, they can be picked up again, and that true love is always worth the wait. Its rhythm mirrors the heartbeat of a person in love, building to a crescendo of joyous beats.",
-    "longDescription": "\"EPHEMERAL MOMENT\" is a heartfelt, pop-driven yodeling love song that captures the bittersweet feeling of being apart from the one you love. The lyrics express a deep longing and the hopeful anticipation of being reunited. It's the moment of waiting for the sun to rise, knowing that with the new day comes the return of a special connection. The song's rhythm mirrors the heartbeat of a person in love, building with each line to a crescendo of joyous beats. It's a reminder that even when things end, they can be picked up again, and that true love is always worth the wait. With its mix of lyrical vulnerability and energetic vocalizations (\"boom boom boom da boom boom boom\"), this track is perfect for a romantic comedy soundtrack, a heartfelt advertisement, or for any scene that needs to convey passion, longing, and the beautiful rhythm of two hearts reuniting.",
-    "snippetA": "Ephemeral moment, I should've stretched it out.",
-    "snippetB": "I don't want to be away for too long 'cause I miss you,",
-    "commercialPotential": "High sync potential for romantic comedies and advertisements.",
-    "keywords": [
-      "Pop",
-      "Love Song",
-      "Heartbeat",
-      "Romantic",
-      "Uplifting",
-      "Longing",
-      "Hopeful",
-      "Reunion"
-    ],
-    "hashtags": [
-      "#EphemeralMoment",
-      "#KellieLarson",
-      "#HeartSong",
-      "#YodelPop"
-    ],
-    "relatedSearchTerms": [
-      "Yodeling",
-      "Euphoric",
-      "Upbeat",
-      "Bittersweet",
-      "Alternative",
-      "Long Distance",
-      "Hopeful",
-      "Pop-Rock"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "(Verse 1)\nEphemeral moment, I should've stretched it out.\nI felt you wanted the same, without any doubt.\nBut all good things come to an end,\nBut it doesn't mean you can't pick it up again.\nSo I will wait 'til the morning for our love to reunite,\nWhen the darkness disperses through the sliver of light.\n\n(Chorus)\nI don't want to be away for too long 'cause I miss you,\nBut when we meet, my heart plays a beautiful beat.\nBoom boom boom da boom boom boom,\nAh-yo-delay-ee-hoo!\nBoom boom boom da boom boom boom,\nYo-de-LAY-ee-oooh-lay.\n\n(Bridge)\nI want you to know that:\nYou are loved,\nYou are worth it,\nYou are amazing,\nYou are mine,\nYooouuuuu are mmmmiiinnnee!\nYo de leee eee ooohhh, boom boom boom,\nYo da lee eeeee eeeee da boom boom boom!\nI don't want to be away from you longer than I have to.\nSo I will wait for day, so I can say how much I missed you,\nJust so I can hear you say that you missed me too.\nAll mine, da boom boom boom.\n\n(Chorus)\nI don't want to be away for too long 'cause I miss you,\nBut when we meet, my heart plays a beautiful beat.\nBoom boom boom da boom boom boom,\nAh-yo-delay-ee-hoo!\nBoom boom boom da boom boom boom,\nYo-de-LAY-ee-oooh-oooh.\nMy love, oooh oooh.\n\n(Outro)\nMy heart plays our love song.\nYo-de-LAY-ee-oooh-oooh boom boom boom da,\nMy love, oooh oooh da boom boom boom.",
-    "audioUrl": "/assets/music/ephemeral-moment-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$250.00",
-      "fullCopyrightPrice": "$6,000.00"
-    }
-  },
-  {
-    "id": 10,
-    "title": "ETCHED IN EVERY SPACE",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/etched-in-every-space-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235613148/",
-    "songbayPlayerUrl": "https://songbay.co/player/235613148",
-    "genre1": "Easy Listening",
-    "genre2": "Pop Ballad",
-    "moodTone": "Introspective, Mournful, Sad",
-    "category": "Grief / Heartbreak Ballad",
-    "tempo": "Slow",
-    "internalRating": "Placeholder",
-    "placementType": "Soulful Ballad / Career Defining Track",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person Female",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Piano-Grand",
-      "Vocals-Backing Vocals",
-      "Vocals-spoken",
-      "Vocals-Rap",
-      "Vocals-Chant",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "A profoundly raw and devastating lyric detailing the suffocating pain of grief after an irreplaceable loss, trapped in an empty shared home.",
-    "shortDescription": "This power ballad contrasts unbearable present isolation with intensely personal, sweet memories, centered on the crushing hook: 'Now you're gone, and I'll never be the same.'",
-    "longDescription": "A profoundly raw and devastating lyric detailing the suffocating pain of grief after an irreplaceable loss. The narrator is trapped in their shared home, a place now filled with \"fear\" and a \"sea of tears,\" desperately calling out for a love that is forever gone. The power of these lyrics lies in the contrast between unbearable present isolation and the sweet, intensely personal memories: a loved one's \"stupid face,\" silly moments, and the profound comfort of their presence. The chorus delivers a memorable hook, centered on the crushing realization: \"Now you're gone, and I'll never be the same.\" The Bridge raises the stakes dramatically, describing the emotional trauma as a physical experience—a \"fire in my veins\" and a reality that \"craches\" into a \"desert of sinking sand.\"",
-    "snippetA": "Oh, i miss your stupid face! it's etched in every space",
-    "snippetB": "When i called out your name, you always came, my steady flame",
-    "commercialPotential": "High potential as a soulful, career-defining ballad for a major artist, with strong sync appeal for emotional dramas.",
-    "keywords": [
-      "Grief",
-      "Loss",
-      "Ballad",
-      "Heartbreak",
-      "Anxiety",
-      "Emotional",
-      "Pop"
-    ],
-    "hashtags": [
-      "#EtchedInEverySpace",
-      "#KellieLarson",
-      "#GriefBallad",
-      "#LoveAndLoss"
-    ],
-    "relatedSearchTerms": [
-      "Devastating",
-      "Raw",
-      "Intense",
-      "Profound Absence",
-      "Isolation",
-      "Anxiety",
-      "Mourning",
-      "Death"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "[Verse 1]\nWhere did you go\nWhy did you leave me here\nIn our home, i'm just breathing in fear\nCome back, please, it's so lonely, i wish you were near\nI'm all alone, drowning in a sea of tears\n\n[Pre-Chorus 1]\nEvery memory, a vivid scene, playing in my head\nOf laughter, whispers, and all the sweet words we said\nYour smile, your laugh, your stories that went on for days\nI loved how silly you were, lost in a sleepy daze\n\n[Chorus 1]\nOh, i miss your stupid face! it's etched in every space\nWhen i called out your name, you always came, my steady flame\nI loved when you listened intensely to every word i'd say\nAnd when you'd kiss my shoulder, the whole world would melt away\n\n[Verse 2]\nNow you're gone, and i'll never be the same\nAll this stress, this anxiety, a fire in my veins\nMy heart feels shattered, just calling out your name\nI'll never be able to touch you again\n\n[Pre-Chorus 2]\nEvery memory, a vivid scene, playing in my head\nOf laughter, whispers, and all the sweet words we said\nYour smile, your laugh, your stories that went on for days\nI loved how silly you were, lost in a sleepy daze\n\n[Chorus 2]\nOh, i miss your stupid face! it's etched in every space\nWhen i called out your name, you always came, my steady flame\nI loved when you listened intensely to every word i'd say\nAnd when you'd kiss my shoulder, the whole world would melt away\n\n[Bridge]\nSometimes i swear you're beside me, and i reach out my hand-but there's only air\nMy reality crashes, a desert of sinking sand\nHow do i move forward when i can't even stand\nWhen every dream i have was built with you in this land\n\n[Chorus 3]\nOh, i miss your stupid face! it's etched in every space\nWhen i called out your name, you always came, my steady flame\nI loved when you listened intensely to every word i'd say\nAnd when you'd kiss my shoulder, the whole world would melt away\n\n[Outro]\nYou're gone. and i'm still here\nIn our home, filled with my tears\nAlone... alone...",
-    "audioUrl": "/assets/music/etched-in-every-space-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$150.00",
-      "extendedLicensePrice": "$250.00",
-      "fullCopyrightPrice": "Not listed"
-    }
-  },
-  {
-    "id": 11,
-    "title": "TAKE THAT FIRST STEP",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "Placeholder",
-    "coverImageUrl": "/assets/covers/take-that-first-step-cover-art.jpg",
-    "songbayWebpageUrl": "Placeholder",
-    "songbayPlayerUrl": "Placeholder",
-    "genre1": "Placeholder",
-    "genre2": "Placeholder",
-    "moodTone": "Placeholder",
-    "category": "General / Placeholder",
-    "tempo": "Placeholder",
-    "internalRating": "Placeholder",
-    "placementType": "Placeholder",
-    "keySignature": "N/A",
-    "timeSignature": "N/A",
-    "vocalType": "Placeholder",
-    "pov": "Placeholder",
-    "fileType": "Placeholder",
-    "instrumentation": [],
-    "seoSnippet": "Placeholder",
-    "shortDescription": "Placeholder",
-    "longDescription": "Placeholder",
-    "snippetA": "Placeholder",
-    "snippetB": "Placeholder",
-    "commercialPotential": "Placeholder",
-    "keywords": [],
-    "hashtags": [],
-    "relatedSearchTerms": [],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Placeholder",
-    "audioUrl": "/assets/music/take-that-first-step-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "Placeholder",
-      "coverSongPrice": "Placeholder",
-      "standardLicensePrice": "Placeholder",
-      "extendedLicensePrice": "Placeholder",
-      "fullCopyrightPrice": "Placeholder"
-    }
-  },
-  {
-    "id": 12,
-    "title": "FURY (I'M THE MONSTER)",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/fury-i-m-the-monster-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235612789/",
-    "songbayPlayerUrl": "https://songbay.co/player/235612789",
-    "genre1": "Alternative and Punk",
-    "genre2": "Pop-Punk",
-    "moodTone": "Angry, Dramatic, Hard, Heavy, Introspective",
-    "category": "Abuse / Escape / Revenge",
-    "tempo": "Fast",
-    "internalRating": "Placeholder",
-    "placementType": "Crunk Punk / Cinematic Tension",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person Female",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Drum Kit",
-      "Drums",
-      "Guitar-Electric",
-      "Keyboard/Synthesizer",
-      "Piano-Electric",
-      "Strings",
-      "Violin",
-      "Vocals-Backing Vocals",
-      "Vocals-spoken",
-      "Vocals-Rap",
-      "Vocals-Chant",
-      "Voice-synth"
-    ],
-    "seoSnippet": "This crunk punk song is an unyielding narrative that chronicles the journey of a person trapped in a domestically abusive relationship, capturing profound fear and desperation.",
-    "shortDescription": "The lyrics vividly depict physical and emotional torment, leading to a turning point where the protagonist resolves to break free and escape the violence. It is a powerful, dark narrative of self-rescue.",
-    "longDescription": "This crunk punk song, titled \"Fury,\" is an unyielding narrative that chronicles the journey of a person trapped in a domestically abusive relationship. The lyrics begin with a vivid depiction of physical and emotional torment, capturing the profound fear and desperation of the person. The song details the cycle of abuse, false apologies, and the crushing realization that the apologies are empty. The protagonist resolves to leave, declaring that karma will find the abuser. It culminates in a powerful moment of self-liberation and defiance: 'I'm about to roll, rooooll right over your body and run! ruuuun right out the door!'",
-    "snippetA": "Your fists, a never-ending show",
-    "snippetB": "Oh, the fury! please save me! help me, hurry!!!",
-    "commercialPotential": "High for dramatic scenes in TV/Film focusing on tension, escape, and consequence.",
-    "keywords": [
-      "Abuse",
-      "Escape",
-      "Revenge",
-      "Crunk Punk",
-      "Heavy",
-      "Dramatic",
-      "Heartbreak"
-    ],
-    "hashtags": [
-      "#Fury",
-      "#ImTheMonster",
-      "#KellieLarson",
-      "#PopPunk"
-    ],
-    "relatedSearchTerms": [
-      "Violence",
-      "Domestic Abuse",
-      "Intense",
-      "Escapism",
-      "Dark",
-      "Heavy Guitars",
-      "Cinematic Tension",
-      "Karma"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "[Verse 1]\nYour fists, a never-ending show\nEvery scream, every insult, and having to fill so many holes in the walls after you unload\nYour fists, every blow echoes in my mind\nAnd the violence is witnessed on my backside\nI need to do something, yeah\nBut i don't know where to start\nI've gotta leave soon, 'cause one of us might not make it if i don't depart\nYou broke me down, ripped my whole world apart\n\n[Pre-Chorus]\nThe blood, the bruises, the tears i cry-\nIt's always this way\nCan you tell me why?! tell me why?! why?!\nYou say you're sorry, but how can that be\nHow can you be sorry yet treat me so horribly\nTell me!!\n\n[Chorus]\nYou pierce me through the flesh, you pierce me through the heart\nYou say you love me after you hit\nThen you always throw another fit!\nOh, the fury! please save me! help me, hurry!!!\n\n[Verse 2]\nI'm so damn sick of these attacks\nJust know that if i can't escape this\nOne of these days, karma will get you back\nI'm sorry, i do love you, but you hurt me\nI don't know what i'm sorry for\n'Cause you're the one who hurt meeee!\n\n[Pre-Chorus 2]\nThe blood, the bruises, the tears i cry-\nIt's always this way\nI know exactly why now\nYou swear you love me, but how can that be\nHow can you treat someone you love so horribly\n\n[Chorus 2]\nGotta help me, do something, i need to dart\nDon't pierce me through the flesh, don't pierce me through the heart\nYou say you're sorry after you hit\nThen you just throw another fit\nOh, no more fits of fury! i'll save me! it's you who should be worried\n\n[Bridge]\nI'm not your property\nI'm done with your control\nIt's time to get out of this\nIt's time to go\nGo. go. goooo\nI'm about to roll, rooooll right over your body and run! ruuuun right out the door!\nYou- you! should be the one that's sorry\nYou won't be able to hurt me, no, not anymore!\n\n[Outro]\nDon't pierce me through the flesh or through the heart\nI won't be alone with you\nI'm playing it safe trying to be smart\nYou say you love me after you hit\nI don't believe you. that's straight bullshit\nI'm goddamn sick of these attacks!\nIf not me, then my girl karma will get you back\nGoodbyyyye\nI loved you, but you're done\nYou can't hurt me!",
-    "audioUrl": "/assets/music/fury-i-m-the-monster-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$200.00",
-      "fullCopyrightPrice": "Not listed"
-    }
-  },
-  {
-    "id": 13,
-    "title": "GENX 80s ANTHEM",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "Placeholder",
-    "coverImageUrl": "/assets/covers/genx-80s-anthem-cover-art.jpg",
-    "songbayWebpageUrl": "Placeholder",
-    "songbayPlayerUrl": "Placeholder",
-    "genre1": "Placeholder",
-    "genre2": "Placeholder",
-    "moodTone": "Placeholder",
-    "category": "General / Placeholder",
-    "tempo": "Placeholder",
-    "internalRating": "Placeholder",
-    "placementType": "Placeholder",
-    "keySignature": "N/A",
-    "timeSignature": "N/A",
-    "vocalType": "Placeholder",
-    "pov": "Placeholder",
-    "fileType": "Placeholder",
-    "instrumentation": [],
-    "seoSnippet": "Placeholder",
-    "shortDescription": "Placeholder",
-    "longDescription": "Placeholder",
-    "snippetA": "Placeholder",
-    "snippetB": "Placeholder",
-    "commercialPotential": "Placeholder",
-    "keywords": [],
-    "hashtags": [],
-    "relatedSearchTerms": [],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Placeholder",
-    "audioUrl": "/assets/music/genx-80s-anthem-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "Placeholder",
-      "coverSongPrice": "Placeholder",
-      "standardLicensePrice": "Placeholder",
-      "extendedLicensePrice": "Placeholder",
-      "fullCopyrightPrice": "Placeholder"
-    }
-  },
-  {
-    "id": 14,
-    "title": "HEARTBREAK AND TROUBLE",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/heartbreak-and-trouble-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235611137/",
-    "songbayPlayerUrl": "https://songbay.co/player/235611137",
-    "genre1": "Pop",
-    "genre2": "R&B",
-    "moodTone": "Anthemic, Introspective, Playful, Romantic",
-    "category": "Toxic Relationship / Longing",
-    "tempo": "Mid Tempo",
-    "internalRating": "Placeholder",
-    "placementType": "R&B Pop / Relatable Heartbreak",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Gender Fluid (either/or)",
-    "pov": "1st Person (Ambiguous)",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Vocals-spoken",
-      "Vocals-Rap",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "\"Hubba Bubba\" is a deeply personal and raw song that captures the emotional turmoil of a one-sided, on-again, off-again relationship.",
-    "shortDescription": "The lyrics use the central metaphor of a transient, unreliable partner likened to the fleeting nature of chewing gum, 'popping in and out like Hubba Bubba,' leaving the narrator in a bubble of sadness.",
-    "longDescription": "\"Hubba Bubba\" is a deeply personal and raw song that captures the emotional turmoil of a one-sided, on-again, off-again relationship. The narrator's lyrics paint a vivid picture of a partner who is transient and unreliable, likened to the fleeting nature of chewing gum-\"popping in and out like Hubba Bubba.\" This central metaphor, along with the repeated imagery of a \"bubble,\" symbolizes the narrator's emotional isolation and the fragile, temporary nature of their connection. The mundane details—the theft of two cigarettes, gum, and a lighter—ground the song in a relatable reality, transforming a universal feeling of heartbreak into a tangible, personal betrayal. As the song progresses, the narrator labels the partner as \"heartbreak and trouble,\" a \"thief of my peace, a thief of my heart.\"",
-    "snippetA": "You pop in and out like Hubba Bubba.",
-    "snippetB": "You're a thief of my peace, a thief of my heart.",
-    "commercialPotential": "Good for relatable R&B/Pop playlists and themes of relationship drama.",
-    "keywords": [
-      "Heartbreak",
-      "Toxic Relationships",
-      "Hubba Bubba",
-      "Pop",
-      "Longing",
-      "R&B"
-    ],
-    "hashtags": [
-      "#HeartbreakAndTrouble",
-      "#HubbaBubbaSong",
-      "#KellieLarson",
-      "#ToxicLove"
-    ],
-    "relatedSearchTerms": [
-      "Hubba Bubba",
-      "On-again Off-again",
-      "Unreliable Partner",
-      "Emotional Turmoil",
-      "Relatable Drama",
-      "Fleeting",
-      "Confrontation"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "You pop in and out like Hubba Bubba.\nMy heart strung out like, \"Why do I love ya?\"\nI turn around and you're nothing again.\nYou stayed a minute, then you dipped, my friend.\nWhat kinda relationship is this?\nYou're trouble.\nAlways leave me with nothing, making me struggle.\nYou took my last two cigs and some gum, uh-huh.\nI don't know why I ever loved you, son.\n'Cause all you are is heartbreak and trouble.\nI must really love nothing, I'm stuck in a bubble.\nBlowing bubbles alone, no fire to light my way,\n'Cause you stole that too, and now I've got to say:\nNo consideration for me from the start.\nYou're a thief of my peace, a thief of my heart.\nYou're popping in and out, boy, you're trouble.\nLeft me with no cigs and Hubba Bubba.\nAlone again, trapped in a bubble of sadness,\nWondering where you're bouncing, it's madness.\nWho are you with, sitting in their place?\nYou stole my lighter, left me with no grace.\nChewing on this old gum, I'm about to fold.\nThis tired story is getting too old.\nYou make me wanna spit the gum out and shout.\nI'm growing tired of trying to figure this out.\nYou're a ghost, a whisper, a fleeting thing,\nAnd all you do is leave the same sting.\n\n[Outro]\nCome back!\nAnd don't forget to bring my damn lighter back.\nJust come back...\nAnd don't forget...\nMy lighter...\nYeah...\nJust come back.",
-    "audioUrl": "/assets/music/heartbreak-and-trouble-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$80.00",
-      "extendedLicensePrice": "$140.00",
-      "fullCopyrightPrice": "$4,000.00"
-    }
-  },
-  {
-    "id": 15,
-    "title": "HIT THE ROAD",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/hit-the-road-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235611349/",
-    "songbayPlayerUrl": "https://songbay.co/player/235611349",
-    "genre1": "Pop",
-    "genre2": "R&B",
-    "moodTone": "Anthemic, Confident, Introspective, Revenge",
-    "category": "Breakup / Self-Liberation",
-    "tempo": "Mid Tempo",
-    "internalRating": "Placeholder",
-    "placementType": "Breakup Anthem / Empowering Commercial",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person Female",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Drum Kit",
-      "Keyboard/Synthesizer",
-      "Piano-Electric",
-      "Synthesizers",
-      "Vocals-Backing Vocals",
-      "Vocals-spoken",
-      "Vocals-Rap",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "'Hit the Road' is a powerful Pop/R&B anthem of self-liberation and moving on from a toxic relationship with raw and direct lyrics.",
-    "shortDescription": "This cathartic track details the narrator's journey from being manipulated to finally finding the strength to walk away for good. The chorus is a commanding message: a final, definitive goodbye.",
-    "longDescription": "\"Hit the Road\" Genre/Mood: Pop/R&B, Confident. \"Hit the Road\" is a powerful anthem of self-liberation and moving on from a toxic relationship. The song details the narrator's journey from being manipulated and hurt to finally finding the strength to walk away for good. The lyrics are raw and direct, detailing the lies, emotional turmoil, and eventual realization that the relationship was damaging. The narrator expresses a sense of empowerment and relief, celebrating the end of a negative chapter and the dawn of a new, brighter one. The chorus, with its direct and commanding message, serves as the core of the song's theme: a final, definitive goodbye. The verses and bridge reinforce this sentiment, highlighting the narrator's firm resolve not to be fooled again and revealing that they have already taken steps to sever all ties. This is a cathartic track for anyone ready to close the door on a hurtful past.",
-    "snippetA": "Don't stop, don't look back,",
-    "snippetB": "Hit the road, Jack, I don't want you back!",
-    "commercialPotential": "Excellent for scenes of triumph, transition, or breakup anthems in film/TV.",
-    "keywords": [
-      "Pop",
-      "R&B",
-      "Confident",
-      "Breakup",
-      "Anthem",
-      "Revenge",
-      "Self-Liberation"
-    ],
-    "hashtags": [
-      "#HitTheRoad",
-      "#KellieLarson",
-      "#PopAnthem",
-      "#GetGone"
-    ],
-    "relatedSearchTerms": [
-      "Empowerment",
-      "Triumph",
-      "Final Goodbye",
-      "Toxic Relationship",
-      "Moving On",
-      "Cathartic",
-      "Raw Lyrics"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "(Verse 1)\nAll those nights you laid in my bed,\nAll those times you messed with my head.\nYou told me lie after lie,\nAnd yeah, I cried a lot back then, but my tears are now dry.\n\n(Pre-Chorus)\nI'm not gonna yell or spend hours tryna get you out the door.\nI've been that fool so many times before.\nYou did me foul, you did me wrong, so I moved on.\nTime for you to get gone.\n\n(Chorus)\nDon't stop, don't look back,\nHit the road, Jack,\nI don't want you back!\n\n(Verse 2)\nMy friends never liked you, they all want you gone.\nYou did me so dirty, boy, you did me so wrong.\nI was so blinded, so into you, I lost myself, it's true.\nThank God you're gone, 'cause they say it's darkest before the dawn.\n\n(Pre-Chorus)\nI'm not gonna tell you off, or spend hours tryna get you out my door.\nI've been that fool so many times before.\nYou're shady as hell, so I moved on, done with being treated so wrong.\nTime to get gone!\n\n(Chorus)\nDon't stop, don't look back,\nHit the road, Jack,\nI don't want you back!\nI truly don't want you back, don't come back.\n\n(Bridge)\nLet's get this straight now, it's all because of how you treated me.\nAnd if you're thinking of me and wondering, here's my answer:\nYou wanna send a DM? Haha, I blocked you on all that stuff.\nYou think I still have feelings? Haha, you're out of luck.\nYou think I'm missing you? Haha, that ain't true.\nYou wanna hear from me? Hahaha, nope, we're through.\n\n(Outro)\nMy friends despise you, they're glad you're gone.\nI'm glad you're gone too, 'cause now I can find someone who doesn't treat me wrong.\nI can finally move on.\nJust don't bother to try and hit me up,\nYou better think twice, 'cause that door is closed.\nYeah, it's a dead end",
-    "audioUrl": "/assets/music/hit-the-road-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.75",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$200.00",
-      "fullCopyrightPrice": "$5,000.00"
-    }
-  },
-  {
-    "id": 16,
-    "title": "HOW'S IT FEEL, BRO?",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "Placeholder",
-    "coverImageUrl": "/assets/covers/how-s-it-feel-bro-cover-art.jpg",
-    "songbayWebpageUrl": "Placeholder",
-    "songbayPlayerUrl": "Placeholder",
-    "genre1": "Placeholder",
-    "genre2": "Placeholder",
-    "moodTone": "Placeholder",
-    "category": "General / Placeholder",
-    "tempo": "Placeholder",
-    "internalRating": "Placeholder",
-    "placementType": "Placeholder",
-    "keySignature": "N/A",
-    "timeSignature": "N/A",
-    "vocalType": "Placeholder",
-    "pov": "Placeholder",
-    "fileType": "Placeholder",
-    "instrumentation": [],
-    "seoSnippet": "Placeholder",
-    "shortDescription": "Placeholder",
-    "longDescription": "Placeholder",
-    "snippetA": "Placeholder",
-    "snippetB": "Placeholder",
-    "commercialPotential": "Placeholder",
-    "keywords": [],
-    "hashtags": [],
-    "relatedSearchTerms": [],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Placeholder",
-    "audioUrl": "/assets/music/how-s-it-feel-bro-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "Placeholder",
-      "coverSongPrice": "Placeholder",
-      "standardLicensePrice": "Placeholder",
-      "extendedLicensePrice": "Placeholder",
-      "fullCopyrightPrice": "Placeholder"
-    }
-  },
-  {
-    "id": 17,
-    "title": "I KNOW YOUR DAMN PIN CODE",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/i-know-your-damn-pin-code-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235608850/",
-    "songbayPlayerUrl": "https://songbay.co/player/235608850",
-    "genre1": "Rock",
-    "genre2": "Alternative Rock",
-    "moodTone": "Bitter, Confident, Introspective, Revenge",
-    "category": "Vengeful Anthem / Betrayal",
-    "tempo": "Fast",
-    "internalRating": "Placeholder",
-    "placementType": "Hard Rock Anthem / Breakup Scene",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person Female",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Drums",
-      "Guitar-Electric",
-      "Keyboard/Synthesizer",
-      "Piano-Electric",
-      "Strings",
-      "Synthesizers",
-      "Vocals-Backing Vocals",
-      "Vocals-Sung"
-    ],
-    "seoSnippet": "\"Not Clever\" is an unbridled hard rock/alternative anthem, seething with the raw emotion of betrayal and ultimate self-liberation.",
-    "shortDescription": "Driven by a heavy, distorted guitar intro, the track features uncompromising, direct lyrics that paint a vivid picture of uncovering deceit. The core motif, 'You think you're clever? You're not clever,' forms an instantly memorable and highly cathartic hook.",
-    "longDescription": "\"Not Clever\" - A Vengeful Anthem of Betrayal and Triumph. This track, \"Not Clever,\" is an unbridled hard rock/alternative anthem, seething with the raw emotion of betrayal and ultimate self-liberation. Driven by a heavy, distorted guitar intro and punctuated by a \"raw and powerful\" solo, the song features uncompromising, direct lyrics that paint a vivid picture of uncovering deceit. The core motif, \"You think you're clever? You're not clever,\" forms an instantly memorable and highly cathartic hook. With a powerful narrative arc—from suspicion and discovery (\"YEP, FOUND IT.... swish through the hoop\") to righteous fury and definitive closure (\"Eff off, kick rocks. I'm slamming the door\")—this track resonates with anyone who's experienced a devastating betrayal. It culminates in an empowering declaration of finding a \"new man\" and embracing self-worth.",
-    "snippetA": "You think you're clever? And I can't get in your phone.",
-    "snippetB": "You're not clever. I know your damn pin code. [your birthday]",
-    "commercialPotential": "High for rock playlists, breakup anthems, and dramatic film/TV scenes.",
-    "keywords": [
-      "Vengeful",
-      "Anthem",
-      "Hard Rock",
-      "Alternative",
-      "Betrayal",
-      "Triumph",
-      "Breakup"
-    ],
-    "hashtags": [
-      "#IKnowYourDamnPinCode",
-      "#NotClever",
-      "#KellieLarson",
-      "#RockAnthem"
-    ],
-    "relatedSearchTerms": [
-      "Hard Rock",
-      "Vengeance",
-      "Betrayal",
-      "Uncovering Deceit",
-      "Fierce",
-      "Cathartic",
-      "Empowering",
-      "Self-Liberation"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "[Heavy, distorted guitar intro]\nThink you're clever? I've been through this and even more.\nYou're not clever. Been through this too many times before.\nI know what to look for and I know where to snoop.\nI know what to open. YEP, FOUND IT.... swish through the hoop. [swish sound] [crowd cherring]\nGave me bullets for my gun I named Justice, yeah.\nNow I'm gonna aim and shoot, no more holding back tears.\nSilly me! Believing you when you said you love me true.\nSaid you wouldn't ever cheat, stay by my side, me and you.\n\n(Chorus)\nYou think you're clever? And I can't get in your phone.\nYou're not clever. I know your damn pin code. [your birthday]\nYou think you're clever? Those excuses you told. [so lame]\nYou're not clever. The truth unfolds.\nYou think you're clever? And the truth I will never know.\nYou're not clever. Your stories have too many holes, [I watch 'em grow.]\n\n(Bridge)\nEff you for hurting me and eff you for the lies.\nI don't care about reasons, excuses or why's.\nEff off, kick rocks. I don't want you no more.\nEff off, get gone. I'm slamming the door.\n\n(Chorus)\nYou think you're clever? And I can't get in your phone.\nYou're not clever. I know your damn pin code.\nYou think you're clever? Those excuses you told.\nYou're not clever. The truth unfolds.\n\n(Bridge Part 2)\nNo room in this silly girl's heart anymore, you hear?\nYou won't have what's between my thighs, not even near.\nBut I'm not like those dumb girls you had in your past.\nYou turned out to be more boy than man, your moment didn't last.\n\n[Guitar Solo - raw and powerful]\n\n[Outro]\nI know I can do better, perfect timing, can't you see?\nHere comes better, yeah, better is coming for me. I found a new man.\n'Cause I can.\nHIT THE ROAD",
-    "audioUrl": "/assets/music/i-know-your-damn-pin-code-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$220.00",
-      "extendedLicensePrice": "$240.00",
-      "fullCopyrightPrice": "$5,000.00"
-    }
-  },
-  {
-    "id": 18,
-    "title": "IN MY DREAMS (WHEN I WAKE)",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/in-my-dreams-when-i-wake-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235610555/",
-    "songbayPlayerUrl": "https://songbay.co/player/235610555",
-    "genre1": "Easy Listening",
-    "genre2": "Pop Ballad",
-    "moodTone": "Anthemic, Dreamy, Melancholic, Sad",
-    "category": "Grief / Loss / Pop Ballad",
-    "tempo": "Slow",
-    "internalRating": "Placeholder",
-    "placementType": "Heartfelt Ballad / Emotional Montage",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Gender Fluid (either/or)",
-    "pov": "1st Person (Ambiguous)",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Piano-Grand",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "This heartfelt and haunting pop-ballad explores the pain of loss and the comfort found in dreams, serving as a raw and emotional expression of grief.",
-    "shortDescription": "The lyrics paint a vivid picture of a deep love that continues to exist in the subconscious. The chorus highlights the desire to return to the dream world where their connection is restored, as the waking world feels empty and colorless.",
-    "longDescription": "This heartfelt and haunting pop-ballad explores the pain of loss and the comfort found in dreams. The lyrics paint a vivid picture of a deep love that continues to exist in the subconscious. The verses describe intimate, cherished moments with a loved one who is no longer present, like gentle kisses and shared laughter, making the waking world feel empty and colorless in comparison. The chorus serves as a poignant refrain, a mantra of hope and longing, highlighting the desire to return to the dream world where their connection is restored. This song is a raw and emotional expression of grief, a journey through the stages of loss, and a testament to the enduring power of love that transcends even death. It's a relatable and moving piece for anyone who has ever experienced a profound absence, and it offers a tender look at how dreams can serve as a bittersweet sanctuary for memories.",
-    "snippetA": "In my dreams, you are here, and you kiss my cheek,",
-    "snippetB": "In my dreams - I long to be together in my dreams.",
-    "commercialPotential": "Excellent for film/TV emotional montages, or themes related to loss, grief, and enduring love.",
-    "keywords": [
-      "loss",
-      "grief",
-      "ballad",
-      "death",
-      "dreaming",
-      "heartbreak",
-      "emotional",
-      "pop"
-    ],
-    "hashtags": [
-      "#InMyDreams",
-      "#KellieLarson",
-      "#GriefBallad",
-      "#EnduringLove"
-    ],
-    "relatedSearchTerms": [
-      "Haunting",
-      "Melancholy",
-      "Poignant",
-      "Bittersweet",
-      "Longing",
-      "Absence",
-      "Emotional Sanctuary"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Lyrics by Kellie Larson\n\n(Verse 1)\nIn my dreams, you are here, and you kiss my cheek,\nAs you tuck the hair behind my ears.\nThen hold me tight, as we gaze into each other's eyes. (Your beautiful eyes)\nBut when I wake, you're not here, and I feel loneliness and fear.\nEmptiness engulfs me, and I long for your embrace. (I miss you)\n\n(Pre-Chorus)\nWhen I wake, I swear sometimes I hear you call my name...\nBut when I turn to see your face, there's nothing but empty space.\n\n(Chorus)\nIn my dreams - I long to be together in my dreams.\nIn my dreams - it will have to be - I see you in my dreams.\n\n(Verse 2)\nIn my dreams, everything is right, and you're never ever out of my sight.\nYou smile big when I laugh, and you get behind me when I dance. (You loved dancing with me)\nBut when I wake, everything is gray, all the world's colors seem to fade.\nI cry a lot, these tears don't stop, and it's hard to get through my day. (So hard)\n\n(Pre-Chorus)\nWhen I wake, I swear sometimes I hear you call my name...\n\n(Chorus)\nIn my dreams - I long to be together in my dreams.\nIn my dreams - it will have to be - I will see you in my dreams.\n\n(Bridge)\nWhen dreams take hold, I don't want to leave my bed.\nWhen waking comes, I wish I stayed dreaming instead.\nI ask God to take this pain,\n'Til we can be together again.\n\n(Outro)\nIn my dreams - just you and me.\nIn my dreams - we are free.\nIn my dreams - it will have to be.\nI will see you in my dreams.\nIn my dreams is where you'll be.\nIn my dreams.",
-    "audioUrl": "/assets/music/in-my-dreams-when-i-wake-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$250.00",
-      "fullCopyrightPrice": "$6,000.00"
-    }
-  },
-  {
-    "id": 19,
-    "title": "IT'S JUST TOO MUCH",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/its-just-too-much-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235609976/",
-    "songbayPlayerUrl": "https://songbay.co/player/235609976",
-    "genre1": "Easy Listening",
-    "genre2": "Mood Music",
-    "moodTone": "Anthemic, Bitter, Melancholic, Sad",
-    "category": "Breakup / Emotional Toll",
-    "tempo": "Slow",
-    "internalRating": "Placeholder",
-    "placementType": "Emotional Soundtrack / Confrontation Scene",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Gender Fluid (either/or)",
-    "pov": "1st Person (Ambiguous)",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Drum Kit",
-      "Guitar-Electric",
-      "Keyboard/Synthesizer",
-      "Piano-Electric",
-      "Strings",
-      "Vocals-Sung"
-    ],
-    "seoSnippet": "A powerful, emotionally charged track exploring the painful aftermath of a broken relationship shattered by betrayal, disrespect, and emotional neglect.",
-    "shortDescription": "The storytelling focuses on the futility of trying to salvage a relationship that's too far gone, leaving behind a wake of tears, blame, and shame. The central theme is the accumulated toll of 'just too much' conflict and distrust.",
-    "longDescription": "This is a powerful, emotionally charged track exploring the painful aftermath of a broken relationship. The lyrics vividly depict a bond shattered by repeated betrayal, disrespect, and emotional neglect. The storytelling focuses on the futility of trying to salvage a relationship that's too far gone, leaving behind a wake of tears, blame, and shame. The song's structure, with its cyclical chorus, emphasizes the repetitive nature of the conflict that led to the relationship's demise. The bridge reflects on the accumulated toll of \"just too much,\" highlighting the heavy cost of distrust and the complete loss of a shared past. This track is perfect for artists with a soulful and powerful voice who can convey deep hurt and resignation.",
-    "snippetA": "Too much fighting, too much disrespect.",
-    "snippetB": "Too much lying, no truth to detect.",
-    "commercialPotential": "High potential for dramatic moments in a TV series or a movie soundtrack involving a breakup or difficult confrontation.",
-    "keywords": [
-      "Breakup",
-      "Emotional",
-      "Betrayal",
-      "Disrespect",
-      "Melancholic",
-      "Sad",
-      "Slow"
-    ],
-    "hashtags": [
-      "#ItsJustTooMuch",
-      "#KellieLarson",
-      "#BreakupBallad",
-      "#EmotionalToll"
-    ],
-    "relatedSearchTerms": [
-      "Repeated Conflict",
-      "Emotional Toll",
-      "Resignation",
-      "Shattered Trust",
-      "Defeated",
-      "Painful Aftermath",
-      "Melancholic"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "The ties that bound us, they've come undone.\nBetrayed and hurt, the trust is gone.\nNo use in trying, there's no repair.\nJust relax now, don't you dare\nTry to fix it, it's too far gone.\nToo much crying through dusk and dawn.\nToo much fighting, too much disrespect.\nToo much lying, no truth to detect.\nToo much blame, and too much shaaammme\nFor all the damage, we can't reclaim.\nToo many tears shed through the years\nDrowning our sorrow, stifling fears.\nToo many days spent wishing away\nThen watching it all just disappear.\nDidn't look forward to another sunrise,\nToo much loneliness reflected in each other's eyes.\nToo much fighting, too much disrespect.\nToo much lying, no truth to detect.\nToo much blame, and too much shame\nFor all the damage, we can't reclaim.\nJust too much, and just too many\nBad memories that haunt, a broken touch.\nFeelings of distrust, a heavy cost.\nEverything we built, completely lost.\nToo much fighting, too much disrespect.\nToo much lying, too many truths were kept.\n\nToo much blame, and too much shame\nFor all the damage, time can't reclaim.\n\n[Outro]\nNever be the same.\nIt's broken bad between us, it's true.\nWe can't undo, it's just too much, for me and for you.\n[Too much] it's just too much, to redo, go through.",
-    "audioUrl": "/assets/music/its-just-too-much-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$220.00",
-      "fullCopyrightPrice": "$6,000.00"
-    }
-  },
-  {
-    "id": 20,
-    "title": "JUST A LITTLE LONELY",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/just-a-little-lonely-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235610626/",
-    "songbayPlayerUrl": "https://songbay.co/player/235610626",
-    "genre1": "Easy Listening",
-    "genre2": "Pop Ballad",
-    "moodTone": "Anthemic, Dramatic, Melancholic, Sad",
-    "category": "Heartache / Aftermath / Solitude",
-    "tempo": "Slow",
-    "internalRating": "Placeholder",
-    "placementType": "Emotional Pop Ballad / Solitude Scene",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person Female",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Piano-Grand",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "A haunting and raw slow pop ballad that dives deep into the aftermath of a broken relationship, exploring heartache, betrayal, and lingering questions.",
-    "shortDescription": "The song contrasts the narrator's pain with the ex-partner's attempts to return, capturing the moment of finding strength in solitude and realizing who the real victim is. It builds to a poignant outro of self-liberation and independence.",
-    "longDescription": "By Kellie Larson. Haunting and raw, this slow, sad pop ballad \"Just\" dives deep into the aftermath of a broken relationship. With a melancholic piano and subtle string arrangement, it's perfect for a dramatic scene or emotional montage in a film or TV show. The song's introspective lyrics paint a vivid picture of betrayal and heartache, exploring the lingering questions and the pain of moving on. It's a powerful narrative about finding strength in solitude and realizing who the real victim is. Featuring a captivating melody and a deeply moving vocal performance, this track builds from a fragile verse to an emotional chorus before resolving in a poignant outro of self-liberation. Ideal for a project that needs to evoke a sense of profound sadness, self-reflection, and ultimately, newfound independence.",
-    "snippetA": "You ask me why, with a question in your eyes,",
-    "snippetB": "Are you just a little lonely? Or just a little sad?",
-    "commercialPotential": "High for dramatic scene placement, especially montages showing emotional reflection and transition.",
-    "keywords": [
-      "Heartache",
-      "Betrayal",
-      "Loneliness",
-      "Sad",
-      "Pop Ballad",
-      "Self-Reflection"
-    ],
-    "hashtags": [
-      "#JustALittleLonely",
-      "#KellieLarson",
-      "#SadPop",
-      "#Aftermath"
-    ],
-    "relatedSearchTerms": [
-      "Melancholy",
-      "Solitude",
-      "Newfound Independence",
-      "Self-liberation",
-      "Profound Sadness",
-      "Piano Ballad",
-      "Wiser"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "(Verse 1)\nStreetlights paint a lonely picture on my wall,\nEach car that passes, I'm hoping it's your call.\nJust saw you out the window, a shadow in the night,\nPacing back and forth, beneath the pale moonlight.\n\n(Chorus)\nYou ask me why, with a question in your eyes,\nDo you think it was fair to throw this all aside?\nDo you believe it was just?\nA story left untold,\nWhile you're out there begging, in the bitter cold.\nHow does it feel to destroy us?\nTell me, what do you see?\nNow I sit over here just crying, while you're wandering free.\nYou say it feels like you're dying...\nAre you just a little lonely?\nOr just a little sad?\n\n(Verse 2)\nEvery corner of this room holds a memory of you,\nA gallery of moments, just fading from the view.\nI'm drowning in the silence, the quiet is too loud,\nJust trying to find a silver lining in this dark rain cloud.\n\n(Chorus)\nYou ask me why, with that question in your eyes,\nDid you think it was fair to just throw this all aside?\nDo you believe it was just?\nOr just too bold?\nWhat are you doing?\nWhile you're out there, in the bitter cold.\nHow does it feel to destroy us?\nJust tell me, what do you see?\nNow I sit over here crying, while you're just wandering free.\nYou say it feels like you're dying...\nAre you just a little lonely?\nJust a little sorry?\n\n(Bridge)\nJust a little sad, a new set of problems this starts,\nJust trying not to stay mad, playing games with broken hearts.\nRemembering all the mistakes, the bitter taste of blame,\nJuggling the weight of all your friends throwing shame and hate.\nI'm leaving whatever this is to God and fate...\n\n(Outro)\nYou say it feels like you're dying.\nWell, maybe that's just the cost!\n'Cause I'm not the one who's truly and utterly lost.\nNow I'm done with all the crying, I'm finally breaking free!\nYeah, I'm done with feeling lonely...just see.\nSo lonely...alone...just me.\nYeah, I'm just leaving it all to fate.\nNo more crying.\nNo more waiting by the window.\nIt's just me now.\nJust a little stronger.\nJust a little wiser.\nJust... free.",
-    "audioUrl": "/assets/music/just-a-little-lonely-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$250.00",
-      "fullCopyrightPrice": "$6,000.00"
-    }
-  },
-  {
-    "id": 21,
-    "title": "LITTLE THINGS",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "Placeholder",
-    "coverImageUrl": "/assets/covers/little-things-cover-art.jpg",
-    "songbayWebpageUrl": "Placeholder",
-    "songbayPlayerUrl": "Placeholder",
-    "genre1": "Placeholder",
-    "genre2": "Placeholder",
-    "moodTone": "Placeholder",
-    "category": "General / Placeholder",
-    "tempo": "Placeholder",
-    "internalRating": "Placeholder",
-    "placementType": "Placeholder",
-    "keySignature": "N/A",
-    "timeSignature": "N/A",
-    "vocalType": "Placeholder",
-    "pov": "Placeholder",
-    "fileType": "Placeholder",
-    "instrumentation": [],
-    "seoSnippet": "Placeholder",
-    "shortDescription": "Placeholder",
-    "longDescription": "Placeholder",
-    "snippetA": "Placeholder",
-    "snippetB": "Placeholder",
-    "commercialPotential": "Placeholder",
-    "keywords": [],
-    "hashtags": [],
-    "relatedSearchTerms": [],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Placeholder",
-    "audioUrl": "/assets/music/little-things-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "Placeholder",
-      "coverSongPrice": "Placeholder",
-      "standardLicensePrice": "Placeholder",
-      "extendedLicensePrice": "Placeholder",
-      "fullCopyrightPrice": "Placeholder"
-    }
-  },
-  {
-    "id": 22,
-    "title": "MURDERERS HEART",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/murderers-heart-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235610937/",
-    "songbayPlayerUrl": "https://songbay.co/player/235610937",
-    "genre1": "Country",
-    "genre2": "Narrative Country",
-    "moodTone": "Anthemic, Introspective, Playful",
-    "category": "Betrayal / Revenge / Narrative",
-    "tempo": "Mid Tempo",
-    "internalRating": "Placeholder",
-    "placementType": "Narrative Country Ballad / Crime Drama Sync",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals, Spoken Word",
-    "pov": "3rd Person Narrative",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Vocals-spoken",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "This gritty, narrative-driven country ballad unravels a devastating tale of betrayal and cold-blooded revenge, centered on the idea of playing games with a 'murderer's heart.'",
-    "shortDescription": "The song tells the story of Mary and Dan, whose marriage crumbles when Mary discovers Dan in a bar with her own sister, leading to a shocking, tragic twist of fate and revenge.",
-    "longDescription": "He was \"playing games with a murderer's heart\". This gritty, narrative-driven country ballad, titled \"Murderer's Heart,\" unravels a devastating tale of betrayal and cold-blooded revenge. The song opens with the crumbling marriage of Mary and Dan, a relationship strained by his deceit and emotional distance. The tension builds as Mary's suspicions lead her to a shocking discovery: Dan in a bar with her own sister. What follows is a tragic twist as Mary, armed with a 22 caliber pistol, spares her unfaithful husband but delivers a fatal shot to her sister, the true target of her rage. This powerful, slow-burn track is marked by a raw, confessional tone, building to a shocking climax and a somber reflection on the irreversible consequences of a love turned lethal.",
-    "snippetA": "He thought he was safe, he thought he could outsmart,",
-    "snippetB": "But he was playing games with a murderer's heart.",
-    "commercialPotential": "Excellent for dramatic television series like Yellowstone, Ozark, or Breaking Bad, or movie trailers that require a powerful, unforgettable story arc.",
-    "keywords": [
-      "Country",
-      "Revenge",
-      "Betrayal",
-      "Murder",
-      "Narrative",
-      "Crime Drama",
-      "Slow-Burn"
-    ],
-    "hashtags": [
-      "#MurderersHeart",
-      "#KellieLarson",
-      "#CountryBallad",
-      "#CrimeStory"
-    ],
-    "relatedSearchTerms": [
-      "Grit",
-      "Slow-burn",
-      "Vengeance",
-      "Fatal",
-      "Cheating",
-      "Crime Drama",
-      "Tragic",
-      "Confessional",
-      "Outlaw Country"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "(Verse 1)\nMary and Dan in therapy sat, their marriage they tried to mend,\nMary gave it all her heart, but Dan, he wouldn't bend.\nAnother day, nothing changed, they fought, he left, she'd weep,\nHe made no noise when he came back home, not a knock, bang, or a peep.\n\n(Verse 2)\nSee, Mary didn't know all his secrets, and Dan wouldn't let them spill,\nBut she knew something was amiss, but was too scared to make a big deal.\nBut this one day, he acted real funny, so she tracked his phone with dread,\nTo a bar she found him laughing, with her own sister instead.\n\n(Chorus)\nHe blamed her, he lied, wouldn't even bend,\nNow she's got a weapon, and this love's at its end.\nHe thought he was safe, he thought he could outsmart,\nBut he was playing games with a murderer's heart.\n\n(Verse 3)\nHad a beer in one hand and the other resting on her sister's thigh he jumped out of his seat so quick,\nSeemed to lose the ability to speak, but in his mind screaming, \"Oh shit!\"\nMary's world was destroyed then, but she knew what she must do,\nMary pulled out what her Daddy gave her, a big ole Colt.22.\n\n(Verse 4)\nDan dropped his beer, placed that hand to shield his little man then holding on real tight,\nHis other hand stretched out in front of him, like, \"What's that gonna do, right?\"\nAnd you might think she didn't even blink, before she fired one between his eyes,\nBut Mary loved Dan too much to kill him... but her sister met her demise.\n\n(Chorus)\nHe blamed her, he lied, wouldn't even bend,\nNow she's got a weapon, and this love's at its end.\nHe thought he was safe, he thought he could outsmart,\nBut he was playing games with a murderer's heart.\n\n(Bridge)\nHe blamed her for all their woes, he lied and wouldn't even bend,\nNow she's got a weapon, and soon a life sentence, and this love's at its end.\nHe thought he was safe, in his selfish desire,\nBut her cold justice set the whole damn scene on fire.\n\n(Outro)\nWith her Daddy's weapon and her cold justice, she left him on the floor, whimpering low,\nHe thought he was safe, he thought he could outsmart, he didn't know, no, no, no,\n[gun shot]\nHe was playing games with a murderer's heart.",
-    "audioUrl": "/assets/music/murderers-heart-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.75",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$80.00",
-      "extendedLicensePrice": "$150.00",
-      "fullCopyrightPrice": "$3,000.00"
-    }
-  },
-  {
-    "id": 23,
-    "title": "MY GIRL KARMA",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "Placeholder",
-    "coverImageUrl": "/assets/covers/my-girl-karma-cover-art.jpg",
-    "songbayWebpageUrl": "Placeholder",
-    "songbayPlayerUrl": "Placeholder",
-    "genre1": "Placeholder",
-    "genre2": "Placeholder",
-    "moodTone": "Placeholder",
-    "category": "General / Placeholder",
-    "tempo": "Placeholder",
-    "internalRating": "Placeholder",
-    "placementType": "Placeholder",
-    "keySignature": "N/A",
-    "timeSignature": "N/A",
-    "vocalType": "Placeholder",
-    "pov": "Placeholder",
-    "fileType": "Placeholder",
-    "instrumentation": [],
-    "seoSnippet": "Placeholder",
-    "shortDescription": "Placeholder",
-    "longDescription": "Placeholder",
-    "snippetA": "Placeholder",
-    "snippetB": "Placeholder",
-    "commercialPotential": "Placeholder",
-    "keywords": [],
-    "hashtags": [],
-    "relatedSearchTerms": [],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Placeholder",
-    "audioUrl": "/assets/music/my-girl-karma-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "Placeholder",
-      "coverSongPrice": "Placeholder",
-      "standardLicensePrice": "Placeholder",
-      "extendedLicensePrice": "Placeholder",
-      "fullCopyrightPrice": "Placeholder"
-    }
-  },
-  {
-    "id": 24,
-    "title": "MY WORDS MATTER",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "Placeholder",
-    "coverImageUrl": "/assets/covers/my-words-matter-cover-art.jpg",
-    "songbayWebpageUrl": "Placeholder",
-    "songbayPlayerUrl": "Placeholder",
-    "genre1": "Placeholder",
-    "genre2": "Placeholder",
-    "moodTone": "Placeholder",
-    "category": "General / Placeholder",
-    "tempo": "Placeholder",
-    "internalRating": "Placeholder",
-    "placementType": "Placeholder",
-    "keySignature": "N/A",
-    "timeSignature": "N/A",
-    "vocalType": "Placeholder",
-    "pov": "Placeholder",
-    "fileType": "Placeholder",
-    "instrumentation": [],
-    "seoSnippet": "Placeholder",
-    "shortDescription": "Placeholder",
-    "longDescription": "Placeholder",
-    "snippetA": "Placeholder",
-    "snippetB": "Placeholder",
-    "commercialPotential": "Placeholder",
-    "keywords": [],
-    "hashtags": [],
-    "relatedSearchTerms": [],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Placeholder",
-    "audioUrl": "/assets/music/my-words-matter-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "Placeholder",
-      "coverSongPrice": "Placeholder",
-      "standardLicensePrice": "Placeholder",
-      "extendedLicensePrice": "Placeholder",
-      "fullCopyrightPrice": "Placeholder"
-    }
-  },
-  {
-    "id": 25,
-    "title": "NOT THAT GIRL ANYMORE",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "Placeholder",
-    "coverImageUrl": "/assets/covers/not-that-girl-anymore-cover-art.jpg",
-    "songbayWebpageUrl": "Placeholder",
-    "songbayPlayerUrl": "Placeholder",
-    "genre1": "Placeholder",
-    "genre2": "Placeholder",
-    "moodTone": "Placeholder",
-    "category": "General / Placeholder",
-    "tempo": "Placeholder",
-    "internalRating": "Placeholder",
-    "placementType": "Placeholder",
-    "keySignature": "N/A",
-    "timeSignature": "N/A",
-    "vocalType": "Placeholder",
-    "pov": "Placeholder",
-    "fileType": "Placeholder",
-    "instrumentation": [],
-    "seoSnippet": "Placeholder",
-    "shortDescription": "Placeholder",
-    "longDescription": "Placeholder",
-    "snippetA": "Placeholder",
-    "snippetB": "Placeholder",
-    "commercialPotential": "Placeholder",
-    "keywords": [],
-    "hashtags": [],
-    "relatedSearchTerms": [],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Placeholder",
-    "audioUrl": "/assets/music/not-that-girl-anymore-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "Placeholder",
-      "coverSongPrice": "Placeholder",
-      "standardLicensePrice": "Placeholder",
-      "extendedLicensePrice": "Placeholder",
-      "fullCopyrightPrice": "Placeholder"
-    }
-  },
-  {
-    "id": 26,
-    "title": "ONE SMALL WRONG",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/one-small-wrong-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235612465/",
-    "songbayPlayerUrl": "https://songbay.co/player/235612465",
-    "genre1": "Hip-hop/Rap",
-    "genre2": "General Hip Hop",
-    "moodTone": "Bitter, Introspective, Sad, Tension",
-    "category": "Dating / Confrontation Duet",
-    "tempo": "Mid Tempo",
-    "internalRating": "Placeholder",
-    "placementType": "Cinematic Duet / Pop R&B",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Duet (M/F)",
-    "pov": "1st Person Duet (M/F)",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Drum Kit",
-      "Drum Machine",
-      "Vocals-spoken",
-      "Vocals-Rap",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "A compelling, conversational duet and fiery lyrical spar between two individuals at a pivotal crossroads, perfectly suited for a dynamic pop, R&B, or cinematic soundtrack.",
-    "shortDescription": "This raw, emotional push-and-pull captures a moment of intense confrontation where one partner's 'small wrong' leads to irrevocable damage. It features male rap and female vocal parts trading blame and heartbreak.",
-    "longDescription": "This is a compelling, conversational duet, a fiery lyrical spar between two individuals at a pivotal crossroads. It's a raw, emotional push-and-pull, perfectly suited for a dynamic pop, R&B, or cinematic soundtrack. The song captures a moment of intense confrontation, a dialogue where every word is charged with resentment and regret. The plot centers on an act of betrayal and a retaliatory 'tit for tat' that escalates the conflict, leading to the crushing realization that 'that one small wrong from you, man, it sealed our whole damn fate.'",
-    "snippetA": "Just one small wrong from me, and then with her you were gone.",
-    "snippetB": "But that one small wrong from you, man, it sealed our whole damn fate.",
-    "commercialPotential": "Strong potential for dramatic TV/Film scenes and R&B/Pop collaboration.",
-    "keywords": [
-      "Duet",
-      "Confrontation",
-      "Betrayal",
-      "Hip-hop",
-      "R&B",
-      "Heartbreak",
-      "Tension"
-    ],
-    "hashtags": [
-      "#OneSmallWrong",
-      "#KellieLarson",
-      "#Duet",
-      "#Cinematic"
-    ],
-    "relatedSearchTerms": [
-      "Conversational",
-      "Fiery",
-      "Tit for Tat",
-      "Irrevocable Damage",
-      "R&B",
-      "Cinematic Duet",
-      "Regret",
-      "Conflict"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "[Female Vocal]\nSunrise through the blinds, another empty day.\nSo many ways to fill it, but they all feel gray.\nYou could've just stayed, we could've talked it through.\nWeighed out the pros and cons, but like a bomb, you blew...\nGone with the wind, you left me here in dread,\nPut an 'L' in my head where intrusive thoughts are bred.\nI can't stand what we became.\nI know what's really going on...\nJust one small wrong from me, and then with her you were gone.\nYou messed me up so bad, I'm proof.\n\n[Female Vocal]\nOur love, once so bright, now just a fading gleam.\nDimmed by all your lies, shattered every dream.\nI've got to retreat before I let you back in my head.\nBefore I regret, and let you hit it again, there we shouldn't tread.\nOoohh won't tread.\n\n[Male Rap]\nWhen we met, You hit it out the park, like Bonds.\nLeft your mark on me, felt like Tony Stark, so strong like Iron.\nOh, man, I can't stand what we became, once strong, now lame.\nBut your tit for tat went too far, to a whole new level.\nNow you're out here talking to my crew, sounding like the devil.\nSpreading that fake news, man, you're tripping, I don't get the reason.\nThe only thing we did was talk, and you're committing treason.\nTreason to the trust we had, the bond we used to feel.\nYou're so busy getting even, you forgot what's real.\nYou think sleeping with your ex was just a little bit of payback.\nA tit for tat you called it, but you're way off track.\nYou call it a MISTAKE, a momentary lapse of FAITH,\nBut that one small wrong from you, man, it sealed our whole damn fate.\n'Cause that small thing to you was EVERYTHING to me,\nAnd that's when Iron Man just turned to dust, you see.\nYou messed me up so bad, I'm proof.\n\n[Female vocal]\nYou say my wrongs were bad, but what about yours?\nWhat were you expecting?\nYou gave her and, not me, all your attention, all of your time and affection.\nHiding texts and SEXTING?\nBut you DIDN'T do anything with her?\nYou're a liar!\nThere was LUST, you had all that desire!\nMy little mistake with my ex happened because you thought it was your birth date, and then tried to eat your cake.\nYour treachery made my heartbreak, so, I tit for tat so you can feel what I feel and to make you relate.\n\n[Male Rap Vocals]\nYou say my wrongs were bad, yours a tiny little slip?\nHow am I supposed to act?\nI'm disgusted.\nRan to your ex for sex, you can't be trusted.\nYOU can't be trusted.\nI can't get that out of my head, the two of you in bed.\nMy heart is busted.\nYOU!\nYou think I took the win instead?\nNO000\nOur love, once bright, is a fading gleam.\nDimmed by lies, shattered all dreams.\nGotta move on.\nGotta move on from this.\nWho took the win?\nThis isn't my end.\nI'll rise again\nI'll rise again",
-    "audioUrl": "/assets/music/one-small-wrong-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$200.00",
-      "fullCopyrightPrice": "$5,000.00"
-    }
-  },
-  {
-    "id": 27,
-    "title": "THE REAL DREAM TEAM",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/the-real-dream-team-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235608792/",
-    "songbayPlayerUrl": "https://songbay.co/player/235608792",
-    "genre1": "Easy Listening",
-    "genre2": "Soft Rock",
-    "moodTone": "Anthemic, Positive, Romantic, Slow, Sweet",
-    "category": "Love / Loyalty / Empowerment",
-    "tempo": "Slow",
-    "internalRating": "Placeholder",
-    "placementType": "Wedding / Motivational Sync",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person Female",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Drum Kit",
-      "Keyboard/Synthesizer",
-      "Piano-Electric",
-      "Violin",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "\"Tick Tok\" is a vibrant and empowering pop/R&B anthem that celebrates the unbreakable bond and unwavering loyalty between two people.",
-    "shortDescription": "This song captures the essence of finding immense courage and strength in a partner, painting a vivid picture of a relationship built on mutual support and fierce loyalty. The title cleverly highlights the timeless nature of this deep connection.",
-    "longDescription": "\"Tick Tok\": An Anthem of Unwavering Love & Loyalty. \"Tick Tok\" is a vibrant and empowering pop/R&B anthem that celebrates the unbreakable bond between two people. This song captures the essence of finding immense courage and strength in a partner, painting a vivid picture of a relationship built on mutual support and fierce loyalty. The title itself, \"Tick Tok,\" cleverly highlights the timeless and enduring nature of this deep connection. From the initial enchantment (\"I can get lost, mesmerized by your eyes\") to the unyielding commitment (\"Every day I will be on your side...\"), the lyrics resonate with anyone who's found their ultimate ally. With its catchy hooks and relatable narrative, \"Tick Tok\" is perfect for showcasing team spirit, resilience, and deep affection.",
-    "snippetA": "Tick Tock, the clock, time never stops.",
-    "snippetB": "Like my love, you are my rock, And forever we will be together, I love you.",
-    "commercialPotential": "Ideal for romantic comedies, wedding montages, motivational scenes, sports highlights, empowering commercials, or any production needing a powerful declaration of devotion and partnership.",
-    "keywords": [
-      "Unconditional love",
-      "Strength in unity",
-      "Loyalty",
-      "Team Spirit",
-      "Romantic",
-      "Pop"
-    ],
-    "hashtags": [
-      "#TheRealDreamTeam",
-      "#TickTok",
-      "#KellieLarson",
-      "#LoveAnthem"
-    ],
-    "relatedSearchTerms": [
-      "Unbreakable Bond",
-      "Devotion",
-      "Ally",
-      "Resilience",
-      "Deep Affection",
-      "Timeless",
-      "Wedding Song",
-      "Empowering Partnership"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "(Verse 1)\nYou love me and I love you too.\nBeen blessed up since the day I met you.\nYou give me courage and you give me strength.\nI can conquer almost anything.\n\n(Pre-Chorus)\nI feel high with you by my side,\nBut I can get lost, mesmerized by your eyes.\n\n(Chorus)\nTick Tock, the clock, time never stops.\nLike my love, you are my rock,\nAnd forever we will be together, I love you.\n\n(Verse 2)\nEvery day I will be on your side,\nNo matter who, what, where, or when, together we'll fight.\nInto battle we will go, you shoot high and I shoot low.\nI've got your back when haters attack,\nJust show me where you want the bodies stacked.\n\n(Pre-Chorus)\nBut I bet you already knew that I would conquer worlds with you,\nAnd if the naysayers say we're wrong,\nRemember she loves me so much she wrote me this song.\n\n(Chorus)\nTick Tock, the clock, time never stops.\nLike my love, you are my rock,\nAnd forever we will be together, I love you.\n\n(Verse 3)\nI want nothing but the best for you,\nAnd you make me want to be better too.\nI love you and you love me,\nTell OJ that we are the real dream team.\nI fell quick when you cast your charms,\nI feel safe and loved when I'm in your arms.\n\n(Outro)\nBut what I love most is spending time with you-",
-    "audioUrl": "/assets/music/the-real-dream-team-audio.mp3"
-  },
-  {
-    "id": 28,
-    "title": "SHOT BY CUPIDS DART",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "Placeholder",
-    "coverImageUrl": "/assets/covers/shot-by-cupids-dart-cover-art.jpg",
-    "songbayWebpageUrl": "Placeholder",
-    "songbayPlayerUrl": "Placeholder",
-    "genre1": "Placeholder",
-    "genre2": "Placeholder",
-    "moodTone": "Placeholder",
-    "category": "General / Placeholder",
-    "tempo": "Placeholder",
-    "internalRating": "Placeholder",
-    "placementType": "Placeholder",
-    "keySignature": "N/A",
-    "timeSignature": "N/A",
-    "vocalType": "Placeholder",
-    "pov": "Placeholder",
-    "fileType": "Placeholder",
-    "instrumentation": [],
-    "seoSnippet": "Placeholder",
-    "shortDescription": "Placeholder",
-    "longDescription": "Placeholder",
-    "snippetA": "Placeholder",
-    "snippetB": "Placeholder",
-    "commercialPotential": "Placeholder",
-    "keywords": [],
-    "hashtags": [],
-    "relatedSearchTerms": [],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Placeholder",
-    "audioUrl": "/assets/music/shot-by-cupids-dart-audio.mp3"
-  },
-  {
-    "id": 29,
-    "title": "SHOWDOWN AT MY DOOR",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "Placeholder",
-    "coverImageUrl": "/assets/covers/showdown-at-my-door-cover-art.jpg",
-    "songbayWebpageUrl": "Placeholder",
-    "songbayPlayerUrl": "Placeholder",
-    "genre1": "Placeholder",
-    "genre2": "Placeholder",
-    "moodTone": "Placeholder",
-    "category": "General / Placeholder",
-    "tempo": "Placeholder",
-    "internalRating": "Placeholder",
-    "placementType": "Placeholder",
-    "keySignature": "N/A",
-    "timeSignature": "N/A",
-    "vocalType": "Placeholder",
-    "pov": "Placeholder",
-    "fileType": "Placeholder",
-    "instrumentation": [],
-    "seoSnippet": "Placeholder",
-    "shortDescription": "Placeholder",
-    "longDescription": "Placeholder",
-    "snippetA": "Placeholder",
-    "snippetB": "Placeholder",
-    "commercialPotential": "Placeholder",
-    "keywords": [],
-    "hashtags": [],
-    "relatedSearchTerms": [],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Placeholder",
-    "audioUrl": "/assets/music/showdown-at-my-door-audio.mp3"
-  },
-  {
-    "id": 30,
-    "title": "SICK ONE (S1C)",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/sick-one-s1c-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235608791/",
-    "songbayPlayerUrl": "https://songbay.co/player/235608791",
-    "genre1": "Rock",
-    "genre2": "General Alternative",
-    "moodTone": "Bitter, Confident, Cool, Introspective, Revenge",
-    "category": "Toxic Relationship / Conflict",
-    "tempo": "Fast",
-    "internalRating": "Placeholder",
-    "placementType": "Raw Confessional / Alternative Rock",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person (Ambiguous)",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Chimes",
-      "Cymbals",
-      "Drum Kit",
-      "Guitar-Electric",
-      "High-Hat",
-      "Keyboard/Synthesizer",
-      "Synthesizers",
-      "Vocals-Backing Vocals",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "\"Sick One\" plunges into the chaotic heart of a relationship that's as compelling as it is damaging, exploring a cycle of intense conflict and superficial reconciliation.",
-    "shortDescription": "This raw, unflinching exploration captures the painful realization of being undervalued, the crushing blow of betrayal, and the descent into insecurity. It acknowledges the 'unsettling pull back to the familiar chaos,' where love feels like a drug.",
-    "longDescription": "\"Sick One\": A Raw Look at Toxic Love \"Sick One\" plunges into the chaotic heart of a relationship that's as compelling as it is damaging. This track isn't about grand gestures or sweet nothings; it's a brutal, honest confessional. The lyrics paint a vivid picture of a love that's \"on a sick one\"-a cycle of intense conflict followed by superficial reconciliation, where apologies are manipulative and promises are empty. The song explores the painful realization of being undervalued (\"I wasn't a priority\") and the descent into insecurity (\"I acted crazy wanting all of you to want me so badly too\"). It captures the crushing blow of betrayal, the gut-wrenching discovery of deceit, and the bitter aftermath of broken trust. Yet, despite the undeniable toxicity, there's an unsettling pull back to the familiar chaos, acknowledging that \"My love is on a sick one too... I run back. Right on cue.\"",
-    "snippetA": "Our love [our love. our love.] is on a sick one. [Sick one sick one.]",
-    "snippetB": "And you were right, this song is about you.",
-    "commercialPotential": "Good for Alternative Rock playlists and scenes depicting chaotic or addictive relationships.",
-    "keywords": [
-      "Toxic Love",
-      "Conflict",
-      "Betrayal",
-      "Alternative Rock",
-      "Druggy",
-      "Heartbreak"
-    ],
-    "hashtags": [
-      "#SickOne",
-      "#S1C",
-      "#KellieLarson",
-      "#ToxicLove"
-    ],
-    "relatedSearchTerms": [
-      "Chaotic",
-      "Addictive",
-      "Brutal Confessional",
-      "Unflinching",
-      "Manipulative",
-      "Conflict",
-      "Heartbreak Cycle",
-      "Grunge"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Our love [our love. our love.] is on a sick one. [Sick one sick one.]\nIt's good for no one [no one].\nShit we fight about is so dumb. [so dumb. so dumb]\nIt's our drug [reup], we're never done [no longer fun].\nSick one. [Sick one. Sick one].\nThey all said [all of them] that you didn't love me. [please love me]\nBut that was truly hard to see, but hindsight I wasn't a priority. [Nope]\nI acted crazy [coo coo] wanting all of you to want me so badly too.\nYou always say that my words hold no value. [Cha ching!]\nSick one. [Sick one. sick one.]\nYour love [your love. your love] is on a sick one. [Sick one. sick one.]\nYou like when the fighting's done. [all done]\n'Cuz making up is more fun. [so fun, you won]\nYou apologize to get between my thighs.\nSick one. [sick one. sick one.]\nYou said I love you and always be true [I'm dumb]\nBut when out of sight you lost your damn mind. [scum]\nYou got new supply and you crossed a lot of lines. [who's this?] [Bitch!]\nI couldn't believe all the lies you told. [probably more than I know]\nYou were sus so I looked through your phone. [yes I did!]\nIt may be wrong [kinda wrong]\nTurns out I was right all along. [facts!]\nSick one. [Sick one. sick one]\nMy love [my love, my love] is on a sick one too. [Sick one. Sick one.]\nI don't know what to o...how to end it with you.\nI run back. [Real fast]\nRight on cue. [straight to you]\nSick one.\nIt's our drug. [Staying high]\nWe're never done. [living a lie]\nOn a sick one. [Sick one. sick one.]\nAnd you were right, this song is about you.\nO. Sick one.",
-    "audioUrl": "/assets/music/sick-one-s1c-audio.mp3"
-  },
-  {
-    "id": 31,
-    "title": "SOLID SHIFTING GROUND",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/solid-shifting-ground-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235609969/",
-    "songbayPlayerUrl": "https://songbay.co/player/235609969",
-    "genre1": "Easy Listening",
-    "genre2": "Contemporary Folk",
-    "moodTone": "Anthemic, Introspective, Positive, Slow",
-    "category": "Inspirational / Life's Duality",
-    "tempo": "Slow",
-    "internalRating": "Placeholder",
-    "placementType": "Meaningful Anthem / Film Sync",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Gender Fluid (either/or)",
-    "pov": "1st Person (Universal)",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Drum Machine",
-      "Piano-Electric",
-      "Synthesizers",
-      "Vocals-Backing Vocals",
-      "Vocals-Sung"
-    ],
-    "seoSnippet": "A deeply emotional and universally relatable ballad that explores the beautiful yet challenging duality of life: that the lows are essential to appreciating the highs.",
-    "shortDescription": "The song uses imagery of shattered hearts, fading flowers, and storm clouds contrasted with golden sunshine to convey that life, despite its turbulence, is worth it every time it comes around.",
-    "longDescription": "\"Solid Shifting Ground\" is a deeply emotional and universally relatable ballad that explores the beautiful yet challenging duality of life. The song's lyrical structure, with its clear verses, a soaring chorus, and a powerful bridge, is perfect for a soulful pop, folk, or country arrangement. The track's core message—that the lows are essential to appreciating the highs—resonates with a broad audience, making it ideal for sync opportunities in film and television or as a standout single for an artist seeking a meaningful anthem. The song's imagery, from \"storm clouds\" and \"shattered hearts\" to \"golden sunshine\" and a \"steady beacon,\" offers a rich palette for production.",
-    "snippetA": "But for every up there is a down, yeah it's true",
-    "snippetB": "This crazy, beautiful life on solid, shifting ground.",
-    "commercialPotential": "Ideal for film and television sync placements, especially motivational or reflective montages, and for an artist seeking a meaningful anthem.",
-    "keywords": [
-      "Duality",
-      "Inspirational",
-      "Folk",
-      "Ballad",
-      "Life",
-      "Positive",
-      "Slow"
-    ],
-    "hashtags": [
-      "#SolidShiftingGround",
-      "#KellieLarson",
-      "#InspirationalAnthem",
-      "#LifeSong"
-    ],
-    "relatedSearchTerms": [
-      "Universal",
-      "Emotional Duality",
-      "Philosophical",
-      "Reflective",
-      "Motivational",
-      "Soulful",
-      "Ballad",
-      "Meaningful Anthem"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "(Verse 1)\nA heart can be heavy, weighted down by dreams\nLike a storm cloud gatherin', it silently screams.\nA heart can be shattered, splintered on the floor\nLeaving you in pieces, wanting somethin' more.\nA flower can unfurl, a vibrant, joyful sight\nKissed by golden sunshine, bathed in morning light.\nThat same flower can fade, its colors turn to gray\nPetals fallin' softly, driftin' far away.\n\n(Verse 2)\nLove can lift you higher than you've ever known\nBuildin' you an empire, a comfortable throne.\nThat same love can leave you stranded in the night\nA hollow, empty feeling, where once burned a light.\nA friend can be a beacon, steady and so true\nLendin' you their strength for all that you go through.\nAnd another can turn on you, with a bitter sting\nLeaving you to wonder, what tomorrow will bring.\n\n(Chorus)\nBut for every up there is a down, yeah it's true\nLike the tide that rushes in, then pulls away from you.\nAnd it's worth it every time it comes around\nThis crazy, beautiful life on solid, shifting ground.\n\n(Bridge)\nSo hold on to the moments when you're standin' tall\nEmbrace the gentle rain when you begin to fall.\n'Cause the darkness only makes the sunshine shine so bright\nGotta feel the low to truly know the height.\n\n(Chorus)\n'Cause for every up there is a down, yeah it's true\nLike the tide that rushes in, then pulls away from you.\nAnd it's worth it every time it comes around\nThis crazy, beautiful life on solid, shifting ground.\n\n(Outro)\nYeah, it's worth it every time, the laughter and the tears\nPushin' through the shadows, conquerin' all your fears.\nFor every up there is a down, and that's alright\nWe'll keep on reachin' for the light, with all our might.\nOoh-ooh-ooh, yeah, the light.\nOoh-ooh-ooh, with all our might.",
-    "audioUrl": "/assets/music/solid-shifting-ground-audio.mp3"
-  },
-  {
-    "id": 32,
-    "title": "STOOD BY MY SIDE",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/stood-by-my-side-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235610824/",
-    "songbayPlayerUrl": "https://songbay.co/player/235610824",
-    "genre1": "Gospel and Religious",
-    "genre2": "General Christian",
-    "moodTone": "Anthemic, Dramatic, Heavy, Peaceful, Soft",
-    "category": "Faith / Hope / Healing",
-    "tempo": "Slow",
-    "internalRating": "Placeholder",
-    "placementType": "Inspirational Ballad / Religious Sync",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Gender Fluid (either/or)",
-    "pov": "1st Person (Spiritual)",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Piano-Grand",
-      "Vocals-Backing Vocals",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "A deeply emotional testament to finding hope and healing through faith, beginning in profound darkness and culminating in a renewed will to live.",
-    "shortDescription": "The song contrasts feeling abandoned with the steadfast presence of divine love, encapsulated in the powerful chorus: 'When the world walked away, You stood by my side, / And because You're with me, I don't wanna die.'",
-    "longDescription": "This song is a deeply emotional testament to finding hope and healing through faith. It begins in a place of profound darkness, using imagery like \"shadows falling\" and a \"world weighed heavy, crushing me down.\" The lyrics describe a feeling of being completely alone, overwhelmed by negative thoughts that lead to suicidal ideation. The turning point is the introduction of a divine presence, \"Lord,\" whose love is the \"light that broke through.\" This relationship is a constant source of strength and companionship. The chorus, \"When the world walked away, You stood by my side,\" powerfully contrasts feeling abandoned with the steadfast presence of this divine love. It's this love that transforms the speaker's despair into a renewed will to live.",
-    "snippetA": "When the world walked away, You stood by my side,",
-    "snippetB": "And because You're with me, I don't wanna die.",
-    "commercialPotential": "Ideal for inspirational content, religious programming, and themes of overcoming struggle through faith.",
-    "keywords": [
-      "Gospel",
-      "Religious",
-      "Inspirational",
-      "Hope",
-      "Healing",
-      "Ballad",
-      "Faith"
-    ],
-    "hashtags": [
-      "#StoodByMySide",
-      "#KellieLarson",
-      "#Gospel",
-      "#Inspirational"
-    ],
-    "relatedSearchTerms": [
-      "Divine Presence",
-      "Spiritual",
-      "Overcoming Darkness",
-      "Suicidal Ideation",
-      "Healing",
-      "Anthem of Hope",
-      "Christian"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "(Verse 1)\nShadows falling, cold and deep,\nFaces turned, secrets to keep.\nWorld weighed heavy, crushing me down,\nLost in silence, no one around.\nWhispers in the dark, told me to quit,\nSaid nobody cared, not even a bit.\nBut then a whisper, a light broke through,\nA love wrapped around, strong and true.\n\n(Chorus)\nWhen the world walked away, You stood by my side,\nMy constant companion, nowhere to hide.\nYou have my back, Lord, a strength I can't deny,\nAnd because You're with me, I don't wanna die.\n\n(Verse 2)\nThe lies they echoed, now they fade away,\nYour sweet presence brightens every day.\nEmptiness inside, starts to fill,\nWith peace overflowing, making me still.\nThe urge to end it, it weakens and flees,\nDrowned out by hope, finding inner ease.\n\n(Chorus)\nWhen the world walked away, You stood by my side,\nMy constant companion, nowhere to hide.\nYou have my back, Lord, a strength I can't deny,\nAnd because You're with me, I don't wanna die.\n\n(Bridge)\nDon't walk this path with fear, not anymore,\nYour presence makes me whole, to my very core.\nEven in the valleys, Your hand guides my way,\nTurning dark moments to a brighter day.\n\n(Chorus)\nWhen the world walked away, You stood by my side,\nMy constant companion, nowhere to hide.\nYou have my back, Lord, a strength I can't deny,\nAnd because You're with me, I don't wanna die.\n\n(Outro)\nDon't wanna die, Your love set me free,\nForever in Your presence, eternally.\nYou have my back, Lord, I'm never alone.",
-    "audioUrl": "/assets/music/stood-by-my-side-audio.mp3"
-  },
-  {
-    "id": 33,
-    "title": "THE AFTERMATH",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/the-aftermath-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235610538/",
-    "songbayPlayerUrl": "https://songbay.co/player/235610538",
-    "genre1": "Alternative and Punk",
-    "genre2": "Indie Pop",
-    "moodTone": "Anthemic, Anxious, Dramatic, Haunting, Tension",
-    "category": "Emotional Turmoil / Breakup",
-    "tempo": "Slow",
-    "internalRating": "Placeholder",
-    "placementType": "Indie Pop / Dramatic Emotional Scene",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person (Ambiguous)",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Piano-Upright",
-      "Vocals-spoken",
-      "Vocals-Sung"
-    ],
-    "seoSnippet": "The song explores the internal turmoil and quiet that follows a chaotic, destructive relationship, where the narrator finds a 'bizarre comfort in the chaos left behind.'",
-    "shortDescription": "This emotionally charged track describes a narrator who is not used to the post-breakup silence, clinging to the 'familiar ache.' It's a story of coming to terms with the end of a toxic relationship and defiantly moving toward healing.",
-    "longDescription": "\"The Aftermath\" Genre/Mood: Alternative Rock/Indie Pop, Emotional, and Defiant. Narrative Synopsis: The song's narrative explores the internal turmoil and quiet that follows a chaotic, destructive relationship. The lyrics describe a narrator who is not used to the silence and finds a \"bizarre comfort in the chaos left behind\". It is a story of coming to terms with the end of a toxic relationship and finding the strength to move on. Key Lyrical Hook: The lines \"I used to crave that familiar ache... Found bizarre comfort in the chaos left behind\" serve as a compelling and unique hook. Commercial Application: This emotionally charged track is a perfect fit for dramatic moments in a TV series or alternative/indie films that feature a powerful, high-stakes emotional confrontation or a moment of reflection.",
-    "snippetA": "This suffocating quiet, a heavy shroud,",
-    "snippetB": "Found bizarre comfort in the chaos left behind.",
-    "commercialPotential": "Perfect fit for dramatic moments in a TV series or alternative/indie films that feature a powerful, high-stakes emotional confrontation or reflection.",
-    "keywords": [
-      "Emotional Turmoil",
-      "Breakup",
-      "Chaos",
-      "Indie Pop",
-      "Alternative Rock",
-      "Reflection"
-    ],
-    "hashtags": [
-      "#TheAftermath",
-      "#KellieLarson",
-      "#IndieRock",
-      "#Emotional"
-    ],
-    "relatedSearchTerms": [
-      "Suffocating Quiet",
-      "Toxic Relationship",
-      "Defiant",
-      "Internal Turmoil",
-      "Anxiety",
-      "Healing",
-      "Indie Rock"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "(Verse 1)\nCan't breathe in this quiet,\nNot used to the silence.\nHooked on the drama, the raw violence\nOf us, a destructive defiance.\nThis empty space just screams your name,\nA gaping void where chaos once held flame.\nMy days stretch out, a hollow hum,\nWhere'd the noise go?\nWhy's it numb?\n\n(Pre-Chorus)\nSo I hit play, spend my day\nRewinding, reliving, come what may.\nGood times just flickered, a cruel tease,\nI paused, on my knees, begging for ease.\nStill searching, a desperate plea,\nBut the bad times drown me, pushing through me.\nA torrent of pain, a relentless tide,\nNowhere to run, nowhere to hide.\n\n(Chorus)\nThis suffocating quiet, a heavy shroud,\nDrowning out thoughts, screaming too loud.\nGhosts of arguments, a spectral fight,\nHaunting me, day and through the night.\nEach memory a thorn, a bitter sting,\nThe broken promises, the cruel words you'd fling.\nI used to crave that familiar ache, the twisted bind,\nFound bizarre comfort in the chaos left behind.\n\n(Verse 2)\nThe silence whispers, \"You're finally free,\"\nBut the echoes still bind me to what used to be.\nA part of me clings to the hurt, the known,\nAfraid of this journey, stepping out alone.\nBut even the quiet can start to reveal,\nA strength I forgot, a way to truly feel.\n\n(Pre-Chorus)\nSo I hit play, spend my day\nRewinding, reliving, come what may.\nGood times just flickered, a cruel tease,\nI paused, on my knees, begging for ease.\nStill searching, a desperate plea,\nBut the bad times drown me, pushing through me.\nA torrent of pain, a relentless tide,\nI don't want to run, I don't want to hide.\n\n(Chorus)\nThis suffocating quiet, a heavy shroud,\nDrowning out thoughts, screaming too loud.\nGhosts of arguments, a spectral fight,\nHaunting me, day and through the night.\nEach memory a thorn, a bitter sting,\nThe broken promises, the cruel words you'd fling.\nI used to crave that familiar ache, the twisted bind,\nFound bizarre comfort in the chaos left behind.\n\n(Bridge)\nWith every breath, every single second spent,\nDragging me down to this living torment.\nBut the anger burns, a purifying fire,\nFueling my escape from this toxic mire.\nYeah, the anger burns, a purifying fire...\nI'm fueling my escape, higher and higher!\n\n(Chorus)\nNO MORE REWINDING, I'LL STOP THE PLAY!\nNO MORE RELIVING, come what may!\nGood times so few, I'll leave them behind,\nNo longer struggling, a new peace I'll find.\nNo longer searching for what wasn't real,\nThe bad times too many, now I start to heal!\nNo pain, no tide, I'll find my own solace, I no longer need to hide!\n\n(Outro)\nThe truth breaks through, bitter and clear,\nReclaiming my strength, shaking off the fear.\nThe silence now?\nA promise, not a dread,\nA wide-open space for what's next instead.\nI'll rise strong and new,\nFinally free, forever done with you.\nEveryone was right...\nYou weren't worth the fight",
-    "audioUrl": "/assets/music/the-aftermath-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$250.00",
-      "fullCopyrightPrice": "$6,000.00"
-    }
-  },
-  {
-    "id": 34,
-    "title": "THE BACK OF ME",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "Placeholder",
-    "coverImageUrl": "/assets/covers/the-back-of-me-cover-art.jpg",
-    "songbayWebpageUrl": "Placeholder",
-    "songbayPlayerUrl": "Placeholder",
-    "genre1": "Placeholder",
-    "genre2": "Placeholder",
-    "moodTone": "Placeholder",
-    "category": "General / Placeholder",
-    "tempo": "Placeholder",
-    "internalRating": "Placeholder",
-    "placementType": "Placeholder",
-    "keySignature": "N/A",
-    "timeSignature": "N/A",
-    "vocalType": "Placeholder",
-    "pov": "Placeholder",
-    "fileType": "Placeholder",
-    "instrumentation": [],
-    "seoSnippet": "Placeholder",
-    "shortDescription": "Placeholder",
-    "longDescription": "Placeholder",
-    "snippetA": "Placeholder",
-    "snippetB": "Placeholder",
-    "commercialPotential": "Placeholder",
-    "keywords": [],
-    "hashtags": [],
-    "relatedSearchTerms": [],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "Placeholder",
-    "audioUrl": "/assets/music/the-back-of-me-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "Placeholder",
-      "coverSongPrice": "Placeholder",
-      "standardLicensePrice": "Placeholder",
-      "extendedLicensePrice": "Placeholder",
-      "fullCopyrightPrice": "Placeholder"
-    }
-  },
-  {
-    "id": 35,
-    "title": "THE SHOW IS THROUGH",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/the-show-is-through-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235612882/",
-    "songbayPlayerUrl": "https://songbay.co/player/235612882",
-    "genre1": "R-n-B",
-    "genre2": "Soul",
-    "moodTone": "Anthemic, Dramatic, Melancholic, Sad",
-    "category": "Closure / Breakup / Theatrical",
-    "tempo": "Mid Tempo",
-    "internalRating": "Placeholder",
-    "placementType": "Theatrical Finale / Cinematic Closure",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person Female",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Drum Kit",
-      "Piano-Grand",
-      "Vocals-spoken",
-      "Vocals-Rap",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "The song uses the extended metaphor of a stage play to describe the definitive end of a toxic relationship with powerful, theatrical language.",
-    "shortDescription": "The narrator, feeling like an 'actor, playing a part,' declares the show is over as the 'curtain falls' and the 'credits roll.' It's a powerful narrative of closure, self-liberation, and final judgment on the deceitful partner.",
-    "longDescription": "\"Show is Through\" Genre/Mood: Dramatic, Theatrical, and Final. Narrative Synopsis: The song uses the extended metaphor of a stage play to describe the end of a relationship. The narrator, who feels like an \"actor, playing a part\" and having their \"heart ripped out,\" declares that the show is over as the \"curtain falls\" and the \"credits roll.\" It is a powerful narrative of closure and self-liberation. Target Vocalist: A theatrical or pop-rock vocalist who can deliver a powerful and dramatic performance. Key Lyrical Hook: The repeated, declarative statement \"Take a bow, 'cause the show is through\" serves as the central hook.",
-    "snippetA": "Take a bow, 'cause the show is through.",
-    "snippetB": "And exit stage left, 'cause the show is through.",
-    "commercialPotential": "Perfect for high-impact cinematic placements, such as the final scene of a film or an end-of-episode placement in a TV drama.",
-    "keywords": [
-      "Closure",
-      "Theatrical",
-      "Breakup",
-      "Dramatic",
-      "R&B",
-      "Soul",
-      "Finality"
-    ],
-    "hashtags": [
-      "#TheShowIsThrough",
-      "#KellieLarson",
-      "#Theatrical",
-      "#Closure"
-    ],
-    "relatedSearchTerms": [
-      "Stage Play Metaphor",
-      "Theatrical",
-      "Definitive End",
-      "Curtain Call",
-      "Finality",
-      "R&B Ballad",
-      "Cinematic"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "You're an actor, playing a part.\nA starring role, ripping out my heart.\nMost would abuse, then quickly dart.\nNot you though, you ad lib and tore my world apart.\nTake a bow, 'cause the show is through.\nJust like us, no more me and you.\nBy the way, you're a damn fine terrible actor, and human too.\nThe curtain falls, the credits roll.\nBut it's a one-man show.\nNo encores, you've taken your toll.\nSpotlight's off, darkness fills my soul.\nLeft with the ruins of every scene.\nMy anger's out of control.\nTake a bow, 'cause the show is through.\nJust like us, no more me and you.\nBy the way, you're a damn fine terrible actor, and human too.\nI thought your performance was real, a masterpiece.\nBut it was all fake, a twisted, cruel release.\nMy heart, your prop, now shattered to pieces.\nThe act is over, and the torment ceases.\nTake a bow, 'cause the show is through.\nJust like us, no more me and you.\nBy the way, you're a damn fine terrible actor, and human too.\n\n[Outro]\nGo on, break a leg at your next big premiere.\nNo need for a fourth act, please just disappear.\nAnd exit stage left, 'cause the show is through.\nJust like me... and you.",
-    "audioUrl": "/assets/music/the-show-is-through-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$200.00",
-      "fullCopyrightPrice": "$5,000.00"
-    }
-  },
-  {
-    "id": 36,
-    "title": "THOUGHT YOU SHOULD KNOW",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/thought-you-should-know-cover-art.jpg",
-    "songbayWebpageUrl": "https://songbay.co/view-music/235610628/",
-    "songbayPlayerUrl": "https://songbay.co/player/235610628",
-    "genre1": "Pop",
-    "genre2": "General Pop",
-    "moodTone": "Anthemic, Confident, Dancing",
-    "category": "Moving On / Celebration / Pop",
-    "tempo": "Fast",
-    "internalRating": "Placeholder",
-    "placementType": "Upbeat Pop Anthem / Commercial Appeal",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person Female",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Drum Kit",
-      "Vocals-Sung",
-      "Voice-synth"
-    ],
-    "seoSnippet": "'Thought You Should Know' is an upbeat pop anthem with a vibrant, celebratory feel, acting as a powerful statement of moving on and thriving after struggle.",
-    "shortDescription": "Built on a foundation of shimmering synths and a confident vocal, the track celebrates breaking the cycle of a toxic past, replacing shadows with light, and living a best life.",
-    "longDescription": "\"Thought You Should Know\" is an upbeat pop anthem with a vibrant, celebratory feel, perfect for artists and producers looking for a track with broad commercial appeal. The song is a powerful statement of moving on and thriving after a period of struggle. It's built on a foundation of shimmering synths. The lyrics focus on enjoying life with friends, having fun, and feeling free from past sadness and shadows. The message is clear: the narrator is doing great and has moved on completely.",
-    "snippetA": "Oh, i'm alright, i'm fine (i'm good)",
-    "snippetB": "The past is a whisper, replaced by the light!",
-    "commercialPotential": "Broad commercial appeal, high potential for general pop/party sync placements.",
-    "keywords": [
-      "Pop Anthem",
-      "Moving On",
-      "Celebration",
-      "Confident",
-      "Dancing",
-      "Upbeat"
-    ],
-    "hashtags": [
-      "#ThoughtYouShouldKnow",
-      "#KellieLarson",
-      "#PopAnthem",
-      "#LivingMyBestLife"
-    ],
-    "relatedSearchTerms": [
-      "Vibrant",
-      "Thriving",
-      "Breakup",
-      "Optimistic",
-      "Commercial",
-      "Party",
-      "Upbeat",
-      "Good Vibes"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "[Verse 1]\nSun in my eyes, new day takes hold\nNo more shadows, stories untold\nThe world's spinning fast, through moments i fly\nJust letting the old feelings softly die\nGot this feeling, pushing me higher\nBurning brighter, like a raging fire!\nYeah, this feeling, it's all brand new\nBreaking on through\nHeard you were asking so i thought you should know\n\n[Chorus]\nOh, i'm alright, i'm fine (i'm good)\nHaving the most fun, on cloud nine\nOut with the girls, we paint the town red\nHardly ever sleeping in my own bed\nNo more shadows, no darkness in sight\nThe past is a whisper, replaced by the light!\n\n[Verse 2]\nLaughter with friends, filling the air\nDinners with family, without a care\nNo longer crying, those tears are all gone\nBeen moving forward, from dusk till dawn\nMy mind
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Pro Vault | Verse and Chorus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define Custom Colors & Fonts */
+        :root {
+            --burgundy: #800020; /* Deep Burgundy */
+            --light-text: #e0e0e0;
+            --main-text: #ffffff;
+        }
+
+        /* Apply global styles */
+        body {
+            background-color: #000000;
+            color: var(--light-text);
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth; /* For smooth scrolling to the top */
+        }
+
+        /* Script font for the main site title */
+        .script-font {
+            font-family: 'Parisienne', cursive;
+        }
+
+        /* The unique page title block style */
+        .page-title-block {
+            display: flex;
+            align-items: center;
+            border-left: 2px solid var(--light-text); /* The vertical line divider */
+            padding-left: 1rem;
+        }
+        
+        /* General content wrapper for centering */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Legal Box Styling - Border added here */
+        .legal-box {
+            border: 4px solid #9ca3af; /* Blue-Gray Border for Legal Box */
+            background-color: #1a1a1a;
+            border-radius: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Song Grid Image Sizing */
+        .song-item img {
+            width: 100%;
+            max-width: 200px; /* Constrain image size */
+            height: auto;
+            border-radius: 0.5rem;
+        }
+        
+        /* Spacing for bullet points */
+        .legal-box li {
+            margin-bottom: 1.25rem;
+        }
+
+        /* Custom Scratched/Distressed Border Effect */
+        .scratched-border {
+            /* Remove standard border width */
+            border: 0px solid transparent; 
+            
+            /* Apply custom border image properties */
+            border-width: 5px; /* Thicker border to hold the effect */
+            border-style: solid;
+            border-radius: 0.5rem; /* Ensure rounded corners are maintained */
+            
+            /* Using a repeating linear gradient to simulate distressed lines (scratches) */
+            /* This pattern alternates between transparent/dark (black) and white (light) stripes */
+            border-image-source: repeating-linear-gradient(
+                90deg,
+                #000000 0px,
+                #000000 3px,
+                #ffffff 3px,
+                #ffffff 5px,
+                #000000 5px
+            );
+            /* Slice and repeat the image over the entire border */
+            border-image-slice: 1;
+            border-image-repeat: repeat;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-[var(--burgundy)] text-white shadow-xl sticky top-0 z-50">
+        <div class="content-container py-3 flex justify-between items-center">
+            
+            <div class="flex items-center space-x-4">
+                <a href="/index.html" class="flex items-center space-x-2">
+                    <img src="/Images/logo.svg" alt="Verse and Chorus Logo" class="h-8 w-8">
+                </a>
+            </div>
+
+            <nav id="nav-desktop" class="hidden md:block">
+                <ul class="flex space-x-6 text-sm font-semibold tracking-wider">
+                    <li><a href="/index.html" class="hover:text-slate-300 transition duration-200">HOME</a></li>
+                    <li><a href="/bio.html" class="hover:text-slate-300 transition duration-200">BIO</a></li>
+                    <li><a href="/industry-pros.html" class="hover:text-slate-300 transition duration-200">INDUSTRY PROS</a></li>
+                    <li><a href="/lyrics.html" class="hover:text-slate-300 transition duration-200">MUSIC</a></li>
+                    <li><a href="/green-room.html" class="hover:text-slate-300 transition duration-200">GREEN ROOM</a></li>
+                    <li><a href="/articles.html" class="hover:text-slate-300 transition duration-200">ARTICLES</a></li>
+                    <li><a href="/lyric-critque.html" class="hover:text-slate-300 transition duration-200">LYRIC CRITIQUE</a></li>
+                    <li><a href="/collab.html" class="hover:text-slate-300 transition duration-200">COLLAB/CONSULT</a></li>
+                    <li><a href="/contact.html" class="hover:text-slate-300 transition duration-200">CONTACT</a></li>
+                    <li><a href="/legal.html" class="hover:text-slate-300 transition duration-200">LEGAL</a></li>
+                </ul>
+            </nav>
+
+            <button id="hamburger-menu" class="md:hidden text-white focus:outline-none p-2 rounded-md hover:bg-black/20 transition duration-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-[var(--burgundy)] transition-all duration-300 shadow-lg">
+            <ul class="flex flex-col text-center pb-2 text-sm font-semibold tracking-wider">
+                <li><a href="/index.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">HOME</a></li>
+                <li><a href="/bio.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">BIO</a></li>
+                <li><a href="/industry-pros.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">INDUSTRY PROS</a></li>
+                <li><a href="/lyrics.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">MUSIC</a></li>
+                <li><a href="/green-room.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">GREEN ROOM</a></li>
+                <li><a href="/articles.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">ARTICLES</a></li>
+                <li><a href="/lyric-critque.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">LYRIC CRITIQUE</a></li>
+                <li><a href="/collab.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">COLLAB/CONSULT</a></li>
+                <li><a href="/contact.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">CONTACT</a></li>
+                <li><a href="/legal.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">LEGAL</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="bg-black py-4 border-b border-gray-800 shadow-lg">
+        <div class="content-container text-center">
+            <h1 class="script-font text-5xl sm:text-6xl font-bold tracking-wider text-amber-400">Verse and Chorus</h1>
+        </div>
+    </div>
+
+    <main class="flex-grow py-10">
+        <div class="content-container">
+
+            <div class="mb-10 pt-4">
+                <div class="page-title-block">
+                    <h2 class="text-4xl font-extrabold tracking-widest text-white ml-4">INDUSTRY PRO VAULT</h2>
+                </div>
+                <p class="text-lg mt-2 text-gray-300 ml-4">Curated catalog for A&R and sync professionals</p>
+            </div>
+            
+            <div class="bg-[var(--burgundy)] p-8 mb-12 rounded-xl shadow-2xl text-center border-6 border-gray-400">
+                <h3 class="text-2xl font-bold text-white mb-3">Welcome to the Vault</h3>
+                <p class="text-gray-100 max-w-3xl mx-auto">
+                    This exclusive section provides fully licensed, pre-cleared assets ready for immediate commercial development. Our system ensures clear IP ownership and royalty-free composition for all placeholder demos, streamlining your path to full copyright.
+                </p>
+                <button class="mt-5 bg-white text-[var(--burgundy)] font-bold py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300">
+                    Explore Licensing Options
+                </button>
+            </div>
+
+
+            <div class="legal-box p-6 mb-10">
+                <h4 class="text-xl font-bold text-white mb-4">Rights & Licensing Assurance (For Industry Use)</h4>
+                
+                <p class="mb-6 text-gray-300">To ensure a seamless, low-risk process for A&R and Sync partners, we offer the following guarantees for all placeholder demos:</p>
+
+                <ul class="text-sm text-gray-300">
+                    <li><strong class="text-white">✅ Royalty-Free Composition:</strong> The instrumental and vocal placeholder track generated by Donna AI is covered by a Lifetime Royalty-Free Commercial License. This eliminates all recurring sync or master use fees for the underlying AI composition.</li>
+                    
+                    <li><strong class="text-white">✅ Guaranteed Lyric Ownership:</strong> The lyrics are 100% human-authored and registered via Songbay, providing clear, verifiable intellectual property (IP) protection and ownership before any further development.</li>
+                    
+                    <li><strong class="text-white">✅ Zero Future Royalties from AI:</strong> Your label/production company will never owe performance or mechanical royalties to the AI platform owner (Mobiversite/Donna AI) for the use of the demo.</li>
+                    
+                    <li><strong class="text-white">✅ Simple Path to Full Copyright:</strong> Once you sign the song and re-record the music (replacing the AI vocals/instruments), the song becomes a new, fully human-authored derivative work based on our copyrighted lyrics, providing your company with full, traditional copyright ownership over the final master and publishing.</li>
+                    
+                    <li><strong class="text-white">✅ Immediate Clearance:</strong> All material is pre-cleared for commercial development and Sync Licensing under the terms of our active PRO subscription. Proof of License (PoC) available instantly upon request.</li>
+                </ul>
+            </div>
+            
+            <div class="flex flex-wrap justify-between items-center bg-gray-900 p-4 rounded-lg mb-10 text-white shadow-lg border-4 border-gray-400">
+                <div class="text-lg font-semibold text-white mb-4 sm:mb-0">Filter Catalog:</div>
+                <div class="flex flex-wrap gap-2 text-sm">
+                    
+                    <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option>Genre</option>
+                        <option>Alternative and Punk</option>
+                        <option>Blues</option>
+                        <option>Country</option>
+                        <option>Easy Listening</option>
+                        <option>Gospel and Religious</option>
+                        <option>Jazz</option>
+                        <option>Metal</option>
+                        <option>Pop</option>
+                        <option>Punk</option>
+                        <option>R&B</option>
+                        <option>Rock</option>
+                        <option>World</option>
+                    </select>
+
+                    <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option>Mood</option>
+                        <option>Anthemic</option>
+                        <option>Bitter</option>
+                        <option>Confident</option>
+                        <option>Cool</option>
+                        <option>Determined</option>
+                        <option>Dramatic</option>
+                        <option>Dreamy</option>
+                        <option>Hard</option>
+                        <option>Heavy</option>
+                        <option>Introspective</option>
+                        <option>Mellow</option>
+                        <option>Melancholic</option>
+                        <option>Peaceful</option>
+                        <option>Playful</option>
+                        <option>Proud</option>
+                        <option>Romantic</option>
+                        <option>Revenge</option>
+                        <option>Sad</option>
+                        <option>Slow</option>
+                        <option>Soft</option>
+                    </select>
+
+                    <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option>Tempo</option>
+                        <option>Fast</option>
+                        <option>Mid Tempo</option>
+                        <option>Slow</option>
+                    </select>
+                    
+                    <select class="p-2 bg-white border border-gray-400 rounded-md text-black focus:ring-1 focus:ring-[var(--burgundy)]">
+                        <option>Sub Genre/Style</option>
+                        <option>Americana</option>
+                        <option>Ballad</option>
+                        <option>Bedroom Pop</option>
+                        <option>Contemporary</option>
+                        <option>Country</option>
+                        <option>Crunk</option>
+                        <option>Dancehall</option>
+                        <option>Horror</option>
+                        <option>Pop</option>
+                        <option>Rock</option>
+                    </select>
+
+
+                    <button class="bg-[var(--burgundy)] hover:bg-red-800 text-white font-semibold py-2 px-4 rounded-md transition duration-200">Filter</button>
+                    <button class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition duration-200">Reset</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/author-of-a-lie-cover-art.jpg" alt="AUTHOR OF A LIE cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        AUTHOR OF A LIE
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/author-of-a-lie-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, Hip-Hop | Mood: Anthemic, Confident | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Deceit, Lies, Gaslighting</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"You're the author of a lie, a master of deceit. And I'm tired of this story on repeat."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/big-hard-no-cover-art.jpg" alt="BIG HARD NO cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        BIG HARD NO
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/big-hard-no-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Rock, Alternative | Mood: Determined | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Setting Boundaries, Rejection</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for BIG HARD NO."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/boom-boom-beat-cover-art.jpg" alt="BOOM BOOM BEAT cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        BOOM BOOM BEAT
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/boom-boom-beat-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Alternative, Rock | Mood: Romantic, Playful | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Yodeling Love Song, Reunion</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Boom boom boom da boom boom boom, Ah-yo-delay-ee-hoo!"</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/broken-record-cover-art.jpg" alt="BROKEN RECORD cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        BROKEN RECORD
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/broken-record-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, Blues | Mood: Melancholic | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Repetitive Conflict, Relationship Stress</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for BROKEN RECORD."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/ceo-not-a-babysitting-tree-cover-art.jpg" alt="CEO, NOT BABYSITTING TREE cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        CEO, NOT BABYSITTING TREE
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/ceo-not-a-babysitting-tree-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Hip-Hop, Pop | Mood: Confident, Proud | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Success, Independence, Self-Worth</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for CEO, NOT BABYSITTING TREE."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/children-of-war-cover-art.jpg" alt="CHILDREN OF WAR cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        CHILDREN OF WAR
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/children-of-war-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: World, Gospel | Mood: Sad, Dramatic | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Conflict, Innocence Lost, Global Tragedy</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for CHILDREN OF WAR."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+                
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/concrete-under-the-feet-cover-art.jpg" alt="CONCRETE UNDER THE FEET cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        CONCRETE UNDER THE FEET
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/concrete-under-the-feet-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Rock, Alternative | Mood: Introspective, Heavy | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Urban Life, Existentialism</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for CONCRETE UNDER THE FEET."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/craving-those-crumbs-cover-art.jpg" alt="CRAVING THOSE CRUMBS cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        CRAVING THOSE CRUMBS
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/craving-those-crumbs-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: R&B, Pop | Mood: Sad, Melancholic | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Desperate Love, Low Self-Worth</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for CRAVING THOSE CRUMBS."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/dont-be-jelly-cover-art.jpg" alt="DON'T BE JELLY cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        DON'T BE JELLY
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/dont-be-jelly-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, R&B | Mood: Confident, Playful | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Bragging, Jealousy</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for DON'T BE JELLY."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/ephemeral-moment-cover-art.jpg" alt="EPHEMERAL MOMENT cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        EPHEMERAL MOMENT
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/ephemeral-moment-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Easy Listening, Pop | Mood: Dreamy, Soft | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Nostalgia, Fleeting Beauty</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for EPHEMERAL MOMENT."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/etched-in-every-space-cover-art.jpg" alt="ETCHED IN EVERY SPACE cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        ETCHED IN EVERY SPACE
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/etched-in-every-space-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Country, Ballad | Mood: Romantic, Mellow | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Enduring Love, Dedication</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for ETCHED IN EVERY SPACE."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/first-step-cover-art.jpg" alt="FIRST STEP cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        FIRST STEP
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/first-step-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, R&B | Mood: Determined, Anthemic | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Motivation, New Beginnings</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for TAKE THAT FIRST STEP."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/fury-im-the-monster-cover-art.jpg" alt="FURY (I'M THE MONSTER) cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        FURY (I'M THE MONSTER)
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/fury-im-the-monster-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Metal, Rock | Mood: Heavy, Dramatic | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Rage, Transformation, Internal Struggle</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for FURY (I'M THE MONSTER)."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/genx-80s-anthem-cover-art.jpg" alt="GENX 80S ANTHEM cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        GENX 80S ANTHEM
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/genx-80s-anthem-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Rock, Pop | Mood: Playful, Proud | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: 80s Nostalgia, Generational Pride</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for GENX 80S ANTHEM."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/heartbreak-and-trouble-cover-art.jpg" alt="HEARTBREAK AND TROUBLE cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        HEARTBREAK AND TROUBLE
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/heartbreak-and-trouble-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, R&B | Mood: Sad, Melancholic | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Love Trouble, Sadness, Relationship</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for HEARTBREAK AND TROUBLE."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/hit-the-road-cover-art.jpg" alt="HIT THE ROAD cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        HIT THE ROAD
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/hit-the-road-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, General Dance | Mood: Anthemic, Revenge | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Self-Liberation, Moving On</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Vengeful anthem about moving on from a toxic relationship. Empowerment-focused pop."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/hows--it-feel-bro-cover-art.jpg" alt="HOW'S IT FEEL, BRO? cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        HOW'S IT FEEL, BRO?
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/hows-it-feel-bro-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, Hip-Hop | Mood: Confident, Revenge | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Tables Turning, Getting Even</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for HOW'S IT FEEL, BRO?."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/i-know-your-damn-pin-code-cover-art.jpg" alt="I KNOW YOUR DAMN PIN CODE cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        I KNOW YOUR DAMN PIN CODE
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/i-know-your-damn-pin-code-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Rock, Alt Country | Mood: Bitter, Revenge | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Betrayal, Triumph, Hard Rock</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Breakup anthem of uncovering a partner's deceit and finding empowerment."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/in-my-dreams-cover-art.jpg" alt="IN MY DREAMS cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        IN MY DREAMS
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/in-my-dreams-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Easy Listening, Pop | Mood: Melancholic, Sad | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Loss, Grief, Enduring Love</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"A haunting, heartfelt pop-ballad dealing with the grief of loss."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/just-too-much-cover-art.jpg" alt="JUST TOO MUCH cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        JUST TOO MUCH
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/just-too-much-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Rock, Punk | Mood: Bitter, Hard | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Overwhelmed, Relationship Collapse</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for JUST TOO MUCH."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/just-a-little-lonely-cover-art.jpg" alt="JUST A LITTLE LONELY cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        JUST A LITTLE LONELY
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/just-a-little-lonely-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Country, Ballad | Mood: Sad, Mellow | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Isolation, Missing a Loved One</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for JUST A LITTLE LONELY."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/little-things-cover-art.jpg" alt="LITTLE THINGS cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        LITTLE THINGS
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/little-things-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, Easy Listening | Mood: Romantic, Soft | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Appreciation, Daily Love</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for LITTLE THINGS."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/married-to-the-drug-cover-art.jpg" alt="MARRIED TO THE DRUG cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        MARRIED TO THE DRUG
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/married-to-the-drug-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Rock, Metal | Mood: Heavy, Bitter | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Addiction, Toxic Relationship</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for MARRIED TO THE DRUG."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/murderers-heart-cover-art.jpg" alt="MURDERERS HEART cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        MURDERERS HEART
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/murderers-heart-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Metal, Horror | Mood: Dramatic, Heavy | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Betrayal, Coldness, Dark Love</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for MURDERERS HEART."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/my-girl-karma-cover-art.jpg" alt="MY GIRL KARMA cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        MY GIRL KARMA
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/my-girl-karma-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: R&B, Pop | Mood: Cool, Revenge | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Justice, Payback, Divine Retribution</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for MY GIRL KARMA."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/my-words-matter-cover-art.jpg" alt="MY WORDS MATTER cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        MY WORDS MATTER
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/my-words-matter-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, Anthemic | Mood: Confident, Proud | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Voice, Advocacy, Self-Empowerment</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for MY WORDS MATTER."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/not-that-girl-anymore-cover-art.jpg" alt="NOT THAT GIRL ANYMORE cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        NOT THAT GIRL ANYMORE
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/not-that-girl-anymore-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Country, Pop | Mood: Determined, Introspective | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Personal Growth, Moving On</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for NOT THAT GIRL ANYMORE."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/one-small-wrong-cover-art.jpg" alt="ONE SMALL WRONG cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        ONE SMALL WRONG
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/one-small-wrong-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Rock, Alternative | Mood: Bitter, Dramatic | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Single Mistake, Relationship Fallout</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for ONE SMALL WRONG."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/real-dream-team-cover-art.jpg" alt="REAL DREAM TEAM cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        REAL DREAM TEAM
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/real-dream-team-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, Dancehall | Mood: Playful, Confident | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Friendship, Social Media, Dancing</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for REAL DREAM TEAM."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/shot-by-cupids-dart-cover-art.jpg" alt="SHOT BY CUPIDS DART cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        SHOT BY CUPIDS DART
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/shot-by-cupids-dart-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, Bedroom Pop | Mood: Romantic, Dreamy | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Falling in Love, Infatuation</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for SHOT BY CUPIDS DART."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/showdown-at-my-door-cover-art.jpg" alt="SHOWDOWN AT MY DOOR cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        SHOWDOWN AT MY DOOR
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/showdown-at-my-door-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Rock, Blues | Mood: Dramatic, Determined | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Confrontation, Final Stand</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for SHOWDOWN AT MY DOOR."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/sick-one-s1c-cover-art.jpg" alt="SICK ONE (S1C) cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        SICK ONE (S1C)
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/sick-one-s1c-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Rock, Alternative | Mood: Bitter, Cool | Tempo: Fast</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Toxic Love, Self-Destructive, Drug</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"A raw, brutal confessional exploring a chaotic and self-destructive toxic love."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/solid-shifting-ground-cover-art.jpg" alt="SOLID SHIFTING GROUND cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        SOLID SHIFTING GROUND
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/solid-shifting-ground-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Country, Rock | Mood: Introspective, Sad | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Instability, Foundation, Loss of Control</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for SOLID SHIFTING GROUND."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/stood-by-my-side-cover-art.jpg" alt="STOOD BY MY SIDE cover art" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        STOOD BY MY SIDE
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/stood-by-my-side-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Gospel, Religious | Mood: Peaceful, Soft | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Emotional Testament, Faith, Hope</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"An emotional Christian ballad about finding peace and healing through faith."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/the-aftermath-cover-art.jpg" alt="THE AFTERMATH cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        THE AFTERMATH
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/the-aftermath-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, Ballad | Mood: Sad, Introspective | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Consequences, Broken Relationship</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for THE AFTERMATH."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/the-back-of-me-cover-art.jpg" alt="THE BACK OF ME cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        THE BACK OF ME
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/the-back-of-me-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Country, Americana | Mood: Determined, Introspective | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Leaving the Past Behind, Freedom</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for THE BACK OF ME."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/the-show-is-through-cover-art.jpg" alt="THE SHOW IS THROUGH cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        THE SHOW IS THROUGH
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/the-show-is-through-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Jazz, Blues | Mood: Bitter, Mellow | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: End of an Era, Final Goodbye</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for THE SHOW IS THROUGH."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/thought-you-should-know-cover-art.jpg" alt="THOUGHT YOU SHOULD KNOW cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        THOUGHT YOU SHOULD KNOW
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/thought-you-should-know-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, R&B | Mood: Cool, Confident | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Disclosure, Telling the Truth</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for THOUGHT YOU SHOULD KNOW."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/top-shelf-queen-cover-art.jpg" alt="TOP SHELF QUEEN cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        TOP SHELF QUEEN
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/top-shelf-queen-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Reggae, World | Mood: Mellow, Dreamy | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Cannabis Love Song, Relaxation</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for TOP SHELF QUEEN."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/welcome-to-jukes-cover-art.jpg" alt="WELCOME TO JUKES cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        WELCOME TO JUKES
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/welcome-to-jukes-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Country, Blues | Mood: Mellow, Introspective | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Dive Bars, Honky Tonk, Escapism</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for WELCOME TO JUKES."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/wildflower-cover-art.jpg" alt="WILDFLOWER cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        WILDFLOWER
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/wildflower-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Folk, Americana | Mood: Peaceful, Soft | Tempo: Slow</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Natural Beauty, Untamed Spirit</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for WILDFLOWER."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/year-in-the-rearview-cover-art.jpg" alt="YEAR IN THE REARVIEW cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        YEAR IN THE REARVIEW
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/year-in-the-rearview-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Pop, Contemporary | Mood: Introspective, Determined | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Retrospection, Closure, Looking Forward</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Placeholder description for YEAR IN THE REARVIEW."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+                <div class="song-item p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
+                    <img src="/assets/covers/your-forever-man-cover-art.jpg" alt="YOUR FOREVER MAN cover art placeholder" class="mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
+                        YOUR FOREVER MAN
+                        <button class="play-button text-2xl ml-2 text-[var(--burgundy)] hover:text-white transition duration-200 focus:outline-none" data-src="/assets/music/your-forever-man-audio.mp3">▶️</button>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-1">Genre: Country | Mood: Romantic, Mellow | Tempo: Mid Tempo</p>
+                    <p class="text-xs text-gray-400 mb-3">Theme: Heartfelt Ballad, Support</p>
+                    <div class="mb-4 text-center text-gray-500 text-sm italic">
+                        Click the play button to listen
+                    </div>
+                    <p class="text-sm italic text-gray-300">"Contemporary folk-pop country song about unconditional love and support."</p>
+                    <div class="mt-4 text-gray-400 font-semibold flex justify-end">
+                        <a href="#" class="hover:underline transition duration-200">🖨️ Print Lyric</a>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="bg-[var(--burgundy)] py-6 mt-auto">
+        <div class="content-container text-center text-sm text-gray-200">
+            
+            <p class="mb-0 w-fit mx-auto">Kellie Larson</p>
+            <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1 text-xs">Cinematic songwriter and Lyricist</p>
+            <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1">
+                <a href="tel:7605370222" class="hover:underline">760-537-0222</a>
+            </p>
+            <p class="mb-2 border-b border-gray-500 w-fit mx-auto pb-1">
+                <a href="mailto:info@verseandchorus.com" class="hover:underline">info@verseandchorus.com</a>
+            </p>
+            
+            <p class="pt-2">
+                <a href="/contact.html" class="hover:underline mx-2">Contact</a>
+                <span class="mx-1">|</span>
+                <a href="/legal.html" class="hover:underline mx-2">Terms</a>
+            </p>
+
+            <p class="mt-4 text-xs text-gray-400">&copy; 2025 Verse and Chorus</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top-btn" 
+            class="fixed bottom-5 right-5 z-40 p-3 rounded-full 
+                   bg-[var(--burgundy)] text-white shadow-lg hover:bg-red-800 
+                   transition-opacity duration-300 opacity-0 cursor-pointer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
+
+    <script>
+        const backToTopBtn = document.getElementById('back-to-top-btn');
+        const mobileMenuToggle = document.getElementById('hamburger-menu'); 
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Store the currently playing audio element and its button
+        let currentAudio = null;
+        let currentButton = null;
+
+        // --- Custom Audio Player Logic (Anti-Download) ---
+        document.querySelectorAll('.play-button').forEach(button => {
+            
+            // Create an audio element for each track (hidden)
+            const audio = new Audio(button.dataset.src);
+            audio.preload = 'none'; 
+
+            button.addEventListener('click', () => {
+                if (audio.paused) {
+                    // Stop any currently playing audio
+                    if (currentAudio && currentAudio !== audio) {
+                        currentAudio.pause();
+                        if (currentButton) {
+                            currentButton.textContent = '▶️';
+                            currentButton.classList.remove('audio-playing');
+                        }
+                    }
+                    
+                    // Play the clicked audio
+                    audio.play().catch(error => {
+                        console.error("Audio playback failed:", error);
+                        // Log or handle playback error silently
+                    });
+                    button.textContent = '⏸️';
+                    button.classList.add('audio-playing');
+                    currentAudio = audio;
+                    currentButton = button;
+                } else {
+                    // Pause the audio
+                    audio.pause();
+                    button.textContent = '▶️';
+                    button.classList.remove('audio-playing');
+                    currentAudio = null;
+                    currentButton = null;
+                }
+            });
+            
+            // When the track ends, reset the button icon
+            audio.addEventListener('ended', () => {
+                button.textContent = '▶️';
+                button
