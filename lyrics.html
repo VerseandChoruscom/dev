@@ -135,12 +135,22 @@
             box-shadow: 8px 8px 0 var(--primary-accent); /* Shift to Hot Pink Shadow on Hover */
         }
 
+        /* Link Wrapper Styling (Ensures the H3 Title is clickable) */
+        .song-link {
+            text-decoration: none; /* Remove underline */
+        }
+
         .song-title {
             color: var(--primary-accent); 
             font-size: 1.5em;
             margin-top: 0;
             margin-bottom: 8px;
             font-weight: 900;
+            /* Added hover to indicate clickability */
+            transition: color 0.2s;
+        }
+        .song-link:hover .song-title {
+             color: var(--secondary-accent); /* Change color on hover for feedback */
         }
 
         .song-metadata {
@@ -174,7 +184,7 @@
         <div class="jukebox-container">
             <div class="jukebox-header">
                 <h2>44 Original Songs Available for A&R & Sync Pitching 🎶</h2>
-                <p>Select a Mood or Theme to instantly filter Kellie's complete catalog. Every song is a hit waiting to happen!</p>
+                <p>Select a Mood or Theme to instantly filter Kellie's complete catalog. Every song title links directly to its licensing page on Songbay.</p>
             </div>
 
             <div id="category-nav">
@@ -196,9 +206,9 @@
     <?php include 'footer.php'; ?>
 
     <script>
-        /* --- JAVASCRIPT LOGIC (Unchanged Data and Functionality) --- */
+        /* --- JAVASCRIPT LOGIC (Updated Data and Functionality) --- */
         const songData = [
-            // Songs with rich metadata (Featured Tracks)
+            // Featured Tracks (Metadata retained)
             { title: "I Know Your Damn Pin Code", genre: "Rock, Alt Country", mood: "Bitter, Revenge, Confident", description: "A vengeful anthem of betrayal and triumph with an unbridled hard rock/alternative sound.", category: "Vengeance & Empowerment" },
             { title: "Hit the Road", genre: "Pop, Dance, Rock", mood: "Anthemic, Confident, Revenge", description: "A powerful anthem of self-liberation and moving on from a toxic relationship.", category: "Vengeance & Empowerment" },
             { title: "In My Dreams (When I Wake)", genre: "Pop-Ballad", mood: "Dreamy, Melancholic, Sad", description: "A heartfelt and haunting pop-ballad that explores the pain of loss and the comfort found in dreams.", category: "Love, Loss, & Longing" },
@@ -211,44 +221,55 @@
             { title: "Author of a Lie", genre: "Pop, Hip-Hop", mood: "Confrontational, Empowered", description: "A punchy, rhythm-driven track about a partner who is a 'master of deceit'.", category: "Vengeance & Empowerment" },
             { title: "Big Hard No", genre: "High-energy Pop", mood: "Fiery, Unapologetic", description: "A high-energy pop track and a fiery anthem of empowerment.", category: "Vengeance & Empowerment" },
             
-            // Remaining songs (using default category/metadata for structure)
-            { title: "Broken Record", category: "Dark & Narrative" },
-            { title: "CEO, not babysitting tree", category: "Dark & Narrative" },
-            { title: "Children of War", category: "Introspection & Faith" },
-            { title: "Concrete Under the Feet", category: "Rock & Alternative Jams" },
-            { title: "Don't Be Jelly", category: "Fun, Party & Nostalgia" },
-            { title: "Ephemeral Moment", category: "Introspection & Faith" },
-            { title: "Etched in every Space", category: "Introspection & Faith" },
-            { title: "First Step", category: "Introspection & Faith" },
-            { title: "Fury (I'm the monster)", category: "Rock & Alternative Jams" },
-            { title: "GenX 80s Anthem", category: "Fun, Party & Nostalgia" },
-            { title: "Heartbreak and Trouble (hubba bubba song)", category: "Love, Loss, & Longing" },
-            { title: "How's It Feel, Bro?", category: "Vengeance & Empowerment" },
-            { title: "Just Too Much", category: "Introspection & Faith" },
-            { title: "Just a little lonely", category: "Love, Loss, & Longing" },
-            { title: "Little Things", category: "Love, Loss, & Longing" },
-            { title: "Murderers Heart", category: "Rock & Alternative Jams" },
-            { title: "My Girl Karma", category: "Dark & Narrative" },
-            { title: "My Words Matter", category: "Introspection & Faith" },
-            { title: "Not that Girl Anymore", category: "Vengeance & Empowerment" },
-            { title: "One Small Wrong", category: "Introspection & Faith" },
-            { title: "Real Dream Team (Tick Tok)", category: "Fun, Party & Nostalgia" },
-            { title: "Shot by Cupids Dart", category: "Love, Loss, & Longing" },
-            { title: "Showdown at My Door", category: "Rock & Alternative Jams" },
-            { title: "Solid Shifting Ground", category: "Rock & Alternative Jams" },
-            { title: "The Aftermath", category: "Dark & Narrative" },
-            { title: "The Back of Me", category: "Vengeance & Empowerment" },
-            { title: "The Show Is Through", category: "Vengeance & Empowerment" },
-            { title: "Thought You Should Know", category: "Dark & Narrative" },
-            { title: "Wildflower", category: "Fun, Party & Nostalgia" },
-            { title: "Year in the Rearview", category: "Dark & Narrative" },
-            { title: "Craving Those Crumbs", category: "Love, Loss, & Longing" },
-            { title: "Married to the Drug", category: "Love, Loss, & Longing" },
+            // Remaining songs with complete metadata and title fixes
+            { title: "Broken Record", genre: "Alternative, Rock", mood: "Repetitive, Frustrated", description: "A narrative lyric about a situation that keeps replaying with no solution.", category: "Dark & Narrative" },
+            { title: "CEO, not babysitting tree", genre: "Pop, Hip-Hop", mood: "Angry, Confrontational", description: "An assertive anthem about prioritizing career success over draining distractions.", category: "Dark & Narrative" },
+            { title: "Children of War", genre: "Folk, Dramatic", mood: "Somber, Reflective, Hopeful", description: "A moving reflection on the resilience of the younger generation facing global conflict.", category: "Introspection & Faith" },
+            { title: "Concrete Under the Feet", genre: "Rock, Alternative", mood: "Grounded, Determined", description: "A solid, mid-tempo rock track about finding stability in a chaotic world.", category: "Rock & Alternative Jams" },
+            { title: "Don't Be Jelly", genre: "Pop, Dance", mood: "Cocky, Playful", description: "A fun, competitive pop song addressing jealousy from a successful perspective.", category: "Fun, Party & Nostalgia" },
+            { title: "Ephemeral Moment", genre: "Acoustic, Pop", mood: "Tender, Fleeting", description: "A delicate lyric capturing the beauty and brief nature of a special moment in time.", category: "Introspection & Faith" },
+            { title: "Etched in every Space", genre: "Pop-Ballad", mood: "Sentimental, Memory", description: "A deeply emotional ballad about a lingering presence felt in every familiar place.", category: "Introspection & Faith" },
+            { title: "First Step", genre: "Christian, Inspirational", mood: "Motivational, Uplifting", description: "An uplifting song about overcoming hesitation and taking the initial leap of faith.", category: "Introspection & Faith" },
+            { title: "Fury (I'm the monster)", genre: "Metal, Hard Rock", mood: "Aggressive, Primal", description: "A heavy track exploring the moment raw anger and transformation take over.", category: "Rock & Alternative Jams" },
+            { title: "GenX 80s Anthem", genre: "Pop-Rock, 80s Vibe", mood: "Nostalgic, Energetic", description: "A high-energy tribute celebrating the culture and spirit of the Generation X 80s era.", category: "Fun, Party & Nostalgia" },
+            // Title Fixed
+            { title: "Heartbreak and Trouble", genre: "Country, Pop", mood: "Wistful, Catchy", description: "A catchy country-pop tune about the cyclical nature of falling for the wrong kind of person.", category: "Love, Loss, & Longing" },
+            { title: "How's It Feel, Bro?", genre: "Hip-Hop, Pop", mood: "Sarcastic, Victorious", description: "A confrontational track delivering a triumphant message to a former rival or foe.", category: "Vengeance & Empowerment" },
+            { title: "Just Too Much", genre: "Pop, R&B", mood: "Overwhelmed, Exhausted", description: "A reflective song about hitting a wall and feeling completely overwhelmed by life's pressures.", category: "Introspection & Faith" },
+            { title: "Just a little lonely", genre: "Folk, Country", mood: "Vulnerable, Sad", description: "An honest, stripped-down lyric about admitting to a simple, quiet need for companionship.", category: "Love, Loss, & Longing" },
+            { title: "Little Things", genre: "Pop, Acoustic", mood: "Appreciative, Warm", description: "A sweet lyric focusing on the small, often overlooked details that make a relationship meaningful.", category: "Love, Loss, & Longing" },
+            { title: "Murderers Heart", genre: "Dark Rock, Goth", mood: "Eerie, Cold", description: "A chilling, dramatic narrative exploring the internal state of a person with a broken moral compass.", category: "Rock & Alternative Jams" },
+            { title: "My Girl Karma", genre: "Hip-Hop, R&B", mood: "Satisfied, Poetic Justice", description: "A confident track personifying the force of Karma as a partner who delivers revenge.", category: "Dark & Narrative" },
+            { title: "My Words Matter", genre: "Inspirational, Pop", mood: "Assertive, Powerful", description: "A personal anthem about finding and using one's voice with conviction and authority.", category: "Introspection & Faith" },
+            { title: "Not that Girl Anymore", genre: "Pop, Electronic", mood: "Changed, Liberated", description: "A strong, driving track about a personal evolution and leaving a weak past identity behind.", category: "Vengeance & Empowerment" },
+            { title: "One Small Wrong", genre: "Indie, Reflective", mood: "Guilty, Confessional", description: "A lyric dwelling on a minor mistake that had major, unforeseen consequences.", category: "Introspection & Faith" },
+            // Title Fixed
+            { title: "Real Dream Team", genre: "Pop, Hip-Hop", mood: "Collaborative, Upbeat", description: "A feel-good, energetic track celebrating successful teamwork and shared ambition.", category: "Fun, Party & Nostalgia" },
+            { title: "Shot by Cupids Dart", genre: "Pop, Romantic", mood: "Infatuated, Joyful", description: "A classic, bubbly pop song about the sudden, delightful surprise of falling in love.", category: "Love, Loss, & Longing" },
+            { title: "Showdown at My Door", genre: "Blues Rock, Western", mood: "Tense, Confrontational", description: "A dramatic, cinematic lyric setting the scene for a final, inevitable confrontation.", category: "Rock & Alternative Jams" },
+            { title: "Solid Shifting Ground", genre: "Alternative, Indie", mood: "Uncertain, Searching", description: "A reflective piece about trying to find stability when everything in life is changing.", category: "Rock & Alternative Jams" },
+            { title: "The Aftermath", genre: "Dramatic, Ballad", mood: "Grief, Emptiness", description: "A heavy, emotional ballad dealing with the silence and ruin following a major personal disaster.", category: "Dark & Narrative" },
+            { title: "The Back of Me", genre: "Dance-Pop", mood: "Dismissive, Moving On", description: "An upbeat, fast-paced track about leaving a negative person or situation firmly in the past.", category: "Vengeance & Empowerment" },
+            { title: "The Show Is Through", genre: "Pop, Soul", mood: "Finality, Resigned", description: "A lyric about the last scene of a relationship, recognizing that the performance is over.", category: "Vengeance & Empowerment" },
+            { title: "Thought You Should Know", genre: "Pop, Confessional", mood: "Direct, Honest", description: "A straightforward, honest lyric delivering a long-overdue, impactful truth.", category: "Dark & Narrative" },
+            { title: "Wildflower", genre: "Acoustic, Country", mood: "Free, Independent", description: "A beautiful, organic lyric celebrating unconventional beauty and fierce independence.", category: "Fun, Party & Nostalgia" },
+            { title: "Year in the Rearview", genre: "Reflective, Pop", mood: "Nostalgic, Hopeful", description: "A look back at a tumultuous year, expressing gratitude for lessons learned and optimism for the future.", category: "Dark & Narrative" },
+            { title: "Craving Those Crumbs", genre: "Pop, R&B", mood: "Needy, Self-Aware", description: "A vulnerable confession about settling for minimal attention in a relationship.", category: "Love, Loss, & Longing" },
+            { title: "Married to the Drug", genre: "Alternative, Grunge", mood: "Obsessive, Toxic", description: "A raw lyric using addiction as a metaphor for a deeply destructive romantic obsession.", category: "Love, Loss, & Longing" },
         ];
 
         const songListElement = document.getElementById('song-list');
         const categoryNavElement = document.getElementById('category-nav');
         const allCategories = ['All Songs', ...new Set(songData.map(song => song.category))].sort();
+
+        // Function to create a clean URL slug (essential for the Songbay link)
+        function createSongSlug(title) {
+            return title
+                .toLowerCase()
+                .replace(/[^a-z0-9\s-]/g, '') // Remove non-alphanumeric characters except spaces and hyphens
+                .trim()
+                .replace(/\s+/g, '-'); // Replace spaces with hyphens
+        }
 
         // Renders the individual song cards
         function renderSongs(songs) {
@@ -262,13 +283,19 @@
                 const card = document.createElement('div');
                 card.className = 'song-card';
 
+                // Create the Songbay URL
+                const songSlug = createSongSlug(song.title);
+                const songbayUrl = `https://www.songbay.co/song/${songSlug}`;
+                
                 const genreText = song.genre ? `<p class="song-metadata">Genre: <span>${song.genre}</span></p>` : '';
                 const moodText = song.mood ? `<p class="song-metadata">Mood: <span>${song.mood}</span></p>` : '';
                 const descriptionText = song.description ? `<div class="song-description">${song.description}</div>` : '';
                 const categoryLabel = `<p class="song-metadata" style="margin-bottom:0;">Category: <span>${song.category || 'Uncategorized'}</span></p>`;
 
                 card.innerHTML = `
-                    <h3 class="song-title">${song.title}</h3>
+                    <a href="${songbayUrl}" target="_blank" class="song-link">
+                        <h3 class="song-title">${song.title}</h3>
+                    </a>
                     ${genreText}
                     ${moodText}
                     ${categoryLabel}
