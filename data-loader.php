@@ -9,9 +9,15 @@ $ALL_SONGS_DATA_JS = '[]'; // Default to an empty array
 if (file_exists($json_file_path)) {
     // Read the file contents
     $json_string = file_get_contents($json_file_path);
-    // Sanitize the output to be safe for JavaScript
-    // The json_encode with flags ensures the PHP array data is correctly and safely formatted as a JS constant.
-    $ALL_SONGS_DATA_JS = json_encode(json_decode($json_string, true), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP);
+    
+    // Decode and re-encode the data using the safest JSON flags 
+    // to ensure it's a valid JavaScript constant array.
+    $data_array = json_decode($json_string, true);
+    
+    // Use JSON_UNESCAPED_UNICODE for readability and robustness, plus others for security
+    if ($data_array) {
+        $ALL_SONGS_DATA_JS = json_encode($data_array, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
+    }
 }
 
 // Output the data structure directly into a JavaScript variable
