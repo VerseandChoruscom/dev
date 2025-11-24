@@ -377,10 +377,10 @@
         const closeModalBtn = document.getElementById('close-modal-btn');
 
         // Filter categories: Using exact JSON field names where possible
-        // NOTE: 'Theme' corresponds to JSON's 'category'. 'Licensing' is not a single field, so 'CommercialPotential' is used.
+        // NOTE: 'Theme' corresponds to JSON's 'category'. 'Licensing' is not a single field, so 'commercialPotential' is used.
         const FILTER_CATEGORIES = [
-            'Category', 'CommercialPotential', 'VocalType', 'PlacementType', 'MoodTone', 
-            'Tempo', 'Genre1', 'Genre2'
+            'category', 'commercialPotential', 'vocalType', 'placementType', 'moodTone', 
+            'tempo', 'genre1', 'genre2'
         ];
         
         // State for managing current active filters
@@ -396,20 +396,25 @@
 
         // --- HELPER FUNCTIONS ---
         function getSongById(id) {
+            // Check for the dynamic data object, just in case
+            if (typeof ALL_SONGS_DATA === 'undefined' || !Array.isArray(ALL_SONGS_DATA)) {
+                console.error("ALL_SONGS_DATA is not defined or is not an array.");
+                return null;
+            }
             return ALL_SONGS_DATA.find(s => s.id === id);
         }
 
         function getUniqueValues(category) {
-            // Converts category string (e.g., 'VocalType') to the exact JSON key
-            const categoryKey = category.toLowerCase().replace('potential', 'Potential').replace('type', 'Type'); 
+            // category is already the exact JSON key name (e.g., 'vocalType')
+            const categoryKey = category; 
             
-            // Special handling for MoodTone and Genre2 which might be comma-separated strings
+            // Special handling for MoodTone, Genre2, and Category which might be comma-separated strings
             let values = [];
             ALL_SONGS_DATA.forEach(song => {
                 let val = song[categoryKey];
-                if (val && typeof val === 'string' && (categoryKey === 'moodTone' || categoryKey === 'genre2')) {
+                if (val && typeof val === 'string' && (categoryKey === 'moodTone' || categoryKey === 'genre2' || categoryKey === 'category')) {
                     // Split comma-separated string and trim
-                    val.split(',').forEach(item => {
+                    val.split(/[,\s/]+/).forEach(item => {
                         let trimmed = item.trim();
                         if (trimmed !== '' && trimmed !== 'Placeholder' && trimmed !== 'N/A') {
                             values.push(trimmed);
@@ -452,8 +457,7 @@
         }
 
         function createThematicCardHtml(cardData) {
-            // NOTE: Thematic cards rely on the custom 'theme' field defined in the local JS array, 
-            // but the filtering will target the JSON's 'category' field.
+            // NOTE: Thematic cards map to the JSON's 'category' field.
             return `
                 <div id="theme-card-${cardData.theme.replace(/\s/g, '-')}-${Math.random().toString(36).substring(2, 7)}" 
                      data-theme-value="${cardData.theme}"
@@ -481,7 +485,7 @@
             cardContainer.innerHTML = '';
             
             if (filteredSongs.length === 0) {
-                 cardContainer.innerHTML = '<p class="no-results lg:col-span-3">No songs found matching your search criteria.</p>';
+                 cardContainer.innerHTML = '<p class="no-results lg:col-span-3">No songs found matching your search criteria. Try clearing your filters or search bar.</p>';
             }
 
             filteredSongs.forEach((song, index) => {
@@ -511,3 +515,341 @@
             thematicCardContainer.innerHTML = '';
             THEMATIC_CARDS_DATA.forEach(cardData => {
                 thematicCardContainer.insertAdjacentHTML('beforeend', createThematicCardHtml(cardData));
+            });
+        }
+        
+        function renderFilterCategoryButtons() {
+            filterCategoryButtons.innerHTML = '';
+            FILTER_CATEGORIES.forEach(category => {
+                const button = document.createElement('button');
+                button.className = 'px-4 py-2 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-500 transition duration-150 shadow-md border border-gray-600';
+                
+                // Clean up button text for display
+                let buttonText = category.replace('Type', ' Type').replace('Potential', ' Potential').replace('1', ' (Primary)').replace('2', ' (Secondary)'); 
+                buttonText = buttonText.charAt(0).toUpperCase() + buttonText.slice(1); // Capitalize first letter
+                button.textContent = buttonText;
+                
+                button.setAttribute('data-category', category);
+                button.onclick = () => toggleSubFilter(category);
+                filterCategoryButtons.appendChild(button);
+            });
+        }
+
+
+        // --- FILTERING LOGIC ---
+
+        function applyFilter(category, value) {
+            if (category) {
+                currentFilters.category = category;
+                currentFilters.value = value;
+            }
+            
+            // Thematic cards often map to the 'category' field, so we clear text search when a new category filter is selected.
+            if (category === 'category' && value !== null) {
+                currentFilters.text = '';
+                searchInput.value = '';
+                subFilterContainer.classList.add('hidden'); 
+            }
+
+            updateFilterButtons();
+            updateThematicCardBorders();
+            updateSubFilterOptions();
+            applyMasterFilter();
+        }
+
+        function applyMasterFilter() {
+            // Ensure data is available before proceeding
+            if (typeof ALL_SONGS_DATA === 'undefined' || !Array.isArray(ALL_SONGS_DATA)) {
+                // This check is duplicated in DOMContentLoaded, but serves as a runtime safeguard
+                return;
+            }
+
+            const textFilter = searchInput.value.toLowerCase().trim();
+            currentFilters.text = textFilter;
+
+            const filteredSongs = ALL_SONGS_DATA.filter(song => {
+                let matchesCategory = true;
+                let matchesText = true;
+
+                // 1. Text Search Filter (Checking ALL relevant fields)
+                if (textFilter.length > 0) {
+                    const searchableFields = [
+                        song.title, song.artistWriter, song.genre1, song.genre2, 
+                        song.category, song.placementType, song.moodTone, song.tempo, 
+                        song.commercialPotential, song.vocalType, song.seoSnippet, song.shortDescription, song.longDescription, 
+                        // Include keywords and relatedSearchTerms for comprehensive searching
+                        ...(song.keywords || []),
+                        ...(song.relatedSearchTerms || [])
+                    ].filter(field => field && typeof field === 'string');
+                    
+                    matchesText = searchableFields.some(field => 
+                        field.toLowerCase().includes(textFilter)
+                    );
+                }
+
+                // 2. Categorical/Value Filter
+                const categoryKey = currentFilters.category;
+                const filterValue = currentFilters.value;
+                
+                if (filterValue !== null && categoryKey) {
+                    const songValue = song[categoryKey];
+                    const lowerFilterValue = filterValue.toLowerCase();
+
+                    // Handle comma-separated fields (MoodTone, Genre2, Genre1, Category)
+                    if (categoryKey === 'moodTone' || categoryKey === 'genre2' || categoryKey === 'genre1' || categoryKey === 'category') {
+                        // Check if ANY part of the comma-separated string matches the filter value
+                        // Uses a robust split to handle spaces, commas, and slashes
+                        matchesCategory = (songValue && songValue.toLowerCase().split(/[,\s/]+/).some(item => item.trim() === lowerFilterValue));
+                    } else {
+                        // Handle single-value fields (VocalType, Tempo, PlacementType, CommercialPotential, etc.)
+                        matchesCategory = (songValue && songValue.toLowerCase() === lowerFilterValue);
+                    }
+                } else if (currentFilters.category && filterValue === null) {
+                    // If a category button is active but no value is selected (i.e., 'All' is selected)
+                    matchesCategory = true;
+                } else if (textFilter === '' && filterValue === null) {
+                    // Reset case: show all
+                    matchesCategory = true;
+                }
+
+                return matchesCategory && matchesText;
+            });
+            
+            renderCatalogCards(filteredSongs);
+        }
+
+        function toggleSubFilter(category) {
+            if (currentFilters.category === category && subFilterContainer.classList.contains('flex')) {
+                currentFilters.category = null;
+                currentFilters.value = null;
+                subFilterContainer.classList.remove('flex');
+                subFilterContainer.classList.add('hidden');
+                updateFilterButtons();
+                updateThematicCardBorders();
+                applyMasterFilter(); 
+                return;
+            }
+            
+            currentFilters.category = category;
+            
+            const values = getUniqueValues(category);
+
+            // Clean up title for display
+            let filterTitle = category.replace('Type', ' Type').replace('Potential', ' Potential').replace('1', ' (Primary)').replace('2', ' (Secondary)');
+            filterTitle = filterTitle.charAt(0).toUpperCase() + filterTitle.slice(1);
+            subFilterTitle.textContent = `Select ${filterTitle}:`;
+            
+            subFilterOptions.innerHTML = '';
+            
+            const clearBtn = document.createElement('button');
+            clearBtn.className = 'sub-filter-option px-3 py-1 bg-gray-700 text-sm font-medium rounded-full shadow-md transition duration-150 border border-gray-600';
+            clearBtn.textContent = 'All';
+            clearBtn.onclick = () => applyFilter(category, null);
+            subFilterOptions.appendChild(clearBtn);
+
+            values.forEach(value => {
+                const btn = document.createElement('button');
+                btn.className = 'sub-filter-option px-3 py-1 bg-gray-800 text-sm font-medium rounded-full border border-gray-700 shadow-sm text-gray-300';
+                btn.textContent = value;
+                btn.onclick = () => applyFilter(category, value);
+                subFilterOptions.appendChild(btn);
+            });
+
+            subFilterContainer.classList.remove('hidden');
+            subFilterContainer.classList.add('flex'); // Show container
+            
+            if (currentFilters.category) {
+                currentFilters.value = null; 
+            }
+            
+            updateFilterButtons();
+            updateThematicCardBorders();
+            updateSubFilterOptions();
+            applyMasterFilter(); 
+        }
+
+        function resetAllFilters() {
+            currentFilters = { category: null, value: null, text: '' };
+            searchInput.value = '';
+            subFilterContainer.classList.remove('flex');
+            subFilterContainer.classList.add('hidden');
+            updateFilterButtons();
+            updateThematicCardBorders();
+            applyMasterFilter();
+        }
+
+        function updateFilterButtons() {
+            document.querySelectorAll('#filter-category-buttons button').forEach(btn => {
+                btn.classList.remove('filter-btn-active');
+                if (btn.getAttribute('data-category') === currentFilters.category) {
+                    btn.classList.add('filter-btn-active');
+                }
+            });
+        }
+        
+        function updateSubFilterOptions() {
+            document.querySelectorAll('#sub-filter-options button').forEach(btn => {
+                btn.classList.remove('active-sub');
+                if (btn.textContent === currentFilters.value) {
+                    btn.classList.add('active-sub');
+                }
+            });
+        }
+        
+        function updateThematicCardBorders() {
+            document.querySelectorAll('.thematic-card').forEach(card => {
+                card.classList.remove('active-filter');
+                // Thematic cards map to the 'Category' field
+                if (currentFilters.value && card.getAttribute('data-theme-value').toLowerCase().includes(currentFilters.value.toLowerCase())) {
+                    card.classList.add('active-filter');
+                }
+            });
+        }
+
+        // --- MODAL & AUDIO LOGIC ---
+
+        window.openMusicPlayer = function(songId) {
+            const song = getSongById(songId);
+            if (!song) return;
+            
+            if (currentAudio) {
+                currentAudio.pause();
+            }
+
+            modalTitle.textContent = song.title;
+            // Use Placeholder if lyrics field is empty or undefined
+            modalLyrics.textContent = song.fullLyrics && song.fullLyrics.trim() !== '' ? song.fullLyrics : "Placeholder Lyrics.";
+
+            const audioPlayer = modalContent.querySelector('audio');
+            // Using exact JSON field: audioUrl
+            audioPlayer.src = song.audioUrl;
+            audioPlayer.load();
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeMusicPlayer() {
+            const audioPlayer = modalContent.querySelector('audio');
+            if (audioPlayer) {
+                audioPlayer.pause();
+                audioPlayer.currentTime = 0;
+            }
+
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Handle print functionality - UPDATED FOR ISOLATED PRINTING (using exact JSON fields)
+        window.handlePrint = function(songId) {
+            const song = getSongById(songId);
+            if (!song) {
+                alert("Error: Song data not found for printing.");
+                return;
+            }
+
+            // Use Placeholder if lyrics field is empty or undefined (using exact JSON field: fullLyrics)
+            const printLyrics = song.fullLyrics && song.fullLyrics.trim() !== '' ? song.fullLyrics : "Placeholder Lyrics.";
+            const genres = [song.genre1, song.genre2].filter(g => g && g !== 'Placeholder' && g !== 'N/A').join(' / ');
+
+            const printContent = `
+                <html>
+                <head>
+                    <title>Lyrics - ${song.title}</title>
+                    <style>
+                        body { font-family: 'Inter', sans-serif; color: #000; margin: 20px; }
+                        h1 { color: #800020; font-size: 24px; margin-bottom: 5px; }
+                        p { font-size: 14px; color: #555; margin-bottom: 15px; }
+                        pre { white-space: pre-wrap; font-size: 16px; border: 1px solid #ccc; padding: 15px; background: #f9f9f9; }
+                        .meta { border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 15px; }
+                        strong { font-weight: 700; }
+                    </style>
+                </head>
+                <body>
+                    <div class="meta">
+                        <h1>${song.title}</h1>
+                        <p><strong>Artist/Writer:</strong> ${song.artistWriter} | <strong>Genres:</strong> ${genres} | <strong>Category:</strong> ${song.category || 'N/A'}</p>
+                        <p><strong>Vocal Type:</strong> ${song.vocalType || 'N/A'} | <strong>Tempo:</strong> ${song.tempo || 'N/A'} | <strong>Key/Scale:</strong> ${song.keySignature || 'N/A'}</p>
+                        <p><strong>Commercial Potential:</strong> ${song.commercialPotential || 'N/A'} | <strong>Placement Type:</strong> ${song.placementType || 'N/A'}</p>
+                    </div>
+                    <h2>Full Lyrics:</h2>
+                    <pre>${printLyrics}</pre>
+                    <p style="font-size: 10px; margin-top: 30px;">[Confidential: For Industry Review Only - Verse and Chorus]</p>
+                </body>
+                </html>
+            `;
+
+            const printWindow = window.open('', '_blank', 'width=800,height=600');
+            if (!printWindow) {
+                alert("The print window could not be opened. Please check your browser's pop-up blockers.");
+                return;
+            }
+            
+            printWindow.document.write(printContent);
+            printWindow.document.close();
+            printWindow.focus();
+            
+            // Use a small delay to ensure content is rendered before printing
+            setTimeout(() => {
+                printWindow.print();
+            }, 500); 
+        };
+
+        // --- INITIALIZATION AND EVENT BINDING ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderThematicCards();
+            renderFilterCategoryButtons();
+            
+            // FIX: Added robust check and console error for immediate diagnosis
+            if (typeof ALL_SONGS_DATA !== 'undefined' && Array.isArray(ALL_SONGS_DATA) && ALL_SONGS_DATA.length > 0) {
+                applyMasterFilter(); // Initial render of all songs
+            } else {
+                console.error("CRITICAL ERROR: ALL_SONGS_DATA is undefined, not an array, or empty. Check data_loader.php and lyrics.json.");
+                // Display error message directly on the page
+                cardContainer.innerHTML = '<p class="no-results lg:col-span-3" style="color:red; font-size: 1.5em; border: 2px solid red; padding: 20px;">CRITICAL ERROR: Song data could not be loaded. Please ensure **lyrics.json** and **data_loader.php** are correctly located and configured on the server.</p>';
+            }
+            
+            closeModalBtn.addEventListener('click', closeMusicPlayer);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) { closeMusicPlayer(); }
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) { closeMusicPlayer(); }
+            });
+            
+            // The onkeyup in HTML is the primary trigger, but keep this fallback/binding:
+            resetFilterBtn.addEventListener('click', resetAllFilters);
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.remove('opacity-0');
+                    backToTopBtn.classList.add('opacity-100');
+                } else {
+                    backToTopBtn.classList.remove('opacity-100');
+                    backToTopBtn.classList.add('opacity-0');
+                }
+            });
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            modalContent.classList.add('scale-95', 'opacity-0');
+        });
+    </script>
+
+</body>
+</html>
