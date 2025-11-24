@@ -1,3 +1,8 @@
+<?php
+// FILE: industry.pros.php
+// The Cinematic Songwriter and Lyricist Kellie Larson
+// Note: Changed navigation from /industry-pros.html to /industry.pros.php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,7 +142,6 @@
             
             <div class="flex items-center space-x-4">
                 <a href="/index.html" class="flex items-center space-x-2">
-                    <!-- Placeholder Logo -->
                     <div class="h-8 w-8 bg-white rounded-full flex items-center justify-center text-[var(--burgundy)] font-bold text-xs">V&C</div>
                 </a>
             </div>
@@ -146,7 +150,7 @@
                 <ul class="flex space-x-6 text-sm font-semibold tracking-wider">
                     <li><a href="/index.html" class="hover:text-slate-300 transition duration-200">HOME</a></li>
                     <li><a href="/bio.html" class="hover:text-slate-300 transition duration-200">BIO</a></li>
-                    <li><a href="/industry-pros.html" class="hover:text-slate-300 transition duration-200">INDUSTRY PROS</a></li>
+                    <li><a href="/industry.pros.php" class="hover:text-slate-300 transition duration-200">INDUSTRY PROS</a></li>
                     <li><a href="/lyrics.html" class="hover:text-slate-300 transition duration-200">MUSIC</a></li>
                     <li><a href="/green-room.html" class="hover:text-slate-300 transition duration-200">GREEN ROOM</a></li>
                     <li><a href="/articles.html" class="hover:text-slate-300 transition duration-200">ARTICLES</a></li>
@@ -166,7 +170,7 @@
             <ul class="flex flex-col text-center pb-2 text-sm font-semibold tracking-wider">
                 <li><a href="/index.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">HOME</a></li>
                 <li><a href="/bio.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">BIO</a></li>
-                <li><a href="/industry-pros.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">INDUSTRY PROS</a></li>
+                <li><a href="/industry.pros.php" class="block py-2 text-white hover:bg-slate-700 transition duration-200">INDUSTRY PROS</a></li>
                 <li><a href="/lyrics.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">MUSIC</a></li>
                 <li><a href="/green-room.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">GREEN ROOM</a></li>
                 <li><a href="/articles.html" class="block py-2 text-white hover:bg-slate-700 transition duration-200">ARTICLES</a></li>
@@ -199,7 +203,6 @@
                 <p class="text-gray-100 max-w-3xl mx-auto">
                     This exclusive section provides fully licensed, pre-cleared assets ready for immediate commercial development. Our system ensures clear IP ownership and royalty-free composition for all placeholder demos, streamlining your path to full copyright.
                 </p>
-                <!-- UPDATED: Added link to legal.html and inline-block for styling -->
                 <a href="/legal.html" class="inline-block mt-5 bg-white text-[var(--burgundy)] font-bold py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300">
                     Explore Licensing Options
                 </a>
@@ -224,50 +227,35 @@
                 </ul>
             </div>
             
-            <!-- --- THEMATIC FILTER CARDS SECTION --- -->
             <section class="mb-12">
                 <h2 class="text-2xl font-bold text-white mb-6 border-b-2 border-indigo-500 pb-2">Core Thematic Pillars (SEO Rich)</h2>
-                <!-- UPDATED: SEO-rich description -->
                 <p class="text-gray-400 mb-6">Click a thematic card to quickly filter the catalog by core narrative. These themes are SEO-rich categories used for placement and sync targeting.</p>
 
-                <!-- 12 Cards Grid -->
                 <div id="thematic-card-container" class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <!-- Thematic Cards will be injected here by JavaScript -->
-                </div>
+                    </div>
             </section>
             
-            <!-- --- ADVANCED FILTER SECTION --- -->
             <div class="bg-gray-900 p-6 rounded-xl mb-10 text-white shadow-lg border-4 border-gray-700">
-                <!-- UPDATED: SEO-rich title -->
                 <h3 class="text-xl font-semibold text-white mb-4 border-b border-gray-700 pb-2">Advanced Search & Metadata Filtering (SEO Rich)</h3>
                 
-                <!-- Text Search Input -->
-                <!-- UPDATED: SEO-rich placeholder -->
-                <input type="text" id="search-input" placeholder="Search Catalog: Filter by Title, Theme, Licensing, Vocals, Placement, Mood, or Genre..."
+                <input type="text" id="search-input" placeholder="Search Catalog: Filter by Title, Category, PlacementType, MoodTone, or Genre..."
                        class="w-full p-3 border border-gray-600 rounded-lg shadow-sm bg-gray-800 text-white focus:ring-[var(--burgundy)] focus:border-[var(--burgundy)] transition duration-150 mb-4">
                 
-                <!-- Advanced Filter Buttons (8 Categories) -->
                 <div class="flex flex-wrap gap-2 mb-4" id="filter-category-buttons">
-                    <!-- Buttons injected by JS: Theme, Licensing, Vocals, Placement, Mood, Tempo, Commercial Potential, Target Demographic -->
-                </div>
+                    </div>
                 
-                <!-- Dropdown/Sub-Filter Container -->
                 <div id="sub-filter-container" class="bg-gray-800 p-4 rounded-lg shadow-inner hidden border border-gray-700">
                     <h4 class="font-semibold text-gray-300 mb-3" id="sub-filter-title">Filter by...</h4>
                     <div id="sub-filter-options" class="flex flex-wrap gap-2 max-h-40 overflow-y-auto">
-                        <!-- Filter options will be injected here -->
-                    </div>
+                        </div>
                 </div>
                 
-                <!-- Reset Button -->
                 <button id="reset-filter-btn" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition duration-200 mt-4">Reset All Filters</button>
             </div>
 
 
-            <!-- --- DYNAMIC SONG CARD GRID --- -->
             <div id="card-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Dynamic song cards will be injected here by JavaScript -->
-            </div>
+                </div>
             
         </div>
     </main>
@@ -294,7 +282,6 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
     <button id="back-to-top-btn" 
             class="fixed bottom-5 right-5 z-40 p-3 rounded-full 
                    bg-[var(--burgundy)] text-white shadow-lg hover:bg-red-800 
@@ -302,10 +289,8 @@
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
     </button>
     
-    <!-- Music Player Modal -->
     <div id="music-player-modal" class="fixed inset-0 bg-gray-900 bg-opacity-90 z-50 hidden justify-center items-center p-4 backdrop-blur-sm">
         
-        <!-- Modal Content - Right-click disabled on this element -->
         <div id="modal-content" class="bg-gray-800 rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-95 opacity-0 border-4 border-gray-600"
              oncontextmenu="return false;">
             
@@ -313,7 +298,6 @@
                 <h2 id="modal-title" class="text-3xl font-extrabold mb-4 text-white border-b border-gray-700 pb-2">Song Title</h2>
                 <p class="text-sm text-gray-400 mb-6">Full Lyrics and Audio Player</p>
 
-                <!-- Audio Player -->
                 <div class="mb-6 border border-gray-600 p-4 rounded-lg bg-gray-900">
                     <p class="text-lg font-semibold mb-2 text-white">Audio Preview (Placeholder)</p>
                     <audio controls class="w-full">
@@ -322,16 +306,13 @@
                     </audio>
                 </div>
                 
-                <!-- Lyrics Display -->
                 <div class="mb-6">
                     <h3 class="text-xl font-semibold mb-3 text-gray-300 border-b pb-2 border-gray-700">Lyrics</h3>
-                    <!-- Using pre for formatting lyrics -->
                     <pre id="modal-lyrics" class="whitespace-pre-wrap text-gray-200 leading-relaxed text-base bg-gray-900 p-4 rounded-lg border border-yellow-800 overflow-x-auto">
                         Placeholder Lyrics. Full lyrics would appear here.
                     </pre>
                 </div>
 
-                <!-- Footer and Close Button -->
                 <div class="flex justify-end">
                     <button id="close-modal-btn" class="px-6 py-2 bg-[var(--burgundy)] text-white rounded-lg hover:bg-red-800 transition duration-150 font-bold shadow-lg">
                         Close Vault
@@ -343,89 +324,36 @@
 
 
     <script>
-        // --- DATA SIMULATION (lyrics.json content) ---
-        // Helper function to get the correct asset URL path
+        // --- DATA INTEGRATION VIA PHP ---
+        // This PHP code outputs the ALL_SONGS_DATA array directly from lyrics.json
+        <?php include 'data_loader.php'; ?> 
+        // The constant ALL_SONGS_DATA is now populated from the JSON file
+
+        // Thematic Cards Data (Kept in JS as it's static UI data)
         function getAssetUrl(filenameWithHash) {
             const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-            return `https://canvas-static-assets.s3.amazonaws.com/collaborator-assets/${appId}/uploaded%3A${filenameWithHash}`;
+            // Assuming this is used for the static assets provided in the prompt's array
+            return `/assets/covers/${filenameWithHash}`; 
         }
         
-        const ALL_SONGS_DATA = [
-            // Note: Data structure expanded to include Tempo, Key_Scale, Commercial_Potential, and Target_Demographic
-            // IDs 1-43 are from previous versions
-            { id: 1, title: "AUTHOR OF A LIE", artist: "Kellie Larson", genre: "Pop, Hip-Hop", mood: "Confident", tempo: "Mid Tempo", theme: "Vengeance & Empowerment", licensing: "Exclusive", vocals: "Male Lead", placement: "TV Series Opener", key_scale: "C Major", commercial_potential: "High", target_demographic: "Gen Z/Millennial", cover: "/assets/covers/author-of-a-lie-cover-art.jpg", audio: "/assets/music/author-of-a-lie-audio.mp3", description: "You're the author of a lie, a master of deceit. And I'm tired of this story on repeat.", lyrics: "Placeholder lyrics for AUTHOR OF A LIE." },
-            { id: 2, title: "BIG HARD NO", artist: "Kellie Larson", genre: "Rock, Alternative", mood: "Determined", tempo: "Fast", theme: "Vengeance & Empowerment", licensing: "Non-Exclusive", vocals: "Female Lead", placement: "Movie Trailer", key_scale: "G Minor", commercial_potential: "Medium", target_demographic: "Millennial/Gen X", cover: "/assets/covers/big-hard-no-cover-art.jpg", audio: "/assets/music/big-hard-no-audio.mp3", description: "Placeholder description for BIG HARD NO.", lyrics: "Placeholder lyrics for BIG HARD NO." },
-            { id: 3, title: "BOOM BOOM BEAT", artist: "Kellie Larson", genre: "Alternative, Rock", mood: "Playful", tempo: "Fast", theme: "Fun, Party & Nostalgia", licensing: "Exclusive", vocals: "Duet (M/F)", placement: "Commercial Spot", key_scale: "D Major", commercial_potential: "High", target_demographic: "Family/All Ages", cover: "/assets/covers/boom-boom-beat-cover-art.jpg", audio: "/assets/music/boom-boom-beat-audio.mp3", description: "Boom boom boom da boom boom boom, Ah-yo-delay-ee-hoo!", lyrics: "Placeholder lyrics for BOOM BOOM BEAT." },
-            { id: 4, title: "BROKEN RECORD", artist: "Kellie Larson", genre: "Pop, Blues", mood: "Melancholic", tempo: "Slow", theme: "Love, Loss, & Longing", licensing: "Non-Exclusive", vocals: "Female Lead", placement: "TV Drama Scene", key_scale: "F Minor", commercial_potential: "Medium", target_demographic: "Millennial/Gen X", cover: "/assets/covers/broken-record-cover-art.jpg", audio: "/assets/music/broken-record-audio.mp3", description: "Placeholder description for BROKEN RECORD.", lyrics: "Placeholder lyrics for BROKEN RECORD." },
-            { id: 5, title: "CEO NOT A BABYSITTING TREE", artist: "Kellie Larson", genre: "Hip-Hop, Pop", mood: "Confident", tempo: "Mid Tempo", theme: "Vengeance & Empowerment", licensing: "Exclusive", vocals: "Male Lead", placement: "Video Game Soundtrack", key_scale: "A Minor", commercial_potential: "High", target_demographic: "Gen Z", cover: "/assets/covers/ceo-not-a-babysitting-tree-cover-art.jpg", audio: "/assets/music/ceo-not-a-babysitting-tree-audio.mp3", description: "Placeholder description for CEO NOT A BABYSITTING TREE.", lyrics: "Placeholder lyrics for CEO NOT A BABYSITTING TREE." },
-            { id: 6, title: "CHILDREN OF WAR", artist: "Kellie Larson", genre: "World, Gospel", mood: "Dramatic", tempo: "Slow", theme: "Introspection & Faith", licensing: "Exclusive", vocals: "Choir/Group", placement: "Film Score", key_scale: "B Minor", commercial_potential: "Niche", target_demographic: "All Ages", cover: "/assets/covers/children-of-war-cover-art.jpg", audio: "/assets/music/children-of-war-audio.mp3", description: "Placeholder description for CHILDREN OF WAR.", lyrics: "Placeholder lyrics for CHILDREN OF WAR." },
-            { id: 7, title: "CONCRETE UNDER THE FEET", artist: "Kellie Larson", genre: "Rock, Alternative", mood: "Introspective", tempo: "Mid Tempo", theme: "Dark & Narrative", licensing: "Non-Exclusive", vocals: "Male Lead", placement: "Commercial Spot", key_scale: "E Minor", commercial_potential: "Medium", target_demographic: "Gen X", cover: "/assets/covers/concrete-under-the-feet-cover-art.jpg", audio: "/assets/music/concrete-under-the-feet-audio.mp3", description: "Placeholder description for CONCRETE UNDER THE FEET.", lyrics: "Placeholder lyrics for CONCRETE UNDER THE FEET." },
-            { id: 8, title: "CRAVING THOSE CRUMBS", artist: "Kellie Larson", genre: "R&B, Pop", mood: "Sad", tempo: "Slow", theme: "Love, Loss, & Longing", licensing: "Exclusive", vocals: "Female Lead", placement: "TV Drama Scene", key_scale: "Db Major", commercial_potential: "Medium", target_demographic: "Millennial", cover: "/assets/covers/craving-those-crumbs-cover-art.jpg", audio: "/assets/music/craving-those-crumbs-audio.mp3", description: "Placeholder description for CRAVING THOSE CRUMBS.", lyrics: "Placeholder lyrics for CRAVING THOSE CRUMBS." },
-            { id: 9, title: "DON'T BE JELLY", artist: "Kellie Larson", genre: "Pop, R&B", mood: "Playful", tempo: "Fast", theme: "Fun, Party & Nostalgia", licensing: "Non-Exclusive", vocals: "Female Lead", placement: "Movie Trailer", key_scale: "Bb Major", commercial_potential: "High", target_demographic: "Gen Z", cover: "/assets/covers/dont-be-jelly-cover-art.jpg", audio: "/assets/music/dont-be-jelly-audio.mp3", description: "Placeholder description for DON'T BE JELLY.", lyrics: "Placeholder lyrics for DON'T BE JELLY." },
-            { id: 10, title: "EPHEMERAL MOMENT", artist: "Kellie Larson", genre: "Easy Listening, Pop", mood: "Dreamy", tempo: "Slow", theme: "Love, Loss, & Longing", licensing: "Exclusive", vocals: "Female Lead", placement: "Film Score", key_scale: "E Major", commercial_potential: "Medium", target_demographic: "Gen X", cover: "/assets/covers/ephemeral-moment-cover-art.jpg", audio: "/assets/music/ephemeral-moment-audio.mp3", description: "Placeholder description for EPHEMERAL MOMENT.", lyrics: "Placeholder lyrics for EPHEMERAL MOMENT." },
-            { id: 11, title: "ETCHED IN EVERY SPACE", artist: "Kellie Larson", genre: "Country, Ballad", mood: "Romantic", tempo: "Mid Tempo", theme: "Love, Loss, & Longing", licensing: "Exclusive", vocals: "Male Lead", placement: "Commercial Spot", key_scale: "C# Minor", commercial_potential: "High", target_demographic: "Millennial/Gen X", cover: "/assets/covers/etched-in-every-space-cover-art.jpg", audio: "/assets/music/etched-in-every-space-audio.mp3", description: "Placeholder description for ETCHED IN EVERY SPACE.", lyrics: "Placeholder lyrics for ETCHED IN EVERY SPACE." },
-            { id: 12, title: "FIRST STEP", artist: "Kellie Larson", genre: "Pop, R&B", mood: "Determined", tempo: "Fast", theme: "Vengeance & Empowerment", licensing: "Non-Exclusive", vocals: "Female Lead", placement: "TV Series Opener", key_scale: "A Major", commercial_potential: "High", target_demographic: "Gen Z", cover: "/assets/covers/first-step-cover-art.jpg", audio: "/assets/music/first-step-audio.mp3", description: "Placeholder description for TAKE THAT FIRST STEP.", lyrics: "Placeholder lyrics for FIRST STEP." },
-            { id: 13, title: "FURY (I'M THE MONSTER)", artist: "Kellie Larson", genre: "Metal, Rock", mood: "Heavy", tempo: "Fast", theme: "Rock & Alternative Jams", licensing: "Exclusive", vocals: "Male Lead", placement: "Movie Trailer", key_scale: "F# Minor", commercial_potential: "Medium", target_demographic: "Gen X", cover: "/assets/covers/fury-im-the-monster-cover-art.jpg", audio: "/assets/music/fury-im-the-monster-audio.mp3", description: "Placeholder description for FURY (I'M THE MONSTER).", lyrics: "Placeholder lyrics for FURY (I'M THE MONSTER)." },
-            { id: 14, title: "GENX 80S ANTHEM", artist: "Kellie Larson", genre: "Rock, Pop", mood: "Proud", tempo: "Fast", theme: "Fun, Party & Nostalgia", licensing: "Non-Exclusive", vocals: "Group/Chorus", placement: "Commercial Spot", key_scale: "C Major", commercial_potential: "High", target_demographic: "Gen X", cover: "/assets/covers/genx-80s-anthem-cover-art.jpg", audio: "/assets/music/genx-80s-anthem-audio.mp3", description: "Placeholder description for GENX 80S ANTHEM.", lyrics: "Placeholder lyrics for GENX 80S ANTHEM." },
-            { id: 15, title: "HEARTBREAK AND TROUBLE", artist: "Kellie Larson", genre: "Pop, R&B", mood: "Melancholic", tempo: "Slow", theme: "Love, Loss, & Longing", licensing: "Exclusive", vocals: "Female Lead", placement: "TV Drama Scene", key_scale: "B Major", commercial_potential: "Medium", target_demographic: "Millennial", cover: "/assets/covers/heartbreak-and-trouble-cover-art.jpg", audio: "/assets/music/heartbreak-and-trouble-audio.mp3", description: "Placeholder description for HEARTBREAK AND TROUBLE.", lyrics: "Placeholder lyrics for HEARTBREAK AND TROUBLE." },
-            { id: 16, title: "HIT THE ROAD", artist: "Kellie Larson", genre: "Pop, Dancehall", mood: "Revenge", tempo: "Mid Tempo", theme: "Vengeance & Empowerment", licensing: "Exclusive", vocals: "Female Lead", placement: "Video Game Soundtrack", key_scale: "Eb Major", commercial_potential: "High", target_demographic: "Gen Z", cover: "/assets/covers/hit-the-road-cover-art.jpg", audio: "/assets/music/hit-the-road-audio.mp3", description: "Vengeful anthem about moving on from a toxic relationship. Empowerment-focused pop.", lyrics: "Placeholder lyrics for HIT THE ROAD." },
-            { id: 17, title: "HOW'S IT FEEL, BRO?", artist: "Kellie Larson", genre: "Pop, Hip-Hop", mood: "Revenge", tempo: "Mid Tempo", theme: "Vengeance & Empowerment", licensing: "Non-Exclusive", vocals: "Male Lead", placement: "Film Score", key_scale: "G Major", commercial_potential: "Medium", target_demographic: "Millennial", cover: "/assets/covers/hows--it-feel-bro-cover-art.jpg", audio: "/assets/music/hows-it-feel-bro-audio.mp3", description: "Placeholder description for HOW'S IT FEEL, BRO?.", lyrics: "Placeholder lyrics for HOW'S IT FEEL, BRO?." },
-            { id: 18, title: "I KNOW YOUR DAMN PIN CODE", artist: "Kellie Larson", genre: "Rock, Alt Country", mood: "Bitter", tempo: "Fast", theme: "Dark & Narrative", licensing: "Exclusive", vocals: "Female Lead", placement: "Movie Trailer", key_scale: "B Minor", commercial_potential: "Medium", target_demographic: "Millennial/Gen X", cover: "/assets/covers/i-know-your-damn-pin-code-cover-art.jpg", audio: "/assets/music/i-know-your-damn-pin-code-audio.mp3", description: "Breakup anthem of uncovering a partner's deceit and finding empowerment.", lyrics: "Placeholder lyrics for I KNOW YOUR DAMN PIN CODE." },
-            { id: 19, title: "IN MY DREAMS", artist: "Kellie Larson", genre: "Easy Listening, Pop", mood: "Melancholic", tempo: "Slow", theme: "Love, Loss, & Longing", licensing: "Non-Exclusive", vocals: "Female Lead", placement: "Commercial Spot", key_scale: "Ab Major", commercial_potential: "Medium", target_demographic: "Gen X", cover: "/assets/covers/in-my-dreams-cover-art.jpg", audio: "/assets/music/in-my-dreams-audio.mp3", description: "A haunting, heartfelt pop-ballad dealing with the grief of loss.", lyrics: "Placeholder lyrics for IN MY DREAMS." },
-            { id: 20, title: "JUST TOO MUCH", artist: "Kellie Larson", genre: "Rock, Punk", mood: "Bitter", tempo: "Fast", theme: "Rock & Alternative Jams", licensing: "Exclusive", vocals: "Male Lead", placement: "Video Game Soundtrack", key_scale: "E Minor", commercial_potential: "Medium", target_demographic: "Gen X", cover: "/assets/covers/just-too-much-cover-art.jpg", audio: "/assets/music/just-too-much-audio.mp3", description: "Placeholder description for JUST TOO MUCH.", lyrics: "Placeholder lyrics for JUST TOO MUCH." },
-            { id: 21, title: "JUST A LITTLE LONELY", artist: "Kellie Larson", genre: "Country, Ballad", mood: "Sad", tempo: "Slow", theme: "Love, Loss, & Longing", licensing: "Non-Exclusive", vocals: "Male Lead", placement: "TV Drama Scene", key_scale: "G Major", commercial_potential: "High", target_demographic: "Millennial/Gen X", cover: "/assets/covers/just-a-little-lonely-cover-art.jpg", audio: "/assets/music/just-a-little-lonELY-audio.mp3", description: "Placeholder description for JUST A LITTLE LONELY.", lyrics: "Placeholder lyrics for JUST A LITTLE LONELY." },
-            { id: 22, title: "LITTLE THINGS", artist: "Kellie Larson", genre: "Pop, Easy Listening", mood: "Romantic", tempo: "Slow", theme: "Love, Loss, & Longing", licensing: "Exclusive", vocals: "Female Lead", placement: "Film Score", key_scale: "D Major", commercial_potential: "Medium", target_demographic: "Family/All Ages", cover: "/assets/covers/little-things-cover-art.jpg", audio: "/assets/music/little-things-audio.mp3", description: "Placeholder description for LITTLE THINGS.", lyrics: "Placeholder lyrics for LITTLE THINGS." },
-            { id: 23, title: "MARRIED TO THE DRUG", artist: "Kellie Larson", genre: "Rock, Metal", mood: "Heavy", tempo: "Fast", theme: "Rock & Alternative Jams", licensing: "Non-Exclusive", vocals: "Male Lead", placement: "Commercial Spot", key_scale: "C# Minor", commercial_potential: "Niche", target_demographic: "Gen X", cover: "/assets/covers/married-to-the-drug-cover-art.jpg", audio: "/assets/music/married-to-the-drug-audio.mp3", description: "Placeholder description for MARRIED TO THE DRUG.", lyrics: "Placeholder lyrics for MARRIED TO THE DRUG." },
-            { id: 24, title: "MURDERERS HEART", artist: "Kellie Larson", genre: "Metal, Horror", mood: "Dramatic", tempo: "Fast", theme: "Dark & Narrative", licensing: "Exclusive", vocals: "Female Lead", placement: "TV Series Opener", key_scale: "F Minor", commercial_potential: "Medium", target_demographic: "Millennial", cover: "/assets/covers/murderers-heart-cover-art.jpg", audio: "/assets/music/murderers-heart-audio.mp3", description: "Placeholder description for MURDERERS HEART.", lyrics: "Placeholder lyrics for MURDERERS HEART." },
-            { id: 25, title: "MY GIRL KARMA", artist: "Kellie Larson", genre: "R&B, Pop", mood: "Revenge", tempo: "Mid Tempo", theme: "Vengeance & Empowerment", licensing: "Non-Exclusive", vocals: "Female Lead", placement: "Movie Trailer", key_scale: "Bb Minor", commercial_potential: "High", target_demographic: "Gen Z", cover: "/assets/covers/my-girl-karma-cover-art.jpg", audio: "/assets/music/my-girl-karma-audio.mp3", description: "Placeholder description for MY GIRL KARMA.", lyrics: "Placeholder lyrics for MY GIRL KARMA." },
-            { id: 26, title: "MY WORDS MATTER", artist: "Kellie Larson", genre: "Pop, Anthemic", mood: "Confident", tempo: "Fast", theme: "Vengeance & Empowerment", licensing: "Exclusive", vocals: "Female Lead", placement: "Video Game Soundtrack", key_scale: "D Major", commercial_potential: "High", target_demographic: "Millennial", cover: "/assets/covers/my-words-matter-cover-art.jpg", audio: "/assets/music/my-words-matter-audio.mp3", description: "Placeholder description for MY WORDS MATTER.", lyrics: "Placeholder lyrics for MY WORDS MATTER." },
-            { id: 27, title: "NOT THAT GIRL ANYMORE", artist: "Kellie Larson", genre: "Country, Pop", mood: "Introspective", tempo: "Mid Tempo", theme: "Vengeance & Empowerment", licensing: "Exclusive", vocals: "Female Lead", placement: "Film Score", key_scale: "C Major", commercial_potential: "Medium", target_demographic: "Millennial/Gen X", cover: "/assets/covers/not-that-girl-anymore-cover-art.jpg", audio: "/assets/music/not-that-girl-anymore-audio.mp3", description: "Placeholder description for NOT THAT GIRL ANYMORE.", lyrics: "Placeholder lyrics for NOT THAT GIRL ANYMORE." },
-            { id: 28, title: "ONE SMALL WRONG", artist: "Kellie Larson", genre: "Rock, Alternative", mood: "Bitter", tempo: "Mid Tempo", theme: "Dark & Narrative", licensing: "Non-Exclusive", vocals: "Male Lead", placement: "TV Drama Scene", key_scale: "E Minor", commercial_potential: "Niche", target_demographic: "Gen X", cover: "/assets/covers/one-small-wrong-cover-art.jpg", audio: "/assets/music/one-small-wrong-audio.mp3", description: "Placeholder description for ONE SMALL WRONG.", lyrics: "Placeholder lyrics for ONE SMALL WRONG." },
-            { id: 29, title: "REAL DREAM TEAM", artist: "Kellie Larson", genre: "Pop, Dancehall", mood: "Confident", tempo: "Fast", theme: "Fun, Party & Nostalgia", licensing: "Exclusive", vocals: "Female Lead", placement: "Commercial Spot", key_scale: "F Major", commercial_potential: "High", target_demographic: "Gen Z", cover: "/assets/covers/real-dream-team-cover-art.jpg", audio: "/assets/music/real-dream-team-audio.mp3", description: "Placeholder description for REAL DREAM TEAM.", lyrics: "Placeholder lyrics for REAL DREAM TEAM." },
-            { id: 30, title: "SHOT BY CUPIDS DART", artist: "Kellie Larson", genre: "Pop, Bedroom Pop", mood: "Romantic", tempo: "Slow", theme: "Love, Loss, & Longing", licensing: "Non-Exclusive", vocals: "Duet (M/F)", placement: "TV Series Opener", key_scale: "Ab Major", commercial_potential: "Medium", target_demographic: "Gen Z", cover: "/assets/covers/shot-by-cupids-dart-cover-art.jpg", audio: "/assets/music/shot-by-cupids-dart-audio.mp3", description: "Placeholder description for SHOT BY CUPIDS DART.", lyrics: "Placeholder lyrics for SHOT BY CUPIDS DART." },
-            { id: 31, title: "SHOWDOWN AT MY DOOR", artist: "Kellie Larson", genre: "Rock, Blues", mood: "Determined", tempo: "Mid Tempo", theme: "Rock & Alternative Jams", licensing: "Exclusive", vocals: "Male Lead", placement: "Movie Trailer", key_scale: "A Minor", commercial_potential: "Medium", target_demographic: "Gen X", cover: "/assets/covers/showdown-at-my-door-cover-art.jpg", audio: "/assets/music/showdown-at-my-door-audio.mp3", description: "Placeholder description for SHOWDOWN AT MY DOOR.", lyrics: "Placeholder lyrics for SHOWDOWN AT MY DOOR." },
-            { id: 32, title: "SICK ONE (S1C)", artist: "Kellie Larson", genre: "Rock, Alternative", mood: "Bitter", tempo: "Fast", theme: "Rock & Alternative Jams", licensing: "Non-Exclusive", vocals: "Female Lead", placement: "Video Game Soundtrack", key_scale: "C# Minor", commercial_potential: "Niche", target_demographic: "Gen Z", cover: "/assets/covers/sick-one-s1c-cover-art.jpg", audio: "/assets/music/sick-one-s1c-audio.mp3", description: "A raw, brutal confessional exploring a chaotic and self-destructive toxic love.", lyrics: "Placeholder lyrics for SICK ONE (S1C)." },
-            { id: 33, title: "SOLID SHIFTING GROUND", artist: "Kellie Larson", genre: "Country, Rock", mood: "Introspective", tempo: "Slow", theme: "Introspection & Faith", licensing: "Exclusive", vocals: "Male Lead", placement: "Film Score", key_scale: "G Major", commercial_potential: "Medium", target_demographic: "Gen X", cover: "/assets/covers/solid-shifting-ground-cover-art.jpg", audio: "/assets/music/solid-shifting-ground-audio.mp3", description: "Placeholder description for SOLID SHIFTING GROUND.", lyrics: "Placeholder lyrics for SOLID SHIFTING GROUND." },
-            { id: 34, title: "STOOD BY MY SIDE", artist: "Kellie Larson", genre: "Gospel, Religious", mood: "Peaceful", tempo: "Slow", theme: "Introspection & Faith", licensing: "Exclusive", vocals: "Choir/Group", placement: "Commercial Spot", key_scale: "Eb Major", commercial_potential: "Niche", target_demographic: "All Ages", cover: "/assets/covers/stood-by-my-side-cover-art.jpg", audio: "/assets/music/stood-by-my-side-audio.mp3", description: "An emotional Christian ballad about finding peace and healing through faith.", lyrics: "Placeholder lyrics for STOOD BY MY SIDE." },
-            { id: 35, title: "THE AFTERMATH", artist: "Kellie Larson", genre: "Pop, Ballad", mood: "Sad", tempo: "Slow", theme: "Love, Loss, & Longing", licensing: "Non-Exclusive", vocals: "Female Lead", placement: "TV Drama Scene", key_scale: "E Major", commercial_potential: "Medium", target_demographic: "Millennial", cover: "/assets/covers/the-aftermath-cover-art.jpg", audio: "/assets/music/the-aftermath-audio.mp3", description: "Placeholder description for THE AFTERMATH.", lyrics: "Placeholder lyrics for THE AFTERMATH." },
-            { id: 36, title: "THE BACK OF ME", artist: "Kellie Larson", genre: "Country, Americana", mood: "Determined", tempo: "Mid Tempo", theme: "Vengeance & Empowerment", licensing: "Exclusive", vocals: "Male Lead", placement: "TV Series Opener", key_scale: "D Minor", commercial_potential: "Medium", target_demographic: "Millennial/Gen X", cover: "/assets/covers/the-back-of-me-cover-art.jpg", audio: "/assets/music/the-back-of-me-audio.mp3", description: "Placeholder description for THE BACK OF ME.", lyrics: "Placeholder lyrics for THE BACK OF ME." },
-            { id: 37, title: "THE SHOW IS THROUGH", artist: "Kellie Larson", genre: "Jazz, Blues", mood: "Bitter", tempo: "Slow", theme: "Dark & Narrative", licensing: "Non-Exclusive", vocals: "Female Lead", placement: "Movie Trailer", key_scale: "A Major", commercial_potential: "Niche", target_demographic: "Gen X", cover: "/assets/covers/the-show-is-through-cover-art.jpg", audio: "/assets/music/the-show-is-through-audio.mp3", description: "Placeholder description for THE SHOW IS THROUGH.", lyrics: "Placeholder lyrics for THE SHOW IS THROUGH." },
-            { id: 38, title: "THOUGHT YOU SHOULD KNOW", artist: "Kellie Larson", genre: "Pop, R&B", mood: "Confident", tempo: "Mid Tempo", theme: "Vengeance & Empowerment", licensing: "Exclusive", vocals: "Female Lead", placement: "Video Game Soundtrack", key_scale: "F Major", commercial_potential: "High", target_demographic: "Gen Z", cover: "/assets/covers/thought-you-should-know-cover-art.jpg", audio: "/assets/music/thought-you-should-know-audio.mp3", description: "Placeholder description for THOUGHT YOU SHOULD KNOW.", lyrics: "Placeholder lyrics for THOUGHT YOU SHOULD KNOW." },
-            { id: 39, title: "TOP SHELF QUEEN", artist: "Kellie Larson", genre: "Reggae, World", mood: "Mellow", tempo: "Slow", theme: "Fun, Party & Nostalgia", licensing: "Non-Exclusive", vocals: "Male Lead", placement: "Film Score", key_scale: "Db Major", commercial_potential: "Medium", target_demographic: "Millennial/Gen X", cover: "/assets/covers/top-shelf-queen-cover-art.jpg", audio: "/assets/music/top-shelf-queen-audio.mp3", description: "Placeholder description for TOP SHELF QUEEN.", lyrics: "Placeholder lyrics for TOP SHELF QUEEN." },
-            { id: 40, title: "WELCOME TO JUKES", artist: "Kellie Larson", genre: "Country, Blues", mood: "Mellow", tempo: "Mid Tempo", theme: "Dark & Narrative", licensing: "Exclusive", vocals: "Male Lead", placement: "Commercial Spot", key_scale: "E Major", commercial_potential: "Niche", target_demographic: "Gen X", cover: "/assets/covers/welcome-to-jukes-cover-art.jpg", audio: "/assets/music/welcome-to-jukes-audio.mp3", description: "Placeholder description for WELCOME TO JUKES.", lyrics: "Placeholder lyrics for WELCOME TO JUKES." },
-            { id: 41, title: "WILDFLOWER", artist: "Kellie Larson", genre: "Folk, Americana", mood: "Peaceful", tempo: "Slow", theme: "Introspection & Faith", licensing: "Non-Exclusive", vocals: "Female Lead", placement: "TV Drama Scene", key_scale: "G Major", commercial_potential: "Medium", target_demographic: "Millennial/Gen X", cover: "/assets/covers/wildflower-cover-art.jpg", audio: "/assets/music/wildflower-audio.mp3", description: "Placeholder description for WILDFLOWER.", lyrics: "Placeholder lyrics for WILDFLOWER." },
-            { id: 42, title: "YEAR IN THE REARVIEW", artist: "Kellie Larson", genre: "Pop, Contemporary", mood: "Introspective", tempo: "Mid Tempo", theme: "Introspection & Faith", licensing: "Exclusive", vocals: "Female Lead", placement: "TV Series Opener", key_scale: "B Major", commercial_potential: "High", target_demographic: "Millennial", cover: "/assets/covers/year-in-the-rearview-cover-art.jpg", audio: "/assets/music/year-in-the-rearview-audio.mp3", description: "Placeholder description for YEAR IN THE REARVIEW.", lyrics: "Placeholder lyrics for YEAR IN THE REARVIEW." },
-            { id: 43, title: "YOUR FOREVER MAN", artist: "Kellie Larson", genre: "Country", mood: "Romantic", tempo: "Mid Tempo", theme: "Love, Loss, & Longing", licensing: "Non-Exclusive", vocals: "Male Lead", placement: "Movie Trailer", key_scale: "C Major", commercial_potential: "High", target_demographic: "Family/All Ages", cover: "/assets/covers/your-forever-man-cover-art.jpg", audio: "/assets/music/your-forever-man-audio.mp3", description: "Contemporary folk-pop country song about unconditional love and support.", lyrics: "Placeholder lyrics for YOUR FOREVER MAN." },
-            
-            // --- NEW SONGS ADDED (44-50) ---
-            { id: 44, title: "SUNSET HIGHWAY", artist: "Kellie Larson", genre: "Pop, Electro", mood: "Energetic", tempo: "Fast", theme: "Fun, Party & Nostalgia", licensing: "Exclusive", vocals: "Female Lead", placement: "Road Trip Movie Soundtrack", key_scale: "D Major", commercial_potential: "High", target_demographic: "Gen Z", cover: "/assets/covers/sunset-highway-cover-art.jpg", audio: "/assets/music/sunset-highway-audio.mp3", description: "Driving, feel-good electro-pop anthem about freedom and chasing the horizon.", lyrics: "Placeholder lyrics for SUNSET HIGHWAY." },
-            { id: 45, title: "THE KING'S FALL", artist: "Kellie Larson", genre: "Metal, Epic", mood: "Dramatic", tempo: "Slow", theme: "Dark & Narrative", licensing: "Non-Exclusive", vocals: "Male Lead", placement: "Fantasy Video Game Cinematic", key_scale: "E Minor", commercial_potential: "Niche", target_demographic: "Millennial/Gen Z", cover: "/assets/covers/the-kings-fall-cover-art.jpg", audio: "/assets/music/the-kings-fall-audio.mp3", description: "Epic, dark track detailing the betrayal and downfall of a powerful ruler.", lyrics: "Placeholder lyrics for THE KING'S FALL." },
-            { id: 46, title: "FOG ON THE LAKE", artist: "Kellie Larson", genre: "Acoustic, Folk", mood: "Peaceful", tempo: "Slow", theme: "Introspection & Faith", licensing: "Exclusive", vocals: "Female Lead", placement: "Nature Documentary Score", key_scale: "G Major", commercial_potential: "Medium", target_demographic: "Gen X", cover: "/assets/covers/fog-on-the-lake-cover-art.jpg", audio: "/assets/music/fog-on-the-lake-audio.mp3", description: "Gentle, reflective song about finding peace and stillness in isolation.", lyrics: "Placeholder lyrics for FOG ON THE LAKE." },
-            { id: 47, title: "GHOST OF YOU", artist: "Kellie Larson", genre: "Ballad, Pop", mood: "Sad", tempo: "Slow", theme: "Love, Loss, & Longing", licensing: "Non-Exclusive", vocals: "Male Lead", placement: "Breakup Scene (TV)", key_scale: "B Minor", commercial_potential: "Medium", target_demographic: "Millennial", cover: "/assets/covers/ghost-of-you-cover-art.jpg", audio: "/assets/music/ghost-of-you-audio.mp3", description: "Heartbreaking ballad about being haunted by the memory of a past love.", lyrics: "Placeholder lyrics for GHOST OF YOU." },
-            { id: 48, title: "BROKEN MACHINE", artist: "Kellie Larson", genre: "Industrial, Rock", mood: "Bitter", tempo: "Fast", theme: "Rock & Alternative Jams", licensing: "Exclusive", vocals: "Male Lead", placement: "Action Movie Montage", key_scale: "D Minor", commercial_potential: "Niche", target_demographic: "Gen X", cover: "/assets/covers/broken-machine-cover-art.jpg", audio: "/assets/music/broken-machine-audio.mp3", description: "Gritty, high-energy rock track about societal pressure and mechanical failure.", lyrics: "Placeholder lyrics for BROKEN MACHINE." },
-            { id: 49, title: "RISE UP (THE ANTHEM)", artist: "Kellie Larson", genre: "Pop, Anthemic", mood: "Proud", tempo: "Fast", theme: "Vengeance & Empowerment", licensing: "Non-Exclusive", vocals: "Female Lead", placement: "Sports Commercial", key_scale: "C Major", commercial_potential: "High", target_demographic: "All Ages", cover: "/assets/covers/rise-up-the-anthem-cover-art.jpg", audio: "/assets/music/rise-up-the-anthem-audio.mp3", description: "Motivational, uplifting pop track designed for triumphant moments.", lyrics: "Placeholder lyrics for RISE UP (THE ANTHEM)." },
-            { id: 50, title: "MIDNIGHT RENDEZVOUS", artist: "Kellie Larson", genre: "R&B, Jazz", mood: "Sultry", tempo: "Mid Tempo", theme: "Love, Loss, & Longing", licensing: "Exclusive", vocals: "Female Lead", placement: "Romantic Comedy Scene", key_scale: "F Minor", commercial_potential: "Medium", target_demographic: "Millennial", cover: "/assets/covers/midnight-rendezvous-cover-art.jpg", audio: "/assets/music/midnight-rendezvous-audio.mp3", description: "Smooth R&B track about a secret, passionate late-night meeting.", lyrics: "Placeholder lyrics for MIDNIGHT RENDEZVOUS." }
-        ];
-
-        // Thematic Cards (12 cards, using the 6 themes twice)
         const PLACEHOLDER_IMAGE = 'https://placehold.co/250x350/800020/ffffff?text=THEME+CARD';
 
         const THEMATIC_CARDS_DATA = [
-            // Row 1 (6 cards)
-            { theme: "Dark & Narrative", image: getAssetUrl('disenchantment-lyrics-photo.jpg-e52363635-6d0e-4ded-8e44-8b2a44c92aaf') }, 
-            { theme: "Fun, Party & Nostalgia", image: getAssetUrl('social-world-lyrics-photo.jpg-b9089d42-671e-4855-a807-adc5c23e4a14') }, 
-            { theme: "Introspection & Faith", image: getAssetUrl('mutual-value-lyrics-photo.jpg-fe9018a1-3569-4343-82e6-db431d692026') }, 
-            { theme: "Love, Loss, & Longing", image: getAssetUrl('loss-of-market-share-lyrics-photo.jpg-32cea1ef-0da3-494b-85ec-ace4d088fd6c') }, 
-            { theme: "Vengeance & Empowerment", image: getAssetUrl('empowerment-arc-lyrics-photo.jpg-49f7b450-59a6-4f52-ba38-78b345acc792') },
-            { theme: "Rock & Alternative Jams", image: PLACEHOLDER_IMAGE }, 
+            // Using placeholder image paths from original JS, these are static UI elements
+            { theme: "Dark / Narrative", image: '/assets/covers/disenchantment-lyrics-photo.jpg' }, 
+            { theme: "Fun / Party / Nostalgia", image: '/assets/covers/social-world-lyrics-photo.jpg' }, 
+            { theme: "Introspection / Faith", image: '/assets/covers/mutual-value-lyrics-photo.jpg' }, 
+            { theme: "Love / Loss / Longing", image: '/assets/covers/loss-of-market-share-lyrics-photo.jpg' }, 
+            { theme: "Vengeance / Empowerment", image: '/assets/covers/empowerment-arc-lyrics-photo.jpg' },
+            { theme: "Rock / Alternative Jams", image: PLACEHOLDER_IMAGE }, 
 
             // Row 2 (6 cards - duplicate themes for visual density)
-            { theme: "Dark & Narrative", image: PLACEHOLDER_IMAGE }, 
-            { theme: "Fun, Party & Nostalgia", image: PLACEHOLDER_IMAGE }, 
-            { theme: "Introspection & Faith", image: PLACEHOLDER_IMAGE }, 
-            { theme: "Love, Loss, & Longing", image: PLACEHOLDER_IMAGE }, 
-            { theme: "Vengeance & Empowerment", image: PLACEHOLDER_IMAGE },
-            { theme: "Rock & Alternative Jams", image: PLACEHOLDER_IMAGE } 
+            { theme: "Dark / Narrative", image: PLACEHOLDER_IMAGE }, 
+            { theme: "Fun / Party / Nostalgia", image: PLACEHOLDER_IMAGE }, 
+            { theme: "Introspection / Faith", image: PLACEHOLDER_IMAGE }, 
+            { theme: "Love / Loss / Longing", image: PLACEHOLDER_IMAGE }, 
+            { theme: "Vengeance / Empowerment", image: PLACEHOLDER_IMAGE },
+            { theme: "Rock / Alternative Jams", image: PLACEHOLDER_IMAGE } 
         ];
 
         // --- GLOBAL VARIABLES ---
@@ -447,10 +375,11 @@
         const modalLyrics = document.getElementById('modal-lyrics');
         const closeModalBtn = document.getElementById('close-modal-btn');
 
-        // Filter categories: 8 unique, highly relevant A&R filters
+        // Filter categories: Using exact JSON field names where possible
+        // NOTE: 'Theme' corresponds to JSON's 'category'. 'Licensing' is not a single field, so 'CommercialPotential' is used.
         const FILTER_CATEGORIES = [
-            'Theme', 'Licensing', 'Vocals', 'Placement', 'Mood', 
-            'Tempo', 'Commercial Potential', 'Target Demographic'
+            'Category', 'CommercialPotential', 'VocalType', 'PlacementType', 'MoodTone', 
+            'Tempo', 'Genre1', 'Genre2'
         ];
         
         // State for managing current active filters
@@ -470,31 +399,49 @@
         }
 
         function getUniqueValues(category) {
-            // Converts 'Commercial Potential' to 'commercial_potential'
-            const categoryKey = category.toLowerCase().replace(/\s/g, '_').replace('/', '_');
-            return [...new Set(ALL_SONGS_DATA.map(song => song[categoryKey]))].sort();
+            // Converts category string (e.g., 'VocalType') to the exact JSON key
+            const categoryKey = category.toLowerCase().replace('potential', 'potential').replace('type', 'type'); 
+            
+            // Special handling for MoodTone and Genre2 which might be comma-separated strings
+            let values = [];
+            ALL_SONGS_DATA.forEach(song => {
+                let val = song[categoryKey];
+                if (val && typeof val === 'string' && (categoryKey === 'moodtone' || categoryKey === 'genre2')) {
+                    // Split comma-separated string and trim
+                    val.split(',').forEach(item => {
+                        let trimmed = item.trim();
+                        if (trimmed !== '' && trimmed !== 'Placeholder' && trimmed !== 'N/A') {
+                            values.push(trimmed);
+                        }
+                    });
+                } else if (val && val !== 'Placeholder' && val !== 'N/A') {
+                    values.push(val);
+                }
+            });
+            
+            return [...new Set(values)].sort();
         }
 
         // --- RENDERING FUNCTIONS ---
 
         function createStandardCardHtml(song) {
-            // Note: Key/Scale and Commercial Potential are added to description for visibility
+            // Using exact JSON fields: coverImageUrl, title, artistWriter, genre1, genre2, keySignature, shortDescription
+            const genres = [song.genre1, song.genre2].filter(g => g && g !== 'Placeholder' && g !== 'N/A').join(' / ');
+            
             return `
                 <div id="song-${song.id}" data-song-id="${song.id}" class="song-card p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
-                    <img src="${song.cover}" alt="${song.title} cover art" class="mx-auto mb-4 w-full max-w-[200px] h-auto rounded-lg">
+                    <img src="${song.coverImageUrl}" alt="${song.title} cover art" class="mx-auto mb-4 w-full max-w-[200px] h-auto rounded-lg">
                     <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
                         ${song.title}
                     </h3>
-                    <p class="text-xs text-gray-400 mb-1">Genre: ${song.genre} | Key: ${song.key_scale}</p>
-                    <p class="text-xs text-gray-400 mb-3">Theme: ${song.theme} | Potential: ${song.commercial_potential}</p>
-                    <p class="text-sm italic text-gray-300 h-10 overflow-hidden text-ellipsis">${song.description}</p>
+                    <p class="text-xs text-gray-400 mb-1">Artist: ${song.artistWriter} | Key: ${song.keySignature || 'N/A'}</p>
+                    <p class="text-xs text-gray-400 mb-3">Genre: ${genres} | Potential: ${song.commercialPotential || 'N/A'}</p>
+                    <p class="text-sm italic text-gray-300 h-10 overflow-hidden text-ellipsis">${song.shortDescription || 'Placeholder'}</p>
                     
                     <div class="mt-4 flex gap-2">
-                        <!-- Read Now (opens player/lyrics) -->
                         <button onclick="openMusicPlayer(${song.id})" class="flex-1 px-4 py-2 text-white font-semibold rounded-lg btn-sunset-orange shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
                             Read Now
                         </button>
-                        <!-- Print Button -->
                         <button onclick="handlePrint(${song.id})" class="flex-1 px-4 py-2 text-white font-semibold rounded-lg btn-sunset-orange shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
                             Print
                         </button>
@@ -504,12 +451,14 @@
         }
 
         function createThematicCardHtml(cardData) {
+            // NOTE: Thematic cards rely on the custom 'theme' field defined in the local JS array, 
+            // but the filtering will target the JSON's 'category' field.
             return `
                 <div id="theme-card-${cardData.theme.replace(/\s/g, '-')}-${Math.random().toString(36).substring(2, 7)}" 
                      data-theme-value="${cardData.theme}"
                      class="thematic-card rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform"
                      style="background-image: url('${cardData.image}');"
-                     onclick="applyFilter('Theme', '${cardData.theme}')">
+                     onclick="applyFilter('Category', '${cardData.theme.split(' / ')[0].trim()}')">
                     <div class="bg-black bg-opacity-40 p-2 rounded-lg w-full text-center">
                         <h3 class="text-lg font-extrabold">${cardData.theme}</h3>
                     </div>
@@ -530,6 +479,10 @@
         function renderCatalogCards(filteredSongs) {
             cardContainer.innerHTML = '';
             
+            if (filteredSongs.length === 0) {
+                 cardContainer.innerHTML = '<p class="no-results lg:col-span-3">No songs found matching your search criteria.</p>';
+            }
+
             filteredSongs.forEach((song, index) => {
                 const cardHtml = createStandardCardHtml(song);
                 cardContainer.insertAdjacentHTML('beforeend', cardHtml);
@@ -565,7 +518,7 @@
             FILTER_CATEGORIES.forEach(category => {
                 const button = document.createElement('button');
                 button.className = 'px-4 py-2 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-500 transition duration-150 shadow-md border border-gray-600';
-                button.textContent = category;
+                button.textContent = category.replace('Type', ' Type').replace('Potential', ' Potential').replace('1', ' (Primary)').replace('2', ' (Secondary)'); // Clean up button text
                 button.setAttribute('data-category', category);
                 button.onclick = () => toggleSubFilter(category);
                 filterCategoryButtons.appendChild(button);
@@ -581,7 +534,7 @@
                 currentFilters.value = value;
             }
             
-            if (category === 'Theme' && value !== null) {
+            if (category === 'Category' && value !== null) {
                 currentFilters.text = '';
                 searchInput.value = '';
                 subFilterContainer.classList.add('hidden'); 
@@ -601,28 +554,36 @@
                 let matchesCategory = true;
                 let matchesText = true;
 
-                // 1. Text Search Filter (Checking ALL fields, including new ones)
+                // 1. Text Search Filter (Checking ALL relevant fields)
                 if (textFilter.length > 0) {
                     const searchableFields = [
-                        song.title, song.artist, song.genre, song.theme, 
-                        song.licensing, song.vocals, song.placement, song.mood, 
-                        song.tempo, song.key_scale, song.commercial_potential, song.target_demographic
-                    ];
+                        song.title, song.artistWriter, song.genre1, song.genre2, 
+                        song.category, song.placementType, song.moodTone, song.tempo, 
+                        song.commercialPotential, song.vocalType, song.seoSnippet, song.shortDescription, song.longDescription
+                    ].filter(field => field && typeof field === 'string');
                     
                     matchesText = searchableFields.some(field => 
-                        field && field.toLowerCase().includes(textFilter)
+                        field.toLowerCase().includes(textFilter)
                     );
                 }
 
                 // 2. Categorical/Value Filter
-                let categoryKey = currentFilters.category ? currentFilters.category.toLowerCase().replace(/\s/g, '_').replace('/', '_') : null;
+                const categoryKey = currentFilters.category;
                 const filterValue = currentFilters.value;
                 
-                if (filterValue !== null) {
-                    // Check if the song property matches the selected filter value
-                    matchesCategory = (song[categoryKey || 'theme'] === filterValue);
-                } else if (currentFilters.category) {
-                    // If a category button is active but no value is selected (e.g., just clicked the button)
+                if (filterValue !== null && categoryKey) {
+                    const songValue = song[categoryKey];
+                    const lowerFilterValue = filterValue.toLowerCase();
+
+                    // Handle comma-separated fields (MoodTone, Genre2)
+                    if (categoryKey === 'moodTone' || categoryKey === 'genre2' || categoryKey === 'genre1') {
+                        matchesCategory = (songValue && songValue.toLowerCase().split(',').some(item => item.trim() === lowerFilterValue));
+                    } else {
+                        // Handle single-value fields (Category, VocalType, Tempo, PlacementType, CommercialPotential, etc.)
+                        matchesCategory = (songValue && songValue.toLowerCase() === lowerFilterValue);
+                    }
+                } else if (currentFilters.category && filterValue === null) {
+                    // If a category button is active but no value is selected (i.e., 'All' is selected)
                     matchesCategory = true;
                 } else if (textFilter === '' && filterValue === null) {
                     // Reset case: show all
@@ -636,9 +597,10 @@
         }
 
         function toggleSubFilter(category) {
-            if (currentFilters.category === category) {
+            if (currentFilters.category === category && subFilterContainer.classList.contains('flex')) {
                 currentFilters.category = null;
                 currentFilters.value = null;
+                subFilterContainer.classList.remove('flex');
                 subFilterContainer.classList.add('hidden');
                 updateFilterButtons();
                 updateThematicCardBorders();
@@ -650,7 +612,7 @@
             
             const values = getUniqueValues(category);
 
-            subFilterTitle.textContent = `Select ${category}:`;
+            subFilterTitle.textContent = `Select ${category.replace('Type', ' Type').replace('Potential', ' Potential').replace('1', ' (Primary)').replace('2', ' (Secondary)')}:`;
             subFilterOptions.innerHTML = '';
             
             const clearBtn = document.createElement('button');
@@ -668,6 +630,7 @@
             });
 
             subFilterContainer.classList.remove('hidden');
+            subFilterContainer.classList.add('flex'); // Show container
             
             if (currentFilters.category) {
                 currentFilters.value = null; 
@@ -682,6 +645,7 @@
         function resetAllFilters() {
             currentFilters = { category: null, value: null, text: '' };
             searchInput.value = '';
+            subFilterContainer.classList.remove('flex');
             subFilterContainer.classList.add('hidden');
             updateFilterButtons();
             updateThematicCardBorders();
@@ -709,7 +673,8 @@
         function updateThematicCardBorders() {
             document.querySelectorAll('.thematic-card').forEach(card => {
                 card.classList.remove('active-filter');
-                if (card.getAttribute('data-theme-value') === currentFilters.value) {
+                // Thematic cards map to the 'Category' field
+                if (card.getAttribute('data-theme-value').includes(currentFilters.value)) {
                     card.classList.add('active-filter');
                 }
             });
@@ -726,10 +691,12 @@
             }
 
             modalTitle.textContent = song.title;
-            modalLyrics.textContent = song.lyrics || "Placeholder Lyrics. Full lyrics coming soon.";
+            // Use Placeholder if lyrics field is empty or undefined
+            modalLyrics.textContent = song.fullLyrics && song.fullLyrics.trim() !== '' ? song.fullLyrics : "Placeholder Lyrics.";
 
             const audioPlayer = modalContent.querySelector('audio');
-            audioPlayer.src = song.audio;
+            // Using exact JSON field: audioUrl
+            audioPlayer.src = song.audioUrl;
             audioPlayer.load();
             
             modal.classList.remove('hidden');
@@ -757,13 +724,17 @@
             }, 300);
         }
 
-        // Handle print functionality - UPDATED FOR ISOLATED PRINTING
+        // Handle print functionality - UPDATED FOR ISOLATED PRINTING (using exact JSON fields)
         window.handlePrint = function(songId) {
             const song = getSongById(songId);
             if (!song) {
                 alert("Error: Song data not found for printing.");
                 return;
             }
+
+            // Use Placeholder if lyrics field is empty or undefined (using exact JSON field: fullLyrics)
+            const printLyrics = song.fullLyrics && song.fullLyrics.trim() !== '' ? song.fullLyrics : "Placeholder Lyrics.";
+            const genres = [song.genre1, song.genre2].filter(g => g && g !== 'Placeholder' && g !== 'N/A').join(' / ');
 
             const printContent = `
                 <html>
@@ -781,12 +752,12 @@
                 <body>
                     <div class="meta">
                         <h1>${song.title}</h1>
-                        <p><strong>Artist:</strong> ${song.artist} | <strong>Genre:</strong> ${song.genre} | <strong>Theme:</strong> ${song.theme}</p>
-                        <p><strong>Vocals:</strong> ${song.vocals} | <strong>Tempo:</strong> ${song.tempo} | <strong>Key/Scale:</strong> ${song.key_scale}</p>
-                        <p><strong>Commercial Potential:</strong> ${song.commercial_potential} | <strong>Target Demo:</strong> ${song.target_demographic} | <strong>Placement:</strong> ${song.placement}</p>
+                        <p><strong>Artist/Writer:</strong> ${song.artistWriter} | <strong>Genres:</strong> ${genres} | <strong>Category:</strong> ${song.category || 'N/A'}</p>
+                        <p><strong>Vocal Type:</strong> ${song.vocalType || 'N/A'} | <strong>Tempo:</strong> ${song.tempo || 'N/A'} | <strong>Key/Scale:</strong> ${song.keySignature || 'N/A'}</p>
+                        <p><strong>Commercial Potential:</strong> ${song.commercialPotential || 'N/A'} | <strong>Placement Type:</strong> ${song.placementType || 'N/A'}</p>
                     </div>
                     <h2>Full Lyrics:</h2>
-                    <pre>${song.lyrics || "Placeholder Lyrics."}</pre>
+                    <pre>${printLyrics}</pre>
                     <p style="font-size: 10px; margin-top: 30px;">[Confidential: For Industry Review Only - Verse and Chorus]</p>
                 </body>
                 </html>
@@ -812,7 +783,13 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderThematicCards();
             renderFilterCategoryButtons();
-            applyMasterFilter(); // Initial render of all 50 songs
+            
+            // Check if data loaded successfully before applying filter
+            if (typeof ALL_SONGS_DATA !== 'undefined' && ALL_SONGS_DATA.length > 0) {
+                applyMasterFilter(); // Initial render of all songs
+            } else {
+                cardContainer.innerHTML = '<p class="no-results lg:col-span-3">Error loading song data from server (lyrics.json missing or empty).</p>';
+            }
             
             closeModalBtn.addEventListener('click', closeMusicPlayer);
             modal.addEventListener('click', (e) => {
