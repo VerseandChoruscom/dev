@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php include 'header.php'; ?>
+  
+    <title>Kellie Larson's Cinematic Songwriting Catalog: Music Licensing, Sync Pitches & A&R Review</title>
+  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+    <meta name="description" content="Kellie Larson's complete, pre-cleared songwriting catalog (44 songs) for Music Licensing, Film/TV Sync, and A&R review. Filter original songs by Genre, Mood, and Theme. 100% human-authored lyrics ready for collaboration.">
+    <meta name="keywords" content="Kellie Larson lyrics, songwriting catalog, digital jukebox, A&R review, sync licensing, music pitches, original song setlist, cinematic lyricist, rock lyrics, country lyrics, pop lyrics, empowerment anthems, grief ballads">
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  
+    <style>
+        /* --- FUN DIGITAL JUKEBOX PALETTE --- */
+        :root {
+            --primary-accent: #FF4081; /* Hot Pink */
+            --secondary-accent: #7C4DFF; /* Electric Purple */
+            --background-light: #f5f5f5; /* Light Base for Cards */
+            --jukebox-body: #4FC3F7; /* Vibrant Light Blue for Jukebox Body */
+            --text-color: #111;
+            --card-base: #FFFFFF;
+            --sunset-orange: #ff741a; /* Sunset Orange for Actions */
+        }
+
+        /* 1. JUKEBOX CONTAINER */
+        .jukebox-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: var(--jukebox-body);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 
+                        0 0 50px var(--secondary-accent);
+            overflow: hidden;
+            padding: 20px;
+            border: 8px solid var(--primary-accent);
+        }
+
+        .jukebox-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: linear-gradient(to right, #fff, #eee);
+            border-radius: 10px;
+            border-bottom: 3px solid var(--secondary-accent);
+        }
+
+        .jukebox-header h2 {
+            font-size: 2em;
+            color: var(--primary-accent); 
+            margin-bottom: 5px;
+        }
+
+        .jukebox-header p {
+            color: var(--text-color);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* 2. CATEGORY BUTTONS */
+        #category-nav {
+            background-color: var(--secondary-accent);
+            padding: 15px 10px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .category-button {
+            background-color: #6136d9;
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            font-size: 1em;
+            letter-spacing: 0.5px;
+        }
+
+        .category-button:hover {
+            background-color: var(--primary-accent);
+            transform: translateY(-2px);
+        }
+
+        .category-button.active {
+            background-color: var(--primary-accent); 
+            color: #fff;
+            box-shadow: 0 0 15px var(--primary-accent), 0 0 5px #fff;
+            transform: scale(1.05);
+        }
+
+        /* 3. SONG LIST GRID */
+        .song-list {
+            background-color: var(--card-base);
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* 4. SONG CARDS */
+        .song-card {
+            background-color: var(--background-light); 
+            border: 2px solid var(--secondary-accent);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 4px 4px 0 var(--secondary-accent);
+            transition: box-shadow 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .song-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 0 var(--primary-accent);
+        }
+
+        /* Link Wrapper Styling */
+        .song-link {
+            text-decoration: none;
+        }
+
+        .song-title {
+            color: var(--primary-accent); 
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-weight: 900;
+            transition: color 0.2s;
+        }
+        .song-link:hover .song-title {
+             color: var(--secondary-accent);
+        }
+
+        .song-metadata {
+            font-size: 1em;
+            color: #555; 
+            margin-bottom: 4px;
+        }
+
+        .song-metadata span {
+            font-weight: 700;
+            color: var(--text-color); 
+        }
+
+        .song-description {
+            color: #333;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 2px dashed #ccc;
+            font-style: italic;
+            font-size: 0.9em;
+            flex-grow: 1; 
+            margin-bottom: 15px;
+        }
+        
+        /* New Button Style for Modal */
+        .lyrics-button {
+            background-color: var(--sunset-orange); /* Sunset Orange */
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .lyrics-button:hover {
+            background-color: #d9004d;
+        }
+        
+        /* Critique Link Style */
+        .critique-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: var(--sunset-orange); 
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            font-size: 1.05em;
+        }
+        .critique-link:hover {
+            background-color: var(--primary-accent);
+        }
+        
+        /* --- MODAL STYLES --- */
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            display: none; 
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .modal-content h3 {
+            color: var(--primary-accent);
+            font-size: 2em;
+            border-bottom: 2px solid var(--secondary-accent);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .modal-content p strong {
+            color: #333; 
+        }
+
+        .modal-lyrics {
+            white-space: pre-wrap;
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.95em;
+            max-height: 40vh;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            color: #333; 
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--primary-accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .songbay-player-embed {
+            width: 100%;
+            height: 120px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        
+        /* --- SCROLL-TO-TOP ARROW --- */
+        #back-to-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            width: 50px;
+            height: 50px;
+            border: none;
+            background-color: var(--sunset-orange); 
+            color: white;
+            cursor: pointer;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            font-size: 24px;
+            line-height: 50px;
+            text-align: center;
+        }
+        
+        #back-to-top-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .show-btn {
+            opacity: 1 !important;
+        }
+
+        /* SEO Block Styling */
+        .seo-keyword-block {
+            position: absolute; 
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            color: #fff; 
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <?php include 'header.php'; ?>
+    </header>
+
+    <main class="page-content">
+        <h1 class="page-header gold-script">Kellie Larson's Cinematic Songwriting Setlist: Digital Jukebox & Music Licensing</h1>
+        
+        <div class="jukebox-container">
+            <div class="jukebox-header">
+                <h2>44 Original Songs Available for A&R Review, Music Sync & Collaboration 🎶</h2>
+                <p>Browse the full **Kellie Larson songwriting catalog** of pre-cleared original songs. Filter the setlist instantly by Genre, Mood, or Theme for streamlined **sync licensing** and **music pitches**. Every title provides a direct link to the Songbay licensing page, and a 'View Lyrics & Player' button for the full lyric sheet and audio preview.</p>
+                
+                <a href="/lyric-critque.html" class="critique-link">Click here to have your lyrics critiqued</a>
+            </div>
+
+            <div id="category-nav">
+                </div>
+
+            <div class="song-list" id="song-list">
+                <p style="text-align: center; width: 100%; color: #111;">Loading songs...</p>
+            </div>
+        </div>
+        
+        <div class="seo-keyword-block">
+            <h3>Kellie Larson Songwriting Keywords for Music Professionals</h3>
+            <p>We feature a versatile range of genres including **Rock, Alternative Rock, Pop, R&B, Country, Folk, and Christian Gospel.** Our thematic pillars cover **Vengeance & Empowerment Anthems, Love Ballads, Grief & Loss, Dark Narrative stories, Introspection & Faith, and Fun Party Jams.** Discover your next hit song for film, television, or a major recording artist looking for powerful, **cinematic lyrics**. All material is ready for **full copyright acquisition** and **commercial sync**.</p>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝 <a href="/legal.html">Legal</a>
+        </p>
+    </footer>
+
+    <?php include 'footer.php'; ?>
+    
+    <div id="song-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title">Song Title</h3>
+            
+            <p><strong>Artist/Writer:</strong> <span id="modal-artist">Kellie Larson</span></p>
+            <p><strong>Genres:</strong> <span id="modal-genres"></span> | <strong>Category:</strong> <span id="modal-category"></span></p>
+            
+            <h4>Audio Preview (via Songbay Player)</h4>
+            <iframe id="songbay-player" class="songbay-player-embed" src="" allow="autoplay"></iframe>
+
+            <h4>Full Lyrics</h4>
+            <pre id="modal-lyrics" class="modal-lyrics"></pre>
+        </div>
+    </div>
+    
+    <button id="back-to-top-btn" title="Go to top">&#x25B2;</button>
+
+
+    <script>
+        // --- Song Data from JSON ---
+        const ALL_SONGS_DATA_RAW = JSON.parse(
+            '<?php echo json_encode(json_decode(file_get_contents("lyrics.json"), true)); ?>'
+        );
+        
+        // Renaming Map
+        const TITLE_RENAME_MAP = {
+            "Tick Tok": "The Real Dream Team",
+            "Hubba Bubba song": "Heartbreak and Trouble",
+            "Just": "Just A Little Lonely",
+            "Too Much": "Just Too Much",
+            "Fury": "Fury (I'm the Monster)",
+            "When Misty Cries": "Your Forever Man",
+            "Miss Your Stupid Face": "Etched in Every Space",
+            "Sick One": "Sick One (s1c)",
+            "Not Clever": "I Know Your Damn Pin Code",
+            "Boys Boys Boys": "CEO NOT A BABYSITTING TREE"
+        };
+        
+        // Data Processing
+        const ALL_SONGS_DATA = ALL_SONGS_DATA_RAW
+            .map(song => {
+                let newTitle = song.title;
+                for (const oldTitle in TITLE_RENAME_MAP) {
+                    if (song.title.includes(oldTitle) && newTitle === song.title) {
+                        newTitle = TITLE_RENAME_MAP[oldTitle];
+                        break;
+                    }
+                }
+                if (TITLE_RENAME_MAP[song.title]) {
+                     newTitle = TITLE_RENAME_MAP[song.title];
+                }
+                if (song.title === "Just") newTitle = "Just A Little Lonely";
+                if (song.title === "Too Much") newTitle = "Just Too Much";
+                if (song.title === "Fury") newTitle = "Fury (I'm the Monster)";
+                if (song.title === "Miss Your Stupid Face") newTitle = "Etched in Every Space";
+                if (song.title === "Sick One") newTitle = "Sick One (s1c)";
+                if (song.title === "Not Clever") newTitle = "I Know Your Damn Pin Code";
+                if (song.title === "Boys Boys Boys") newTitle = "CEO NOT A BABYSITTING TREE";
+                if (song.title === "Tick Tok") newTitle = "The Real Dream Team";
+                if (song.title === "Hubba Bubba song") newTitle = "Heartbreak and Trouble";
+                if (song.title === "When Misty Cries") newTitle = "Your Forever Man";
+
+                return { ...song, title: newTitle };
+            })
+            .filter(song => song.title !== "Placeholder" && song.fullLyrics !== "Placeholder");
+
+
+        // --- Global Elements ---
+        const songListElement = document.getElementById('song-list');
+        const categoryNavElement = document.getElementById('category-nav');
+        const backToTopBtn = document.getElementById('back-to-top-btn');
+        
+        const allCategories = ['All Songs', ...new Set(ALL_SONGS_DATA
+            .map(song => song.category)
+            .filter(cat => cat && cat !== 'Placeholder' && cat !== 'General / Placeholder')
+        )].sort();
+
+        const modal = document.getElementById('song-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalArtist = document.getElementById('modal-artist');
+        const modalGenres = document.getElementById('modal-genres');
+        const modalCategory = document.getElementById('modal-category');
+        const modalLyrics = document.getElementById('modal-lyrics');
+        const songbayPlayer = document.getElementById('songbay-player');
+        const closeBtn = document.querySelector('.close-btn');
+
+
+        // --- Render Functions ---
+        function renderSongs(songs) {
+            songListElement.innerHTML = ''; 
+            if (songs.length === 0) {
+                songListElement.innerHTML = '<p style="text-align: center; width: 100%; color: #111;">No songs found in this category.</p>';
+                return;
+            }
+
+            songs.forEach(song => {
+                const genres = [song.genre1, song.genre2].filter(g => g && g !== 'Placeholder' && g !== 'N/A').join(' / ');
+                let description = 'Description unavailable.';
+                if (song.shortDescription && song.shortDescription !== 'Placeholder') {
+                    description = song.shortDescription;
+                } else if (song.longDescription && song.longDescription !== 'Placeholder') {
+                    description = song.longDescription.substring(0, 150) + '...'; 
+                }
+                
+                const card = document.createElement('div');
+                card.className = 'song-card';
+
+                const cardHtml = `
+                    <div>
+                        <a href="${song.songbayWebpageUrl || '#'}" target="_blank" class="song-link" title="View on Songbay">
+                            <h3 class="song-title">${song.title}</h3>
+                        </a>
+                        <p class="song-metadata">Genre: <span>${genres}</span></p>
+                        <p class="song-metadata" style="margin-bottom:0;">Category: <span>${song.category || 'N/A'}</span></p>
+                        <div class="song-description">${description}</div>
+                    </div>
+                    
+                    <button class="lyrics-button" onclick="openSongModal(${song.id})">
+                        View Lyrics & Player
+                    </button>
+                `;
+
+                card.innerHTML = cardHtml;
+                songListElement.appendChild(card);
+            });
+        }
+
+        function filterSongs(category) {
+            document.querySelectorAll('.category-button').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === category) {
+                    btn.classList.add('active');
+                }
+            });
+
+            if (category === 'All Songs') {
+                renderSongs(ALL_SONGS_DATA);
+            } else {
+                const filtered = ALL_SONGS_DATA.filter(song => song.category === category);
+                renderSongs(filtered);
+            }
+        }
+        
+        window.openSongModal = function(songId) {
+            const song = ALL_SONGS_DATA.find(s => s.id === songId);
+            if (!song) return;
+            
+            const genres = [song.genre1, song.genre2].filter(g => g && g !== 'Placeholder' && g !== 'N/A').join(' / ');
+            const fullLyrics = song.fullLyrics && song.fullLyrics.trim().toLowerCase() !== "placeholder" ? song.fullLyrics : "Placeholder: Full lyrics are not available.";
+            
+            modalTitle.textContent = song.title;
+            modalArtist.textContent = song.artistWriter;
+            modalGenres.textContent = genres;
+            modalCategory.textContent = song.category || 'N/A';
+            modalLyrics.textContent = fullLyrics;
+            
+            songbayPlayer.src = song.songbayPlayerUrl && song.songbayPlayerUrl !== 'Placeholder' ? song.songbayPlayerUrl : 'about:blank';
+
+            modal.style.display = 'flex';
+        }
+        
+        function closeSongModal() {
+            modal.style.display = 'none';
+            songbayPlayer.src = '';
+        }
+
+        // --- Scroll Logic ---
+        function scrollFunction() {
+          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopBtn.classList.add('show-btn');
+          } else {
+            backToTopBtn.classList.remove('show-btn');
+          }
+        }
+
+        window.onscroll = function() {scrollFunction()};
+        
+        backToTopBtn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- Initialization ---
+        function initJukebox() {
+            allCategories.forEach(category => {
+                const button = document.createElement('button');
+                button.className = 'category-button';
+                button.textContent = category;
+                button.addEventListener('click', () => filterSongs(category));
+                categoryNavElement.appendChild(button);
+            });
+            
+            filterSongs('All Songs');
+            
+            closeBtn.addEventListener('click', closeSongModal);
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeSongModal();
+                }
+            });
+            window.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && modal.style.display === 'flex') {
+                    closeSongModal();
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initJukebox);
+    </script>
+</body>
+</html>
