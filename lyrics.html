@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include 'header.php'; // Keep original PHP includes ?>
+    <?php include 'header.php'; ?>
   
     <title>Kellie Larson's Cinematic Songwriting Catalog: Music Licensing, Sync Pitches & A&R Review</title>
   
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
   
     <style>
-        /* --- FUN DIGITAL JUKEBOX PALETTE (ORIGINAL) --- */
+        /* --- FUN DIGITAL JUKEBOX PALETTE --- */
         :root {
             --primary-accent: #FF4081; /* Hot Pink */
             --secondary-accent: #7C4DFF; /* Electric Purple */
@@ -25,7 +25,7 @@
             --sunset-orange: #ff741a; /* Sunset Orange for Actions */
         }
 
-        /* 1. JUKEBOX CONTAINER (The Fun Machine Body - Light Blue) */
+        /* 1. JUKEBOX CONTAINER */
         .jukebox-container {
             width: 100%;
             max-width: 1200px;
@@ -36,7 +36,7 @@
                         0 0 50px var(--secondary-accent);
             overflow: hidden;
             padding: 20px;
-            border: 8px solid var(--primary-accent); /* Hot Pink Border */
+            border: 8px solid var(--primary-accent);
         }
 
         .jukebox-header {
@@ -50,19 +50,19 @@
 
         .jukebox-header h2 {
             font-size: 2em;
-            color: var(--primary-accent); /* Hot Pink */ 
+            color: var(--primary-accent); 
             margin-bottom: 5px;
         }
 
         .jukebox-header p {
-            color: var(--text-color); /* Dark Text */
+            color: var(--text-color);
             font-style: normal;
             font-weight: 500;
         }
 
         /* 2. CATEGORY BUTTONS */
         #category-nav {
-            background-color: var(--secondary-accent); /* Electric Purple */
+            background-color: var(--secondary-accent);
             padding: 15px 10px;
             text-align: center;
             display: flex;
@@ -75,7 +75,7 @@
         }
 
         .category-button {
-            background-color: #6136d9; /* Darker Purple */
+            background-color: #6136d9;
             color: #fff;
             border: none;
             padding: 10px 18px;
@@ -88,7 +88,7 @@
         }
 
         .category-button:hover {
-            background-color: var(--primary-accent); /* Hover to Hot Pink */
+            background-color: var(--primary-accent);
             transform: translateY(-2px);
         }
 
@@ -101,20 +101,20 @@
 
         /* 3. SONG LIST GRID */
         .song-list {
-            background-color: var(--card-base); /* White */
+            background-color: var(--card-base);
             padding: 20px;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
         }
 
-        /* 4. SONG CARDS (Light Base with Purple Accent) */
+        /* 4. SONG CARDS */
         .song-card {
-            background-color: var(--background-light); /* Light Base */ 
+            background-color: var(--background-light); 
             border: 2px solid var(--secondary-accent);
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 4px 4px 0 var(--secondary-accent); /* Purple Offset Shadow */
+            box-shadow: 4px 4px 0 var(--secondary-accent);
             transition: box-shadow 0.3s, transform 0.3s;
             display: flex;
             flex-direction: column;
@@ -123,7 +123,7 @@
 
         .song-card:hover {
             transform: translateY(-5px);
-            box-shadow: 8px 8px 0 var(--primary-accent); /* Hot Pink Shadow on Hover */
+            box-shadow: 8px 8px 0 var(--primary-accent);
         }
 
         /* Link Wrapper Styling */
@@ -132,7 +132,7 @@
         }
 
         .song-title {
-            color: var(--primary-accent); /* Hot Pink */ 
+            color: var(--primary-accent); 
             font-size: 1.5em;
             margin-top: 0;
             margin-bottom: 8px;
@@ -140,22 +140,22 @@
             transition: color 0.2s;
         }
         .song-link:hover .song-title {
-             color: var(--secondary-accent); /* Purple on Hover */
+             color: var(--secondary-accent);
         }
 
         .song-metadata {
             font-size: 1em;
-            color: #555; /* Dark Text */
+            color: #555; 
             margin-bottom: 4px;
         }
 
         .song-metadata span {
             font-weight: 700;
-            color: var(--text-color); /* Dark Text */ 
+            color: var(--text-color); 
         }
 
         .song-description {
-            color: #333; /* Dark Text */
+            color: #333;
             margin-top: 15px;
             padding-top: 10px;
             border-top: 2px dashed #ccc;
@@ -165,7 +165,7 @@
             margin-bottom: 15px;
         }
         
-        /* New Button Style for Modal (SUNSET ORANGE) */
+        /* New Button Style for Modal */
         .lyrics-button {
             background-color: var(--sunset-orange); /* Sunset Orange */
             color: white;
@@ -181,10 +181,10 @@
             margin-top: 10px;
         }
         .lyrics-button:hover {
-            background-color: #d9004d; /* Darker Pink/Red on Hover for contrast */
+            background-color: #d9004d;
         }
         
-        /* New Critique Link Style (Sunset Orange Button) */
+        /* Critique Link Style */
         .critique-link {
             display: inline-block;
             margin-top: 20px;
@@ -201,7 +201,7 @@
             font-size: 1.05em;
         }
         .critique-link:hover {
-            background-color: var(--primary-accent); /* Hot Pink on Hover */
+            background-color: var(--primary-accent);
         }
         
         /* --- MODAL STYLES --- */
@@ -282,7 +282,7 @@
             margin-bottom: 20px;
         }
         
-        /* --- SCROLL-TO-TOP ARROW STYLES --- */
+        /* --- SCROLL-TO-TOP ARROW --- */
         #back-to-top-btn {
             position: fixed;
             bottom: 30px;
@@ -295,7 +295,7 @@
             color: white;
             cursor: pointer;
             border-radius: 50%;
-            opacity: 0; /* Hidden by default */
+            opacity: 0;
             transition: opacity 0.3s, transform 0.3s;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
             font-size: 24px;
@@ -324,7 +324,7 @@
 </head>
 <body>
     <header id="main-header">
-        <?php include 'header.php'; // Keep original PHP includes ?>
+        <?php include 'header.php'; ?>
     </header>
 
     <main class="page-content">
@@ -333,267 +333,4 @@
         <div class="jukebox-container">
             <div class="jukebox-header">
                 <h2>44 Original Songs Available for A&R Review, Music Sync & Collaboration 🎶</h2>
-                <p>Browse the full **Kellie Larson songwriting catalog** of pre-cleared original songs. Filter the setlist instantly by Genre, Mood, or Theme for streamlined **sync licensing** and **music pitches**. Every title provides a direct link to the Songbay licensing page, and a 'View Lyrics & Player' button for the full lyric sheet and audio preview.</p>
-                
-                <a href="/lyric-critque.html" class="critique-link">Click here to have your lyrics critiqued</a>
-            </div>
-
-            <div id="category-nav">
-                </div>
-
-            <div class="song-list" id="song-list">
-                <p style="text-align: center; width: 100%; color: #111;">Loading songs...</p>
-            </div>
-        </div>
-        
-        <div class="seo-keyword-block">
-            <h3>Kellie Larson Songwriting Keywords for Music Professionals</h3>
-            <p>We feature a versatile range of genres including **Rock, Alternative Rock, Pop, R&B, Country, Folk, and Christian Gospel.** Our thematic pillars cover **Vengeance & Empowerment Anthems, Love Ballads, Grief & Loss, Dark Narrative stories, Introspection & Faith, and Fun Party Jams.** Discover your next hit song for film, television, or a major recording artist looking for powerful, **cinematic lyrics**. All material is ready for **full copyright acquisition** and **commercial sync**.</p>
-        </div>
-
-    </main>
-
-    <footer class="site-footer">
-        <p>
-            Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝 <a href="/legal.html">Legal</a>
-        </p>
-    </footer>
-
-    <?php include 'footer.php'; // Keep original PHP includes ?>
-    
-    <div id="song-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3 id="modal-title">Song Title</h3>
-            
-            <p><strong>Artist/Writer:</strong> <span id="modal-artist">Kellie Larson</span></p>
-            <p><strong>Genres:</strong> <span id="modal-genres"></span> | <strong>Category:</strong> <span id="modal-category"></span></p>
-            
-            <h4>Audio Preview (via Songbay Player)</h4>
-            <iframe id="songbay-player" class="songbay-player-embed" src="" allow="autoplay"></iframe>
-
-            <h4>Full Lyrics</h4>
-            <pre id="modal-lyrics" class="modal-lyrics"></pre>
-        </div>
-    </div>
-    
-    <button id="back-to-top-btn" title="Go to top">&#x25B2;</button>
-
-
-    <script>
-        // --- Song Data from JSON (Simulated PHP inclusion) ---
-        // NOTE: This PHP block must be correctly parsed on the server side to load the data.
-        const ALL_SONGS_DATA_RAW = JSON.parse(
-            '<?php echo json_encode(json_decode(file_get_contents("lyrics.json"), true)); ?>'
-        );
-        
-        // Custom renaming map based on user instructions
-        const TITLE_RENAME_MAP = {
-            "Tick Tok": "The Real Dream Team",
-            "Hubba Bubba song": "Heartbreak and Trouble",
-            "Just": "Just A Little Lonely",
-            "Too Much": "Just Too Much",
-            "Fury": "Fury (I'm the Monster)",
-            "When Misty Cries": "Your Forever Man",
-            "Miss Your Stupid Face": "Etched in Every Space",
-            "Sick One": "Sick One (s1c)",
-            "Not Clever": "I Know Your Damn Pin Code",
-            "Boys Boys Boys": "CEO NOT A BABYSITTING TREE"
-        };
-        
-        // Apply renames and filter out Placeholder songs
-        const ALL_SONGS_DATA = ALL_SONGS_DATA_RAW
-            .map(song => {
-                let newTitle = song.title;
-                for (const oldTitle in TITLE_RENAME_MAP) {
-                    // Check if the old title is part of the song's original title
-                    if (song.title.includes(oldTitle) && newTitle === song.title) {
-                        newTitle = TITLE_RENAME_MAP[oldTitle];
-                        break;
-                    }
-                }
-
-                // If the old title *was* the title, ensure the new title is used.
-                if (TITLE_RENAME_MAP[song.title]) {
-                     newTitle = TITLE_RENAME_MAP[song.title];
-                }
-
-                // Explicitly check for title case issues in the input data and fix them
-                if (song.title === "Just") newTitle = "Just A Little Lonely";
-                if (song.title === "Too Much") newTitle = "Just Too Much";
-                if (song.title === "Fury") newTitle = "Fury (I'm the Monster)";
-                if (song.title === "Miss Your Stupid Face") newTitle = "Etched in Every Space";
-                if (song.title === "Sick One") newTitle = "Sick One (s1c)";
-                if (song.title === "Not Clever") newTitle = "I Know Your Damn Pin Code";
-                if (song.title === "Boys Boys Boys") newTitle = "CEO NOT A BABYSITTING TREE";
-                if (song.title === "Tick Tok") newTitle = "The Real Dream Team";
-                if (song.title === "Hubba Bubba song") newTitle = "Heartbreak and Trouble";
-                if (song.title === "When Misty Cries") newTitle = "Your Forever Man";
-
-                return { ...song, title: newTitle };
-            })
-            // Filter out songs where the title is Placeholder
-            .filter(song => song.title !== "Placeholder" && song.fullLyrics !== "Placeholder");
-
-
-        // --- GLOBAL ELEMENTS & CONSTANTS ---
-        const songListElement = document.getElementById('song-list');
-        const categoryNavElement = document.getElementById('category-nav');
-        const backToTopBtn = document.getElementById('back-to-top-btn');
-        
-        // Dynamically collect unique categories, filtering out placeholders
-        const allCategories = ['All Songs', ...new Set(ALL_SONGS_DATA
-            .map(song => song.category)
-            .filter(cat => cat && cat !== 'Placeholder' && cat !== 'General / Placeholder')
-        )].sort();
-
-        const modal = document.getElementById('song-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalArtist = document.getElementById('modal-artist');
-        const modalGenres = document.getElementById('modal-genres');
-        const modalCategory = document.getElementById('modal-category');
-        const modalLyrics = document.getElementById('modal-lyrics');
-        const songbayPlayer = document.getElementById('songbay-player');
-        const closeBtn = document.querySelector('.close-btn');
-
-
-        // --- CORE FUNCTIONS ---
-
-        // Renders the individual song cards
-        function renderSongs(songs) {
-            songListElement.innerHTML = ''; 
-            if (songs.length === 0) {
-                songListElement.innerHTML = '<p style="text-align: center; width: 100%; color: var(--text-color);">No songs found in this category.</p>';
-                return;
-            }
-
-            songs.forEach(song => {
-                // Determine Genres
-                const genres = [song.genre1, song.genre2].filter(g => g && g !== 'Placeholder' && g !== 'N/A').join(' / ');
-                // Determine Description (using longDescription if short is missing)
-                let description = 'Description unavailable.';
-                if (song.shortDescription && song.shortDescription !== 'Placeholder') {
-                    description = song.shortDescription;
-                } else if (song.longDescription && song.longDescription !== 'Placeholder') {
-                    description = song.longDescription.substring(0, 150) + '...'; // Truncate long description
-                }
-                
-                const card = document.createElement('div');
-                card.className = 'song-card';
-
-                const cardHtml = `
-                    <div>
-                        <a href="${song.songbayWebpageUrl || '#'}" target="_blank" class="song-link" title="View on Songbay">
-                            <h3 class="song-title">${song.title}</h3>
-                        </a>
-                        <p class="song-metadata">Genre: <span>${genres}</span></p>
-                        <p class="song-metadata" style="margin-bottom:0;">Category: <span>${song.category || 'N/A'}</span></p>
-                        <div class="song-description">${description}</div>
-                    </div>
-                    
-                    <button class="lyrics-button" onclick="openSongModal(${song.id})">
-                        View Lyrics & Player
-                    </button>
-                `;
-
-                card.innerHTML = cardHtml;
-                songListElement.appendChild(card);
-            });
-        }
-
-        // Handles button clicks and filtering
-        function filterSongs(category) {
-            document.querySelectorAll('.category-button').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent === category) {
-                    btn.classList.add('active');
-                }
-            });
-
-            if (category === 'All Songs') {
-                renderSongs(ALL_SONGS_DATA);
-            } else {
-                const filtered = ALL_SONGS_DATA.filter(song => song.category === category);
-                renderSongs(filtered);
-            }
-        }
-        
-        // Function to open the modal with song-specific content
-        window.openSongModal = function(songId) {
-            const song = ALL_SONGS_DATA.find(s => s.id === songId);
-            if (!song) return;
-            
-            const genres = [song.genre1, song.genre2].filter(g => g && g !== 'Placeholder' && g !== 'N/A').join(' / ');
-            // Use Placeholder if lyrics are empty or only contain the word "Placeholder"
-            const fullLyrics = song.fullLyrics && song.fullLyrics.trim().toLowerCase() !== "placeholder" ? song.fullLyrics : "Placeholder: Full lyrics are not available.";
-            
-            modalTitle.textContent = song.title;
-            modalArtist.textContent = song.artistWriter;
-            modalGenres.textContent = genres;
-            modalCategory.textContent = song.category || 'N/A';
-            modalLyrics.textContent = fullLyrics;
-            
-            // Set the Songbay player iframe source, fulfilling the requirement
-            // Use songbayPlayerUrl (or 'about:blank' if missing)
-            songbayPlayer.src = song.songbayPlayerUrl && song.songbayPlayerUrl !== 'Placeholder' ? song.songbayPlayerUrl : 'about:blank';
-
-            modal.style.display = 'flex';
-        }
-        
-        // Function to close the modal
-        function closeSongModal() {
-            modal.style.display = 'none';
-            // Stop the iframe audio when closing the modal
-            songbayPlayer.src = '';
-        }
-
-        // --- SCROLL-TO-TOP LOGIC ---
-        function scrollFunction() {
-          // Show button if user has scrolled down 300px
-          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            backToTopBtn.classList.add('show-btn');
-          } else {
-            backToTopBtn.classList.remove('show-btn');
-          }
-        }
-
-        window.onscroll = function() {scrollFunction()};
-        
-        backToTopBtn.addEventListener('click', function() {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        // --- END SCROLL-TO-TOP LOGIC ---
-
-
-        // Initialization function
-        function initJukebox() {
-            // Build the Category buttons
-            allCategories.forEach(category => {
-                const button = document.createElement('button');
-                button.className = 'category-button';
-                button.textContent = category;
-                button.addEventListener('click', () => filterSongs(category));
-                categoryNavElement.appendChild(button);
-            });
-            
-            // Set initial filter to 'All Songs'
-            filterSongs('All Songs');
-            
-            // Add event listeners for modal
-            closeBtn.addEventListener('click', closeSongModal);
-            window.addEventListener('click', (event) => {
-                if (event.target === modal) {
-                    closeSongModal();
-                }
-            });
-            window.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape' && modal.style.display === 'flex') {
-                    closeSongModal();
-                }
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', initJukebox);
-    </script>
-</body>
-</html>
+                <p>Browse the full **Kellie Larson songwriting catalog** of pre-cleared original songs. Filter the setlist instantly by Genre, Mood, or Theme
