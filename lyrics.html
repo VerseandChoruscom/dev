@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include 'header.php'; ?>
+    <?php include 'header.php'; // Keep original PHP includes ?>
   
     <title>Kellie Larson Songwriting Catalog | Digital Jukebox, Setlist, and Lyric Pitches</title>
   
@@ -14,19 +14,6 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
   
     <style>
-        /* CSS from your homepage template */
-        #nav-menu a {
-            color: #FFFFFF !important;
-        }
-        .gold-script {
-            color: #FF4081; /* Hot Pink Primary Accent */
-            font-family: 'YourScriptFont', cursive; 
-            font-size: 1.8em; 
-            margin: 0;
-            text-shadow: 2px 2px 0 #7C4DFF; /* Purple Shadow for Pop Effect */
-        }
-        /* End of inherited styles */
-        
         /* --- FUN DIGITAL JUKEBOX PALETTE --- */
         :root {
             --primary-accent: #FF4081; /* Hot Pink */
@@ -43,12 +30,12 @@
             max-width: 1200px;
             margin: 30px auto;
             background-color: var(--jukebox-body);
-            border-radius: 20px; /* Highly Rounded Corners */
+            border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 
-                        0 0 50px var(--secondary-accent); /* Shadow with Purple Glow */
+                        0 0 50px var(--secondary-accent);
             overflow: hidden;
             padding: 20px;
-            border: 8px solid var(--primary-accent); /* Hot Pink Border */
+            border: 8px solid var(--primary-accent);
         }
 
         .jukebox-header {
@@ -72,26 +59,26 @@
             font-weight: 500;
         }
 
-        /* 2. CATEGORY BUTTONS (The Colorful Selection Panel) */
+        /* 2. CATEGORY BUTTONS */
         #category-nav {
-            background-color: var(--secondary-accent); /* Electric Purple Background */
+            background-color: var(--secondary-accent);
             padding: 15px 10px;
             text-align: center;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 12px;
-            border-radius: 30px; /* Pill Shape */
+            border-radius: 30px;
             margin-bottom: 20px;
             box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
         }
 
         .category-button {
-            background-color: #6136d9; /* Darker Purple */
+            background-color: #6136d9;
             color: #fff;
             border: none;
             padding: 10px 18px;
-            border-radius: 25px; /* Pill Shape */
+            border-radius: 25px;
             cursor: pointer;
             font-weight: 700;
             transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
@@ -100,18 +87,18 @@
         }
 
         .category-button:hover {
-            background-color: var(--primary-accent); /* Hover to Hot Pink */
+            background-color: var(--primary-accent);
             transform: translateY(-2px);
         }
 
         .category-button.active {
             background-color: var(--primary-accent); 
             color: #fff;
-            box-shadow: 0 0 15px var(--primary-accent), 0 0 5px #fff; /* Neon Glow */
+            box-shadow: 0 0 15px var(--primary-accent), 0 0 5px #fff;
             transform: scale(1.05);
         }
 
-        /* 3. SONG LIST GRID (The Display Screen) */
+        /* 3. SONG LIST GRID */
         .song-list {
             background-color: var(--card-base);
             padding: 20px;
@@ -120,24 +107,27 @@
             gap: 25px;
         }
 
-        /* 4. SONG CARDS (The Displayed Data) */
+        /* 4. SONG CARDS */
         .song-card {
             background-color: var(--background-light); 
             border: 2px solid var(--secondary-accent);
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 4px 4px 0 var(--secondary-accent); /* Pop-Art Offset Shadow */
+            box-shadow: 4px 4px 0 var(--secondary-accent);
             transition: box-shadow 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .song-card:hover {
             transform: translateY(-5px);
-            box-shadow: 8px 8px 0 var(--primary-accent); /* Shift to Hot Pink Shadow on Hover */
+            box-shadow: 8px 8px 0 var(--primary-accent);
         }
 
-        /* Link Wrapper Styling (Ensures the H3 Title is clickable) */
+        /* Link Wrapper Styling (Ensures the H3 Title is clickable to Songbay page) */
         .song-link {
-            text-decoration: none; /* Remove underline */
+            text-decoration: none;
         }
 
         .song-title {
@@ -146,11 +136,10 @@
             margin-top: 0;
             margin-bottom: 8px;
             font-weight: 900;
-            /* Added hover to indicate clickability */
             transition: color 0.2s;
         }
         .song-link:hover .song-title {
-             color: var(--secondary-accent); /* Change color on hover for feedback */
+             color: var(--secondary-accent);
         }
 
         .song-metadata {
@@ -171,12 +160,111 @@
             border-top: 2px dashed #ccc;
             font-style: italic;
             font-size: 0.9em;
+            flex-grow: 1; /* Allow description to take up available space */
+            margin-bottom: 15px;
+        }
+        
+        /* New Button Style for Modal */
+        .lyrics-button {
+            background-color: var(--primary-accent);
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .lyrics-button:hover {
+            background-color: #d9004d; /* Darker Pink */
+        }
+        
+        /* --- MODAL STYLES --- */
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .modal-content h3 {
+            color: var(--primary-accent);
+            font-size: 2em;
+            border-bottom: 2px solid var(--secondary-accent);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .modal-content p strong {
+            color: var(--text-color);
+        }
+
+        .modal-lyrics {
+            white-space: pre-wrap;
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.95em;
+            max-height: 40vh;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--primary-accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .songbay-player-embed {
+            width: 100%;
+            height: 120px; /* Standard height for Songbay player iframe */
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <header id="main-header">
-        </header>
+        <?php include 'header.php'; // Keep original PHP includes ?>
+    </header>
 
     <main class="page-content">
         <h1 class="page-header gold-script">Kellie Larson Songwriting Setlist: Digital Jukebox</h1>
@@ -184,7 +272,7 @@
         <div class="jukebox-container">
             <div class="jukebox-header">
                 <h2>44 Original Songs Available for A&R & Sync Pitching 🎶</h2>
-                <p>Select a Mood or Theme to instantly filter Kellie's complete catalog. Every song title links directly to its licensing page on Songbay.</p>
+                <p>Select a Mood or Theme to instantly filter Kellie's complete catalog. Every song title links directly to its licensing page on Songbay. **Click 'View Lyrics' for the Songbay Player and Full Lyrics.**</p>
             </div>
 
             <div id="category-nav">
@@ -203,73 +291,94 @@
         </p>
     </footer>
 
-    <?php include 'footer.php'; ?>
+    <?php include 'footer.php'; // Keep original PHP includes ?>
+    
+    <div id="song-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title">Song Title</h3>
+            
+            <p><strong>Artist/Writer:</strong> <span id="modal-artist">Kellie Larson</span></p>
+            <p><strong>Genres:</strong> <span id="modal-genres"></span> | <strong>Category:</strong> <span id="modal-category"></span></p>
+            
+            <h4>Audio Preview (via Songbay Player)</h4>
+            <iframe id="songbay-player" class="songbay-player-embed" src="" allow="autoplay"></iframe>
+
+            <h4>Full Lyrics</h4>
+            <pre id="modal-lyrics" class="modal-lyrics"></pre>
+        </div>
+    </div>
+
 
     <script>
-        /* --- JAVASCRIPT LOGIC (Updated Data and Functionality) --- */
-        const songData = [
-            // Featured Tracks (Metadata retained)
-            { title: "I Know Your Damn Pin Code", genre: "Rock, Alt Country", mood: "Bitter, Revenge, Confident", description: "A vengeful anthem of betrayal and triumph with an unbridled hard rock/alternative sound.", category: "Vengeance & Empowerment" },
-            { title: "Hit the Road", genre: "Pop, Dance, Rock", mood: "Anthemic, Confident, Revenge", description: "A powerful anthem of self-liberation and moving on from a toxic relationship.", category: "Vengeance & Empowerment" },
-            { title: "In My Dreams (When I Wake)", genre: "Pop-Ballad", mood: "Dreamy, Melancholic, Sad", description: "A heartfelt and haunting pop-ballad that explores the pain of loss and the comfort found in dreams.", category: "Love, Loss, & Longing" },
-            { title: "Your Forever Man", genre: "Country, Contemporary", mood: "Mellow, Romantic, Proud", description: "A powerful, heartfelt ballad about love, healing, and support.", category: "Love, Loss, & Longing" },
-            { title: "Sick One (s1c)", genre: "Rock, General Alternative", mood: "Bitter, Cool, Revenge", description: "A raw, unflinching exploration of a toxic, self-destructive relationship that feels like a drug.", category: "Vengeance & Empowerment" },
-            { title: "Stood by my Side", genre: "Gospel, Christian", mood: "Dramatic, Peaceful, Anthemic", description: "A deeply emotional testament to finding hope and healing through faith and divine love.", category: "Introspection & Faith" },
-            { title: "Welcome to Jukes", genre: "Blues Rock, Country Blues", mood: "Dark, Haunting", description: "A track set in a mysterious bayou juke joint that hides a sinister, supernatural secret.", category: "Dark & Narrative" },
-            { title: "Top Shelf Queen", genre: "Country-Rock, General Rock", mood: "Fun, Happy, Lively", description: "A country-rock track about a 'full-bodied Goddess' (Mary Jane).", category: "Fun, Party & Nostalgia" },
-            { title: "Boom Boom Beat", genre: "General Alternative", mood: "Determined, Romantic", description: "A heartfelt, pop-driven yodeling love song.", category: "Rock & Alternative Jams" },
-            { title: "Author of a Lie", genre: "Pop, Hip-Hop", mood: "Confrontational, Empowered", description: "A punchy, rhythm-driven track about a partner who is a 'master of deceit'.", category: "Vengeance & Empowerment" },
-            { title: "Big Hard No", genre: "High-energy Pop", mood: "Fiery, Unapologetic", description: "A high-energy pop track and a fiery anthem of empowerment.", category: "Vengeance & Empowerment" },
-            
-            // Remaining songs with complete metadata and title fixes
-            { title: "Broken Record", genre: "Alternative, Rock", mood: "Repetitive, Frustrated", description: "A narrative lyric about a situation that keeps replaying with no solution.", category: "Dark & Narrative" },
-            { title: "CEO, not babysitting tree", genre: "Pop, Hip-Hop", mood: "Angry, Confrontational", description: "An assertive anthem about prioritizing career success over draining distractions.", category: "Dark & Narrative" },
-            { title: "Children of War", genre: "Folk, Dramatic", mood: "Somber, Reflective, Hopeful", description: "A moving reflection on the resilience of the younger generation facing global conflict.", category: "Introspection & Faith" },
-            { title: "Concrete Under the Feet", genre: "Rock, Alternative", mood: "Grounded, Determined", description: "A solid, mid-tempo rock track about finding stability in a chaotic world.", category: "Rock & Alternative Jams" },
-            { title: "Don't Be Jelly", genre: "Pop, Dance", mood: "Cocky, Playful", description: "A fun, competitive pop song addressing jealousy from a successful perspective.", category: "Fun, Party & Nostalgia" },
-            { title: "Ephemeral Moment", genre: "Acoustic, Pop", mood: "Tender, Fleeting", description: "A delicate lyric capturing the beauty and brief nature of a special moment in time.", category: "Introspection & Faith" },
-            { title: "Etched in every Space", genre: "Pop-Ballad", mood: "Sentimental, Memory", description: "A deeply emotional ballad about a lingering presence felt in every familiar place.", category: "Introspection & Faith" },
-            { title: "First Step", genre: "Christian, Inspirational", mood: "Motivational, Uplifting", description: "An uplifting song about overcoming hesitation and taking the initial leap of faith.", category: "Introspection & Faith" },
-            { title: "Fury (I'm the monster)", genre: "Metal, Hard Rock", mood: "Aggressive, Primal", description: "A heavy track exploring the moment raw anger and transformation take over.", category: "Rock & Alternative Jams" },
-            { title: "GenX 80s Anthem", genre: "Pop-Rock, 80s Vibe", mood: "Nostalgic, Energetic", description: "A high-energy tribute celebrating the culture and spirit of the Generation X 80s era.", category: "Fun, Party & Nostalgia" },
-            // Title Fixed
-            { title: "Heartbreak and Trouble", genre: "Country, Pop", mood: "Wistful, Catchy", description: "A catchy country-pop tune about the cyclical nature of falling for the wrong kind of person.", category: "Love, Loss, & Longing" },
-            { title: "How's It Feel, Bro?", genre: "Hip-Hop, Pop", mood: "Sarcastic, Victorious", description: "A confrontational track delivering a triumphant message to a former rival or foe.", category: "Vengeance & Empowerment" },
-            { title: "Just Too Much", genre: "Pop, R&B", mood: "Overwhelmed, Exhausted", description: "A reflective song about hitting a wall and feeling completely overwhelmed by life's pressures.", category: "Introspection & Faith" },
-            { title: "Just a little lonely", genre: "Folk, Country", mood: "Vulnerable, Sad", description: "An honest, stripped-down lyric about admitting to a simple, quiet need for companionship.", category: "Love, Loss, & Longing" },
-            { title: "Little Things", genre: "Pop, Acoustic", mood: "Appreciative, Warm", description: "A sweet lyric focusing on the small, often overlooked details that make a relationship meaningful.", category: "Love, Loss, & Longing" },
-            { title: "Murderers Heart", genre: "Dark Rock, Goth", mood: "Eerie, Cold", description: "A chilling, dramatic narrative exploring the internal state of a person with a broken moral compass.", category: "Rock & Alternative Jams" },
-            { title: "My Girl Karma", genre: "Hip-Hop, R&B", mood: "Satisfied, Poetic Justice", description: "A confident track personifying the force of Karma as a partner who delivers revenge.", category: "Dark & Narrative" },
-            { title: "My Words Matter", genre: "Inspirational, Pop", mood: "Assertive, Powerful", description: "A personal anthem about finding and using one's voice with conviction and authority.", category: "Introspection & Faith" },
-            { title: "Not that Girl Anymore", genre: "Pop, Electronic", mood: "Changed, Liberated", description: "A strong, driving track about a personal evolution and leaving a weak past identity behind.", category: "Vengeance & Empowerment" },
-            { title: "One Small Wrong", genre: "Indie, Reflective", mood: "Guilty, Confessional", description: "A lyric dwelling on a minor mistake that had major, unforeseen consequences.", category: "Introspection & Faith" },
-            // Title Fixed
-            { title: "Real Dream Team", genre: "Pop, Hip-Hop", mood: "Collaborative, Upbeat", description: "A feel-good, energetic track celebrating successful teamwork and shared ambition.", category: "Fun, Party & Nostalgia" },
-            { title: "Shot by Cupids Dart", genre: "Pop, Romantic", mood: "Infatuated, Joyful", description: "A classic, bubbly pop song about the sudden, delightful surprise of falling in love.", category: "Love, Loss, & Longing" },
-            { title: "Showdown at My Door", genre: "Blues Rock, Western", mood: "Tense, Confrontational", description: "A dramatic, cinematic lyric setting the scene for a final, inevitable confrontation.", category: "Rock & Alternative Jams" },
-            { title: "Solid Shifting Ground", genre: "Alternative, Indie", mood: "Uncertain, Searching", description: "A reflective piece about trying to find stability when everything in life is changing.", category: "Rock & Alternative Jams" },
-            { title: "The Aftermath", genre: "Dramatic, Ballad", mood: "Grief, Emptiness", description: "A heavy, emotional ballad dealing with the silence and ruin following a major personal disaster.", category: "Dark & Narrative" },
-            { title: "The Back of Me", genre: "Dance-Pop", mood: "Dismissive, Moving On", description: "An upbeat, fast-paced track about leaving a negative person or situation firmly in the past.", category: "Vengeance & Empowerment" },
-            { title: "The Show Is Through", genre: "Pop, Soul", mood: "Finality, Resigned", description: "A lyric about the last scene of a relationship, recognizing that the performance is over.", category: "Vengeance & Empowerment" },
-            { title: "Thought You Should Know", genre: "Pop, Confessional", mood: "Direct, Honest", description: "A straightforward, honest lyric delivering a long-overdue, impactful truth.", category: "Dark & Narrative" },
-            { title: "Wildflower", genre: "Acoustic, Country", mood: "Free, Independent", description: "A beautiful, organic lyric celebrating unconventional beauty and fierce independence.", category: "Fun, Party & Nostalgia" },
-            { title: "Year in the Rearview", genre: "Reflective, Pop", mood: "Nostalgic, Hopeful", description: "A look back at a tumultuous year, expressing gratitude for lessons learned and optimism for the future.", category: "Dark & Narrative" },
-            { title: "Craving Those Crumbs", genre: "Pop, R&B", mood: "Needy, Self-Aware", description: "A vulnerable confession about settling for minimal attention in a relationship.", category: "Love, Loss, & Longing" },
-            { title: "Married to the Drug", genre: "Alternative, Grunge", mood: "Obsessive, Toxic", description: "A raw lyric using addiction as a metaphor for a deeply destructive romantic obsession.", category: "Love, Loss, & Longing" },
-        ];
+        // --- Song Data from JSON (Simulated PHP inclusion) ---
+        // The data below is the complete, unaltered content of lyrics.json
+        const ALL_SONGS_DATA_RAW = JSON.parse(
+            '<?php echo json_encode(json_decode(file_get_contents("lyrics.json"), true)); ?>'
+        );
+        
+        // Custom renaming map based on user instructions
+        const TITLE_RENAME_MAP = {
+            "Tick Tok": "The Real Dream Team",
+            "Hubba Bubba song": "Heartbreak and Trouble",
+            "Just": "Just A Little Lonely",
+            "Too Much": "Just Too Much",
+            "Fury": "Fury (I'm the Monster)",
+            "When Misty Cries": "Your Forever Man",
+            "Miss Your Stupid Face": "Etched in Every Space",
+            "Sick One": "Sick One (s1c)",
+            "Not Clever": "I Know Your Damn Pin Code",
+            "Boys Boys Boys": "CEO NOT A BABYSITTING TREE"
+        };
+        
+        // Apply renames and filter out Placeholder songs
+        const ALL_SONGS_DATA = ALL_SONGS_DATA_RAW
+            .map(song => {
+                let newTitle = song.title;
+                for (const oldTitle in TITLE_RENAME_MAP) {
+                    if (newTitle.includes(oldTitle)) {
+                        newTitle = TITLE_RENAME_MAP[oldTitle];
+                        break;
+                    }
+                }
+                // Also explicitly replace the old titles with the new titles in the new data structure 
+                // that was originally hardcoded in lyrics.html, for completeness, if it were still used.
+                if (song.title === "Just") song.title = "Just A Little Lonely";
+                if (song.title === "Too Much") song.title = "Just Too Much";
+                if (song.title === "Fury") song.title = "Fury (I'm the Monster)";
+                if (song.title === "Miss Your Stupid Face") song.title = "Etched in Every Space";
+                if (song.title === "Sick One") song.title = "Sick One (s1c)";
+                if (song.title === "Not Clever") song.title = "I Know Your Damn Pin Code";
+                if (song.title === "Boys Boys Boys") song.title = "CEO NOT A BABYSITTING TREE";
+                if (song.title === "Tick Tok") song.title = "The Real Dream Team";
+                if (song.title === "Hubba Bubba song") song.title = "Heartbreak and Trouble";
+                if (song.title === "When Misty Cries") song.title = "Your Forever Man";
 
+                return { ...song, title: newTitle };
+            })
+            // Filter out songs where the title is Placeholder
+            .filter(song => song.title !== "Placeholder" && song.fullLyrics !== "Placeholder");
+
+
+        // --- GLOBAL ELEMENTS & CONSTANTS ---
         const songListElement = document.getElementById('song-list');
         const categoryNavElement = document.getElementById('category-nav');
-        const allCategories = ['All Songs', ...new Set(songData.map(song => song.category))].sort();
+        const allCategories = ['All Songs', ...new Set(ALL_SONGS_DATA
+            .map(song => song.category)
+            .filter(cat => cat && cat !== 'Placeholder' && cat !== 'General / Placeholder')
+        )].sort();
 
-        // Function to create a clean URL slug (essential for the Songbay link)
-        function createSongSlug(title) {
-            return title
-                .toLowerCase()
-                .replace(/[^a-z0-9\s-]/g, '') // Remove non-alphanumeric characters except spaces and hyphens
-                .trim()
-                .replace(/\s+/g, '-'); // Replace spaces with hyphens
-        }
+        const modal = document.getElementById('song-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalArtist = document.getElementById('modal-artist');
+        const modalGenres = document.getElementById('modal-genres');
+        const modalCategory = document.getElementById('modal-category');
+        const modalLyrics = document.getElementById('modal-lyrics');
+        const songbayPlayer = document.getElementById('songbay-player');
+        const closeBtn = document.querySelector('.close-btn');
+
+
+        // --- CORE FUNCTIONS ---
 
         // Renders the individual song cards
         function renderSongs(songs) {
@@ -280,27 +389,30 @@
             }
 
             songs.forEach(song => {
+                // Determine Genres
+                const genres = [song.genre1, song.genre2].filter(g => g && g !== 'Placeholder' && g !== 'N/A').join(' / ');
+                // Determine Description
+                const description = song.shortDescription && song.shortDescription !== 'Placeholder' ? song.shortDescription : 'Description unavailable.';
+                
                 const card = document.createElement('div');
                 card.className = 'song-card';
 
-                // Create the Songbay URL
-                const songSlug = createSongSlug(song.title);
-                const songbayUrl = `https://www.songbay.co/song/${songSlug}`;
-                
-                const genreText = song.genre ? `<p class="song-metadata">Genre: <span>${song.genre}</span></p>` : '';
-                const moodText = song.mood ? `<p class="song-metadata">Mood: <span>${song.mood}</span></p>` : '';
-                const descriptionText = song.description ? `<div class="song-description">${song.description}</div>` : '';
-                const categoryLabel = `<p class="song-metadata" style="margin-bottom:0;">Category: <span>${song.category || 'Uncategorized'}</span></p>`;
-
-                card.innerHTML = `
-                    <a href="${songbayUrl}" target="_blank" class="song-link">
-                        <h3 class="song-title">${song.title}</h3>
-                    </a>
-                    ${genreText}
-                    ${moodText}
-                    ${categoryLabel}
-                    ${descriptionText}
+                const cardHtml = `
+                    <div>
+                        <a href="${song.songbayWebpageUrl || '#'}" target="_blank" class="song-link" title="View on Songbay">
+                            <h3 class="song-title">${song.title}</h3>
+                        </a>
+                        <p class="song-metadata">Genre: <span>${genres}</span></p>
+                        <p class="song-metadata" style="margin-bottom:0;">Category: <span>${song.category || 'N/A'}</span></p>
+                        <div class="song-description">${description}</div>
+                    </div>
+                    
+                    <button class="lyrics-button" onclick="openSongModal(${song.id})">
+                        View Lyrics & Player
+                    </button>
                 `;
+
+                card.innerHTML = cardHtml;
                 songListElement.appendChild(card);
             });
         }
@@ -315,15 +427,44 @@
             });
 
             if (category === 'All Songs') {
-                renderSongs(songData);
+                renderSongs(ALL_SONGS_DATA);
             } else {
-                const filtered = songData.filter(song => song.category === category);
+                const filtered = ALL_SONGS_DATA.filter(song => song.category === category);
                 renderSongs(filtered);
             }
+        }
+        
+        // Function to open the modal with song-specific content
+        window.openSongModal = function(songId) {
+            const song = ALL_SONGS_DATA.find(s => s.id === songId);
+            if (!song) return;
+            
+            const genres = [song.genre1, song.genre2].filter(g => g && g !== 'Placeholder' && g !== 'N/A').join(' / ');
+            const fullLyrics = song.fullLyrics && song.fullLyrics.trim() !== '' ? song.fullLyrics : "Placeholder: Full lyrics are not available.";
+
+            modalTitle.textContent = song.title;
+            modalArtist.textContent = song.artistWriter;
+            modalGenres.textContent = genres;
+            modalCategory.textContent = song.category || 'N/A';
+            modalLyrics.textContent = fullLyrics;
+            
+            // Set the Songbay player iframe source, fulfilling the requirement
+            // Use songbayPlayerUrl (or a placeholder if missing)
+            songbayPlayer.src = song.songbayPlayerUrl && song.songbayPlayerUrl !== 'Placeholder' ? song.songbayPlayerUrl : 'about:blank';
+
+            modal.style.display = 'flex';
+        }
+        
+        // Function to close the modal
+        function closeSongModal() {
+            modal.style.display = 'none';
+            // Stop the iframe audio when closing the modal
+            songbayPlayer.src = '';
         }
 
         // Initialization function to build buttons and load default view
         function initJukebox() {
+            // Build the Category buttons
             allCategories.forEach(category => {
                 const button = document.createElement('button');
                 button.className = 'category-button';
@@ -331,12 +472,25 @@
                 button.addEventListener('click', () => filterSongs(category));
                 categoryNavElement.appendChild(button);
             });
-
+            
+            // Set initial filter to 'All Songs'
             filterSongs('All Songs');
+            
+            // Add event listeners for modal
+            closeBtn.addEventListener('click', closeSongModal);
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeSongModal();
+                }
+            });
+            window.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && modal.style.display === 'flex') {
+                    closeSongModal();
+                }
+            });
         }
 
-        initJukebox();
-
+        document.addEventListener('DOMContentLoaded', initJukebox);
     </script>
 </body>
 </html>
