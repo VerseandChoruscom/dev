@@ -87,7 +87,7 @@
             background-color: #ff741a;
         }
         
-        /* Thematic Filter Cards (12 Cards - New Grid Layout) */
+        /* Thematic Filter Cards (6 Cards Grid Layout) */
         .thematic-card {
             background-size: cover;
             background-position: center;
@@ -258,6 +258,22 @@
             <div id="card-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 </div>
             
+            <!-- START OF INDUSTRY LINKS & RESOURCES SECTION (Placed before Footer) -->
+            <div class="mt-12 border-t border-gray-700 pt-8 pb-4 text-center">
+                <h4 class="text-xl font-semibold mb-3 text-white">Industry Links & Resources</h4>
+                <p class="text-sm text-gray-400 max-w-lg mx-auto mb-6">
+                    These resources are provided to assist A&R and Sync Professionals with vetting, licensing, and collaboration needs.
+                </p>
+                <div class="flex flex-wrap justify-center space-x-4 text-sm font-semibold">
+                    <a href="/bio.html" class="text-gray-300 hover:text-amber-400 transition duration-200 py-1">Kellie Larson Bio</a>
+                    <span class="text-gray-500 mx-1">|</span>
+                    <a href="/lyric-critque.html" class="text-gray-300 hover:text-amber-400 transition duration-200 py-1">Lyric Critique (A&R $399/$499)</a>
+                    <span class="text-gray-500 mx-1">|</span>
+                    <a href="/legal.html" class="text-gray-300 hover:text-amber-400 transition duration-200 py-1">Terms & Licensing</a>
+                </div>
+            </div>
+            <!-- END OF INDUSTRY LINKS & RESOURCES SECTION -->
+
         </div>
     </main>
 
@@ -273,12 +289,6 @@
                 <a href="mailto:info@verseandchorus.com" class="hover:underline">info@verseandchorus.com</a>
             </p>
             
-            <p class="pt-2">
-                <a href="/contact.html" class="hover:underline mx-2">Contact</a>
-                <span class="mx-1">|</span>
-                <a href="/legal.html" class="hover:underline mx-2">Terms</a>
-            </p>
-
             <p class="mt-4 text-xs text-gray-400">&copy; 2025 Verse and Chorus</p>
         </div>
     </footer>
@@ -340,21 +350,13 @@
         const PLACEHOLDER_IMAGE = 'https://placehold.co/250x350/800020/ffffff?text=THEME+CARD';
 
         const THEMATIC_CARDS_DATA = [
-            // Using placeholder image paths from original JS, these are static UI elements
+            // Reduced to 6 unique thematic cards as requested.
             { theme: "Dark / Narrative", image: '/assets/covers/disenchantment-lyrics-photo.jpg' }, 
             { theme: "Fun / Party / Nostalgia", image: '/assets/covers/social-world-lyrics-photo.jpg' }, 
             { theme: "Introspection / Faith", image: '/assets/covers/mutual-value-lyrics-photo.jpg' }, 
             { theme: "Love / Loss / Longing", image: '/assets/covers/loss-of-market-share-lyrics-photo.jpg' }, 
             { theme: "Vengeance / Empowerment", image: '/assets/covers/empowerment-arc-lyrics-photo.jpg' },
-            { theme: "Rock / Alternative Jams", image: PLACEHOLDER_IMAGE }, 
-
-            // Row 2 (6 cards - duplicate themes for visual density)
-            { theme: "Dark / Narrative", image: PLACEHOLDER_IMAGE }, 
-            { theme: "Fun / Party / Nostalgia", image: PLACEHOLDER_IMAGE }, 
-            { theme: "Introspection / Faith", image: PLACEHOLDER_IMAGE }, 
-            { theme: "Love / Loss / Longing", image: PLACEHOLDER_IMAGE }, 
-            { theme: "Vengeance / Empowerment", image: PLACEHOLDER_IMAGE },
-            { theme: "Rock / Alternative Jams", image: PLACEHOLDER_IMAGE } 
+            { theme: "Cinematic / Rock Jams", image: PLACEHOLDER_IMAGE } 
         ];
 
         // --- GLOBAL VARIABLES ---
@@ -377,7 +379,6 @@
         const closeModalBtn = document.getElementById('close-modal-btn');
 
         // Filter categories: Using exact JSON field names where possible
-        // NOTE: 'Theme' corresponds to JSON's 'category'. 'Licensing' is not a single field, so 'commercialPotential' is used.
         const FILTER_CATEGORIES = [
             'category', 'commercialPotential', 'vocalType', 'placementType', 'moodTone', 
             'tempo', 'genre1', 'genre2'
@@ -401,7 +402,8 @@
                 console.error("ALL_SONGS_DATA is not defined or is not an array.");
                 return null;
             }
-            return ALL_SONGS_DATA.find(s => s.id === id);
+            // Ensure ID is matched correctly (IDs in JSON are numbers, so convert input ID to number)
+            return ALL_SONGS_DATA.find(s => s.id === parseInt(id));
         }
 
         function getUniqueValues(category) {
@@ -436,7 +438,7 @@
             
             return `
                 <div id="song-${song.id}" data-song-id="${song.id}" class="song-card p-4 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 scratched-border">
-                    <img src="${song.coverImageUrl}" alt="${song.title} cover art" class="mx-auto mb-4 w-full max-w-[200px] h-auto rounded-lg">
+                    <img src="${song.coverImageUrl}" onerror="this.onerror=null;this.src='https://placehold.co/200x200/505050/ffffff?text=COVER';" alt="${song.title} cover art" class="mx-auto mb-4 w-full max-w-[200px] h-auto rounded-lg">
                     <h3 class="text-xl font-bold text-slate-200 mb-1 flex items-center justify-between">
                         ${song.title}
                     </h3>
@@ -513,7 +515,9 @@
         
         function renderThematicCards() {
             thematicCardContainer.innerHTML = '';
-            THEMATIC_CARDS_DATA.forEach(cardData => {
+            // Only render the reduced 6 thematic cards
+            const cardsToShow = THEMATIC_CARDS_DATA.slice(0, 6);
+            cardsToShow.forEach(cardData => {
                 thematicCardContainer.insertAdjacentHTML('beforeend', createThematicCardHtml(cardData));
             });
         }
@@ -599,7 +603,7 @@
                     if (categoryKey === 'moodTone' || categoryKey === 'genre2' || categoryKey === 'genre1' || categoryKey === 'category') {
                         // Check if ANY part of the comma-separated string matches the filter value
                         // Uses a robust split to handle spaces, commas, and slashes
-                        matchesCategory = (songValue && songValue.toLowerCase().split(/[,\s/]+/).some(item => item.trim() === lowerFilterValue));
+                        matchesCategory = (songValue && songValue.toLowerCase().split(/[,\s/]+/).some(item => item.trim().toLowerCase() === lowerFilterValue));
                     } else {
                         // Handle single-value fields (VocalType, Tempo, PlacementType, CommercialPotential, etc.)
                         matchesCategory = (songValue && songValue.toLowerCase() === lowerFilterValue);
@@ -706,7 +710,7 @@
             });
         }
 
-        // --- MODAL & AUDIO LOGIC ---
+        // --- MODAL & AUDIO LOGIC (FIX APPLIED) ---
 
         window.openMusicPlayer = function(songId) {
             const song = getSongById(songId);
@@ -722,9 +726,6 @@
             
             // CRITICAL FIX: Replace literal newline characters with <br> tags 
             // and use innerHTML to guarantee line breaks in the modal content.
-            // Using a `<pre>` tag is still good for maintaining monospace/section formatting, 
-            // but the \n -> <br> conversion makes the line breaks visible even if data is flattened.
-            // Note: We use \r?\n to catch both Windows (\r\n) and Unix (\n) line endings.
             lyricsText = lyricsText.replace(/\r?\n/g, '<br>');
             
             modalLyrics.innerHTML = lyricsText; // Use innerHTML to render <br> tags
@@ -763,7 +764,7 @@
         window.handlePrint = function(songId) {
             const song = getSongById(songId);
             if (!song) {
-                alert("Error: Song data not found for printing.");
+                console.error("Error: Song data not found for printing.");
                 return;
             }
 
@@ -801,7 +802,7 @@
 
             const printWindow = window.open('', '_blank', 'width=800,height=600');
             if (!printWindow) {
-                alert("The print window could not be opened. Please check your browser's pop-up blockers.");
+                console.error("The print window could not be opened. Please check your browser's pop-up blockers.");
                 return;
             }
             
@@ -820,12 +821,11 @@
             renderThematicCards();
             renderFilterCategoryButtons();
             
-            // FIX: Added robust check and console error for immediate diagnosis
+            // FIX: Initial render of all songs is guaranteed here.
             if (typeof ALL_SONGS_DATA !== 'undefined' && Array.isArray(ALL_SONGS_DATA) && ALL_SONGS_DATA.length > 0) {
-                applyMasterFilter(); // Initial render of all songs
+                applyMasterFilter(); 
             } else {
                 console.error("CRITICAL ERROR: ALL_SONGS_DATA is undefined, not an array, or empty. Check data_loader.php and lyrics.json.");
-                // Display error message directly on the page
                 cardContainer.innerHTML = '<p class="no-results lg:col-span-3" style="color:red; font-size: 1.5em; border: 2px solid red; padding: 20px;">CRITICAL ERROR: Song data could not be loaded. Please ensure **lyrics.json** and **data_loader.php** are correctly located and configured on the server.</p>';
             }
             
@@ -837,7 +837,7 @@
                 if (e.key === 'Escape' && !modal.classList.contains('hidden')) { closeMusicPlayer(); }
             });
             
-            // The onkeyup in HTML is the primary trigger, but keep this fallback/binding:
+            searchInput.addEventListener('input', applyMasterFilter);
             resetFilterBtn.addEventListener('click', resetAllFilters);
 
             window.addEventListener('scroll', () => {
