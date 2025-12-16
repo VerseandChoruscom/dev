@@ -3,103 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verse and Chorus | Cinematic Lyricist Talent Vault</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Verse and Chorus | Cinematic Songwriter & Lyricist Kellie Larson</title>
+    <meta name="description" content="Official site of Kellie Larson, Cinematic Songwriter and Lyricist. Explore the Digital Jukebox, Industry Vault for A&R, and the Green Room for creative tools.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+    <style>
+        :root {
+            --primary-color: #333;
+            --accent-color: #008CBA; 
+            --sunset-orange: #FD5E53; /* Added Sunset Orange */
+            --bg-color: #f4f4f4;
+            --text-color: #333;
+            --white: #fff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <a href="index.html">
-                    <h1>VERSE AND CHORUS</h1>
-                    <p class="tagline">A&R Talent Vault & Cinematic Concept Lyrics for Sync</p>
-                </a>
-            </div>
-            <nav class="hal-nav">
-                <input type="checkbox" id="nav-toggle">
-                <label for="nav-toggle" class="nav-icon">
-                    <i class="fas fa-bars"></i>
-                </label>
-                <ul class="nav-links">
-                    <li><a href="#bio">Bio</a></li>
-                    <li><a href="#industry">Industry Pro</a></li>
-                    <li><a href="#lyrics">Lyrics</a></li>
-                    <li><a href="#articles">Articles</a></li>
-                    <li><a href="#reports">Reports</a></li>
-                    <li><a href="#collab">Collab</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#legal">Legal</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        /* --- Header & Hal Navigation --- */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0; /* Reset padding for flex container */
+        }
 
-    <main>
-        <section class="hero">
-            <h2>Kellie Larson — Cinematic Songwriter & Lyricist</h2>
-            <p>Welcome to the official site of Kellie Larson. Explore lyrics, creative tools, industry resources, and interactive features designed to showcase Kellie's voice and vision.</p>
-        </section>
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1rem 2rem;
+        }
 
-        <section class="grid-container">
-            <div class="box">
-                <h3>Spotlight</h3>
-                <p><strong>Meet the Cinematic Lyricist</strong></p>
-                <p>Read the official songwriter profile.</p>
-                <a href="#" class="btn">View Profile</a>
-            </div>
+        /* Logo Area - 80% Width */
+        .logo-area {
+            width: 80%;
+        }
 
-            <div class="box">
-                <h3>Setlist</h3>
-                <p><strong>View Lyrics for Sale & Licensing</strong></p>
-                <p>Lyrics available for sync and publication.</p>
-                <a href="#" class="btn">Browse Catalog</a>
-            </div>
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: var(--primary-color);
+            display: block;
+        }
 
-            <div class="box">
-                <h3>Green Room</h3>
-                <p><strong>Songwriting Tools and Resources</strong></p>
-                <p>Creative tools for new songwriters to inspire your next song.</p>
-                <a href="#" class="btn">Get Inspired</a>
-            </div>
+        /* Hal (Hamburger) Navigation - 20% Width */
+        .hal-nav {
+            width: 20%;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+        }
 
-            <div class="box">
-                <h3>Industry Vault</h3>
-                <p><strong>A&R Talent Scouting Vault</strong></p>
-                <p>Curated catalog for A&R Scouts & Music Supervisors. Discover Vetted Lyricists and High-Concept Themes for Film/TV.</p>
-                <a href="#" class="btn">Enter Vault</a>
-            </div>
+        /* Hamburger Icon */
+        .nav-icon {
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+        
+        .nav-icon:hover {
+            color: var(--sunset-orange);
+        }
 
-            <div class="box">
-                <h3>Articles</h3>
-                <p><strong>Songwriting and Music Industry Articles</strong></p>
-                <p>Tips and trends for the music industry. Songwriting insights and advice.</p>
-                <a href="#" class="btn">Read Articles</a>
-            </div>
+        /* Hidden Checkbox */
+        #nav-check {
+            display: none;
+        }
 
-            <div class="box">
-                <h3>Lyric Reports</h3>
-                <p><strong>Professional Lyric Report Service</strong></p>
-                <p>Professional Lyric Analysis & Song Critique. Get expert Songwriter Consultation.</p>
-                <a href="#" class="btn">Get Report</a>
-            </div>
+        /* Dropdown Menu */
+        .nav-links {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: var(--white);
+            width: 200px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
 
-            <div class="box">
-                <h3>Collab / Commission</h3>
-                <p><strong>Commission Lyrics for Collaboration</strong></p>
-                <p>Lyric Collaboration or Custom Commission. Hire a Cinematic Lyricist for your next collaboration.</p>
-                <a href="#" class="btn">Work With Kellie</a>
-            </div>
-        </section>
-    </main>
+        .nav-links a {
+            padding: 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+            border-bottom: 1px solid #eee;
+            display: block;
+        }
 
-    <footer>
-        <p>Cinematic Songwriter & Lyricist &copy; 2025 Kellie Larson</p>
-        <p>🎙️ VerseandChorus.com | ☎️ 760-537-0222 | ✉️ info@verseandchorus.com</p>
-        <p><a href="#legal">Legal</a></p>
-    </footer>
+        .nav-links a:hover {
+            background: #f9f9f9;
+            color: var(--sunset-orange);
+        }
 
-</body>
-  </html>
-  
+        /* Show Menu when Checked */
+        #nav-check:checked ~ .nav-links {
+            display: flex;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+        }
+        .hero h1 { margin-bottom: 0.5rem; }
+        .hero p { font-size: 1.2rem; opacity: 0.8; }
+
+        /* --- Main Layout --- */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* --- Cards/Sections --- */
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0
+        
