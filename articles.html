@@ -4,105 +4,277 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Articles & Podcasts | Kellie Larson</title>
-  <link rel="stylesheet" href="style.css" />
+  
+  <link rel="stylesheet" href="/assets/css/style.css" />
   
   <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: 'Georgia', serif;
+    :root {
+      --bg-color: #000000;
+      --burgundy: #800020;
+      --gold: #D4AF37;
+      --sunset-orange: #FD5E53;
+      --text-white: #ffffff;
+      --text-off-white: #e5e5e5;
     }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-white);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    /* --- STANDARD HEADER STYLES --- */
+    #main-header {
+        background-color: #000;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid var(--gold);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo-top-left {
+        width: 89px; /* Exact width per instructions */
+        height: auto;
+    }
+
+    /* Hamburger Icon */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: #FFFFFF;
+        transition: all 0.3s ease;
+    }
+
+    /* Navigation */
+    #nav-menu {
+        display: flex;
+        gap: 20px;
+    }
+
+    #nav-menu a {
+        color: #FFFFFF !important;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        transition: color 0.3s;
+    }
+
+    #nav-menu a:hover {
+        color: var(--gold) !important;
+    }
+
+    /* Mobile Nav Styles */
+    @media (max-width: 900px) {
+        .hamburger {
+            display: flex;
+        }
+
+        #nav-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--gold);
+            text-align: center;
+        }
+
+        #nav-menu.active {
+            display: flex;
+        }
+        
+        #nav-menu a {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+            width: 100%;
+            display: block;
+        }
+    }
+
+    /* --- PAGE SPECIFIC STYLES --- */
     a {
       color: #ffccd5;
       text-decoration: none;
+      transition: color 0.3s;
     }
-    a:hover, a:active {
-      color: #800020;
+    a:hover {
+      color: var(--gold);
     }
-    header, footer {
-      background-color: #2c3e50;
-      padding: 20px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 10px;
-    }
+
+    /* Outline Section */
     .outline {
       max-width: 800px;
       margin: 40px auto 20px;
-      padding: 10px;
-      border-bottom: 1px solid #444;
+      padding: 20px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background-color: #111;
     }
     .outline h3 {
-      color: #ffccd5;
-      margin-bottom: 10px;
+      color: var(--gold); /* Feature Articles Title in Gold */
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
     }
     .outline ul {
       list-style: none;
       padding-left: 0;
     }
     .outline li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
+    /* Underlined Links for Featured Articles */
+    .outline li a {
+        text-decoration: underline; 
+        color: var(--text-white);
+        font-size: 1.1rem;
+    }
+    .outline li a:hover {
+        color: var(--sunset-orange);
+    }
+
+    /* Articles */
     .feature-article {
       max-width: 800px;
       margin: 40px auto;
       padding: 20px;
-      border-bottom: 1px solid #444;
+      border-bottom: 1px solid #333;
     }
     .byline {
       font-style: italic;
+      color: #888;
       margin-bottom: 20px;
     }
-    h2, h3, h4 {
-      color: #ffccd5;
+    
+    .article-title {
+        color: var(--text-white);
+        font-family: 'Georgia', serif;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
     }
+
+    h3 { color: var(--gold); margin-top: 1.5rem; }
+    
     .sync-table {
       width: 100%;
       border-collapse: collapse;
       margin: 20px 0;
     }
     .sync-table th, .sync-table td {
-      border: 1px solid #999;
-      padding: 10px;
+      border: 1px solid #444;
+      padding: 12px;
       text-align: left;
     }
     .sync-table th {
-      background-color: #333;
-      color: #ffccd5;
+      background-color: #222;
+      color: var(--gold);
     }
     .sync-table td {
       background-color: #111;
+      color: #ddd;
     }
     blockquote {
       margin: 30px auto;
       max-width: 700px;
       font-style: italic;
-      border-left: 4px solid #ffccd5;
+      border-left: 4px solid var(--burgundy);
       padding-left: 20px;
+      color: #ccc;
+    }
+
+    /* Back to Top Links */
+    .back-to-top-container {
+        text-align: center;
+        margin: 40px 0;
+    }
+    .back-to-top-link {
+        color: var(--sunset-orange) !important; /* Sunset Orange */
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        text-decoration: none;
+        border: 1px solid var(--sunset-orange);
+        padding: 5px 10px;
+        border-radius: 4px;
+        transition: 0.3s;
+    }
+    .back-to-top-link:hover {
+        background-color: var(--sunset-orange);
+        color: #000 !important;
+    }
+
+    /* --- FOOTER STYLES --- */
+    .site-footer {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 4rem;
+        border-top: 1px solid var(--gold);
+    }
+
+    .site-footer a {
+        color: var(--gold);
+        text-decoration: none;
     }
   </style>
+
+  <script>
+    // Toggle Hamburger Menu
+    function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('active'); 
+    }
+  </script>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Stage</a>
-      <a href="bio.html">Bio</a>
-      <a href="lyrics.html">Lyrics</a>
-      <a href="green-room.html">Green Room</a>
-      <a href="articles.html" class="active">Articles/Podcasts</a>
-      <a href="industry-pros.html">Industry Pro's</a>
-      <a href="collab.html">Collab/Commission</a>
-      <a href="report.html">Lyric Critique</a>
-      <a href="contact.html">Contact</a>
-      <a href="legal.html">Legal/Licensing</a>
+
+  <header id="main-header">
+    <a href="index.html">
+        <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
+    </a>
+    
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+
+    <nav id="nav-menu">
+      <a href="/bio.html">Bio</a>
+      <a href="/industry-pros.html">Industry Pro</a>
+      <a href="/lyrics.html">Lyrics</a>
+      <a href="/green-room.html">Green Room</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/collab.html">Collab</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/legal.html">Legal</a>
     </nav>
   </header>
 
   <section class="outline">
     <h3>Featured Articles</h3>
     <ul>
-      <li><a href="#formatting">Beyond the Rhyme</a></li>
+      <li><a href="#formatting">Beyond the Rhyme: Formatting Guide</a></li>
       <li><a href="#cinematic">Deconstructing the Cinematic Lyric</a></li>
       <li><a href="#sync-guide">Crafting Sync-Ready Lyrics</a></li>
       <li><a href="#audit">Is Your Song Ready for a Deal?</a></li>
@@ -142,6 +314,7 @@
 
       <p>By following these guidelines, you'll present your lyrics in a professional, clear, and easy-to-digest format — allowing the producer to focus on your artistry rather than deciphering a messy document. This small effort can make a significant difference in how your work is received and ultimately, how your song comes to life.</p>
     </article>
+
     <article class="feature-article" id="cinematic">
       <h2 class="article-title">Deconstructing the Cinematic Lyric: Why Kellie Larson's Work is a Sync Supervisor’s Dream</h2>
       <p class="byline">By Kellie Larson, 2025</p>
@@ -212,6 +385,7 @@
     <div class="back-to-top-container">
         <a href="#articles-top" class="back-to-top-link">**^ Back to Top ^**</a>
     </div>
+
     <article class="feature-article" id="sync-guide">
       <h2 class="article-title">Crafting Sync-Ready Lyrics: A Songwriter's Guide to Commercial Placement</h2>
       <p class="byline">By Kellie Larson, 2025</p>
@@ -242,12 +416,11 @@
 
       <h3>Final Thoughts</h3>
       <p>By adhering to these instructions—prioritizing emotional support over literal storytelling, crafting genre-flexible hooks, and ensuring complete professional and legal readiness—a songwriter significantly increases the commercial potential of their catalogue, turning individual lyrics into highly valuable media assets.</p>
-
-      <p>To see these principles in practice, explore the work of <strong>Kellie Larson</strong>, the Cinematic Songwriter and Lyricist, whose portfolio is intentionally structured around these exact synchronization strategies.</p>
     </article>
     <div class="back-to-top-container">
         <a href="#articles-top" class="back-to-top-link">**^ Back to Top ^**</a>
     </div>
+
     <article class="feature-article" id="audit">
       <h2 class="article-title">Is Your Song Ready for a Deal? Why a Strategic Lyric Audit is Your Next Essential Step ✍️</h2>
       <p class="byline">By Kellie Larson, 2025</p>
@@ -274,6 +447,7 @@
     <div class="back-to-top-container">
         <a href="#articles-top" class="back-to-top-link">**^ Back to Top ^**</a>
     </div>
+
     <article class="feature-article" id="prestige">
       <h2 class="article-title">The Exceptional and Tier-One Prestige Lyrics</h2>
       <p class="byline">By Kellie Larson, 2025</p>
@@ -295,20 +469,21 @@
         </thead>
         <tbody>
           <tr><td>Welcome to Jukes</td><td>Sync / Cinematic Blues / Horror</td><td>Exceptional</td><td>Dark Southern Gothic. High sync value.</td></tr>
-          <tr><td>First Step</td><td>Inspirational Pop / Alt-Folk</td><td>Exceptional</td><td>Addresses addiction with maturity. Strong vulnerability.</td></tr>
-          <tr><td>Crunkpunk Song: Fury (Escape)</td><td>Alternative Rock / Metal</td><td>Tier-One Prestige</td><td>Raw domestic violence narrative. High emotional intensity.</td></tr>
-          <tr><td>Alone In Our Home</td><td>Adult Contemporary Ballad</td><td>Tier-One Prestige</td><td>Grief through domestic loss. Deep resonance.</td></tr>
-          <tr><td>Miss Your Stupid Face</td><td>Pop Ballad / Grief</td><td>Tier-One Prestige</td><td>Humorous grief details. Elevated emotional impact.</td></tr>
+          <tr><td>Take that First Step</td><td>Inspirational Pop / Alt-Folk</td><td>Exceptional</td><td>Addresses addiction with maturity. Strong vulnerability.</td></tr>
+          <tr><td>Fury (I'm the Monster)</td><td>Alternative Rock / Metal</td><td>Tier-One Prestige</td><td>Raw domestic violence narrative. High emotional intensity.</td></tr>
+          <tr><td>Just a Littke Lonely</td><td>Adult Contemporary Ballad</td><td>Tier-One Prestige</td><td>Grief through domestic loss. Deep resonance.</td></tr>
+          <tr><td>Etched in Every Space</td><td>Pop Ballad / Grief</td><td>Tier-One Prestige</td><td>Humorous grief details. Elevated emotional impact.</td></tr>
           <tr><td>The Aftermath</td><td>Alt-Pop / Emo-Pop</td><td>Tier-One Prestige</td><td>Post-chaos struggle. Strong resolution arc.</td></tr>
           <tr><td>One Small Wrong</td><td>Pop / R&B / Hip-Hop Dialogue</td><td>Tier-One Prestige</td><td>Alternating voices. Complex betrayal story.</td></tr>
           <tr><td>In My Dreams</td><td>Adult Contemporary Ballad</td><td>Tier-One Prestige</td><td>Grief and escapism. High emotional fidelity.</td></tr>
-          <tr><td>I can be your everything</td><td>Pop Ballad / R&B</td><td>Tier-One Prestige</td><td>Dramatic plea. Strong unrequited desire theme.</td></tr>
+          <tr><td>The Back of Me</td><td>Pop Ballad / R&B</td><td>Tier-One Prestige</td><td>Dramatic plea. Strong unrequited desire theme.</td></tr>
         </tbody>
       </table>
     </article>
-<div class="back-to-top-container">
+    <div class="back-to-top-container">
         <a href="#articles-top" class="back-to-top-link">**^ Back to Top ^**</a>
     </div>
+
     <article class="feature-article" id="article7">
         <h2 class="article-title">**Masterclass Lyric Analysis: How "Wildflower" Defines the Commercial Redemptive Narrative**</h2>
         <p class="byline">By Kellie Larson, Cinematic Songwriter and Lyricist</p>
@@ -350,7 +525,7 @@
     <div class="back-to-top-container">
         <a href="#articles-top" class="back-to-top-link">**^ Back to Top ^**</a>
     </div>
-    <hr class="story-separator">
+    <hr class="story-separator" style="border-color: #333;">
 
     <article class="feature-article" id="article8">
         <h2 class="article-title">**The Sonic Blueprint: AI as the Professional Placeholder in Songwriting Demos**</h2>
@@ -373,7 +548,7 @@
         <ul>
             <li><strong>Hyper-Customization for Sync:</strong> The cinematic songwriter's pitch will become dramatically more effective. Instead of providing a single demo, a writer will use AI to provide hyper-specific versions on demand. A music supervisor asks for a "darker, minor-key trailer version of Wildflower for a drama series"? AI will deliver it in 30 minutes. This speed and precision will make the human-written lyric an indispensable, customizable foundation.</li>
             <li><strong>Legal Clarity and Human Value:</strong> The industry is moving towards a model where the **Human-Written Lyric and Melody (Composition)** is legally recognized as the core intellectual property, separate from the **AI-Generated Production (Master Recording)**. This separation is crucial: it protects the songwriter's most valuable asset—the unique, narrative arc that AI cannot spontaneously create—while leveraging AI for all the necessary technical and production work.</li>
-            <li>**Creative Co-Pilots:** Future AI tools will not just generate music; they will actively suggest structural variations, stronger internal rhymes, or more vivid sensory details to the human writer during the composition phase. This turns the technology into a **Creative Co-Pilot**, speeding up the first draft and allowing the writer to focus on the unique emotional narrative that only human experience can deliver.</li>
+            <li><strong>Creative Co-Pilots:</strong> Future AI tools will not just generate music; they will actively suggest structural variations, stronger internal rhymes, or more vivid sensory details to the human writer during the composition phase. This turns the technology into a **Creative Co-Pilot**, speeding up the first draft and allowing the writer to focus on the unique emotional narrative that only human experience can deliver.</li>
         </ul>
 
         <p>For the professional lyricist, AI is not a threat to creativity; it is a **radical accelerator for commercial success**, ensuring that high-value, emotionally narrative lyrics—the true currency of the industry—are presented with maximum impact and efficiency.</p>
@@ -385,8 +560,10 @@
 
   </main>
 
-  <footer>
-    &copy; 2025 Kellie Larson | All rights reserved
+  <footer class="site-footer">
+    <p>
+      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝 <a href="/legal.html">Legal</a>
+    </p>
   </footer>
 </body>
 </html>
