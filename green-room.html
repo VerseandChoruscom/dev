@@ -4,177 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Green Room | Verse and Chorus</title>
+    <meta name="description" content="Interactive songwriting tools and lyric games powered by the Verse and Chorus catalog.">
+    
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
     <style>
         :root {
-            /* Branding Colors */
-            --bg-color: #000000;
-            --header-bg: #000000;
-            --footer-bg: #000000;
-            --gold: #D4AF37;
+            /* --- Page Specific Colors --- */
+            --winter-green-bg: #5F8575; /* Winter Green */
+            --game-card-bg: rgba(255, 255, 255, 0.95);
             --burgundy: #800020;
-            --text-main: #E5E5E5;
-            
-            /* Page Specific */
-            --winter-green: #2F4F4F; /* Dark Slate Gray/Winter Greenish */
-            --winter-green-light: #5F8575; /* Sage/Winter Green */
-            --title-black: #000000;
+            --gold: #D4AF37;
+            --black: #000000;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            /* Winter Green Background as requested */
-            background-color: var(--winter-green-light);
-            color: #333; /* Dark text for readability on green, unless specified otherwise */
+            background-color: var(--winter-green-bg); /* Winter Green Background */
+            color: #111;
             line-height: 1.6;
         }
 
-        /* --- HEADER (Matches index.html) --- */
-        header {
-            background-color: var(--header-bg);
-            border-bottom: 2px solid var(--gold);
-            padding: 1rem 2rem;
+        /* --- ORIGINAL HEADER STYLES --- */
+        #main-header {
+            background-color: #000; /* Assuming black background for header based on logo contrast */
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 2px solid var(--gold);
             position: sticky;
             top: 0;
             z-index: 1000;
-            color: var(--gold);
         }
 
-        .logo {
-            color: var(--gold);
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-decoration: none;
+        .logo-top-left {
+            max-height: 60px; /* Adjust size to fit your logo */
+            width: auto;
         }
 
-        .nav-toggle { display: none; }
-        .nav-icon {
-            font-size: 2rem;
-            color: var(--gold);
+        /* Hamburger Icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
             cursor: pointer;
         }
 
-        nav {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: #000;
-            border-bottom: 2px solid var(--gold);
-            display: none;
-            flex-direction: column;
-            align-items: center;
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: 0.4s;
         }
 
-        nav a {
-            color: var(--gold);
+        /* Navigation */
+        #nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        #nav-menu a {
+            color: #fff;
             text-decoration: none;
-            padding: 1rem;
-            width: 100%;
-            text-align: center;
-            border-bottom: 1px solid #333;
+            font-weight: bold;
             text-transform: uppercase;
             font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
+            transition: color 0.3s;
         }
 
-        nav a:hover {
-            background-color: var(--burgundy);
-            color: #fff;
+        #nav-menu a:hover {
+            color: var(--gold);
         }
 
-        #nav-check:checked ~ nav { display: flex; }
-
-        @media(min-width: 768px) {
-            .nav-icon { display: none; }
-            nav {
-                position: static;
+        /* Mobile Nav Styles */
+        @media (max-width: 900px) {
+            .hamburger {
                 display: flex;
-                flex-direction: row;
-                width: auto;
-                border: none;
-                background: none;
             }
-            nav a { border: none; width: auto; padding: 0 15px; }
+
+            #nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #000;
+                padding: 20px 0;
+                border-bottom: 2px solid var(--gold);
+                text-align: center;
+            }
+
+            #nav-menu.active {
+                display: flex;
+            }
+            
+            #nav-menu a {
+                padding: 10px 0;
+                border-bottom: 1px solid #333;
+                width: 100%;
+                display: block;
+            }
         }
 
-        /* --- MAIN CONTENT --- */
-        main {
+        /* --- MAIN CONTENT STYLES --- */
+        main.page-content {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 3rem 1rem;
         }
 
-        /* Page Title */
-        .page-title {
-            text-align: center;
-            /* "Green Room title in black" */
-            color: var(--title-black);
+        .page-header h1 {
+            color: var(--black); /* Title in Black */
             font-family: 'Georgia', serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
+            text-align: center;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.2);
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.3);
         }
 
-        .page-subtitle {
+        .page-header p {
             text-align: center;
-            color: #1a1a1a;
             font-size: 1.2rem;
+            color: #000;
             margin-bottom: 3rem;
-            font-style: italic;
+            font-weight: 500;
         }
 
-        /* Game Sections */
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
         .game-card {
-            background-color: rgba(255, 255, 255, 0.9);
-            border: 2px solid #333;
+            background-color: var(--game-card-bg);
+            border: 3px solid #000;
             border-radius: 8px;
             padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.2);
         }
 
         .game-card h2 {
-            color: var(--burgundy);
             margin-top: 0;
-            border-bottom: 1px solid #ccc;
+            color: var(--burgundy);
+            border-bottom: 2px solid #ccc;
             padding-bottom: 10px;
         }
 
-        .game-content {
-            margin-top: 1rem;
+        .input-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
         }
 
-        /* Inputs & Buttons */
         input[type="text"] {
-            padding: 8px;
-            margin: 5px 0;
-            width: 100%;
-            max-width: 300px;
-            border: 1px solid #ccc;
+            padding: 10px;
+            border: 2px solid #ccc;
             border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         button.game-btn {
             background-color: var(--burgundy);
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border: none;
             border-radius: 4px;
-            cursor: pointer;
             font-size: 1rem;
             font-weight: bold;
-            margin-top: 10px;
-            transition: 0.3s;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
         }
 
         button.game-btn:hover {
@@ -183,146 +192,197 @@
         }
 
         .result-box {
+            margin-top: 20px;
+            padding: 20px;
             background-color: #f4f4f4;
             border-left: 5px solid var(--gold);
-            padding: 15px;
-            margin-top: 15px;
-            font-style: italic;
+            font-family: 'Georgia', serif;
             font-size: 1.1rem;
-            display: none; /* Hidden by default */
+            display: none;
+            color: #333;
         }
 
-        /* --- FOOTER (Matches index.html) --- */
-        footer {
+        /* --- FOOTER STYLES --- */
+        .site-footer {
+            background-color: #000;
+            color: #fff;
             text-align: center;
             padding: 2rem;
-            border-top: 2px solid var(--gold);
-            background-color: var(--footer-bg);
-            color: var(--gold);
-            margin-top: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--gold);
         }
-        footer a { color: var(--gold); text-decoration: none; margin: 0 10px; }
-        footer a:hover { color: var(--burgundy); }
 
+        .site-footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
     </style>
+
+    <script>
+        // Hamburger Menu Toggle Logic
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="logo">Verse & Chorus</a>
-        <input type="checkbox" id="nav-check" class="nav-toggle">
-        <label for="nav-check" class="nav-icon">&#9776;</label>
-        <nav>
+    <header id="main-header">
+        <a href="index.html">
+            <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
+        </a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div><div></div><div></div>
+        </div>
+        <nav id="nav-menu">
             <a href="bio.html">Bio</a>
-            <a href="industry-vault.html">Industry Vault</a>
-            <a href="digital-jukebox.html">Jukebox</a>
+            <a href="industry-pros.html">Industry Pro</a>
+            <a href="lyrics.html">Lyrics</a>
             <a href="green-room.html">Green Room</a>
             <a href="articles.html">Articles</a>
+            <a href="reports.html">Reports</a>
+            <a href="collab.html">Collab</a>
             <a href="contact.html">Contact</a>
+            <a href="legal.html">Legal</a>
         </nav>
     </header>
 
-    <main>
-        <h1 class="page-title">The Green Room</h1>
-        <p class="page-subtitle">Interactive Songwriter's Playground</p>
+    <main class="page-content">
+        <div class="page-header">
+            <h1>The Green Room</h1>
+            <p>Songwriter's Playground & Funhouse. Play with the lyrics!</p>
+        </div>
 
-        <section class="game-card">
-            <h2>1. Lyrical Madlibs</h2>
-            <p>Enter random words to rewrite a classic verse!</p>
-            <div class="game-content">
-                <input type="text" id="ml-adj" placeholder="Adjective">
-                <input type="text" id="ml-noun" placeholder="Noun (Singular)">
-                <input type="text" id="ml-verb" placeholder="Verb (Past Tense)">
-                <input type="text" id="ml-place" placeholder="Place">
+        <div class="game-grid">
+            
+            <div class="game-card">
+                <h2>1. Lyrical Madlibs</h2>
+                <p>Rewrite a classic line! Fill in the blanks below.</p>
+                <div class="input-group">
+                    <input type="text" id="ml-adj" placeholder="Adjective (e.g. Rusty)">
+                    <input type="text" id="ml-noun" placeholder="Noun (e.g. Truck)">
+                    <input type="text" id="ml-verb" placeholder="Verb (Past Tense)">
+                    <input type="text" id="ml-place" placeholder="Place (e.g. Motel)">
+                </div>
                 <button class="game-btn" onclick="playMadlibs()">Rewrite Lyric</button>
                 <div id="ml-result" class="result-box"></div>
             </div>
-        </section>
 
-        <section class="game-card">
-            <h2>2. 2-Song Turnstyle</h2>
-            <p>Randomly mix themes from two different songs in the catalog to create a brand new concept!</p>
-            <div class="game-content">
-                <button class="game-btn" onclick="playTurnstyle()">Spin The Decks!</button>
+            <div class="game-card">
+                <h2>2. 2-Song Turnstyle</h2>
+                <p><strong>Spin the Decks!</strong> Randomly smash two songs from the catalog together to create a brand new concept.</p>
+                <button class="game-btn" onclick="playTurnstyle()">Mix It Up</button>
                 <div id="ts-result" class="result-box"></div>
             </div>
-        </section>
 
-        <section class="game-card">
-            <h2>3. Cinematic Scene Generator</h2>
-            <p>The AI (simulated) will write a unique lyric line based on your random inputs.</p>
-            <div class="game-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                <input type="text" id="cs-person" placeholder="Person (e.g. ex-lover)">
-                <input type="text" id="cs-place" placeholder="Place (e.g. empty bar)">
-                <input type="text" id="cs-thing" placeholder="Thing (e.g. rusty key)">
-                <input type="text" id="cs-mood" placeholder="Mood (e.g. gloomy)">
+            <div class="game-card">
+                <h2>3. Cinematic Scene Generator</h2>
+                <p>Enter random prompts and generate a unique opening line.</p>
+                <div class="input-group">
+                    <input type="text" id="cs-person" placeholder="Person (e.g. Sheriff)">
+                    <input type="text" id="cs-place" placeholder="Place (e.g. Swamp)">
+                    <input type="text" id="cs-thing" placeholder="Thing (e.g. Locket)">
+                    <input type="text" id="cs-mood" placeholder="Mood (e.g. Eerie)">
+                </div>
+                <button class="game-btn" onclick="playSceneGen()">Generate Scene</button>
+                <div id="cs-result" class="result-box"></div>
             </div>
-            <button class="game-btn" onclick="playSceneGen()">Generate Lyric</button>
-            <div id="cs-result" class="result-box"></div>
-        </section>
 
-        <section class="game-card">
-            <h2>4. Lightning Lyrics</h2>
-            <p>Instantly pull one of Kellie's most powerful, licensing-ready lyric lines.</p>
-            <div class="game-content">
-                <button class="game-btn" onclick="playLightning()">Get Inspired!</button>
+            <div class="game-card">
+                <h2>4. Lightning Lyrics</h2>
+                <p>Need inspiration? Instantly pull a <strong>Commercial Hook</strong> from the Vault.</p>
+                <button class="game-btn" onclick="playLightning()">Strike Me!</button>
                 <div id="ll-result" class="result-box"></div>
             </div>
-        </section>
 
+        </div>
     </main>
 
-    <footer>
-        <p>Cinematic Songwriter & Lyricist</p>
-        <p>&copy; 2025 Kellie Larson | VerseandChorus.com</p>
-        <p>☎️ 760-537-0222 | ✉️ info@verseandchorus.com</p>
-        <p><a href="legal.html">Legal</a> | <a href="privacy.html">Privacy</a></p>
+    <footer class="site-footer">
+        <p>Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝 <a href="legal.html">Legal</a></p>
     </footer>
 
     <script>
-        // Embedding the JSON data directly as requested to ensure functionality
-        const lyricsData = [
-            // ... I will paste the JSON content here in the final output ...
+        // Full Song Data from lyrics.json
+        const allLyrics = [
+          { "title": "AUTHOR OF A LIE", "genre1": "Pop", "category": "Betrayal / Storytelling", "commercialHook": "You're the author of a lie, a master of deceit.", "moodTone": "Anthemic, Confident" },
+          { "title": "BIG HARD NO", "genre1": "Country", "category": "Empowerment / Defiance", "commercialHook": "You can't mess with my day, no way, not anymore!", "moodTone": "Anthemic, Confident" },
+          { "title": "BOOM BOOM BEAT", "genre1": "Pop", "category": "Love / Reunion", "commercialHook": "Boom boom boom da boom boom boom", "moodTone": "Bouncy, Fun" },
+          { "title": "BROKEN RECORD", "genre1": "Rock", "category": "Self-Reclamation", "commercialHook": "'Cause I'm a broken record, skipping on repeat.", "moodTone": "Bitter, Confident" },
+          { "title": "CEO NOT A BABYSITTING TREE", "genre1": "Pop", "category": "Female Empowerment", "commercialHook": "Honey, I'm a CEO, not a babysitting tree.", "moodTone": "Confident, Fun" },
+          { "title": "CHILDREN OF WAR", "genre1": "Folk", "category": "Social Commentary", "commercialHook": "When everyone has nukes and buttons are pressed, If everyone dies, then who cares who is best.", "moodTone": "Dark, Haunting" },
+          { "title": "DON'T BE JELLY", "genre1": "Country", "category": "Defiance / Dance", "commercialHook": "Hips left, hips right, stomp, kick, slide.", "moodTone": "Fun, Lively" },
+          { "title": "EPHEMERAL MOMENT", "genre1": "Alternative", "category": "Love / Longing", "commercialHook": "Ephemeral moment, I should've stretched it out.", "moodTone": "Dreamy, Romantic" },
+          { "title": "ETCHED IN EVERY SPACE", "genre1": "Easy Listening", "category": "Grief / Heartbreak", "commercialHook": "Oh, i miss your stupid face! it's etched in every space.", "moodTone": "Mournful, Sad" },
+          { "title": "FURY (I'M THE MONSTER)", "genre1": "Alternative", "category": "Abuse / Escape", "commercialHook": "Gave me bullets for my gun I named Justice, yeah.", "moodTone": "Angry, Dramatic" },
+          { "title": "HEARTBREAK AND TROUBLE", "genre1": "Pop", "category": "Toxic Relationship", "commercialHook": "You pop in and out like Hubba Bubba.", "moodTone": "Playful, Romantic" },
+          { "title": "HIT THE ROAD", "genre1": "Pop", "category": "Breakup", "commercialHook": "Don't stop, don't look back, Hit the road, Jack.", "moodTone": "Confident, Revenge" },
+          { "title": "I KNOW YOUR DAMN PIN CODE", "genre1": "Rock", "category": "Vengeful Anthem", "commercialHook": "Gave me bullets for my gun I named Justice, yeah.", "moodTone": "Bitter, Revenge" },
+          { "title": "IN MY DREAMS (WHEN I WAKE)", "genre1": "Easy Listening", "category": "Grief / Loss", "commercialHook": "In my dreams - I long to be together in my dreams.", "moodTone": "Dreamy, Sad" },
+          { "title": "JUST TOO MUCH", "genre1": "Easy Listening", "category": "Breakup", "commercialHook": "Too much fighting, too much disrespect. Too much lying, no truth to detect.", "moodTone": "Bitter, Melancholic" },
+          { "title": "JUST A LITTLE LONELY", "genre1": "Easy Listening", "category": "Heartache", "commercialHook": "Yeah, I'm done with feeling lonely...just see. Just a little stronger. Just a little wiser. Just... free.", "moodTone": "Dramatic, Sad" },
+          { "title": "MURDERERS HEART", "genre1": "Country", "category": "Betrayal / Revenge", "commercialHook": "But he was playing games with a murderer's heart.", "moodTone": "Anthemic, Introspective" },
+          { "title": "ONE SMALL WRONG", "genre1": "Hip-hop", "category": "Dating / Confrontation", "commercialHook": "But that one small wrong from you, man, it sealed our whole damn fate.", "moodTone": "Bitter, Tension" },
+          { "title": "THE REAL DREAM TEAM", "genre1": "Easy Listening", "category": "Love / Loyalty", "commercialHook": "Tick Tock, the clock, time never stops. Like my love, you are my rock.", "moodTone": "Positive, Romantic" },
+          { "title": "SICK ONE (S1C)", "genre1": "Rock", "category": "Toxic Relationship", "commercialHook": "My love is on a sick one too... I run back. Right on cue.", "moodTone": "Bitter, Cool" },
+          { "title": "SOLID SHIFTING GROUND", "genre1": "Easy Listening", "category": "Inspirational", "commercialHook": "This crazy, beautiful life on solid, shifting ground.", "moodTone": "Anthemic, Positive" },
+          { "title": "STOOD BY MY SIDE", "genre1": "Gospel", "category": "Faith / Hope", "commercialHook": "When the world walked away, You stood by my side.", "moodTone": "Peaceful, Soft" },
+          { "title": "THE AFTERMATH", "genre1": "Alternative", "category": "Emotional Turmoil", "commercialHook": "Found bizarre comfort in the chaos left behind.", "moodTone": "Haunting, Tension" },
+          { "title": "THE SHOW IS THROUGH", "genre1": "R-n-B", "category": "Closure / Breakup", "commercialHook": "Take a bow, 'cause the show is through.", "moodTone": "Dramatic, Theatrical" },
+          { "title": "THOUGHT YOU SHOULD KNOW", "genre1": "Pop", "category": "Moving On", "commercialHook": "Oh, i'm alright, i'm fine (i'm good) / Having the most fun, on cloud nine", "moodTone": "Confident, Dancing" },
+          { "title": "TOP SHELF QUEEN", "genre1": "Reggae", "category": "Relaxation", "commercialHook": "She's my full-bodied Goddess, so fine, so divine.", "moodTone": "Peaceful, Positive" },
+          { "title": "WELCOME TO JUKE", "genre1": "Blues", "category": "Horror / Narrative", "commercialHook": "No one ever leaves here when day breaks... a ghostly fate.", "moodTone": "Dark, Disturbing" },
+          { "title": "WILDFLOWER", "genre1": "Country", "category": "Inspirational", "commercialHook": "She's got the spirit of a rebel, never gonna bend.", "moodTone": "Confident, Optimistic" },
+          { "title": "YOUR FOREVER MAN", "genre1": "Country", "category": "Love / Healing", "commercialHook": "She's my future, I'm her forever man.", "moodTone": "Confident, Romantic" }
         ];
 
-        // --- GAME LOGIC ---
+        // Filter valid songs (exclude those with missing hooks)
+        const validSongs = allLyrics.filter(s => s.commercialHook && s.commercialHook !== "Placeholder");
+
+        // --- GAME FUNCTIONS ---
 
         // 1. Madlibs
         function playMadlibs() {
-            const adj = document.getElementById('ml-adj').value || "dark";
-            const noun = document.getElementById('ml-noun').value || "heart";
-            const verb = document.getElementById('ml-verb').value || "broke";
-            const place = document.getElementById('ml-place').value || "highway";
+            const adj = document.getElementById('ml-adj').value || "Broken";
+            const noun = document.getElementById('ml-noun').value || "Record";
+            const verb = document.getElementById('ml-verb').value || "Shattered";
+            const place = document.getElementById('ml-place').value || "Green Room";
             
-            // Simple template based on generic style
             const result = `
-                "Walking down the <strong>${adj}</strong> ${place},<br>
-                I saw your <strong>${noun}</strong> and I couldn't look away.<br>
-                You <strong>${verb}</strong> my soul in the pouring rain,<br>
-                Now nothing but the <strong>${noun}</strong> remains."
+                "Walking through the <strong>${adj}</strong> <strong>${place}</strong>,<br>
+                I found your <strong>${noun}</strong> lying on the floor.<br>
+                You <strong>${verb}</strong> my heart in two,<br>
+                And now I don't love you anymore."
             `;
             const box = document.getElementById('ml-result');
             box.innerHTML = result;
             box.style.display = 'block';
         }
 
-        // 2. Turnstyle (Mixes 2 songs from JSON)
+        // 2. Turnstyle (Mixes 2 songs)
         function playTurnstyle() {
-            if(!lyricsData.length) return;
-            // Pick 2 random unique indices
-            let idx1 = Math.floor(Math.random() * lyricsData.length);
-            let idx2 = Math.floor(Math.random() * lyricsData.length);
-            while(idx1 === idx2) { idx2 = Math.floor(Math.random() * lyricsData.length); }
+            if(validSongs.length < 2) return;
+            
+            let idx1 = Math.floor(Math.random() * validSongs.length);
+            let idx2 = Math.floor(Math.random() * validSongs.length);
+            
+            // Ensure unique indices
+            while(idx1 === idx2) { 
+                idx2 = Math.floor(Math.random() * validSongs.length); 
+            }
 
-            const s1 = lyricsData[idx1];
-            const s2 = lyricsData[idx2];
+            const s1 = validSongs[idx1];
+            const s2 = validSongs[idx2];
 
             const result = `
-                <strong>Concept Mashup:</strong><br>
-                What if the song <em>"${s1.title}"</em> was re-imagined as a <strong>${s2.genre1}</strong> anthem?<br><br>
+                <div style="border-bottom: 2px dashed #999; padding-bottom: 10px; margin-bottom: 10px;">
+                    <strong>THE MIX:</strong> What if <em>"${s1.title}"</em> was written as a <strong>${s2.genre1}</strong> song?
+                </div>
                 <strong>The Vibe:</strong> ${s2.moodTone}<br>
-                <strong>The Hook:</strong> "${s1.commercialHook}"<br>
-                <strong>The Twist:</strong> It's now about <em>${s2.category}</em>!
+                <strong>The Concept:</strong> A story about <em>${s2.category}</em>...<br>
+                <strong>But utilizing the Hook:</strong><br>
+                <em style="color:#800020; font-weight:bold;">"${s1.commercialHook}"</em>
             `;
             const box = document.getElementById('ts-result');
             box.innerHTML = result;
@@ -331,41 +391,35 @@
 
         // 3. Scene Generator
         function playSceneGen() {
-            const person = document.getElementById('cs-person').value || "stranger";
-            const place = document.getElementById('cs-place').value || "shadows";
-            const thing = document.getElementById('cs-thing').value || "memory";
-            const mood = document.getElementById('cs-mood').value || "silent";
+            const person = document.getElementById('cs-person').value || "Stranger";
+            const place = document.getElementById('cs-place').value || "Alleyway";
+            const thing = document.getElementById('cs-thing').value || "Letter";
+            const mood = document.getElementById('cs-mood').value || "Dark";
 
             const templates = [
-                `The ${person} stood in the ${mood} ${place}, holding a ${thing} that whispered of the past.`,
-                `I left the ${thing} behind in the ${place}, but the ${person} still haunts my ${mood} dreams.`,
-                `Every ${thing} reminds me of the ${place} where we became ${mood}.`
+                `The <strong>${person}</strong> stood in the <strong>${mood}</strong> <strong>${place}</strong>, clutching a <strong>${thing}</strong> that whispered of a crime.`,
+                `I left the <strong>${thing}</strong> behind in the <strong>${place}</strong>, but the ghost of the <strong>${person}</strong> still haunts my <strong>${mood}</strong> dreams.`,
+                `Every time I see a <strong>${thing}</strong>, it reminds me of the <strong>${place}</strong> where we became <strong>${mood}</strong>.`
             ];
             const rand = Math.floor(Math.random() * templates.length);
             
             const box = document.getElementById('cs-result');
-            box.innerHTML = `<strong>Scene:</strong> "${templates[rand]}"`;
+            box.innerHTML = `<strong>OPENING LINE:</strong><br>"${templates[rand]}"`;
             box.style.display = 'block';
         }
 
-        // 4. Lightning Lyrics (Random Hook from JSON)
+        // 4. Lightning Lyrics
         function playLightning() {
-            if(!lyricsData.length) return;
-            const rand = Math.floor(Math.random() * lyricsData.length);
-            const song = lyricsData[rand];
+            if(validSongs.length === 0) return;
             
-            // Prefer commercialHook, fallback to snippetA
-            const lyric = song.commercialHook || song.snippetA;
+            const rand = Math.floor(Math.random() * validSongs.length);
+            const song = validSongs[rand];
+            
+            const lyric = song.commercialHook || song.title;
             
             const result = `
-                "${lyric}"<br>
-                <span style="font-size:0.9rem; color:#666;">— form <strong>${song.title}</strong></span>
+                <div style="font-size: 1.4rem; font-weight: bold; color: #800020; margin-bottom: 10px;">"${lyric}"</div>
+                <div style="font-size: 0.9rem; color: #555;">— from <strong>${song.title}</strong> (${song.genre1})</div>
             `;
             const box = document.getElementById('ll-result');
-            box.innerHTML = result;
-            box.style.display = 'block';
-        }
-    </script>
-</body>
-  </html>
-  
+            box.innerHTML = re
