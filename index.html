@@ -23,11 +23,11 @@
         font-weight: bold; /* Bolded text */
     }
     
-    /* 3. New CSS for Gold Script Category Titles (NOW BIGGER) */
+    /* 3. CSS for Sunset Orange Script Category Titles (Formerly Gold) */
     .gold-script {
-        color: #FFD700; /* Gold color, ensuring consistency */
+        color: #FD5E53; /* Sunset Orange */
         font-family: 'YourScriptFont', cursive; 
-        font-size: 1.8em; /* INCREASED SIZE */
+        font-size: 1.8em;
         margin: 0;
     }
 
@@ -58,6 +58,11 @@
         background-color: #e67e00; /* Darker orange on hover */
     }
 
+    /* 6. Logo Width Constraint */
+    .logo-top-left {
+        width: 89px;
+        height: auto;
+    }
 
     /* Existing Box Grid Styles (Retained) */
     .box-grid {
@@ -113,14 +118,47 @@
         font-style: italic;
     }
 
-    /* --- HAMBURGER MENU FIX CSS --- */
+    /* --- HAMBURGER MENU CSS --- */
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: #FFFFFF;
+        transition: all 0.3s ease;
+    }
+
     @media (max-width: 768px) {
+        .hamburger {
+            display: flex; /* Show hamburger on mobile */
+        }
+
         #nav-menu {
             display: none; 
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 100%; /* Push below header */
+            left: 0;
+            background-color: #000; /* Black background for dropdown */
+            padding: 20px 0;
+            z-index: 1000;
+            border-bottom: 2px solid #FFD700;
         }
+
         #nav-menu.active {
             display: flex;
-            flex-direction: column;
+        }
+
+        #nav-menu a {
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
         }
     }
   </style>
@@ -154,12 +192,14 @@
   </script>
 </head>
 <body>
-  <header id="main-header">
+  <header id="main-header" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #000;">
     <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
+    
     <div class="hamburger" onclick="toggleMenu()">
       <div></div><div></div><div></div>
     </div>
-    <nav id="nav-menu">
+
+    <nav id="nav-menu" style="display: flex; gap: 20px;">
       <a href="/bio.html">Bio</a>
       <a href="/industry-pros.html">Industry Pro</a>
       <a href="/lyrics.html">Lyrics</a>
@@ -242,5 +282,5 @@
 <?php include 'footer.php'; ?>
 
 </body>
-    </html>
-    
+  </html>
+        
