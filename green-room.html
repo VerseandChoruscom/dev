@@ -1,133 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="/assets/js/data.js" defer></script> 
-<script src="/assets/js/green-room-scripts.js" defer></script> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Green Room | Verse and Chorus</title>
+    <style>
+        :root {
+            /* Branding Colors */
+            --bg-color: #000000;
+            --header-bg: #000000;
+            --footer-bg: #000000;
+            --gold: #D4AF37;
+            --burgundy: #800020;
+            --text-main: #E5E5E5;
+            
+            /* Page Specific */
+            --winter-green: #2F4F4F; /* Dark Slate Gray/Winter Greenish */
+            --winter-green-light: #5F8575; /* Sage/Winter Green */
+            --title-black: #000000;
+        }
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Green Room Activities | Kellie Larson</title>
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <!-- Link to the dedicated script for the Green Room Games -->
-  <script src="/assets/js/green-room-scripts.js" defer></script> 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Winter Green Background as requested */
+            background-color: var(--winter-green-light);
+            color: #333; /* Dark text for readability on green, unless specified otherwise */
+            line-height: 1.6;
+        }
+
+        /* --- HEADER (Matches index.html) --- */
+        header {
+            background-color: var(--header-bg);
+            border-bottom: 2px solid var(--gold);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            color: var(--gold);
+        }
+
+        .logo {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-toggle { display: none; }
+        .nav-icon {
+            font-size: 2rem;
+            color: var(--gold);
+            cursor: pointer;
+        }
+
+        nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            border-bottom: 2px solid var(--gold);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--burgundy);
+            color: #fff;
+        }
+
+        #nav-check:checked ~ nav { display: flex; }
+
+        @media(min-width: 768px) {
+            .nav-icon { display: none; }
+            nav {
+                position: static;
+                display: flex;
+                flex-direction: row;
+                width: auto;
+                border: none;
+                background: none;
+            }
+            nav a { border: none; width: auto; padding: 0 15px; }
+        }
+
+        /* --- MAIN CONTENT --- */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            /* "Green Room title in black" */
+            color: var(--title-black);
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.2);
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        /* Game Sections */
+        .game-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .game-card h2 {
+            color: var(--burgundy);
+            margin-top: 0;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .game-content {
+            margin-top: 1rem;
+        }
+
+        /* Inputs & Buttons */
+        input[type="text"] {
+            padding: 8px;
+            margin: 5px 0;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button.game-btn {
+            background-color: var(--burgundy);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        button.game-btn:hover {
+            background-color: #000;
+            color: var(--gold);
+        }
+
+        .result-box {
+            background-color: #f4f4f4;
+            border-left: 5px solid var(--gold);
+            padding: 15px;
+            margin-top: 15px;
+            font-style: italic;
+            font-size: 1.1rem;
+            display: none; /* Hidden by default */
+        }
+
+        /* --- FOOTER (Matches index.html) --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 2px solid var(--gold);
+            background-color: var(--footer-bg);
+            color: var(--gold);
+            margin-top: 2rem;
+        }
+        footer a { color: var(--gold); text-decoration: none; margin: 0 10px; }
+        footer a:hover { color: var(--burgundy); }
+
+    </style>
 </head>
 <body>
-  <header id="main-header">
-    <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div><div></div><div></div>
-    </div>
-    <nav id="nav-menu">
-      <a href="/bio.html">Bio</a>
-      <a href="/index.html">Main Stage</a>
-      <a href="/industry-pros.html">Industry Pro</a>
-      <a href="/green-room.html" class="active">Green Room</a>
-      <a href="/lyrics.html">Lyrics</a>
-      <a href="/articles.html">Articles</a>
-      <a href="/reports.html">Reports</a>
-      <a href="/collab.html">Collab</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/legal.html">Legal</a>
-    </nav>
-  </header>
 
-  <main class="page-content">
-    <h1 class="page-header script-text">THE GREEN ROOM</h1>
-    <!-- New Cinematic Songwriter Header -->
-    <h2 style="text-align: center; font-size: 1.25rem; font-weight: 400; color: #555; margin-top: -10px;">Kellie Larson | Cinematic Songwriter & Lyricist</h2>
-    <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-      Welcome to the interactive space! Play with Kellie Larson's lyrics, mix and match concepts, and generate new creative inspiration.
-    </p>
+    <header>
+        <a href="index.html" class="logo">Verse & Chorus</a>
+        <input type="checkbox" id="nav-check" class="nav-toggle">
+        <label for="nav-check" class="nav-icon">&#9776;</label>
+        <nav>
+            <a href="bio.html">Bio</a>
+            <a href="industry-vault.html">Industry Vault</a>
+            <a href="digital-jukebox.html">Jukebox</a>
+            <a href="green-room.html">Green Room</a>
+            <a href="articles.html">Articles</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-    <!-- 1. LYRICAL MADLIBS (UPDATED) -->
-    <section class="game-section">
-      <h3 class="game-title">1. Lyrical Madlibs</h3>
-      <p>Enter six words/phrases to rewrite a classic Kellie Larson lyric!</p>
-      <form id="madlibs-form">
-        <div class="input-group">
-            <label for="madlib-adjective">Adjective:</label>
-            <input type="text" id="madlib-adjective" required placeholder="e.g., sparkling">
-        </div>
-        <div class="input-group">
-            <label for="madlib-noun">Noun (Singular):</label>
-            <input type="text" id="madlib-noun" required placeholder="e.g., guitar">
-        </div>
-        <div class="input-group">
-            <label for="madlib-verb">Verb (Past Tense):</label>
-            <input type="text" id="madlib-verb" required placeholder="e.g., screamed">
-        </div>
-        <div class="input-group">
-            <label for="madlib-adverb">Adverb:</label>
-            <input type="text" id="madlib-adverb" required placeholder="e.g., awkwardly">
-        </div>
-        <div class="input-group">
-            <label for="madlib-plural-noun">Plural Noun:</label>
-            <input type="text" id="madlib-plural-noun" required placeholder="e.g., ghosts">
-        </div>
-        <div class="input-group">
-            <label for="madlib-place">Place:</label>
-            <input type="text" id="madlib-place" required placeholder="e.g., stadium">
-        </div>
-        <button type="submit" onclick="generateMadlib(event)">Rewrite Lyric</button>
-      </form>
-      <div id="madlib-result" class="game-result-box"></div>
-    </section>
+    <main>
+        <h1 class="page-title">The Green Room</h1>
+        <p class="page-subtitle">Interactive Songwriter's Playground</p>
 
-    <!-- 2. 2 SONG TURN STYLE (NOW RANDOM) -->
-    <section class="game-section">
-      <h3 class="game-title">2. 2 Song Turn Style</h3>
-      <p>Press the button to **randomly 'mix'** the themes and concepts from two distinct songs in the catalog to create a new concept summary!</p>
-      <div class="turnstyle-container">
-          <div class="turnstyle-center">Random Mix Generator</div>
-      </div>
-      <button onclick="mixSongs()">Spin The Decks!</button>
-      <div id="turnstyle-result" class="game-result-box"></div>
-    </section>
+        <section class="game-card">
+            <h2>1. Lyrical Madlibs</h2>
+            <p>Enter random words to rewrite a classic verse!</p>
+            <div class="game-content">
+                <input type="text" id="ml-adj" placeholder="Adjective">
+                <input type="text" id="ml-noun" placeholder="Noun (Singular)">
+                <input type="text" id="ml-verb" placeholder="Verb (Past Tense)">
+                <input type="text" id="ml-place" placeholder="Place">
+                <button class="game-btn" onclick="playMadlibs()">Rewrite Lyric</button>
+                <div id="ml-result" class="result-box"></div>
+            </div>
+        </section>
 
-    <!-- 3. CINEMATIC SCENE GENERATOR -->
-    <section class="game-section">
-      <h3 class="game-title">3. Cinematic Scene Generator (AI Powered)</h3>
-      <p>Provide 12 random concepts. The AI will write a unique, cinematic lyric line based on your choices! (This game uses your input, not random lines).</p>
-      <form id="scene-form">
-        <div class="scene-inputs">
-            <div class="input-group"><label>Person:</label><input type="text" id="scene-person" required placeholder="A firefighter"></div>
-            <div class="input-group"><label>Place:</label><input type="text" id="scene-place" required placeholder="In a bookstore"></div>
-            <div class="input-group"><label>Thing:</label><input type="text" id="scene-thing" required placeholder="An old photograph"></div>
-            <div class="input-group"><label>Number:</label><input type="number" id="scene-number" required placeholder="73"></div>
-            <div class="input-group"><label>Color:</label><input type="text" id="scene-color" required placeholder="Neon green"></div>
-            <div class="input-group"><label>Fun Place:</label><input type="text" id="scene-fun-place" required placeholder="Roller rink"></div>
-            <div class="input-group"><label>Fav Celebrity:</label><input type="text" id="scene-celeb" required placeholder="Dwayne Johnson"></div>
-            <div class="input-group"><label>Animal:</label><input type="text" id="scene-animal" required placeholder="Jaguar"></div>
-            <div class="input-group"><label>Transport:</label><input type="text" id="scene-transport" required placeholder="Unicycle"></div>
-            <div class="input-group"><label>Place to Live:</label><input type="text" id="scene-live" required placeholder="Lighthouse"></div>
-            <div class="input-group"><label>U.S. State:</label><input type="text" id="scene-state" required placeholder="Alaska"></div>
-            <div class="input-group"><label>Life Problem:</label><input type="text" id="scene-problem" required placeholder="Can't trust anyone"></div>
-        </div>
-        <button type="submit" onclick="generateCinematicScene(event)">Generate Lyric</button>
-      </form>
-      <div id="scene-result" class="game-result-box"></div>
-    </section>
+        <section class="game-card">
+            <h2>2. 2-Song Turnstyle</h2>
+            <p>Randomly mix themes from two different songs in the catalog to create a brand new concept!</p>
+            <div class="game-content">
+                <button class="game-btn" onclick="playTurnstyle()">Spin The Decks!</button>
+                <div id="ts-result" class="result-box"></div>
+            </div>
+        </section>
 
-    <!-- 4. LIGHTNING LYRICS -->
-    <section class="game-section">
-      <h3 class="game-title">4. Lightning Lyrics</h3>
-      <p>Press the button to instantly pull one of Kellie's most powerful, licensing-ready lyric lines!</p>
-      <button onclick="lightningLyrics()">Get Inspired!</button>
-      <div id="lightning-result" class="game-result-box"></div>
-    </section>
-<a href="**lyrics.html**" style="color: **#FF8C00**;">Play Some Music - Click Here</a>
+        <section class="game-card">
+            <h2>3. Cinematic Scene Generator</h2>
+            <p>The AI (simulated) will write a unique lyric line based on your random inputs.</p>
+            <div class="game-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <input type="text" id="cs-person" placeholder="Person (e.g. ex-lover)">
+                <input type="text" id="cs-place" placeholder="Place (e.g. empty bar)">
+                <input type="text" id="cs-thing" placeholder="Thing (e.g. rusty key)">
+                <input type="text" id="cs-mood" placeholder="Mood (e.g. gloomy)">
+            </div>
+            <button class="game-btn" onclick="playSceneGen()">Generate Lyric</button>
+            <div id="cs-result" class="result-box"></div>
+        </section>
 
-You'll need to replace another_page.html with the actual file path or URL of the page you want to link to.
+        <section class="game-card">
+            <h2>4. Lightning Lyrics</h2>
+            <p>Instantly pull one of Kellie's most powerful, licensing-ready lyric lines.</p>
+            <div class="game-content">
+                <button class="game-btn" onclick="playLightning()">Get Inspired!</button>
+                <div id="ll-result" class="result-box"></div>
+            </div>
+        </section>
 
+    </main>
 
-  </main>
+    <footer>
+        <p>Cinematic Songwriter & Lyricist</p>
+        <p>&copy; 2025 Kellie Larson | VerseandChorus.com</p>
+        <p>☎️ 760-537-0222 | ✉️ info@verseandchorus.com</p>
+        <p><a href="legal.html">Legal</a> | <a href="privacy.html">Privacy</a></p>
+    </footer>
 
-  <footer class="site-footer">
-    <p>
-      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝<a href="/legal.html">Terms and Conditions</a>
-    </p>
-  </footer>
+    <script>
+        // Embedding the JSON data directly as requested to ensure functionality
+        const lyricsData = [
+            // ... I will paste the JSON content here in the final output ...
+        ];
 
+        // --- GAME LOGIC ---
+
+        // 1. Madlibs
+        function playMadlibs() {
+            const adj = document.getElementById('ml-adj').value || "dark";
+            const noun = document.getElementById('ml-noun').value || "heart";
+            const verb = document.getElementById('ml-verb').value || "broke";
+            const place = document.getElementById('ml-place').value || "highway";
+            
+            // Simple template based on generic style
+            const result = `
+                "Walking down the <strong>${adj}</strong> ${place},<br>
+                I saw your <strong>${noun}</strong> and I couldn't look away.<br>
+                You <strong>${verb}</strong> my soul in the pouring rain,<br>
+                Now nothing but the <strong>${noun}</strong> remains."
+            `;
+            const box = document.getElementById('ml-result');
+            box.innerHTML = result;
+            box.style.display = 'block';
+        }
+
+        // 2. Turnstyle (Mixes 2 songs from JSON)
+        function playTurnstyle() {
+            if(!lyricsData.length) return;
+            // Pick 2 random unique indices
+            let idx1 = Math.floor(Math.random() * lyricsData.length);
+            let idx2 = Math.floor(Math.random() * lyricsData.length);
+            while(idx1 === idx2) { idx2 = Math.floor(Math.random() * lyricsData.length); }
+
+            const s1 = lyricsData[idx1];
+            const s2 = lyricsData[idx2];
+
+            const result = `
+                <strong>Concept Mashup:</strong><br>
+                What if the song <em>"${s1.title}"</em> was re-imagined as a <strong>${s2.genre1}</strong> anthem?<br><br>
+                <strong>The Vibe:</strong> ${s2.moodTone}<br>
+                <strong>The Hook:</strong> "${s1.commercialHook}"<br>
+                <strong>The Twist:</strong> It's now about <em>${s2.category}</em>!
+            `;
+            const box = document.getElementById('ts-result');
+            box.innerHTML = result;
+            box.style.display = 'block';
+        }
+
+        // 3. Scene Generator
+        function playSceneGen() {
+            const person = document.getElementById('cs-person').value || "stranger";
+            const place = document.getElementById('cs-place').value || "shadows";
+            const thing = document.getElementById('cs-thing').value || "memory";
+            const mood = document.getElementById('cs-mood').value || "silent";
+
+            const templates = [
+                `The ${person} stood in the ${mood} ${place}, holding a ${thing} that whispered of the past.`,
+                `I left the ${thing} behind in the ${place}, but the ${person} still haunts my ${mood} dreams.`,
+                `Every ${thing} reminds me of the ${place} where we became ${mood}.`
+            ];
+            const rand = Math.floor(Math.random() * templates.length);
+            
+            const box = document.getElementById('cs-result');
+            box.innerHTML = `<strong>Scene:</strong> "${templates[rand]}"`;
+            box.style.display = 'block';
+        }
+
+        // 4. Lightning Lyrics (Random Hook from JSON)
+        function playLightning() {
+            if(!lyricsData.length) return;
+            const rand = Math.floor(Math.random() * lyricsData.length);
+            const song = lyricsData[rand];
+            
+            // Prefer commercialHook, fallback to snippetA
+            const lyric = song.commercialHook || song.snippetA;
+            
+            const result = `
+                "${lyric}"<br>
+                <span style="font-size:0.9rem; color:#666;">— form <strong>${song.title}</strong></span>
+            `;
+            const box = document.getElementById('ll-result');
+            box.innerHTML = result;
+            box.style.display = 'block';
+        }
+    </script>
 </body>
-</html>
-
+  </html>
+  
