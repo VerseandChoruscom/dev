@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verse and Chorus | Cinematic Songwriter & Lyricist Kellie Larson</title>
-    <meta name="description" content="Official site of Kellie Larson, Cinematic Songwriter and Lyricist. Explore the Digital Jukebox, Industry Vault for A&R, and the Green Room for creative tools.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Official site of Kellie Larson, Cinematic Songwriter and Lyricist. Digital Jukebox, Industry Vault, and Green Room.">
     <style>
         :root {
-            --primary-color: #333;
-            --accent-color: #008CBA; 
-            --sunset-orange: #FD5E53; /* Added Sunset Orange */
-            --bg-color: #f4f4f4;
-            --text-color: #333;
-            --white: #fff;
+            /* --- CINEMATIC BRAND COLORS --- */
+            --bg-color: #000000;        /* Pure Black */
+            --card-bg: #111111;         /* Off-Black for depth */
+            --gold: #D4AF37;            /* Metallic Gold */
+            --gold-dim: #AA8C2C;        /* Darker Gold for borders/hover */
+            --burgundy: #800020;        /* Deep Burgundy */
+            --burgundy-bright: #a00028; /* Brighter Burgundy for hover */
+            --text-main: #E5E5E5;       /* Silver/White for readability */
         }
         
         body {
@@ -21,121 +22,317 @@
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--text-main);
             line-height: 1.6;
         }
 
-        /* --- Header & Hal Navigation --- */
+        /* --- HEADER & NAV (Hamburger on Top) --- */
         header {
-            background: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #000;
+            border-bottom: 2px solid var(--gold);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 0; /* Reset padding for flex container */
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            padding: 1rem 2rem;
-        }
-
-        /* Logo Area - 80% Width */
-        .logo-area {
-            width: 80%;
         }
 
         .logo {
-            font-weight: bold;
+            color: var(--gold);
             font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             text-decoration: none;
-            color: var(--primary-color);
-            display: block;
         }
 
-        /* Hal (Hamburger) Navigation - 20% Width */
-        .hal-nav {
-            width: 20%;
-            display: flex;
-            justify-content: flex-end;
-            position: relative;
-        }
-
-        /* Hamburger Icon */
+        /* Nav Toggle (Checkbox Hack) */
+        .nav-toggle { display: none; }
         .nav-icon {
-            font-size: 1.8rem;
+            font-size: 2rem;
+            color: var(--gold);
             cursor: pointer;
-            color: var(--primary-color);
-        }
-        
-        .nav-icon:hover {
-            color: var(--sunset-orange);
         }
 
-        /* Hidden Checkbox */
-        #nav-check {
-            display: none;
-        }
-
-        /* Dropdown Menu */
-        .nav-links {
+        nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            border-bottom: 2px solid var(--gold);
             display: none; /* Hidden by default */
             flex-direction: column;
-            position: absolute;
-            top: 50px;
-            right: 0;
-            background: var(--white);
-            width: 200px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            border-radius: 4px;
-            border: 1px solid #ddd;
+            align-items: center;
         }
 
-        .nav-links a {
-            padding: 1rem;
+        nav a {
+            color: var(--gold);
             text-decoration: none;
-            color: var(--text-color);
-            border-bottom: 1px solid #eee;
-            display: block;
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
 
-        .nav-links a:hover {
-            background: #f9f9f9;
-            color: var(--sunset-orange);
+        nav a:hover {
+            background-color: var(--burgundy);
+            color: #fff;
         }
 
         /* Show Menu when Checked */
-        #nav-check:checked ~ .nav-links {
+        #nav-check:checked ~ nav {
             display: flex;
         }
 
-        /* --- Hero Section --- */
+        /* Desktop Menu */
+        @media(min-width: 768px) {
+            .nav-icon { display: none; }
+            nav {
+                position: static;
+                display: flex;
+                flex-direction: row;
+                width: auto;
+                border: none;
+                background: none;
+            }
+            nav a {
+                border: none;
+                width: auto;
+                padding: 0 15px;
+            }
+        }
+
+        /* --- HERO SECTION --- */
         .hero {
             text-align: center;
-            padding: 3rem 1rem;
-            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            padding: 4rem 1rem;
+            background: radial-gradient(circle, #222 0%, #000 100%);
+            border-bottom: 1px solid var(--gold-dim);
         }
-        .hero h1 { margin-bottom: 0.5rem; }
-        .hero p { font-size: 1.2rem; opacity: 0.8; }
 
-        /* --- Main Layout --- */
+        .hero h1 {
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+        
+        .hero p {
+            color: var(--text-main);
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* --- MAIN GRID --- */
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 2rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        /* --- Cards/Sections --- */
+        /* --- CARDS --- */
         .card {
-            background: var(--white);
-            border-radius: 8px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--gold-dim);
+            padding: 0; /* Remove padding to let image fill top */
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); /* Gold Glow */
+            border-color: var(--gold);
+        }
+
+        /* IMAGES - Replaces Emojis */
+        .card-img-container {
+            width: 100%;
+            height: 200px; /* Fixed height for consistency */
+            background-color: #222;
+            overflow: hidden;
+            border-bottom: 1px solid var(--gold-dim);
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image fills box without stretching */
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card h2 {
+            color: var(--gold);
+            margin-top: 0;
+            font-family: 'Georgia', serif;
+        }
+
+        .card p {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            background-color: var(--burgundy);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: 1px solid var(--burgundy);
+            transition: background 0.3s, color 0.3s, border 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #000;
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        /* Green Room Specific Tweak */
+        .green-room {
+            border-left: 4px solid #4CAF50; /* Subtle green accent */
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
             padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0
+            border-top: 1px solid var(--gold);
+            background-color: #000;
+            color: var(--gold);
+            margin-top: 2rem;
+        }
+
+        footer a { color: var(--gold); text-decoration: none; margin: 0 10px; }
+        footer a:hover { color: var(--burgundy); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Verse & Chorus</a>
         
+        <input type="checkbox" id="nav-check" class="nav-toggle">
+        <label for="nav-check" class="nav-icon">&#9776;</label>
+
+        <nav>
+            <a href="bio.html">Bio</a>
+            <a href="industry-vault.html">Industry Vault</a>
+            <a href="digital-jukebox.html">Jukebox</a>
+            <a href="green-room.html">Green Room</a>
+            <a href="articles.html">Articles</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Cinematic Songwriter & Lyricist Kellie Larson</h1>
+        <p>A&R Talent Vault & Cinematic Concept Lyrics for Sync Licensing</p>
+    </section>
+
+    <main>
+
+        <article class="card">
+            <div class="card-img-container">
+                <img src="images/bio.jpg" alt="Kellie Larson Profile">
+            </div>
+            <div class="card-content">
+                <h2>Spotlight: The Bio</h2>
+                <p><strong>Meet the Cinematic Lyricist.</strong> Read the official songwriter profile of Kellie Larson. Discover the voice and vision behind the lyrics.</p>
+                <a href="bio.html" class="btn">Read Profile</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card-img-container">
+                <img src="images/industry.jpg" alt="Industry Vault">
+            </div>
+            <div class="card-content">
+                <h2>Industry Vault</h2>
+                <p><strong>Curated Catalog for A&R Scouts.</strong> Discover Vetted Lyricists and High-Concept Themes specifically designed for Film and TV sync opportunities.</p>
+                <a href="industry-vault.html" class="btn">Enter Vault</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card-img-container">
+                <img src="images/jukebox.jpg" alt="Digital Jukebox">
+            </div>
+            <div class="card-content">
+                <h2>Digital Jukebox</h2>
+                <p><strong>View Lyrics for Sale & Licensing.</strong> Step up to the jukebox and browse the catalog. Find lyrics available for sync, publication, and production.</p>
+                <a href="digital-jukebox.html" class="btn">Play My Lyrics</a>
+            </div>
+        </article>
+
+        <article class="card green-room">
+            <div class="card-img-container">
+                <img src="images/greenroom.jpg" alt="Green Room Fun">
+            </div>
+            <div class="card-content">
+                <h2>The Green Room</h2>
+                <p><strong>Songwriter's Playground & Funhouse!</strong> Unleash your inner genius with silly prompts, creative toys, and inspiring tools. The ultimate backstage hang for finding your next big hit!</p>
+                <a href="green-room.html" class="btn">Get Creative</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card-img-container">
+                <img src="images/articles.jpg" alt="Articles and News">
+            </div>
+            <div class="card-content">
+                <h2>Articles</h2>
+                <p><strong>Tips and Trends.</strong> Deep dives into songwriting insights, industry advice, and the business of music.</p>
+                <a href="articles.html" class="btn">Read Articles</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card-img-container">
+                <img src="images/contact.jpg" alt="Contact and Collab">
+            </div>
+            <div class="card-content">
+                <h2>Collab & Commission</h2>
+                <p><strong>Lyric Collaboration.</strong> Hire a Cinematic Lyricist for your next project. Let's write history together.</p>
+                <a href="contact.html" class="btn">Work Together</a>
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>Cinematic Songwriter & Lyricist</p>
+        <p>&copy; 2025 Kellie Larson | VerseandChorus.com</p>
+        <p>☎️ 760-537-0222 | ✉️ info@verseandchorus.com</p>
+        <p>
+            <a href="legal.html">Legal</a> | 
+            <a href="privacy.html">Privacy</a>
+        </p>
+    </footer>
+
+</body>
+                </html>
+    
