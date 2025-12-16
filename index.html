@@ -1,239 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><?php include 'header.php'; ?>
-  
-  <title>Cinematic Lyricist Talent Vault | Professional Songwriter, A&R Scouting, and Sync Licensing</title>
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
-  <meta name="description" content="Industry Pro Vault: Exclusive, Vetted Talent & Cinematic Lyrics for A&R, Sync, and Music Supervisors. Discover professional, high-concept themes.">
-
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  
-  <style>
-    /* 1. CSS for White Navigation Links */
-    #nav-menu a {
-        color: #FFFFFF !important; /* Forces the navigation text color to white */
-    }
-
-    /* 2. CSS for the main songwriter heading (White and Bold) */
-    .white-bold-header {
-        color: #FFFFFF; /* White color */
-        font-weight: bold; /* Bolded text */
-        /* Retaining original font style if 'script-text' applies it, otherwise add font-family here */
-    }
-    
-    /* 3. New CSS for Gold Script Category Titles (NOW BIGGER) */
-    .gold-script {
-        color: #FFD700; /* Gold color, ensuring consistency */
-        /* Assuming 'script-text' is defined elsewhere, if not, you may need to add font-family here */
-        font-family: 'YourScriptFont', cursive; 
-        font-size: 1.8em; /* INCREASED SIZE */
-        margin: 0;
-    }
-
-    /* 4. Hamburger Menu Line Color (White) */
-    .hamburger div {
-        background-color: #FFFFFF; /* Makes the hamburger lines white */
-    }
-
-    /* 5. Scroll-to-Top Button CSS (Sunrise Orange) */
-    #scroll-to-top-btn {
-        display: none; /* Hidden by default */
-        position: fixed; /* Fixed/sticky position */
-        bottom: 20px; /* Place the button at the bottom of the page */
-        right: 30px; /* Place the button 30px from the right */
-        z-index: 99; /* Make sure it does not overlap other elements */
-        border: none; /* Remove borders */
-        outline: none; /* Remove outline */
-        background-color: #FF8C00; /* Sunrise Orange */
-        color: white; /* Text color */
-        cursor: pointer; /* Add a mouse pointer on hover */
-        padding: 15px; /* Some padding */
-        border-radius: 10px; /* Rounded corners */
-        font-size: 18px; /* Increase font size */
-        transition: opacity 0.3s;
-    }
-
-    #scroll-to-top-btn:hover {
-        background-color: #e67e00; /* Darker orange on hover */
-    }
-
-
-    /* Existing Box Grid Styles (Retained) */
-    .box-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 40px 20px;
-    }
-
-    .box-link {
-      width: 280px;
-      height: 280px;
-      background-color: #800020; /* Retaining existing color */
-      border: 4px solid #6c7a89;
-      color: #fff;
-      text-align: center;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.3s ease;
-      padding: 10px;
-    }
-
-    .box-link:hover {
-      transform: scale(1.05);
-    }
-
-    /* Updated Image Size for Larger Boxes */
-    .box-link img {
-      max-width: 140px; /* Increased from 100px to 140px for a larger look */
-      height: auto;
-      margin-bottom: 10px;
-    }
-    
-    /* Style for SEO Description 1 in Boxes (Retained) */
-    .box-description {
-        font-size: 0.8em;
-        margin-top: 5px;
-        line-height: 1.2;
-        opacity: 0.9;
-        font-weight: 300;
-    }
-
-    /* NEW Style for SEO Description 2 in Boxes */
-    .box-description-seo {
-        font-size: 0.7em; /* Slightly smaller for the secondary line */
-        margin-top: 2px;
-        line-height: 1.2;
-        opacity: 0.7;
-        font-style: italic;
-    }
-
-    /* --- HAMBURGER MENU FIX CSS --- */
-    @media (max-width: 768px) {
-        #nav-menu {
-            display: none; 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verse and Chorus | Cinematic Songwriter & Lyricist Kellie Larson</title>
+    <meta name="description" content="Official site of Kellie Larson, Cinematic Songwriter and Lyricist. Explore the Digital Jukebox, Industry Vault for A&R, and the Green Room for creative tools.">
+    <style>
+        :root {
+            --primary-color: #333;
+            --accent-color: #008CBA; /* Example accent */
+            --bg-color: #f4f4f4;
+            --text-color: #333;
+            --white: #fff;
         }
-        #nav-menu.active {
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* --- Header & Hamburger Nav --- */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        /* Simple CSS Hamburger Menu */
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-icon {
+            cursor: pointer;
+            font-size: 1.8rem;
+        }
+
+        nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            display: none;
+            flex-direction: column;
+            border-top: 1px solid #ddd;
+        }
+
+        nav a {
+            padding: 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background: #f9f9f9;
+            color: var(--accent-color);
+        }
+
+        /* Show nav when checkbox is checked */
+        #nav-check:checked ~ nav {
+            display: flex;
+        }
+
+        /* Desktop View adjustment */
+        @media(min-width: 768px) {
+            .nav-icon { display: none; }
+            nav {
+                position: static;
+                display: flex;
+                flex-direction: row;
+                width: auto;
+                background: none;
+                border: none;
+            }
+            nav a {
+                border: none;
+                padding: 0 1rem;
+            }
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+        }
+        .hero h1 { margin-bottom: 0.5rem; }
+        .hero p { font-size: 1.2rem; opacity: 0.8; }
+
+        /* --- Main Layout --- */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* --- Cards/Sections --- */
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
-    }
-  </style>
 
-  <script>
-    // Existing function to toggle the navigation menu
-    function toggleMenu() {
-        const navMenu = document.getElementById('nav-menu');
-        navMenu.classList.toggle('active'); 
-    }
-
-    // NEW JavaScript for Scroll-to-Top functionality
-    window.onscroll = function() {scrollFunction()};
-
-    function scrollFunction() {
-        const btn = document.getElementById("scroll-to-top-btn");
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            btn.style.display = "block";
-        } else {
-            btn.style.display = "none";
+        .card:hover {
+            transform: translateY(-5px);
         }
-    }
 
-    // Function to scroll to the top with soft scrolling
-    function topFunction() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth' // This enables soft/smooth scrolling
-        });
-    }
-  </script>
+        .card h2 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: auto;
+            padding: 0.75rem 1.5rem;
+            background: var(--accent-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #00779e;
+        }
+
+        /* Specific Styles for Green Room */
+        .green-room {
+            background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+            border: 2px dashed #4caf50;
+        }
+        .green-room h2 { color: #2e7d32; }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        footer a { color: #ccc; text-decoration: none; margin: 0 0.5rem; }
+        footer a:hover { color: var(--white); }
+
+        .back-to-top {
+            display: block;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-  <header id="main-header">
-    <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div><div></div><div></div>
-    </div>
-    <nav id="nav-menu">
-      <a href="/bio.html">Bio</a>
-      <a href="/industry-pros.html">Industry Pro</a>
-      <a href="/lyrics.html">Lyrics</a>
-      <a href="/articles.html">Articles</a>
-      <a href="/reports.html">Reports</a>
-      <a href="/collab.html">Collab</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/legal.html">Legal</a>
-    </nav>
-  </header>
 
-  <main class="page-content">
-    <h1 class="page-header script-text">VERSE AND CHORUS | A&R Talent Vault & Cinematic Concept Lyrics for Sync</h1>
-    <h2 class="white-bold-header">Kellie Larson — Cinematic Songwriter & Lyricist</h2>
-    <p style="max-width: 800px; margin: 20px auto; text-align: center;">
-      Welcome to the official site of Kellie Larson. Explore lyrics, creative tools, industry resources, and interactive features designed to showcase Kellie’s voice and vision.
-    </p>
+    <header>
+        <a href="index.html" class="logo">Verse and Chorus</a>
+        
+        <input type="checkbox" id="nav-check" class="nav-toggle">
+        <label for="nav-check" class="nav-icon">&#9776;</label>
 
-    <div class="box-grid">
-      <a href="/bio.html" class="box-link">
-        <img src="/images/cover/bio-box-photo.jpg" alt="Kellie Larson Profile: Cinematic Songwriter" />
-        <h3 class="gold-script">Spotlight</h3>
-        <span class="box-description">Meet the **Cinematic Lyricist**</span>
-        <span class="box-description-seo">Read the official songwriter profile.</span>
-      </a>
-      <a href="/lyrics.html" class="box-link">
-        <img src="/images/cover/lyrics-box-photo.jpg" alt="Lyrics Catalog for Sale and Licensing" />
-        <h3 class="gold-script">Setlist</h3>
-        <span class="box-description">View Lyrics for Sale & Licensing</span>
-        <span class="box-description-seo">Lyrics available for sync and publication.</span>
-      </a>
-      <a href="/green-room.html" class="box-link">
-        <img src="/images/cover/green-room-box-photo.jpg" alt="Songwriting Tools and Resources" />
-        <h3 class="gold-script">Green Room</h3>
-        <span class="box-description">Creative Tools for New Songwriters</span>
-        <span class="box-description-seo">Resources to inspire your next song.</span>
-      </a>
-      <a href="/industry-pros.html" class="box-link">
-        <img src="/images/cover/industry-pros-box-photo.jpg" alt="A&R Talent Scouting Vault" />
-        <h3 class="gold-script">Industry Vault</h3>
-        <span class="box-description">Curated Catalog for **A&R Scouts** & **Music Supervisors**</span>
-        <span class="box-description-seo">Discover **Vetted Lyricists** and **High-Concept Themes** for Film/TV.</span>
-      </a>
-      <a href="/articles.html" class="box-link">
-        <img src="/images/cover/articles-box-photo.jpg" alt="Songwriting and Music Industry Articles" />
-        <h3 class="gold-script">Articles</h3>
-        <span class="box-description">Tips and Trends for the Music Industry</span>
-        <span class="box-description-seo">Songwriting insights and advice.</span>
-      </a>
-      <a href="/reports.html" class="box-link">
-        <img src="/images/cover/reports-box-photo.jpg" alt="Professional Lyric Report Service" />
-        <h3 class="gold-script">Lyric Reports</h3>
-        <span class="box-description">**Professional Lyric Analysis & Song Critique**</span>
-        <span class="box-description-seo">Get expert **Songwriter Consultation** and **Critique**.</span>
-      </a>
-      <a href="/collab.html" class="box-link">
-        <img src="/images/cover/collab-box-photo.jpg" alt="Commission Lyrics for Collaboration" />
-        <h3 class="gold-script">Collab / Commission</h3>
-        <span class="box-description">**Lyric Collaboration** or **Custom Commission**</span>
-        <span class="box-description-seo">Hire a **Cinematic Lyricist** for your next collaboration.</span>
-      </a>
-    </div>
-  </main>
+        <nav>
+            <a href="#bio">Bio</a>
+            <a href="#industry">Industry Pros</a>
+            <a href="#jukebox">Digital Jukebox</a>
+            <a href="#green-room">Green Room</a>
+            <a href="#articles">Articles</a>
+            <a href="#collab">Collab</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  <button onclick="topFunction()" id="scroll-to-top-btn" title="Go to top">⬆️</button>
+    <section class="hero">
+        <h1>Cinematic Songwriter & Lyricist Kellie Larson</h1>
+        <p>A&R Talent Vault & Cinematic Concept Lyrics for Sync Licensing</p>
+    </section>
 
-  <footer class="site-footer">
-    <p>
-      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝 <a href="/legal.html">Legal</a>
-    </p>
-  </footer>
-<?php include 'footer.php'; ?>
+    <main>
+        
+        <section id="bio" class="card">
+            <div class="card-icon">🎤</div>
+            <h2>Spotlight: The Bio</h2>
+            <p><strong>Meet the Cinematic Lyricist.</strong> Read the official songwriter profile of Kellie Larson. Discover the voice and vision behind the lyrics.</p>
+            <a href="bio.html" class="btn">Read Profile</a>
+        </section>
+
+        <section id="industry" class="card">
+            <div class="card-icon">🏢</div>
+            <h2>Industry Vault</h2>
+            <p><strong>Curated Catalog for A&R Scouts & Music Supervisors.</strong> Discover Vetted Lyricists and High-Concept Themes specifically designed for Film and TV sync opportunities.</p>
+            <a href="industry-vault.html" class="btn">Enter Vault</a>
+        </section>
+
+        <section id="jukebox" class="card">
+            <div class="card-icon">🎶</div>
+            <h2>Digital Jukebox</h2>
+            <p><strong>View Lyrics for Sale & Licensing.</strong> Step up to the jukebox and browse the catalog. Find lyrics available for sync, publication, and production.</p>
+            <a href="digital-jukebox.html" class="btn">Play My Lyrics</a>
+        </section>
+
+        <section id="green-room" class="card green-room">
+            <div class="card-icon">🛋️</div>
+            <h2>The Green Room</h2>
+            <p><strong>Songwriter's Playground & Funhouse!</strong> Unleash your inner genius with silly prompts, creative toys, and inspiring tools. It's the ultimate backstage hang for new songwriters to find their next big hit!</p>
+            <a href="green-room.html" class="btn">Get Creative</a>
+        </section>
+
+        <section id="articles" class="card">
+            <div class="card-icon">📰</div>
+            <h2>Articles</h2>
+            <p><strong>Tips and Trends for the Music Industry.</strong> Deep dives into songwriting insights, industry advice, and the business of music.</p>
+            <a href="articles.html" class="btn">Read Articles</a>
+        </section>
+
+        <section id="reports" class="card">
+            <div class="card-icon">📊</div>
+            <h2>Lyric Reports</h2>
+            <p><strong>Professional Lyric Analysis & Song Critique.</strong> Get expert Songwriter Consultation and constructive critique to polish your work.</p>
+            <a href="lyric-reports.html" class="btn">Get Analyzed</a>
+        </section>
+
+        <section id="collab" class="card">
+            <div class="card-icon">🤝</div>
+            <h2>Collab & Commission</h2>
+            <p><strong>Lyric Collaboration or Custom Commission.</strong> Hire a Cinematic Lyricist for your next project. Let's write history together.</p>
+            <a href="contact.html" class="btn">Work Together</a>
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <h3>Cinematic Songwriter & Lyricist</h3>
+        <p>&copy; 2025 Kellie Larson | VerseandChorus.com</p>
+        <p>☎️ 760-537-0222 | ✉️ info@verseandchorus.com</p>
+        <p>
+            <a href="legal.html">Legal</a> | 
+            <a href="privacy.html">Privacy</a>
+        </p>
+        <a href="#" class="back-to-top">⬆️</a>
+    </footer>
 
 </body>
-</html>
+  </html>
+              
