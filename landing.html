@@ -78,14 +78,14 @@
             cursor: pointer;
             transition: transform 0.3s ease;
             width: 100%;
+            height: 80vh; /* Constrain height to keep it above footer */
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
         }
         
         #logo-container:hover {
-            transform: scale(1.02);
+            transform: scale(1.01);
         }
 
         /* Footer Styling */
@@ -98,20 +98,20 @@
             padding-bottom: 1.5rem;
             color: white;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-            pointer-events: none; /* Let clicks pass through to the "open curtain" event if needed */
+            pointer-events: none; 
         }
     </style>
 </head>
 <body class="bg-gray-900 flex items-center justify-center">
 
     <h1 class="sr-only">Kellie Larson Cinematic Lyricist and Songwriter Portfolio Entrance</h1>
-    <p class="sr-only">Connecting A&R representatives with professional cinematic songwriting and lyric writing services. Specializing in emotional depth and high production value tracks for the entertainment industry.</p>
+    <p class="sr-only">Connecting A&R representatives with professional cinematic songwriting and lyric writing services.</p>
 
     <div id="leftCurtain" class="curtain"></div>
     <div id="rightCurtain" class="curtain"></div>
 
-    <div id="logo-container" class="absolute p-4 rounded-xl text-center">
-        <img src="verse-and-chorus-logo.png" alt="Verse and Chorus Logo" class="w-[75vw] h-auto mx-auto object-contain drop-shadow-2xl">
+    <div id="logo-container" class="absolute">
+        <img src="verse-and-chorus-logo.png" alt="Verse and Chorus Logo" class="w-[98vw] max-h-[80vh] mx-auto object-contain drop-shadow-2xl">
     </div>
 
     <footer>
@@ -136,38 +136,30 @@
          */
         if (!isMobile) {
             document.addEventListener('mousemove', (e) => {
-                // Creates a radial gradient that acts as a spotlight
-                // The center is bright, fading to fully opaque black (the darkness of the room)
                 const x = (e.clientX / window.innerWidth) * 100;
                 const y = (e.clientY / window.innerHeight) * 100;
                 
-                spotlight.style.background = `radial-gradient(circle 250px at ${x}% ${y}%, transparent 0%, rgba(0, 0, 0, 0.95) 90%)`;
+                // Increased spotlight size to 350px to match bigger logo
+                spotlight.style.background = `radial-gradient(circle 350px at ${x}% ${y}%, transparent 0%, rgba(0, 0, 0, 0.95) 90%)`;
             });
         } else {
-            // Hide spotlight and show default cursor on mobile
             spotlight.style.opacity = '0';
             document.body.style.cursor = 'default';
         }
-
 
         /**
          * Curtain Opening and Redirection Logic
          */
         logoContainer.addEventListener('click', () => {
-            // 1. Start the curtain opening animation
             leftCurtain.classList.add('open-left');
             rightCurtain.classList.add('open-right');
-            
-            // 2. Hide the spotlight during the transition
             spotlight.style.opacity = '0';
 
-            // 3. Wait for the transition to finish (2000ms from CSS) before redirecting
             setTimeout(() => {
                 window.location.href = 'index.html';
-            }, 1800); // 1.8 seconds delay before redirection
+            }, 1800);
         });
-
     </script>
 </body>
     </html>
-    
+            
