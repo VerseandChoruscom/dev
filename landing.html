@@ -4,119 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinematic Lyricist | Entrance to Kellie Larson's Songwriting Portfolio</title>
-    <meta name="description" content="Official entrance to the portfolio of Kellie Larson, Cinematic Lyricist and Songwriter. Discover award-winning, A&R-ready music for film, television, and major artists.">
-    <meta name="keywords" content="Kellie Larson, Cinematic Lyricist, Songwriter, A&R, Film Music, TV Scores, Songwriting Portfolio, Cinematic Score, Music for Licensing">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom Tailwind Configuration for Burgundy */
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'burgundy': '#800020', /* A deep, rich burgundy */
-                    },
-                    cursor: {
-                        'none': 'none',
+                        'burgundy': '#800020',
                     }
                 }
             }
         }
 
-        /* Hide the default cursor */
         body {
             cursor: none;
             height: 100vh;
+            width: 100vw;
             overflow: hidden;
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #800020; /* The base burgundy for the 1% borders */
         }
 
-        /* The spotlight element */
+        /* The Spotlight layer */
         #spotlight {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Allows clicks to pass through */
+            pointer-events: none;
             mix-blend-mode: hard-light;
-            z-index: 10;
+            z-index: 100;
             transition: opacity 0.3s ease-in-out;
         }
 
-        /* Curtains */
+        /* Curtains - positioned to show 2% peek on each side */
         .curtain {
             position: fixed;
             top: 0;
             height: 100vh;
-            width: 50vw;
-            background-color: #800020; /* Burgundy */
-            transition: transform 2s cubic-bezier(0.86, 0, 0.07, 1); /* Slower, dramatic transition */
-            z-index: 20;
+            width: 47.5vw; /* Adjusted so they don't meet perfectly, showing the center */
+            background-color: #800020;
+            transition: transform 2s cubic-bezier(0.86, 0, 0.07, 1);
+            z-index: 50;
         }
 
-        #leftCurtain {
-            left: 0;
-        }
+        #leftCurtain { left: 0; transform: translateX(2%); }
+        #rightCurtain { right: 0; transform: translateX(-2%); }
 
-        #rightCurtain {
-            right: 0;
-        }
+        .open-left { transform: translateX(-100%) !important; }
+        .open-right { transform: translateX(100%) !important; }
 
-        .open-left {
-            transform: translateX(-100%);
-        }
-
-        .open-right {
-            transform: translateX(100%);
-        }
-
-        /* Logo/Clickable area */
+        /* Splash Logo: 95% Width/Height */
         #logo-container {
-            z-index: 30;
+            position: absolute;
+            top: 1.5%; /* 1% border top + slight offset */
+            left: 2.5%; /* Centers the 95% width */
+            width: 95vw;
+            height: 95vh;
+            z-index: 60;
             cursor: pointer;
-            transition: transform 0.3s ease;
-            width: 100%;
-            height: 80vh; /* Constrain height to keep it above footer */
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        
-        #logo-container:hover {
-            transform: scale(1.01);
+
+        #splash-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
-        /* Footer Styling */
+        /* Header (Hidden behind curtains initially) */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: #800020;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 30;
+        }
+
+        #menu-overlay {
+            display: none;
+            position: fixed;
+            top: 100px;
+            right: 0;
+            width: 250px;
+            background: black;
+            z-index: 40;
+        }
+        #menu-overlay.active { display: block; }
+
         footer {
-            z-index: 30; /* Sit on top of curtains */
             position: fixed;
             bottom: 0;
             width: 100%;
-            text-align: center;
-            padding-bottom: 1.5rem;
+            padding-bottom: 10px;
+            z-index: 70;
             color: white;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-            pointer-events: none; 
+            text-align: center;
+            pointer-events: none;
         }
     </style>
 </head>
-<body class="bg-gray-900 flex items-center justify-center">
+<body class="flex items-center justify-center">
 
-    <h1 class="sr-only">Kellie Larson Cinematic Lyricist and Songwriter Portfolio Entrance</h1>
-    <p class="sr-only">Connecting A&R representatives with professional cinematic songwriting and lyric writing services.</p>
+    <header>
+        <div style="width: 90%; height: 100%;">
+            <img src="verse-and-chorus-logo.png" alt="Logo" class="h-full w-full object-contain object-left">
+        </div>
+        <button id="menu-btn" class="text-white focus:outline-none">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+        <div id="menu-overlay">
+            <nav class="flex flex-col p-6 space-y-4 text-white text-right">
+                <a href="index.html" class="hover:text-gray-400">Home</a>
+                <a href="#" class="hover:text-gray-400">Portfolio</a>
+                <a href="#" class="hover:text-gray-400">Services</a>
+                <a href="#" class="hover:text-gray-400">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-    <div id="leftCurtain" class="curtain"></div>
-    <div id="rightCurtain" class="curtain"></div>
+    <div id="leftCurtain" class="curtain shadow-[10px_0_15px_rgba(0,0,0,0.5)]"></div>
+    <div id="rightCurtain" class="curtain shadow-[-10px_0_15px_rgba(0,0,0,0.5)]"></div>
 
-    <div id="logo-container" class="absolute">
-        <img src="verse-and-chorus-logo.png" alt="Verse and Chorus Logo" class="w-[98vw] max-h-[80vh] mx-auto object-contain drop-shadow-2xl">
+    <div id="logo-container">
+        <img src="verse-and-chorus-logo.png" id="splash-img" alt="Verse and Chorus Logo">
     </div>
 
     <footer>
-        <p class="text-sm md:text-base font-medium tracking-wide">
-            Kellie Larson 🔥 Cinematic Songwriter and Lyricist 🎙️ info@verseandchorus.com ✉️(760) 537-0222 ☎️
+        <p class="text-sm md:text-base font-medium">
+            Kellie Larson 🔥 Cinematic Songwriter and Lyricist 🎙️ info@verseandchorus.com
         </p>
     </footer>
 
@@ -127,39 +154,33 @@
         const leftCurtain = document.getElementById('leftCurtain');
         const rightCurtain = document.getElementById('rightCurtain');
         const spotlight = document.getElementById('spotlight');
+        const menuBtn = document.getElementById('menu-btn');
+        const menuOverlay = document.getElementById('menu-overlay');
 
-        // Check for mobile device (based on common touch criteria)
-        const isMobile = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+        const isMobile = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
-        /**
-         * Spotlight Cursor Effect (Desktop only)
-         */
         if (!isMobile) {
             document.addEventListener('mousemove', (e) => {
                 const x = (e.clientX / window.innerWidth) * 100;
                 const y = (e.clientY / window.innerHeight) * 100;
-                
-                // Increased spotlight size to 350px to match bigger logo
-                spotlight.style.background = `radial-gradient(circle 350px at ${x}% ${y}%, transparent 0%, rgba(0, 0, 0, 0.95) 90%)`;
+                spotlight.style.background = `radial-gradient(circle 350px at ${x}% ${y}%, transparent 0%, rgba(0, 0, 0, 0.98) 95%)`;
             });
         } else {
             spotlight.style.opacity = '0';
             document.body.style.cursor = 'default';
         }
 
-        /**
-         * Curtain Opening and Redirection Logic
-         */
         logoContainer.addEventListener('click', () => {
             leftCurtain.classList.add('open-left');
             rightCurtain.classList.add('open-right');
             spotlight.style.opacity = '0';
+            logoContainer.style.display = 'none';
+            document.body.style.cursor = 'default';
+        });
 
-            setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 1800);
+        menuBtn.addEventListener('click', () => {
+            menuOverlay.classList.toggle('active');
         });
     </script>
 </body>
-    </html>
-            
+</html>
