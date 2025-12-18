@@ -12,61 +12,99 @@
   <link rel="stylesheet" href="/assets/css/style.css" />
   
   <style>
-    /* 1. CSS for White Navigation Links */
-    #nav-menu a {
-        color: #FFFFFF !important; /* Forces the navigation text color to white */
+    /* --- COLOR PALETTE --- */
+    :root {
+        --metallic-gold: #D4AF37;
+        --burgundy: #800020;
+        --white: #FFFFFF;
+        --black: #000000;
     }
 
-    /* 2. CSS for the main songwriter heading (White and Bold) */
-    .white-bold-header {
-        color: #FFFFFF; /* White color */
-        font-weight: bold; /* Bolded text */
-    }
-    
-    /* 3. CSS for Box Titles (Requested: White) */
-    .gold-script {
-        color: #FFFFFF; /* White per request */
-        font-family: 'YourScriptFont', cursive; 
-        font-size: 1.8em;
-        margin: 0;
+    /* 1. Header & Nav Layout */
+    #main-header {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 10px 20px; 
+        background: var(--black);
+        position: relative;
+        flex-wrap: wrap; /* Allows wrapping on small screens */
     }
 
-    /* 4. Hamburger Menu Line Color (White) */
-    .hamburger div {
-        background-color: #FFFFFF; /* Makes the hamburger lines white */
-    }
-
-    /* 5. Scroll-to-Top Button CSS */
-    #scroll-to-top-btn {
-        display: none; /* Hidden by default */
-        position: fixed; /* Fixed/sticky position */
-        bottom: 20px; /* Place the button at the bottom of the page */
-        right: 30px; /* Place the button 30px from the right */
-        z-index: 99; /* Make sure it does not overlap other elements */
-        border: none; /* Remove borders */
-        outline: none; /* Remove outline */
-        background-color: #D4AF37; /* Metallic Gold */
-        color: white; /* Text color */
-        cursor: pointer; /* Add a mouse pointer on hover */
-        padding: 15px; /* Some padding */
-        border-radius: 10px; /* Rounded corners */
-        font-size: 18px; /* Increase font size */
-        transition: opacity 0.3s;
-    }
-
-    #scroll-to-top-btn:hover {
-        background-color: #C5A028; /* Darker Gold on hover */
-    }
-
-    /* 6. Logo Width Constraint (Requested: 90%) */
+    /* Logo Width Constraint (90%) */
     .logo-top-left {
-        width: 90%; /* Takes up 90% of header width */
+        width: 90%; 
+        max-width: 300px; /* Optional cap so it doesn't get huge on desktop */
         height: auto;
         display: block;
-        margin-bottom: 10px; /* Adds space below logo if it wraps */
+        margin-bottom: 10px;
     }
 
-    /* Existing Box Grid Styles (Retained) */
+    /* Desktop Navigation */
+    #nav-menu {
+        display: flex;
+        gap: 20px;
+    }
+
+    #nav-menu a {
+        color: var(--white) !important;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    /* 2. Hamburger Menu */
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: var(--white);
+        transition: all 0.3s ease;
+    }
+
+    /* 3. Main Script Title (Verse and Chorus) */
+    .main-script-title {
+        font-family: 'Brush Script MT', 'Cursive', cursive; /* Beautiful Script Font */
+        font-size: 4em; /* Large size */
+        color: var(--metallic-gold); /* Gold */
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        line-height: 1.1;
+        text-shadow: 1px 1px 2px #000;
+    }
+
+    .sub-header-text {
+        text-align: center;
+        font-size: 1.2em;
+        color: #333;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    /* 4. White Bold Header */
+    .white-bold-header {
+        color: var(--black); /* Changed to black/dark for visibility on white background, or keep white if background is dark */
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    /* 5. Box Titles (Gold Script) */
+    .gold-script {
+        color: var(--metallic-gold); 
+        font-family: 'Brush Script MT', 'Cursive', cursive; 
+        font-size: 2.2em;
+        margin: 0;
+        text-shadow: 1px 1px 1px #000;
+    }
+
+    /* 6. Box Grid Styles */
     .box-grid {
       display: flex;
       flex-wrap: wrap;
@@ -78,9 +116,9 @@
     .box-link {
       width: 280px;
       height: 280px;
-      background-color: #800020; /* Retaining existing Burgundy color */
+      background-color: var(--burgundy);
       border: 4px solid #6c7a89;
-      color: #fff;
+      color: var(--white);
       text-align: center;
       text-decoration: none;
       display: flex;
@@ -95,14 +133,12 @@
       transform: scale(1.05);
     }
 
-    /* Updated Image Size for Larger Boxes */
     .box-link img {
-      max-width: 140px; /* Increased from 100px to 140px for a larger look */
+      max-width: 140px;
       height: auto;
       margin-bottom: 10px;
     }
     
-    /* Style for SEO Description 1 in Boxes (Retained) */
     .box-description {
         font-size: 0.8em;
         margin-top: 5px;
@@ -111,103 +147,126 @@
         font-weight: 300;
     }
 
-    /* NEW Style for SEO Description 2 in Boxes */
     .box-description-seo {
-        font-size: 0.7em; /* Slightly smaller for the secondary line */
+        font-size: 0.7em;
         margin-top: 2px;
         line-height: 1.2;
         opacity: 0.7;
         font-style: italic;
     }
 
-    /* --- HAMBURGER MENU CSS --- */
-    .hamburger {
+    /* 7. Scroll-to-Top Button */
+    #scroll-to-top-btn {
         display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: var(--metallic-gold);
+        color: white;
         cursor: pointer;
-        flex-direction: column;
-        gap: 5px;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 18px;
+        transition: opacity 0.3s;
     }
 
-    .hamburger div {
-        width: 25px;
-        height: 3px;
-        background-color: #FFFFFF;
-        transition: all 0.3s ease;
+    #scroll-to-top-btn:hover {
+        background-color: #C5A028;
     }
 
-    /* Footer Styles */
+    /* 8. Footer Styles */
     .site-footer {
-        background-color: #000;
-        color: #fff;
-        text-align: center;
-        padding: 30px 20px;
+        background-color: var(--black);
+        color: var(--white);
+        text-align: center; /* Center Justify */
+        padding: 40px 20px;
         margin-top: 50px;
-        border-top: 5px solid #D4AF37; /* Metallic Gold Border */
+        border-top: 5px solid var(--metallic-gold);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .site-footer p {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
     }
 
     .footer-line {
         border: 0;
         height: 1px;
-        background: #D4AF37; /* Metallic Gold Line */
-        margin: 15px auto;
+        background: var(--metallic-gold);
+        margin: 20px auto;
         width: 100%;
         max-width: 300px;
     }
 
+    .footer-links {
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
     .footer-links a {
-        color: #fff;
+        color: var(--white);
         text-decoration: none;
         margin: 0 10px;
         font-weight: bold;
     }
 
+    /* --- MOBILE RESPONSIVE STYLES --- */
     @media (max-width: 768px) {
         .hamburger {
             display: flex; /* Show hamburger on mobile */
         }
 
-        /* Updated Header to allow wrapping for 90% Logo */
-        #main-header {
-            flex-wrap: wrap;
-        }
-
         #nav-menu {
-            display: none; 
+            display: none; /* Hidden by default on mobile */
             flex-direction: column;
             width: 100%;
             position: absolute;
             top: 100%; /* Push below header */
             left: 0;
-            background-color: #000; /* Black background for dropdown */
+            background-color: var(--black);
             padding: 20px 0;
             z-index: 1000;
-            border-bottom: 2px solid #D4AF37; /* Metallic Gold Border */
+            border-bottom: 2px solid var(--metallic-gold);
             
-            /* SCROLL FIX: Ensures menu scrolls if it cuts off */
+            /* SCROLL FIX */
             max-height: 70vh; 
             overflow-y: auto; 
         }
 
         #nav-menu.active {
-            display: flex;
+            display: flex; /* Show when active class is added via JS */
         }
 
         #nav-menu a {
             padding: 15px 0;
             text-align: center;
             width: 100%;
+            border-bottom: 1px solid #333;
+        }
+        
+        .main-script-title {
+            font-size: 3em; /* Slightly smaller on mobile */
         }
     }
   </style>
 
   <script>
-    // Existing function to toggle the navigation menu
+    // Toggle Menu Function
     function toggleMenu() {
         const navMenu = document.getElementById('nav-menu');
         navMenu.classList.toggle('active'); 
     }
 
-    // NEW JavaScript for Scroll-to-Top functionality
+    // Scroll-to-Top Functionality
     window.onscroll = function() {scrollFunction()};
 
     function scrollFunction() {
@@ -219,24 +278,24 @@
         }
     }
 
-    // Function to scroll to the top with soft scrolling
     function topFunction() {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth' // This enables soft/smooth scrolling
+            behavior: 'smooth'
         });
     }
   </script>
 </head>
 <body>
-  <header id="main-header" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #000;">
+
+  <header id="main-header">
     <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
     
     <div class="hamburger" onclick="toggleMenu()">
       <div></div><div></div><div></div>
     </div>
 
-    <nav id="nav-menu" style="display: flex; gap: 20px;">
+    <nav id="nav-menu">
       <a href="/bio.html">Bio</a>
       <a href="/industry-pros.html">Industry Pro</a>
       <a href="/lyrics.html">Lyrics</a>
@@ -249,10 +308,15 @@
   </header>
 
   <main class="page-content">
-    <h1 class="page-header script-text">VERSE AND CHORUS | A&R Talent Vault & Cinematic Concept Lyrics for Sync</h1>
-    <h2 class="white-bold-header">Kellie Larson — Cinematic Songwriter & Lyricist</h2>
+    
+    <h1 class="main-script-title">Verse and Chorus</h1>
+    
+    <div class="sub-header-text">A&R Talent Vault & Cinematic Concept Lyrics for Sync</div>
+    
+    <h2 class="white-bold-header" style="color:#000;">Kellie Larson — Cinematic Songwriter & Lyricist</h2>
+    
     <p style="max-width: 800px; margin: 20px auto; text-align: center;">
-      Welcome to the official site of Kellie Larson. Explore lyrics, creative tools, industry resources, and interactive features designed to showcase Kellie’s lyrics and vision.
+      Welcome to the official site of Kellie Larson. Explore lyrics, creative tools, industry resources, and interactive features designed to showcase Kellie’s voice and vision.
     </p>
 
     <div class="box-grid">
@@ -313,9 +377,10 @@
 
   <footer class="site-footer">
     <p>♥️ Kellie Larson ♥️</p>
-    <p>✍️ Cinematic Songwriter and Lyricist 🎹</p>
-    <p> <p>© 2025 VerseandChorus.com. All Rights Reserved. All lyrics and website content are copyrighted.</p>
-    <p>🧑‍🎤 www.VerseandChorus.com 🎙️</p>
+    <p>✍️Cinematic Songwriter & Lyricist 🎹</p>
+    <p>© 2025 VerseandChorus.com. All Rights Reserved. </p>
+    <p> All lyrics and website content are copyrighted.</p>
+    <p>🧑‍🎤 VerseandChorus.com 🎙️</p>
     <p>✉️ info@verseandchorus.com 📨</p>
     <p>☎️ 760-537-0222 📲</p>
     <hr class="footer-line">
@@ -326,4 +391,5 @@
 <?php include 'footer.php'; ?>
 
 </body>
-</html>
+  </html>
+      
