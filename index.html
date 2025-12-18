@@ -2,12 +2,14 @@
 <html lang="en">
 <head><?php include 'header.php'; ?>
   
-  <title>Cinematic Lyricist Talent Vault | Professional Songwriter, A&R Scouting, and Sync Licensing</title>
+  <title>Kellie Larson | Cinematic Songwriter, A&R Sync Vault & Lyric Critiques</title>
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
-  <meta name="description" content="Industry Pro Vault: Exclusive, Vetted Talent & Cinematic Lyrics for A&R, Sync, and Music Supervisors. Discover professional, high-concept themes.">
+  <meta name="description" content="Official site of Cinematic Lyricist Kellie Larson. Featuring an A&R Talent Vault for sync licensing, professional lyric critiques for songwriters, and industry scouting resources at VerseandChorus.com.">
+  
+  <meta name="keywords" content="Kellie Larson, Cinematic Songwriter, Lyricist for Hire, A&R Scouting, Music Supervision, Lyric Critiques, Songwriting Feedback, Sync Licensing, Verse and Chorus">
 
   <link rel="stylesheet" href="/assets/css/style.css" />
   
@@ -18,6 +20,7 @@
         --burgundy: #800020;
         --white: #FFFFFF;
         --black: #000000;
+        --blue-gray-elegant: #5D6D7E; /* Elegant Blue Gray Border */
     }
 
     /* 1. Header & Nav Layout */
@@ -28,13 +31,13 @@
         padding: 10px 20px; 
         background: var(--black);
         position: relative;
-        flex-wrap: wrap; /* Allows wrapping on small screens */
+        flex-wrap: wrap; 
     }
 
     /* Logo Width Constraint (90%) */
     .logo-top-left {
         width: 90%; 
-        max-width: 300px; /* Optional cap so it doesn't get huge on desktop */
+        max-width: 300px; 
         height: auto;
         display: block;
         margin-bottom: 10px;
@@ -70,9 +73,9 @@
 
     /* 3. Main Script Title (Verse and Chorus) */
     .main-script-title {
-        font-family: 'Brush Script MT', 'Cursive', cursive; /* Beautiful Script Font */
-        font-size: 4em; /* Large size */
-        color: var(--metallic-gold); /* Gold */
+        font-family: 'Brush Script MT', 'Cursive', cursive; 
+        font-size: 4em; 
+        color: var(--metallic-gold); 
         text-align: center;
         margin-top: 20px;
         margin-bottom: 10px;
@@ -90,7 +93,7 @@
 
     /* 4. White Bold Header */
     .white-bold-header {
-        color: var(--black); /* Changed to black/dark for visibility on white background, or keep white if background is dark */
+        color: var(--black); 
         font-weight: bold;
         text-align: center;
     }
@@ -104,7 +107,7 @@
         text-shadow: 1px 1px 1px #000;
     }
 
-    /* 6. Box Grid Styles */
+    /* 6. Box Grid Styles - ELEGANT BORDER */
     .box-grid {
       display: flex;
       flex-wrap: wrap;
@@ -117,7 +120,12 @@
       width: 280px;
       height: 280px;
       background-color: var(--burgundy);
-      border: 4px solid #6c7a89;
+      
+      /* Elegant Thicker Blue Gray Border */
+      border: 8px solid var(--blue-gray-elegant);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.3); 
+      border-radius: 4px;
+      
       color: var(--white);
       text-align: center;
       text-decoration: none;
@@ -125,12 +133,13 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       padding: 10px;
     }
 
     .box-link:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.4);
     }
 
     .box-link img {
@@ -181,7 +190,7 @@
     .site-footer {
         background-color: var(--black);
         color: var(--white);
-        text-align: center; /* Center Justify */
+        text-align: center; 
         padding: 40px 20px;
         margin-top: 50px;
         border-top: 5px solid var(--metallic-gold);
@@ -222,28 +231,26 @@
     /* --- MOBILE RESPONSIVE STYLES --- */
     @media (max-width: 768px) {
         .hamburger {
-            display: flex; /* Show hamburger on mobile */
+            display: flex; 
         }
 
         #nav-menu {
-            display: none; /* Hidden by default on mobile */
+            display: none; 
             flex-direction: column;
             width: 100%;
             position: absolute;
-            top: 100%; /* Push below header */
+            top: 100%; 
             left: 0;
             background-color: var(--black);
             padding: 20px 0;
             z-index: 1000;
             border-bottom: 2px solid var(--metallic-gold);
-            
-            /* SCROLL FIX */
             max-height: 70vh; 
             overflow-y: auto; 
         }
 
         #nav-menu.active {
-            display: flex; /* Show when active class is added via JS */
+            display: flex; 
         }
 
         #nav-menu a {
@@ -254,19 +261,17 @@
         }
         
         .main-script-title {
-            font-size: 3em; /* Slightly smaller on mobile */
+            font-size: 3em; 
         }
     }
   </style>
 
   <script>
-    // Toggle Menu Function
     function toggleMenu() {
         const navMenu = document.getElementById('nav-menu');
         navMenu.classList.toggle('active'); 
     }
 
-    // Scroll-to-Top Functionality
     window.onscroll = function() {scrollFunction()};
 
     function scrollFunction() {
@@ -313,10 +318,10 @@
     
     <div class="sub-header-text">A&R Talent Vault & Cinematic Concept Lyrics for Sync</div>
     
-    <h2 class="white-bold-header" style="color:#000;">Kellie Larson — Cinematic Songwriter & Lyricist</h2>
+    <h2 class="white-bold-header" style="color:#000;">Kellie Larson — Cinematic Songwriter & Professional Lyricist</h2>
     
     <p style="max-width: 800px; margin: 20px auto; text-align: center;">
-      Welcome to the official site of Kellie Larson. Explore lyrics, creative tools, industry resources, and interactive features designed to showcase Kellie’s voice and vision.
+      The official hub for <strong>Industry Professionals</strong> and <strong>Aspiring Songwriters</strong>. Access the A&R Talent Vault for sync-ready lyrics, hire Kellie for custom commissions, or elevate your craft with <strong>expert lyric critiques</strong> and analysis.
     </p>
 
     <div class="box-grid">
@@ -324,50 +329,50 @@
       <a href="/bio.html" class="box-link">
         <img src="/images/cover/bio-box-photo.jpg" alt="Kellie Larson Profile: Cinematic Songwriter" />
         <h3 class="gold-script">Spotlight</h3>
-        <span class="box-description">Meet the **Cinematic Lyricist**</span>
-        <span class="box-description-seo">Read the official songwriter profile.</span>
+        <span class="box-description">Meet **Kellie Larson**</span>
+        <span class="box-description-seo">Profile of the **Cinematic Lyricist** specializing in visual storytelling for Film & TV.</span>
       </a>
 
       <a href="/industry-pros.html" class="box-link">
         <img src="/images/cover/industry-pros-box-photo.jpg" alt="A&R Talent Scouting Vault" />
         <h3 class="gold-script">Industry Vault</h3>
-        <span class="box-description">Curated Catalog for **A&R Scouts** & **Music Supervisors**</span>
-        <span class="box-description-seo">Discover **Vetted Lyricists** and **High-Concept Themes** for Film/TV.</span>
+        <span class="box-description">For **A&R Scouts** & **Music Supervisors**</span>
+        <span class="box-description-seo">Search for **Vetted Talent**, new songwriters, and high-concept lyrics for sync.</span>
       </a>
 
       <a href="/lyrics.html" class="box-link">
         <img src="/images/cover/lyrics-box-photo.jpg" alt="Lyrics Catalog for Sale and Licensing" />
         <h3 class="gold-script">Digital Jukebox</h3>
-        <span class="box-description">**Play My Lyrics** & View Catalog</span>
-        <span class="box-description-seo">Step up to the jukebox: Lyrics for **Sync Licensing** & Sale.</span>
+        <span class="box-description">**Sync Licensing** Catalog</span>
+        <span class="box-description-seo">Browse and play lyrics available for **Commercial Licensing** & immediate sale.</span>
       </a>
 
       <a href="/green-room.html" class="box-link">
         <img src="/images/cover/green-room-box-photo.jpg" alt="Songwriting Tools and Resources" />
         <h3 class="gold-script">Green Room</h3>
-        <span class="box-description">**Songwriter's Playground & Funhouse!**</span>
-        <span class="box-description-seo">Unleash your inner genius with silly prompts, toys, and **creative tools**.</span>
+        <span class="box-description">**Songwriter Resources**</span>
+        <span class="box-description-seo">Creative tools and prompts for lyricists looking to break writer's block.</span>
       </a>
 
       <a href="/articles.html" class="box-link">
         <img src="/images/cover/articles-box-photo.jpg" alt="Songwriting and Music Industry Articles" />
         <h3 class="gold-script">Articles</h3>
-        <span class="box-description">Tips and Trends for the Music Industry</span>
-        <span class="box-description-seo">Songwriting insights and advice.</span>
+        <span class="box-description">**Music Industry Insights**</span>
+        <span class="box-description-seo">Tips on **how to pitch to A&R**, songwriting trends, and lyric advice.</span>
       </a>
 
       <a href="/reports.html" class="box-link">
         <img src="/images/cover/reports-box-photo.jpg" alt="Professional Lyric Report Service" />
         <h3 class="gold-script">Lyric Reports</h3>
-        <span class="box-description">**Professional Lyric Analysis & Song Critique**</span>
-        <span class="box-description-seo">Get expert **Songwriter Consultation** and **Critique**.</span>
+        <span class="box-description">**Lyric Critique & Analysis**</span>
+        <span class="box-description-seo">Get professional feedback to **polish your songs** before submitting to A&R.</span>
       </a>
 
       <a href="/collab.html" class="box-link">
         <img src="/images/cover/collab-box-photo.jpg" alt="Commission Lyrics for Collaboration" />
         <h3 class="gold-script">Collab / Commission</h3>
-        <span class="box-description">**Lyric Collaboration** or **Custom Commission**</span>
-        <span class="box-description-seo">Hire a **Cinematic Lyricist** for your next collaboration.</span>
+        <span class="box-description">**Hire a Lyricist**</span>
+        <span class="box-description-seo">Book Kellie Larson for **Custom Songwriting** or co-writing collaborations.</span>
       </a>
 
     </div>
@@ -377,8 +382,9 @@
 
   <footer class="site-footer">
     <p>♥️ Kellie Larson ♥️</p>
-    <p>✍️Cinematic Songwriter & Lyricist 🎹</p>
-    <p>🧑‍🎤 VerseandChorus.com 🎙️</p>
+    <p>✍️ Cinematic Songwriter & Lyricist 🎹</p>
+    <p>🧑‍🎤 www.VerseandChorus.com 🎙️</p>
+    <p>© 2025 Kellie Larson. All Rights Reserved.</p>
     <p>✉️ info@verseandchorus.com 📨</p>
     <p>☎️ 760-537-0222 📲</p>
     <hr class="footer-line">
