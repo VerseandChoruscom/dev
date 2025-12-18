@@ -1,283 +1,241 @@
-body {
-  font-family: 'Helvetica Neue', sans-serif;
-  margin: 0;
-  padding: 0;
-  /* NEW: Default to black background and white text for most pages */
-  background-color: #000; 
-  color: #fff;
-}
-.button-group {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-.submit-button, .reset-button {
-  padding: 0.5rem 1.2rem;
-  font-weight: bold;
-  border-radius: 4px;
-}
-/* ---------------------------------------------------- */
-/* --- COLOR VARIABLES --- */
-/* ---------------------------------------------------- */
+/* Base Styles */
 :root {
-  --color-burgundy: #800020;
-  --color-gold: #d4af37;
-  --color-bluegray: #6c7a89;
-  --color-dark-text: #333; /* For use on white backgrounds */
-  --color-sunset-orange: #FF8E47; /* NEW: Sunset Orange Link Color */
+    /* Gold color updated to be less yellow and more metallic */
+    --gold-color: #D4AF37; 
+    --gold-hover: #C5A028;
+    --dark-bg: #1a1a1a;
+    --text-color: #333;
+    --box-bg: #2a2a2a;
 }
 
-/* ---------------------------------------------------- */
-/* --- BACKGROUND OVERRIDE (For pages like Industry Pro & Articles) --- */
-/* ---------------------------------------------------- */
-.body-white {
-    background-color: #fff;
-    color: var(--color-dark-text); /* Restore dark text color on white background */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: var(--text-color);
 }
 
-/* Ensure content on white pages is readable */
-.body-white .page-header, 
-.body-white h1, 
-.body-white h2, 
-.body-white h3 {
-    color: var(--color-burgundy) !important;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* ---------------------------------------------------- */
-/* --- HEADER & NAVIGATION (Consistent on ALL Pages) --- */
-/* ---------------------------------------------------- */
-#main-header {
-  background-color: var(--color-burgundy); /* Burgundy background */
-  color: #fff; /* White text */
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 50; 
+/* Header & Logo */
+header {
+    background-color: var(--dark-bg);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 3px solid var(--gold-color);
 }
 
-/* FIX: Logo 3x Bigger and 2x Longer */
-.logo-top-left {
-  height: 120px; /* 3x the likely original 40px */
-  width: 200px;  /* 2x longer */
-  object-fit: contain; 
+.logo-container {
+    width: 100%;
+    margin-bottom: 10px;
 }
 
-/* Hamburger Icon (Hidden on Desktop) */
-.hamburger {
+.header-logo {
+    /* Logo takes up 90% of the width as requested */
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Navigation */
+.navbar {
+    background-color: #000;
+    color: var(--gold-color);
+    position: relative;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    color: var(--gold-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    display: block;
+    padding: 15px 5px;
+}
+
+.nav-menu a:hover {
+    color: #fff;
+}
+
+/* Mobile Hamburger Nav */
+.nav-toggle {
+    display: none;
+}
+
+.nav-burger {
     display: none;
     cursor: pointer;
-    font-size: 30px; 
-    color: #fff;
-    padding: 5px;
+    flex-direction: column;
+    width: 30px;
+    margin: 10px auto;
 }
 
-/* Navigation Links */
-#nav-menu {
-  display: flex;
-  color: #fff;
-
-  gap: 15px;
-  transition: max-height 0.3s ease-out; 
-}
-#nav-menu a {
-  color: var(--color-sunset-orange); /* FIX: Sunset Orange Link Color */
-  text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  white-space: nowrap; 
-}
-#nav-menu a:hover, #nav-menu a.active {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: var(--color-gold);
-}
-#nav-menu .nav-separator {
-    color: #fff; 
-    margin: 0 5px;
-    font-weight: normal;
-    font-size: 0.9em;
+.nav-burger .line {
+    height: 3px;
+    background-color: var(--gold-color);
+    margin: 3px 0;
+    width: 100%;
 }
 
-/* ---------------------------------------------------- */
-/* --- MOBILE RESPONSIVENESS FIXES (Hamburger & Wrapping) --- */
-/* ---------------------------------------------------- */
-@media (max-width: 768px) {
-    /* Header Layout for Mobile */
-    #main-header {
-        justify-content: space-between; 
-        align-items: center;
-        padding: 10px 20px;
+/* Responsive Navigation */
+@media screen and (max-width: 768px) {
+    .nav-burger {
+        display: flex;
     }
 
-    /* FIX: Show the hamburger icon */
-    .hamburger {
-        display: block;
-    }
-
-    /* FIX: Initial state of the menu on mobile (hidden/collapsed) */
-    #nav-menu {
+    .nav-menu {
+        display: none; /* Hidden by default on mobile */
         flex-direction: column;
-        width: 100%; 
-        position: absolute;
-        top: 140px; 
-        left: 0;
-        background-color: var(--color-burgundy);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        max-height: 0; 
-        overflow: hidden;
-        gap: 0;
+        width: 100%;
+        background-color: #000;
+        text-align: center;
+        /* Fix for cutting off content: allow scrolling */
+        max-height: 80vh; 
+        overflow-y: auto;
     }
 
-    /* FIX: Menu open state triggered by JS */
-    #nav-menu.open {
-        max-height: 500px; 
-    }
-    
-    /* Navigation Links take full width */
-    #nav-menu a {
-        width: 100%; 
-        text-align: left;
-        padding: 10px 20px;
-        border-radius: 0;
+    .nav-menu li {
+        margin: 0;
+        border-bottom: 1px solid #333;
     }
 
-    /* Navigation Separator (Hide the '|' on mobile when stacked) */
-    #nav-menu .nav-separator {
-        display: none;
+    .nav-menu a {
+        padding: 15px;
+    }
+
+    /* Show menu when checkbox is checked */
+    .nav-toggle:checked ~ .nav-menu {
+        display: flex;
     }
 }
 
-
-/* ---------------------------------------------------- */
-/* --- FOOTER (Consistent on ALL Pages) --- */
-/* ---------------------------------------------------- */
-.site-footer {
-  background-color: var(--color-burgundy); /* Burgundy background */
-  color: #fff; /* White text */
-  text-align: center;
-  padding: 15px 20px;
-  margin-top: 40px;
-}
-/* Ensure links in the footer are visible on the burgundy background */
-.site-footer a {
-    color: var(--color-sunset-orange); /* FIX: Sunset Orange Link Color */
-    text-decoration: none;
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
 }
 
-/* Global Link Color Change (Sunset Orange) */
-a {
-    color: var(--color-sunset-orange);
-    text-decoration: none;
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* ---------------------------------------------------- */
-/* --- GENERAL PAGE CONTENT (Headings Gold on Black Background) --- */
-/* ---------------------------------------------------- */
-.page-header, h1, h2, h3 {
-  /* Default heading color on black background */
-  color: var(--color-gold);
-}
-.page-content {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
+.hero h1 {
+    font-size: 2.5em;
+    color: var(--gold-color);
+    /* Metallic gradient text effect */
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
 }
 
-/* --- OTHER UTILITY STYLES --- */
-.script-text {
-  font-family: 'Times New Roman', Times, serif; 
-  font-style: italic;
-}
-.legal-box {
-    border: 1px solid #ccc; /* A light grey border */
-    padding: 20px;          /* Space inside the box */
-    margin: 30px 0;         /* Space above and below the box */
-    background-color: #f9f9f9; /* A very light grey background */
-    border-radius: 8px;     /* Optional: Rounds the corners */
-    line-height: 1.6;       /* Improves readability */
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* Make the title stand out */
-.legal-box h4 { 
-    color: #333;
-    margin-top: 0;
-}
-
-/* ---------------------------------------------------- */
-/* --- LANDING PAGE CURTAIN ANIMATION (FIX) --- */
-/* ---------------------------------------------------- */
-.curtain {
-    /* FIX: Set transition for the opening animation */
-    transition: transform 2s ease-in-out; 
-}
-
-.left-curtain.open {
-    /* Opens to the left */
-    transform: translateX(-100%);
-}
-
-.right-curtain.open {
-    /* Opens to the right */
-    transform: translateX(100%);
-}
-
-/* ---------------------------------------------------- */
-/* --- SPOTLIGHT CURSOR EFFECT (Desktop Only) --- */
-/* ---------------------------------------------------- */
-
-#spotlight-overlay {
-    display: none; 
-}
-
-@media (min-width: 769px) {
-    /* FIX: Only activate the effect on desktop screens */
-    #spotlight-overlay {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        pointer-events: none; /* Allows clicking through */
-        background-color: rgba(0, 0, 0, 0.9); /* Dark background */
-        z-index: 9999; 
-        cursor: none; 
-    }
-/* --- Song Grid Layout --- */
-.song-grid {
+/* Content Boxes */
+.content-grid {
     display: grid;
-    /* Create a grid with columns that automatically adjust. 
-       This makes it responsive: 3 columns for large screens, 2 for medium, etc. */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px 20px; /* Space between the rows and columns */
-    margin-top: 50px;
+    gap: 20px;
 }
 
-/* --- Fixing Huge Pictures --- */
-.song-item {
-    text-align: left; /* Keep text aligned within the item */
+.box {
+    background-color: var(--box-bg);
+    color: #ddd;
+    padding: 20px;
+    border: 1px solid var(--gold-color);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s;
 }
 
-.song-item img {
-    /* Set a fixed size for the cover art */
-    width: 100%;       /* Make the image responsive to its container */
-    max-width: 250px;  /* Set the maximum width for desktop view */
-    height: auto;
-    display: block;    /* Remove extra space below the image */
-    margin-bottom: 10px; /* Space below the image */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: A subtle shadow */
+.box:hover {
+    transform: translateY(-5px);
 }
 
-.song-item h3 {
-    font-size: 1.4em;
+/* Box titles white as requested */
+.box h2 {
+    color: #ffffff; 
     margin-top: 0;
-  }
-  
-
-      }
-
+    border-bottom: 1px solid var(--gold-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 
+.btn {
+    display: inline-block;
+    background-color: var(--gold-color);
+    color: #000;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: var(--gold-hover);
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top: 5px solid var(--gold-color);
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.footer-line {
+    border: 0;
+    height: 1px;
+    background: var(--gold-color);
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    margin: 20px auto;
+    width: 80%;
+}
+
+.footer-links a {
+    color: var(--gold-color);
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
