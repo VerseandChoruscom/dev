@@ -15,26 +15,26 @@
             height: 100vh;
             width: 100vw;
             overflow: hidden;
-            background-color: #800020; /* This creates your 1% burgundy borders */
+            background-color: #800020; /* The 1% frame color */
             margin: 0;
             display: flex;
             flex-direction: column;
         }
 
-        /* --- BURGUNDY HEADER --- */
+        /* --- HEADER (90% Logo Width) --- */
         header {
-            height: 80px; /* Adjust height as needed */
+            height: 80px;
             width: 100%;
             background-color: #800020;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 1%; 
-            z-index: 100;
+            position: relative;
+            z-index: 1000; /* Stays above everything */
         }
 
-        /* Logo takes 90% width, full height */
-        .header-logo-container {
+        .header-logo-wrap {
             width: 90%;
             height: 100%;
         }
@@ -42,52 +42,46 @@
         /* --- HAMBURGER NAVIGATION --- */
         #nav-toggle {
             cursor: pointer;
-            z-index: 110;
+            color: white;
+            z-index: 1001;
         }
 
         #nav-menu {
             display: none;
             position: absolute;
-            top: 80px; /* Sits exactly under header */
+            top: 80px; 
             right: 0;
             width: 250px;
             background-color: black;
-            box-shadow: -5px 5px 15px rgba(0,0,0,0.5);
-            z-index: 105;
+            z-index: 999;
         }
 
-        #nav-menu.active {
-            display: block;
-        }
+        #nav-menu.active { display: block; }
 
         #nav-menu a {
             display: block;
             color: white;
             padding: 15px 25px;
-            text-decoration: none;
             text-align: right;
-            border-bottom: 1px solid #222;
+            border-bottom: 1px solid #1a1a1a;
         }
 
-        #nav-menu a:hover {
-            background-color: #111;
-            color: #800020;
-        }
+        #nav-menu a:hover { color: #800020; }
 
-        /* --- MAIN IMAGE AREA --- */
+        /* --- THE STAGE (95% PNG Area) --- */
         #stage {
             position: relative;
             flex-grow: 1;
-            /* 2% margin at top (between header and logo) */
-            /* 1% margin on left, right, and bottom (above footer) */
+            /* 2% gap between Header and Image, 1% elsewhere */
             margin: 2% 1% 1% 1%; 
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            background: #000; /* Dark space behind curtains */
         }
 
-        /* PNG Picture: Dead center, fills 95% of available space */
+        /* The central PNG (95% size) */
         #central-png {
             width: 95%;
             height: 95%;
@@ -95,21 +89,21 @@
             z-index: 10;
         }
 
-        /* Curtains peeking in 2% from the left and right */
+        /* --- CURTAINS (Contained inside Stage, below Header) --- */
         .curtain {
             position: absolute;
-            top: 0;
+            top: 0; /* Starts at the top of the #stage (2% below header) */
             bottom: 0;
             width: 50%;
             background-color: #800020;
-            z-index: 20;
+            z-index: 50; 
             transition: transform 2s cubic-bezier(0.86, 0, 0.07, 1);
         }
 
+        /* 2% Peek from sides */
         #leftCurtain { left: 0; transform: translateX(2%); }
         #rightCurtain { right: 0; transform: translateX(-2%); }
 
-        /* Animation Classes */
         .open-left { transform: translateX(-100%) !important; }
         .open-right { transform: translateX(100%) !important; }
 
@@ -121,31 +115,30 @@
             justify-content: center;
             align-items: center;
             color: white;
-            z-index: 100;
-            font-size: 0.85rem;
+            z-index: 60;
+            font-size: 0.8rem;
         }
 
-        /* Spotlight Effect */
         #spotlight {
             position: fixed;
-            top: 0;
+            top: 80px; /* Spotlight also starts below header */
             left: 0;
             width: 100%;
-            height: 100%;
+            height: calc(100% - 80px);
             pointer-events: none;
             mix-blend-mode: hard-light;
-            z-index: 150;
+            z-index: 500;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-logo-container">
+        <div class="header-logo-wrap">
             <img src="verse-and-chorus-logo.png" alt="Logo" class="h-full w-full object-contain object-left">
         </div>
         
-        <div id="nav-toggle" class="text-white p-2">
+        <div id="nav-toggle">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
@@ -163,11 +156,11 @@
         <div id="leftCurtain" class="curtain"></div>
         <div id="rightCurtain" class="curtain"></div>
 
-        <img src="verse-and-chorus-logo.png" id="central-png" alt="Main Portfolio Entry">
+        <img src="verse-and-chorus-logo.png" id="central-png" alt="Kellie Larson Logo">
     </div>
 
     <footer>
-        <p>Kellie Larson 🔥 Cinematic Lyricist 🎙️ info@verseandchorus.com ✉️ (760) 537-0222 ☎️</p>
+        Kellie Larson 🔥 Cinematic Lyricist 🎙️ info@verseandchorus.com ✉️ (760) 537-0222
     </footer>
 
     <div id="spotlight"></div>
@@ -180,32 +173,30 @@
         const rightCurtain = document.getElementById('rightCurtain');
         const spotlight = document.getElementById('spotlight');
 
-        // 1. Toggle Hamburger Menu
+        // Toggle Navigation
         navToggle.addEventListener('click', (e) => {
             navMenu.classList.toggle('active');
             e.stopPropagation();
         });
 
-        // 2. Spotlight Movement
+        document.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+
+        // Spotlight (Centered logic)
         document.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth) * 100;
             const y = (e.clientY / window.innerHeight) * 100;
-            spotlight.style.background = `radial-gradient(circle 350px at ${x}% ${y}%, transparent 0%, rgba(0, 0, 0, 0.96) 90%)`;
+            spotlight.style.background = `radial-gradient(circle 350px at ${x}% ${y}%, transparent 0%, rgba(0, 0, 0, 0.98) 95%)`;
         });
 
-        // 3. Click Stage to Open Curtains
+        // Curtain Trigger
         stage.addEventListener('click', () => {
             leftCurtain.classList.add('open-left');
             rightCurtain.classList.add('open-right');
             spotlight.style.opacity = '0';
             document.body.style.cursor = 'default';
         });
-
-        // Close menu if clicking anywhere else
-        document.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        });
     </script>
 </body>
-    </html>
-    
+</html>
