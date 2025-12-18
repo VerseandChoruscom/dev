@@ -15,13 +15,13 @@
             height: 100vh;
             width: 100vw;
             overflow: hidden;
-            background-color: #800020; /* The 1% frame color */
+            background-color: #800020; 
             margin: 0;
             display: flex;
             flex-direction: column;
         }
 
-        /* --- HEADER (90% Logo Width) --- */
+        /* --- BURGUNDY HEADER --- */
         header {
             height: 80px;
             width: 100%;
@@ -31,7 +31,7 @@
             justify-content: space-between;
             padding: 0 1%; 
             position: relative;
-            z-index: 1000; /* Stays above everything */
+            z-index: 1000;
         }
 
         .header-logo-wrap {
@@ -44,16 +44,19 @@
             cursor: pointer;
             color: white;
             z-index: 1001;
+            transition: transform 0.2s;
         }
+        #nav-toggle:hover { transform: scale(1.1); }
 
         #nav-menu {
             display: none;
             position: absolute;
             top: 80px; 
             right: 0;
-            width: 250px;
+            width: 280px;
             background-color: black;
             z-index: 999;
+            box-shadow: -5px 10px 20px rgba(0,0,0,0.5);
         }
 
         #nav-menu.active { display: block; }
@@ -61,27 +64,32 @@
         #nav-menu a {
             display: block;
             color: white;
-            padding: 15px 25px;
+            padding: 12px 25px;
             text-align: right;
+            text-decoration: none;
+            font-size: 0.95rem;
             border-bottom: 1px solid #1a1a1a;
+            transition: background 0.3s, color 0.3s;
         }
 
-        #nav-menu a:hover { color: #800020; }
+        #nav-menu a:hover { 
+            background-color: #1a1a1a;
+            color: #ff3b3b; /* Subtle highlight */
+        }
 
         /* --- THE STAGE (95% PNG Area) --- */
         #stage {
             position: relative;
             flex-grow: 1;
-            /* 2% gap between Header and Image, 1% elsewhere */
+            /* 2% gap top, 1% sides/bottom */
             margin: 2% 1% 1% 1%; 
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            background: #000; /* Dark space behind curtains */
+            background: #000; 
         }
 
-        /* The central PNG (95% size) */
         #central-png {
             width: 95%;
             height: 95%;
@@ -89,23 +97,22 @@
             z-index: 10;
         }
 
-        /* --- CURTAINS (Contained inside Stage, below Header) --- */
+        /* --- CURTAINS (Below Header) --- */
         .curtain {
             position: absolute;
-            top: 0; /* Starts at the top of the #stage (2% below header) */
+            top: 0;
             bottom: 0;
             width: 50%;
             background-color: #800020;
             z-index: 50; 
-            transition: transform 2s cubic-bezier(0.86, 0, 0.07, 1);
+            transition: transform 2.2s cubic-bezier(0.86, 0, 0.07, 1);
         }
 
-        /* 2% Peek from sides */
         #leftCurtain { left: 0; transform: translateX(2%); }
         #rightCurtain { right: 0; transform: translateX(-2%); }
 
-        .open-left { transform: translateX(-100%) !important; }
-        .open-right { transform: translateX(100%) !important; }
+        .open-left { transform: translateX(-105%) !important; }
+        .open-right { transform: translateX(105%) !important; }
 
         /* --- FOOTER --- */
         footer {
@@ -116,12 +123,13 @@
             align-items: center;
             color: white;
             z-index: 60;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
         }
 
         #spotlight {
             position: fixed;
-            top: 80px; /* Spotlight also starts below header */
+            top: 80px;
             left: 0;
             width: 100%;
             height: calc(100% - 80px);
@@ -135,7 +143,7 @@
 
     <header>
         <div class="header-logo-wrap">
-            <img src="verse-and-chorus-logo.png" alt="Logo" class="h-full w-full object-contain object-left">
+            <img src="verse-and-chorus-logo.png" alt="Kellie Larson Logo" class="h-full w-full object-contain object-left">
         </div>
         
         <div id="nav-toggle">
@@ -145,9 +153,13 @@
         </div>
 
         <nav id="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="credits.html">Credits</a>
+            <a href="bio.html">Spotlight</a>
+            <a href="industry-pros.php">Industry Pros Only</a>
+            <a href="lyrics.html">Jukebox</a>
+            <a href="green-room.html">Green Room</a>
+            <a href="Lyrics-critque.html">Lyric Reports</a>
+            <a href="collab.html">Collab / Commission</a>
+            <a href="legal.html">Legal</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
@@ -155,8 +167,7 @@
     <div id="stage">
         <div id="leftCurtain" class="curtain"></div>
         <div id="rightCurtain" class="curtain"></div>
-
-        <img src="verse-and-chorus-logo.png" id="central-png" alt="Kellie Larson Logo">
+        <img src="verse-and-chorus-logo.png" id="central-png" alt="Main Entry Logo">
     </div>
 
     <footer>
@@ -173,24 +184,27 @@
         const rightCurtain = document.getElementById('rightCurtain');
         const spotlight = document.getElementById('spotlight');
 
-        // Toggle Navigation
+        // Toggle Nav
         navToggle.addEventListener('click', (e) => {
             navMenu.classList.toggle('active');
             e.stopPropagation();
         });
 
-        document.addEventListener('click', () => {
-            navMenu.classList.remove('active');
+        // Close menu on outside click
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && e.target !== navToggle) {
+                navMenu.classList.remove('active');
+            }
         });
 
-        // Spotlight (Centered logic)
+        // Spotlight Move
         document.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth) * 100;
             const y = (e.clientY / window.innerHeight) * 100;
             spotlight.style.background = `radial-gradient(circle 350px at ${x}% ${y}%, transparent 0%, rgba(0, 0, 0, 0.98) 95%)`;
         });
 
-        // Curtain Trigger
+        // Curtain Logic
         stage.addEventListener('click', () => {
             leftCurtain.classList.add('open-left');
             rightCurtain.classList.add('open-right');
