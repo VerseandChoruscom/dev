@@ -23,9 +23,9 @@
         font-weight: bold; /* Bolded text */
     }
     
-    /* 3. CSS for Sunset Orange Script Category Titles (Formerly Gold) */
+    /* 3. CSS for Box Titles (Requested: White) */
     .gold-script {
-        color: #FD5E53; /* Sunset Orange */
+        color: #FFFFFF; /* White per request */
         font-family: 'YourScriptFont', cursive; 
         font-size: 1.8em;
         margin: 0;
@@ -36,7 +36,7 @@
         background-color: #FFFFFF; /* Makes the hamburger lines white */
     }
 
-    /* 5. Scroll-to-Top Button CSS (Sunrise Orange) */
+    /* 5. Scroll-to-Top Button CSS */
     #scroll-to-top-btn {
         display: none; /* Hidden by default */
         position: fixed; /* Fixed/sticky position */
@@ -45,7 +45,7 @@
         z-index: 99; /* Make sure it does not overlap other elements */
         border: none; /* Remove borders */
         outline: none; /* Remove outline */
-        background-color: #FF8C00; /* Sunrise Orange */
+        background-color: #D4AF37; /* Metallic Gold */
         color: white; /* Text color */
         cursor: pointer; /* Add a mouse pointer on hover */
         padding: 15px; /* Some padding */
@@ -55,13 +55,15 @@
     }
 
     #scroll-to-top-btn:hover {
-        background-color: #e67e00; /* Darker orange on hover */
+        background-color: #C5A028; /* Darker Gold on hover */
     }
 
-    /* 6. Logo Width Constraint */
+    /* 6. Logo Width Constraint (Requested: 90%) */
     .logo-top-left {
-        width: 89px;
+        width: 90%; /* Takes up 90% of header width */
         height: auto;
+        display: block;
+        margin-bottom: 10px; /* Adds space below logo if it wraps */
     }
 
     /* Existing Box Grid Styles (Retained) */
@@ -133,9 +135,40 @@
         transition: all 0.3s ease;
     }
 
+    /* Footer Styles */
+    .site-footer {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        padding: 30px 20px;
+        margin-top: 50px;
+        border-top: 5px solid #D4AF37; /* Metallic Gold Border */
+    }
+
+    .footer-line {
+        border: 0;
+        height: 1px;
+        background: #D4AF37; /* Metallic Gold Line */
+        margin: 15px auto;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+    }
+
     @media (max-width: 768px) {
         .hamburger {
             display: flex; /* Show hamburger on mobile */
+        }
+
+        /* Updated Header to allow wrapping for 90% Logo */
+        #main-header {
+            flex-wrap: wrap;
         }
 
         #nav-menu {
@@ -148,7 +181,11 @@
             background-color: #000; /* Black background for dropdown */
             padding: 20px 0;
             z-index: 1000;
-            border-bottom: 2px solid #FFD700;
+            border-bottom: 2px solid #D4AF37; /* Metallic Gold Border */
+            
+            /* SCROLL FIX: Ensures menu scrolls if it cuts off */
+            max-height: 70vh; 
+            overflow-y: auto; 
         }
 
         #nav-menu.active {
@@ -156,7 +193,7 @@
         }
 
         #nav-menu a {
-            padding: 10px 0;
+            padding: 15px 0;
             text-align: center;
             width: 100%;
         }
@@ -215,7 +252,7 @@
     <h1 class="page-header script-text">VERSE AND CHORUS | A&R Talent Vault & Cinematic Concept Lyrics for Sync</h1>
     <h2 class="white-bold-header">Kellie Larson — Cinematic Songwriter & Lyricist</h2>
     <p style="max-width: 800px; margin: 20px auto; text-align: center;">
-      Welcome to the official site of Kellie Larson. Explore lyrics, creative tools, industry resources, and interactive features designed to showcase Kellie’s voice and vision.
+      Welcome to the official site of Kellie Larson. Explore lyrics, creative tools, industry resources, and interactive features designed to showcase Kellie’s lyrics and vision.
     </p>
 
     <div class="box-grid">
@@ -275,12 +312,18 @@
   <button onclick="topFunction()" id="scroll-to-top-btn" title="Go to top">⬆️</button>
 
   <footer class="site-footer">
-    <p>
-      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝 <a href="/legal.html">Legal</a>
-    </p>
+    <p>♥️ Kellie Larson ♥️</p>
+    <p>✍️ Cinematic Songwriter and Lyricist 🎹</p>
+    <p> <p>© 2025 VerseandChorus.com. All Rights Reserved. All lyrics and website content are copyrighted.</p>
+    <p>🧑‍🎤 www.VerseandChorus.com 🎙️</p>
+    <p>✉️ info@verseandchorus.com 📨</p>
+    <p>☎️ 760-537-0222 📲</p>
+    <hr class="footer-line">
+    <div class="footer-links">
+        <a href="contact.html">Contact</a> | <a href="legal.html">Legal</a>
+    </div>
   </footer>
 <?php include 'footer.php'; ?>
 
 </body>
-  </html>
-        
+</html>
