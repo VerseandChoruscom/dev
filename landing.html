@@ -21,7 +21,7 @@
             flex-direction: column;
         }
 
-        /* --- BURGUNDY HEADER --- */
+        /* --- HEADER (Fixed Top) --- */
         header {
             height: 80px;
             width: 100%;
@@ -29,8 +29,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 1%; 
-            position: relative;
+            padding: 0 1%;
             z-index: 1000;
         }
 
@@ -39,55 +38,39 @@
             height: 100%;
         }
 
-        /* --- HAMBURGER NAVIGATION --- */
-        #nav-toggle {
-            cursor: pointer;
-            color: white;
-            z-index: 1001;
-            transition: transform 0.2s;
-        }
-        #nav-toggle:hover { transform: scale(1.1); }
-
+        /* --- NAVIGATION --- */
+        #nav-toggle { cursor: pointer; color: white; z-index: 1001; }
         #nav-menu {
             display: none;
             position: absolute;
-            top: 80px; 
+            top: 80px;
             right: 0;
             width: 280px;
             background-color: black;
             z-index: 999;
-            box-shadow: -5px 10px 20px rgba(0,0,0,0.5);
+            box-shadow: -5px 5px 15px rgba(0,0,0,0.5);
         }
-
         #nav-menu.active { display: block; }
-
         #nav-menu a {
             display: block;
             color: white;
             padding: 12px 25px;
             text-align: right;
-            text-decoration: none;
-            font-size: 0.95rem;
             border-bottom: 1px solid #1a1a1a;
-            transition: background 0.3s, color 0.3s;
         }
+        #nav-menu a:hover { color: #800020; background: #0a0a0a; }
 
-        #nav-menu a:hover { 
-            background-color: #1a1a1a;
-            color: #ff3b3b; /* Subtle highlight */
-        }
-
-        /* --- THE STAGE (95% PNG Area) --- */
-        #stage {
+        /* --- THE STAGE (Middle Area) --- */
+        #stage-container {
             position: relative;
-            flex-grow: 1;
-            /* 2% gap top, 1% sides/bottom */
-            margin: 2% 1% 1% 1%; 
+            flex: 1; /* Fills space between header and footer */
+            /* 2% Gap Top, 1% Sides/Bottom border */
+            margin: 2vh 1vw 1vh 1vw; 
+            background: #000;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
-            background: #000; 
         }
 
         #central-png {
@@ -97,34 +80,33 @@
             z-index: 10;
         }
 
-        /* --- CURTAINS (Below Header) --- */
+        /* --- CURTAINS (Inside Stage) --- */
         .curtain {
             position: absolute;
             top: 0;
             bottom: 0;
             width: 50%;
             background-color: #800020;
-            z-index: 50; 
-            transition: transform 2.2s cubic-bezier(0.86, 0, 0.07, 1);
+            z-index: 50;
+            transition: transform 2s cubic-bezier(0.86, 0, 0.07, 1);
         }
-
         #leftCurtain { left: 0; transform: translateX(2%); }
         #rightCurtain { right: 0; transform: translateX(-2%); }
-
         .open-left { transform: translateX(-105%) !important; }
         .open-right { transform: translateX(105%) !important; }
 
-        /* --- FOOTER --- */
+        /* --- FOOTER (Fixed Bottom) --- */
         footer {
             height: 40px;
             width: 100%;
+            background-color: #800020;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
-            z-index: 60;
+            z-index: 1000;
             font-size: 0.75rem;
-            letter-spacing: 0.05em;
+            pointer-events: auto; /* Ensure links are clickable */
         }
 
         #spotlight {
@@ -132,7 +114,7 @@
             top: 80px;
             left: 0;
             width: 100%;
-            height: calc(100% - 80px);
+            height: calc(100vh - 120px);
             pointer-events: none;
             mix-blend-mode: hard-light;
             z-index: 500;
@@ -143,15 +125,13 @@
 
     <header>
         <div class="header-logo-wrap">
-            <img src="verse-and-chorus-logo.png" alt="Kellie Larson Logo" class="h-full w-full object-contain object-left">
+            <img src="verse-and-chorus-logo.png" alt="Logo" class="h-full w-full object-contain object-left">
         </div>
-        
         <div id="nav-toggle">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
         </div>
-
         <nav id="nav-menu">
             <a href="bio.html">Spotlight</a>
             <a href="industry-pros.php">Industry Pros Only</a>
@@ -164,14 +144,14 @@
         </nav>
     </header>
 
-    <div id="stage">
+    <div id="stage-container">
         <div id="leftCurtain" class="curtain"></div>
         <div id="rightCurtain" class="curtain"></div>
-        <img src="verse-and-chorus-logo.png" id="central-png" alt="Main Entry Logo">
+        <img src="verse-and-chorus-logo.png" id="central-png" alt="Main Portfolio">
     </div>
 
     <footer>
-        Kellie Larson 🔥 Cinematic Lyricist 🎙️ info@verseandchorus.com ✉️ (760) 537-0222
+        <p>Kellie Larson 🔥 Cinematic Lyricist 🎙️ <a href="mailto:info@verseandchorus.com" class="hover:underline">info@verseandchorus.com</a> ✉️ (760) 537-0222 ☎️</p>
     </footer>
 
     <div id="spotlight"></div>
@@ -179,32 +159,24 @@
     <script>
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
-        const stage = document.getElementById('stage');
+        const stage = document.getElementById('stage-container');
         const leftCurtain = document.getElementById('leftCurtain');
         const rightCurtain = document.getElementById('rightCurtain');
         const spotlight = document.getElementById('spotlight');
 
-        // Toggle Nav
         navToggle.addEventListener('click', (e) => {
             navMenu.classList.toggle('active');
             e.stopPropagation();
         });
 
-        // Close menu on outside click
-        document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && e.target !== navToggle) {
-                navMenu.classList.remove('active');
-            }
-        });
+        document.addEventListener('click', () => { navMenu.classList.remove('active'); });
 
-        // Spotlight Move
         document.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth) * 100;
             const y = (e.clientY / window.innerHeight) * 100;
             spotlight.style.background = `radial-gradient(circle 350px at ${x}% ${y}%, transparent 0%, rgba(0, 0, 0, 0.98) 95%)`;
         });
 
-        // Curtain Logic
         stage.addEventListener('click', () => {
             leftCurtain.classList.add('open-left');
             rightCurtain.classList.add('open-right');
