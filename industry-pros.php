@@ -1,7 +1,7 @@
 <?php
 // industry-pros.php
 
-// 1. Load song data safely
+// 1. Load song data
 $json_file = 'lyrics.json';
 $json_content = file_exists($json_file) ? file_get_contents($json_file) : "[]";
 ?>
@@ -15,17 +15,17 @@ $json_content = file_exists($json_file) ? file_get_contents($json_file) : "[]";
     
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
-        /* --- BRANDING COLORS --- */
+        /* --- BRANDING --- */
         :root {
             --metallic-gold: #D4AF37;
             --burgundy: #800020;
             --white: #FFFFFF;
             --black: #000000;
             --blue-gray-elegant: #5D6D7E;
-            --sunset-orange: #ea580c; 
+            --sunset-orange: #ea580c;
             --sunset-orange-hover: #ff741a;
         }
 
@@ -34,9 +34,12 @@ $json_content = file_exists($json_file) ? file_get_contents($json_file) : "[]";
             color: var(--white);
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* --- HEADER & NAV (From index.html) --- */
+        /* --- HEADER (From index.html) --- */
         #main-header {
             display: flex; 
             justify-content: space-between; 
@@ -46,6 +49,7 @@ $json_content = file_exists($json_file) ? file_get_contents($json_file) : "[]";
             position: relative;
             flex-wrap: wrap; 
             border-bottom: 1px solid var(--metallic-gold);
+            z-index: 50;
         }
 
         .logo-top-left {
@@ -105,18 +109,19 @@ $json_content = file_exists($json_file) ? file_get_contents($json_file) : "[]";
             }
         }
 
-        /* --- PAGE CONTENT --- */
+        /* --- CONTENT STYLES --- */
         .content-container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 40px 1rem;
+            flex-grow: 1;
         }
 
         .script-font {
             font-family: 'Brush Script MT', 'Cursive', cursive;
         }
 
-        /* Buttons & Interactive Elements */
+        /* Interactive Elements */
         .btn-sunset {
             background-color: var(--sunset-orange);
             color: white;
@@ -128,25 +133,69 @@ $json_content = file_exists($json_file) ? file_get_contents($json_file) : "[]";
             transform: translateY(-2px);
         }
 
-        /* Round Terms Button */
-        .btn-round-terms {
+        .btn-round {
             background-color: var(--sunset-orange);
             color: white;
             border-radius: 9999px;
-            padding: 12px 30px;
+            padding: 10px 24px;
             font-weight: bold;
             text-transform: uppercase;
             text-decoration: none;
             display: inline-block;
             transition: background 0.3s, transform 0.2s;
-            box-shadow: 0 4px 6px rgba(234, 88, 12, 0.3);
         }
-        .btn-round-terms:hover {
+        .btn-round:hover {
             background-color: var(--sunset-orange-hover);
             transform: scale(1.05);
         }
 
-        /* Back to Top Arrow */
+        /* Cards */
+        .song-card {
+            background-color: #1F2937;
+            border: 1px solid #374151;
+            transition: transform 0.2s;
+        }
+        .song-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(234, 88, 12, 0.2); /* Sunset glow */
+            border-color: var(--sunset-orange);
+        }
+
+        /* Filter Controls */
+        .filter-group-btn {
+            background-color: #374151;
+            color: #d1d5db;
+            border: 1px solid #4b5563;
+            transition: all 0.2s;
+        }
+        .filter-group-btn:hover {
+            background-color: #4b5563;
+            color: white;
+        }
+        .filter-group-btn.active {
+            background-color: var(--sunset-orange);
+            border-color: var(--sunset-orange);
+            color: white;
+        }
+
+        .filter-pill {
+            background-color: #111827;
+            color: #9ca3af;
+            border: 1px solid #374151;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-pill:hover {
+            border-color: var(--sunset-orange);
+            color: white;
+        }
+        .filter-pill.active {
+            background-color: var(--sunset-orange);
+            color: white;
+            border-color: var(--sunset-orange);
+        }
+
+        /* Back to Top */
         #scroll-to-top-btn {
             display: none;
             position: fixed;
@@ -168,26 +217,8 @@ $json_content = file_exists($json_file) ? file_get_contents($json_file) : "[]";
             transform: scale(1.15);
         }
 
-        /* Cards & Filters */
-        .song-card {
-            background-color: #1F2937;
-            border: 1px solid #374151;
-            transition: transform 0.2s;
-        }
-        .song-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-        }
-
-        .filter-btn {
-            background-color: #374151;
-            color: white;
-            border: 1px solid #4B5563;
-        }
-        .filter-btn.active {
-            background-color: var(--sunset-orange);
-            border-color: var(--sunset-orange);
-        }
+        /* Hidden Utility */
+        .hidden { display: none !important; }
 
         /* --- FOOTER (From index.html) --- */
         .site-footer {
@@ -195,7 +226,7 @@ $json_content = file_exists($json_file) ? file_get_contents($json_file) : "[]";
             color: var(--white);
             text-align: center; 
             padding: 40px 20px;
-            margin-top: 50px;
+            margin-top: auto;
             border-top: 5px solid var(--metallic-gold);
             display: flex;
             flex-direction: column;
@@ -247,52 +278,79 @@ $json_content = file_exists($json_file) ? file_get_contents($json_file) : "[]";
         
         <div class="text-center mb-12">
             <h1 class="script-font text-5xl text-[var(--metallic-gold)] mb-4">Industry Pro Vault</h1>
-            <p class="text-gray-400 mb-8 text-lg">Curated A&R Catalog | Sync-Ready Lyrics | Commercial Demos</p>
-            
-            <a href="/legal.html" class="btn-round-terms">
-                View Licensing Terms
-            </a>
+            <p class="text-gray-400 text-lg mb-6">Curated A&R Catalog | Sync-Ready Lyrics | Commercial Demos</p>
+            <a href="/legal.html" class="btn-round text-sm">View Licensing Terms</a>
         </div>
 
-        <div class="bg-gray-900 p-8 rounded-xl mb-12 border border-gray-700 shadow-2xl">
-            <h3 class="text-2xl font-bold text-white mb-6">Search Catalog</h3>
-            
-            <input type="text" id="search-input" 
-                   placeholder="Search by Title, Mood, Hashtags (#Empowerment), Genre, or Keywords..."
-                   class="w-full p-4 mb-6 rounded-lg bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-[var(--sunset-orange)] text-lg placeholder-gray-500 transition">
-            
-            <div class="flex flex-wrap gap-3 mb-6" id="filter-categories">
-                </div>
-
-            <div id="sub-filters" class="hidden bg-gray-800 p-6 rounded-lg mt-4 border border-gray-700 animate-fade-in">
-                <h4 id="sub-filter-title" class="text-[var(--metallic-gold)] mb-4 font-bold uppercase text-sm tracking-widest">Select Option:</h4>
-                <div id="sub-filter-options" class="flex flex-wrap gap-3 max-h-48 overflow-y-auto">
+        <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-2xl overflow-hidden mb-12">
+            <div class="p-6 border-b border-gray-700 bg-gray-800">
+                <h3 class="text-xl font-bold text-white mb-4"><i class="fa fa-search mr-2 text-[var(--metallic-gold)]"></i> Search Catalog</h3>
+                
+                <div class="flex flex-col md:flex-row gap-4">
+                    <div class="flex-grow">
+                        <input type="text" id="search-input" 
+                               placeholder="Search Titles, Lyrics, Hashtags (#Empowerment), Keywords..." 
+                               class="w-full p-3 rounded bg-gray-900 text-white border border-gray-600 focus:outline-none focus:border-[var(--sunset-orange)]">
                     </div>
+                    
+                    <div class="w-full md:w-48">
+                        <select id="sort-select" onchange="applyFilters()" 
+                                class="w-full p-3 rounded bg-gray-900 text-white border border-gray-600 focus:outline-none focus:border-[var(--sunset-orange)]">
+                            <option value="title_asc">Sort: A-Z</option>
+                            <option value="title_desc">Sort: Z-A</option>
+                            <option value="artist_asc">Artist: A-Z</option>
+                            <option value="tempo_slow">Tempo: Slow to Fast</option>
+                            <option value="tempo_fast">Tempo: Fast to Slow</option>
+                        </select>
+                    </div>
+                </div>
             </div>
 
-            <button onclick="resetFilters()" class="mt-6 text-sm text-gray-400 hover:text-[var(--sunset-orange)] underline transition">Reset All Filters</button>
+            <div class="p-6">
+                <p class="text-gray-400 text-xs uppercase font-bold mb-3 tracking-widest">Filter By Category:</p>
+                <div class="flex flex-wrap gap-2 mb-6" id="category-buttons">
+                    <button class="filter-group-btn px-4 py-2 rounded text-sm font-bold" onclick="selectFilterGroup('genre', this)">Genre</button>
+                    <button class="filter-group-btn px-4 py-2 rounded text-sm font-bold" onclick="selectFilterGroup('mood', this)">Mood</button>
+                    <button class="filter-group-btn px-4 py-2 rounded text-sm font-bold" onclick="selectFilterGroup('theme', this)">Theme</button>
+                    <button class="filter-group-btn px-4 py-2 rounded text-sm font-bold" onclick="selectFilterGroup('vocals', this)">Vocals</button>
+                    <button class="filter-group-btn px-4 py-2 rounded text-sm font-bold" onclick="selectFilterGroup('tempo', this)">Tempo</button>
+                </div>
+
+                <div id="sub-options-container" class="hidden animate-fade-in p-4 bg-gray-800 rounded border border-gray-700">
+                    <div class="flex justify-between items-center mb-3">
+                        <h4 id="sub-options-title" class="text-[var(--sunset-orange)] font-bold text-sm uppercase">Select Options</h4>
+                        <button onclick="clearActiveFilter()" class="text-xs text-gray-400 hover:text-white underline">Clear</button>
+                    </div>
+                    <div id="sub-options-grid" class="flex flex-wrap gap-2 max-h-40 overflow-y-auto"></div>
+                </div>
+                
+                <div class="mt-4 flex justify-between items-center">
+                    <span id="result-count" class="text-xs text-gray-500 italic">Loading...</span>
+                    <button onclick="resetAll()" class="text-sm text-gray-400 hover:text-[var(--sunset-orange)] underline">Reset All Filters</button>
+                </div>
+            </div>
         </div>
 
         <div id="card-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             </div>
 
-        <div class="p-10 bg-gray-900 rounded-xl border-t-4 border-[var(--metallic-gold)] text-center shadow-2xl">
-            <h2 class="script-font text-4xl text-[var(--metallic-gold)] mb-4">Elevate Your Songwriting</h2>
-            <p class="text-gray-300 mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
-                Need professional feedback before pitching? Our 
-                <a href="/lyric-critque.html" class="text-[var(--sunset-orange)] font-bold hover:text-white transition">Lyric Critique Services</a> 
-                provide a comprehensive <strong>$499 Industry Report</strong> to polish your songs for the market. 
-                Discover more about our lead writer in the <a href="/bio.html" class="text-[var(--sunset-orange)] font-bold hover:text-white transition">Spotlight Section</a>.
+        <div class="bg-gray-900 border-t-4 border-[var(--metallic-gold)] rounded-xl p-10 text-center shadow-2xl mt-auto">
+            <h2 class="script-font text-4xl text-[var(--metallic-gold)] mb-4">Professional Songwriting Services</h2>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Before you pitch, get your lyrics polished. We offer a comprehensive 
+                <a href="/lyric-critque.html" class="text-[var(--sunset-orange)] font-bold hover:underline">Lyric Critique Service</a> 
+                that includes a <strong>$499 Industry Report</strong>. 
+                Learn more about our lead writer in the <a href="/bio.html" class="text-[var(--sunset-orange)] font-bold hover:underline">Spotlight Section</a>.
             </p>
-            <div class="flex flex-wrap justify-center gap-6">
-                <a href="/lyric-critque.html" class="btn-round-terms text-sm">Get the $499 Report</a>
-                <a href="/bio.html" class="btn-round-terms bg-gray-700 hover:bg-gray-600 text-sm">View Artist Spotlight</a>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/lyric-critque.html" class="btn-round text-sm">Get Critique Report</a>
+                <a href="/bio.html" class="btn-round bg-gray-700 hover:bg-gray-600 text-sm">View Spotlight</a>
             </div>
         </div>
 
     </main>
 
-    <button onclick="topFunction()" id="scroll-to-top-btn" title="Go to top">⬆️</button>
+    <button onclick="topFunction()" id="scroll-to-top-btn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
     <footer class="site-footer">
         <p>♥️ Kellie Larson ♥️</p>
@@ -307,27 +365,29 @@ $json_content = file_exists($json_file) ? file_get_contents($json_file) : "[]";
         </div>
     </footer>
 
-    <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-95 z-50 hidden flex justify-center items-center p-4 backdrop-blur-sm">
-        <div class="bg-gray-800 rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto border border-gray-600 relative">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl font-bold">&times;</button>
+    <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-95 z-[100] hidden flex justify-center items-center p-4 backdrop-blur-sm">
+        <div class="bg-gray-800 rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto border border-gray-600 relative flex flex-col">
             
-            <div class="p-8">
-                <h2 id="modal-title" class="text-3xl font-bold text-[var(--metallic-gold)] mb-2">Song Title</h2>
-                <p id="modal-artist" class="text-gray-400 text-sm mb-6">Artist Name</p>
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl z-10">&times;</button>
+            
+            <div class="p-8 flex-grow">
+                <h2 id="modal-title" class="text-3xl font-bold text-[var(--metallic-gold)] mb-1">Song Title</h2>
+                <p id="modal-artist" class="text-gray-400 text-sm mb-6 uppercase tracking-wider">Artist Name</p>
 
-                <div id="player-wrapper" class="mb-8 bg-black rounded-lg p-4 min-h-[150px] flex items-center justify-center border border-gray-700 shadow-inner">
+                <div id="player-container" class="mb-8 bg-black rounded-lg p-2 min-h-[150px] flex items-center justify-center border border-gray-700 shadow-inner">
                     <p class="text-gray-500 animate-pulse">Loading Player...</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="text-[var(--sunset-orange)] font-bold mb-3 uppercase text-xs tracking-wider">Full Lyrics</h4>
-                        <div id="modal-lyrics" class="bg-gray-900 p-6 rounded-lg text-gray-300 text-sm whitespace-pre-wrap h-80 overflow-y-auto border border-gray-700 font-mono leading-relaxed shadow-inner"></div>
+                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 shadow-inner h-80 overflow-y-auto">
+                        <h4 class="text-[var(--sunset-orange)] font-bold mb-3 uppercase text-xs sticky top-0 bg-gray-900 pb-2 border-b border-gray-700">Full Lyrics</h4>
+                        <pre id="modal-lyrics" class="text-gray-300 text-sm whitespace-pre-wrap font-sans leading-relaxed"></pre>
                     </div>
+                    
                     <div class="space-y-6 text-sm text-gray-300">
                         <div><h4 class="text-[var(--sunset-orange)] font-bold uppercase text-xs mb-1">Mood & Tone</h4><p id="modal-mood">Placeholder</p></div>
-                        <div><h4 class="text-[var(--sunset-orange)] font-bold uppercase text-xs mb-1">Placement Type</h4><p id="modal-placement">Placeholder</p></div>
-                        <div><h4 class="text-[var(--sunset-orange)] font-bold uppercase text-xs mb-1">Description</h4><p id="modal-desc" class="italic leading-relaxed">Placeholder</p></div>
+                        <div><h4 class="text-[var(--sunset-orange)] font-bold uppercase text-xs mb-1">Placement</h4><p id="modal-placement">Placeholder</p></div>
+                        <div><h4 class="text-[var(--sunset-orange)] font-bold uppercase text-xs mb-1">Description</h4><p id="modal-desc" class="italic">Placeholder</p></div>
                         <div><h4 class="text-[var(--sunset-orange)] font-bold uppercase text-xs mb-1">Tags</h4><p id="modal-tags" class="text-blue-300">#Placeholder</p></div>
                     </div>
                 </div>
@@ -340,97 +400,63 @@ $json_content = file_exists($json_file) ? file_get_contents($json_file) : "[]";
     </div>
 
     <script>
-        const SONGS_DATA = <?php echo $json_content; ?>;
+        // Data Injection
+        const SONGS = <?php echo $json_content; ?>;
 
-        // Elements
+        // Globals
+        let currentFilterGroup = null;
+        let activeFilterValue = null;
         const cardGrid = document.getElementById('card-grid');
         const searchInput = document.getElementById('search-input');
-        const filterContainer = document.getElementById('filter-categories');
-        const subFilterContainer = document.getElementById('sub-filters');
-        const subFilterOptions = document.getElementById('sub-filter-options');
-        const subFilterTitle = document.getElementById('sub-filter-title');
-        
-        // Modal
-        const modal = document.getElementById('modal-overlay');
-        const playerWrapper = document.getElementById('player-wrapper');
+        const resultCount = document.getElementById('result-count');
+        const subOptionsContainer = document.getElementById('sub-options-container');
+        const subOptionsGrid = document.getElementById('sub-options-grid');
+        const subOptionsTitle = document.getElementById('sub-options-title');
 
-        // State
-        let activeCategoryKey = null;
-        let activeFilterValue = null;
-
-        const CATEGORY_MAP = [
-            { label: 'Genre', key: 'genre1' },
-            { label: 'Mood', key: 'moodTone' },
-            { label: 'Theme', key: 'category' },
-            { label: 'Tempo', key: 'tempo' },
-            { label: 'Vocals', key: 'vocalType' },
-            { label: 'Placement', key: 'placementType' }
-        ];
-
-        // --- INITIALIZATION ---
+        // --- INIT ---
         document.addEventListener('DOMContentLoaded', () => {
-            renderFilterButtons();
-            renderCards(SONGS_DATA);
+            renderCards(SONGS);
+            searchInput.addEventListener('input', applyFilters);
         });
 
-        // --- NAVIGATION ---
-        function toggleMenu() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        }
-
-        window.onscroll = function() { scrollFunction() };
-        function scrollFunction() {
-            const btn = document.getElementById("scroll-to-top-btn");
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                btn.style.display = "block";
-            } else {
-                btn.style.display = "none";
-            }
-        }
-        function topFunction() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // --- CARD RENDERING ---
+        // --- RENDER CARDS ---
         function renderCards(data) {
             cardGrid.innerHTML = '';
             if (data.length === 0) {
-                cardGrid.innerHTML = '<p class="text-gray-400 col-span-full text-center py-10 text-xl">No songs found matching your criteria.</p>';
+                cardGrid.innerHTML = '<div class="col-span-full text-center py-20"><p class="text-2xl text-gray-500 mb-2">No matches found.</p><button onclick="resetAll()" class="text-[var(--sunset-orange)] underline">Clear Filters</button></div>';
+                resultCount.innerText = '0 Songs Found';
                 return;
             }
+            
+            resultCount.innerText = `${data.length} Songs Found`;
+
             data.forEach(song => {
                 const genres = [song.genre1, song.genre2].filter(g => g && g !== 'Placeholder').join(' / ');
-                const safeImg = song.coverImageUrl || 'https://placehold.co/400x400?text=No+Image';
+                const safeImg = song.coverImageUrl || 'https://placehold.co/400x400?text=No+Cover';
                 
                 const card = `
-                    <div class="song-card p-6 rounded-xl shadow-lg flex flex-col h-full hover:border-[var(--sunset-orange)] transition duration-300">
-                        <div class="relative mb-6 group">
-                            <img src="${safeImg}" class="w-full h-64 object-cover rounded-lg shadow-md group-hover:opacity-80 transition" alt="${song.title}">
-                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                                <button onclick="openModal(${song.id})" class="bg-black bg-opacity-70 text-white rounded-full p-4 hover:bg-[var(--sunset-orange)]">
-                                    ▶ Play
-                                </button>
+                    <div class="song-card p-6 rounded-xl shadow-lg flex flex-col h-full relative group">
+                        <div class="relative mb-4 overflow-hidden rounded-lg">
+                            <img src="${safeImg}" class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500" alt="${song.title}">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <button onclick="openModal(${song.id})" class="bg-[var(--sunset-orange)] text-white px-6 py-2 rounded-full font-bold shadow-lg transform hover:scale-110 transition">View Details</button>
                             </div>
                         </div>
                         
-                        <h3 class="text-2xl font-bold text-white mb-2 leading-tight">${song.title}</h3>
-                        <p class="text-sm text-[var(--metallic-gold)] mb-4 font-bold uppercase tracking-wider">${song.artistWriter}</p>
+                        <h3 class="text-2xl font-bold text-white mb-1 leading-tight">${song.title}</h3>
+                        <p class="text-xs text-[var(--metallic-gold)] font-bold uppercase mb-3">${song.artistWriter}</p>
                         
-                        <div class="mb-6 flex-grow space-y-2">
-                            <p class="text-xs text-gray-400 uppercase font-bold">Genre</p>
-                            <p class="text-sm text-white">${genres}</p>
-                            <div class="h-px bg-gray-700 my-2"></div>
-                            <p class="text-sm text-gray-300 line-clamp-3 italic leading-relaxed">${song.shortDescription || 'No description available.'}</p>
+                        <div class="flex-grow">
+                            <p class="text-xs text-gray-400 mb-2"><span class="text-gray-500 uppercase font-bold mr-2">Genre:</span> ${genres}</p>
+                            <p class="text-sm text-gray-300 line-clamp-3 leading-relaxed italic">${song.shortDescription || 'No description available.'}</p>
                         </div>
 
-                        <div class="flex gap-3 mt-auto">
-                            <button onclick="openModal(${song.id})" 
-                                    class="flex-1 btn-sunset font-bold py-3 px-4 rounded-lg text-sm shadow-lg uppercase tracking-wide">
-                                Play / View
+                        <div class="mt-6 flex gap-3">
+                            <button onclick="openModal(${song.id})" class="flex-1 btn-sunset py-3 px-4 rounded-lg font-bold text-sm shadow-md uppercase tracking-wide">
+                                <i class="fa fa-play mr-2"></i> Play / View
                             </button>
-                            <button onclick="printSong(${song.id})" 
-                                    class="btn-sunset font-bold py-3 px-6 rounded-lg text-sm shadow-lg uppercase tracking-wide">
-                                🖨️ Print
+                            <button onclick="printSong(${song.id})" class="btn-sunset py-3 px-4 rounded-lg font-bold text-sm shadow-md uppercase tracking-wide">
+                                <i class="fa fa-print"></i>
                             </button>
                         </div>
                     </div>
@@ -439,213 +465,228 @@ $json_content = file_exists($json_file) ? file_get_contents($json_file) : "[]";
             });
         }
 
-        // --- FILTERING ---
-        function renderFilterButtons() {
-            filterContainer.innerHTML = '';
-            CATEGORY_MAP.forEach(cat => {
-                const btn = document.createElement('button');
-                btn.className = `filter-btn px-5 py-2 rounded-full text-sm font-bold transition uppercase tracking-wider shadow-sm`;
-                btn.innerText = cat.label;
-                btn.onclick = () => activateCategory(cat.key, cat.label, btn);
-                filterContainer.appendChild(btn);
-            });
-        }
+        // --- FILTERING LOGIC ---
+        function selectFilterGroup(group, btn) {
+            // UI Toggle
+            document.querySelectorAll('.filter-group-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilterGroup = group;
+            activeFilterValue = null; // Reset value when switching group
 
-        function activateCategory(jsonKey, displayLabel, btnElement) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btnElement.classList.add('active');
-            
-            activeCategoryKey = jsonKey;
-            activeFilterValue = null;
-            
+            // Collect unique values
             const values = new Set();
-            SONGS_DATA.forEach(song => {
-                const rawVal = song[jsonKey];
-                if (rawVal && rawVal !== 'Placeholder') {
-                    rawVal.split(',').forEach(v => { const t = v.trim(); if(t) values.add(t); });
+            SONGS.forEach(song => {
+                let val = '';
+                if(group === 'genre') val = [song.genre1, song.genre2].join(',');
+                if(group === 'mood') val = song.moodTone;
+                if(group === 'theme') val = song.category;
+                if(group === 'vocals') val = song.vocalType;
+                if(group === 'tempo') val = song.tempo;
+
+                if (val && val !== 'Placeholder') {
+                    val.split(',').forEach(v => {
+                        const t = v.trim();
+                        if (t && t !== 'N/A') values.add(t);
+                    });
                 }
             });
 
-            subFilterTitle.innerText = `Filter by ${displayLabel}:`;
-            subFilterOptions.innerHTML = '';
-            
-            const allBtn = createSubOption('All', () => applyFilter(null));
-            subFilterOptions.appendChild(allBtn);
-
+            // Render Pills
+            subOptionsTitle.innerText = `Select ${group}:`;
+            subOptionsGrid.innerHTML = '';
             Array.from(values).sort().forEach(val => {
-                const optBtn = createSubOption(val, () => applyFilter(val));
-                subFilterOptions.appendChild(optBtn);
+                const pill = document.createElement('button');
+                pill.className = 'filter-pill px-3 py-1 rounded-full text-xs font-medium';
+                pill.innerText = val;
+                pill.onclick = () => {
+                    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+                    pill.classList.add('active');
+                    activeFilterValue = val;
+                    applyFilters();
+                };
+                subOptionsGrid.appendChild(pill);
             });
-            subFilterContainer.classList.remove('hidden');
+            subOptionsContainer.classList.remove('hidden');
         }
 
-        function createSubOption(text, onClick) {
-            const btn = document.createElement('button');
-            btn.className = "px-4 py-2 bg-gray-700 hover:bg-[var(--sunset-orange)] text-xs rounded-full border border-gray-600 text-gray-200 transition font-medium shadow-sm mb-2";
-            btn.innerText = text;
-            btn.onclick = (e) => {
-                document.querySelectorAll('#sub-filter-options button').forEach(b => {
-                    b.classList.remove('bg-[var(--sunset-orange)]', 'text-white', 'border-transparent');
-                    b.classList.add('bg-gray-700', 'text-gray-200');
-                });
-                e.target.classList.remove('bg-gray-700', 'text-gray-200');
-                e.target.classList.add('bg-[var(--sunset-orange)]', 'text-white', 'border-transparent');
-                onClick();
-            };
-            return btn;
+        function clearActiveFilter() {
+            activeFilterValue = null;
+            document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+            applyFilters();
         }
 
-        function applyFilter(value) {
-            activeFilterValue = value;
-            runMasterSearch();
-        }
-
-        searchInput.addEventListener('input', runMasterSearch);
-
-        function runMasterSearch() {
-            const query = searchInput.value.toLowerCase().trim();
-            const filtered = SONGS_DATA.filter(song => {
-                let textMatch = true;
-                if (query) {
-                    const searchable = [
-                        song.title, song.artistWriter, song.shortDescription, song.longDescription,
-                        song.moodTone, song.category, (song.keywords || []).join(' '), (song.hashtags || []).join(' ')
-                    ].join(' ').toLowerCase();
-                    textMatch = searchable.includes(query);
-                }
-                let catMatch = true;
-                if (activeCategoryKey && activeFilterValue) {
-                    const songVal = song[activeCategoryKey];
-                    catMatch = songVal ? songVal.toLowerCase().includes(activeFilterValue.toLowerCase()) : false;
-                }
-                return textMatch && catMatch;
-            });
-            renderCards(filtered);
-        }
-
-        function resetFilters() {
-            activeCategoryKey = null;
+        function resetAll() {
+            currentFilterGroup = null;
             activeFilterValue = null;
             searchInput.value = '';
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            subFilterContainer.classList.add('hidden');
-            renderCards(SONGS_DATA);
+            subOptionsContainer.classList.add('hidden');
+            document.querySelectorAll('.filter-group-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('sort-select').selectedIndex = 0;
+            applyFilters();
         }
 
-        // --- MODAL / PLAYER ---
-        function openModal(songId) {
-            const song = SONGS_DATA.find(s => s.id === songId);
-            if (!song) return;
+        function applyFilters() {
+            const query = searchInput.value.toLowerCase().trim();
+            const sortMode = document.getElementById('sort-select').value;
+
+            // 1. Filter
+            let results = SONGS.filter(song => {
+                // Text Search
+                let textMatch = true;
+                if (query) {
+                    const haystack = [
+                        song.title, song.artistWriter, song.shortDescription, 
+                        song.moodTone, song.category, 
+                        (song.hashtags || []).join(' '), (song.keywords || []).join(' ')
+                    ].join(' ').toLowerCase();
+                    textMatch = haystack.includes(query);
+                }
+
+                // Category Filter
+                let catMatch = true;
+                if (activeFilterValue) {
+                    let targetVal = '';
+                    if(currentFilterGroup === 'genre') targetVal = [song.genre1, song.genre2].join(',');
+                    if(currentFilterGroup === 'mood') targetVal = song.moodTone;
+                    if(currentFilterGroup === 'theme') targetVal = song.category;
+                    if(currentFilterGroup === 'vocals') targetVal = song.vocalType;
+                    if(currentFilterGroup === 'tempo') targetVal = song.tempo;
+                    
+                    catMatch = targetVal && targetVal.toLowerCase().includes(activeFilterValue.toLowerCase());
+                }
+
+                return textMatch && catMatch;
+            });
+
+            // 2. Sort
+            results.sort((a, b) => {
+                if (sortMode === 'title_asc') return a.title.localeCompare(b.title);
+                if (sortMode === 'title_desc') return b.title.localeCompare(a.title);
+                if (sortMode === 'artist_asc') return a.artistWriter.localeCompare(b.artistWriter);
+                if (sortMode === 'tempo_slow') return (a.tempo || '').localeCompare(b.tempo || '');
+                return 0;
+            });
+
+            renderCards(results);
+        }
+
+        // --- MODAL LOGIC ---
+        function openModal(id) {
+            const song = SONGS.find(s => s.id === id);
+            if(!song) return;
 
             document.getElementById('modal-title').innerText = song.title;
             document.getElementById('modal-artist').innerText = song.artistWriter;
-            document.getElementById('modal-lyrics').innerText = song.fullLyrics || 'Lyrics not available.';
-            document.getElementById('modal-mood').innerText = song.moodTone || 'N/A';
-            document.getElementById('modal-placement').innerText = song.placementType || 'N/A';
-            document.getElementById('modal-desc').innerText = song.longDescription || 'N/A';
-            document.getElementById('modal-tags').innerText = (song.hashtags || []).join(' ');
+            document.getElementById('modal-lyrics').innerText = song.fullLyrics || "Lyrics unavailable.";
+            document.getElementById('modal-mood').innerText = song.moodTone || "N/A";
+            document.getElementById('modal-placement').innerText = song.placementType || "N/A";
+            document.getElementById('modal-desc').innerText = song.longDescription || "N/A";
+            document.getElementById('modal-tags').innerText = (song.hashtags || []).join(', ');
 
-            if (song.songbayPlayerUrl && song.songbayPlayerUrl !== 'Placeholder') {
-                playerWrapper.innerHTML = `<iframe src="${song.songbayPlayerUrl}" style="width:100%; height:150px; border:none; border-radius:4px;" scrolling="no"></iframe>`;
+            const player = document.getElementById('player-container');
+            if(song.songbayPlayerUrl && song.songbayPlayerUrl !== 'Placeholder') {
+                player.innerHTML = `<iframe src="${song.songbayPlayerUrl}" style="width:100%; height:150px; border:none; border-radius:8px;" scrolling="no"></iframe>`;
             } else {
-                playerWrapper.innerHTML = '<p class="text-gray-500 italic">No audio player available for this track.</p>';
+                player.innerHTML = `<p class="text-gray-500 italic text-sm">Audio player not available.</p>`;
             }
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; 
+
+            document.getElementById('modal-overlay').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
-            modal.classList.add('hidden');
-            playerWrapper.innerHTML = ''; 
+            document.getElementById('modal-overlay').classList.add('hidden');
+            document.getElementById('player-container').innerHTML = ''; // Stop audio
             document.body.style.overflow = 'auto';
         }
-        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 
-        // --- 4. ADVANCED PRINT FUNCTION (2 PAGES) ---
-        function printSong(songId) {
-            const song = SONGS_DATA.find(s => s.id === songId);
-            if (!song) return;
+        document.getElementById('modal-overlay').addEventListener('click', (e) => {
+            if(e.target.id === 'modal-overlay') closeModal();
+        });
+
+        // --- PRINT LOGIC (2 PAGES) ---
+        function printSong(id) {
+            const song = SONGS.find(s => s.id === id);
+            if(!song) return;
 
             const date = new Date().toLocaleDateString();
             const headerHTML = document.getElementById('main-header').outerHTML;
             const footerHTML = document.querySelector('.site-footer').outerHTML;
-            const safeImg = song.coverImageUrl || 'https://placehold.co/400x400?text=No+Cover';
+            const genres = [song.genre1, song.genre2].filter(g => g && g !== 'Placeholder').join(' / ');
+            const imgUrl = song.coverImageUrl || 'https://placehold.co/300';
 
-            const printWindow = window.open('', '', 'width=900,height=800');
-            printWindow.document.write(`
+            const win = window.open('', '', 'width=900,height=800');
+            win.document.write(`
                 <html>
                 <head>
-                    <title>${song.title} - Industry One Sheet</title>
-                    <link rel="stylesheet" href="/assets/css/style.css" />
+                    <title>${song.title} - One Sheet</title>
+                    <link rel="stylesheet" href="/assets/css/style.css">
                     <style>
-                        body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #000; margin: 0; background: #fff; }
+                        body { font-family: Arial, sans-serif; color: #000; margin: 0; background: #fff; }
                         #main-header, .site-footer { background: #000 !important; color: #fff !important; -webkit-print-color-adjust: exact; }
-                        #main-header a, .site-footer a { color: #fff !important; text-decoration: none; }
-                        #nav-menu, .hamburger { display: none !important; } /* Hide nav on print */
-                        
-                        .container { max-width: 800px; margin: 0 auto; padding: 40px; }
-                        .page-break { page-break-before: always; }
-                        
-                        h1 { font-size: 36px; color: #800020; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
-                        h2 { font-size: 24px; color: #D4AF37; margin-bottom: 20px; text-align: center; font-weight: normal; font-family: 'Brush Script MT', cursive; }
-                        
-                        .cover-art { width: 300px; height: 300px; object-fit: cover; border-radius: 8px; margin: 20px auto; display: block; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-                        
-                        .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; border-top: 2px solid #D4AF37; border-bottom: 2px solid #D4AF37; padding: 20px 0; }
-                        .meta-item strong { display: block; color: #ea580c; text-transform: uppercase; font-size: 11px; margin-bottom: 3px; }
-                        .meta-item span { font-size: 14px; color: #333; }
-                        
-                        .desc-box { background: #f4f4f4; padding: 20px; border-left: 5px solid #800020; margin-bottom: 20px; font-size: 14px; line-height: 1.6; }
-                        
-                        .blurb { font-style: italic; color: #555; font-size: 13px; text-align: center; margin-top: 30px; border: 1px dashed #ccc; padding: 10px; }
-                        
-                        .lyrics-col { column-count: 2; column-gap: 40px; font-size: 13px; line-height: 1.5; white-space: pre-wrap; font-family: inherit; }
+                        #nav-menu, .hamburger { display: none !important; }
+                        .print-wrap { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+                        .page-break { page-break-before: always; display: block; height: 1px; margin: 20px 0; }
+                        h1 { color: #800020; font-size: 36px; text-transform: uppercase; margin-bottom: 5px; text-align: center; }
+                        .meta-box { border: 2px solid #D4AF37; padding: 20px; margin: 20px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+                        .meta-box strong { color: #ea580c; text-transform: uppercase; font-size: 11px; display: block; }
+                        .cover-art { display: block; margin: 20px auto; width: 250px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+                        .blurb { background: #f9f9f9; padding: 15px; border-left: 4px solid #ea580c; font-size: 14px; margin-top: 20px; }
+                        .lyrics-col { column-count: 2; column-gap: 40px; font-size: 13px; line-height: 1.6; white-space: pre-wrap; font-family: inherit; }
                     </style>
                 </head>
                 <body>
                     ${headerHTML}
-                    <div class="container">
+                    <div class="print-wrap">
                         <h1>${song.title}</h1>
-                        <h2>Written by ${song.artistWriter} | ${date}</h2>
+                        <p style="text-align: center; color: #666; margin-bottom: 20px;">Written by ${song.artistWriter} | ${date}</p>
                         
-                        <img src="${safeImg}" class="cover-art" />
+                        <img src="${imgUrl}" class="cover-art" />
                         
-                        <div class="meta-grid">
-                            <div class="meta-item"><strong>Mood</strong> <span>${song.moodTone || 'N/A'}</span></div>
-                            <div class="meta-item"><strong>Licensing</strong> <span>${song.license || 'Standard Sync'}</span></div>
-                            <div class="meta-item"><strong>Copyright</strong> <span>${song.copyright}</span></div>
-                            <div class="meta-item"><strong>Legal</strong> <span>Standard Terms (Placeholder)</span></div>
+                        <div class="meta-box">
+                            <div><strong>Genre</strong> ${genres}</div>
+                            <div><strong>Mood</strong> ${song.moodTone}</div>
+                            <div><strong>Licensing</strong> ${song.license || 'Contact for Licensing'}</div>
+                            <div><strong>Copyright</strong> ${song.copyright}</div>
                         </div>
 
-                        <div class="desc-box">
-                            <strong style="color:#000;">Song Description:</strong><br>
+                        <div class="blurb">
+                            <strong>Description:</strong><br>
                             ${song.longDescription || 'No description available.'}
                         </div>
 
                         <div class="blurb">
-                            <strong>Artist Note:</strong> My best lyrics focus on authentic storytelling and raw emotion, ensuring every word resonates with the visual narrative.<br><br>
-                            <strong>Audio Formats:</strong> High-quality MP3, WAV, M4A, and Stems available upon request.
+                            <strong>Artist Note:</strong> "My best lyrics focus on authentic storytelling and raw emotion, ensuring every word resonates with the visual narrative."<br><br>
+                            <strong>Formats:</strong> High-quality MP3, WAV, M4A, and Stems available upon request.
                         </div>
                     </div>
                     ${footerHTML}
 
                     <div class="page-break"></div>
+                    
                     ${headerHTML}
-                    <div class="container">
+                    <div class="print-wrap">
                         <h1>${song.title}</h1>
-                        <p style="text-align:center; color:#666; margin-bottom: 30px;">${song.copyright}</p>
-                        
-                        <h3 style="color:#ea580c; border-bottom:1px solid #ddd; padding-bottom:5px; margin-bottom:20px;">Full Lyrics</h3>
+                        <p style="text-align: center; margin-bottom: 30px;">${song.copyright}</p>
+                        <h3 style="border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 20px; color: #ea580c;">Full Lyrics</h3>
                         <pre class="lyrics-col">${song.fullLyrics || 'Lyrics unavailable.'}</pre>
                     </div>
                     ${footerHTML}
                 </body>
                 </html>
             `);
-            printWindow.document.close();
-            printWindow.focus();
-            setTimeout(() => { printWindow.print(); }, 800);
+            win.document.close();
+            win.focus();
+            setTimeout(() => win.print(), 1000);
         }
+
+        // --- NAV ---
+        function toggleMenu() { document.getElementById('nav-menu').classList.toggle('active'); }
+        function topFunction() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        window.onscroll = () => {
+            const btn = document.getElementById("scroll-to-top-btn");
+            btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
+        };
     </script>
 </body>
 </html>
