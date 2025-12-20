@@ -1,4 +1,4 @@
-|<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <?php include 'header.php'; ?>
@@ -274,76 +274,7 @@
                 "shortDescription": "An upbeat pop song with a strong, feel-good message centered on the anticipation of reuniting with a loved one. The infectious 'Boom, boom, boom' is a lyrical hook designed for a big sing-along.",
                 "fullLyrics": "(Verse 1)\nEphemeral moment, I should've stretched it out\nFelt you wanted the same, without any doubt\n..."
             },
-            // .  {
-    "id": 43,
-    "title": "CRAVING THOSE CRUMBS",
-    "artistWriter": "Kellie Larson",
-    "year": 2025,
-    "songDuration": "N/A",
-    "language": "English",
-    "coverImageUrl": "/assets/covers/craving-those-crumbs-cover-art.jpg",
-    "songbayWebpageUrl": "Placeholder",
-    "songbayPlayerUrl": "Placeholder",
-    "genre1": "Pop",
-    "genre2": "R&B",
-    "moodTone": "Bitter, Confident, Defensive, Introspective",
-    "category": "Toxic Relationship / Empowerment",
-    "tempo": "Mid Tempo",
-    "internalRating": "Placeholder",
-    "placementType": "Breakup Anthem / Dramatic Scene",
-    "keySignature": "N/A",
-    "timeSignature": "4/4",
-    "vocalType": "Female Vocals",
-    "pov": "1st Person Female",
-    "fileType": "MP3",
-    "instrumentation": [
-      "Drum Machine",
-      "Synthesizers",
-      "Vocals-Sung",
-      "Vocals-Spoken"
-    ],
-    "seoSnippet": "Empowerment Anthem: Craving Those Crumbs (Breaking Toxic Cycles)",
-    "shortDescription": "A raw confrontation of a toxic ex-partner trying to manipulate their way back. The lyrics detail the transition from being under siege to finding self-worth and changing the locks.",
-    "longDescription": "This track explores the psychological 'madness' of a one-sided pursuit by an ex-partner. It contrasts the 'It Boy' persona with the reality of 'ugly temper fits' and domestic toxicity. The song culminates in a definitive act of closure—changing the locks and reclaiming the narrator's voice.",
-    "snippetA": "Too much time wasted, gotta stop craving those crumbs!",
-    "snippetB": "I changed the lock, baby, you're out of luck, the deed is completed!",
-    "commercialPotential": "High for reality TV drama or cinematic scenes focused on self-liberation.",
-    "keywords": [
-      "Toxic Relationship",
-      "Crumbs",
-      "Closure",
-      "Empowerment",
-      "Madness",
-      "Breakup"
-    ],
-    "hashtags": [
-      "#CravingThoseCrumbs",
-      "#KellieLarson",
-      "#ToxicCircus",
-      "#SelfWorth"
-    ],
-    "relatedSearchTerms": [
-      "Confrontational",
-      "Moving On",
-      "Domestic Tension",
-      "Healing",
-      "Reclaiming Voice"
-    ],
-    "isOriginal": true,
-    "copyright": "© 2025 Kellie Larson Music",
-    "license": "Standard Commercial License (Contact for details)",
-    "fullLyrics": "We broke up—it's over—but every time you show up, it's just pure hell\nI see the look; you think you're gonna sleep with me. Don't mean to burst your bubble, but that will not be.\nI can see you fishing for a fight, tryna make me mad,\nWhen you don't get your way, it's honestly kinda sad.\nOver there, stuck in your head, just twiddling your thumbs,\nI know exactly when the full meltdown comes.\n\nMy pulse starts racing, my head starts to hurt,\nAnd the only thing I can think of to say is... \"What's up?\"\nYou could just ask, but you never do.\nThis whole damn thing? It's dumb, dumb, dumb, dumb\nToo much time wasted, gotta stop craving those crumbs!\n\nWhat's the deal? You try to win me back before you even catch me?\nTryin' to push me to sadness, then straight into madness?\nIt's pointless, 'cause I don't care about you like that anymore.\nOnce upon a time, you were the big \"It Boy,\"\nNow you're just throwin' big, ugly temper fits, boy!\n\nIf I remember correctly, [and I know I do,] you are also that boy that hits, too. Boy... oh, boy!\nMy voice still matters, even when I'm lit,\nYou shut me down, this is a toxic circus, you better split.\nDon't stop here no more, you don't belong here,\nDon't try to hang out, don't even stand near.\nYou're losing your mind trying to get me back,\nI already crossed that line, there is no turning back.\n\nMy pulse starts racing, my head starts to hurt,\nAnd the only thing I can think of to say is... \"What's up?\"\nThis whole damn thing? It's dumb, dumb, dumb, dumb\nSo much thinking, gotta stop craving those crumbs!\n\nWhat's the deal? You try to win me back before you even catch me?\nTryin' to push me to sadness, then straight into madness?\nIt's pointless, 'cause I don't care about you like that anymore.\nOnce upon a time, you were the big \"It Boy,\"\nNow you're just throwin' big, ugly temper fits, boy!\n\nYou used to come around and kill the vibe, kill the chill,\nThe whole damn night was under siege, I tried to slow breathe.\nBetween all the yelling, you acted all cool,\nAround all our friends, you looked like a fool.\nYou wanted me to feel what you felt? Well, you did succeed.\nBut that cost too much, I'm taking it back. My receipts are loaded.\nI changed the lock, baby, you're out of luck, the deed is completed!\n\nWhat's the deal? You try to win me back before you even catch me?\nTryin' to push me to sadness, then straight into madness?\nIt's pointless, 'cause I don't care about you like that anymore.\n[Outro]\nNo, you're no lil boy...\nYeah, you succeeded...\nGotta stop craving those crumbs...\nMy words still matter...\nAnd I like where my head is at, so no, we ain't that!",
-    "audioUrl": "/assets/music/craving-those-crumbs-audio.mp3",
-    "licensing": {
-      "digitalDownloadPrice": "$0.99",
-      "coverSongPrice": "$22.75",
-      "standardLicensePrice": "$120.00",
-      "extendedLicensePrice": "$240.00",
-      "fullCopyrightPrice": "$5,000.00"
-    },
-    "commercialHook": "Gotta stop craving those crumbs!"
-}
-.. (Insert ALL remaining songs from your JSON here) ...
+            // ... (Insert ALL remaining songs from your JSON here) ...
             // For brevity in this code block I've included the first 3. 
             // In the actual file, paste the full JSON array here.
         ];
@@ -613,4 +544,3 @@
     </script>
 </body>
 </html>
-
