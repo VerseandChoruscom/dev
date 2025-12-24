@@ -17,7 +17,6 @@
         .script-font { font-family: 'Dancing Script', cursive; }
         .content-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
         
-        /* Legal Box Styles */
         .legal-box { background: rgba(255, 255, 255, 0.05); border-left: 4px solid var(--burgundy); border-radius: 0.5rem; }
 
         /* Song Card Styles */
@@ -43,22 +42,37 @@
         .btn-sunset-orange { background-color: var(--sunset-orange); transition: opacity 0.2s; color: white; }
         .btn-sunset-orange:hover { opacity: 0.9; }
 
-        .cover-img { width: 100%; max-width: 200px; aspect-ratio: 1/1; border-radius: 8px; margin-bottom: 15px; object-fit: cover; border: 1px solid var(--blue-gray); }
+        .cover-img { width: 100%; max-width: 180px; aspect-ratio: 1/1; border-radius: 8px; margin-bottom: 12px; object-fit: cover; border: 1px solid var(--blue-gray); }
         
-        /* Thematic Pillar Cards (6 Cards) */
-        .thematic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
+        /* 6 Cards - 2 per row, 3 rows high */
+        .thematic-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 1rem; 
+            max-width: 600px; 
+            margin: 0 auto;
+        }
         .thematic-card { 
-            background-size: cover; background-position: center; aspect-ratio: 1 / 1.4;
-            display: flex; align-items: flex-end; padding: 1rem; color: white;
-            border: 2px solid var(--blue-gray); border-radius: 0.75rem; cursor: pointer; transition: 0.3s;
+            background-size: cover; background-position: center; height: 120px;
+            display: flex; align-items: flex-end; padding: 0.75rem; color: white;
+            border: 2px solid var(--blue-gray); border-radius: 0.5rem; cursor: pointer; transition: 0.3s;
             position: relative; overflow: hidden;
         }
-        .thematic-card::after {
-            content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); z-index: 1;
+        .thematic-card::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.6); z-index: 1; }
+        .thematic-card span { z-index: 2; width: 100%; text-align: center; font-size: 0.75rem; font-weight: 800; }
+
+        /* 3 Rectangular Categories - Small/Thin */
+        .rectangular-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+        .rectangular-card { 
+            background: #334155; padding: 0.5rem; border: 1px solid var(--blue-gray); 
+            text-align: center; border-radius: 4px; font-size: 0.7rem; font-weight: bold; uppercase;
+            cursor: pointer; transition: 0.2s;
         }
-        .thematic-card span { z-index: 2; width: 100%; text-align: center; }
-        .thematic-card:hover { border-color: var(--sunset-orange); transform: translateY(-2px); }
-        .active-filter { border-color: var(--sunset-orange); box-shadow: 0 0 15px rgba(253, 94, 83, 0.5); }
+        .rectangular-card:hover { border-color: var(--sunset-orange); }
+
+        @media print {
+            .page-break { page-break-before: always; }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -77,214 +91,212 @@
     </header>
 
     <main class="content-container py-10">
-        <div class="mb-10 text-center md:text-left">
-            <h2 class="text-5xl font-extrabold tracking-widest text-white uppercase italic">Industry Pro Vault</h2>
-            <p class="text-gray-400 text-xl mt-2">Curated for Cinematic Songwriter Kellie Larson</p>
+        <div class="mb-10 text-center">
+            <h2 class="text-4xl font-extrabold tracking-widest text-white uppercase italic">Industry Pro Vault</h2>
+            <p class="text-gray-400 text-lg mt-2">Professional Music Licensing Catalog — Kellie Larson</p>
         </div>
 
-        <div class="bg-[var(--burgundy)] p-10 mb-12 rounded-xl shadow-2xl text-center border-4 border-gray-400">
-            <h3 class="text-3xl font-bold text-white mb-4">Welcome to the Vault</h3>
-            <p class="text-gray-100 max-w-4xl mx-auto text-lg leading-relaxed">
-                Fully licensed, pre-cleared assets ready for immediate commercial development. Our system ensures verified human-authored lyrics and royalty-free demo compositions for a streamlined licensing path.
-            </p>
-            <a href="/legal.html" class="inline-block mt-8 bg-white text-[var(--burgundy)] font-bold py-3 px-10 rounded-full hover:bg-gray-200 transition duration-300 uppercase tracking-widest text-sm">
-                Explore Licensing Options
-            </a>
-        </div>
-
-        <div class="legal-box p-8 mb-12 bg-slate-900/50">
-            <h4 class="text-2xl font-bold text-white mb-6 underline decoration-amber-400 underline-offset-8 uppercase tracking-wide">Rights & Licensing Assurance</h4>
-            <div class="grid md:grid-cols-2 gap-6 text-gray-300">
-                <ul class="space-y-4">
-                    <li><strong class="text-amber-400">✅ Royalty-Free Composition:</strong> Lifetime Royalty-Free Commercial License on all demo instrumentation.</li>
-                    <li><strong class="text-amber-400">✅ Human-Authored Lyrics:</strong> 100% original lyrics registered via Songbay for verifiable IP.</li>
+        <div class="legal-box p-6 mb-12">
+            <h4 class="text-xl font-bold text-white mb-4 uppercase tracking-wide">Rights & Licensing Assurance</h4>
+            <p class="text-sm text-gray-300 mb-4">Verification of ownership for A&R and Sync placement:</p>
+            <div class="grid md:grid-cols-2 gap-4 text-xs text-gray-300">
+                <ul class="space-y-2">
+                    <li><strong class="text-amber-400">✅ Human-Authored Lyrics:</strong> 100% human-authored and registered IP via Songbay.</li>
+                    <li><strong class="text-amber-400">✅ Royalty-Free Demos:</strong> Lifetime Royalty-Free license for underlying placeholder compositions.</li>
                 </ul>
-                <ul class="space-y-4">
-                    <li><strong class="text-amber-400">✅ Zero Future AI Royalties:</strong> No recurring master fees or royalties owed to AI platforms.</li>
-                    <li><strong class="text-amber-400">✅ Immediate Sync Clearance:</strong> All material pre-cleared for commercial use and sync.</li>
+                <ul class="space-y-2">
+                    <li><strong class="text-amber-400">✅ Clean Copyright Path:</strong> Streamlined conversion to full traditional copyright upon re-recording.</li>
+                    <li><strong class="text-amber-400">✅ Zero AI Liability:</strong> No backend royalties owed to generative platforms.</li>
                 </ul>
             </div>
         </div>
 
+        <div class="rectangular-grid">
+            <div class="rectangular-card" onclick="setMasterFilter('PlacementType', 'Commercial Sync')">Commercial Sync Assets</div>
+            <div class="rectangular-card" onclick="setMasterFilter('CommercialPotential', 'High')">High Potential Tracks</div>
+            <div class="rectangular-card" onclick="setMasterFilter('Genre1', 'Pop')">Pop / Modern Radio</div>
+        </div>
+
         <section class="mb-12">
-            <h3 class="text-2xl font-bold text-amber-400 mb-8 border-b-2 border-slate-700 pb-2 uppercase tracking-widest">Narrative Frameworks</h3>
+            <h3 class="text-center text-lg font-bold text-amber-400 mb-6 uppercase tracking-widest">Narrative Frameworks</h3>
             <div id="thematic-container" class="thematic-grid">
                 </div>
         </section>
 
-        <div class="bg-slate-900 p-8 rounded-xl mb-12 border-2 border-var(--blue-gray) shadow-inner">
-            <input type="text" id="search-input" placeholder="SEARCH VAULT: Title, Mood, Theme, or Keyword..." 
-                   class="w-full p-5 bg-black/50 border-2 border-slate-700 rounded-lg text-white mb-6 focus:outline-none focus:border-[var(--sunset-orange)] transition-all uppercase tracking-widest">
-            <div class="flex justify-between items-center">
-                <p id="filter-status" class="text-sm font-bold text-slate-400 uppercase tracking-widest">Displaying all assets</p>
-                <button onclick="resetFilters()" class="text-sm font-black uppercase tracking-widest hover:underline" style="color: var(--sunset-orange);">Reset All Filters</button>
+        <div class="bg-slate-900 p-6 rounded-xl mb-12 border-2 border-slate-700">
+            <input type="text" id="search-input" placeholder="Search Keywords, SEO, Hashtags, Mood, Tempo, Placement..." 
+                   class="w-full p-4 bg-black border-2 border-slate-700 rounded-lg text-white focus:outline-none focus:border-[var(--sunset-orange)] uppercase tracking-widest text-sm">
+            <div class="flex justify-between mt-4">
+                <p id="filter-status" class="text-xs font-bold text-slate-500 uppercase">Viewing Full Catalog</p>
+                <button onclick="resetAll()" class="text-xs font-black uppercase text-[var(--sunset-orange)] hover:underline">Clear Search</button>
             </div>
         </div>
 
-        <div id="catalog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div id="catalog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
     </main>
 
-    <script>
-        // Data populated from your catalog andFramework Pillar logic
-        const ALL_SONGS = [
-            { 
-                id: 1, 
-                title: "AUTHOR OF A LIE", 
-                songbay: "https://songbay.co/view-music/235611415/", 
-                pillar: "Social Commentary", 
-                genre: "Pop, Hip-Hop", 
-                mood: "Anthemic, Confident", 
-                tempo: "Mid Tempo", 
-                theme: "Deceit, Lies, Gaslighting", 
-                snippet: "You're the author of a lie, a master of deceit. And I'm tired of this story on repeat.", 
-                img: "/assets/covers/author-of-a-lie-cover-art.jpg",
-                lyrics: `[Verse 1]\nYou tell a story, i pick it apart...`
-            },
-            { 
-                id: 12, 
-                title: "FURY (I'M THE MONSTER)", 
-                songbay: "https://songbay.co/view-music/235612789/", 
-                pillar: "The Empowerment Arc", 
-                genre: "Metal, Rock", 
-                mood: "Heavy, Dramatic", 
-                tempo: "Fast", 
-                theme: "Rage, Transformation", 
-                snippet: "A visceral journey through the rage of betrayal and the transformation into strength.", 
-                img: "/assets/covers/fury-i-m-the-monster-cover-art.jpg",
-                lyrics: `[Verse 1]\nYour fists, a never-ending show...`
-            },
-            { 
-                id: 30, 
-                title: "SICK ONE (S1C)", 
-                songbay: "https://songbay.co/view-music/235608791/", 
-                pillar: "Narrative of Disenchantment", 
-                genre: "Rock, Alternative", 
-                mood: "Bitter, Cool", 
-                tempo: "Fast", 
-                theme: "Toxic Love, Self-Destructive", 
-                snippet: "A raw, brutal confessional exploring a chaotic and self-destructive toxic love.", 
-                img: "/assets/covers/sick-one-s1c-cover-art.jpg",
-                lyrics: `Our love is on a sick one...`
-            }
-            // Additional songs populated based on your JSON...
-        ];
-
-        const PILLARS = [
-            { id: "Social Commentary", label: "Social Commentary", img: "/assets/covers/social-world-lyrics-photo.jpg" },
-            { id: "The Empowerment Arc", label: "Empowerment Arc", img: "/assets/covers/empowerment-arc-lyrics-photo.jpg" },
-            { id: "Narrative of Disenchantment", label: "Disenchantment", img: "/assets/covers/disenchantment-lyrics-photo.jpg" },
-            { id: "Mutual Value Proposition", label: "Value Proposition", img: "/assets/covers/mutual-value-lyrics-photo.jpg" },
-            { id: "Loss of Market Share", label: "Loss of Market Share", img: "/assets/covers/loss-of-market-share-lyrics-photo.jpg" },
-            { id: "The Iterative Protagonist", label: "Iterative Protagonist", img: "/assets/covers/iterative-photo.jpg" }
-        ];
-
-        let activeFilter = null;
-
-        function renderPillars() {
-            const container = document.getElementById('thematic-container');
-            container.innerHTML = PILLARS.map(p => `
-                <div class="thematic-card ${activeFilter === p.id ? 'active-filter' : ''}" 
-                     style="background-image: url('${p.img}')"
-                     onclick="setFilter('${p.id}')">
-                    <span class="font-black text-xs uppercase tracking-widest text-white drop-shadow-lg">${p.label}</span>
-                </div>
-            `).join('');
-        }
-
-        function renderCatalog(songs) {
-            const grid = document.getElementById('catalog-grid');
-            grid.innerHTML = songs.map(s => `
-                <div class="song-card p-8 rounded-xl shadow-2xl">
-                    <img src="${s.img}" class="cover-img">
-                    <div class="mb-4">
-                        <a href="${s.songbay}" target="_blank" class="metallic-gold-title text-2xl tracking-tighter hover:underline">${s.title}</a>
-                        <button onclick="viewLyrics(${s.id})" class="text-2xl ml-3 hover:scale-125 transition-transform">▶️</button>
-                    </div>
-                    <p class="metadata-row uppercase text-[10px] tracking-widest font-bold">Genre: ${s.genre} | Mood: ${s.mood}</p>
-                    <p class="metadata-row uppercase text-[10px] tracking-widest font-bold">Tempo: ${s.tempo}</p>
-                    <p class="theme-row mt-4 text-slate-300">Theme: ${s.theme}</p>
-                    <p class="text-[10px] text-slate-500 my-2 font-bold uppercase tracking-widest">Click play to listen</p>
-                    <p class="text-sm text-slate-200 italic my-6 px-4">"${s.snippet}"</p>
-                    
-                    <div class="grid grid-cols-2 gap-3 w-full">
-                        <button onclick="viewLyrics(${s.id})" class="py-3 btn-sunset-orange font-black text-xs uppercase tracking-widest rounded-lg">Read Now</button>
-                        <button onclick="printLyrics(${s.id})" class="py-3 bg-slate-700 hover:bg-slate-600 font-black text-xs uppercase tracking-widest rounded-lg">Print</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function setFilter(id) {
-            activeFilter = (activeFilter === id) ? null : id;
-            renderPillars();
-            applyFilter();
-        }
-
-        function applyFilter() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            const filtered = ALL_SONGS.filter(s => {
-                const matchesPillar = !activeFilter || s.pillar === activeFilter;
-                const matchesSearch = s.title.toLowerCase().includes(query) || s.theme.toLowerCase().includes(query);
-                return matchesPillar && matchesSearch;
-            });
-            document.getElementById('filter-status').innerText = activeFilter ? `Category: ${activeFilter}` : "Displaying all assets";
-            renderCatalog(filtered);
-        }
-
-        function viewLyrics(id) {
-            const song = ALL_SONGS.find(s => s.id === id);
-            document.getElementById('modal-title').innerText = song.title;
-            document.getElementById('modal-lyrics').innerText = song.lyrics;
-            document.getElementById('modal-audio').src = `/assets/music/${song.title.toLowerCase().replace(/ /g, '-')}-audio.mp3`;
-            document.getElementById('lyric-modal').classList.replace('hidden', 'flex');
-        }
-
-        function printLyrics(id) {
-            const song = ALL_SONGS.find(s => s.id === id);
-            const win = window.open('', '_blank');
-            win.document.write(`<html><body style="font-family:serif;padding:50px;line-height:1.6;">
-                <h1 style="color:#800020;text-align:center;">${song.title}</h1><hr>
-                <p><strong>Genre:</strong> ${song.genre} | <strong>Theme:</strong> ${song.theme}</p>
-                <pre style="white-space:pre-wrap;font-size:18px;">${song.lyrics}</pre>
-                </body></html>`);
-            win.document.close();
-            win.print();
-        }
-
-        function resetFilters() {
-            activeFilter = null;
-            document.getElementById('search-input').value = '';
-            renderPillars();
-            applyFilter();
-        }
-
-        function closeModal() { document.getElementById('lyric-modal').classList.replace('flex', 'hidden'); }
-        document.getElementById('search-input').addEventListener('input', applyFilter);
-        
-        // Initial Render
-        renderPillars();
-        renderCatalog(ALL_SONGS);
-    </script>
-
     <div id="lyric-modal" class="fixed inset-0 bg-black/98 z-50 hidden items-center justify-center p-4 backdrop-blur-md">
-        <div class="bg-slate-900 rounded-2xl max-w-4xl w-full max-h-[95vh] overflow-hidden flex flex-col border-2 border-slate-700">
+        <div class="bg-slate-900 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden flex flex-col border-2 border-slate-700">
             <div class="p-6 border-b border-slate-800 flex justify-between items-center bg-[var(--burgundy)]">
-                <h2 id="modal-title" class="text-3xl font-black text-white italic uppercase tracking-widest"></h2>
+                <h2 id="modal-title" class="text-2xl font-black text-white uppercase tracking-widest"></h2>
                 <button onclick="closeModal()" class="text-white hover:text-amber-400 text-4xl">&times;</button>
             </div>
-            <div class="p-10 overflow-y-auto text-slate-100">
-                <div class="mb-10 bg-black/50 p-6 rounded-xl border border-slate-800">
-                    <p class="text-amber-400 font-black uppercase tracking-widest text-xs mb-3">Audio Assets Preview</p>
+            <div class="p-8 overflow-y-auto text-slate-100">
+                <div class="mb-8 bg-black/50 p-6 rounded-xl border border-slate-800">
+                    <p class="text-amber-400 font-bold uppercase text-[10px] mb-2 tracking-widest">Audio Preview</p>
                     <audio id="modal-audio" controls class="w-full"></audio>
                 </div>
-                <div id="modal-lyrics" class="whitespace-pre-wrap font-serif text-xl leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-amber-400"></div>
-            </div>
-            <div class="p-6 border-t border-slate-800 flex justify-end">
-                <button onclick="closeModal()" class="px-10 py-3 bg-slate-800 text-white font-black uppercase tracking-widest text-xs rounded-xl hover:bg-slate-700 transition-all">Exit Vault</button>
+                <div id="modal-lyrics" class="whitespace-pre-wrap font-serif text-lg leading-relaxed"></div>
             </div>
         </div>
     </div>
 
+    <footer class="bg-[var(--burgundy)] py-10 mt-auto border-t-4 border-gray-400">
+        <div class="content-container text-center text-gray-200">
+            <p class="font-bold text-lg uppercase tracking-widest">Kellie Larson</p>
+            <p class="text-xs text-amber-400 mb-4">Cinematic Songwriter & Lyricist</p>
+            <div class="flex justify-center space-x-6 text-sm mb-6">
+                <a href="tel:7605370222" class="hover:underline">760.537.0222</a>
+                <a href="mailto:info@verseandchorus.com" class="hover:underline">info@verseandchorus.com</a>
+            </div>
+            <p class="text-[10px] text-gray-400">&copy; 2025 Verse and Chorus. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Integrated Song Data (Titles linked to Songbay URL from JSON)
+        const SONGS = [
+            { 
+                id: 1, title: "AUTHOR OF A LIE", songbay: "https://songbay.co/view-music/235611415/", pillar: "Social Commentary", 
+                genre1: "Pop", genre2: "Hip-Hop", mood: "Anthemic", theme: "Deceit", snippet: "You're the author of a lie, a master of deceit. And I'm tired of this story on repeat.", 
+                img: "/assets/covers/author-of-a-lie-cover-art.jpg", slug: "author-of-a-lie",
+                fullLyrics: `[Verse 1]\nYou tell a story, i pick it apart...`,
+                tags: "deceit lies gaslighting storytelling sarcastic confrontational" 
+            },
+            { 
+                id: 2, title: "BIG HARD NO", songbay: "https://songbay.co/view-music/235609978/", pillar: "Empowerment Arc", 
+                genre1: "Rock", genre2: "Alternative", mood: "Determined", theme: "Boundaries", snippet: "That's a big hard NO, not playing your game!", 
+                img: "/assets/covers/big-hard-no-cover-art.jpg", slug: "big-hard-no",
+                fullLyrics: `Verse 1:\nSo sad, heard she had enough...`,
+                tags: "empowerment defiance breakup rejected fierce female vocal"
+            },
+            { 
+                id: 3, title: "BOOM BOOM BEAT", songbay: "https://songbay.co/view-music/235611871/", pillar: "Iterative Protagonist", 
+                genre1: "Alternative", genre2: "Rock", mood: "Playful", theme: "Yodeling Love", snippet: "Boom boom boom da boom boom boom, Ah-yo-delay-ee-hoo!", 
+                img: "/assets/covers/boom-boom-beat-cover-art.jpg", slug: "boom-boom-beat",
+                fullLyrics: `(Verse 1)\nEphemeral moment...`,
+                tags: "fun romantic reunion yodel bouncy euphoric heartbeat"
+            }
+            // Logic continues for all 44 songs...
+        ];
+
+        const PILLARS = [
+            { id: "Social Commentary", label: "Social Commentary", img: "/assets/covers/social-world-lyrics-photo.jpg" },
+            { id: "Empowerment Arc", label: "Empowerment Arc", img: "/assets/covers/empowerment-arc-lyrics-photo.jpg" },
+            { id: "Narrative of Disenchantment", label: "Disenchantment", img: "/assets/covers/disenchantment-lyrics-photo.jpg" },
+            { id: "Mutual Value Proposition", label: "Value Proposition", img: "/assets/covers/mutual-value-lyrics-photo.jpg" },
+            { id: "Loss of Market Share", label: "Loss of Market Share", img: "/assets/covers/loss-of-market-share-lyrics-photo.jpg" },
+            { id: "Iterative Protagonist", label: "Iterative Protagonist", img: "/assets/covers/iterative-photo.jpg" }
+        ];
+
+        function renderCatalog(filteredSongs) {
+            const grid = document.getElementById('catalog-grid');
+            grid.innerHTML = filteredSongs.map(s => `
+                <div class="song-card p-6 rounded-xl shadow-2xl">
+                    <img src="${s.img}" class="cover-img">
+                    <div class="mb-2">
+                        <a href="${s.songbay}" target="_blank" class="metallic-gold-title text-xl hover:underline">${s.title}</a>
+                    </div>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mb-1">
+                        Genre: ${s.genre1}, ${s.genre2} | Mood: ${s.mood}
+                    </p>
+                    <p class="text-[10px] text-slate-300 font-bold uppercase mb-4">Theme: ${s.theme}</p>
+                    <p class="text-sm text-slate-200 italic mb-6 leading-relaxed">"${s.snippet}"</p>
+                    
+                    <div class="grid grid-cols-2 gap-2 w-full mt-auto">
+                        <button onclick="openPlayer(${s.id})" class="py-2 btn-sunset-orange font-black text-[10px] uppercase tracking-tighter rounded-md">READ / PLAY</button>
+                        <button onclick="generate2PagePrint(${s.id})" class="py-2 bg-slate-700 hover:bg-slate-600 font-black text-[10px] uppercase tracking-tighter rounded-md">🖨️ PRINT</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Print Logic: Creates a specific 2-page document layout
+        function generate2PagePrint(id) {
+            const s = SONGS.find(song => song.id === id);
+            const win = window.open('', '_blank');
+            win.document.write(`
+                <html>
+                <head>
+                    <style>
+                        body { font-family: sans-serif; padding: 40px; line-height: 1.6; }
+                        h1 { color: #800020; text-transform: uppercase; border-bottom: 2px solid #ccc; padding-bottom: 10px; }
+                        .meta-block { margin-bottom: 30px; }
+                        .page-break { page-break-before: always; }
+                        pre { white-space: pre-wrap; font-size: 18px; font-family: serif; }
+                        .header { text-align: center; font-size: 10px; color: #666; margin-bottom: 40px; }
+                    </style>
+                </head>
+                <body>
+                    <div class="header">INDUSTRY PRO VAULT — SYNC READY ASSETS</div>
+                    <h1>${s.title}</h1>
+                    <div class="meta-block">
+                        <p><strong>GENRE:</strong> ${s.genre1} / ${s.genre2}</p>
+                        <p><strong>MOOD:</strong> ${s.mood}</p>
+                        <p><strong>THEME:</strong> ${s.theme}</p>
+                        <p><strong>ARTIST/WRITER:</strong> Kellie Larson</p>
+                    </div>
+                    <div class="page-break"></div>
+                    <h1>Lyrics: ${s.title}</h1>
+                    <pre>${s.fullLyrics}</pre>
+                </body></html>
+            `);
+            win.document.close();
+            win.print();
+        }
+
+        // Search Box Logic: Pulls from metadata and SEO tags
+        document.getElementById('search-input').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const filtered = SONGS.filter(s => 
+                s.title.toLowerCase().includes(query) || 
+                s.tags.toLowerCase().includes(query) ||
+                s.theme.toLowerCase().includes(query) ||
+                s.mood.toLowerCase().includes(query)
+            );
+            renderCatalog(filtered);
+        });
+
+        function renderPillars() {
+            const container = document.getElementById('thematic-container');
+            container.innerHTML = PILLARS.map(p => `
+                <div class="thematic-card" style="background-image: url('${p.img}')" onclick="filterByPillar('${p.id}')">
+                    <span>${p.label}</span>
+                </div>
+            `).join('');
+        }
+
+        function filterByPillar(id) {
+            const filtered = SONGS.filter(s => s.pillar === id);
+            renderCatalog(filtered);
+            document.getElementById('filter-status').innerText = `Framework: ${id}`;
+        }
+
+        function openPlayer(id) {
+            const s = SONGS.find(song => song.id === id);
+            document.getElementById('modal-title').innerText = s.title;
+            document.getElementById('modal-lyrics').innerText = s.fullLyrics;
+            document.getElementById('modal-audio').src = `/assets/music/${s.slug}-audio.mp3`;
+            document.getElementById('lyric-modal').classList.replace('hidden', 'flex');
+        }
+
+        function closeModal() { document.getElementById('lyric-modal').classList.replace('flex', 'hidden'); document.getElementById('modal-audio').pause(); }
+        function resetAll() { renderCatalog(SONGS); document.getElementById('filter-status').innerText = "Viewing Full Catalog"; document.getElementById('search-input').value = ''; }
+
+        // Initial Initialization
+        renderPillars();
+        renderCatalog(SONGS);
+    </script>
 </body>
 </html>
