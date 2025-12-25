@@ -45,7 +45,8 @@
         /* Filter Controls */
         .vault-select { background-color: #0f172a; border: 2px solid var(--blue-gray); color: white; padding: 10px; border-radius: 6px; width: 100%; cursor: pointer; }
         .vault-select:focus { border-color: var(--sunset-orange); outline: none; }
-        .rect-card { background: #334155; border: 1px solid var(--blue-gray); padding: 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; text-align: center; cursor: pointer; text-transform: uppercase; }
+        .rect-card { background: #334155; border: 1px solid var(--blue-gray); padding: 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; text-align: center; cursor: pointer; text-transform: uppercase; transition: all 0.2s; }
+        .rect-card:hover { background: #475569; border-color: var(--sunset-orange); }
         .rect-card:active, .rect-card.active { border-color: var(--sunset-orange); background: var(--sunset-orange); }
 
         /* Sunset Orange Up Arrow */
@@ -61,6 +62,26 @@
         
         .btn-sunset-orange { background-color: var(--sunset-orange); transition: 0.2s; }
         .btn-sunset-orange:active { transform: scale(0.95); }
+
+        /* New Prominent Reset Button Style */
+        .btn-reset-filters {
+            background-color: var(--sunset-orange);
+            color: white;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            margin-top: 1rem;
+        }
+        .btn-reset-filters:hover {
+            background-color: #e2524a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -95,12 +116,14 @@
             </div>
         </div>
 
+        <!-- Quick Filters -->
         <div class="grid grid-cols-3 gap-3 mb-8">
             <div class="rect-card" onclick="applyQuickFilter('placementType', 'Sync')">Commercial Sync</div>
             <div class="rect-card" onclick="applyQuickFilter('commercialPotential', 'High')">High Potential</div>
             <div class="rect-card" onclick="applyQuickFilter('genre1', 'Pop')">Radio Pop Focus</div>
         </div>
 
+        <!-- Thematic Filters -->
         <div class="thematic-grid">
             <div class="thematic-card" style="background-image: url('/assets/covers/social-world-lyrics-photo.jpg')" onclick="applyQuickFilter('category', 'Social')"><span>Social Commentary</span></div>
             <div class="thematic-card" style="background-image: url('/assets/covers/empowerment-arc-lyrics-photo.jpg')" onclick="applyQuickFilter('category', 'Empowerment')"><span>Empowerment Arc</span></div>
@@ -110,6 +133,7 @@
             <div class="thematic-card" style="background-image: url('/assets/covers/iterative-photo.jpg')" onclick="applyQuickFilter('category', 'Iterative')"><span>Iterative Protagonist</span></div>
         </div>
 
+        <!-- Main Filter Bar -->
         <div class="bg-gray-800 p-6 rounded-xl mb-12 border-2 border-[var(--blue-gray)] shadow-2xl">
             <input type="text" id="vault-search-box" placeholder="Search Keywords, SEO Tags, Placement, Mood, BPM..." 
                    class="w-full p-4 bg-black border border-slate-700 rounded mb-6 text-white uppercase text-sm focus:border-[var(--sunset-orange)] outline-none">
@@ -120,7 +144,11 @@
                 <select id="tempo-pull" class="vault-select" onchange="runFilters()"><option value="">TEMPO</option><option value="Fast">Fast</option><option value="Mid Tempo">Mid Tempo</option><option value="Slow">Slow</option></select>
                 <select id="subgenre-pull" class="vault-select" onchange="runFilters()"><option value="">STYLE</option><option value="Americana">Americana</option><option value="Ballad">Ballad</option><option value="Bedroom Pop">Bedroom Pop</option><option value="Pop">Pop</option><option value="Rock">Rock</option></select>
             </div>
-            <button onclick="resetVaultFilters()" class="mt-4 text-xs font-black uppercase text-[var(--sunset-orange)] hover:underline">Clear Search</button>
+            
+            <!-- Updated Prominent Reset Button -->
+            <button onclick="resetVaultFilters()" class="btn-reset-filters">
+                ↻ Reset All Filters
+            </button>
         </div>
 
         <div id="vault-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
@@ -146,11 +174,12 @@
 
     <script>
         // HARD-CODED VERIFIED DATA (Ensure 44 card display)
+        // Added 'commercialPotential' field to data to fix filter bug
         const SONGS = [
             {
                 id: 1, title: "AUTHOR OF A LIE", songbayWebpageUrl: "https://songbay.co/view-music/235611415/",
                 genre1: "Pop", genre2: "Hip-Hop", moodTone: "Anthemic", tempo: "Mid Tempo", category: "Social Commentary",
-                placementType: "Commercial Sync", snippetA: "You're the author of a lie, a master of deceit",
+                placementType: "Commercial Sync", commercialPotential: "High", snippetA: "You're the author of a lie, a master of deceit",
                 coverImageUrl: "/assets/covers/author-of-a-lie-cover-art.jpg",
                 fullLyrics: "[Verse 1]\nYou tell a story, i pick it apart...\n[All words verified in JSON]"
             },
@@ -229,18 +258,23 @@
             const filtered = SONGS.filter(song => {
                 const textStr = `${song.title} ${song.category} ${song.snippetA} ${song.fullLyrics}`.toLowerCase();
                 const textMatch = !q || textStr.includes(q);
-                const genreMatch = !g || song.genre1.includes(g) || song.genre2.includes(g);
-                const moodMatch = !m || song.moodTone.includes(m);
-                const tempoMatch = !t || song.tempo.includes(t);
-                const subMatch = !s || song.genre2.includes(s);
+                // Safe check for missing fields
+                const genreMatch = !g || (song.genre1 && song.genre1.includes(g)) || (song.genre2 && song.genre2.includes(g));
+                const moodMatch = !m || (song.moodTone && song.moodTone.includes(m));
+                const tempoMatch = !t || (song.tempo && song.tempo.includes(t));
+                const subMatch = !s || (song.genre2 && song.genre2.includes(s));
                 return textMatch && genreMatch && moodMatch && tempoMatch && subMatch;
             });
             renderVault(filtered);
         }
 
         function applyQuickFilter(field, val) {
-            const filtered = SONGS.filter(s => s[field].toLowerCase().includes(val.toLowerCase()));
+            // Updated to handle case sensitivity and missing fields gracefully
+            const filtered = SONGS.filter(s => s[field] && s[field].toLowerCase().includes(val.toLowerCase()));
             renderVault(filtered);
+            // Optionally clear the main dropdowns to avoid confusion, as quick filters override them in this UI logic
+            document.querySelectorAll('select').forEach(sel => sel.value = '');
+            document.getElementById('vault-search-box').value = '';
         }
 
         function resetVaultFilters() {
