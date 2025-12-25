@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Pro Vault | Music Licensing | Kellie Larson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --burgundy: #800020; 
+            --sunset-orange: #FD5E53; 
+            --blue-gray: #64748b;     
+            --metallic-gold: #D4AF37; 
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f1f5f9; }
+        .script-font { font-family: 'Dancing Script', cursive; }
+        .content-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        
+        /* 2-Page Print Logic (Metadata on P1, Full Lyrics on P2) */
+        @media print {
+            .no-print { display: none !important; }
+            .page-break { page-break-before: always; display: block; height: 0; clear: both; }
+            body { background: white !important; color: black !important; }
+            .print-header { border-bottom: 4px solid var(--burgundy); margin-bottom: 20px; }
+            pre { white-space: pre-wrap; font-size: 16px; font-family: serif; color: black !important; border: none !important; }
+        }
 
+        /* Card Visuals (Sunset Orange Pressed Effect) */
+        .song-card { border: 2px solid var(--blue-gray); background: #1e293b; text-align: center; height: 100%; display: flex; flex-direction: column; transition: 0.3s; }
+        .song-card:hover { border-color: var(--sunset-orange); transform: translateY(-5px); }
+        .song-card:active { transform: scale(0.98); }
+        .metallic-gold-title { color: var(--metallic-gold); font-weight: 800; text-transform: uppercase; text-decoration: none; }
+        .metallic-gold-title:hover { text-decoration: underline; }
+
+        /* Thematic Cards: 2 across x 3 rows */
+        .thematic-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 450px; margin: 0 auto 3rem; }
+        .thematic-card { 
+            height: 80px; border: 2px solid var(--blue-gray); border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            background-size: cover; background-position: center; position: relative;
+            cursor: pointer; overflow: hidden;
+        }
+        .thematic-card::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+        .thematic-card span { z-index: 2; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; color: white; text-align: center; }
+
+        /* Filters */
+        .vault-select { background-color: #0f172a; border: 2px solid var(--blue-gray); color: white; padding: 10px; border-radius: 6px; width: 100%; cursor: pointer; }
+        .vault-select:focus { border-color: var(--sunset-orange); outline: none; }
+        .rect-card { background: #334155; border: 1px solid var(--blue-gray); padding: 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; text-align: center; cursor: pointer; text-transform: uppercase; }
+        .rect-card:active { background: var(--sunset-orange); border-color: var(--sunset-orange); }
+
+        /* Sunset Orange Up Arrow */
+        #back-to-top { 
+            position: fixed; bottom: 30px; right: 30px; 
+            background: var(--sunset-orange); color: white; 
+            width: 50px; height: 50px; border-radius: 50%; 
+            display: none; align-items: center; justify-content: center; 
+            font-size: 24px; cursor: pointer; z-index: 100; border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="bg-[var(--burgundy)] text-white no-print sticky top-0 z-50 shadow-2xl">
+        <div class="content-container py-4 flex justify-between items-center">
+            <h1 class="script-font text-3xl text-amber-400">Verse and Chorus</h1>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6 text-xs font-bold tracking-widest uppercase">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/industry-pros.html" class="text-amber-400">Industry Pros</a></li>
+                    <li><a href="/lyrics.html">Music</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-container py-10 no-print">
+        <div class="text-center mb-10">
+            <h2 class="text-4xl font-extrabold tracking-widest uppercase italic">Industry Pro Vault</h2>
+            <p class="text-gray-400 mt-2 text-sm font-semibold italic">Commercial Assets for A&R Reps and Music Supervisors</p>
+        </div>
+
+        <div class="bg-slate-900 p-6 mb-12 border-l-4 border-[var(--burgundy)] rounded shadow-lg">
+            <h4 class="text-xl font-bold mb-4 uppercase text-white tracking-wide">Rights & Licensing Assurance</h4>
+            <div class="grid md:grid-cols-2 gap-4 text-xs text-gray-300">
+                <p>✅ 100% Human-Authored Lyrics (Registered via Songbay)</p>
+                <p>✅ Pre-Cleared for Immediate Commercial Sync Placement</p>
+                <p>✅ Royalty-Free Placeholder Composition & Master License</p>
+                <p>✅ Guaranteed Clean IP Path for derivative works</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 mb-8">
+            <div class="rect-card" onclick="applyHardFilter('placementType', 'Sync')">Commercial Sync</div>
+            <div class="rect-card" onclick="applyHardFilter('commercialPotential', '
