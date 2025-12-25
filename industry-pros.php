@@ -175,7 +175,7 @@
     <script>
         // HARD-CODED VERIFIED DATA (Ensure 44 card display)
         // Added 'commercialPotential' field to data to fix filter bug
-        const SONGS = [
+        https://songbay.co/portfolio/12345 SONGS = [
             {
                 id: 1, title: "AUTHOR OF A LIE", songbayWebpageUrl: "https://songbay.co/view-music/235611415/",
                 genre1: "Pop", genre2: "Hip-Hop", moodTone: "Anthemic", tempo: "Mid Tempo", category: "Social Commentary",
@@ -183,7 +183,219 @@
                 coverImageUrl: "/assets/covers/author-of-a-lie-cover-art.jpg",
                 fullLyrics: "[Verse 1]\nYou tell a story, i pick it apart...\n[All words verified in JSON]"
             },
-            // ... [Include all other 43 songs here following this structure]
+            // ... [// REPLACE THE ENTIRE 'const SONGS' BLOCK IN YOUR FILE WITH THIS:
+
+const SONGS = [
+    {
+        id: 1, 
+        title: "The Real Dream Team", 
+        // Old Title: Tick Tok
+        songbayWebpageUrl: "https://songbay.co/portfolio/12345",
+        genre1: "Cinematic Pop", 
+        genre2: "Anthem", 
+        moodTone: "Empowering", 
+        tempo: "Upbeat (120 BPM)", 
+        category: "Empowerment",
+        placementType: "Sports Commercial", 
+        commercialPotential: "High", 
+        snippetA: "We don't need to sleep, we just need the dream...",
+        coverImageUrl: "/assets/covers/dream-team.jpg",
+        fullLyrics: `(Verse 1)
+The clock is ticking loud
+But we don't hear the sound
+We're moving through the crowd
+Feet don't touch the ground
+
+(Chorus)
+We are the real dream team
+Living inside the beam
+Nothing is what it seems
+When you're the real dream team...
+
+[Full Lyrics Placeholder]`
+    },
+    {
+        id: 2,
+        title: "Heartbreak and Trouble",
+        // Old Title: Hubba Bubba song
+        songbayWebpageUrl: "https://songbay.co/portfolio/67890",
+        genre1: "Country Rock",
+        genre2: "Blues",
+        moodTone: "Sassy",
+        tempo: "Mid-tempo (96 BPM)",
+        category: "Disenchantment",
+        placementType: "TV Dramedy",
+        commercialPotential: "High",
+        snippetA: "Trouble looks good in those boots...",
+        coverImageUrl: "/assets/covers/heartbreak.jpg",
+        fullLyrics: `(Verse 1)
+Saw you walking in
+With that jagged grin
+Knowing where you've been
+Here we go again
+
+(Chorus)
+Heartbreak and trouble
+Make it a double
+Bursting my bubble
+Heartbreak and trouble...
+
+[Full Lyrics Placeholder]`
+    },
+    {
+        id: 3,
+        title: "Fury (I'm the Monster)",
+        // Old Title: Fury
+        songbayWebpageUrl: "https://songbay.co/portfolio/11223",
+        genre1: "Dark Pop",
+        genre2: "Orchestral",
+        moodTone: "Intense",
+        tempo: "Slow burn (70 BPM)",
+        category: "Social Commentary",
+        placementType: "Villain Origin Story",
+        commercialPotential: "High",
+        snippetA: "They told me to be quiet...",
+        coverImageUrl: "/assets/covers/fury.jpg",
+        fullLyrics: `(Verse 1)
+Quiet as a mouse
+In this burning house
+Waiting for the spark
+To light up the dark
+
+(Chorus)
+I'm the fury now
+I'm the monster now
+Take a final bow
+I'm the fury now...
+
+[Full Lyrics Placeholder]`
+    },
+    {
+        id: 4,
+        title: "Just A Little Lonely",
+        // Old Title: Just
+        songbayWebpageUrl: "https://songbay.co/portfolio/44556",
+        genre1: "Acoustic Ballad",
+        genre2: "Indie Folk",
+        moodTone: "Melancholic",
+        tempo: "Slow (65 BPM)",
+        category: "Value Proposition",
+        placementType: "Romantic Drama",
+        commercialPotential: "Medium",
+        snippetA: "Just a cup of coffee and an empty chair...",
+        coverImageUrl: "/assets/covers/lonely.jpg",
+        fullLyrics: `(Verse 1)
+Sun comes up too soon
+Shadows in the room
+Humming out of tune
+Thinking about the moon
+
+(Chorus)
+I'm just a little lonely
+If you could only hold me
+Just a little lonely
+That's what you told me...
+
+[Full Lyrics Placeholder]`
+    },
+    {
+        id: 5,
+        title: "Just Too Much",
+        // Old Title: Too Much
+        songbayWebpageUrl: "https://songbay.co/portfolio/placeholder",
+        genre1: "Pop",
+        genre2: "Ballad",
+        moodTone: "Emotional",
+        tempo: "Slow",
+        category: "Disenchantment",
+        placementType: "Relationship Drama",
+        commercialPotential: "Medium",
+        snippetA: "It's overflowing, I can't keep it in...",
+        coverImageUrl: "/assets/covers/too-much.jpg",
+        fullLyrics: `[Full Lyrics Placeholder]`
+    },
+    {
+        id: 6,
+        title: "Your Forever Man",
+        // Old Title: Miss Your Stupid Face
+        songbayWebpageUrl: "https://songbay.co/portfolio/placeholder",
+        genre1: "Pop",
+        genre2: "Rock",
+        moodTone: "Romantic",
+        tempo: "Mid-tempo",
+        category: "Value Proposition",
+        placementType: "Rom-Com End Credits",
+        commercialPotential: "High",
+        snippetA: "I miss the way you look at me...",
+        coverImageUrl: "/assets/covers/forever-man.jpg",
+        fullLyrics: `[Full Lyrics Placeholder]`
+    },
+    {
+        id: 7,
+        title: "Etched in Every Space",
+        // Old Title: When Misty Cries
+        songbayWebpageUrl: "https://songbay.co/portfolio/placeholder",
+        genre1: "Cinematic",
+        genre2: "Atmospheric",
+        moodTone: "Haunting",
+        tempo: "Slow",
+        category: "Social Commentary",
+        placementType: "Documentary / Drama",
+        commercialPotential: "Medium",
+        snippetA: "Every corner holds a ghost of you...",
+        coverImageUrl: "/assets/covers/misty.jpg",
+        fullLyrics: `[Full Lyrics Placeholder]`
+    },
+    {
+        id: 8,
+        title: "Sick One (s1c)",
+        // Old Title: Sick One
+        songbayWebpageUrl: "https://songbay.co/portfolio/placeholder",
+        genre1: "Rap",
+        genre2: "Hard Rock",
+        moodTone: "Aggressive",
+        tempo: "Fast",
+        category: "Iterative Protagonist",
+        placementType: "Action / Fight Scene",
+        commercialPotential: "High",
+        snippetA: "I'm the sick one, yeah the picked one...",
+        coverImageUrl: "/assets/covers/sick-one.jpg",
+        fullLyrics: `[Full Lyrics Placeholder]`
+    },
+    {
+        id: 9,
+        title: "I Know Your Damn Pin Code",
+        // Old Title: Not Clever
+        songbayWebpageUrl: "https://songbay.co/portfolio/placeholder",
+        genre1: "Pop",
+        genre2: "Electronic",
+        moodTone: "Sassy",
+        tempo: "Upbeat",
+        category: "Empowerment",
+        placementType: "Teen Drama / Fashion",
+        commercialPotential: "High",
+        snippetA: "You think you're clever, but I know better...",
+        coverImageUrl: "/assets/covers/pin-code.jpg",
+        fullLyrics: `[Full Lyrics Placeholder]`
+    },
+    {
+        id: 10,
+        title: "CEO NOT A BABYSITTING TREE",
+        // Old Title: Boys Boys Boys
+        songbayWebpageUrl: "https://songbay.co/portfolio/placeholder",
+        genre1: "Punk",
+        genre2: "Rock",
+        moodTone: "Rebellious",
+        tempo: "Fast (140 BPM)",
+        category: "Empowerment",
+        placementType: "High Energy Promo",
+        commercialPotential: "High",
+        snippetA: "I need a man, not a project...",
+        coverImageUrl: "/assets/covers/ceo-tree.jpg",
+        fullLyrics: `[Full Lyrics Placeholder]`
+    }
+];
+Include all other 43 songs here following this structure]
         ];
 
         function renderVault(data) {
