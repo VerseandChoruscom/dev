@@ -95,4 +95,202 @@
 
         <div class="grid grid-cols-3 gap-3 mb-8">
             <div class="rect-card" onclick="applyHardFilter('placementType', 'Sync')">Commercial Sync</div>
-            <div class="rect-card" onclick="applyHardFilter('commercialPotential', '
+            <div class="rect-card" onclick="applyHardFilter('commercialPotential', 'High')">High Potential</div>
+            <div class="rect-card" onclick="applyHardFilter('genre1', 'Pop')">Radio Pop Focus</div>
+        </div>
+
+        <div class="thematic-grid">
+            <div class="thematic-card" style="background-image: url('/assets/covers/social-world-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Social')"><span>Social Commentary</span></div>
+            <div class="thematic-card" style="background-image: url('/assets/covers/empowerment-arc-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Empowerment')"><span>Empowerment Arc</span></div>
+            <div class="thematic-card" style="background-image: url('/assets/covers/disenchantment-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Disenchantment')"><span>Disenchantment</span></div>
+            <div class="thematic-card" style="background-image: url('/assets/covers/mutual-value-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Value')"><span>Value Prop</span></div>
+            <div class="thematic-card" style="background-image: url('/assets/covers/loss-of-market-share-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Loss')"><span>Market Share</span></div>
+            <div class="thematic-card" style="background-image: url('/assets/covers/iterative-photo.jpg')" onclick="applyHardFilter('category', 'Iterative')"><span>Iterative Protagonist</span></div>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-xl mb-12 border-2 border-[var(--blue-gray)] shadow-2xl">
+            <input type="text" id="vault-search" placeholder="Search Keywords, SEO Tags, Hashtags, Mood, Placement..." 
+                   class="w-full p-4 bg-black border border-slate-700 rounded mb-6 text-white uppercase text-sm focus:border-[var(--sunset-orange)] outline-none">
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <select id="genre-pull" class="vault-select" onchange="runMasterFilter()">
+                    <option value="">GENRE</option>
+                    <option value="Alternative and Punk">Alternative and Punk</option>
+                    <option value="Blues">Blues</option>
+                    <option value="Country">Country</option>
+                    <option value="Easy Listening">Easy Listening</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Rock">Rock</option>
+                    <option value="R&B">R&B</option>
+                </select>
+                <select id="mood-pull" class="vault-select" onchange="runMasterFilter()">
+                    <option value="">MOOD</option>
+                    <option value="Anthemic">Anthemic</option>
+                    <option value="Bitter">Bitter</option>
+                    <option value="Confident">Confident</option>
+                    <option value="Sad">Sad</option>
+                    <option value="Slow">Slow</option>
+                </select>
+                <select id="tempo-pull" class="vault-select" onchange="runMasterFilter()">
+                    <option value="">TEMPO</option>
+                    <option value="Fast">Fast</option>
+                    <option value="Mid Tempo">Mid Tempo</option>
+                    <option value="Slow">Slow</option>
+                </select>
+                <select id="style-pull" class="vault-select" onchange="runMasterFilter()">
+                    <option value="">SUB GENRE/STYLE</option>
+                    <option value="Americana">Americana</option>
+                    <option value="Ballad">Ballad</option>
+                    <option value="Bedroom Pop">Bedroom Pop</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Rock">Rock</option>
+                </select>
+            </div>
+            <button onclick="resetAllFilters()" class="mt-4 text-xs font-black uppercase text-[var(--sunset-orange)] hover:underline">Reset Search</button>
+        </div>
+
+        <div id="vault-grid-display" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </main>
+
+    <div id="vault-modal" class="fixed inset-0 bg-black/98 z-50 hidden flex justify-center items-center p-4 backdrop-blur-md">
+        <div class="bg-slate-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col border-2 border-slate-700 shadow-2xl" oncontextmenu="return false;">
+            <div class="p-6 bg-[var(--burgundy)] flex justify-between items-center shadow-lg">
+                <h2 id="modal-title" class="text-2xl font-black uppercase tracking-widest text-white italic"></h2>
+                <button onclick="closeVaultModal()" class="text-white text-4xl hover:text-amber-400">&times;</button>
+            </div>
+            <div class="p-10 overflow-y-auto">
+                <div class="bg-black/50 p-6 rounded-xl border border-slate-800 mb-8 shadow-inner">
+                    <p class="text-amber-400 font-bold uppercase text-[10px] tracking-widest mb-3">Audio Preview Only</p>
+                    <audio id="modal-audio" controls controlsList="nodownload" class="w-full"></audio>
+                </div>
+                <div id="modal-lyrics" class="whitespace-pre-wrap font-serif text-xl leading-relaxed text-slate-100"></div>
+            </div>
+        </div>
+    </div>
+
+    <button id="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+
+    <footer class="bg-[var(--burgundy)] py-10 mt-auto border-t-4 border-gray-400 no-print">
+        <div class="content-container text-center text-xs text-gray-200 uppercase tracking-widest font-bold">
+            <p>Kellie Larson | Cinematic Songwriter & Lyricist</p>
+            <p class="mt-4">Verse and Chorus &copy; 2025 | IP Protected</p>
+        </div>
+    </footer>
+
+    <script>
+        // HARD-CODED VERIFIED DATA (Ensure 44 card display)
+        const VAULT_DATA = [
+            {
+                id: 1, title: "AUTHOR OF A LIE", songbayWebpageUrl: "https://songbay.co/view-music/235611415/",
+                genre1: "Pop", genre2: "Hip-Hop", moodTone: "Anthemic", tempo: "Mid Tempo", category: "Social Commentary",
+                placementType: "Commercial Sync", snippetA: "You're the author of a lie, a master of deceit",
+                coverImageUrl: "/assets/covers/author-of-a-lie-cover-art.jpg",
+                fullLyrics: "[Verse 1]\nYou tell a story, i pick it apart\nYour timeline is whacked, you're playing a part\nSaid you were dancing on the beach in july\nand the tide was high and the moon was in the sky\nI'm like, \"wait a minute, that don't add up to me\"\nYour whole memory's a movie fantasy\nThe sun was out, the clouds were gray\nAnd you were playing video games all day\nBut when i start to get angry and vent\nThen you deflect, make up stuff and rewrite events\nYou rewrite the stars, you rewrite the past\nPlaying fast and loose, nothin's built to last\n\n[Chorus]\nYou're the author of a lie, a master of deceit\nAnd i'm tired of this story on repeat\n\n[Verse 2]\nYou sent a text at 2 am\nSaid you were home, busy working late again but\nI saw a picture tagged in front of a neon bar\nAn arm over a shoulder, in your co-workers car\nYa said \"oh, that wasn't me, that was a look-alike, babe!\"\nMan, your excuses are all just a big charade\nYou look me in the eye and sell me this line\nYou're a broken record, wasting my time\n\n[Pre-Chorus]\n'Cause when i start to get angry and vent\nThen you deflect, make up stuff and rewrite events\nYou rewrite the stars, you rewrite the past\nPlaying fast and loose, nothin's built to last\n\n[Repeat Chorus]\nYou're the author of a lie, a master of deceit\nAnd i'm tired of this story on repeat\n\n[Bridge]\nOne little lie leads to a house of glass\nTrying to fool me, but you're running out of gas\nI see the cracks, the holes in your alibi\nEvery time you open your mouth, boom, another lie\nI'm over it, i'm done, i'm walking away\nFrom this little game you're playing every single day\n\n[Outro]\nYeah, tired of this fiction, tired of the pretense\nNo more of your stories, they lack common sense\nRewrite this, lie, rewrite that, yeah, you rewrite events\nLooking real bad\n(I'm not buying it, no, not ever again)\n(Not ever again)\nfantasy world has come to an end\n(Fade out)"
+            },
+            // ... [Paste remaining 43 songs here]
+        ];
+
+        function renderVault(data) {
+            const grid = document.getElementById('vault-grid-display');
+            if (data.length === 0) {
+                grid.innerHTML = '<p class="col-span-full text-center py-20 text-slate-500 uppercase tracking-widest font-bold">No results found for your query.</p>';
+                return;
+            }
+            grid.innerHTML = data.map(s => `
+                <div class="song-card p-6 rounded-lg shadow-2xl">
+                    <img src="${s.coverImageUrl}" class="w-full max-w-[140px] mx-auto rounded-lg mb-4 border border-slate-700 shadow-lg">
+                    <div class="mb-2">
+                        <a href="${s.songbayWebpageUrl}" target="_blank" class="metallic-gold-title text-xl tracking-tighter hover:underline">${s.title}</a>
+                    </div>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Genre: ${s.genre1} | ${s.moodTone.split(',')[0]}</p>
+                    <p class="text-[10px] text-slate-300 font-bold uppercase mb-4 italic tracking-widest">Category: ${s.category}</p>
+                    <p class="text-sm text-slate-200 italic mb-8 px-2 flex-grow">"${s.snippetA}"</p>
+                    
+                    <div class="grid grid-cols-2 gap-2 mt-auto">
+                        <button onclick="openPlayer(${s.id})" class="py-3 bg-[var(--sunset-orange)] text-white font-black text-[10px] rounded uppercase shadow-inner active:scale-95">READ / PLAY</button>
+                        <button onclick="printIndustryReport(${s.id})" class="py-3 bg-slate-700 text-white font-black text-[10px] rounded uppercase hover:bg-slate-600 active:scale-95 transition">🖨️ PRINT</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 2-Page Print Function
+        function printIndustryReport(id) {
+            const s = VAULT_DATA.find(x => x.id === id);
+            const win = window.open('', '_blank');
+            win.document.write(`
+                <html><head><style>
+                    body { font-family: 'Helvetica', sans-serif; padding: 50px; line-height: 1.6; color: black; }
+                    .pg-break { page-break-before: always; display:block; height:0; clear:both; }
+                    h1 { color: #800020; border-bottom: 3px solid #000; padding-bottom: 5px; text-transform: uppercase; }
+                    .meta-grid { font-size: 19px; margin-top: 40px; border-left: 8px solid #64748b; padding-left: 20px; }
+                    pre { white-space: pre-wrap; font-size: 17px; font-family: 'Georgia', serif; border-top: 1px solid #ccc; padding-top: 20px; margin-top: 30px; }
+                </style></head>
+                <body>
+                    <h1>${s.title} - Industry Metadata</h1>
+                    <div class="meta-grid">
+                        <p><strong>Artist/Writer:</strong> Kellie Larson</p>
+                        <p><strong>Genre:</strong> ${s.genre1} / ${s.genre2}</p>
+                        <p><strong>Mood:</strong> ${s.moodTone}</p>
+                        <p><strong>BPM/Tempo:</strong> ${s.tempo}</p>
+                        <p><strong>Placement:</strong> ${s.placementType}</p>
+                        <p><strong>IP Status:</strong> Pre-Cleared / Registered</p>
+                    </div>
+                    <div class="pg-break"></div>
+                    <h1>Full Lyrics: ${s.title}</h1>
+                    <pre>${s.fullLyrics}</pre>
+                </body></html>
+            `);
+            win.document.close();
+            win.focus();
+            setTimeout(() => win.print(), 600);
+        }
+
+        function openPlayer(id) {
+            const s = VAULT_DATA.find(x => x.id === id);
+            document.getElementById('modal-title').innerText = s.title;
+            document.getElementById('modal-lyrics').innerText = s.fullLyrics;
+            const slug = s.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+            document.getElementById('modal-audio').src = `/assets/music/${slug}-audio.mp3`;
+            document.getElementById('vault-modal').classList.replace('hidden', 'flex');
+        }
+
+        function runMasterFilter() {
+            const q = document.getElementById('vault-search').value.toLowerCase();
+            const g = document.getElementById('genre-pull').value;
+            const m = document.getElementById('mood-pull').value;
+            const t = document.getElementById('tempo-pull').value;
+            const s = document.getElementById('style-pull').value;
+
+            const filtered = VAULT_DATA.filter(song => {
+                const searchString = `${song.title} ${song.category} ${song.shortDescription} ${song.snippetA} ${song.fullLyrics}`.toLowerCase();
+                const textMatch = !q || searchString.includes(q);
+                const genreMatch = !g || song.genre1.includes(g) || song.genre2.includes(g);
+                const moodMatch = !m || song.moodTone.includes(m);
+                const tempoMatch = !t || song.tempo.includes(t);
+                const styleMatch = !s || song.genre2.includes(s);
+                return textMatch && genreMatch && moodMatch && tempoMatch && styleMatch;
+            });
+            renderVault(filtered);
+        }
+
+        function applyHardFilter(field, val) {
+            const filtered = VAULT_DATA.filter(s => s[field].toLowerCase().includes(val.toLowerCase()));
+            renderVault(filtered);
+        }
+
+        function resetAllFilters() {
+            document.querySelectorAll('select').forEach(sel => sel.value = '');
+            document.getElementById('vault-search').value = '';
+            renderVault(VAULT_DATA);
+        }
+
+        function closeVaultModal() { document.getElementById('vault-modal').classList.replace('flex', 'hidden'); document.getElementById('modal-audio').pause(); }
+        window.onscroll = () => { document.getElementById('back-to-top').style.display = (window.scrollY > 500) ? 'flex' : 'none'; };
+        document.getElementById('vault-search').addEventListener('input', runMasterFilter);
+
+        // INITIALIZATION
+        renderVault(VAULT_DATA);
+    </script>
+</body>
+</html>
