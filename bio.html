@@ -3,235 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bio | Kellie Larson - Cinematic Songwriter</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        header {
-            background-color: #fff;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #000;
-            text-decoration: none;
-        }
-        nav a {
-            margin-left: 15px;
-            text-decoration: none;
-            color: #555;
-            font-size: 14px;
-            font-weight: 500;
-        }
-        nav a:hover {
-            color: #000;
-        }
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding-bottom: 40px;
-        }
-        .hero {
-            text-align: center;
-            padding: 40px 20px;
-            background: #111;
-            color: #fff;
-            margin-bottom: 30px;
-        }
-        .hero h1 {
-            font-size: 36px;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .hero h2 {
-            font-size: 18px;
-            font-weight: 300;
-            color: #ccc;
-        }
-        .content-section {
-            padding: 20px 40px;
-        }
-        .content-section h3 {
-            font-size: 22px;
-            border-bottom: 2px solid #000;
-            padding-bottom: 10px;
-            margin-top: 30px;
-            color: #111;
-            text-transform: uppercase;
-        }
-        .lead-text {
-            font-size: 18px;
-            font-weight: bold;
-            color: #444;
-            margin-bottom: 20px;
-        }
-        .pillar-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .pillar-card {
-            background: #f4f4f4;
-            padding: 20px;
-            border-left: 4px solid #333;
-        }
-        .pillar-card h4 {
-            margin-top: 0;
-            color: #000;
-        }
-        .sporadic-pic {
-            width: 100%;
-            max-height: 450px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin: 40px 0;
-            display: block;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .business-box {
-            background-color: #eef;
-            padding: 25px;
-            border-radius: 5px;
-            margin-top: 30px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        footer {
-            background-color: #111;
-            color: #fff;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 50px;
-            font-size: 14px;
-            line-height: 1.8;
-        }
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 5px;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 600px) {
-            .pillar-grid {
-                grid-template-columns: 1fr;
-            }
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            nav {
-                margin-top: 15px;
-            }
-        }
-    </style>
+    
+    <title>Bio | Kellie Larson | Cinematic Lyricist & Songwriting Asset Manager</title>
+    <meta name="description" content="Kellie Larson: Cinematic storyteller specializing in the 'Empowerment Arc' and high-fidelity music metadata for A&R scouting and sync placement.">
+    <meta name="keywords" content="Kellie Larson, Cinematic Lyricist, Songwriter, Music Metadata, Sync Licensing, Empowerment Arc, A&R Discovery, Verse and Chorus, 44-song portfolio">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="logo">Verse and Chorus</a>
-        <nav>
-            <a href="index.html">🏠 Home</a>
-            <a href="bio.html">👤 Bio</a>
-            <a href="lyrics.html">🎤 Lyrics</a>
-            <a href="reports.html">📈 Reports</a>
-            <a href="collab.html">🤝 Collab</a>
-            <a href="legal.html">⚖️ Legal</a>
-            <a href="contact.html">📧 Contact</a>
+    <header id="main-header">
+        <div class="logo">VERSE<span>&</span>CHORUS</div>
+        <nav id="nav-menu">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+            <ul class="nav-links">
+                <li><a href="index.html">Stage</a></li>
+                <li><a href="bio.html" class="active">Bio</a></li>
+                <li><a href="lyrics.html">Lyrics</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <div class="container">
-        
-        <div class="hero">
-            <h1>Kellie Larson</h1>
-            <h2>Cinematic Songwriter & A&R Asset Profile</h2>
-        </div>
-
-        <div class="content-section">
-            <p class="lead-text">I don't just write songs; I write movie scenes set to music. My catalog is built on the "Story-First" philosophy—providing turnkey lyrical solutions for producers and artists who need authentic, high-concept narratives.</p>
+    <main class="page-content">
+        <article class="bio-hero">
+            <header>
+                <h1 class="script-text">Spotlight: Kellie Larson</h1>
+                <p class="tagline">Cinematic Storyteller & Architect of the "Empowerment Arc"</p>
+            </header>
             
-            <p>In an industry shifting toward singles-driven and playlist-centric consumption, generic lyrics don't cut it. My work is engineered to bridge the gap between commercial viability and cinematic storytelling. I specialize in specific, visual details that ground the listener immediately, reducing the "imagination gap" for your production team.</p>
+            <section class="creative-bio">
+                <p>Kellie Larson is a <strong>Cinematic Storyteller</strong> who approaches songwriting as the creation of <em>"movie scenes set to music."</em> Her work is fundamentally defined by the <strong>'Empowerment Arc'</strong>—a narrative specialty that crafts powerful transformations from raw vulnerability to defiant agency. With a confident, commercial pop-rock sensibility, her lyrics provide the high-impact emotional beats essential for film, TV, and brand storytelling.</p>
+                
+                <p>Beyond the pen, Kellie leverages 25+ years of experience as an Executive Assistant to provide unmatched <strong>IP hygiene</strong>. In an industry moving toward a data-driven "GPS" system, Kellie treats every song as a highly visible asset, formatted for <strong>Global Cue Sheet Standard 2.0</strong> and optimized for AI-driven <strong>Automated A&R</strong> systems.</p>
+            </section>
+        </article>
 
-            <img src="images/kellie_writing.jpg" alt="Kellie Larson working on lyrics" class="sporadic-pic"> </div>
+        <section class="pillars-section">
+            <h2 class="section-title">The 44-Song Portfolio: Strategic Creative Pillars</h2>
+            <p class="seo-text">Explore a versatile catalog optimized for Sync Licensing, Contextual Listening, and Music Supervision.</p>
+            
+            <div class="pillars-grid">
+                <article class="pillar-box">
+                    <h3>Pillar I: Anthemic Power & Defiance</h3>
+                    <p class="pillar-desc">High-energy tracks centered on self-liberation and personal agency.</p>
+                    <ul class="song-list">
+                        <li>Big Hard No</li>
+                        <li>CEO Not Babysitting Tree</li>
+                        <li>I Know Your Damn PIN Code</li>
+                        <li>Don't Want You Back</li>
+                        <li>Hit the Road</li>
+                        <li>No More Rewinding</li>
+                        <li>The Show is Through</li>
+                        <li>Take the Keys</li>
+                        <li>My Girl Karma</li>
+                        <li>Thought You Should Know</li>
+                        <li>The Back of Me</li>
+                    </ul>
+                </article>
 
-        <div class="content-section">
-            <h3>The 4 Strategic Pillars</h3>
-            <p>My catalog of 44+ works is not a monolith. It is a multi-tiered ecosystem designed to mitigate risk and maximize placement potential across four distinct categories:</p>
+                <article class="pillar-box">
+                    <h3>Pillar II: Raw Emotional Landscapes</h3>
+                    <p class="pillar-desc">Introspective narratives exploring the complex human experience and resilience.</p>
+                    <ul class="song-list">
+                        <li>Now Etched in Every Space</li>
+                        <li>Take That First Step</li>
+                        <li>Sick One (s1c)</li>
+                        <li>The Aftermath</li>
+                        <li>Craving Those Crumbs</li>
+                        <li>Fragile</li>
+                        <li>Messy</li>
+                        <li>Rain</li>
+                        <li>Your Mask</li>
+                        <li>Solid Shifting Ground</li>
+                        <li>Ephemeral Moment</li>
+                    </ul>
+                </article>
 
-            <div class="pillar-grid">
-                <div class="pillar-card">
-                    <h4>1. Anthemic Empowerment</h4>
-                    <p><strong>The "Phoenix" Narratives.</strong> High-energy, reclamation tracks designed for radio play and younger demographics (Gen Z/Millennials). These are definitive boundary songs.</p>
-                    <p><em>Key Tracks:</em> "Big Hard No", "I Know Your Damn PIN Code"</p>
-                </div>
+                <article class="pillar-box">
+                    <h3>Pillar III: Cinematic Niche & Faith</h3>
+                    <p class="pillar-desc">Atmospheric storytelling bridging spiritual narratives and dramatic tension.</p>
+                    <ul class="song-list">
+                        <li>Wildflower</li>
+                        <li>Welcome to Jukes</li>
+                        <li>Stood By My Side</li>
+                        <li>Fury (I'm the Monster)</li>
+                        <li>Children of War</li>
+                        <li>Murders Heart</li>
+                        <li>Your Forever Man</li>
+                    </ul>
+                </article>
 
-                <div class="pillar-card">
-                    <h4>2. Raw Emotional Narrative</h4>
-                    <p><strong>Psychological Realism.</strong> These tracks explore the gray areas of relationships—codependency and the quiet moments after the fight. Optimized for Sync Licensing in TV dramas.</p>
-                    <p><em>Key Tracks:</em> "Sick One (s1c)", "Just A Little Lonely"</p>
-                </div>
-
-                <div class="pillar-card">
-                    <h4>3. Kinetic Energy / Functional Fun</h4>
-                    <p><strong>The "Vibe" Collection.</strong> Functional music designed for movement, viral trends, and advertising. These tracks pivot from trauma to carefree engagement.</p>
-                    <p><em>Key Tracks:</em> "The Real Dream Team", "Heartbreak and Trouble"</p>
-                </div>
-
-                <div class="pillar-card">
-                    <h4>4. Cinematic Storytelling</h4>
-                    <p><strong>The "Movie Scene" Collection.</strong> Linear stories with specific world-building and character perspectives. Ideal for niche artists and theatrical concepts.</p>
-                    <p><em>Key Tracks:</em> "CEO NOT A BABYSITTING TREE", "Etched in Every Space"</p>
-                </div>
+                <article class="pillar-box">
+                    <h3>Pillar IV: Commercial Hooks & Uplifting Vibes</h3>
+                    <p class="pillar-desc">Radio-ready assets designed for immediate commercial sync and mainstream appeal.</p>
+                    <ul class="song-list">
+                        <li>Beautiful Beat</li>
+                        <li>Author of a Lie</li>
+                        <li>Don't Be Jealous</li>
+                        <li>Whimsical</li>
+                        <li>Real Dream Team</li>
+                        <li>Heartbreak and Trouble</li>
+                    </ul>
+                </article>
             </div>
-        </div>
+        </section>
 
-        <div class="content-section">
-            <img src="images/kellie_professional.jpg" alt="Kellie Larson Professional Headshot" class="sporadic-pic"> <h3>The Business Behind the Art</h3>
-            <div class="business-box">
-                <p><strong>Why I am a safe bet for A&R:</strong></p>
-                <p>Talent is common; reliability is rare. I bring over 25 years of high-level executive experience (Executive Assistant & Retail Management) to the creative process.</p>
-                <ul>
-                    <li><strong>IP Hygiene:</strong> My catalog is organized, protected, and ready for immediate clearable placement.</li>
-                    <li><strong>Deadlines:</strong> I understand the speed of the industry. I deliver polished concepts, not rough drafts.</li>
-                    <li><strong>Versatility:</strong> Whether you need a stadium anthem or a heartbreaking ballad, my portfolio covers the emotional spectrum.</li>
-                </ul>
+        <section class="image-gallery">
+            <h2 class="visually-hidden">Kellie Larson Gallery</h2>
+            <div class="gallery-grid">
+                <img src="assets/images/all_165.jpg" alt="Kellie Larson Cinematic Songwriter Profile">
+                <img src="assets/images/all_184.jpg" alt="Lyricist Asset Management - Verse and Chorus">
+                <img src="assets/images/all_253.jpg" alt="Songwriting Process for Sync Placement">
+                <img src="assets/images/all_790.jpg" alt="Kellie Larson Creative Industry Professional">
+                <img src="assets/images/all_1466.jpg" alt="Music Metadata and A&R Ready Assets">
             </div>
-            <p style="margin-top: 20px;">
-                <strong>Current Status:</strong> Open for commissions, co-writes, and catalog buyouts.
-            </p>
+        </section>
+
+        <section class="personal-note">
+            <h3>Behind the Artist</h3>
+            <div class="fun-facts">
+                <p><strong>Origins:</strong> Started writing poetry in elementary school, developing a lifelong obsession with the power of the written word.</p>
+                <p><strong>Philosophy:</strong> <em>"A single word hooks the worm to the ear; a great line shelters it for eternity."</em></p>
+                <p><strong>Companion:</strong> Long-haired Chihuahua <strong>Muffins</strong> serves as the honorary creative consultant.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p><strong>Kellie Larson | Verse & Chorus</strong></p>
+            <p>760-537-0222 | info@verseandchorus.com</p>
+            <p class="small-text">Industry-Standard Metadata | Global Cue Sheet 2.0 Compliant | Cinematic Storytelling</p>
         </div>
-
-    </div>
-
-    <footer>
-        ♥️ Kellie Larson ♥️ <br>
-        ✍️ Cinematic Songwriter & Lyricist 🎹 <br>
-        🧑‍🎤 <a href="http://www.VerseandChorus.com">www.VerseandChorus.com</a> 🎙️ <br>
-        © 2025 Kellie Larson. All Rights Reserved. <br>
-        ✉️ info@verseandchorus.com 📨 <br>
-        ☎️ 760-537-0222 📲 <br>
-        <a href="contact.html">Contact</a> | <a href="legal.html">Legal</a>
     </footer>
 
 </body>
