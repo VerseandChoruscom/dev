@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore the cinematic lyrics of Kellie Larson. A resource for A&R, music supervisors, and aspiring lyricists looking for critiques and new music.">
-    <title>The Cinematic Jukebox | Kellie Larson</title>
+    <title>The Cinematic Jukebox | Kellie Larson - Cinematic Songwriter</title>
     
     <!-- React & Tailwind -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
@@ -78,7 +78,7 @@
             transition: all 0.3s ease;
         }
 
-        /* --- PAGE SPECIFIC STYLES --- */
+        /* --- PAGE CONTENT LAYOUT --- */
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -96,7 +96,7 @@
         }
         .hero h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--metallic-gold);
             margin-bottom: 5px;
         }
@@ -111,22 +111,24 @@
         /* Top Section: Industry Pros */
         .top-section {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             border: 2px solid var(--metallic-gold);
             padding: 30px;
             border-radius: 8px;
-            background-color: #111; /* Slight contrast from main black */
+            background-color: #0a0a0a;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
         }
         .top-section h3 {
             color: var(--white);
             font-size: 1.5rem;
             margin-bottom: 10px;
             text-transform: uppercase;
+            font-weight: 800;
         }
         .top-section a {
             color: var(--sunset-orange);
             font-size: 1.1rem;
-            font-weight: bold;
+            font-weight: 800;
             text-decoration: none;
         }
         .top-section a:hover {
@@ -136,22 +138,22 @@
         /* iPod Section */
         .jukebox-section {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
         .jukebox-title {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: var(--metallic-gold);
             margin-bottom: 10px;
         }
         .jukebox-subtitle {
             color: #ccc;
-            margin-bottom: 40px;
-            font-size: 1rem;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
         }
         .ipod-section {
             background-color: transparent;
-            min-height: 950px; 
+            min-height: 980px; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -162,7 +164,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 20px;
+            margin-top: 40px;
         }
         .action-card {
             background: #0a0a0a;
@@ -174,7 +176,7 @@
         }
         .action-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2); /* Gold glow */
+            box-shadow: 0 5px 25px rgba(212, 175, 55, 0.2);
         }
         .action-card h3 {
             margin-top: 0;
@@ -182,14 +184,15 @@
             text-transform: uppercase;
             color: var(--white);
             margin-bottom: 15px;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #222;
             padding-bottom: 10px;
+            font-weight: 800;
         }
         .action-card p {
-            color: #ccc;
+            color: #bbb;
             font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
+            line-height: 1.6;
+            margin-bottom: 25px;
         }
         .action-card a {
             color: var(--sunset-orange);
@@ -197,11 +200,10 @@
             text-decoration: none;
             text-transform: uppercase;
             font-size: 0.9rem;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
         .action-card a:hover {
             text-decoration: underline;
-            color: #ff8a80;
         }
 
         /* --- FOOTER STYLES --- */
@@ -209,7 +211,7 @@
             background-color: var(--black);
             color: var(--white);
             text-align: center; 
-            padding: 40px 20px;
+            padding: 50px 20px;
             margin-top: 50px;
             border-top: 2px solid var(--metallic-gold);
             display: flex;
@@ -234,9 +236,9 @@
             #nav-menu.active { display: flex; }
             #nav-menu a { padding: 15px 0; text-align: center; width: 100%; border-bottom: 1px solid #333; }
             
-            .ipod-wrapper { transform: scale(0.9) !important; margin-bottom: 0 !important; }
+            .ipod-wrapper { transform: scale(0.85) !important; margin-bottom: 0 !important; }
             .ipod-section { min-height: 700px; }
-            .jukebox-title { font-size: 2.5rem; }
+            .jukebox-title { font-size: 3rem; }
         }
     </style>
     <script>
@@ -272,14 +274,14 @@
 
     <div class="container">
         
-        <!-- TOP SECTION: Industry Pros -->
+        <!-- TOP SECTION: Industry Professionals -->
         <div class="top-section">
             <h3>For Industry Professionals</h3>
-            <p style="color: #ccc; margin-bottom: 15px;">Are you looking for clearable, high-concept IP?</p>
+            <p style="color: #bbb; margin-bottom: 15px;">Seeking clearable, high-concept IP for sync or artist placement?</p>
             <p><a href="industry-pros.html">A&R and Music Supervisors: Please go here to your dedicated page →</a></p>
         </div>
 
-        <!-- MIDDLE SECTION: The Jukebox -->
+        <!-- MIDDLE SECTION: The Cinematic Jukebox -->
         <div class="jukebox-section">
             <h2 class="jukebox-title">The Cinematic Jukebox</h2>
             <p class="jukebox-subtitle">Use the click wheel to browse 44 cinematic tracks by Mood or Theme.</p>
@@ -287,34 +289,34 @@
             <div class="ipod-section">
                 <!-- React Root for iPod -->
                 <div id="ipod-root" class="w-full flex justify-center">
-                    <span class="text-white animate-pulse">Loading iPod Interface...</span>
+                    <span class="text-white animate-pulse">Loading Digital Jukebox...</span>
                 </div>
             </div>
         </div>
 
-        <!-- BOTTOM SECTION: Other Links Grid -->
+        <!-- BOTTOM SECTION: Action Grid -->
         <div class="bottom-grid">
             <!-- New Artists / Bio -->
             <div class="action-card">
                 <h3>Discover the Writer</h3>
-                <p>Behind every great song is a story. Get to know the creator.</p>
+                <p>Behind every great song is a story. Explore the artistic journey and 25 years of professional discipline.</p>
                 <p><a href="bio.html">Meet Kellie Larson Cinematic →</a></p>
             </div>
 
             <!-- Lyric Critique -->
             <div class="action-card">
-                <h3>Aspiring Lyricists</h3>
-                <p>Are you a lyricist or do you write songs for a hobby? Get your lyrics critiqued to see your chances of being on the radio or in a movie scene.</p>
-                <p><a href="lyrics-critique.html">Get Your Critique →</a></p>
+                <h3>Get Your Lyrics Critiqued</h3>
+                <p>Are you a lyricist or songwriter? Get a professional assessment of your work’s potential for radio or film sync.</p>
+                <p><a href="lyrics-critique.html">Check Your Chances →</a></p>
             </div>
 
-            <!-- Fun & Updates -->
+            <!-- Fun & Notifications -->
             <div class="action-card">
-                <h3>Stay Connected</h3>
-                <p>Want to be notified when new songs and articles are posted?</p>
-                <p><a href="contact.html">Join the list here</a></p>
-                <hr style="border: 0; border-top: 1px solid #333; margin: 15px 0;">
-                <p><a href="green-room.html">Play Lyrical Mad Libs in the Green Room! 🎲</a></p>
+                <h3>Stay Notified</h3>
+                <p>Be the first to know when new songs, articles, and cinematic narratives are posted.</p>
+                <p><a href="contact.html">Join the Mailing List</a></p>
+                <hr style="border: 0; border-top: 1px solid #222; margin: 20px 0;">
+                <p><a href="green-room.html">Visit the Green Room for Lyrical Mad Libs! 🎲</a></p>
             </div>
         </div>
 
@@ -352,7 +354,7 @@
 
         const { useState, useEffect, useRef } = React;
 
-        // --- DATA ---
+        // --- MASTER DATA ---
         const ARTIST = "Kellie Larson";
         const RAW_TITLES = [
           "Author of a Lie", "Big Hard No", "Boom Boom Beat", "Bottom of the Wishing Well",
@@ -396,9 +398,8 @@
                 id: index,
                 title: title,
                 artist: ARTIST,
-                audioSrc: `audio/${filename}.mp3`,
-                lyricsSrc: `lyrics/${filename}.txt`, 
-                lyricsContent: "Loading lyric file..." 
+                slug: filename,
+                audioSrc: `audio/${filename}.mp3`
             };
           });
         };
@@ -428,11 +429,14 @@
           const [currentTime, setCurrentTime] = useState("12:00");
           const [selectedTheme, setSelectedTheme] = useState(null);
           const [selectedMood, setSelectedMood] = useState(null);
-          const [lyricText, setLyricText] = useState("");
+          
+          const [allLyrics, setAllLyrics] = useState({}); // Stores contents of lyrics.json
+          const [lyricDisplay, setLyricDisplay] = useState("Loading lyrics...");
           
           const wheelRef = useRef(null);
           const audioRef = useRef(null); 
           
+          // Initialize Audio and Clock
           useEffect(() => {
             audioRef.current = new Audio();
             const timer = setInterval(() => {
@@ -440,7 +444,15 @@
               setCurrentTime(now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
             }, 1000);
             
-            // Audio Listener
+            // Load lyrics.json
+            fetch('lyrics.json')
+              .then(res => res.json())
+              .then(data => setAllLyrics(data))
+              .catch(err => {
+                console.error("Could not load lyrics.json", err);
+                setAllLyrics({});
+              });
+
             const handleEnded = () => setIsPlaying(false);
             if (audioRef.current) {
                 audioRef.current.addEventListener('ended', handleEnded);
@@ -456,38 +468,33 @@
             };
           }, []);
 
+          // Control Playback
           useEffect(() => {
              if (audioRef.current) {
                 if (isPlaying) {
-                    // Try/Catch for AutoPlay restrictions
-                    audioRef.current.play().catch(e => console.log("Audio autoplay prevented:", e));
+                    audioRef.current.play().catch(e => console.log("User interaction required for audio. Click Play on the wheel."));
                 } else {
                     audioRef.current.pause();
                 }
              }
           }, [isPlaying]);
 
+          // Handle Song Selection
           useEffect(() => {
             if (currentSong && audioRef.current) {
                 audioRef.current.src = currentSong.audioSrc;
                 audioRef.current.load();
-                if (isPlaying) {
-                     audioRef.current.play().catch(e => console.log("Audio error:", e));
-                }
+                if (isPlaying) audioRef.current.play().catch(() => {});
 
-                setLyricText("Loading lyrics...");
-                fetch(currentSong.lyricsSrc)
-                    .then(response => {
-                        if (!response.ok) throw new Error("Lyrics not found");
-                        return response.text();
-                    })
-                    .then(text => setLyricText(text))
-                    .catch(err => {
-                        console.log("Lyric fetch error:", err);
-                        setLyricText(`Lyrics file not found.\nPlease ensure "${currentSong.lyricsSrc}" exists in the lyrics folder.`);
-                    });
+                // Find lyrics by slug (filename) from JSON
+                const content = allLyrics[currentSong.slug] || allLyrics[currentSong.title];
+                if (content) {
+                    setLyricDisplay(content);
+                } else {
+                    setLyricDisplay(`Placeholder Lyric Content for "${currentSong.title}".`);
+                }
             }
-          }, [currentSong]);
+          }, [currentSong, allLyrics]);
 
           const currentScreen = menuStack[menuStack.length - 1];
 
@@ -551,22 +558,22 @@
             if (currentScreen === 'nowPlaying') {
               if (!currentSong) return <div className="p-4">No song selected</div>;
               return (
-                <div className="flex flex-col h-full bg-white">
+                <div className="flex flex-col h-full bg-white text-left">
                   <Header title="Now Playing" time={currentTime} />
                   <div className="flex-1 flex flex-col p-3 overflow-hidden">
                     <div className="flex gap-3 mb-3">
                       <div className="w-20 h-20 bg-gradient-to-br from-gray-700 to-gray-900 shadow-lg flex items-center justify-center text-gray-100 rounded-sm shrink-0">
                         <IconMusic size={32} className="text-white" />
                       </div>
-                      <div className="flex flex-col justify-center min-w-0 text-left flex-1">
-                        <h2 className="font-bold text-sm leading-tight mb-1">{currentSong.title}</h2>
+                      <div className="flex flex-col justify-center min-w-0 flex-1">
+                        <h2 className="font-bold text-sm leading-tight mb-1 break-words">{currentSong.title}</h2>
                         <p className="text-xs text-gray-600">{currentSong.artist}</p>
                       </div>
                     </div>
                     <div className="flex-1 border-t border-gray-200 mt-1 pt-2 overflow-y-auto bg-gray-50 rounded px-2">
-                      <p className="text-center text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Lyrics</p>
+                      <p className="text-center text-[10px] font-bold text-gray-400 mb-2 uppercase tracking-wider">Lyrics</p>
                       <p className="text-xs text-gray-800 whitespace-pre-wrap font-serif leading-relaxed text-center pb-4">
-                        {lyricText}
+                        {lyricDisplay}
                       </p>
                     </div>
                   </div>
@@ -576,10 +583,10 @@
             const titleMap = { 'main': 'iPod', 'music': 'Music', 'themes': 'Themes', 'moods': 'Moods', 'songs': selectedTheme ? selectedTheme : (selectedMood ? selectedMood : 'All Songs') };
             const isMain = currentScreen === 'main';
             return (
-              <div className="flex flex-col h-full bg-white">
+              <div className="flex flex-col h-full bg-white text-left">
                 <Header title={titleMap[currentScreen] || 'Menu'} time={currentTime} />
                 <div className="flex flex-1 overflow-hidden">
-                   <div className={`flex-1 overflow-y-auto ${isMain ? 'w-1/2' : 'w-full'} text-left`}>
+                   <div className={`flex-1 overflow-y-auto ${isMain ? 'w-1/2' : 'w-full'}`}>
                      {listItems.length > 0 ? (
                        listItems.map((item, idx) => (
                         <MenuItem key={idx} label={item.label} isActive={idx === selectedIndex} hasArrow={currentScreen !== 'songs'} />
@@ -604,7 +611,7 @@
                 {/* Gloss / Reflection */}
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-transparent via-white/30 to-transparent pointer-events-none rounded-[40px]" />
                 
-                {/* Screen */}
+                {/* Screen Area */}
                 <div className="mt-8 w-[320px] h-[240px] bg-black rounded-lg p-1 shadow-inner relative z-10">
                   <div className="w-full h-full bg-white rounded overflow-hidden relative text-black">
                     {renderScreenContent()}
@@ -642,5 +649,4 @@
 
 </body>
 </html>
-
 
