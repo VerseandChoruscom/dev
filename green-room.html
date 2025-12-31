@@ -4,21 +4,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Green Room | Verse and Chorus</title>
-    <meta name="description" content="Interactive songwriting tools and lyric games powered by the Verse and Chorus catalog.">
     <link rel="stylesheet" href="http://verseandchorus.com/assets/css/style.css">
     <style>
-        /* Green Room Specific Theme Overrides */
         :root { 
             --winter-green-bg: #5F8575; 
             --game-card-bg: rgba(255, 255, 255, 0.95); 
             --burgundy: #800020; 
             --gold: #D4AF37; 
         }
-        body { 
-            background-color: var(--winter-green-bg); 
-            font-family: "Segoe UI", Tahoma, sans-serif; 
-            margin: 0; 
-        }
+        body { background-color: var(--winter-green-bg); line-height: 1.6; margin: 0; }
+        
         #main-header { 
             background-color: #000; 
             padding: 10px 20px; 
@@ -32,95 +27,25 @@
         }
         .logo-top-left { max-height: 60px; width: auto; }
         #nav-menu { display: flex; gap: 20px; }
-        #nav-menu a { 
-            color: #fff; 
-            text-decoration: none; 
-            font-weight: bold; 
-            text-transform: uppercase; 
-            font-size: 0.9rem; 
-            transition: color 0.3s; 
-        }
+        #nav-menu a { color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
         #nav-menu a:hover { color: var(--gold); }
-        main.page-content { 
-            max-width: 1000px; 
-            margin: 0 auto; 
-            padding: 3rem 1rem; 
-        }
-        .page-header h1 { 
-            color: #000; 
-            font-family: Georgia, serif; 
-            font-size: 3.5rem; 
-            text-align: center; 
-            margin-bottom: 0.5rem; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-        }
-        .page-header p { 
-            text-align: center; 
-            font-size: 1.2rem; 
-            color: #000; 
-            margin-bottom: 3rem; 
-            font-weight: 500; 
-        }
-        .game-card { 
-            background-color: var(--game-card-bg); 
-            border: 3px solid #000; 
-            border-radius: 8px; 
-            padding: 2rem; 
-            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2); 
-            margin-bottom: 2rem; 
-        }
-        .game-card h2 { 
-            margin-top: 0; 
-            color: var(--burgundy); 
-            border-bottom: 2px solid #ccc; 
-            padding-bottom: 10px; 
-        }
-        .input-group { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-            gap: 10px; 
-            margin-bottom: 15px; 
-        }
-        input[type="text"] { 
-            padding: 10px; 
-            border: 2px solid #ccc; 
-            border-radius: 4px; 
-            width: 100%; 
-            box-sizing: border-box; 
-        }
-        button.game-btn { 
-            background-color: var(--burgundy); 
-            color: #fff; 
-            padding: 12px 24px; 
-            border: none; 
-            border-radius: 4px; 
-            font-size: 1rem; 
-            font-weight: bold; 
-            text-transform: uppercase; 
-            cursor: pointer; 
-            width: 100%; 
-            transition: background 0.3s; 
-        }
+
+        main.page-content { max-width: 1100px; margin: 0 auto; padding: 3rem 1rem; }
+        .page-header h1 { color: #000; font-family: Georgia, serif; font-size: 3.5rem; text-align: center; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .page-header p { text-align: center; font-size: 1.2rem; color: #000; margin-bottom: 3rem; font-weight: 500; }
+        
+        .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .game-card { background-color: var(--game-card-bg); border: 3px solid #000; border-radius: 8px; padding: 1.5rem; box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; }
+        .game-card h2 { margin-top: 0; color: var(--burgundy); border-bottom: 2px solid #ccc; padding-bottom: 10px; font-size: 1.4rem; }
+        
+        .input-group { display: grid; gap: 10px; margin-bottom: 15px; }
+        input[type="text"], select { padding: 10px; border: 2px solid #ccc; border-radius: 4px; width: 100%; box-sizing: border-box; }
+        
+        button.game-btn { background-color: var(--burgundy); color: #fff; padding: 12px 24px; border: none; border-radius: 4px; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; cursor: pointer; width: 100%; margin-top: auto; }
         button.game-btn:hover { background-color: #000; color: var(--gold); }
-        .result-box { 
-            margin-top: 20px; 
-            padding: 20px; 
-            background-color: #f4f4f4; 
-            border-left: 5px solid var(--gold); 
-            font-family: Georgia, serif; 
-            font-size: 1.1rem; 
-            display: none; 
-            color: #333; 
-        }
-        .site-footer { 
-            background-color: #000; 
-            color: #fff; 
-            text-align: center; 
-            padding: 2rem; 
-            margin-top: 4rem; 
-            border-top: 1px solid var(--gold); 
-        }
+        
+        .result-box { margin-top: 15px; padding: 15px; background-color: #f4f4f4; border-left: 5px solid var(--gold); font-family: Georgia, serif; font-size: 1rem; display: none; color: #333; }
+        .site-footer { background-color: #000; color: #fff; text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid var(--gold); }
         .site-footer a { color: var(--gold); text-decoration: none; }
     </style>
 </head>
@@ -132,29 +57,32 @@
         </a>
         <nav id="nav-menu">
             <a href="http://verseandchorus.com/bio.html">Bio</a>
+            <a href="http://verseandchorus.com/industry-pros.html">Industry Pro</a>
             <a href="http://verseandchorus.com/lyrics.html">Lyrics</a>
             <a href="http://verseandchorus.com/green-room.html">Green Room</a>
+            <a href="http://verseandchorus.com/articles.html">Articles</a>
+            <a href="http://verseandchorus.com/reports.html">Reports</a>
             <a href="http://verseandchorus.com/collab.html">Collab</a>
             <a href="http://verseandchorus.com/contact.html">Contact</a>
+            <a href="http://verseandchorus.com/legal.html">Legal</a>
         </nav>
     </header>
 
     <main class="page-content">
         <div class="page-header">
             <h1>The Green Room</h1>
-            <p>Songwriter's Playground &amp; Funhouse. Play with the lyrics!</p>
+            <p>Songwriter's Playground &amp; Funhouse.</p>
         </div>
 
         <div class="game-grid">
             
             <div class="game-card">
                 <h2>1. Lyrical Madlibs</h2>
-                <p>Rewrite a cinematic line! Fill in the blanks below.</p>
+                <p>Rewrite a cinematic line! Fill in the blanks.</p>
                 <div class="input-group">
-                    <input type="text" id="ml-adj" placeholder="Adjective (e.g. Rusty)">
-                    <input type="text" id="ml-noun" placeholder="Noun (e.g. Locket)">
-                    <input type="text" id="ml-verb" placeholder="Verb (Past Tense)">
-                    <input type="text" id="ml-place" placeholder="Place (e.g. Swamp)">
+                    <input type="text" id="ml-adj" placeholder="Adjective">
+                    <input type="text" id="ml-noun" placeholder="Noun">
+                    <input type="text" id="ml-place" placeholder="Place">
                 </div>
                 <button class="game-btn" onclick="runMadlibs()">Rewrite Lyric</button>
                 <div id="ml-result" class="result-box"></div>
@@ -162,58 +90,116 @@
 
             <div class="game-card">
                 <h2>2. 2-Song Turnstyle</h2>
-                <p><strong>Spin the Decks!</strong> Randomly smash two songs from the catalog together to create a brand new concept.</p>
+                <p>Spin the Decks! Smash two song titles together.</p>
                 <button class="game-btn" onclick="runTurnstyle()">Mix It Up</button>
                 <div id="ts-result" class="result-box"></div>
+            </div>
+
+            <div class="game-card">
+                <h2>3. Scene Generator</h2>
+                <p>Generate a unique opening line from prompts.</p>
+                <div class="input-group">
+                    <input type="text" id="cs-person" placeholder="Person">
+                    <input type="text" id="cs-thing" placeholder="Thing">
+                    <input type="text" id="cs-mood" placeholder="Mood">
+                </div>
+                <button class="game-btn" onclick="runScene()">Generate Scene</button>
+                <div id="cs-result" class="result-box"></div>
+            </div>
+
+            <div class="game-card">
+                <h2>4. Lightning Lyrics</h2>
+                <p>Instantly pull a Commercial Hook from the Vault.</p>
+                <button class="game-btn" onclick="runLightning()">Strike Me!</button>
+                <div id="ll-result" class="result-box"></div>
+            </div>
+
+            <div class="game-card">
+                <h2>5. Pin Code Unscramble</h2>
+                <p>Unscramble the title word before time runs out!</p>
+                <div id="pc-word" style="font-weight:bold; font-size:1.2rem; text-align:center; margin:10px 0; letter-spacing:3px;">OEC</div>
+                <div class="input-group">
+                    <input type="text" id="pc-input" placeholder="Your Answer">
+                </div>
+                <button class="game-btn" onclick="checkPinCode()">Unlock</button>
+                <div id="pc-result" class="result-box"></div>
+            </div>
+
+            <div class="game-card">
+                <h2>6. Mood Matcher</h2>
+                <p>Match the vibe to the song title.</p>
+                <div class="input-group">
+                    <select id="mm-select">
+                        <option value="">Select a vibe...</option>
+                        <option value="fury">Dark & Monster-like</option>
+                        <option value="ceo">Empowered & Executive</option>
+                        <option value="dream">United & Classic</option>
+                    </select>
+                </div>
+                <button class="game-btn" onclick="matchMood()">Match</button>
+                <div id="mm-result" class="result-box"></div>
             </div>
 
         </div>
     </main>
 
     <footer class="site-footer">
-        <p>Cinematic Songwriter &amp; Lyricist @2025 Kellie Larson | <a href="http://verseandchorus.com/legal.html">Legal</a></p>
+        <p>Cinematic Songwriter &amp; Lyricist @2025 Kellie Larson 児ｸ酬erseandChorus.com 笘趣ｸ760-537-0222 笨会ｸinfo@verseandchorus.com 統 <a href="http://verseandchorus.com/legal.html">Legal</a></p>
     </footer>
 
     <script>
-        // Catalog with updated song titles
         const catalog = [
-            "The Real Dream Team",
-            "Heartbreak and Trouble",
-            "Just A Little Lonely",
-            "Just Too Much",
-            "Fury (I'm the Monster)",
-            "Your Forever Man",
-            "Etched in Every Space",
-            "Sick One (s1c)",
-            "I Know Your Damn Pin Code",
+            "The Real Dream Team", "Heartbreak and Trouble", "Just A Little Lonely", 
+            "Just Too Much", "Fury (I'm the Monster)", "Your Forever Man", 
+            "Etched in Every Space", "Sick One (s1c)", "I Know Your Damn Pin Code", 
             "CEO NOT A BABYSITTING TREE"
         ];
 
-        // Functional Game 1: Madlibs
+        function showResult(id, text) {
+            const el = document.getElementById(id);
+            el.innerHTML = text;
+            el.style.display = 'block';
+        }
+
         function runMadlibs() {
             const adj = document.getElementById('ml-adj').value || "Placeholder";
             const noun = document.getElementById('ml-noun').value || "Placeholder";
-            const verb = document.getElementById('ml-verb').value || "Placeholder";
             const place = document.getElementById('ml-place').value || "Placeholder";
-
-            // Constructed thematic cinematic line
-            const lyric = `In the ${adj} silence of the ${place}, the ${noun} ${verb}—etched in every space.`;
-            
-            const resultBox = document.getElementById('ml-result');
-            resultBox.innerHTML = `<em>"${lyric}"</em>`;
-            resultBox.style.display = 'block';
+            showResult('ml-result', `In the ${adj} silence of the ${place}, the ${noun} was etched in every space.`);
         }
 
-        // Functional Game 2: Turnstyle
         function runTurnstyle() {
-            const song1 = catalog[Math.floor(Math.random() * catalog.length)];
-            const song2 = catalog[Math.floor(Math.random() * catalog.length)];
-            
-            const resultBox = document.getElementById('ts-result');
-            resultBox.innerHTML = `<strong>Concept Mashup:</strong><br> What if <em>"${song1}"</em> met <em>"${song2}"</em>?`;
-            resultBox.style.display = 'block';
+            const s1 = catalog[Math.floor(Math.random() * catalog.length)];
+            const s2 = catalog[Math.floor(Math.random() * catalog.length)];
+            showResult('ts-result', `<strong>Mashup:</strong> ${s1} x ${s2}`);
+        }
+
+        function runScene() {
+            const per = document.getElementById('cs-person').value || "Placeholder";
+            const thi = document.getElementById('cs-thing').value || "Placeholder";
+            const moo = document.getElementById('cs-mood').value || "Placeholder";
+            showResult('cs-result', `The ${per} clutched the ${thi}, feeling ${moo}. It was just too much.`);
+        }
+
+        function runLightning() {
+            const hooks = ["Placeholder", "Placeholder", "Placeholder"];
+            showResult('ll-result', `<strong>Vault Hook:</strong> "${hooks[Math.floor(Math.random() * hooks.length)]}"`);
+        }
+
+        function checkPinCode() {
+            const ans = document.getElementById('pc-input').value.toUpperCase();
+            if(ans === "CEO") showResult('pc-result', "Correct! Title: CEO NOT A BABYSITTING TREE");
+            else showResult('pc-result', "Try again!");
+        }
+
+        function matchMood() {
+            const val = document.getElementById('mm-select').value;
+            let res = "";
+            if(val === "fury") res = "Fury (I'm the Monster)";
+            else if(val === "ceo") res = "CEO NOT A BABYSITTING TREE";
+            else if(val === "dream") res = "The Real Dream Team";
+            showResult('mm-result', res ? `Title: ${res}` : "Pick a vibe.");
         }
     </script>
-
 </body>
 </html>
