@@ -4,16 +4,24 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Green Room | Verse and Chorus</title>
+    <meta name="description" content="Interactive songwriting tools and lyric games powered by the Verse and Chorus catalog.">
+    
     <link rel="stylesheet" href="http://verseandchorus.com/assets/css/style.css">
+    
     <style>
+        /* Green Room Theme Variables */
         :root { 
             --winter-green-bg: #5F8575; 
             --game-card-bg: rgba(255, 255, 255, 0.95); 
             --burgundy: #800020; 
             --gold: #D4AF37; 
         }
-        body { background-color: var(--winter-green-bg); line-height: 1.6; margin: 0; }
-        
+        body { 
+            background-color: var(--winter-green-bg); 
+            line-height: 1.6; 
+            margin: 0;
+        }
+        /* Specific header/footer layout styling */
         #main-header { 
             background-color: #000; 
             padding: 10px 20px; 
@@ -27,25 +35,103 @@
         }
         .logo-top-left { max-height: 60px; width: auto; }
         #nav-menu { display: flex; gap: 20px; }
-        #nav-menu a { color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
-        #nav-menu a:hover { color: var(--gold); }
-
-        main.page-content { max-width: 1100px; margin: 0 auto; padding: 3rem 1rem; }
-        .page-header h1 { color: #000; font-family: Georgia, serif; font-size: 3.5rem; text-align: center; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
-        .page-header p { text-align: center; font-size: 1.2rem; color: #000; margin-bottom: 3rem; font-weight: 500; }
-        
-        .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-        .game-card { background-color: var(--game-card-bg); border: 3px solid #000; border-radius: 8px; padding: 1.5rem; box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; }
-        .game-card h2 { margin-top: 0; color: var(--burgundy); border-bottom: 2px solid #ccc; padding-bottom: 10px; font-size: 1.4rem; }
-        
-        .input-group { display: grid; gap: 10px; margin-bottom: 15px; }
-        input[type="text"], select { padding: 10px; border: 2px solid #ccc; border-radius: 4px; width: 100%; box-sizing: border-box; }
-        
-        button.game-btn { background-color: var(--burgundy); color: #fff; padding: 12px 24px; border: none; border-radius: 4px; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; cursor: pointer; width: 100%; margin-top: auto; }
-        button.game-btn:hover { background-color: #000; color: var(--gold); }
-        
-        .result-box { margin-top: 15px; padding: 15px; background-color: #f4f4f4; border-left: 5px solid var(--gold); font-family: Georgia, serif; font-size: 1rem; display: none; color: #333; }
-        .site-footer { background-color: #000; color: #fff; text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid var(--gold); }
+        #nav-menu a { 
+            color: #fff; 
+            text-decoration: none; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.9rem; 
+        }
+        main.page-content { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 3rem 1rem; 
+        }
+        .page-header h1 { 
+            color: #000; 
+            font-family: Georgia, serif; 
+            font-size: 3.5rem; 
+            text-align: center; 
+            margin-bottom: 0.5rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+        }
+        .page-header p { 
+            text-align: center; 
+            font-size: 1.2rem; 
+            color: #000; 
+            margin-bottom: 3rem; 
+            font-weight: 500; 
+        }
+        .game-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+            gap: 2rem; 
+        }
+        .game-card { 
+            background-color: var(--game-card-bg); 
+            border: 3px solid #000; 
+            border-radius: 8px; 
+            padding: 2rem; 
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.2); 
+            display: flex;
+            flex-direction: column;
+        }
+        .game-card h2 { 
+            margin-top: 0; 
+            color: var(--burgundy); 
+            border-bottom: 2px solid #ccc; 
+            padding-bottom: 10px; 
+            font-size: 1.5rem;
+        }
+        .input-group { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px; 
+            margin-bottom: 15px; 
+        }
+        input[type="text"], select { 
+            padding: 10px; 
+            border: 2px solid #ccc; 
+            border-radius: 4px; 
+            width: 100%; 
+            box-sizing: border-box; 
+        }
+        button.game-btn { 
+            background-color: var(--burgundy); 
+            color: #fff; 
+            padding: 12px 24px; 
+            border: none; 
+            border-radius: 4px; 
+            font-size: 1rem; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            cursor: pointer; 
+            width: 100%; 
+            margin-top: auto;
+        }
+        button.game-btn:hover { 
+            background-color: #000; 
+            color: var(--gold); 
+        }
+        .result-box { 
+            margin-top: 20px; 
+            padding: 20px; 
+            background-color: #f4f4f4; 
+            border-left: 5px solid var(--gold); 
+            font-family: Georgia, serif; 
+            font-size: 1.1rem; 
+            display: none; 
+            color: #333; 
+        }
+        .site-footer { 
+            background-color: #000; 
+            color: #fff; 
+            text-align: center; 
+            padding: 2rem; 
+            margin-top: 4rem; 
+            border-top: 1px solid var(--gold); 
+        }
         .site-footer a { color: var(--gold); text-decoration: none; }
     </style>
 </head>
@@ -71,17 +157,18 @@
     <main class="page-content">
         <div class="page-header">
             <h1>The Green Room</h1>
-            <p>Songwriter's Playground &amp; Funhouse.</p>
+            <p>Songwriter's Playground &amp; Funhouse. Play with the lyrics!</p>
         </div>
 
         <div class="game-grid">
             
             <div class="game-card">
                 <h2>1. Lyrical Madlibs</h2>
-                <p>Rewrite a cinematic line! Fill in the blanks.</p>
+                <p>Rewrite a cinematic line! Fill in the blanks below.</p>
                 <div class="input-group">
                     <input type="text" id="ml-adj" placeholder="Adjective">
                     <input type="text" id="ml-noun" placeholder="Noun">
+                    <input type="text" id="ml-verb" placeholder="Verb (Past)">
                     <input type="text" id="ml-place" placeholder="Place">
                 </div>
                 <button class="game-btn" onclick="runMadlibs()">Rewrite Lyric</button>
@@ -90,16 +177,17 @@
 
             <div class="game-card">
                 <h2>2. 2-Song Turnstyle</h2>
-                <p>Spin the Decks! Smash two song titles together.</p>
+                <p><strong>Spin the Decks!</strong> Randomly smash two songs from the catalog together.</p>
                 <button class="game-btn" onclick="runTurnstyle()">Mix It Up</button>
                 <div id="ts-result" class="result-box"></div>
             </div>
 
             <div class="game-card">
                 <h2>3. Scene Generator</h2>
-                <p>Generate a unique opening line from prompts.</p>
+                <p>Enter random prompts and generate a unique opening line.</p>
                 <div class="input-group">
                     <input type="text" id="cs-person" placeholder="Person">
+                    <input type="text" id="cs-place" placeholder="Place">
                     <input type="text" id="cs-thing" placeholder="Thing">
                     <input type="text" id="cs-mood" placeholder="Mood">
                 </div>
@@ -109,34 +197,35 @@
 
             <div class="game-card">
                 <h2>4. Lightning Lyrics</h2>
-                <p>Instantly pull a Commercial Hook from the Vault.</p>
+                <p>Instantly pull a <strong>Commercial Hook</strong> from the Vault.</p>
                 <button class="game-btn" onclick="runLightning()">Strike Me!</button>
                 <div id="ll-result" class="result-box"></div>
             </div>
 
             <div class="game-card">
                 <h2>5. Pin Code Unscramble</h2>
-                <p>Unscramble the title word before time runs out!</p>
-                <div id="pc-word" style="font-weight:bold; font-size:1.2rem; text-align:center; margin:10px 0; letter-spacing:3px;">OEC</div>
-                <div class="input-group">
-                    <input type="text" id="pc-input" placeholder="Your Answer">
+                <p>Unscramble the song title to unlock the vault!</p>
+                <div id="scramble-word" style="font-weight:bold; font-size:1.4rem; text-align:center; margin:15px 0; color:var(--burgundy); letter-spacing:4px;">NPI CDEO</div>
+                <div class="input-group" style="grid-template-columns: 1fr;">
+                    <input type="text" id="pc-guess" placeholder="Enter Title">
                 </div>
-                <button class="game-btn" onclick="checkPinCode()">Unlock</button>
+                <button class="game-btn" onclick="runPinCode()">Unlock</button>
                 <div id="pc-result" class="result-box"></div>
             </div>
 
             <div class="game-card">
-                <h2>6. Mood Matcher</h2>
-                <p>Match the vibe to the song title.</p>
-                <div class="input-group">
-                    <select id="mm-select">
-                        <option value="">Select a vibe...</option>
-                        <option value="fury">Dark & Monster-like</option>
-                        <option value="ceo">Empowered & Executive</option>
-                        <option value="dream">United & Classic</option>
+                <h2>6. Mood Board Matcher</h2>
+                <p>Pick a cinematic mood to find your songwriting inspiration.</p>
+                <div class="input-group" style="grid-template-columns: 1fr;">
+                    <select id="mood-select">
+                        <option value="">-- Choose a Mood --</option>
+                        <option value="monstrous">Monstrous & Intense</option>
+                        <option value="lonely">Quiet & Melancholy</option>
+                        <option value="executive">Powerful & Direct</option>
+                        <option value="etched">Ethereal & Timeless</option>
                     </select>
                 </div>
-                <button class="game-btn" onclick="matchMood()">Match</button>
+                <button class="game-btn" onclick="runMoodMatch()">Find My Vibe</button>
                 <div id="mm-result" class="result-box"></div>
             </div>
 
@@ -148,58 +237,78 @@
     </footer>
 
     <script>
-        const catalog = [
-            "The Real Dream Team", "Heartbreak and Trouble", "Just A Little Lonely", 
-            "Just Too Much", "Fury (I'm the Monster)", "Your Forever Man", 
-            "Etched in Every Space", "Sick One (s1c)", "I Know Your Damn Pin Code", 
+        const songCatalog = [
+            "The Real Dream Team",
+            "Heartbreak and Trouble",
+            "Just A Little Lonely",
+            "Just Too Much",
+            "Fury (I'm the Monster)",
+            "Your Forever Man",
+            "Etched in Every Space",
+            "Sick One (s1c)",
+            "I Know Your Damn Pin Code",
             "CEO NOT A BABYSITTING TREE"
         ];
 
-        function showResult(id, text) {
-            const el = document.getElementById(id);
-            el.innerHTML = text;
-            el.style.display = 'block';
+        function showBox(id, text) {
+            const box = document.getElementById(id);
+            box.innerHTML = text;
+            box.style.display = 'block';
         }
 
         function runMadlibs() {
             const adj = document.getElementById('ml-adj').value || "Placeholder";
             const noun = document.getElementById('ml-noun').value || "Placeholder";
+            const verb = document.getElementById('ml-verb').value || "Placeholder";
             const place = document.getElementById('ml-place').value || "Placeholder";
-            showResult('ml-result', `In the ${adj} silence of the ${place}, the ${noun} was etched in every space.`);
+            showBox('ml-result', `The ${adj} ${noun} ${verb} through the ${place}, leaving a trail of heartbreak and trouble.`);
         }
 
         function runTurnstyle() {
-            const s1 = catalog[Math.floor(Math.random() * catalog.length)];
-            const s2 = catalog[Math.floor(Math.random() * catalog.length)];
-            showResult('ts-result', `<strong>Mashup:</strong> ${s1} x ${s2}`);
+            const s1 = songCatalog[Math.floor(Math.random() * songCatalog.length)];
+            const s2 = songCatalog[Math.floor(Math.random() * songCatalog.length)];
+            showBox('ts-result', `<strong>Mashup:</strong> ${s1} x ${s2}`);
         }
 
         function runScene() {
             const per = document.getElementById('cs-person').value || "Placeholder";
+            const pla = document.getElementById('cs-place').value || "Placeholder";
             const thi = document.getElementById('cs-thing').value || "Placeholder";
             const moo = document.getElementById('cs-mood').value || "Placeholder";
-            showResult('cs-result', `The ${per} clutched the ${thi}, feeling ${moo}. It was just too much.`);
+            showBox('cs-result', `The ${per} sat alone in the ${pla}, clutching the ${thi} with a ${moo} intent.`);
         }
 
         function runLightning() {
-            const hooks = ["Placeholder", "Placeholder", "Placeholder"];
-            showResult('ll-result', `<strong>Vault Hook:</strong> "${hooks[Math.floor(Math.random() * hooks.length)]}"`);
+            const hooks = [
+                "Placeholder: Lyric from Fury (I'm the Monster)",
+                "Placeholder: Lyric from CEO NOT A BABYSITTING TREE",
+                "Placeholder: Lyric from Your Forever Man"
+            ];
+            showBox('ll-result', `<strong>Vault Hook:</strong> "${hooks[Math.floor(Math.random() * hooks.length)]}"`);
         }
 
-        function checkPinCode() {
-            const ans = document.getElementById('pc-input').value.toUpperCase();
-            if(ans === "CEO") showResult('pc-result', "Correct! Title: CEO NOT A BABYSITTING TREE");
-            else showResult('pc-result', "Try again!");
+        function runPinCode() {
+            const guess = document.getElementById('pc-guess').value.toLowerCase();
+            if (guess.includes("pin code")) {
+                showBox('pc-result', "<strong>Access Granted:</strong> I Know Your Damn Pin Code unlocked!");
+            } else {
+                showBox('pc-result', "Incorrect code. Try unscrambling 'NPI CDEO'.");
+            }
         }
 
-        function matchMood() {
-            const val = document.getElementById('mm-select').value;
-            let res = "";
-            if(val === "fury") res = "Fury (I'm the Monster)";
-            else if(val === "ceo") res = "CEO NOT A BABYSITTING TREE";
-            else if(val === "dream") res = "The Real Dream Team";
-            showResult('mm-result', res ? `Title: ${res}` : "Pick a vibe.");
+        function runMoodMatch() {
+            const mood = document.getElementById('mood-select').value;
+            let result = "";
+            switch(mood) {
+                case "monstrous": result = "Fury (I'm the Monster)"; break;
+                case "lonely": result = "Just A Little Lonely"; break;
+                case "executive": result = "CEO NOT A BABYSITTING TREE"; break;
+                case "etched": result = "Etched in Every Space"; break;
+                default: result = "Please select a mood!";
+            }
+            showBox('mm-result', `<strong>Your Song:</strong> ${result}`);
         }
     </script>
+
 </body>
 </html>
