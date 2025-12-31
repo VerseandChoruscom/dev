@@ -15,15 +15,18 @@
             --game-card-bg: rgba(255, 255, 255, 0.95); 
             --burgundy: #800020; 
             --gold: #D4AF37; 
+            --black: #000000;
         }
         body { 
             background-color: var(--winter-green-bg); 
             line-height: 1.6; 
             margin: 0;
+            color: var(--black); /* Default text color */
         }
-        /* Specific header/footer layout styling */
+        
+        /* Header Styling */
         #main-header { 
-            background-color: #000; 
+            background-color: var(--black); 
             padding: 10px 20px; 
             display: flex; 
             justify-content: space-between; 
@@ -41,28 +44,35 @@
             font-weight: bold; 
             text-transform: uppercase; 
             font-size: 0.9rem; 
+            transition: color 0.3s ease;
         }
+        #nav-menu a:hover { color: var(--gold); }
+
+        /* Main Content & Game Grid */
         main.page-content { 
             max-width: 1200px; 
             margin: 0 auto; 
             padding: 3rem 1rem; 
         }
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative; /* For absolute positioning of images */
+        }
         .page-header h1 { 
-            color: #000; 
+            color: var(--black); 
             font-family: Georgia, serif; 
             font-size: 3.5rem; 
-            text-align: center; 
-            margin-bottom: 0.5rem; 
             text-transform: uppercase; 
             letter-spacing: 2px; 
+            margin-bottom: 0.5rem; 
         }
         .page-header p { 
-            text-align: center; 
             font-size: 1.2rem; 
-            color: #000; 
-            margin-bottom: 3rem; 
             font-weight: 500; 
+            margin-bottom: 0;
         }
+
         .game-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
@@ -70,12 +80,14 @@
         }
         .game-card { 
             background-color: var(--game-card-bg); 
-            border: 3px solid #000; 
+            border: 3px solid var(--black); 
             border-radius: 8px; 
             padding: 2rem; 
             box-shadow: 8px 8px 0px rgba(0,0,0,0.2); 
             display: flex;
             flex-direction: column;
+            position: relative; /* For image placement within cards */
+            overflow: hidden; /* Hide overflow for images */
         }
         .game-card h2 { 
             margin-top: 0; 
@@ -83,12 +95,20 @@
             border-bottom: 2px solid #ccc; 
             padding-bottom: 10px; 
             font-size: 1.5rem;
+            position: relative;
+            z-index: 1; /* Ensure text is above image */
+        }
+        .game-card p {
+            position: relative;
+            z-index: 1;
         }
         .input-group { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
             gap: 10px; 
             margin-bottom: 15px; 
+            position: relative;
+            z-index: 1;
         }
         input[type="text"], select { 
             padding: 10px; 
@@ -96,6 +116,7 @@
             border-radius: 4px; 
             width: 100%; 
             box-sizing: border-box; 
+            font-size: 1rem;
         }
         button.game-btn { 
             background-color: var(--burgundy); 
@@ -109,9 +130,12 @@
             cursor: pointer; 
             width: 100%; 
             margin-top: auto;
+            transition: background 0.3s ease, color 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
         button.game-btn:hover { 
-            background-color: #000; 
+            background-color: var(--black); 
             color: var(--gold); 
         }
         .result-box { 
@@ -123,9 +147,51 @@
             font-size: 1.1rem; 
             display: none; 
             color: #333; 
+            position: relative;
+            z-index: 1;
         }
+
+        /* Image Styling */
+        .header-image-left {
+            position: absolute;
+            top: 0;
+            left: -100px; /* Adjust as needed */
+            height: 150px; /* Adjust size */
+            opacity: 0.8;
+            z-index: 0;
+            transform: rotate(-15deg);
+        }
+        .header-image-right {
+            position: absolute;
+            top: 20px;
+            right: -100px; /* Adjust as needed */
+            height: 120px; /* Adjust size */
+            opacity: 0.7;
+            z-index: 0;
+            transform: rotate(10deg);
+        }
+        .card-image-corner {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            height: 100px; /* Smaller for cards */
+            opacity: 0.6;
+            z-index: 0;
+            transform: rotate(20deg);
+        }
+        .card-image-top-left {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            height: 80px;
+            opacity: 0.5;
+            z-index: 0;
+            transform: rotate(-10deg);
+        }
+
+        /* Footer Styling */
         .site-footer { 
-            background-color: #000; 
+            background-color: var(--black); 
             color: #fff; 
             text-align: center; 
             padding: 2rem; 
@@ -133,6 +199,21 @@
             border-top: 1px solid var(--gold); 
         }
         .site-footer a { color: var(--gold); text-decoration: none; }
+
+        /* Hamburger menu for responsiveness if needed */
+        .hamburger { display: none; cursor: pointer; }
+        .hamburger div { width: 25px; height: 3px; background-color: white; margin: 5px 0; }
+
+        @media (max-width: 768px) {
+            #nav-menu { display: none; flex-direction: column; width: 100%; background-color: #000; position: absolute; top: 70px; left: 0; }
+            #nav-menu.active { display: flex; }
+            .hamburger { display: block; }
+            .page-header h1 { font-size: 2.5rem; }
+            .page-header p { font-size: 1rem; }
+            .game-grid { grid-template-columns: 1fr; }
+            .header-image-left, .header-image-right { display: none; } /* Hide decorative images on small screens */
+            .card-image-corner, .card-image-top-left { height: 60px; }
+        }
     </style>
 </head>
 <body>
@@ -141,6 +222,9 @@
         <a href="http://verseandchorus.com/index.html">
             <img src="http://verseandchorus.com/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left">
         </a>
+        <div class="hamburger">
+            <div></div><div></div><div></div>
+        </div>
         <nav id="nav-menu">
             <a href="http://verseandchorus.com/bio.html">Bio</a>
             <a href="http://verseandchorus.com/industry-pros.html">Industry Pro</a>
@@ -158,11 +242,14 @@
         <div class="page-header">
             <h1>The Green Room</h1>
             <p>Songwriter's Playground &amp; Funhouse. Play with the lyrics!</p>
+            <img src="https://image.pollinations.ai/prompt/elegant%20music%20note%20flair%20gold%20and%20burgundy" alt="Music flair" class="header-image-left">
+            <img src="https://image.pollinations.ai/prompt/cinematic%20reel%20abstract%20gold%20and%20black" alt="Cinematic reel" class="header-image-right">
         </div>
 
         <div class="game-grid">
             
             <div class="game-card">
+                <img src="https://image.pollinations.ai/prompt/quill%20and%20ink%20minimalist%20gold%20line%20art" alt="Quill" class="card-image-top-left">
                 <h2>1. Lyrical Madlibs</h2>
                 <p>Rewrite a cinematic line! Fill in the blanks below.</p>
                 <div class="input-group">
@@ -176,6 +263,7 @@
             </div>
 
             <div class="game-card">
+                <img src="https://image.pollinations.ai/prompt/vintage%20turntable%20abstract%20stylized%20gold" alt="Turntable" class="card-image-corner">
                 <h2>2. 2-Song Turnstyle</h2>
                 <p><strong>Spin the Decks!</strong> Randomly smash two songs from the catalog together.</p>
                 <button class="game-btn" onclick="runTurnstyle()">Mix It Up</button>
@@ -183,6 +271,7 @@
             </div>
 
             <div class="game-card">
+                <img src="https://image.pollinations.ai/prompt/film%20strip%20abstract%20cinematic%20gold%20shimmer" alt="Film strip" class="card-image-top-left">
                 <h2>3. Scene Generator</h2>
                 <p>Enter random prompts and generate a unique opening line.</p>
                 <div class="input-group">
@@ -196,6 +285,7 @@
             </div>
 
             <div class="game-card">
+                <img src="https://image.pollinations.ai/prompt/light%20bulb%20spark%20idea%20abstract%20gold%20glow" alt="Light bulb" class="card-image-corner">
                 <h2>4. Lightning Lyrics</h2>
                 <p>Instantly pull a <strong>Commercial Hook</strong> from the Vault.</p>
                 <button class="game-btn" onclick="runLightning()">Strike Me!</button>
@@ -203,6 +293,7 @@
             </div>
 
             <div class="game-card">
+                <img src="https://image.pollinations.ai/prompt/vintage%20safe%20dial%20minimalist%20gold%20outline" alt="Safe dial" class="card-image-top-left">
                 <h2>5. Pin Code Unscramble</h2>
                 <p>Unscramble the song title to unlock the vault!</p>
                 <div id="scramble-word" style="font-weight:bold; font-size:1.4rem; text-align:center; margin:15px 0; color:var(--burgundy); letter-spacing:4px;">NPI CDEO</div>
@@ -214,6 +305,7 @@
             </div>
 
             <div class="game-card">
+                <img src="https://image.pollinations.ai/prompt/mood%20board%20palette%20abstract%20cinematic%20colors" alt="Mood board" class="card-image-corner">
                 <h2>6. Mood Board Matcher</h2>
                 <p>Pick a cinematic mood to find your songwriting inspiration.</p>
                 <div class="input-group" style="grid-template-columns: 1fr;">
@@ -257,10 +349,10 @@
         }
 
         function runMadlibs() {
-            const adj = document.getElementById('ml-adj').value || "Placeholder";
-            const noun = document.getElementById('ml-noun').value || "Placeholder";
-            const verb = document.getElementById('ml-verb').value || "Placeholder";
-            const place = document.getElementById('ml-place').value || "Placeholder";
+            const adj = document.getElementById('ml-adj').value || "dark";
+            const noun = document.getElementById('ml-noun').value || "secret";
+            const verb = document.getElementById('ml-verb').value || "whispered";
+            const place = document.getElementById('ml-place').value || "shadows";
             showBox('ml-result', `The ${adj} ${noun} ${verb} through the ${place}, leaving a trail of heartbreak and trouble.`);
         }
 
@@ -271,18 +363,20 @@
         }
 
         function runScene() {
-            const per = document.getElementById('cs-person').value || "Placeholder";
-            const pla = document.getElementById('cs-place').value || "Placeholder";
-            const thi = document.getElementById('cs-thing').value || "Placeholder";
-            const moo = document.getElementById('cs-mood').value || "Placeholder";
+            const per = document.getElementById('cs-person').value || "stranger";
+            const pla = document.getElementById('cs-place').value || "empty street";
+            const thi = document.getElementById('cs-thing').value || "rusted key";
+            const moo = document.getElementById('cs-mood').value || "eerie";
             showBox('cs-result', `The ${per} sat alone in the ${pla}, clutching the ${thi} with a ${moo} intent.`);
         }
 
         function runLightning() {
             const hooks = [
-                "Placeholder: Lyric from Fury (I'm the Monster)",
-                "Placeholder: Lyric from CEO NOT A BABYSITTING TREE",
-                "Placeholder: Lyric from Your Forever Man"
+                "Tearing through the memories like a wildfire in the dark.",
+                "You’re the heartbeat in a silent room.",
+                "I’m the monster in the fury, I’m the shadow in the hall.",
+                "CEO of my own life, not a babysitting tree.",
+                "Heartbreak and trouble, that's all you ever bring."
             ];
             showBox('ll-result', `<strong>Vault Hook:</strong> "${hooks[Math.floor(Math.random() * hooks.length)]}"`);
         }
@@ -308,7 +402,11 @@
             }
             showBox('mm-result', `<strong>Your Song:</strong> ${result}`);
         }
-    </script>
 
+        // Toggle mobile nav menu
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
