@@ -1,425 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Green Room | Verse and Chorus</title>
     <meta name="description" content="Interactive songwriting tools and lyric games powered by the Verse and Chorus catalog.">
-    
-    <link rel="stylesheet" href="/assets/css/style.css" />
-
+    <link rel="stylesheet" href="http://verseandchorus.com/assets/css/style.css">
     <style>
-        :root {
-            /* --- Page Specific Colors --- */
-            --winter-green-bg: #5F8575; /* Winter Green */
-            --game-card-bg: rgba(255, 255, 255, 0.95);
-            --burgundy: #800020;
-            --gold: #D4AF37;
-            --black: #000000;
+        /* Green Room Specific Theme Overrides */
+        :root { 
+            --winter-green-bg: #5F8575; 
+            --game-card-bg: rgba(255, 255, 255, 0.95); 
+            --burgundy: #800020; 
+            --gold: #D4AF37; 
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--winter-green-bg); /* Winter Green Background */
-            color: #111;
-            line-height: 1.6;
+        body { 
+            background-color: var(--winter-green-bg); 
+            font-family: "Segoe UI", Tahoma, sans-serif; 
+            margin: 0; 
         }
-
-        /* --- ORIGINAL HEADER STYLES --- */
-        #main-header {
-            background-color: #000; /* Assuming black background for header based on logo contrast */
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--gold);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        #main-header { 
+            background-color: #000; 
+            padding: 10px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 2px solid var(--gold); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
         }
-
-        .logo-top-left {
-            max-height: 60px; /* Adjust size to fit your logo */
-            width: auto;
+        .logo-top-left { max-height: 60px; width: auto; }
+        #nav-menu { display: flex; gap: 20px; }
+        #nav-menu a { 
+            color: #fff; 
+            text-decoration: none; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.9rem; 
+            transition: color 0.3s; 
         }
-
-        /* Hamburger Icon */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
+        #nav-menu a:hover { color: var(--gold); }
+        main.page-content { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 3rem 1rem; 
         }
-
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: #fff;
-            margin: 3px 0;
-            transition: 0.4s;
+        .page-header h1 { 
+            color: #000; 
+            font-family: Georgia, serif; 
+            font-size: 3.5rem; 
+            text-align: center; 
+            margin-bottom: 0.5rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
         }
-
-        /* Navigation */
-        #nav-menu {
-            display: flex;
-            gap: 20px;
+        .page-header p { 
+            text-align: center; 
+            font-size: 1.2rem; 
+            color: #000; 
+            margin-bottom: 3rem; 
+            font-weight: 500; 
         }
-
-        #nav-menu a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: color 0.3s;
+        .game-card { 
+            background-color: var(--game-card-bg); 
+            border: 3px solid #000; 
+            border-radius: 8px; 
+            padding: 2rem; 
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2); 
+            margin-bottom: 2rem; 
         }
-
-        #nav-menu a:hover {
-            color: var(--gold);
+        .game-card h2 { 
+            margin-top: 0; 
+            color: var(--burgundy); 
+            border-bottom: 2px solid #ccc; 
+            padding-bottom: 10px; 
         }
-
-        /* Mobile Nav Styles */
-        @media (max-width: 900px) {
-            .hamburger {
-                display: flex;
-            }
-
-            #nav-menu {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: #000;
-                padding: 20px 0;
-                border-bottom: 2px solid var(--gold);
-                text-align: center;
-            }
-
-            #nav-menu.active {
-                display: flex;
-            }
-            
-            #nav-menu a {
-                padding: 10px 0;
-                border-bottom: 1px solid #333;
-                width: 100%;
-                display: block;
-            }
+        .input-group { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+            gap: 10px; 
+            margin-bottom: 15px; 
         }
-
-        /* --- MAIN CONTENT STYLES --- */
-        main.page-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 3rem 1rem;
+        input[type="text"] { 
+            padding: 10px; 
+            border: 2px solid #ccc; 
+            border-radius: 4px; 
+            width: 100%; 
+            box-sizing: border-box; 
         }
-
-        .page-header h1 {
-            color: var(--black); /* Title in Black */
-            font-family: 'Georgia', serif;
-            font-size: 3.5rem;
-            text-align: center;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 0px rgba(255,255,255,0.3);
+        button.game-btn { 
+            background-color: var(--burgundy); 
+            color: #fff; 
+            padding: 12px 24px; 
+            border: none; 
+            border-radius: 4px; 
+            font-size: 1rem; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            cursor: pointer; 
+            width: 100%; 
+            transition: background 0.3s; 
         }
-
-        .page-header p {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #000;
-            margin-bottom: 3rem;
-            font-weight: 500;
+        button.game-btn:hover { background-color: #000; color: var(--gold); }
+        .result-box { 
+            margin-top: 20px; 
+            padding: 20px; 
+            background-color: #f4f4f4; 
+            border-left: 5px solid var(--gold); 
+            font-family: Georgia, serif; 
+            font-size: 1.1rem; 
+            display: none; 
+            color: #333; 
         }
-
-        /* Game Grid */
-        .game-grid {
-            display: grid;
-            gap: 2rem;
+        .site-footer { 
+            background-color: #000; 
+            color: #fff; 
+            text-align: center; 
+            padding: 2rem; 
+            margin-top: 4rem; 
+            border-top: 1px solid var(--gold); 
         }
-
-        .game-card {
-            background-color: var(--game-card-bg);
-            border: 3px solid #000;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 8px 8px 0px rgba(0,0,0,0.2);
-        }
-
-        .game-card h2 {
-            margin-top: 0;
-            color: var(--burgundy);
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 10px;
-        }
-
-        .input-group {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            border: 2px solid #ccc;
-            border-radius: 4px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        button.game-btn {
-            background-color: var(--burgundy);
-            color: #fff;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.3s;
-        }
-
-        button.game-btn:hover {
-            background-color: #000;
-            color: var(--gold);
-        }
-
-        .result-box {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
-            border-left: 5px solid var(--gold);
-            font-family: 'Georgia', serif;
-            font-size: 1.1rem;
-            display: none;
-            color: #333;
-        }
-
-        /* --- FOOTER STYLES --- */
-        .site-footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            border-top: 1px solid var(--gold);
-        }
-
-        .site-footer a {
-            color: var(--gold);
-            text-decoration: none;
-        }
+        .site-footer a { color: var(--gold); text-decoration: none; }
     </style>
-
-    <script>
-        // Hamburger Menu Toggle Logic
-        function toggleMenu() {
-            const navMenu = document.getElementById('nav-menu');
-            navMenu.classList.toggle('active');
-        }
-    </script>
 </head>
 <body>
 
     <header id="main-header">
-        <a href="index.html">
-            <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
+        <a href="http://verseandchorus.com/index.html">
+            <img src="http://verseandchorus.com/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left">
         </a>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div><div></div><div></div>
-        </div>
         <nav id="nav-menu">
-            <a href="bio.html">Bio</a>
-            <a href="industry-pros.html">Industry Pro</a>
-            <a href="lyrics.html">Lyrics</a>
-            <a href="green-room.html">Green Room</a>
-            <a href="articles.html">Articles</a>
-            <a href="reports.html">Reports</a>
-            <a href="collab.html">Collab</a>
-            <a href="contact.html">Contact</a>
-            <a href="legal.html">Legal</a>
+            <a href="http://verseandchorus.com/bio.html">Bio</a>
+            <a href="http://verseandchorus.com/lyrics.html">Lyrics</a>
+            <a href="http://verseandchorus.com/green-room.html">Green Room</a>
+            <a href="http://verseandchorus.com/collab.html">Collab</a>
+            <a href="http://verseandchorus.com/contact.html">Contact</a>
         </nav>
     </header>
 
     <main class="page-content">
         <div class="page-header">
             <h1>The Green Room</h1>
-            <p>Songwriter's Playground & Funhouse. Play with the lyrics!</p>
+            <p>Songwriter's Playground &amp; Funhouse. Play with the lyrics!</p>
         </div>
 
         <div class="game-grid">
             
             <div class="game-card">
                 <h2>1. Lyrical Madlibs</h2>
-                <p>Rewrite a classic line! Fill in the blanks below.</p>
+                <p>Rewrite a cinematic line! Fill in the blanks below.</p>
                 <div class="input-group">
                     <input type="text" id="ml-adj" placeholder="Adjective (e.g. Rusty)">
-                    <input type="text" id="ml-noun" placeholder="Noun (e.g. Truck)">
+                    <input type="text" id="ml-noun" placeholder="Noun (e.g. Locket)">
                     <input type="text" id="ml-verb" placeholder="Verb (Past Tense)">
-                    <input type="text" id="ml-place" placeholder="Place (e.g. Motel)">
+                    <input type="text" id="ml-place" placeholder="Place (e.g. Swamp)">
                 </div>
-                <button class="game-btn" onclick="playMadlibs()">Rewrite Lyric</button>
+                <button class="game-btn" onclick="runMadlibs()">Rewrite Lyric</button>
                 <div id="ml-result" class="result-box"></div>
             </div>
 
             <div class="game-card">
                 <h2>2. 2-Song Turnstyle</h2>
                 <p><strong>Spin the Decks!</strong> Randomly smash two songs from the catalog together to create a brand new concept.</p>
-                <button class="game-btn" onclick="playTurnstyle()">Mix It Up</button>
+                <button class="game-btn" onclick="runTurnstyle()">Mix It Up</button>
                 <div id="ts-result" class="result-box"></div>
-            </div>
-
-            <div class="game-card">
-                <h2>3. Cinematic Scene Generator</h2>
-                <p>Enter random prompts and generate a unique opening line.</p>
-                <div class="input-group">
-                    <input type="text" id="cs-person" placeholder="Person (e.g. Sheriff)">
-                    <input type="text" id="cs-place" placeholder="Place (e.g. Swamp)">
-                    <input type="text" id="cs-thing" placeholder="Thing (e.g. Locket)">
-                    <input type="text" id="cs-mood" placeholder="Mood (e.g. Eerie)">
-                </div>
-                <button class="game-btn" onclick="playSceneGen()">Generate Scene</button>
-                <div id="cs-result" class="result-box"></div>
-            </div>
-
-            <div class="game-card">
-                <h2>4. Lightning Lyrics</h2>
-                <p>Need inspiration? Instantly pull a <strong>Commercial Hook</strong> from the Vault.</p>
-                <button class="game-btn" onclick="playLightning()">Strike Me!</button>
-                <div id="ll-result" class="result-box"></div>
             </div>
 
         </div>
     </main>
 
     <footer class="site-footer">
-        <p>Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝 <a href="legal.html">Legal</a></p>
+        <p>Cinematic Songwriter &amp; Lyricist @2025 Kellie Larson | <a href="http://verseandchorus.com/legal.html">Legal</a></p>
     </footer>
 
     <script>
-        // Full Song Data from lyrics.json
-        const allLyrics = [
-          { "title": "AUTHOR OF A LIE", "genre1": "Pop", "category": "Betrayal / Storytelling", "commercialHook": "You're the author of a lie, a master of deceit.", "moodTone": "Anthemic, Confident" },
-          { "title": "BIG HARD NO", "genre1": "Country", "category": "Empowerment / Defiance", "commercialHook": "You can't mess with my day, no way, not anymore!", "moodTone": "Anthemic, Confident" },
-          { "title": "BOOM BOOM BEAT", "genre1": "Pop", "category": "Love / Reunion", "commercialHook": "Boom boom boom da boom boom boom", "moodTone": "Bouncy, Fun" },
-          { "title": "BROKEN RECORD", "genre1": "Rock", "category": "Self-Reclamation", "commercialHook": "'Cause I'm a broken record, skipping on repeat.", "moodTone": "Bitter, Confident" },
-          { "title": "CEO NOT A BABYSITTING TREE", "genre1": "Pop", "category": "Female Empowerment", "commercialHook": "Honey, I'm a CEO, not a babysitting tree.", "moodTone": "Confident, Fun" },
-          { "title": "CHILDREN OF WAR", "genre1": "Folk", "category": "Social Commentary", "commercialHook": "When everyone has nukes and buttons are pressed, If everyone dies, then who cares who is best.", "moodTone": "Dark, Haunting" },
-          { "title": "DON'T BE JELLY", "genre1": "Country", "category": "Defiance / Dance", "commercialHook": "Hips left, hips right, stomp, kick, slide.", "moodTone": "Fun, Lively" },
-          { "title": "EPHEMERAL MOMENT", "genre1": "Alternative", "category": "Love / Longing", "commercialHook": "Ephemeral moment, I should've stretched it out.", "moodTone": "Dreamy, Romantic" },
-          { "title": "ETCHED IN EVERY SPACE", "genre1": "Easy Listening", "category": "Grief / Heartbreak", "commercialHook": "Oh, i miss your stupid face! it's etched in every space.", "moodTone": "Mournful, Sad" },
-          { "title": "FURY (I'M THE MONSTER)", "genre1": "Alternative", "category": "Abuse / Escape", "commercialHook": "Gave me bullets for my gun I named Justice, yeah.", "moodTone": "Angry, Dramatic" },
-          { "title": "HEARTBREAK AND TROUBLE", "genre1": "Pop", "category": "Toxic Relationship", "commercialHook": "You pop in and out like Hubba Bubba.", "moodTone": "Playful, Romantic" },
-          { "title": "HIT THE ROAD", "genre1": "Pop", "category": "Breakup", "commercialHook": "Don't stop, don't look back, Hit the road, Jack.", "moodTone": "Confident, Revenge" },
-          { "title": "I KNOW YOUR DAMN PIN CODE", "genre1": "Rock", "category": "Vengeful Anthem", "commercialHook": "Gave me bullets for my gun I named Justice, yeah.", "moodTone": "Bitter, Revenge" },
-          { "title": "IN MY DREAMS (WHEN I WAKE)", "genre1": "Easy Listening", "category": "Grief / Loss", "commercialHook": "In my dreams - I long to be together in my dreams.", "moodTone": "Dreamy, Sad" },
-          { "title": "JUST TOO MUCH", "genre1": "Easy Listening", "category": "Breakup", "commercialHook": "Too much fighting, too much disrespect. Too much lying, no truth to detect.", "moodTone": "Bitter, Melancholic" },
-          { "title": "JUST A LITTLE LONELY", "genre1": "Easy Listening", "category": "Heartache", "commercialHook": "Yeah, I'm done with feeling lonely...just see. Just a little stronger. Just a little wiser. Just... free.", "moodTone": "Dramatic, Sad" },
-          { "title": "MURDERERS HEART", "genre1": "Country", "category": "Betrayal / Revenge", "commercialHook": "But he was playing games with a murderer's heart.", "moodTone": "Anthemic, Introspective" },
-          { "title": "ONE SMALL WRONG", "genre1": "Hip-hop", "category": "Dating / Confrontation", "commercialHook": "But that one small wrong from you, man, it sealed our whole damn fate.", "moodTone": "Bitter, Tension" },
-          { "title": "THE REAL DREAM TEAM", "genre1": "Easy Listening", "category": "Love / Loyalty", "commercialHook": "Tick Tock, the clock, time never stops. Like my love, you are my rock.", "moodTone": "Positive, Romantic" },
-          { "title": "SICK ONE (S1C)", "genre1": "Rock", "category": "Toxic Relationship", "commercialHook": "My love is on a sick one too... I run back. Right on cue.", "moodTone": "Bitter, Cool" },
-          { "title": "SOLID SHIFTING GROUND", "genre1": "Easy Listening", "category": "Inspirational", "commercialHook": "This crazy, beautiful life on solid, shifting ground.", "moodTone": "Anthemic, Positive" },
-          { "title": "STOOD BY MY SIDE", "genre1": "Gospel", "category": "Faith / Hope", "commercialHook": "When the world walked away, You stood by my side.", "moodTone": "Peaceful, Soft" },
-          { "title": "THE AFTERMATH", "genre1": "Alternative", "category": "Emotional Turmoil", "commercialHook": "Found bizarre comfort in the chaos left behind.", "moodTone": "Haunting, Tension" },
-          { "title": "THE SHOW IS THROUGH", "genre1": "R-n-B", "category": "Closure / Breakup", "commercialHook": "Take a bow, 'cause the show is through.", "moodTone": "Dramatic, Theatrical" },
-          { "title": "THOUGHT YOU SHOULD KNOW", "genre1": "Pop", "category": "Moving On", "commercialHook": "Oh, i'm alright, i'm fine (i'm good) / Having the most fun, on cloud nine", "moodTone": "Confident, Dancing" },
-          { "title": "TOP SHELF QUEEN", "genre1": "Reggae", "category": "Relaxation", "commercialHook": "She's my full-bodied Goddess, so fine, so divine.", "moodTone": "Peaceful, Positive" },
-          { "title": "WELCOME TO JUKE", "genre1": "Blues", "category": "Horror / Narrative", "commercialHook": "No one ever leaves here when day breaks... a ghostly fate.", "moodTone": "Dark, Disturbing" },
-          { "title": "WILDFLOWER", "genre1": "Country", "category": "Inspirational", "commercialHook": "She's got the spirit of a rebel, never gonna bend.", "moodTone": "Confident, Optimistic" },
-          { "title": "YOUR FOREVER MAN", "genre1": "Country", "category": "Love / Healing", "commercialHook": "She's my future, I'm her forever man.", "moodTone": "Confident, Romantic" }
+        // Catalog with updated song titles
+        const catalog = [
+            "The Real Dream Team",
+            "Heartbreak and Trouble",
+            "Just A Little Lonely",
+            "Just Too Much",
+            "Fury (I'm the Monster)",
+            "Your Forever Man",
+            "Etched in Every Space",
+            "Sick One (s1c)",
+            "I Know Your Damn Pin Code",
+            "CEO NOT A BABYSITTING TREE"
         ];
 
-        // Filter valid songs (exclude those with missing hooks)
-        const validSongs = allLyrics.filter(s => s.commercialHook && s.commercialHook !== "Placeholder");
+        // Functional Game 1: Madlibs
+        function runMadlibs() {
+            const adj = document.getElementById('ml-adj').value || "Placeholder";
+            const noun = document.getElementById('ml-noun').value || "Placeholder";
+            const verb = document.getElementById('ml-verb').value || "Placeholder";
+            const place = document.getElementById('ml-place').value || "Placeholder";
 
-        // --- GAME FUNCTIONS ---
-
-        // 1. Madlibs
-        function playMadlibs() {
-            const adj = document.getElementById('ml-adj').value || "Broken";
-            const noun = document.getElementById('ml-noun').value || "Record";
-            const verb = document.getElementById('ml-verb').value || "Shattered";
-            const place = document.getElementById('ml-place').value || "Green Room";
+            // Constructed thematic cinematic line
+            const lyric = `In the ${adj} silence of the ${place}, the ${noun} ${verb}—etched in every space.`;
             
-            const result = `
-                "Walking through the <strong>${adj}</strong> <strong>${place}</strong>,<br>
-                I found your <strong>${noun}</strong> lying on the floor.<br>
-                You <strong>${verb}</strong> my heart in two,<br>
-                And now I don't love you anymore."
-            `;
-            const box = document.getElementById('ml-result');
-            box.innerHTML = result;
-            box.style.display = 'block';
+            const resultBox = document.getElementById('ml-result');
+            resultBox.innerHTML = `<em>"${lyric}"</em>`;
+            resultBox.style.display = 'block';
         }
 
-        // 2. Turnstyle (Mixes 2 songs)
-        function playTurnstyle() {
-            if(validSongs.length < 2) return;
+        // Functional Game 2: Turnstyle
+        function runTurnstyle() {
+            const song1 = catalog[Math.floor(Math.random() * catalog.length)];
+            const song2 = catalog[Math.floor(Math.random() * catalog.length)];
             
-            let idx1 = Math.floor(Math.random() * validSongs.length);
-            let idx2 = Math.floor(Math.random() * validSongs.length);
-            
-            // Ensure unique indices
-            while(idx1 === idx2) { 
-                idx2 = Math.floor(Math.random() * validSongs.length); 
-            }
-
-            const s1 = validSongs[idx1];
-            const s2 = validSongs[idx2];
-
-            const result = `
-                <div style="border-bottom: 2px dashed #999; padding-bottom: 10px; margin-bottom: 10px;">
-                    <strong>THE MIX:</strong> What if <em>"${s1.title}"</em> was written as a <strong>${s2.genre1}</strong> song?
-                </div>
-                <strong>The Vibe:</strong> ${s2.moodTone}<br>
-                <strong>The Concept:</strong> A story about <em>${s2.category}</em>...<br>
-                <strong>But utilizing the Hook:</strong><br>
-                <em style="color:#800020; font-weight:bold;">"${s1.commercialHook}"</em>
-            `;
-            const box = document.getElementById('ts-result');
-            box.innerHTML = result;
-            box.style.display = 'block';
+            const resultBox = document.getElementById('ts-result');
+            resultBox.innerHTML = `<strong>Concept Mashup:</strong><br> What if <em>"${song1}"</em> met <em>"${song2}"</em>?`;
+            resultBox.style.display = 'block';
         }
+    </script>
 
-        // 3. Scene Generator
-        function playSceneGen() {
-            const person = document.getElementById('cs-person').value || "Stranger";
-            const place = document.getElementById('cs-place').value || "Alleyway";
-            const thing = document.getElementById('cs-thing').value || "Letter";
-            const mood = document.getElementById('cs-mood').value || "Dark";
-
-            const templates = [
-                `The <strong>${person}</strong> stood in the <strong>${mood}</strong> <strong>${place}</strong>, clutching a <strong>${thing}</strong> that whispered of a crime.`,
-                `I left the <strong>${thing}</strong> behind in the <strong>${place}</strong>, but the ghost of the <strong>${person}</strong> still haunts my <strong>${mood}</strong> dreams.`,
-                `Every time I see a <strong>${thing}</strong>, it reminds me of the <strong>${place}</strong> where we became <strong>${mood}</strong>.`
-            ];
-            const rand = Math.floor(Math.random() * templates.length);
-            
-            const box = document.getElementById('cs-result');
-            box.innerHTML = `<strong>OPENING LINE:</strong><br>"${templates[rand]}"`;
-            box.style.display = 'block';
-        }
-
-        // 4. Lightning Lyrics
-        function playLightning() {
-            if(validSongs.length === 0) return;
-            
-            const rand = Math.floor(Math.random() * validSongs.length);
-            const song = validSongs[rand];
-            
-            const lyric = song.commercialHook || song.title;
-            
-            const result = `
-                <div style="font-size: 1.4rem; font-weight: bold; color: #800020; margin-bottom: 10px;">"${lyric}"</div>
-                <div style="font-size: 0.9rem; color: #555;">— from <strong>${song.title}</strong> (${song.genre1})</div>
-            `;
-            const box = document.getElementById('ll-result');
-            box.innerHTML = re
+</body>
+</html>
