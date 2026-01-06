@@ -571,6 +571,8 @@
               case 'music': return [{ id: 'songs', label: `Songs (${SONGS.length})` }, { id: 'artists', label: 'Artists' }, { id: 'themes', label: 'Themes' }, { id: 'moods', label: 'Moods' }];
               case 'themes': return Object.keys(THEMES).map(themeName => ({ id: themeName, label: themeName }));
               case 'moods': return Object.keys(MOODS).map(moodName => ({ id: moodName, label: moodName }));
+              case 'extras': return [{ id: 'clock', label: 'Clock' }, { id: 'greenroom', label: 'Green Room' }];
+              case 'settings': return [{ id: 'about', label: 'About' }, { id: 'eq', label: 'EQ: Cinematic' }, { id: 'backlight', label: 'Backlight: Always On' }];
               case 'songs':
                 let displayedSongs = SONGS;
                 if (selectedTheme) {
@@ -588,7 +590,7 @@
           const listItems = getListItems();
 
           const handleScroll = (direction) => {
-            if (currentScreen === 'nowPlaying') return;
+            if (['nowPlaying', 'about', 'clock', 'greenroom'].includes(currentScreen)) return;
             if (direction === 'down') {
               setSelectedIndex(prev => (prev + 1) % listItems.length);
             } else {
@@ -599,14 +601,32 @@
           const handleSelect = () => {
             const selectedItem = listItems[selectedIndex];
             if (!selectedItem) return;
+            
             if (currentScreen === 'main') {
               if (selectedItem.id === 'music') { setMenuStack([...menuStack, 'music']); setSelectedIndex(0); }
+              else if (selectedItem.id === 'extras') { setMenuStack([...menuStack, 'extras']); setSelectedIndex(0); }
+              else if (selectedItem.id === 'settings') { setMenuStack([...menuStack, 'settings']); setSelectedIndex(0); }
+              else if (selectedItem.id === 'shuffle') { 
+                // Shuffle Logic
+                const randomSong = SONGS[Math.floor(Math.random() * SONGS.length)];
+                setCurrentSong(randomSong);
+                setIsPlaying(true);
+                setMenuStack([...menuStack, 'nowPlaying']);
+                setSelectedIndex(0);
+              }
             } else if (currentScreen === 'music') {
               if (selectedItem.id === 'songs') { setSelectedTheme(null); setSelectedMood(null); setMenuStack([...menuStack, 'songs']); setSelectedIndex(0); }
               else if (selectedItem.id === 'themes') { setMenuStack([...menuStack, 'themes']); setSelectedIndex(0); }
               else if (selectedItem.id === 'moods') { setMenuStack([...menuStack, 'moods']); setSelectedIndex(0); }
             } else if (currentScreen === 'themes') { setSelectedTheme(selectedItem.id); setSelectedMood(null); setMenuStack([...menuStack, 'songs']); setSelectedIndex(0); }
             else if (currentScreen === 'moods') { setSelectedMood(selectedItem.id); setSelectedTheme(null); setMenuStack([...menuStack, 'songs']); setSelectedIndex(0); }
+            else if (currentScreen === 'extras') {
+                 if (selectedItem.id === 'clock') { setMenuStack([...menuStack, 'clock']); }
+                 else if (selectedItem.id === 'greenroom') { setMenuStack([...menuStack, 'greenroom']); }
+            }
+            else if (currentScreen === 'settings') {
+                 if (selectedItem.id === 'about') { setMenuStack([...menuStack, 'about']); }
+            }
             else if (currentScreen === 'songs') { setCurrentSong(selectedItem.data); setIsPlaying(true); setMenuStack([...menuStack, 'nowPlaying']); setSelectedIndex(0); }
           };
 
@@ -622,6 +642,45 @@
           };
 
           const renderScreenContent = () => {
+            // ABOUT SCREEN
+            if (currentScreen === 'about') {
+                return (
+                    <div className="flex flex-col h-full bg-white text-black p-4 items-center justify-center text-center">
+                        <Header title="About" time={currentTime} />
+                        <div className="flex-1 flex flex-col justify-center gap-2">
+                             <h2 className="font-bold text-lg">Verse & Chorus</h2>
+                             <p className="text-xs">Model: Cinematic Jukebox</p>
+                             <p className="text-xs">Version: 1.0</p>
+                             <p className="text-xs">Capacity: 44 Songs</p>
+                             <p className="text-xs mt-2 text-gray-500">© 2025 Kellie Larson</p>
+                        </div>
+                    </div>
+                );
+            }
+            // CLOCK SCREEN
+            if (currentScreen === 'clock') {
+                return (
+                    <div className="flex flex-col h-full bg-black text-white items-center justify-center">
+                        <p className="text-[10px] uppercase text-gray-400 mb-2">Local Time</p>
+                        <h2 className="text-5xl font-bold font-mono">{currentTime}</h2>
+                        <p className="text-xs text-gray-500 mt-2">San Diego, CA</p>
+                    </div>
+                );
+            }
+            // GREEN ROOM SCREEN
+            if (currentScreen === 'greenroom') {
+                return (
+                    <div className="flex flex-col h-full bg-white text-black p-4 items-center justify-center text-center">
+                        <Header title="Green Room" time={currentTime} />
+                        <div className="flex-1 flex flex-col justify-center p-4">
+                             <p className="text-sm font-bold mb-2">Visit the Green Room</p>
+                             <p className="text-xs text-gray-600 mb-4">Play Lyrical Mad Libs and unlock your creativity.</p>
+                             <p className="text-[10px] text-gray-400">(Use the link at the bottom of the page)</p>
+                        </div>
+                    </div>
+                );
+            }
+            // NOW PLAYING SCREEN
             if (currentScreen === 'nowPlaying') {
               if (!currentSong) return <div className="p-4">No song selected</div>;
               return (
@@ -649,7 +708,15 @@
                 </div>
               );
             }
-            const titleMap = { 'main': 'iPod', 'music': 'Music', 'themes': 'Themes', 'moods': 'Moods', 'songs': selectedTheme ? selectedTheme : (selectedMood ? selectedMood : 'All Songs') };
+            const titleMap = { 
+                'main': 'iPod', 
+                'music': 'Music', 
+                'themes': 'Themes', 
+                'moods': 'Moods', 
+                'extras': 'Extras',
+                'settings': 'Settings',
+                'songs': selectedTheme ? selectedTheme : (selectedMood ? selectedMood : 'All Songs') 
+            };
             const isMain = currentScreen === 'main';
             return (
               <div className="flex flex-col h-full bg-white text-left">
@@ -658,7 +725,7 @@
                    <div className={`flex-1 overflow-y-auto ${isMain ? 'w-1/2' : 'w-full'}`}>
                      {listItems.length > 0 ? (
                        listItems.map((item, idx) => (
-                        <MenuItem key={idx} label={item.label} isActive={idx === selectedIndex} hasArrow={currentScreen !== 'songs'} />
+                        <MenuItem key={idx} label={item.label} isActive={idx === selectedIndex} hasArrow={currentScreen !== 'songs' && currentScreen !== 'settings' && item.id !== 'clock'} />
                        ))
                      ) : (
                        <div className="p-4 text-center text-xs text-gray-500">No items found</div>
