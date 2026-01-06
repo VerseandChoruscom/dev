@@ -4,51 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Industry Pro Vault | Cinematic Songwriter Kellie Larson</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
     <style>
         :root { --metallic-gold: #D4AF37; --burgundy: #800020; --white: #FFFFFF; --black: #000000; --sunset-orange: #FD5E53; --blue-gray: #64748b; }
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f1f5f9; }
         .content-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-        #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); position: relative; }
-        .logo-top-left { width: 90%; max-width: 300px; height: auto; }
+
+        /* --- HEADER STYLES --- */
+        #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); position: relative; flex-wrap: wrap; }
+        .logo-top-left { width: 90%; max-width: 300px; height: auto; display: block; margin-bottom: 10px; }
         #nav-menu { display: flex; gap: 20px; }
-        #nav-menu a { color: var(--white) !important; text-decoration: none; font-weight: bold; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+        #nav-menu a { color: var(--white) !important; text-decoration: none; font-weight: bold; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+        #nav-menu a:hover { color: var(--metallic-gold) !important; }
+
+        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+        .hamburger div { width: 25px; height: 3px; background-color: var(--white); }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            #nav-menu { display: none; flex-direction: column; width: 100%; position: absolute; top: 100%; left: 0; background-color: var(--black); padding: 20px 0; z-index: 1000; border-bottom: 2px solid var(--metallic-gold); }
+            #nav-menu.active { display: flex; }
+            #nav-menu a { padding: 15px 0; text-align: center; border-bottom: 1px solid #333; }
+        }
+
+        /* --- VAULT UI --- */
         .song-card { border: 2px solid var(--blue-gray); background: #1e293b; text-align: center; height: 100%; display: flex; flex-direction: column; transition: 0.3s; }
         .song-card:hover { border-color: var(--sunset-orange); transform: translateY(-5px); }
         .metallic-gold-title { color: var(--metallic-gold); font-weight: 800; text-transform: uppercase; }
+        
         .vault-select { background-color: #0f172a; border: 2px solid var(--blue-gray); color: white; padding: 10px; border-radius: 6px; width: 100%; cursor: pointer; }
+        .rect-card { background: #334155; border: 1px solid var(--blue-gray); padding: 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; text-align: center; cursor: pointer; text-transform: uppercase; }
+        .rect-card.active { border-color: var(--sunset-orange); background: var(--sunset-orange); color: white; }
+
         #back-to-top { position: fixed; bottom: 30px; right: 30px; background: var(--sunset-orange); color: white; width: 50px; height: 50px; border-radius: 50%; display: none; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border: none; }
-        .site-footer { background-color: var(--black); color: var(--white); text-align: center; padding: 40px 20px; border-top: 5px solid var(--metallic-gold); margin-top: 50px; }
+
+        .site-footer { background-color: var(--black); color: var(--white); text-align: center; padding: 40px 20px; border-top: 5px solid var(--metallic-gold); margin-top: 50px; display: flex; flex-direction: column; align-items: center; }
+        .footer-line { border: 0; height: 1px; background: var(--metallic-gold); margin: 20px auto; width: 100%; max-width: 300px; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
+
     <header id="main-header" class="no-print">
         <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
+        <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
         <nav id="nav-menu">
           <a href="/bio.html">Bio</a>
           <a href="/industry-pros.html">Industry Pro</a>
           <a href="/lyrics.html">Lyrics</a>
           <a href="/contact.html">Contact</a>
+          <a href="/legal.html">Legal</a>
         </nav>
     </header>
 
     <main class="content-container py-10 no-print">
         <div class="text-center mb-10">
             <h2 class="text-4xl font-extrabold tracking-widest uppercase italic text-white">Industry Pro Vault</h2>
-            <p class="text-gray-400 mt-2 text-sm font-semibold italic">Dossiers for Music Supervisors & A&R</p>
+            <p class="text-gray-400 mt-2 text-sm font-semibold italic">Curated Dossiers for Music Supervisors & A&R</p>
+        </div>
+
+        <div class="bg-slate-900 p-6 mb-12 border-l-4 border-[var(--burgundy)] rounded shadow-lg">
+            <h4 class="text-xl font-bold mb-4 uppercase text-white tracking-wide">Rights & Licensing Assurance</h4>
+            <div class="grid md:grid-cols-2 gap-4 text-xs text-gray-300">
+                <p>✅ 100% Human-Authored Lyrics (Kellie Larson)</p>
+                <p>✅ Pre-Cleared for Immediate Commercial Sync Placement</p>
+                <p>✅ 1-Stop Shop: Lyrics, Composition, & Master Rights</p>
+                <p>✅ Full Clean Legal Path to traditional copyright ownership</p>
+            </div>
         </div>
 
         <div class="bg-gray-800 p-6 rounded-xl mb-12 border-2 border-[var(--blue-gray)] shadow-2xl">
-            <input type="text" id="vault-search-box" placeholder="Search Keywords, Mood, BPM..." class="w-full p-4 bg-black border border-slate-700 rounded mb-6 text-white uppercase text-sm outline-none">
+            <input type="text" id="vault-search-box" placeholder="Search Keywords, Mood, BPM, hashtags..." class="w-full p-4 bg-black border border-slate-700 rounded mb-6 text-white uppercase text-sm outline-none">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <select id="genre-pull" class="vault-select" onchange="runFilters()">
                     <option value="">GENRE</option>
-                    <option value="Pop">Pop</option><option value="Rock">Rock</option><option value="Country">Country</option><option value="Folk">Folk</option><option value="R&B">R&B</option>
+                    <option value="Alternative">Alternative</option><option value="Blues">Blues</option>
+                    <option value="Country">Country</option><option value="Folk">Folk</option>
+                    <option value="Hip Hop">Hip Hop</option><option value="Pop">Pop</option>
+                    <option value="Rock">Rock</option><option value="Soul">Soul</option><option value="R&B">R&B</option>
                 </select>
                 <select id="mood-pull" class="vault-select" onchange="runFilters()">
                     <option value="">MOOD</option>
-                    <option value="Confident">Confident</option><option value="Dark">Dark</option><option value="Melancholic">Melancholy</option><option value="Aggressive">Aggressive</option>
+                    <option value="Aggressive">Aggressive</option><option value="Bitter">Bitter</option>
+                    <option value="Confident">Confident</option><option value="Dark">Dark</option>
+                    <option value="Happy">Happy</option><option value="Romantic">Romantic</option>
+                    <option value="Sad">Sad</option><option value="Melancholy">Melancholy</option>
                 </select>
                 <select id="subgenre-pull" class="vault-select" onchange="runFilters()">
                     <option value="">STYLE</option>
@@ -63,23 +106,21 @@
 
     <div id="vault-modal-player" class="fixed inset-0 bg-black/98 z-50 hidden flex justify-center items-center p-4 backdrop-blur-md">
         <div class="bg-slate-900 rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden flex flex-col border-2 border-slate-700 shadow-2xl">
-            <div class="p-4 bg-[var(--burgundy)] flex justify-between items-center">
+            <div class="p-4 bg-[var(--burgundy)] flex justify-between items-center shadow-lg">
                 <h2 id="modal-song-title" class="text-xl font-bold uppercase tracking-widest text-white italic"></h2>
                 <button onclick="closeVaultModal()" class="text-white text-4xl">&times;</button>
             </div>
             <div class="p-10 overflow-y-auto">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="md:col-span-1">
-                        <div class="bg-black/50 p-6 rounded-xl border border-slate-800 mb-8">
-                            <p class="text-amber-400 font-bold uppercase text-[10px] tracking-widest mb-3">Audio Assets</p>
-                            <audio id="modal-song-audio-asset" controls class="w-full mb-4"></audio>
-                            <button onclick="printCurrent()" class="w-full py-2 bg-slate-700 text-white font-bold uppercase text-xs rounded">Generate A&R Report</button>
+                        <div class="bg-black/50 p-6 rounded-xl border border-slate-800 mb-8 shadow-inner">
+                            <p class="text-amber-400 font-bold uppercase text-[10px] tracking-widest mb-3">Audio Preview</p>
+                            <audio id="modal-song-audio-asset" controls controlsList="nodownload" class="w-full mb-4"></audio>
                         </div>
-                        <div id="modal-song-lyrics-full" class="whitespace-pre-wrap font-serif text-sm leading-relaxed text-slate-400"></div>
                     </div>
                     <div class="md:col-span-2">
-                        <h4 class="text-metallic-gold font-black uppercase text-lg mb-4">A&R Professional Dossier</h4>
-                        <div id="modal-song-description-long" class="text-slate-200 text-sm leading-loose"></div>
+                        <h4 class="text-metallic-gold font-black uppercase text-lg mb-4">Professional Dossier</h4>
+                        <div id="modal-song-description-long" class="text-slate-200 text-sm leading-loose space-y-4"></div>
                     </div>
                 </div>
             </div>
@@ -88,155 +129,163 @@
 
     <button id="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
 
-    <footer class="site-footer">
+    <footer class="site-footer no-print">
         <p>♥️ Kellie Larson ♥️ | Cinematic Songwriter & Lyricist 🎹</p>
-        <p>© 2026 Kellie Larson. All Rights Reserved. | www.VerseandChorus.com</p>
+        <p>🧑‍🎤 www.VerseandChorus.com 🎙️</p>
+        <p>© 2026 Kellie Larson. All Rights Reserved.</p>
+        <hr class="footer-line">
     </footer>
 
     <script>
         function getSongSlug(title) { return title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-'); }
 
-        async function fetchExternalLyrics(title) {
-            const slug = getSongSlug(title);
-            try {
-                const response = await fetch(`/assets/lyrics/${slug}.html`);
-                const html = await response.text();
-                return new DOMParser().parseFromString(html, 'text/html').body.innerText.trim();
-            } catch { return "Full lyrics available on primary song page."; }
+        // Synonym mapping for intelligent matching
+        function getLikeTerms(term) {
+            const mappings = {
+                "sad": ["sad", "melancholy", "depressed", "mournful", "anguished", "vulnerable"],
+                "melancholy": ["sad", "melancholy", "depressed", "mournful", "anguished", "vulnerable"],
+                "aggressive": ["aggressive", "intense", "angry", "defiant", "fury"],
+                "happy": ["happy", "playful", "upbeat", "fun", "romantic"],
+                "hip hop": ["hip hop", "urban", "r&b", "rhythmic"],
+                "r&b": ["hip hop", "urban", "r&b", "rhythmic"],
+                "rock": ["rock", "alternative", "punk", "indie", "metal"],
+                "alternative": ["rock", "alternative", "punk", "indie", "metal"]
+            };
+            return mappings[term.toLowerCase()] || [term.toLowerCase()];
         }
 
         const VAULT_DATA = [
             { 
                 id: 1, title: "AUTHOR OF A LIE", genre1: "Pop", genre2: "R&B", subGenre: "Rhythmic Pop", pov: "First Person", moodTone: "Confident, Confrontational", feeling: "Strong", category: "Disenchantment", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/author-of-a-lie-cover-art.jpg",
                 snippetA: "You tell a story I pick it apart / Your timeline is whacked you're playing a part",
-                description: `<strong>THEMATIC ANALYSIS:</strong> This narrative deconstructs the architecture of deception by contrasting specific, fabricated timelines against physical reality. The protagonist methodically calls out inconsistencies—July beach trips vs. gray clouds and video games—moving from a text at 2 AM to a tagged photo at a neon bar. It captures the definitive transition from being gaslit to enlightened, focusing on the moment the "fantasy world" collapses and the pretense of common sense is abandoned.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Ideal for <strong>Psychological Thrillers</strong> or <strong>Prestige TV Dramas</strong> during scenes where a character uncovers a complex betrayal. The focus on digital evidence (texts, tagged photos) makes it a prime candidate for <strong>Modern Urban Dramas</strong> or advertisements for cybersecurity and investigative services.`
+                description: `This narrative deconstructs the architecture of deception by contrasting specific, fabricated timelines against physical reality. The protagonist methodically picks apart a partner's whacked timeline, calling out inconsistencies such as a supposed trip to the beach in July versus the reality of gray clouds and video games. The story moves from a text sent at 2 AM to a tagged photo outside a neon bar, capturing the definitive transition from being gaslit to enlightened. It explores the finality of a 'fantasy world' coming to an end as the protagonist refuses to buy into the charade any longer. 
+                <br><br><strong>BEST PLACEMENT:</strong> Ideal for <strong>Psychological Thrillers</strong> or <strong>Prestige TV Dramas</strong> during scenes where a character uncovers a complex betrayal or confronts a gaslighter. It fits perfectly in advertisements for investigative services or transparency-focused brand campaigns.`
             },
             { 
-                id: 2, title: "BIG HARD NO", genre1: "Pop", genre2: "Ballad", subGenre: "Empowerment", pov: "First Person", moodTone: "Strong, Resilient", feeling: "Healed", category: "Empowerment", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/big-hard-no-cover-art.jpg",
+                id: 2, title: "BIG HARD NO", genre1: "Pop", genre2: "Ballad", subGenre: "Contemporary", pov: "First Person", moodTone: "Strong, Resilient", feeling: "Healed", category: "Empowerment", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/big-hard-no-cover-art.jpg",
                 snippetA: "Happier now, more than I've ever been / Found my own light, a peace from deep within",
-                description: `<strong>THEMATIC ANALYSIS:</strong> This narrative centers on an absolute, empowered rejection of a former partner’s attempts at reconciliation. The protagonist detail a history of being shattered and left crying on the floor for someone else, only to contrast that past with a present state of being "happier now" and "finally free". It explores the concept of finding peace from "deep within" and a desire for something bigger and better, effectively slamming the door on "desperate dances" and "magic spells".
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> A definitive <strong>Character Pivot Anthem</strong> for dramas focusing on recovery from toxic relationships. Perfect for <strong>Coming-of-Age films</strong> or season finales where a character firmly rejects a recurring antagonist to choose their own light.`
+                description: `The narrative centers on a firm, empowered rejection of a former partner attempting to manipulate their way back into the protagonist's life. It details a history of betrayal, remembering the moment the antagonist walked out for someone else and left the protagonist shattered on the floor. The lyrics describe a journey from weakness to finding a peace from deep within, guided by a desire for something bigger and better. It is a story of absolute finality, closing a door that will never be reopened. 
+                <br><br><strong>BEST PLACEMENT:</strong> A definitive <strong>Character Pivot Anthem</strong> for dramas focusing on recovery from toxic relationships. Perfect for <strong>Coming-of-Age films</strong> or season finales where a character firmly rejects a recurring antagonist.`
             },
             { 
-                id: 3, title: "BOTTOM OF THE WISHING WELL", genre1: "Folk", genre2: "Narrative", subGenre: "Murder Ballad", pov: "Third Person", moodTone: "Dark, Dramatic", feeling: "Eerie", category: "Social", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/bottom-of-the-wishing-well-cover-art.jpg",
+                id: 3, title: "BOTTOM OF THE WISHING WELL", genre1: "Folk", genre2: "Narrative", subGenre: "Murder Ballad", pov: "Third Person", moodTone: "Dark, Dramatic", feeling: "Eerie", category: "Social Commentary", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/bottom-of-the-wishing-well-cover-art.jpg",
                 snippetA: "Oh poor lil Belle at the bottom of the wishing well",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A haunting Southern Gothic exploration of secrets and tragic endings set on the streets of Amsterdam. The narrative subverts the "lucky" imagery of a wishing well, transforming it into a grave where both Belle and her lover lay motionless after a violent plunge. It captures a scene of betrayal where both characters "saw red," culminating in a chilling finality where "both of their wishes came true" in a watery tomb.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Perfectly suited for <strong>True Crime Documentaries</strong>, **Dark Mystery Series**, or opening credits for **Procedural Dramas**. Its atmospheric suspense makes it ideal for **Southern Gothic settings** or scenes involving the discovery of long-buried evidence.`
+                description: `A dark narrative murder ballad following Belle as she hurries to meet her lover on the streets of Amsterdam. The narrative subverts the tradition of a 'wishing well' for luck, turning it into a site of violent confrontation when Belle discovered her lover had another partner. Both characters are described as having 'seen red,' culminating in a fatal plunge into the well where they remain motionless. The irony of 'both of their wishes came true' in a shared grave creates a chilling finality. 
+                <br><br><strong>BEST PLACEMENT:</strong> Perfectly suited for <strong>True Crime Documentaries</strong>, **Dark Mystery Series**, or opening credits for **Procedural Dramas**. Its atmospheric suspense is ideal for **Southern Gothic settings**.`
             },
             { 
-                id: 4, title: "BROKEN BAD", genre1: "Easy Listening", genre2: "Mood", subGenre: "Contemporary", pov: "First Person", moodTone: "Bitter, Sad", feeling: "Exhausted", category: "Disenchantment", placementType: "Soundtrack", tempo: "Slow", img: "/assets/covers/just-too-much-cover-art.jpg",
-                snippetA: "Too much fighting, too much disrespect / You're a thief of my peace a thief of my heart",
-                description: `<strong>THEMATIC ANALYSIS:</strong> This narrative focuses on the heavy, static aftermath of a relationship performance that has finally reached its end. The protagonist describes a state of being "stuck in a bubble" and "blowing bubbles alone," signaling total isolation and exhaustion from constant fighting and theft of peace. It explores the "suffocating quiet" and the sensory sting of abandonment, where the partner has become a "ghost" or a "whisper" that leaves a recurring sting.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Ideal for <strong>Emotional "Rock Bottom" Scenes</strong> or somatic sequences where a character processes a life-altering realization in silence. Its slow, atmospheric weight fits **Prestige TV Dramas** focusing on the "final straw" moment of relationship collapses.`
-            },
-            { 
-                id: 5, title: "CEO NOT A BABYSITTING TREE", genre1: "Pop", genre2: "R&B", subGenre: "Urban Pop", pov: "First Person", moodTone: "Sassy, Confident, Boss", feeling: "Powerful", category: "Value", placementType: "Viral Hit", tempo: "Fast", img: "/assets/covers/ceo-not-babysitting-tree-cover-art.jpg",
+                id: 5, title: "CEO NOT A BABYSITTING TREE", genre1: "Pop", genre2: "R&B", subGenre: "Urban Pop", pov: "First Person", moodTone: "Sassy, Confident, Boss", feeling: "Powerful", category: "Value Proposition", placementType: "Viral Hit", tempo: "Fast", img: "/assets/covers/ceo-not-babysitting-tree-cover-art.jpg",
                 snippetA: "Honey I'm a CEO not a babysitting tree",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A sharp manifesto on self-valuation and the refusal to provide emotional labor for those who do not contribute to growth. The "babysitting tree" metaphor critiques those who want the "shade" of success without planting the "seed" of effort. The narrative contrasts a protagonist who is "hustling racking stacks" with "boys" who play video games and ask to "chill at my crib" because their parents are awake.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> A powerhouse **"Walk-in" Anthem** for female-led professional dramas or corporate thrillers. Its witty, no-nonsense posture makes it perfect for **Luxury Branding Advertisements**, reality TV competition segments, or satires about modern influencers and professional boundaries.`
+                description: `A sharp, assertive manifesto on professional and personal boundaries, rejecting the role of an emotional caregiver for those who don't contribute. The lyrics contrast a protagonist who is 'hustling racking stacks' with an antagonist asking to 'chill at my crib' because their parents are still awake. The 'babysitting tree' serves as a critique of those who want the 'shade' of success without planting the 'seed' of effort. It is an unapologetic celebration of high standards and self-made leadership. 
+                <br><br><strong>BEST PLACEMENT:</strong> A powerhouse **"Walk-in" Anthem** for female-led professional dramas or corporate thrillers. Perfect for **Luxury Branding Advertisements** or satires about tech and fashion industries.`
             },
             { 
-                id: 6, title: "CHILDREN OF WAR", genre1: "Cinematic", genre2: "Folk", subGenre: "Cinematic", pov: "Third Person", moodTone: "Haunting, Sad, Urgent", feeling: "Heartbroken", category: "Social", placementType: "Soundtrack", tempo: "Slow", img: "/assets/covers/children-of-war-cover-art.jpg",
+                id: 6, title: "CHILDREN OF WAR", genre1: "Cinematic", genre2: "Folk", subGenre: "Cinematic", pov: "Third Person", moodTone: "Haunting, Sad, Urgent", feeling: "Heartbroken", category: "Social Commentary", placementType: "Soundtrack", tempo: "Slow", img: "/assets/covers/children-of-war-cover-art.jpg",
                 snippetA: "Run little children there's nothing left here / Only shattered memories",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A devastating examination of the human cost of conflict, focusing on the loss of innocence and the physical destruction of the familiar. The lyrics describe playgrounds becoming graveyards and small feet running from blasts in "broken-down houses" where dust turns day into night. It critiques the failure of global peace talks, emphasizing how the "helpless and small" carry the burden of wars started by clashing leaders who "turn out the lights".
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> High-impact soundtrack for <strong>Social Advocacy Documentaries</strong>, news promos covering humanitarian crises, or **Somber Cinematic Sequences** in war dramas. Its purpose-driven sound is ideal for charitable campaigns or museum exhibits focused on history and global conflict.`
+                description: `A somber and haunting exploration of lost innocence and the human cost of global conflict. The narrative focuses on playgrounds becoming graveyards and small feet running from blasts in 'broken-down houses'. It critiques the failure of peace talks and the clash of leaders who 'turn out the lights' while the innocent suffer in the rubble. It is a devastating commentary on how those 'helpless and small' carry the burden of wars they did not start. 
+                <br><br><strong>BEST PLACEMENT:</strong> High-impact soundtrack for <strong>Social Advocacy Documentaries</strong> or **Somber Cinematic Sequences** in historical or modern war dramas.`
             },
             { 
-                id: 7, title: "CONCRETE UNDER OUR FEET", genre1: "Rock", genre2: "Alternative", subGenre: "Urban Rock", pov: "First Person", moodTone: "Introspective, Cool", feeling: "Streetwise", category: "Social", placementType: "Urban Drama", tempo: "Mid Tempo", img: "/assets/covers/concrete-under-our-feet-cover-art.jpg",
+                id: 7, title: "CONCRETE UNDER OUR FEET", genre1: "Rock", genre2: "Alternative", subGenre: "Urban Rock", pov: "First Person", moodTone: "Introspective, Cool", feeling: "Streetwise", category: "Social Commentary", placementType: "Urban Drama", tempo: "Mid Tempo", img: "/assets/covers/concrete-under-our-feet-cover-art.jpg",
                 snippetA: "It ain't about the clout the flash the scene / It's about the real somethin' in between",
-                description: `<strong>THEMATIC ANALYSIS:</strong> This track explores the search for authentic connection within a "digital blur," prioritizing physical presence over online clout. The narrative moves from the "flash" of a squad to a private rooftop conversation, utilizing the "concrete under our feet" as a grounding metaphor for reality. It captures a romanticized urban energy where two people choose to "hit the street" and "watch the city lights glow" instead of chasing superficial VIP status.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Perfectly suited for <strong>Urban Drama Series</strong>, city-centric lifestyle promos, or **Gritty Transition Sequences** in modern film. Its streetwise posture fits advertisements for streetwear, urban tech, or travel apps focused on finding "hidden gems" in a metropolis.`
+                description: `This track captures an introspective search for authentic connection amidst a 'digital blur'. The narrative focuses on choosing 'the real' over the flash of VIP sections, preferring a rooftop with city lights and good conversation. The 'concrete' serves as a grounding force where genuineness can be built. The protagonist values someone who chooses 'this beat' despite having a whole city of ladies looking their way. 
+                <br><br><strong>BEST PLACEMENT:</strong> Perfect for <strong>Urban Drama Series</strong>, city-centric lifestyle promos, or **Gritty Transition Sequences** in modern film.`
             },
             { 
                 id: 8, title: "CRAVING THOSE CRUMBS", genre1: "R&B", genre2: "Pop", subGenre: "Contemporary", pov: "First Person", moodTone: "Confident, Disenchanted", feeling: "Vulnerable", category: "Disenchantment", placementType: "Toxic Relationship", tempo: "Slow", img: "/assets/covers/craving-those-crumbs-cover-art.jpg",
                 snippetA: "Too much thinking I gotta stop craving those crumbs",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A raw deconstruction of the exhaustion that follows a toxic dependency cycle. The protagonist detail the "pure hell" of an ex who "pops in" to start fights or sulks when they don't get their way, recognizing the manipulation of being pushed from "sadness into madness". It highlights the moment of crossing the line, changing the locks, and realizing that a partner's "nasty fits" make them a "lil boy" who hits.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> High-utility for <strong>Late-Night Emotional Dramas</strong> or series focusing on breaking free from abusive or codependent cycles. Ideal for **Character Arc montages** where a protagonist finally stops "craving crumbs" and decides they like "where my head is at".`
+                description: `A raw dissection of the exhaustion that follows a toxic relationship cycle. The lyrics describe an ex-partner who 'pops in' to start fights, creating a 'pure hell' atmosphere where the protagonist is pushed from 'sadness into madness'. It highlights the moment of taking back one's worth and refusing to survive on 'crumbs' of affection from a 'man-child' who doesn't let them talk. The story concludes with changing the locks and realizing 'my words still matter'. 
+                <br><br><strong>BEST PLACEMENT:</strong> Suited for <strong>Late-Night Emotional Dramas</strong> or character-driven series focusing on breaking free from toxic cycles.`
             },
             { 
                 id: 9, title: "DON'T BE JELLY", genre1: "Country", genre2: "Dance", subGenre: "Contemporary", pov: "First Person", moodTone: "Fun, Playful, Confident", feeling: "Sassy", category: "Empowerment", placementType: "Viral Dance", tempo: "Fast", img: "/assets/covers/dont-be-jelly-cover-art.jpg",
                 snippetA: "I live my truth un-freakin'-apologetically / Every move a statement a raw symphony",
-                description: `<strong>THEMATIC ANALYSIS:</strong> An assertive manifesto on self-confidence and the refusal to be anchored by the insecurity or jealousy of others. The narrative establishes a character as a "wild untamed machine" and a "queen in all domains" who lives her truth "un-freakin'-apologetically". It emphasizes movement and synergy, utilizing dance cues (hips left, stomp, kick, slide) as a physical rejection of "drama" and "rodeo clowns".
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Tailor-made for **Viral Dance promos**, **High-Energy Reality TV** segments, or high-fashion lifestyle commercials. Ideal for scenes involving social media-centric narratives or advertisements targeting a bold, modern demographic focused on independence and energy.`
+                description: `An assertive manifesto on self-confidence and the refusal to be held down by drama or rodeo clowns. The narrative describes a 'wild untamed machine' who lives her truth unapologetically and has 'no room for that petty scene'. It utilizes dance metaphors (hips left, stomp, kick, slide) as a physical rejection of insecurity. It is a celebration of 'pure energy' and synergy over childish games and petty shows. 
+                <br><br><strong>BEST PLACEMENT:</strong> Tailor-made for **Viral Dance promos**, **High-Energy Reality TV** segments, or lifestyle advertisements targeting a bold audience.`
             },
             { 
-                id: 12, title: "FURY (I'M THE MONSTER)", genre1: "Rock", genre2: "Metal", subGenre: "Cinematic", pov: "First Person", moodTone: "Heavy, Bitter, Intense", feeling: "Intense", category: "Social", placementType: "Addiction / Domestic Drama", tempo: "Fast", img: "/assets/covers/fury-im-the-monster-cover-art.jpg",
+                id: 11, title: "ETCHED IN EVERY SPACE", genre1: "Easy Listening", genre2: "Pop Ballad", subGenre: "Contemporary", pov: "First Person", moodTone: "Mournful, Sad", feeling: "Lonely", category: "Disenchantment", placementType: "Ballad", tempo: "Slow", img: "/assets/covers/etched-in-every-space-cover-art.jpg",
+                snippetA: "Oh I miss your stupid face! It’s etched in every space",
+                description: `A deeply personal exploration of grief and the 'fire burning in my veins' following the loss of a loved one. The narrative is built on vivid, specific memories—a silly chortling laugh and stories that went for days—contrasting the past with a current 'barren land'. The lyrics capture the sensory haunting of a home where someone used to listen intensely to every word, but now the protagonist is up to their head in sinking sand. 
+                <br><br><strong>BEST PLACEMENT:</strong> **Grief-focused Drama Series**, somber cinematic montages, or **Somatic Sequences** exploring loss and memory.`
+            },
+            { 
+                id: 12, title: "FURY (I'M THE MONSTER)", genre1: "Rock", genre2: "Metal", subGenre: "Cinematic", pov: "First Person", moodTone: "Heavy, Bitter, Intense", feeling: "Intense", category: "Social Commentary", placementType: "Domestic Drama", tempo: "Fast", img: "/assets/covers/fury-im-the-monster-cover-art.jpg",
                 snippetA: "Your fists a never-ending show / Every scream every insult",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A visceral, first-person narrative focusing on the psychological and physical urgency of escaping domestic violence. The lyrics describe a "never-ending show" of fists, screams, and holes in the walls, moving toward the life-saving decision to "roll right over your body and run right out the door". It captures the pivot from being a victim to adopting a "monster" persona for survival, warning that "my girl karma" will eventually settle the score.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> High-intensity soundtrack for <strong>Domestic Dramas</strong> or action-thrillers centered on survival and identity reclamation. Perfect for **Final Confrontation Scenes** or high-tension "escape" arcs in prestige television and film.`
+                description: `A visceral and intense narrative focusing on the escape from domestic violence. The lyrics describe a cycle of fists, screams, and insults, moving toward a moment of clarity where the protagonist decides to 'roll right over your body and run run right out the door'. The tone shifts from a plea for help to a cold warning that 'my girl karma will get you back' as the protagonist declares they are not property. 
+                <br><br><strong>BEST PLACEMENT:</strong> **High-Intensity Domestic Dramas** or action-thrillers centered on survival and identity reclamation.`
             },
             { 
-                id: 14, title: "HEARTBREAK AND TROUBLE", genre1: "Pop", genre2: "R&B", subGenre: "Contemporary", pov: "First Person", moodTone: "Introspective", feeling: "Melancholy", category: "Disenchantment", placementType: "Relatable Heartbreak", tempo: "Mid Tempo", img: "/assets/covers/heartbreak-and-trouble-cover-art.jpg",
+                id: 14, title: "HEARTBREAK AND TROUBLE", genre1: "Pop", genre2: "R&B", subGenre: "Contemporary", pov: "First Person", moodTone: "Introspective, Melancholy", feeling: "Melancholy", category: "Disenchantment", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/heartbreak-and-trouble-cover-art.jpg",
                 snippetA: "You pop in and out like Hubba Bubba / My heart strung out like Why do I love ya",
-                description: `<strong>THEMATIC ANALYSIS:</strong> This narrative uses the mundane metaphor of "Hubba Bubba" gum to describe the fleeting, inconsistent presence of an unreliable partner. The protagonist explores the cycle of being left with nothing—specifically citing the theft of the "last two cigs," gum, and a lighter—as symbolic of a "thief of peace". It captures the sensation of being "stuck in a bubble of sadness" and the exhaustion of trying to figure out a "tired story" that offers no grace.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Ideal for <strong>Indie Relationship Dramas</strong> or "quiet desperation" sequences where a character is processing a recurring disappointment. Its introspective tone fits perfectly in **Late-Night Somatic Scenes** involving small, relatable reminders of a failing connection.`
+                description: `This narrative uses 'Hubba Bubba' gum as a metaphor for an unreliable partner who 'pops in and out'. The protagonist is left 'making a struggle' after being drained of resources like gum, cigarettes, and a lighter. It captures a cycle of 'bubble-blowing' isolation where the antagonist is a 'thief of peace' and a ghost-like figure who leaves only a recurring sting. 
+                <br><br><strong>BEST PLACEMENT:</strong> Ideal for <strong>Indie Relationship Dramas</strong> or 'quiet desperation' sequences where a character processes a recurring disappointment.`
             },
             { 
                 id: 16, title: "HOW'S IT FEEL, BRO?", genre1: "Pop", genre2: "Hip-Hop", subGenre: "Contemporary", pov: "First Person", moodTone: "Confident, Revenge", feeling: "Spiteful", category: "Loss of Market Share", placementType: "Confrontation", tempo: "Mid Tempo", img: "/assets/covers/hows-it-feel-bro-cover-art.jpg",
                 snippetA: "You're always spinning that sht but I'm boomeranging it back",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A sharp, confrontational narrative centering on the reversal of manipulative tactics within a relationship built on weak excuses. The protagonist calls out "whack" stories about flat tires and dead batteries, contrasting them with the reality of "creeping all night long". It explores the "loss of market share" in a partner's heart and the hypocrisy of an antagonist who history shows will repeat their betrayal, now viewed from the "outside looking in".
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Definitive **Confrontation Scenes** for urban dramas or reality TV "The Reveal" segments. Its assertive, rhythmic tone makes it a strong candidate for **Revenge-Themed Trailers** or promotional spots for dark series focusing on character karma and digital betrayal.`
+                description: `A sharp, confrontational narrative centering on the reversal of manipulative tactics within a relationship. The protagonist calls out 'whack' stories about flat tires and dead batteries, contrasting them with the reality of 'creeping all night long'. It explores the 'loss of market share' in a partner's heart and the hypocrisy of an antagonist viewed from the 'outside looking in'. 
+                <br><br><strong>BEST PLACEMENT:</strong> Definitive **Confrontation Scenes** for urban dramas or reality TV 'The Reveal' segments.`
             },
             { 
                 id: 17, title: "I KNOW YOUR DAMN PIN CODE", genre1: "Hard Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Bitter, Confident, Revenge", feeling: "Aggressive", category: "Loss", placementType: "Anthem", tempo: "Fast", img: "/assets/covers/i-know-your-damn-pin-code-cover-art.jpg",
                 snippetA: "Think you're clever / I know your damn pin code",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A visceral exploration of digital betrayal and the reclamation of power through the breach of a partner's smartphone security. The narrative describes an antagonist who thinks they are "clever" but has provided "bullets for my gun I named Justice". It captures the moment the "truth unfolds" and the protagonist slams the door on a "man-child," realizing they are nothing like the "dumb girls" of the partner's past.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Tailor-made for **Modern Revenge Dramas** or high-stakes breakup sequences in series targeting Millennial and Gen Z audiences. Its aggressive energy fits **Action-Thrillers** involving cyber-betrayal or trailers requiring a gritty, high-energy "truth" theme.`
+                description: `A visceral exploration of digital betrayal and the reclamation of power through a smartphone breach. The narrative describes an antagonist who thinks they are 'clever' but has provided 'bullets for my gun I named Justice'. It captures the moment the 'truth unfolds' as the protagonist realize they are nothing like the 'dumb girls' of the partner's past. 
+                <br><br><strong>BEST PLACEMENT:</strong> Tailor-made for **Modern Revenge Dramas** or high-stakes breakup sequences in series targeting modern audiences.`
             },
             { 
                 id: 18, title: "I'M A BROKEN RECORD", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Raw, Honest, Resilient", feeling: "Stuck", category: "Loss", placementType: "Emotional Breakdown", tempo: "Mid Tempo", img: "/assets/covers/im-a-broken-record-cover-art.jpg",
-                snippetA: "Cause I'm a broken record skipping on repeat / This ain't a cry for help it's the bitter taste of defeat",
-                description: `<strong>THEMATIC ANALYSIS:</strong> This narrative explores the "bitter taste of defeat" and the cyclical nature of self-sabotage within a "one-sided youth". The protagonist describes being surrounded by "ghosts" and "eyes like lasers judging every flaw," eventually choosing the silence of an empty table for one over a "picture unclean". It captures the exact moment the "venom starts to fade" and ties are cut to step into the "fading light" to finally feel alright.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Ideal for <strong>Character "Breaking Point" Scenes</strong> or prestige drama sequences where a protagonist accepts their messy reality to find liberation. Perfect for **Cinematic Finales** focusing on the "honest truth" and the ripping out of old roots to start over.`
+                snippetA: "Cause I'm a broken record skipping on repeat",
+                description: `This narrative explores the 'bitter taste of defeat' and the cyclical nature of self-sabotage. The protagonist is surrounded by 'ghosts' and 'eyes like lasers judging every flaw,' eventually choosing silence over an 'unclean picture'. It captures the exact moment the 'venom starts to fade' and ties are cut to step into the 'fading light'. 
+                <br><br><strong>BEST PLACEMENT:</strong> Ideal for <strong>Character 'Breaking Point' Scenes</strong> where a protagonist accepts their reality to find liberation.`
             },
             { 
                 id: 20, title: "MY WORDS STILL MATTER", genre1: "Pop", genre2: "Anthemic", subGenre: "Cinematic", pov: "First Person", moodTone: "Confident", feeling: "Unheard", category: "Empowerment", placementType: "Self-Empowerment", tempo: "Fast", img: "/assets/covers/my-words-matter-cover-art.jpg",
-                snippetA: "My words still matter even when I'm lit / But I will keep them in my head and I just sit",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A complex exploration of silent victory and self-valuation during a high-tension bar confrontation. The protagonist realizes their words are being treated as "cheap" or "worn" by a "man-child," eventually choosing to trade their strength for the antagonist's "fear". It captures the tragic realization that "shouting your truth is the sound of defeat," culminating in a quiet seat at the table with "red on my teeth" instead of my lips.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Perfect for **Introspective Character Study Scenes** or Neo-Noir bar sequences involving a tense emotional standoff. Suited for **Somatic Cinematic montages** focusing on the "inner monologue" of a character who is being silenced but remains empowered within.`
+                snippetA: "My words still matter even when I'm lit",
+                description: `A complex exploration of silent victory during a high-tension bar confrontation. The protagonist realizes their words are being dismissed as 'cheap' or 'worn' by a 'man-child,' eventually choosing to trade strength for the antagonist's 'fear'. It captures the realization that 'shouting your truth is the sound of defeat'. 
+                <br><br><strong>BEST PLACEMENT:</strong> Perfect for **Introspective Character Study Scenes** involving a tense emotional standoff.`
             },
             { 
                 id: 21, title: "SHOT BY CUPIDS DART", genre1: "Pop", genre2: "Bedroom Pop", subGenre: "Contemporary", pov: "First Person", moodTone: "Romantic", feeling: "Smitten", category: "Iterative", placementType: "Falling in Love", tempo: "Slow", img: "/assets/covers/shot-by-cupids-dart-cover-art.jpg",
                 snippetA: "Together forever shot by Cupid's dart",
-                description: `<strong>THEMATIC ANALYSIS:</strong> An atmospheric celebration of the sudden, undeniable impact of a "mind-blowing" first meeting. The narrative centers on the realization that a new connection is "truly one of a kind," framing the arrival of love as a fated strike "right between the eyes". It captures the transition from disbelief to the "forever" promise, acting as an encouraging reminder to others that fated connections are "flying high" above.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Ideal for <strong>Romantic "First Look" Sequences</strong>, wedding montages, or upbeat "Falling in Love" transitions in film. Its contemporary bedroom pop vibe fits **Luxury Branding Advertisements** for jewelry, travel, or high-end lifestyle products celebrating partnership.`
+                description: `An atmospheric celebration of the sudden impact of a 'mind-blowing' first meeting. The narrative centers on the realization that a new connection is 'one of a kind,' framing love as a strike 'right between the eyes'. It captures the transition from disbelief to the 'forever' promise. 
+                <br><br><strong>BEST PLACEMENT:</strong> Ideal for <strong>Romantic 'First Look' Sequences</strong> or transition montages in upbeat films.`
             },
             { 
                 id: 25, title: "SHOWDOWN AT MY DOOR", genre1: "Country", genre2: "Rock", subGenre: "Cinematic", pov: "First Person", moodTone: "Strong, Feisty, Defiant", feeling: "Unyielding", category: "Empowerment", placementType: "Confrontation", tempo: "Mid Tempo", img: "/assets/covers/showdown-at-my-door-cover-art.jpg",
                 snippetA: "Don't you dare think 'bout a showdown at my door",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A defiant narrative about setting unyielding boundaries against an ex who attempts to "mosey" back into the protagonist's life. The lyrics detail a history of being blamed for debt and laziness, emphasizing that the "river don't flow no more" and the locks have been changed. It critiques the "foolish" attempt to slide into DMs, choosing "less talk and more walk" to end a "petty show".
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Perfect for <strong>Modern Westerns</strong> or rural dramas during an "Empowered Character Arc" scene. Tailor-made for **High-Energy Breakup Sequences** or transition montages in film where a character finally walks away from a "dusty road" they've been down a hundred times before.`
+                description: `A defiant narrative about setting boundaries against an ex attempting to 'mosey' back into the protagonist's life. The lyrics detail a history of being blamed for debt and laziness, emphasizing that 'the river don't flow no more'. It critiques 'foolish' attempts to slide into DMs, choosing 'less talk and more walk'. 
+                <br><br><strong>BEST PLACEMENT:</strong> Perfect for <strong>Modern Westerns</strong> during an 'Empowered Character Arc' scene.`
             },
             { 
                 id: 28, title: "TAKE THAT FIRST STEP", genre1: "Pop", genre2: "Anthemic", subGenre: "Contemporary", pov: "First/Second Person", moodTone: "Hopeful, Resilient", feeling: "Grateful", category: "Empowerment", placementType: "Self-Empowerment", tempo: "Slow", img: "/assets/covers/take-that-first-step-audio.mp3",
                 snippetA: "Everything broken trust me it's only bent / Together we can fix it",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A moving narrative intervention focusing on the urgency of saving a loved one from self-destruction. The protagonist refuses to "enable" but offers unconditional support, emphasizing that "everything broken is only bent". It captures the fear of a final goodbye at a "casket being lowered," begging for a commitment to a "different path" and the first step on a "long hard road" that will be shared.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> High-impact **Hopeful Anthem** for social impact campaigns, recovery awareness promos, or deep family drama sequences. Its resilient emotional core fits perfectly in **Trailers for prestige films** dealing with healing, intervention, and the power of shared burden.`
+                description: `A moving narrative intervention focusing on saving a loved one from self-destruction. The protagonist refuses to 'enable' but offers unconditional support, emphasizing 'everything broken is only bent'. It captures the fear of a final goodbye at a casket, begging for a commitment to a 'different path'. 
+                <br><br><strong>BEST PLACEMENT:</strong> High-impact **Hopeful Anthem** for social impact campaigns or deep family drama sequences.`
             },
             { 
                 id: 29, title: "THE BACK OF ME", genre1: "Cinematic Pop", genre2: "Rock", subGenre: "Cinematic", pov: "First Person", moodTone: "Strong, Decisive, Bitter", feeling: "Done", category: "Empowerment", placementType: "Final Breakup", tempo: "Mid Tempo", img: "/assets/covers/the-back-of-me-cover-art.jpg",
                 snippetA: "All you will see when you turn back to look is the back of me",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A decisive narrative capturing the "final frame" of a relationship's end, focusing on the destruction of a "house we haven't finished building yet". The protagonist deconstructs the antagonist's confidence as an "illusion" and "mere imitation" of the man she made. It utilizes sensory finality—the "whisper of a coat sleeve" and the "echo of a sole"—as the protagonist walks through the door into a "silence that feels like a tomb".
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Tailor-made for a **Film’s "Final Frame"** or a season finale’s "Empowered Exit" moment. Its strong, Decisive tone fits **High-End Automotive or Tech advertisements** focusing on forward momentum and leaving false illusions behind.`
+                description: `A decisive narrative capturing the 'final frame' of a relationship's end. The protagonist deconstructs the antagonist's confidence as an 'illusion' of the man she made, utilized sensory finality—the 'whisper of a coat sleeve' and the 'echo of a sole'—as she walks through the door into 'silence that feels like a tomb'. 
+                <br><br><strong>BEST PLACEMENT:</strong> Tailor-made for a **Film’s 'Final Frame'** or a season finale's 'Empowered Exit' moment.`
             },
             { 
                 id: 30, title: "THE POCKET WATCH", genre1: "Easy Listening", genre2: "Piano Ballad", subGenre: "Cinematic", pov: "First Person", moodTone: "Dark, Melancholic, Sad", feeling: "Haunted", category: "Disenchantment", placementType: "Emotional Soundtrack", tempo: "Slow", img: "/assets/covers/the-pocket-watch-cover-art.jpg",
                 snippetA: "My only comfort is the sound of your pocket watch as it just ticks",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A haunting exploration of memory and the physical weight of time set at a misty waterfront. The "pocket watch" serves as a somatic anchor, its "tick ticking" representing the relentless counting of moments spent in isolation after becoming "you and me" instead of "us". It captures the anxiety and heaviness that can't be shaken, even as the watch is consigned to a "watery grave" to haunt the protagonist forever.
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Perfectly suited for **Dark Period Dramas** or prestige psychological thrillers focusing on the persistence of grief. Its atmospheric weight fits **Somatic Cinematic Sequences** where a character is processing a deep loss in a fog-heavy or waterfront setting.`
+                description: `A haunting exploration of memory set at a misty waterfront. The 'pocket watch' serves as a anchor, its 'tick ticking' representing the relentless counting of moments spent in isolation. It captures anxiety and heaviness even as the watch is consigned to a 'watery grave'. 
+                <br><br><strong>BEST PLACEMENT:</strong> Perfectly suited for **Dark Period Dramas** or psychological thrillers focusing on grief.`
             },
             { 
-                id: 32, title: "THE REAL DREAM TEAM", genre1: "Pop", genre2: "Dancehall", subGenre: "Contemporary", pov: "First Person", moodTone: "Playful, Confident", feeling: "Loyal", category: "Value", placementType: "Loyalty Anthem", tempo: "Fast", img: "/assets/covers/the-real-dream-team-cover-art.jpg",
+                id: 32, title: "THE REAL DREAM TEAM", genre1: "Pop", genre2: "Dancehall", subGenre: "Contemporary", pov: "First Person", moodTone: "Playful, Confident", feeling: "Loyal", category: "Value Proposition", placementType: "Loyalty Anthem", tempo: "Fast", img: "/assets/covers/the-real-dream-team-cover-art.jpg",
                 snippetA: "We are the real dream team everyone can see / I tie the knot and say I Do",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A celebratory loyalty anthem detailing a battle-ready alliance against "haters" and "naysayers". The narrative moves from romantic mesmerization to a vow of protective action, promising to conquer worlds together and "fight" no matter who or where. It culminates in the "stone-set" finality of "tying the knot," celebrating a partnership that makes the protagonist "want to be better too".
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> High-utility for **Wedding Sequences**, **Sports Promos** focusing on partnership, or as an anthem for a series' "Primary Power Couple". Fits perfectly in **Commercial Advertisements** for luxury travel or lifestyle brands celebrating synergy and unwavering mutual support.`
+                description: `A celebratory loyalty anthem detailing a battle-ready alliance against 'haters'. The narrative moves from mesmerization to a vow of protective action, promised to 'fight' no matter who or where. It culminates in 'tying the knot,' celebrating partnership. 
+                <br><br><strong>BEST PLACEMENT:</strong> High-utility for **Wedding Sequences** or **Sports Promos** focusing on partnership.`
             },
             { 
                 id: 35, title: "YEAR IN THE REARVIEW", genre1: "Easy Listening", genre2: "Pop Ballad", subGenre: "Cinematic", pov: "First Person", moodTone: "Melancholic, Resilient", feeling: "Reflective", category: "Empowerment", placementType: "Healing Journey", tempo: "Mid Tempo", img: "/assets/covers/year-in-the-rearview-cover-art.jpg",
                 snippetA: "A year in the rearview since that shattering crash / Glue the broken pieces from the ash",
-                description: `<strong>THEMATIC ANALYSIS:</strong> A methodical examination of the healing process following a "shattering crash" and emotional betrayal. The lyrics use a calendar as "heavy stones" used to build a fortress, before transitioning into "peeling back layers like bark" to reclaim silence. It captures the shift from the "bitter sting" of poison to the planting of new seeds in a garden, stepping into sunlight with a "hopeful steady gaze".
-                <br><br><strong>CINEMATIC PLACEMENT:</strong> Definitive **"Healing Journey" Soundtrack** for emotional transition montages in film or television. Perfectly suited for **Lifestyle or Wellness Advertisements** focusing on personal growth, "turning the page," and finding promise in tomorrow.`
+                description: `A methodical examination of the healing process following a 'shattering crash'. The lyrics use a calendar as 'heavy stones' to build a fortress, before transitioning into 'peeling back layers' to reclaim silence. It captures the shift from 'bitter sting' to planting new seeds. 
+                <br><br><strong>BEST PLACEMENT:</strong> Definitive **'Healing Journey' Soundtrack** for emotional transition montages.`
             }
         ].sort((a, b) => a.title.localeCompare(b.title));
 
@@ -249,7 +298,7 @@
                     <p class="text-[10px] text-slate-400 font-bold uppercase mb-4">${s.genre1} | ${s.moodTone.split(',')[0]} | ${s.category}</p>
                     <p class="text-sm text-slate-200 italic mb-8 flex-grow">"${s.snippetA}"</p>
                     <div class="grid grid-cols-2 gap-2 mt-auto">
-                        <button onclick="openPlayer(${s.id})" class="py-3 bg-[var(--sunset-orange)] text-white font-black text-[10px] rounded uppercase active:scale-95">VIEW DOSSIER</button>
+                        <button onclick="openPlayer(${s.id})" class="py-3 bg-[var(--sunset-orange)] text-white font-black text-[10px] rounded uppercase active:scale-95">READ / PLAY</button>
                         <button onclick="printFromId(${s.id})" class="py-3 bg-slate-700 text-white font-black text-[10px] rounded uppercase active:scale-95">PRINT REPORT</button>
                     </div>
                 </div>
@@ -261,17 +310,75 @@
             document.getElementById('modal-song-title').innerText = s.title;
             document.getElementById('modal-song-description-long').innerHTML = s.description;
             document.getElementById('vault-modal-player').classList.replace('hidden', 'flex');
-            document.getElementById('modal-song-lyrics-full').innerText = await fetchExternalLyrics(s.title);
             document.getElementById('modal-song-audio-asset').src = `/assets/music/${getSongSlug(s.title)}-audio.mp3`;
+        }
+
+        async function printFromId(id) {
+            const s = VAULT_DATA.find(x => x.id === id);
+            const slug = getSongSlug(s.title);
+            let lyrics = "Lyrics from file placeholder.";
+            try {
+                const response = await fetch(`/assets/lyrics/${slug}.html`);
+                const html = await response.text();
+                lyrics = new DOMParser().parseFromString(html, 'text/html').body.innerText.trim();
+            } catch (e) {}
+
+            const win = window.open('', '_blank');
+            win.document.write(`
+                <html><head><style>
+                    @media print { .pg { page-break-after: always; } }
+                    body { font-family: sans-serif; padding: 40px; color: black; line-height: 1.6; }
+                    .header-print { background: black; padding: 20px; border-bottom: 3px solid #D4AF37; display: flex; align-items: center; justify-content: space-between; }
+                    .header-print img { max-width: 250px; }
+                    .footer-print { background: black; color: white; text-align: center; padding: 20px; border-top: 5px solid #D4AF37; margin-top: 40px; }
+                    .meta-box { background: #f1f5f9; padding: 20px; border-radius: 8px; margin: 20px 0; }
+                    pre { white-space: pre-wrap; font-family: serif; font-size: 16px; margin-top: 30px; }
+                </style></head><body>
+                    <div class="pg">
+                        <div class="header-print"><img src="/images/logo/verseandchorus-logo-med-photo.jpg"></div>
+                        <h1>INDUSTRY REPORT: ${s.title}</h1>
+                        <div class="meta-box">
+                            <p><strong>GENRE:</strong> ${s.genre1} / ${s.genre2} | <strong>STYLE:</strong> ${s.subGenre}</p>
+                            <p><strong>POV:</strong> ${s.pov} | <strong>MOOD:</strong> ${s.moodTone}</p>
+                        </div>
+                        <h3>Dossier (Page 1):</h3>
+                        <p>${s.description}</p>
+                        <div style="background:#fff9e6; padding:15px; border:1px solid #D4AF37; font-size:12px; margin-top:20px;">
+                            <strong>Legal Terms:</strong> 100% Human-Authored by Kellie Larson. Pre-cleared for immediate sync placement.
+                        </div>
+                        <div class="footer-print"><p>© 2026 Kellie Larson | www.VerseandChorus.com</p></div>
+                    </div>
+                    <div class="pg">
+                        <div class="header-print"><img src="/images/logo/verseandchorus-logo-med-photo.jpg"></div>
+                        <h1>FULL LYRICS: ${s.title} (Page 2)</h1>
+                        <pre>${lyrics}</pre>
+                        <div class="footer-print"><p>© 2026 Kellie Larson | www.VerseandChorus.com</p></div>
+                    </div>
+                </body></html>
+            `);
+            win.document.close();
+            win.setTimeout(() => { win.print(); }, 500);
         }
 
         function runFilters() {
             const q = document.getElementById('vault-search-box').value.toLowerCase();
             const g = document.getElementById('genre-pull').value;
             const m = document.getElementById('mood-pull').value;
-            renderVault(VAULT_DATA.filter(s => (!q || s.title.toLowerCase().includes(q)) && (!g || s.genre1 === g) && (!m || s.moodTone.includes(m))));
+            const s = document.getElementById('subgenre-pull').value;
+
+            const targetMoods = m ? getLikeTerms(m) : [];
+            const targetGenres = g ? getLikeTerms(g) : [];
+
+            renderVault(VAULT_DATA.filter(song => {
+                const queryMatch = !q || song.title.toLowerCase().includes(q) || song.description.toLowerCase().includes(q);
+                const genreMatch = !g || targetGenres.some(tg => song.genre1.toLowerCase().includes(tg) || (song.genre2 && song.genre2.toLowerCase().includes(tg)));
+                const moodMatch = !m || targetMoods.some(tm => song.moodTone.toLowerCase().includes(tm));
+                const styleMatch = !s || song.subGenre === s;
+                return queryMatch && genreMatch && moodMatch && styleMatch;
+            }));
         }
 
+        function resetVaultFilters() { document.querySelectorAll('select').forEach(sel => sel.value = ''); document.getElementById('vault-search-box').value = ''; renderVault(VAULT_DATA); }
         function toggleMenu() { document.getElementById('nav-menu').classList.toggle('active'); }
         function closeVaultModal() { document.getElementById('vault-modal-player').classList.replace('flex', 'hidden'); document.getElementById('modal-song-audio-asset').pause(); }
         window.onscroll = () => { document.getElementById('back-to-top').style.display = (window.scrollY > 400) ? 'flex' : 'none'; };
