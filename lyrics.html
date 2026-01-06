@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore The Setlist presented by VerseandChorus.com. A diverse collection of 44 songs by Cinematic Songwriter and Lyricist Kellie Larson, spanning genres from rock to ballads for creative inspiration.">
+    <meta name="description" content="Explore The Setlist presented by VerseandChorus.com. A diverse collection of 44 songs by Cinematic Songwriter and Lyricist Kellie Larson.">
     <title>The Setlist | Kellie Larson - Cinematic Songwriter</title>
     
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
@@ -107,7 +107,7 @@
             color: #888;
         }
         
-        /* Top Section: Creative / Songwriters */
+        /* Top Section: Industry Pros */
         .top-section {
             text-align: center;
             margin-bottom: 50px;
@@ -123,6 +123,11 @@
             margin-bottom: 10px;
             text-transform: uppercase;
             font-weight: 800;
+        }
+        .top-section p {
+            color: #bbb;
+            margin-bottom: 15px;
+            font-size: 1rem;
         }
         .top-section a {
             color: var(--sunset-orange);
@@ -184,6 +189,9 @@
             border-left: 6px solid var(--burgundy);
             padding: 30px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             transition: transform 0.3s, box-shadow 0.3s;
         }
         .action-card:hover {
@@ -333,9 +341,9 @@
     <div class="container">
         
         <div class="top-section">
-            <h3>For Songwriters & Dreamers</h3>
-            <p style="color: #bbb; margin-bottom: 15px;">Looking for inspiration? Spin the wheel to explore how cinematic lyrics come to life. If you write your own songs, I can help you polish them.</p>
-            <p><a href="lyrics-critique.html">Check out my Lyric Review Services →</a></p>
+            <h3>Industry Professionals & Music Supervisors</h3>
+            <p>Access the <strong>Precision Lyric Filter</strong> to sort the catalog by theme, mood, and sync potential for immediate placement.</p>
+            <p><a href="industry-pros.html">CLICK HERE for the Custom Lyric Filter →</a></p>
         </div>
 
         <div class="jukebox-section">
@@ -355,6 +363,13 @@
         </div>
 
         <div class="bottom-grid">
+            
+            <div class="action-card">
+                <h3>For Songwriters & Dreamers</h3>
+                <p>Looking for inspiration? Spin the wheel to explore how cinematic lyrics come to life. If you write your own songs, I can help you polish them.</p>
+                <p><a href="lyrics-critique.html">Check out my Lyric Review Services →</a></p>
+            </div>
+
             <div class="action-card">
                 <h3>Discover the Writer</h3>
                 <p>Behind every great song is a story. Explore the artistic journey and 25 years of professional discipline.</p>
@@ -558,7 +573,12 @@
                     })
                     .catch(err => {
                         console.error("Could not load lyric file", err);
-                        setLyricDisplay(`<p>Lyrics for "${currentSong.title}" are currently unavailable.</p>`);
+                        // DISPLAYING SPECIFIC ERROR FOR USER
+                        setLyricDisplay(
+                            `<p style="color: red; font-weight: bold;">Lyrics Not Found.</p>
+                             <p>Please ensure file is named: <code>assets/music/${currentSong.slug}.html</code></p>
+                             <p>If you are opening this file locally, security blocks the lyrics. Please use a Live Server.</p>`
+                        );
                     });
             }
           }, [currentSong]);
