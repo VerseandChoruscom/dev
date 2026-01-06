@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the cinematic lyrics of Kellie Larson. A resource for A&R, music supervisors, and aspiring lyricists looking for critiques and new music.">
-    <title>The Cinematic Jukebox | Kellie Larson - Cinematic Songwriter</title>
+    <meta name="description" content="Explore The Setlist presented by VerseandChorus.com. A diverse collection of 44 songs by Cinematic Songwriter and Lyricist Kellie Larson, spanning genres from rock to ballads for creative inspiration.">
+    <title>The Setlist | Kellie Larson - Cinematic Songwriter</title>
     
-    <!-- React & Tailwind -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -108,7 +107,7 @@
             color: #888;
         }
         
-        /* Top Section: Industry Pros */
+        /* Top Section: Creative / Songwriters */
         .top-section {
             text-align: center;
             margin-bottom: 50px;
@@ -144,12 +143,25 @@
             font-family: 'Dancing Script', cursive;
             font-size: 4rem;
             color: var(--metallic-gold);
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+            line-height: 1.2;
         }
         .jukebox-subtitle {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        .jukebox-desc {
             color: #ccc;
             margin-bottom: 50px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
         }
         .ipod-section {
             background-color: transparent;
@@ -204,6 +216,52 @@
         }
         .action-card a:hover {
             text-decoration: underline;
+        }
+
+        /* --- TESTIMONIALS SECTION --- */
+        .testimonials-section {
+            margin-top: 80px;
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 50px;
+        }
+        .testimonials-section h3 {
+            color: var(--metallic-gold);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-family: 'Dancing Script', cursive;
+        }
+        .testimonial-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .testimonial-card {
+            background: #111;
+            border: 1px solid #333;
+            border-bottom: 2px solid var(--burgundy);
+            padding: 25px;
+            max-width: 450px;
+            flex: 1 1 300px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .testimonial-card p {
+            font-style: italic;
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .testimonial-card cite {
+            display: block;
+            color: var(--metallic-gold);
+            font-weight: bold;
+            font-style: normal;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
         /* --- FOOTER STYLES --- */
@@ -274,49 +332,61 @@
 
     <div class="container">
         
-        <!-- TOP SECTION: Industry Professionals -->
         <div class="top-section">
-            <h3>For Industry Professionals</h3>
-            <p style="color: #bbb; margin-bottom: 15px;">Seeking clearable, high-concept IP for sync or artist placement?</p>
-            <p><a href="industry-pros.html">A&R and Music Supervisors: Please go here to your dedicated page →</a></p>
+            <h3>For Songwriters & Dreamers</h3>
+            <p style="color: #bbb; margin-bottom: 15px;">Looking for inspiration? Spin the wheel to explore how cinematic lyrics come to life. If you write your own songs, I can help you polish them.</p>
+            <p><a href="lyrics-critique.html">Check out my Lyric Review Services →</a></p>
         </div>
 
-        <!-- MIDDLE SECTION: The Cinematic Jukebox -->
         <div class="jukebox-section">
-            <h2 class="jukebox-title">The Cinematic Jukebox</h2>
-            <p class="jukebox-subtitle">Use the click wheel to browse 44 cinematic tracks by Mood or Theme.</p>
+            <h2 class="jukebox-title">The Setlist</h2>
+            <p class="jukebox-subtitle">Presented by VerseandChorus.com</p>
+            <p class="jukebox-desc">
+                Dive into a collection of 44 original songs by Cinematic Songwriter and Lyricist Kellie Larson. 
+                From gritty rock anthems to deep emotional ballads, this diverse catalog spans multiple genres 
+                and moods, designed to spark inspiration for musicians and creators everywhere.
+            </p>
             
             <div class="ipod-section">
-                <!-- React Root for iPod -->
                 <div id="ipod-root" class="w-full flex justify-center">
                     <span class="text-white animate-pulse">Loading Digital Jukebox...</span>
                 </div>
             </div>
         </div>
 
-        <!-- BOTTOM SECTION: Action Grid -->
         <div class="bottom-grid">
-            <!-- New Artists / Bio -->
             <div class="action-card">
                 <h3>Discover the Writer</h3>
                 <p>Behind every great song is a story. Explore the artistic journey and 25 years of professional discipline.</p>
                 <p><a href="bio.html">Meet Kellie Larson Cinematic →</a></p>
             </div>
 
-            <!-- Lyric Critique -->
             <div class="action-card">
                 <h3>Get Your Lyrics Critiqued</h3>
-                <p>Are you a lyricist or songwriter? Get a professional assessment of your work’s potential for radio or film sync.</p>
-                <p><a href="lyrics-critique.html">Check Your Chances →</a></p>
+                <p>Stuck on a verse? Get a professional assessment of your work’s potential. Let's make your lyrics shine.</p>
+                <p><a href="lyrics-critique.html">See How It Works →</a></p>
             </div>
 
-            <!-- Fun & Notifications -->
             <div class="action-card">
                 <h3>Stay Notified</h3>
                 <p>Be the first to know when new songs, articles, and cinematic narratives are posted.</p>
                 <p><a href="contact.html">Join the Mailing List</a></p>
                 <hr style="border: 0; border-top: 1px solid #222; margin: 20px 0;">
                 <p><a href="green-room.html">Visit the Green Room for Lyrical Mad Libs! 🎲</a></p>
+            </div>
+        </div>
+
+        <div class="testimonials-section">
+            <h3>Words from the Writers Room</h3>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>“The Cinematic Lyric Review completely changed how I approach storytelling. I went from writing vague feelings to painting pictures with words. A game changer for my portfolio.”</p>
+                    <cite>— J.D., Indie Folk Artist</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>“Finally, honest feedback that isn't just 'great job.' Kellie dug deep into the structure and commercial viability of my song. It’s now the strongest track on my EP.”</p>
+                    <cite>— Sarah M., Pop Songwriter</cite>
+                </div>
             </div>
         </div>
 
@@ -335,7 +405,6 @@
         </div>
     </footer>
 
-    <!-- iPod React Logic -->
     <script type="text/babel">
         // SVG Icons
         const IconBattery = () => <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600 fill-green-500"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg>;
@@ -399,7 +468,7 @@
                 title: title,
                 artist: ARTIST,
                 slug: filename,
-                audioSrc: `audio/${filename}.mp3`
+                audioSrc: `assets/music/${filename}.mp3`
             };
           });
         };
@@ -430,7 +499,6 @@
           const [selectedTheme, setSelectedTheme] = useState(null);
           const [selectedMood, setSelectedMood] = useState(null);
           
-          const [allLyrics, setAllLyrics] = useState({}); // Stores contents of lyrics.json
           const [lyricDisplay, setLyricDisplay] = useState("Loading lyrics...");
           
           const wheelRef = useRef(null);
@@ -444,15 +512,6 @@
               setCurrentTime(now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
             }, 1000);
             
-            // Load lyrics.json
-            fetch('lyrics.json')
-              .then(res => res.json())
-              .then(data => setAllLyrics(data))
-              .catch(err => {
-                console.error("Could not load lyrics.json", err);
-                setAllLyrics({});
-              });
-
             const handleEnded = () => setIsPlaying(false);
             if (audioRef.current) {
                 audioRef.current.addEventListener('ended', handleEnded);
@@ -479,22 +538,30 @@
              }
           }, [isPlaying]);
 
-          // Handle Song Selection
+          // Handle Song Selection and Lyric Fetching
           useEffect(() => {
             if (currentSong && audioRef.current) {
+                // Audio Logic
                 audioRef.current.src = currentSong.audioSrc;
                 audioRef.current.load();
                 if (isPlaying) audioRef.current.play().catch(() => {});
 
-                // Find lyrics by slug (filename) from JSON
-                const content = allLyrics[currentSong.slug] || allLyrics[currentSong.title];
-                if (content) {
-                    setLyricDisplay(content);
-                } else {
-                    setLyricDisplay(`Placeholder Lyric Content for "${currentSong.title}".`);
-                }
+                // Fetch Individual Lyric HTML File
+                setLyricDisplay("Loading lyrics...");
+                fetch(`assets/music/${currentSong.slug}.html`)
+                    .then(res => {
+                        if (!res.ok) throw new Error('Network response was not ok');
+                        return res.text();
+                    })
+                    .then(htmlContent => {
+                        setLyricDisplay(htmlContent);
+                    })
+                    .catch(err => {
+                        console.error("Could not load lyric file", err);
+                        setLyricDisplay(`<p>Lyrics for "${currentSong.title}" are currently unavailable.</p>`);
+                    });
             }
-          }, [currentSong, allLyrics]);
+          }, [currentSong]);
 
           const currentScreen = menuStack[menuStack.length - 1];
 
@@ -572,9 +639,11 @@
                     </div>
                     <div className="flex-1 border-t border-gray-200 mt-1 pt-2 overflow-y-auto bg-gray-50 rounded px-2">
                       <p className="text-center text-[10px] font-bold text-gray-400 mb-2 uppercase tracking-wider">Lyrics</p>
-                      <p className="text-xs text-gray-800 whitespace-pre-wrap font-serif leading-relaxed text-center pb-4">
-                        {lyricDisplay}
-                      </p>
+                      {/* Using dangerouslySetInnerHTML to render the HTML content from the fetch */}
+                      <div 
+                        className="text-xs text-gray-800 font-serif leading-relaxed text-center pb-4"
+                        dangerouslySetInnerHTML={{ __html: lyricDisplay }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -649,4 +718,3 @@
 
 </body>
 </html>
-
