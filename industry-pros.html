@@ -22,7 +22,7 @@
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f1f5f9; }
         .content-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
-        /* --- HEADER STYLES --- */
+        /* --- HEADER --- */
         #main-header {
             display: flex; justify-content: space-between; align-items: center; 
             padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold);
@@ -36,52 +36,26 @@
         }
         #nav-menu a:hover { color: var(--metallic-gold) !important; }
 
-        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-        .hamburger div { width: 25px; height: 3px; background-color: var(--white); }
-
-        @media (max-width: 768px) {
-            .hamburger { display: flex; }
-            #nav-menu {
-                display: none; flex-direction: column; width: 100%; position: absolute;
-                top: 100%; left: 0; background-color: var(--black); padding: 20px 0;
-                z-index: 1000; border-bottom: 2px solid var(--metallic-gold);
-            }
-            #nav-menu.active { display: flex; }
-            #nav-menu a { padding: 15px 0; text-align: center; width: 100%; border-bottom: 1px solid #333; }
-        }
-
-        /* --- VAULT COMPONENT STYLES --- */
+        /* --- VAULT CARD --- */
         .song-card { border: 2px solid var(--blue-gray); background: #1e293b; text-align: center; height: 100%; display: flex; flex-direction: column; transition: 0.3s; }
         .song-card:hover { border-color: var(--sunset-orange); transform: translateY(-5px); }
         .metallic-gold-title { color: var(--metallic-gold); font-weight: 800; text-transform: uppercase; text-decoration: none; }
-        .metallic-gold-title:hover { text-decoration: underline; }
-
+        
         .vault-select { background-color: #0f172a; border: 2px solid var(--blue-gray); color: white; padding: 10px; border-radius: 6px; width: 100%; cursor: pointer; }
-        .rect-card { background: #334155; border: 1px solid var(--blue-gray); padding: 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; text-align: center; cursor: pointer; text-transform: uppercase; transition: 0.2s; }
-        .rect-card.active { border-color: var(--sunset-orange); background: var(--sunset-orange); color: white; }
-
-        #back-to-top { 
-            position: fixed; bottom: 30px; right: 30px; 
-            background: var(--sunset-orange); color: white; 
-            width: 50px; height: 50px; border-radius: 50%; 
-            display: none; align-items: center; justify-content: center; 
-            font-size: 24px; cursor: pointer; z-index: 100; border: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        
+        @media (max-width: 768px) {
+            #nav-menu { display: none; flex-direction: column; width: 100%; position: absolute; top: 100%; left: 0; background: var(--black); z-index: 1000; }
+            #nav-menu.active { display: flex; }
         }
-
-        .site-footer {
-            background-color: var(--black); color: var(--white); text-align: center; 
-            padding: 40px 20px; margin-top: 50px; border-top: 5px solid var(--metallic-gold);
-        }
-        .footer-line { border: 0; height: 1px; background: var(--metallic-gold); margin: 20px auto; width: 100%; max-width: 300px; }
-        .footer-links a { color: var(--white); text-decoration: none; margin: 0 10px; font-weight: bold; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
     <header id="main-header" class="no-print">
         <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
-        <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+        <div class="hamburger" onclick="document.getElementById('nav-menu').classList.toggle('active')">
+            <div class="w-6 h-1 bg-white mb-1"></div><div class="w-6 h-1 bg-white mb-1"></div><div class="w-6 h-1 bg-white"></div>
+        </div>
         <nav id="nav-menu">
           <a href="/bio.html">Bio</a>
           <a href="/industry-pros.html">Industry Pro</a>
@@ -98,137 +72,107 @@
     <main class="content-container py-10 no-print">
         <div class="text-center mb-10">
             <h2 class="text-4xl font-extrabold tracking-widest uppercase italic text-white">Industry Pro Vault</h2>
-            <p class="text-gray-400 mt-2 text-sm font-semibold italic">Curated Assets for Music Supervisors & A&R</p>
-        </div>
-
-        <div class="bg-slate-900 p-6 mb-12 border-l-4 border-[var(--burgundy)] rounded shadow-lg">
-            <h4 class="text-xl font-bold mb-4 uppercase text-white tracking-wide">Rights & Licensing Assurance</h4>
-            <div class="grid md:grid-cols-2 gap-4 text-xs text-gray-300">
-                <p>✅ 100% Human-Authored Lyrics (Registered via Songbay)</p>
-                <p>✅ Pre-Cleared for Immediate Commercial Sync Placement</p>
-                <p>✅ Royalty-Free Placeholder Composition & Master License</p>
-                <p>✅ Clean Legal Path to Traditional Copyright Ownership</p>
-            </div>
-        </div>
-
-        <div class="bg-gray-800 p-6 rounded-xl mb-12 border-2 border-[var(--blue-gray)] shadow-2xl">
-            <input type="text" id="vault-search-box" placeholder="Search Keywords, Mood, Placement..." 
-                   class="w-full p-4 bg-black border border-slate-700 rounded mb-6 text-white uppercase text-sm outline-none">
-            
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <select id="genre-pull" class="vault-select" onchange="runFilters()"><option value="">GENRE</option><option value="Pop">Pop</option><option value="Rock">Rock</option><option value="Country">Country</option><option value="Alternative">Alternative</option><option value="Easy Listening">Easy Listening</option></select>
-                <select id="mood-pull" class="vault-select" onchange="runFilters()"><option value="">MOOD</option><option value="Anthemic">Anthemic</option><option value="Confident">Confident</option><option value="Sad">Sad</option><option value="Bitter">Bitter</option></select>
-                <select id="tempo-pull" class="vault-select" onchange="runFilters()"><option value="">TEMPO</option><option value="Fast">Fast</option><option value="Mid Tempo">Mid Tempo</option><option value="Slow">Slow</option></select>
-                <button onclick="resetVaultFilters()" class="text-xs font-black uppercase text-[var(--sunset-orange)] hover:underline">Reset Filters</button>
-            </div>
         </div>
 
         <div id="vault-grid-display" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </main>
 
-    <div id="vault-modal-player" class="fixed inset-0 bg-black/98 z-50 hidden flex justify-center items-center p-4 backdrop-blur-md">
+    <div id="vault-modal-player" class="fixed inset-0 bg-black/95 z-50 hidden flex justify-center items-center p-4 backdrop-blur-md">
         <div class="bg-slate-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col border-2 border-slate-700">
             <div class="p-4 bg-[var(--burgundy)] flex justify-between items-center">
                 <h2 id="modal-song-title" class="text-xl font-bold uppercase text-white italic"></h2>
                 <button onclick="closeVaultModal()" class="text-white text-4xl">&times;</button>
             </div>
             <div class="p-10 overflow-y-auto">
-                <div id="modal-song-lyrics-full" class="whitespace-pre-wrap font-serif text-xl text-slate-100">Fetching lyrics...</div>
+                <div class="bg-black/50 p-6 rounded-xl border border-slate-800 mb-8">
+                    <p class="text-amber-400 font-bold uppercase text-[10px] tracking-widest mb-3">Audio Preview</p>
+                    <audio id="modal-song-audio-asset" controls controlsList="nodownload" class="w-full"></audio>
+                </div>
+                <div id="modal-song-lyrics-full" class="whitespace-pre-wrap font-serif text-xl text-slate-100">Fetching lyrics from song page...</div>
             </div>
         </div>
     </div>
 
-    <button id="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
-
-    <footer class="site-footer no-print">
-        <p>♥️ Kellie Larson ♥️</p>
-        <p>✍️ Cinematic Songwriter & Lyricist 🎹</p>
-        <p>© 2025 Kellie Larson. All Rights Reserved.</p>
-        <hr class="footer-line">
-        <div class="footer-links">
-            <a href="contact.html">Contact</a> | <a href="legal.html">Legal</a>
-        </div>
-    </footer>
-
     <script>
+        // Verified 44-Song Metadata
         const VAULT_DATA = [
-            { id: 1, title: "AUTHOR OF A LIE", genre1: "Pop", moodTone: "Anthemic, Confident", tempo: "Mid Tempo", placementType: "Commercial Sync", snippetA: "You're the author of a lie, a master of deceit", coverImageUrl: "/assets/covers/author-of-a-lie-cover-art.jpg" },
-            { id: 2, title: "BIG HARD NO", genre1: "Country", moodTone: "Determined, Confident", tempo: "Mid Tempo", placementType: "Potential Single", snippetA: "That's a big hard NO!", coverImageUrl: "/assets/covers/big-hard-no-cover-art.jpg" },
-            { id: 3, title: "BOOM BOOM BEAT", genre1: "Pop", moodTone: "Playful, Romantic", tempo: "Mid Tempo", placementType: "Commercial Sync", snippetA: "Boom, boom, boom, da boom, boom, boom", coverImageUrl: "/assets/covers/boom-boom-beat-cover-art.jpg" },
-            { id: 4, title: "I'M A BROKEN RECORD", genre1: "Rock", moodTone: "Bitter, Dramatic", tempo: "Mid Tempo", placementType: "Film/TV Placement", snippetA: "I'm a broken record, skipping on repeat,", coverImageUrl: "/assets/covers/im-a-broken-record-cover-art.jpg" },
-            { id: 5, title: "CEO NOT A BABYSITTING TREE", genre1: "Pop", moodTone: "Confident, Playful", tempo: "Fast", placementType: "Viral Hit", snippetA: "Honey, I'm a CEO, not a babysitting tree.", coverImageUrl: "/assets/covers/ceo-not-babysitting-tree-cover-art.jpg" },
-            { id: 6, title: "CHILDREN OF WAR", genre1: "Folk", moodTone: "Haunting, Sad", tempo: "Slow", placementType: "Dramatic Soundtrack", snippetA: "Run, little children! there's nothing left here!", coverImageUrl: "/assets/covers/children-of-war-cover-art.jpg" },
-            { id: 7, title: "CONCRETE UNDER OUR FEET", genre1: "Rock", moodTone: "Introspective, Cool", tempo: "Mid Tempo", placementType: "Urban Drama", snippetA: "Yeah, you got so many choices, but you chose this beat", coverImageUrl: "/assets/covers/concrete-under-our-feet-cover-art.jpg" },
-            { id: 8, title: "DON'T BE JELLY", genre1: "Country", moodTone: "Fun, Playful", tempo: "Fast", placementType: "Viral Dance", snippetA: "Don't be all jelly. (Jelly! Jelly!)", coverImageUrl: "/assets/covers/dont-be-jelly-cover-art.jpg" },
-            { id: 9, title: "EPHEMERAL MOMENT", genre1: "Alternative", moodTone: "Dreamy, Romantic", tempo: "Fast", placementType: "Rom-Com Sync", snippetA: "Ephemeral moment, I should've stretched it out.", coverImageUrl: "/assets/covers/ephemeral-moment-cover-art.jpg" },
-            { id: 10, title: "ETCHED IN EVERY SPACE", genre1: "Easy Listening", moodTone: "Mournful, Sad", tempo: "Slow", placementType: "Soulful Ballad", snippetA: "It's etched in every space", coverImageUrl: "/assets/covers/etched-in-every-space-cover-art.jpg" },
-            { id: 11, title: "FURY (I'M THE MONSTER)", genre1: "Alternative", moodTone: "Angry, Defiant", tempo: "Fast", placementType: "Cinematic Tension", snippetA: "Your fists, a never-ending show", coverImageUrl: "/assets/covers/fury-im-the-monster-cover-art.jpg" },
-            { id: 12, title: "GENX 80s ANTHEM", genre1: "Rock", moodTone: "Playful", tempo: "Fast", placementType: "Nostalgia", snippetA: "They say Gen X is the best, yeah, I believe it's true.", coverImageUrl: "/assets/covers/genx-80s-anthem-cover-art.jpg" },
-            { id: 13, title: "HEARTBREAK AND TROUBLE", genre1: "Pop", moodTone: "Introspective", tempo: "Mid Tempo", placementType: "Relatable Heartbreak", snippetA: "You pop in and out like Hubba Bubba.", coverImageUrl: "/assets/covers/heartbreak-and-trouble-cover-art.jpg" },
-            { id: 14, title: "HIT THE ROAD", genre1: "Pop", moodTone: "Confident, Revenge", tempo: "Mid Tempo", placementType: "Breakup Anthem", snippetA: "Don't stop, don't look back,", coverImageUrl: "/assets/covers/hit-the-road-cover-art.jpg" },
-            { id: 15, title: "HOW'S IT FEEL, BRO?", genre1: "Pop", moodTone: "Confident, Revenge", tempo: "Mid Tempo", placementType: "Confrontation", snippetA: "Here you go again, spinning that story.", coverImageUrl: "/assets/covers/hows-it-feel-bro-cover-art.jpg" },
-            { id: 16, title: "I KNOW YOUR DAMN PIN CODE", genre1: "Rock", moodTone: "Bitter, Revenge", tempo: "Fast", placementType: "Hard Rock Anthem", snippetA: "Think you're clever? I know your damn pin code.", coverImageUrl: "/assets/covers/i-know-your-damn-pin-code-cover-art.jpg" },
-            { id: 17, title: "IN MY DREAMS (WHEN I WAKE)", genre1: "Easy Listening", moodTone: "Dreamy, Sad", tempo: "Slow", placementType: "Emotional Montage", snippetA: "In my dreams, you are here,", coverImageUrl: "/assets/covers/in-my-dreams-when-i-wake-cover-art.jpg" },
-            { id: 18, title: "JUST TOO MUCH", genre1: "Easy Listening", moodTone: "Bitter, Sad", tempo: "Slow", placementType: "Emotional Soundtrack", snippetA: "Too much fighting, too much disrespect.", coverImageUrl: "/assets/covers/just-too-much-cover-art.jpg" },
-            { id: 19, title: "JUST A LITTLE LONELY", genre1: "Easy Listening", moodTone: "Melancholic, Sad", tempo: "Slow", placementType: "Emotional Pop Ballad", snippetA: "You ask me why, with a question in your eyes.", coverImageUrl: "/assets/covers/just-a-little-lonely-cover-art.jpg" },
-            { id: 20, title: "BOTTOM OF THE WISHING WELL", genre1: "Folk", moodTone: "Dark, Dramatic", tempo: "Mid Tempo", placementType: "Murder Ballad", snippetA: "Oh, poor lil' Belle, at the bottom of the wishing well", coverImageUrl: "/assets/covers/bottom-of-the-wishing-well-cover-art.jpg" },
-            { id: 21, title: "MARRIED TO THE DRUG", genre1: "Rock", moodTone: "Heavy, Bitter", tempo: "Fast", placementType: "Addiction Drama", snippetA: "Married to the drug, Mrs. Fetty, hand in hand.", coverImageUrl: "/assets/covers/married-to-the-drug-cover-art.jpg" },
-            { id: 22, title: "MURDERER'S HEART", genre1: "Country", moodTone: "Dramatic", tempo: "Mid Tempo", placementType: "Crime Drama Sync", snippetA: "He was playing games with a murderer's heart", coverImageUrl: "/assets/covers/murderers-heart-cover-art.jpg" },
-            { id: 23, title: "MY GIRL KARMA", genre1: "R&B", moodTone: "Cool, Revenge", tempo: "Mid Tempo", placementType: "Justice Anthem", snippetA: "My girl Karma is coming your way.", coverImageUrl: "/assets/covers/my-girl-karma-cover-art.jpg" },
-            { id: 24, title: "MY WORDS STILL MATTER", genre1: "Pop", moodTone: "Confident", tempo: "Fast", placementType: "Self-Empowerment", snippetA: "My words matter, hear them loud.", coverImageUrl: "/assets/covers/my-words-matter-cover-art.jpg" },
-            { id: 25, title: "THE POCKET WATCH", genre1: "Easy Listening", moodTone: "Dark, Melancholic", tempo: "Slow", placementType: "Emotional Soundtrack", snippetA: "My only comfort is the sound of your pocket watch", coverImageUrl: "/assets/covers/the-pocket-watch-cover-art.jpg" },
-            { id: 26, title: "ONE SMALL WRONG", genre1: "Rock", moodTone: "Bitter, Tension", tempo: "Mid Tempo", placementType: "Cinematic Duet", snippetA: "Just one small wrong from me,", coverImageUrl: "/assets/covers/one-small-wrong-cover-art.jpg" },
-            { id: 27, title: "THE REAL DREAM TEAM", genre1: "Pop", moodTone: "Playful, Confident", tempo: "Fast", placementType: "Loyalty Anthem", snippetA: "Tick Tock, the clock, time never stops.", coverImageUrl: "/assets/covers/the-real-dream-team-cover-art.jpg" },
-            { id: 28, title: "SHOT BY CUPIDS DART", genre1: "Pop", moodTone: "Romantic", tempo: "Slow", placementType: "Falling in Love", snippetA: "When I first saw you, I thought, 'Damn, he's so fine'", coverImageUrl: "/assets/covers/shot-by-cupids-dart-cover-art.jpg" },
-            { id: 29, title: "SHOWDOWN AT MY DOOR", genre1: "Rock", moodTone: "Dramatic", tempo: "Mid Tempo", placementType: "Confrontation", snippetA: "Don't you dare think 'bout a showdown at my door.", coverImageUrl: "/assets/covers/showdown-at-my-door-cover-art.jpg" },
-            { id: 30, title: "SICK ONE (S1C)", genre1: "Rock", moodTone: "Bitter, Cool", tempo: "Fast", placementType: "Toxic Love Cycle", snippetA: "Our love is on a sick one.", coverImageUrl: "/assets/covers/sick-one-s1c-cover-art.jpg" },
-            { id: 31, title: "SOLID SHIFTING GROUND", genre1: "Country", moodTone: "Introspective", tempo: "Slow", placementType: "Duality of Life", snippetA: "But for every up there is a down,", coverImageUrl: "/assets/covers/solid-shifting-ground-cover-art.jpg" },
-            { id: 32, title: "STOOD BY MY SIDE", genre1: "Gospel", moodTone: "Peaceful", tempo: "Slow", placementType: "Faith & Healing", snippetA: "When the world walked away, You stood by my side.", coverImageUrl: "/assets/covers/stood-by-my-side-cover-art.jpg" },
-            { id: 33, title: "THE AFTERMATH", genre1: "Pop", moodTone: "Sad", tempo: "Slow", placementType: "Post-Breakup Silence", snippetA: "This suffocating quiet, a heavy shroud.", coverImageUrl: "/assets/covers/the-aftermath-cover-art.jpg" },
-            { id: 34, title: "THE BACK OF ME", genre1: "Country", moodTone: "Determined", tempo: "Mid Tempo", placementType: "Leaving the Past", snippetA: "Stop! Before you go too far now.", coverImageUrl: "/assets/covers/the-back-of-me-cover-art.jpg" },
-            { id: 35, title: "THE SHOW IS THROUGH", genre1: "Jazz", moodTone: "Bitter", tempo: "Slow", placementType: "Theatrical Finale", snippetA: "Take a bow, 'cause the show is through.", coverImageUrl: "/assets/covers/the-show-is-through-cover-art.jpg" },
-            { id: 36, title: "THOUGHT YOU SHOULD KNOW", genre1: "Pop", moodTone: "Cool, Confident", tempo: "Mid Tempo", placementType: "Telling the Truth", snippetA: "Oh, i'm alright, i'm fine (i'm good)", coverImageUrl: "/assets/covers/thought-you-should-know-cover-art.jpg" },
-            { id: 37, title: "TOP SHELF QUEEN", genre1: "Reggae", moodTone: "Mellow", tempo: "Slow", placementType: "Relaxation Ode", snippetA: "She's a top-shelf queen, my number one prime.", coverImageUrl: "/assets/covers/top-shelf-queen-cover-art.jpg" },
-            { id: 38, title: "WELCOME TO JUKES", genre1: "Blues", moodTone: "Haunting", tempo: "Mid Tempo", placementType: "Horror Narrative", snippetA: "The sign says, 'Come on in, welcome to Jukes,'", coverImageUrl: "/assets/covers/welcome-to-jukes-cover-art.jpg" },
-            { id: 39, title: "WILDFLOWER", genre1: "Folk", moodTone: "Peaceful", tempo: "Slow", placementType: "Inspirational Country", snippetA: "Oh, she's Wildflower, dancing in the wind.", coverImageUrl: "/assets/covers/wildflower-cover-art.jpg" },
-            { id: 40, title: "YEAR IN THE REARVIEW", genre1: "Pop", moodTone: "Introspective", tempo: "Mid Tempo", placementType: "Closure", snippetA: "A year in the rearview since that shattering crash.", coverImageUrl: "/assets/covers/year-in-the-rearview-cover-art.jpg" },
-            { id: 41, title: "YOUR FOREVER MAN", genre1: "Country", moodTone: "Romantic", tempo: "Mid Tempo", placementType: "Heartfelt Ballad", snippetA: "When Misty cries, the tears fall like rain", coverImageUrl: "/assets/covers/your-forever-man-cover-art.jpg" },
-            { id: 42, title: "YOUR MASK", genre1: "Reggae", moodTone: "Aggressive", tempo: "Variable", placementType: "Criminal Justice", snippetA: "Rip your f-ing mask off,", coverImageUrl: "/assets/covers/your-mask-cover-art.jpg" },
-            { id: 43, title: "CRAVING THOSE CRUMBS", genre1: "R&B", moodTone: "Sad", tempo: "Slow", placementType: "Desperate Love", snippetA: "Craving those crumbs of affection.", coverImageUrl: "/assets/covers/craving-those-crumbs-cover-art.jpg" },
-            { id: 44, title: "AUTHOR OF A LIE (RADIO EDIT)", genre1: "Pop", moodTone: "Anthemic", tempo: "Fast", placementType: "Radio Airplay", snippetA: "You're the author of a lie, yeah.", coverImageUrl: "/assets/covers/author-of-a-lie-cover-art.jpg" }
+            { id: 1, title: "AUTHOR OF A LIE", genre1: "Pop", mood: "Anthemic", tempo: "Mid Tempo", placement: "Sync", snippet: "You're the author of a lie...", img: "/assets/covers/author-of-a-lie-cover-art.jpg" },
+            { id: 2, title: "BIG HARD NO", genre1: "Country", mood: "Confident", tempo: "Mid Tempo", placement: "Single", snippet: "That's a big hard NO!", img: "/assets/covers/big-hard-no-cover-art.jpg" },
+            { id: 3, title: "BOOM BOOM BEAT", genre1: "Pop", mood: "Playful", tempo: "Mid Tempo", placement: "Sync", snippet: "Boom, boom, boom...", img: "/assets/covers/boom-boom-beat-cover-art.jpg" },
+            { id: 4, title: "I'M A BROKEN RECORD", genre1: "Rock", mood: "Bitter", tempo: "Mid Tempo", placement: "Film", snippet: "I'm a broken record...", img: "/assets/covers/im-a-broken-record-cover-art.jpg" },
+            { id: 5, title: "CEO NOT A BABYSITTING TREE", genre1: "Pop", mood: "Confident", tempo: "Fast", placement: "Viral", snippet: "Honey, I'm a CEO...", img: "/assets/covers/ceo-not-babysitting-tree-cover-art.jpg" },
+            { id: 6, title: "CHILDREN OF WAR", genre1: "Folk", mood: "Haunting", tempo: "Slow", placement: "Soundtrack", snippet: "Run, little children!", img: "/assets/covers/children-of-war-cover-art.jpg" },
+            { id: 7, title: "CONCRETE UNDER OUR FEET", genre1: "Rock", mood: "Cool", tempo: "Mid Tempo", placement: "Urban", snippet: "Concrete under our feet", img: "/assets/covers/concrete-under-our-feet-cover-art.jpg" },
+            { id: 8, title: "DON'T BE JELLY", genre1: "Country", mood: "Fun", tempo: "Fast", placement: "Dance", snippet: "Don't be all jelly.", img: "/assets/covers/dont-be-jelly-cover-art.jpg" },
+            { id: 9, title: "EPHEMERAL MOMENT", genre1: "Alternative", mood: "Dreamy", tempo: "Fast", placement: "Rom-Com", snippet: "Ephemeral moment...", img: "/assets/covers/ephemeral-moment-cover-art.jpg" },
+            { id: 10, title: "ETCHED IN EVERY SPACE", genre1: "Easy Listening", mood: "Sad", tempo: "Slow", placement: "Ballad", snippet: "Etched in every space", img: "/assets/covers/etched-in-every-space-cover-art.jpg" },
+            { id: 11, title: "FURY (I'M THE MONSTER)", genre1: "Alternative", mood: "Angry", tempo: "Fast", placement: "Cinematic", snippet: "Fury! save me!", img: "/assets/covers/fury-im-the-monster-cover-art.jpg" },
+            { id: 12, title: "GENX 80s ANTHEM", genre1: "Rock", mood: "Playful", tempo: "Fast", placement: "Nostalgia", snippet: "Gen X is the best", img: "/assets/covers/genx-80s-anthem-cover-art.jpg" },
+            { id: 13, title: "HEARTBREAK AND TROUBLE", genre1: "Pop", mood: "Introspective", tempo: "Mid Tempo", placement: "Heartbreak", snippet: "Hubba Bubba...", img: "/assets/covers/heartbreak-and-trouble-cover-art.jpg" },
+            { id: 14, title: "HIT THE ROAD", genre1: "Pop", mood: "Confident", tempo: "Mid Tempo", placement: "Anthem", snippet: "Hit the road", img: "/assets/covers/hit-the-road-cover-art.jpg" },
+            { id: 15, title: "HOW'S IT FEEL, BRO?", genre1: "Pop", mood: "Revenge", tempo: "Mid Tempo", placement: "Confrontation", snippet: "How's it feel, bro?", img: "/assets/covers/hows-it-feel-bro-cover-art.jpg" },
+            { id: 16, title: "I KNOW YOUR DAMN PIN CODE", genre1: "Rock", mood: "Bitter", tempo: "Fast", placement: "Hard Rock", snippet: "Know your pin code.", img: "/assets/covers/i-know-your-damn-pin-code-cover-art.jpg" },
+            { id: 17, title: "IN MY DREAMS (WHEN I WAKE)", genre1: "Easy Listening", mood: "Sad", tempo: "Slow", placement: "Montage", snippet: "In my dreams...", img: "/assets/covers/in-my-dreams-when-i-wake-cover-art.jpg" },
+            { id: 18, title: "JUST TOO MUCH", genre1: "Easy Listening", mood: "Bitter", tempo: "Slow", placement: "Soundtrack", snippet: "Just too much.", img: "/assets/covers/just-too-much-cover-art.jpg" },
+            { id: 19, title: "JUST A LITTLE LONELY", genre1: "Easy Listening", mood: "Melancholic", tempo: "Slow", placement: "Pop Ballad", snippet: "Little lonely.", img: "/assets/covers/just-a-little-lonely-cover-art.jpg" },
+            { id: 20, title: "BOTTOM OF THE WISHING WELL", genre1: "Folk", mood: "Dark", tempo: "Mid Tempo", placement: "Murder Ballad", snippet: "Wishing well.", img: "/assets/covers/bottom-of-the-wishing-well-cover-art.jpg" },
+            { id: 21, title: "MARRIED TO THE DRUG", genre1: "Rock", mood: "Bitter", tempo: "Fast", placement: "Addiction", snippet: "Married to the drug.", img: "/assets/covers/married-to-the-drug-cover-art.jpg" },
+            { id: 22, title: "MURDERER'S HEART", genre1: "Country", mood: "Dramatic", tempo: "Mid Tempo", placement: "Crime Drama", snippet: "Murderer's heart.", img: "/assets/covers/murderer-s-heart-cover-art.jpg" },
+            { id: 23, title: "MY GIRL KARMA", genre1: "R&B", mood: "Cool", tempo: "Mid Tempo", placement: "Justice", snippet: "My girl Karma.", img: "/assets/covers/my-girl-karma-cover-art.jpg" },
+            { id: 24, title: "MY WORDS STILL MATTER", genre1: "Pop", mood: "Confident", tempo: "Fast", placement: "Empowerment", snippet: "Words still matter.", img: "/assets/covers/my-words-matter-cover-art.jpg" },
+            { id: 25, title: "THE POCKET WATCH", genre1: "Easy Listening", mood: "Dark", tempo: "Slow", placement: "Soundtrack", snippet: "The pocket watch.", img: "/assets/covers/the-pocket-watch-cover-art.jpg" },
+            { id: 26, title: "ONE SMALL WRONG", genre1: "Rock", mood: "Tension", tempo: "Mid Tempo", placement: "Duet", snippet: "One small wrong.", img: "/assets/covers/one-small-wrong-cover-art.jpg" },
+            { id: 27, title: "THE REAL DREAM TEAM", genre1: "Pop", mood: "Confident", tempo: "Fast", placement: "Loyalty", snippet: "The dream team.", img: "/assets/covers/the-real-dream-team-cover-art.jpg" },
+            { id: 28, title: "SHOT BY CUPIDS DART", genre1: "Pop", mood: "Romantic", tempo: "Slow", placement: "Love", snippet: "Cupids dart.", img: "/assets/covers/shot-by-cupids-dart-cover-art.jpg" },
+            { id: 29, title: "SHOWDOWN AT MY DOOR", genre1: "Rock", mood: "Dramatic", tempo: "Mid Tempo", placement: "Confrontation", snippet: "Showdown at my door.", img: "/assets/covers/showdown-at-my-door-cover-art.jpg" },
+            { id: 30, title: "SICK ONE (S1C)", genre1: "Rock", mood: "Cool", tempo: "Fast", placement: "Toxic Love", snippet: "Sick one.", img: "/assets/covers/sick-one-s1c-cover-art.jpg" },
+            { id: 31, title: "SOLID SHIFTING GROUND", genre1: "Country", mood: "Introspective", tempo: "Slow", placement: "Duality", snippet: "Solid shifting ground.", img: "/assets/covers/solid-shifting-ground-cover-art.jpg" },
+            { id: 32, title: "STOOD BY MY SIDE", genre1: "Gospel", mood: "Peaceful", tempo: "Slow", placement: "Faith", snippet: "Stood by my side.", img: "/assets/covers/stood-by-my-side-cover-art.jpg" },
+            { id: 33, title: "THE AFTERMATH", genre1: "Pop", mood: "Sad", tempo: "Slow", placement: "Silence", snippet: "The aftermath.", img: "/assets/covers/the-aftermath-cover-art.jpg" },
+            { id: 34, title: "THE BACK OF ME", genre1: "Country", mood: "Determined", tempo: "Mid Tempo", placement: "Leaving", snippet: "The back of me.", img: "/assets/covers/the-back-of-me-cover-art.jpg" },
+            { id: 35, title: "THE SHOW IS THROUGH", genre1: "Jazz", mood: "Bitter", tempo: "Slow", placement: "Theatrical", snippet: "The show is through.", img: "/assets/covers/the-show-is-through-cover-art.jpg" },
+            { id: 36, title: "THOUGHT YOU SHOULD KNOW", genre1: "Pop", mood: "Confident", tempo: "Mid Tempo", placement: "Truth", snippet: "Thought you should know.", img: "/assets/covers/thought-you-should-know-cover-art.jpg" },
+            { id: 37, title: "TOP SHELF QUEEN", genre1: "Reggae", mood: "Mellow", tempo: "Slow", placement: "Ode", snippet: "Top shelf queen.", img: "/assets/covers/top-shelf-queen-cover-art.jpg" },
+            { id: 38, title: "WELCOME TO JUKES", genre1: "Blues", mood: "Haunting", tempo: "Mid Tempo", placement: "Horror", snippet: "Welcome to Jukes.", img: "/assets/covers/welcome-to-jukes-cover-art.jpg" },
+            { id: 39, title: "WILDFLOWER", genre1: "Folk", mood: "Peaceful", tempo: "Slow", placement: "Inspirational", snippet: "Wildflower.", img: "/assets/covers/wildflower-cover-art.jpg" },
+            { id: 40, title: "YEAR IN THE REARVIEW", genre1: "Pop", mood: "Introspective", tempo: "Mid Tempo", placement: "Closure", snippet: "Year in the rearview.", img: "/assets/covers/year-in-the-rearview-cover-art.jpg" },
+            { id: 41, title: "YOUR FOREVER MAN", genre1: "Country", mood: "Romantic", tempo: "Mid Tempo", placement: "Ballad", snippet: "Forever man.", img: "/assets/covers/your-forever-man-cover-art.jpg" },
+            { id: 42, title: "YOUR MASK", genre1: "Reggae", mood: "Aggressive", tempo: "Variable", placement: "Criminal Justice", snippet: "Rip your mask off.", img: "/assets/covers/your-mask-cover-art.jpg" },
+            { id: 43, title: "CRAVING THOSE CRUMBS", genre1: "R&B", mood: "Sad", tempo: "Slow", placement: "Desperate", snippet: "Craving those crumbs.", img: "/assets/covers/craving-those-crumbs-cover-art.jpg" },
+            { id: 44, title: "NOT CLEVER", genre1: "Pop", mood: "Bitter", tempo: "Fast", placement: "Viral", snippet: "I Know Your Damn Pin Code.", img: "/assets/covers/not-clever-cover-art.jpg" }
         ];
 
-        function toggleMenu() { document.getElementById('nav-menu').classList.toggle('active'); }
-
+        // Slug helper
         function getSongSlug(title) {
             return title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
         }
 
-        async function fetchLyrics(title) {
+        // Fetching lyrics from external HTML
+        async function fetchExternalLyrics(title) {
             const slug = getSongSlug(title);
             try {
                 const response = await fetch(`/${slug}.html`);
                 const html = await response.text();
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
-                // Target innerText or a specific lyric ID if your pages use one
+                // Target innerText of the body as requested
                 return doc.body.innerText.trim();
-            } catch (e) {
-                return "Full lyrics are available on the primary song page.";
+            } catch (err) {
+                return "Full lyrics could not be loaded. Please check the song's primary page.";
             }
         }
 
         function renderVault(data) {
             const grid = document.getElementById('vault-grid-display');
             grid.innerHTML = data.map(s => `
-                <div class="song-card p-6 rounded-lg">
-                    <img src="${s.coverImageUrl}" class="w-full max-w-[140px] mx-auto rounded-lg mb-4">
+                <div class="song-card p-6 rounded-lg shadow-xl">
+                    <img src="${s.img}" class="w-full max-w-[140px] mx-auto rounded-lg mb-4 border border-slate-700">
                     <h3 class="metallic-gold-title text-xl mb-2">${s.title}</h3>
-                    <p class="text-[10px] text-slate-400 font-bold uppercase mb-4">${s.genre1} | ${s.moodTone.split(',')[0]}</p>
-                    <p class="text-sm text-slate-200 italic mb-8 flex-grow">"${s.snippetA}"</p>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase mb-4">${s.genre1} | ${s.mood}</p>
+                    <p class="text-sm text-slate-200 italic mb-8 flex-grow">"${s.snippet}"</p>
                     <div class="grid grid-cols-2 gap-2 mt-auto">
                         <button onclick="openPlayer('${s.title}')" class="py-3 bg-[var(--sunset-orange)] text-white font-black text-[10px] rounded uppercase active:scale-95">READ / PLAY</button>
-                        <button onclick="printReport('${s.title}')" class="py-3 bg-slate-700 text-white font-black text-[10px] rounded uppercase hover:bg-slate-600 active:scale-95">🖨️ PRINT</button>
+                        <button onclick="printFromPage('${s.title}')" class="py-3 bg-slate-700 text-white font-black text-[10px] rounded uppercase active:scale-95">🖨️ PRINT</button>
                     </div>
                 </div>
             `).join('');
@@ -236,31 +180,33 @@
 
         async function openPlayer(title) {
             document.getElementById('modal-song-title').innerText = title;
-            document.getElementById('modal-song-lyrics-full').innerText = "Loading lyrics from source...";
+            document.getElementById('modal-song-lyrics-full').innerText = "Loading lyrics...";
             document.getElementById('vault-modal-player').classList.replace('hidden', 'flex');
-            const lyrics = await fetchLyrics(title);
+            
+            const lyrics = await fetchExternalLyrics(title);
             document.getElementById('modal-song-lyrics-full').innerText = lyrics;
+            
+            const slug = getSongSlug(title);
+            document.getElementById('modal-song-audio-asset').src = `/assets/music/${slug}-audio.mp3`;
         }
 
-        async function printReport(title) {
+        async function printFromPage(title) {
             const song = VAULT_DATA.find(s => s.title === title);
-            const lyrics = await fetchLyrics(title);
+            const lyrics = await fetchExternalLyrics(title);
             const win = window.open('', '_blank');
             win.document.write(`
                 <html><head><style>
-                    body { font-family: 'Inter', sans-serif; padding: 40px; color: black; line-height: 1.6; }
-                    h1 { color: #800020; text-transform: uppercase; border-bottom: 2px solid #D4AF37; }
-                    .meta { margin-bottom: 30px; font-size: 18px; border-left: 5px solid #64748b; padding-left: 15px; }
+                    body { font-family: 'Helvetica', sans-serif; padding: 50px; line-height: 1.6; }
+                    h1 { color: #800020; border-bottom: 2px solid #D4AF37; }
+                    .meta { border-left: 5px solid #64748b; padding-left: 15px; margin: 20px 0; font-size: 18px; }
                     pre { white-space: pre-wrap; font-family: serif; font-size: 16px; margin-top: 30px; }
                     .page-break { page-break-before: always; }
                 </style></head><body>
                     <h1>${song.title} - Industry Report</h1>
                     <div class="meta">
-                        <p><strong>Writer:</strong> Kellie Larson</p>
                         <p><strong>Genre:</strong> ${song.genre1}</p>
-                        <p><strong>Mood:</strong> ${song.moodTone}</p>
-                        <p><strong>Tempo:</strong> ${song.tempo}</p>
-                        <p><strong>Placement:</strong> ${song.placementType}</p>
+                        <p><strong>Mood:</strong> ${song.mood}</p>
+                        <p><strong>Placement:</strong> ${song.placement}</p>
                     </div>
                     <div class="page-break"></div>
                     <h1>Lyrics: ${song.title}</h1>
@@ -271,31 +217,12 @@
             win.print();
         }
 
-        function runFilters() {
-            const q = document.getElementById('vault-search-box').value.toLowerCase();
-            const g = document.getElementById('genre-pull').value;
-            const m = document.getElementById('mood-pull').value;
-            const t = document.getElementById('tempo-pull').value;
-
-            const filtered = VAULT_DATA.filter(s => {
-                return (!q || s.title.toLowerCase().includes(q)) &&
-                       (!g || s.genre1 === g) &&
-                       (!m || s.moodTone.includes(m)) &&
-                       (!t || s.tempo === t);
-            });
-            renderVault(filtered);
+        function closeVaultModal() { 
+            document.getElementById('vault-modal-player').classList.replace('flex', 'hidden');
+            document.getElementById('modal-song-audio-asset').pause();
         }
-
-        function resetVaultFilters() {
-            document.querySelectorAll('select').forEach(s => s.value = '');
-            document.getElementById('vault-search-box').value = '';
-            renderVault(VAULT_DATA);
-        }
-
-        function closeVaultModal() { document.getElementById('vault-modal-player').classList.replace('flex', 'hidden'); }
 
         window.onload = () => renderVault(VAULT_DATA);
-        document.getElementById('vault-search-box').addEventListener('input', runFilters);
     </script>
 </body>
 </html>
