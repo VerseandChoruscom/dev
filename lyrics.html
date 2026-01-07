@@ -563,7 +563,7 @@
 
                 // Fetch Individual Lyric HTML File
                 setLyricDisplay("Loading lyrics...");
-                fetch(`assets/music/${currentSong.slug}.html`)
+                fetch(`assets/lyrics/${currentSong.slug}.html`)
                     .then(res => {
                         if (!res.ok) throw new Error('Network response was not ok');
                         return res.text();
