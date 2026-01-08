@@ -163,7 +163,142 @@
         }
 
         const VAULT_DATA = [
+           { 
+                id: 1, title: "AUTHOR OF A LIE", genre1: "Pop", genre2: "R&B", subGenre: "Rhythmic Pop", pov: "First Person", moodTone: "Confident, Confrontational", feeling: "Strong", category: "Disenchantment", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/author-of-a-lie-cover-art.jpg", snippetA: "You tell a story I pick it apart...",
+                description: `This narrative deconstructs the architecture of deception by contrasting specific, fabricated timelines against physical reality. The protagonist methodically picks apart a partner's whacked timeline, calling out inconsistencies. BEST PLACEMENT: Psychological Thrillers.`
+            },
             { 
+                id: 2, title: "BIG HARD NO", genre1: "Country", genre2: "Ballad", subGenre: "Contemporary", pov: "First Person", moodTone: "Strong, Resilient", feeling: "Healed", category: "Empowerment", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/big-hard-no-cover-art.jpg", snippetA: "Happier now, more than I've ever been...",
+                description: `The narrative centers on a firm, empowered rejection of a former partner attempting to manipulate their way back into the protagonist's life. BEST PLACEMENT: Character Pivot Anthem.`
+            },
+            // ... Add the rest of your 40+ songs here following this format ...
+             {
+                id: 45, title: "YOUR MASK", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Angry, Betrayed", feeling: "Vindicated", category: "Social", placementType: "Political Drama", tempo: "Fast", img: "/assets/covers/your-mask-cover-art.jpg", snippetA: "You see me on the screen a monster in the news...",
+                description: `A biting social commentary on scapegoating and corruption. BEST PLACEMENT: Political Thrillers or Corruption Dramas.`
+            }
+        ].sort((a, b) => a.title.localeCompare(b.title));
+
+        // --- RENDER LOGIC ---
+        function renderVault(data) {
+            const grid = document.getElementById('vault-grid-display');
+            grid.innerHTML = data.map(s => `
+                <div class="song-card p-6 rounded-lg shadow-xl">
+                    <img src="${s.img}" class="w-full max-w-[140px] mx-auto rounded-lg mb-4 border border-slate-700" onerror="this.src='https://via.placeholder.com/150'">
+                    <h3 class="metallic-gold-title text-xl mb-1">${s.title}</h3>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase mb-4">${s.genre1} | ${s.moodTone.split(',')[0]} | ${s.category}</p>
+                    <p class="text-sm text-slate-200 italic mb-8 flex-grow">"${s.snippetA}"</p>
+                    <div class="grid grid-cols-2 gap-2 mt-auto">
+                        <button onclick="openPlayer(${s.id})" class="py-3 bg-[var(--sunset-orange)] text-white font-black text-[10px] rounded uppercase active:scale-95">READ / PLAY</button>
+                        <button onclick="printFromId(${s.id})" class="py-3 bg-slate-700 text-white font-black text-[10px] rounded uppercase active:scale-95">PRINT REPORT</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- MODAL LOGIC ---
+        async function openPlayer(id) {
+            const s = VAULT_DATA.find(x => x.id === id);
+            document.getElementById('modal-song-title').innerText = s.title;
+            const slug = getSongSlug(s.title);
+            document.getElementById('vault-modal-player').classList.replace('hidden', 'flex');
+            document.getElementById('modal-song-lyrics-full').innerText = "Loading lyrics...";
+            
+            // NOTE: This fetch will fail if you just open the HTML file locally without a local server
+            // because of browser security (CORS) on file:// protocols.
+            try {
+                const response = await fetch(`/assets/lyrics/${slug}.html`);
+                if (!response.ok) throw new Error("File not found");
+                const html = await response.text();
+                document.getElementById('modal-song-lyrics-full').innerText = new DOMParser().parseFromString(html, 'text/html').body.innerText.trim();
+            } catch (e) { 
+                document.getElementById('modal-song-lyrics-full').innerText = "Full lyrics available on request (Preview Mode)."; 
+            }
+            document.getElementById('modal-song-audio-asset').src = `/assets/music/${slug}.mp3`;
+        }
+
+        // --- PRINT LOGIC ---
+        async function printFromId(id) {
+            const s = VAULT_DATA.find(x => x.id === id);
+            const slug = getSongSlug(s.title);
+            let lyrics = "Full lyrics available on request.";
+            try {
+                const response = await fetch(`/assets/lyrics/${slug}.html`);
+                if (response.ok) {
+                    const html = await response.text();
+                    lyrics = new DOMParser().parseFromString(html, 'text/html').body.innerText.trim();
+                }
+            } catch (e) {}
+
+            const win = window.open('', '_blank');
+            win.document.write(`
+                <html><head><style>
+                    @media print { .pg { page-break-after: always; } }
+                    body { font-family: sans-serif; padding: 40px; color: black; line-height: 1.6; }
+                    .header-print { background: black; padding: 20px; border-bottom: 3px solid #D4AF37; display: flex; align-items: center; justify-content: space-between; }
+                    .header-print img { max-width: 250px; }
+                    .footer-print { background: black; color: white; text-align: center; padding: 20px; border-top: 5px solid #D4AF37; margin-top: 40px; }
+                    .meta-box { background: #f1f5f9; padding: 20px; border-radius: 8px; margin: 20px 0; font-weight: bold; }
+                    .bio-box { border-top: 1px solid #ccc; padding-top: 20px; margin-top: 20px; font-style: italic; }
+                    pre { white-space: pre-wrap; font-family: serif; font-size: 16px; margin-top: 30px; }
+                </style></head><body>
+                    <div class="pg">
+                        <div class="header-print"><img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Logo"></div>
+                        <h1>INDUSTRY REPORT: ${s.title}</h1>
+                        <div class="meta-box">
+                            <p>GENRE: ${s.genre1} / ${s.genre2 || 'N/A'} | STYLE: ${s.subGenre}</p>
+                            <p>POV: ${s.pov || 'N/A'} | MOOD: ${s.moodTone}</p>
+                            <p>THEME: ${s.category} | PLACEMENT: ${s.placementType || 'Sync Ready'}</p>
+                        </div>
+                        <h3>Dossier (A&R Description):</h3>
+                        <p>${s.description}</p>
+                        <div class="bio-box">
+                            <strong>Kellie Larson: Cinematic Songwriter</strong><br>
+                            Kellie Larson is a professional cinematic songwriter.
+                        </div>
+                        <div class="footer-print"><p>© 2024 Kellie Larson</p></div>
+                    </div>
+                </body></html>
+            `);
+            win.document.close();
+            win.setTimeout(() => { win.print(); }, 500);
+        }
+
+        // --- FILTER LOGIC ---
+        function runFilters() {
+            const q = document.getElementById('vault-search-box').value.toLowerCase();
+            const g = document.getElementById('genre-pull').value;
+            const m = document.getElementById('mood-pull').value;
+            const s = document.getElementById('subgenre-pull').value;
+
+            const targetMoods = m ? getLikeTerms(m) : [];
+            const targetGenres = g ? getLikeTerms(g) : [];
+
+            renderVault(VAULT_DATA.filter(song => {
+                const isDark = song.moodTone.toLowerCase().includes('dark') || song.moodTone.toLowerCase().includes('eerie');
+                const matchesGenreSelection = !g || 
+                    (g.toLowerCase() === 'country' ? !isDark : targetGenres.some(tg => song.genre1.toLowerCase().includes(tg) || (song.genre2 && song.genre2.toLowerCase().includes(tg))));
+
+                const queryMatch = !q || song.title.toLowerCase().includes(q) || song.description.toLowerCase().includes(q);
+                const moodMatch = !m || targetMoods.some(tm => song.moodTone.toLowerCase().includes(tm));
+                const styleMatch = !s || song.subGenre === s;
+                
+                return queryMatch && matchesGenreSelection && moodMatch && styleMatch;
+            }));
+        }
+
+        function applyHardFilter(f, v, el) {
+            document.querySelectorAll('.thematic-card, .rect-card').forEach(x => x.classList.remove('active'));
+            if(el) el.classList.add('active');
+            renderVault(VAULT_DATA.filter(song => song[f].toLowerCase().includes(v.toLowerCase())));
+        }
+
+        function resetVaultFilters() { document.querySelectorAll('select').forEach(sel => sel.value = ''); document.getElementById('vault-search-box').value = ''; renderVault(VAULT_DATA); }
+        function closeVaultModal() { document.getElementById('vault-modal-player').classList.replace('flex', 'hidden'); document.getElementById('modal-song-audio-asset').pause(); }
+        window.onscroll = () => { document.getElementById('back-to-top').style.display = (window.scrollY > 400) ? 'flex' : 'none'; };
+        window.onload = () => renderVault(VAULT_DATA);
+    </script>
+</body>
+</html> { 
                 id: 1, title: "AUTHOR OF A LIE", genre1: "Pop", genre2: "R&B", subGenre: "Rhythmic Pop", pov: "First Person", moodTone: "Confident, Confrontational", feeling: "Strong", category: "Disenchantment", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/author-of-a-lie-cover-art.jpg", snippetA: "You tell a story I pick it apart...",
                 description: `This narrative deconstructs the architecture of deception by contrasting specific, fabricated timelines against physical reality. The protagonist methodically picks apart a partner's whacked timeline, calling out inconsistencies such as a supposed trip to the beach in July versus the reality of gray clouds and video games. The story moves from a text sent at 2 AM to a tagged photo outside a neon bar, capturing the definitive transition from being gaslit to enlightened. It explores the finality of a 'fantasy world' coming to an end as the protagonist refuses to buy into the charade any longer. BEST PLACEMENT: Ideal for Psychological Thrillers or Prestige TV Dramas.`
             },
