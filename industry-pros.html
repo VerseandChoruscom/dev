@@ -14,14 +14,7 @@
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f1f5f9; }
         .content-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
-        /* --- HEADER & NAV --- */
-        #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); position: relative; }
-        .logo-top-left { width: 90%; max-width: 300px; height: auto; }
-        #nav-menu { display: flex; gap: 20px; }
-        #nav-menu a { color: var(--white) !important; text-decoration: none; font-weight: bold; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
-        #nav-menu a:hover { color: var(--metallic-gold) !important; }
-
-        /* --- HERO: THE VAULT --- */
+        /* --- HERO --- */
         .hero-box { text-align: center; padding: 60px 20px; background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8)), url('/assets/covers/industry-vault-bg.jpg'); background-size: cover; border-bottom: 1px solid #334155; }
         .hero-script { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 2.2rem; margin-bottom: 5px; }
         .hero-title { font-size: 4.5rem; font-weight: 900; color: var(--white); text-transform: uppercase; letter-spacing: 4px; line-height: 1; text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
@@ -33,34 +26,31 @@
         .song-card:hover { border-color: var(--sunset-orange); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .metallic-gold-title { color: var(--metallic-gold); font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        .thematic-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 600px; margin: 0 auto 3rem; }
-        .thematic-card { height: 80px; border: 2px solid var(--blue-gray); border-radius: 6px; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; position: relative; cursor: pointer; overflow: hidden; }
-        .thematic-card::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
-        .thematic-card span { z-index: 2; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; color: white; text-align: center; letter-spacing: 1px; }
-        .thematic-card.active { border-color: var(--sunset-orange); box-shadow: 0 0 15px rgba(253, 94, 83, 0.4); }
+        /* Interactive Filter Cards */
+        .pillar-card { background: #334155; border: 1px solid var(--blue-gray); padding: 15px; border-radius: 4px; text-align: center; cursor: pointer; transition: 0.2s; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100px; }
+        .pillar-card h3 { color: var(--metallic-gold); font-weight: 800; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 5px; }
+        .pillar-card:hover, .pillar-card.active { border-color: var(--sunset-orange); background: var(--sunset-orange); }
+        .pillar-card.active h3, .pillar-card:hover h3 { color: white; }
 
-        .rect-card { background: #334155; border: 1px solid var(--blue-gray); padding: 12px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; text-align: center; cursor: pointer; text-transform: uppercase; transition: 0.2s; }
-        .rect-card:hover { background: #475569; }
-        .rect-card.active { border-color: var(--sunset-orange); background: var(--sunset-orange); color: white; }
+        .vault-select { background-color: #0f172a; border: 1px solid var(--blue-gray); color: #cbd5e1; padding: 10px; border-radius: 6px; width: 100%; cursor: pointer; font-size: 0.75rem; text-transform: uppercase; font-weight: bold; }
+        
+        .rating-badge { position: absolute; top: 10px; right: 10px; background: var(--metallic-gold); color: black; font-weight: 900; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
 
-        .vault-select { background-color: #0f172a; border: 1px solid var(--blue-gray); color: #cbd5e1; padding: 12px; border-radius: 6px; width: 100%; cursor: pointer; font-size: 0.8rem; text-transform: uppercase; font-weight: bold; }
-        .vault-select:focus { border-color: var(--metallic-gold); outline: none; }
-
-        /* --- FOOTER --- */
-        .site-footer { background-color: var(--black); color: var(--white); text-align: center; padding: 40px 20px; border-top: 5px solid var(--metallic-gold); margin-top: 50px; }
-        #back-to-top { position: fixed; bottom: 30px; right: 30px; background: var(--sunset-orange); color: white; width: 50px; height: 50px; border-radius: 50%; display: none; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; z-index: 100; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+        /* --- FOOTER & TESTIMONIALS --- */
+        .site-footer { background-color: var(--black); color: var(--white); text-align: center; padding: 40px 20px; border-top: 5px solid var(--metallic-gold); margin-top: 50px; font-size: 0.9rem; line-height: 1.6; }
+        .testimonial-section { background: #1e293b; padding: 40px 20px; border-top: 2px solid var(--sunset-orange); text-align: center; margin-top: 40px; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <header id="main-header" class="no-print">
-        <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
-        <nav id="nav-menu">
-            <a href="/bio.html">Spotlight</a>
-            <a href="/industry-pros.html">Industry Pro</a>
-            <a href="/lyrics.html">Lyrics</a>
-            <a href="/green-room.html">Green Room</a>
-            <a href="/contact.html">Contact</a>
+    <header id="main-header" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #000; border-bottom: 2px solid #D4AF37;">
+        <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Logo" style="max-width: 250px;">
+        <nav style="display: flex; gap: 20px;">
+            <a href="/bio.html" style="color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 12px;">Spotlight</a>
+            <a href="/industry-pros.html" style="color: #FD5E53; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 12px;">Industry Pro</a>
+            <a href="/lyrics.html" style="color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 12px;">Lyrics</a>
+            <a href="/green-room.html" style="color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 12px;">Green Room</a>
+            <a href="/contact.html" style="color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 12px;">Contact</a>
         </nav>
     </header>
 
@@ -68,278 +58,563 @@
         <p class="hero-script">VerseandChorus.com Presents</p>
         <h1 class="hero-title">THE VAULT</h1>
         <div class="hero-desc">
-            <p>
-                Exclusively for <strong>Music Supervisors & A&R</strong>. 
-                A curated, pre-cleared ecosystem of 46 cinematic narratives designed for immediate sync licensing and artist placement. 
-                <strong>100% Human-Authored.</strong> Verified emotional depth without the legal risks of Generative AI.
-            </p>
+            <p>Exclusively for <strong>Music Supervisors & A&R</strong>. A curated, pre-cleared ecosystem of 46 cinematic narratives designed for immediate sync licensing. <strong>100% Human-Authored.</strong> Verified emotional depth without the legal risks of Generative AI.</p>
+        </div>
+        <div class="mt-6 border-t border-gray-600 pt-4 max-w-2xl mx-auto text-xs text-gray-400 grid grid-cols-2 gap-2 text-left">
+            <p>✅ 100% Human-Authored Lyrics (Registered via Songbay)</p>
+            <p>✅ Pre-Cleared for Immediate Commercial Sync Placement</p>
+            <p>✅ Royalty-Free Placeholder Composition & Master License</p>
+            <p>✅ Clean Legal Path to Traditional Copyright Ownership</p>
         </div>
     </section>
 
-    <main class="content-container py-10 no-print">
+    <main class="content-container py-10">
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8">
-            <div class="rect-card" onclick="applyHardFilter('types', 'Sync', this)">Commercial Sync Ready</div>
-            <div class="rect-card" onclick="applyHardFilter('types', 'Hit', this)">Top 40 Radio Potential</div>
-            <div class="rect-card" onclick="applyHardFilter('types', 'Critical', this)">Critical Acclaim / Indie</div>
-        </div>
-
-        <div class="thematic-grid">
-            <div class="thematic-card" style="background-image: url('/assets/covers/social-world-lyrics-photo.jpg')" onclick="applyHardFilter('hashtags', 'Social', this)"><span>Social Commentary</span></div>
-            <div class="thematic-card" style="background-image: url('/assets/covers/empowerment-arc-lyrics-photo.jpg')" onclick="applyHardFilter('hashtags', 'Empowerment', this)"><span>Anthemic Empowerment</span></div>
-            <div class="thematic-card" style="background-image: url('/assets/covers/disenchantment-lyrics-photo.jpg')" onclick="applyHardFilter('hashtags', 'Disenchantment', this)"><span>Raw Disenchantment</span></div>
-            <div class="thematic-card" style="background-image: url('/assets/covers/mutual-value-lyrics-photo.jpg')" onclick="applyHardFilter('hashtags', 'Value', this)"><span>High Value Proposition</span></div>
-            <div class="thematic-card" style="background-image: url('/assets/covers/loss-of-market-share-lyrics-photo.jpg')" onclick="applyHardFilter('hashtags', 'Grief', this)"><span>Loss & Grief</span></div>
-            <div class="thematic-card" style="background-image: url('/assets/covers/iterative-photo.jpg')" onclick="applyHardFilter('hashtags', 'Story', this)"><span>Iterative Storytelling</span></div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
+            <div class="pillar-card" onclick="applyHardFilter('pillar', 'Anthemic Empowerment', this)">
+                <h3>1. Anthemic Empowerment</h3>
+                <p>The "Phoenix" Narratives. High-energy reclamation.</p>
+            </div>
+            <div class="pillar-card" onclick="applyHardFilter('pillar', 'Raw Emotional Narrative', this)">
+                <h3>2. Raw Emotional Narrative</h3>
+                <p>Psychological Realism. Drama Sync.</p>
+            </div>
+            <div class="pillar-card" onclick="applyHardFilter('pillar', 'Kinetic Energy / Fun', this)">
+                <h3>3. Kinetic Energy / Fun</h3>
+                <p>The "Vibe" Collection. Viral trends.</p>
+            </div>
+            <div class="pillar-card" onclick="applyHardFilter('pillar', 'Cinematic Storytelling', this)">
+                <h3>4. Cinematic Storytelling</h3>
+                <p>The "Movie Scene" Collection. World-building.</p>
+            </div>
         </div>
 
         <div class="bg-gray-800 p-6 rounded-xl mb-12 border border-[var(--blue-gray)] shadow-2xl relative">
             <p class="text-[10px] text-gray-400 uppercase font-bold mb-2 tracking-widest">Advanced Metadata Search</p>
             <input type="text" id="vault-search-box" onkeyup="runFilters()" placeholder="SEARCH: Keyword, Lyric snippet, Song Title, Emotion..." class="w-full p-4 bg-black border border-slate-700 rounded mb-6 text-white text-sm outline-none focus:border-[var(--metallic-gold)] transition">
             
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <select id="genre-pull" class="vault-select" onchange="runFilters()">
-                    <option value="">ALL GENRES</option>
-                    <option value="Alternative">Alternative</option>
-                    <option value="Cinematic">Cinematic</option>
-                    <option value="Country">Country</option>
-                    <option value="Dance">Dance / Electronic</option>
-                    <option value="Folk">Folk / Americana</option>
-                    <option value="Gospel">Gospel / Christian</option>
-                    <option value="Hip-Hop">Hip-Hop / Urban</option>
-                    <option value="Pop">Pop</option>
-                    <option value="R&B">R&B</option>
-                    <option value="Rock">Rock</option>
-                </select>
-
-                <select id="mood-pull" class="vault-select" onchange="runFilters()">
-                    <option value="">ALL MOODS</option>
-                    <option value="Angry">Angry / Aggressive</option>
-                    <option value="Bitter">Bitter / Resigned</option>
-                    <option value="Chill">Chill / Introspective</option>
-                    <option value="Confident">Confident / Bold</option>
-                    <option value="Dark">Dark / Eerie</option>
-                    <option value="Empowered">Empowered / Strong</option>
-                    <option value="Grateful">Grateful / Spiritual</option>
-                    <option value="Happy">Happy / Radiant</option>
-                    <option value="Hopeful">Hopeful / Resilient</option>
-                    <option value="Intense">Intense / Heavy</option>
-                    <option value="Nostalgic">Nostalgic / Reflective</option>
-                    <option value="Romantic">Romantic / Sweet</option>
-                    <option value="Sad">Sad / Melancholic</option>
-                    <option value="Sassy">Sassy / Playful</option>
-                    <option value="Toxic">Toxic / Conflicted</option>
-                </select>
-
-                <select id="placement-pull" class="vault-select" onchange="runFilters()">
-                    <option value="">PLACEMENT TYPE</option>
-                    <option value="Background">Background / Bar Scene</option>
-                    <option value="Commercial">Commercial / Ad</option>
-                    <option value="Credits">Opening / End Credits</option>
-                    <option value="Feature">Feature / Main Theme</option>
-                    <option value="Montage">Montage Sequence</option>
-                    <option value="Reality">Reality TV / Dramedy</option>
-                    <option value="Sync">General Sync</option>
-                    <option value="Trailer">Trailer / Promo</option>
-                </select>
-
-                <button onclick="resetVaultFilters()" class="text-xs font-black uppercase text-[var(--sunset-orange)] hover:text-white transition">Reset All Filters</button>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+                <select id="genre1-pull" class="vault-select" onchange="runFilters()"><option value="">Genre 1</option><option value="Pop">Pop</option><option value="Country">Country</option><option value="Rock">Rock</option><option value="R&B">R&B</option><option value="Hip Hop">Hip Hop</option><option value="Indie">Indie</option><option value="Alternative">Alternative</option><option value="Blues">Blues</option><option value="Punk">Punk</option><option value="Kpop">Kpop</option></select>
+                <select id="sub-pull" class="vault-select" onchange="runFilters()"><option value="">Sub Genre</option><option value="Contemporary">Contemporary</option><option value="Cinematic">Cinematic</option><option value="Easy Listening">Easy Listening</option><option value="Ballad">Ballad</option><option value="Anthem">Anthem</option><option value="Acoustic">Acoustic</option><option value="Urban">Urban</option><option value="Synth">Synth</option><option value="Narrative">Narrative</option><option value="Dark">Dark</option></select>
+                <select id="mood-pull" class="vault-select" onchange="runFilters()"><option value="">Mood</option><option value="Confident">Confident</option><option value="Sad">Sad</option><option value="Happy">Happy</option><option value="Angry">Angry</option><option value="Empowered">Empowered</option><option value="Nostalgic">Nostalgic</option><option value="Dark">Dark</option><option value="Hopeful">Hopeful</option><option value="Romantic">Romantic</option><option value="Sassy">Sassy</option><option value="Intense">Intense</option><option value="Chill">Chill</option><option value="Broken">Broken</option><option value="Grateful">Grateful</option><option value="Resilient">Resilient</option></select>
+                <select id="placement-pull" class="vault-select" onchange="runFilters()"><option value="">Placement</option><option value="Trailer">Trailer</option><option value="Montage">Montage</option><option value="Credits">End Credits</option><option value="Commercial">Commercial</option><option value="Reality">Reality TV</option><option value="Drama">Drama Scene</option><option value="Opening">Opening Credits</option><option value="Background">Background</option></select>
+                <button onclick="resetVaultFilters()" class="text-xs font-black uppercase text-[var(--sunset-orange)] hover:text-white transition col-span-2 md:col-span-1 border border-[var(--sunset-orange)] rounded">Reset Options</button>
             </div>
         </div>
 
         <div id="vault-grid-display" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </main>
 <script>
-    const VAULT_DATA_PART_1 = [
+    const VAULT_DATA = [
         {
-            id: 1, title: "80S ANTHEMS", genre1: "Pop", genre2: "Rock", subGenre: "Synth Pop",
+            id: 1, title: "80S ANTHEMS", pillar: "Kinetic Energy / Fun", genre1: "Pop", genre2: "Rock", subGenre: "Synth Pop",
             moods: ["Nostalgic", "Energetic", "Vibrant"], feelings: ["Free", "Sentimental", "Hopeful"],
-            types: ["Retro Anthem", "Lifestyle"], tempos: ["Up Tempo", "Fast", "Driving"],
-            povs: ["First Person", "Nostalgic Observer", "Collective We", "Youthful"],
-            placements: ["Coming of Age", "Period Piece", "Sporting Event", "Lifestyle Brand", "Commercial", "Summer Movie", "Teen Comedy", "Opening Credits"],
-            hashtags: ["#80sRetro", "#Vibrant", "#NeonNostalgia", "#SynthPop", "#HighEnergy"],
-            seoKeywords: ["80s style lyrics", "Retro pop anthem", "Nostalgic youth song", "80s throwback sync", "Neon vibes songwriter"],
-            description: `This track leverages heavy nostalgia and the vibrant energy of the 1980s to create a feeling of timeless freedom. It focuses on the iconography of the era and the collective memory of synth-driven radio hits. This is great because it provides an instant tonal anchor for any project needing a period-accurate feel or a retro-modern crossover. Best placement includes 80s-set Period Pieces or coming-of-age films looking for a high-energy summer vibe.`,
-            snippet1: "Neon lights and city nights", snippet2: "Living for the music feeling so alive", bestLyrics: "Best Lyrics: \"Neon lights and city nights... Living for the music feeling so alive.\" WHY: Captures the quintessential 80s aesthetic.", img: "/assets/covers/80s-anthems-cover-art.jpg"
+            tempos: ["Up Tempo"], povs: ["First Person", "Nostalgic Observer"],
+            placements: ["Period Piece", "Commercial", "Summer Movie"], hashtags: ["#80sRetro", "#Vibrant", "#NeonNostalgia"],
+            potential: "Top Radio Hit", rating: 8.5,
+            description: `Pure 80s nostalgia utilizing the high energy of synth-pop to create immediate Stranger Things vibes.`,
+            snippet: "Neon lights and city nights / Living for the music feeling so alive", 
+            bestLyrics: "Neon lights and city nights... Living for the music feeling so alive.", 
+            img: "/assets/covers/80s-anthems-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 2, title: "AUTHOR OF A LIE", genre1: "Pop", genre2: "R&B", subGenre: "Rhythmic Pop", 
-            moods: ["Confident", "Confrontational", "Analytical"], feelings: ["Strong", "Enlightened", "Vindicated"],
-            types: ["Breakup Anthem", "Narrative"], tempos: ["Mid Tempo", "Steady", "Rhythmic"],
-            povs: ["First Person", "Direct Address", "Observational", "Reliable Narrator"],
-            placements: ["Psychological Thriller", "Mystery Series", "Prestige Drama", "Reality TV", "Commercial", "Trailer", "End Credits", "Podcast Theme"],
-            hashtags: ["#Gaslighting", "#TruthTeller", "#Liar", "#PopRNB", "#Discovery"],
-            seoKeywords: ["Betrayal lyrics", "Deception song", "Evidence based lyrics", "Lyrical confrontation", "Cinematic pop R&B"],
-            description: `This narrative deconstructs the architecture of deception by contrasting specific, fabricated timelines against physical reality. The protagonist methodically picks apart a partner's whacked timeline, calling out inconsistencies such as a supposed trip to the beach in July versus the reality of gray clouds and video games. The story moves from a text sent at 2 AM to a tagged photo outside a neon bar, capturing the definitive transition from being gaslit to enlightened. It explores the finality of a 'fantasy world' coming to an end as the protagonist refuses to buy into the charade any longer.`,
-            snippet1: "You tell a story I pick it apart / Your timeline is whacked you're playing a part", snippet2: "The sun was out the clouds were gray / And you were playing video games all day", bestLyrics: "Best Lyrics: \"You tell a story I pick it apart / Your timeline is whacked you're playing a part... The sun was out the clouds were gray / And you were playing video games all day.\" WHY: These lines are the strongest because they provide a concrete, visual rebuttal to a lie.", img: "/assets/covers/author-of-a-lie-cover-art.jpg"
+            id: 2, title: "AUTHOR OF A LIE", pillar: "Raw Emotional Narrative", genre1: "Pop", genre2: "R&B", subGenre: "Rhythmic Pop", 
+            moods: ["Confident", "Confrontational", "Analytical"], feelings: ["Strong", "Enlightened"],
+            tempos: ["Mid Tempo"], povs: ["First Person", "Direct Address"],
+            placements: ["Psychological Thriller", "Mystery Series"], hashtags: ["#Gaslighting", "#TruthTeller", "#Liar"],
+            potential: "Critical Acclaim", rating: 9.2,
+            description: `This narrative deconstructs the architecture of deception by contrasting specific, fabricated timelines against physical reality.`,
+            snippet: "You tell a story I pick it apart / Your timeline is whacked you're playing a part", 
+            bestLyrics: "The sun was out the clouds were gray / And you were playing video games all day.", 
+            img: "/assets/covers/author-of-a-lie-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 3, title: "BIG HARD NO", genre1: "Country", genre2: "Pop", subGenre: "Contemporary Ballad", 
-            moods: ["Strong", "Resilient", "Decisive"], feelings: ["Healed", "Empowered", "Peaceful"],
-            types: ["Empowerment Anthem", "Character Study"], tempos: ["Mid Tempo", "Flowing", "Build-up"],
-            povs: ["First Person", "Direct Address", "Empowered Survivor", "Reflective"],
-            placements: ["Character Pivot", "Divorce Drama", "Romance", "Indie Film", "Ending Scene", "Montage", "Trailer", "Lifestyle Commercial"],
-            hashtags: ["#MovingOn", "#NoContact", "#SelfRespect", "#CountryPop", "#Healing"],
-            seoKeywords: ["Empowerment country lyrics", "Rejecting an ex song", "Strong female lead music", "Healing from betrayal song", "Self-worth country pop"],
-            description: `The narrative centers on a firm, empowered rejection of a former partner attempting to manipulate their way back into the protagonist's life. It details a history of betrayal, remembering the moment the antagonist walked out for someone else and left the protagonist shattered on the floor. The lyrics describe a journey from weakness to finding a peace from deep within, guided by a desire for something bigger and better. It is a story of absolute finality, closing a door that will never be reopened.`,
-            snippet1: "Happier now, more than I've ever been / Found a peace from deep within", snippet2: "Found the strength to stand up off the floor / Now I'm the one who's closing up the door", bestLyrics: "Best Lyrics: \"Happier now, more than I've ever been... Found a peace from deep within.\" WHY: These lines serve as the emotional climax, moving the story from the pain of the past to the victory of the present.", img: "/assets/covers/big-hard-no-cover-art.jpg"
+            id: 3, title: "BIG HARD NO", pillar: "Anthemic Empowerment", genre1: "Country", genre2: "Pop", subGenre: "Contemporary Ballad", 
+            moods: ["Strong", "Resilient", "Decisive"], feelings: ["Healed", "Peaceful"],
+            tempos: ["Mid Tempo"], povs: ["First Person", "Empowered Survivor"],
+            placements: ["Character Pivot", "Divorce Drama"], hashtags: ["#MovingOn", "#NoContact", "#SelfRespect"],
+            potential: "Top Radio Hit", rating: 9.5,
+            description: `The narrative centers on a firm, empowered rejection of a former partner attempting to manipulate their way back into the protagonist's life.`,
+            snippet: "Happier now, more than I've ever been / Found a peace from deep within", 
+            bestLyrics: "Found the strength to stand up off the floor / Now I'm the one who's closing up the door.", 
+            img: "/assets/covers/big-hard-no-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 4, title: "BOOM BOOM BEAT", genre1: "Pop", genre2: "Dance", subGenre: "Rhythmic Pop", 
-            moods: ["Energetic", "Fun", "Playful"], feelings: ["Excited", "Confident", "Vibrant"],
-            types: ["Lifestyle Track", "Party Anthem"], tempos: ["Up Tempo", "Fast", "Driving"],
-            povs: ["First Person", "Direct Address", "Youthful", "Energetic Narrator"],
-            placements: ["Commercial", "Fashion", "Sports Promo", "Summer Montage", "Club Scene", "Reality TV", "Teens", "Lifestyle"],
-            hashtags: ["#HighEnergy", "#PopDance", "#SummerVibes", "#BoomBoom", "#PartyMusic"],
-            seoKeywords: ["Upbeat pop sync", "High energy dance lyrics", "Summer party song", "Fashion runway music", "Youthful pop songwriter"],
-            description: `Boom Boom Beat is a high-octane celebration of rhythm and personal momentum. The lyrics focus on the visceral feeling of a heart playing a beautiful beat when meeting a significant other or just feeling the energy of the moment. It utilizes onomatopoeia and rhythmic hooks to mimic the pulse of a thriving city or a crowded room. The narrative is simple but effective, focusing on the 'ephemeral moment' where everything feels right and the music takes control.`,
-            snippet1: "But when we meet my heart plays a beautiful beat / Boom boom boom da boom boom boom", snippet2: "You are mine Yo de lee eee ooohhh boom boom boom", bestLyrics: "Best Lyrics: \"But when we meet my heart plays a beautiful beat / Boom boom boom da boom boom boom.\" WHY: The simplicity of the 'boom boom' motif combined with the 'heart beat' metaphor makes this instantly accessible.", img: "/assets/covers/boom-boom-beat-cover-art.jpg"
+            id: 4, title: "BOOM BOOM BEAT", pillar: "Kinetic Energy / Fun", genre1: "Pop", genre2: "Dance", subGenre: "Rhythmic Pop", 
+            moods: ["Energetic", "Fun", "Playful"], feelings: ["Confident", "Vibrant"],
+            tempos: ["Fast", "Up Tempo"], povs: ["First Person", "Energetic Narrator"],
+            placements: ["Commercial", "Fashion", "Sports Promo"], hashtags: ["#HighEnergy", "#PopDance", "#SummerVibes"],
+            potential: "Top Radio Hit", rating: 8.8,
+            description: `Boom Boom Beat is a high-octane celebration of rhythm and personal momentum. The lyrics focus on the visceral feeling of a heart playing a beautiful beat.`,
+            snippet: "But when we meet my heart plays a beautiful beat / Boom boom boom da boom boom boom", 
+            bestLyrics: "You are mine Yo de lee eee ooohhh boom boom boom.", 
+            img: "/assets/covers/boom-boom-beat-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 5, title: "BOTTOM OF THE WISHING WELL", genre1: "Country", genre2: "Narrative", subGenre: "Murder Ballad", 
-            moods: ["Dark", "Dramatic", "Eerie"], feelings: ["Haunted", "Tragic", "Cold"],
-            types: ["Murder Ballad", "Story Song"], tempos: ["Mid Tempo", "Steady", "Tension-building"],
-            povs: ["Third Person", "Narrator", "Objective Observer", "Storyteller"],
-            placements: ["True Crime Documentary", "Crime Drama", "Southern Gothic", "Mystery Series", "Thriller Trailer", "Ending Twist", "Dark Comedy", "Podcast Theme"],
-            hashtags: ["#MurderBallad", "#WishingWell", "#DarkStory", "#Tragedy", "#ColdCase"],
-            seoKeywords: ["Murder ballad lyrics", "Dark country storytelling", "Songs about crime and death", "Eerie wishing well song", "Cinematic crime sync"],
-            description: `A dark narrative murder ballad following Belle as she hurries to meet her lover on the streets of Amsterdam. The narrative subverts the tradition of a 'wishing well' for luck, turning it into a grave where both Belle and her lover lay motionless after a violent plunge. Irony is heavy as 'both of their wishes came true' in a shared grave, suggesting a tragic end to a secret or forbidden romance. The lyrics paint a cold, damp picture of the scene, allowing the water to be the only witness to the secrets kept by the pair.`,
-            snippet1: "Oh poor lil Belle at the bottom of the wishing well / Her secrets now only the water can tell", snippet2: "They lay there so still in their watery home / Where the wishes they made are now etched into stone", bestLyrics: "Best Lyrics: \"Oh poor lil Belle at the bottom of the wishing well / Her secrets now only the water can tell.\" WHY: These lines establish the setting and the stakes immediately. The personification of the water as the 'keeper of secrets' adds a layer of supernatural weight.", img: "/assets/covers/bottom-of-the-wishing-well-cover-art.jpg"
+            id: 5, title: "BOTTOM OF THE WISHING WELL", pillar: "Cinematic Storytelling", genre1: "Country", genre2: "Folk", subGenre: "Murder Ballad", 
+            moods: ["Dark", "Dramatic", "Eerie"], feelings: ["Tragic", "Cold"],
+            tempos: ["Slow", "Steady"], povs: ["Third Person", "Narrator"],
+            placements: ["True Crime Documentary", "Crime Drama"], hashtags: ["#MurderBallad", "#WishingWell", "#DarkStory"],
+            potential: "Critical Acclaim", rating: 9.8,
+            description: `A dark narrative murder ballad following Belle as she hurries to meet her lover on the streets of Amsterdam to a shared watery grave.`,
+            snippet: "Oh poor lil Belle at the bottom of the wishing well / Her secrets now only the water can tell", 
+            bestLyrics: "They lay there so still in their watery home / Where the wishes they made are now etched into stone.", 
+            img: "/assets/covers/bottom-of-the-wishing-well-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 6, title: "BROKEN BAD", genre1: "Country", genre2: "Mood", subGenre: "Contemporary Ballad", 
-            moods: ["Bitter", "Sad", "Resigned"], feelings: ["Exhausted", "Numb", "Defeated"],
-            types: ["Heartbreak Ballad", "Narrative"], tempos: ["Slow", "Static", "Heavy"],
-            povs: ["First Person", "Direct Address", "Exhausted Narrator", "Final Appeal"],
-            placements: ["Rock Bottom", "Final Argument", "Divorce Drama", "Ending Scene", "Depression Arc", "Sad Promo", "Tragic Romance", "Relationship Finale"],
-            hashtags: ["#ExhaustedLove", "#BreakingPoint", "#TooMuch", "#BrokenBad", "#CountryHeartbreak"],
-            seoKeywords: ["Songs about reaching the breaking point", "Exhausted relationship lyrics", "Country ballads for sad scenes", "Relationship rock bottom music", "Final goodbye lyrics"],
-            description: `This narrative focuses on the heavy, static aftermath of a relationship performance that has finally reached its end. The protagonist describes a state of being 'stuck in a bubble' and 'blowing bubbles alone,' signaling total isolation and exhaustion from constant fighting and the theft of peace. It explores the 'suffocating quiet' and the sensory sting of abandonment, where the partner has become a 'ghost' or a 'whisper' that leaves a recurring sting.`,
-            snippet1: "Too much fighting, too much disrespect / Too much lying no truth to detect", snippet2: "It's broken bad between us it's true / We can't undo It's just too much for me and for you", bestLyrics: "Best Lyrics: \"Too much lying no truth to detect... It's broken bad between us it's true.\" WHY: The phrase 'no truth to detect' provides a modern, almost clinical finality to the relationship's death.", img: "/assets/covers/just-too-much-cover-art.jpg"
+            id: 6, title: "BROKEN BAD", pillar: "Raw Emotional Narrative", genre1: "Country", genre2: "Pop", subGenre: "Ballad", 
+            moods: ["Bitter", "Sad", "Resigned"], feelings: ["Exhausted", "Numb"],
+            tempos: ["Slow"], povs: ["First Person", "Exhausted Narrator"],
+            placements: ["Rock Bottom", "Relationship Finale"], hashtags: ["#ExhaustedLove", "#BreakingPoint", "#TooMuch"],
+            potential: "Critical Acclaim", rating: 8.9,
+            description: `This narrative focuses on the heavy, static aftermath of a relationship performance that has finally reached its end.`,
+            snippet: "Too much fighting, too much disrespect / Too much lying no truth to detect", 
+            bestLyrics: "It's broken bad between us it's true / We can't undo It's just too much for me and for you.", 
+            img: "/assets/covers/just-too-much-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 7, title: "CEO NOT BABYSITTING TREE", genre1: "Pop", genre2: "R&B", subGenre: "Urban Pop", 
-            moods: ["Sassy", "Confident", "Boss"], feelings: ["Powerful", "Unbothered", "Independent"],
-            types: ["Empowerment Anthem", "Lifestyle"], tempos: ["Fast", "Rhythmic", "Upbeat"],
-            povs: ["First Person", "Direct Address", "Superior", "Professional"],
-            placements: ["Walk-in Anthem", "Fashion Scene", "Business Drama", "Reality TV", "Commercial", "Makeover Montage", "Club Scene", "Podcast Intro"],
-            hashtags: ["#BossBabe", "#CEO", "#NoFreeShade", "#IndependentWoman", "#Hustle"],
-            seoKeywords: ["Boss female pop lyrics", "CEO empowerment song", "Songs about hustle and business", "Independent woman R&B", "Sassy business sync"],
-            description: `A sharp manifesto on self-valuation and the refusal to provide emotional labor for those who do not contribute to growth. The 'babysitting tree' metaphor critiques those who want the 'shade' of success without planting the 'seed' of effort. The narrative contrasts a protagonist who is 'hustling racking stacks' with an antagonist asking to 'chill at my crib' because their parents are still awake. It is an unapologetic declaration of boundaries.`,
-            snippet1: "Honey I'm a CEO not a babysitting tree / You want the shade without planting the seed", snippet2: "I'm busy stacking while you're just slacking / No room in my world for the weight you're packing", bestLyrics: "Best Lyrics: \"Honey I'm a CEO not a babysitting tree / You want the shade without planting the seed.\" WHY: This is the definitive hook. The 'shade vs. seed' metaphor is a high-level lyrical concept that clearly defines the value proposition.", img: "/assets/covers/ceo-not-babysitting-tree-cover-art.jpg"
+            id: 7, title: "CEO NOT BABYSITTING TREE", pillar: "Cinematic Storytelling", genre1: "Pop", genre2: "R&B", subGenre: "Urban Pop", 
+            moods: ["Sassy", "Confident", "Boss"], feelings: ["Powerful", "Unbothered"],
+            tempos: ["Fast", "Upbeat"], povs: ["First Person", "Superior"],
+            placements: ["Walk-in Anthem", "Business Drama"], hashtags: ["#BossBabe", "#CEO", "#NoFreeShade"],
+            potential: "Top Radio Hit", rating: 9.4,
+            description: `A sharp manifesto on self-valuation and the refusal to provide emotional labor for those who do not contribute to growth.`,
+            snippet: "Honey I'm a CEO not a babysitting tree / You want the shade without planting the seed", 
+            bestLyrics: "I'm busy stacking while you're just slacking / No room in my world for the weight you're packing.", 
+            img: "/assets/covers/ceo-not-babysitting-tree-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 8, title: "CHILDREN OF WAR", genre1: "Cinematic", genre2: "Folk", subGenre: "Cinematic Ballad", 
-            moods: ["Haunting", "Sad", "Urgent"], feelings: ["Heartbroken", "Compassionate", "Desperate"],
-            types: ["Social Commentary", "Soundtrack"], tempos: ["Slow", "Atmospheric", "Plaintive"],
-            povs: ["Third Person", "Observational Narrator", "Witness", "Compassionate Observer"],
-            placements: ["Social Advocacy", "Documentary", "War Film", "History Drama", "News Montage", "Emotional Scene", "End Credits", "Charity Campaign"],
-            hashtags: ["#PeaceNow", "#HumanRights", "#InnocenceLost", "#AntiWar", "#ChildrenOfWar"],
-            seoKeywords: ["Anti-war song lyrics", "Haunting cinematic folk", "Songs about children in conflict", "Social justice sync music", "Emotional humanitarian lyrics"],
-            description: `A devastating examination of the human cost of conflict, focusing on the loss of innocence and the physical destruction of the familiar. The lyrics describe playgrounds becoming graveyards and small feet running from blasts in 'broken-down houses' while dust turns day into night. It critiques the failure of peace talks, emphasizing how the 'helpless and small' carry the burden of wars started by leaders who 'turn out the lights.'`,
-            snippet1: "Run little children there's nothing left here / The playground's a grave and the sky is full of fear", snippet2: "Leaders turn out the lights and go hide / While the innocent children are trapped on the inside", bestLyrics: "Best Lyrics: \"Leaders turn out the lights and go hide / While the innocent children are trapped on the inside.\" WHY: These lines provide the sharpest critique of authority in the song.", img: "/assets/covers/children-of-war-cover-art.jpg"
+            id: 8, title: "CHILDREN OF WAR", pillar: "Cinematic Storytelling", genre1: "Cinematic", genre2: "Folk", subGenre: "Cinematic Ballad", 
+            moods: ["Haunting", "Sad", "Urgent"], feelings: ["Heartbroken", "Compassionate"],
+            tempos: ["Slow", "Plaintive"], povs: ["Third Person", "Observational Narrator"],
+            placements: ["Social Advocacy", "Documentary"], hashtags: ["#PeaceNow", "#HumanRights", "#InnocenceLost"],
+            potential: "Critical Acclaim", rating: 9.9,
+            description: `A devastating examination of the human cost of conflict, focusing on the loss of innocence and the physical destruction of the familiar.`,
+            snippet: "Run little children there's nothing left here / The playground's a grave and the sky is full of fear", 
+            bestLyrics: "Leaders turn out the lights and go hide / While the innocent children are trapped on the inside.", 
+            img: "/assets/covers/children-of-war-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 9, title: "CONCRETE UNDER OUR FEET", genre1: "Rock", genre2: "Alternative", subGenre: "Urban Rock", 
-            moods: ["Introspective", "Cool", "Grounded"], feelings: ["Streetwise", "Connected", "Authentic"],
-            types: ["Urban Drama", "Lifestyle Track"], tempos: ["Mid Tempo", "Driving", "Steady"],
-            povs: ["First Person", "Conversational", "Observational", "Partner"],
-            placements: ["Urban Drama", "City Montage", "Night Scene", "Romance", "Lifestyle Promo", "Opening Credits", "Coming of Age", "Travel"],
-            hashtags: ["#CityLife", "#RealLove", "#NoClout", "#UrbanGrounded", "#RooftopVibes"],
-            seoKeywords: ["Urban rock lyrics about love", "City night scene music", "Songs about real connection", "Anti-clout song lyrics", "Grounded urban sync music"],
-            description: `This track explores the search for authentic connection within a 'digital blur,' prioritizing physical presence over online clout. It utilizes the 'concrete under our feet' as a grounding metaphor for reality. The narrative moves from the 'flash' of a squad to a private rooftop conversation where two people build something real, rejecting 'digital clout' for actual human presence. The lyrics celebrate the simple beauty of a city night when the noise of social media is silenced.`,
-            snippet1: "It ain't about the clout the flash the scene / It's the concrete under our feet and the space between", snippet2: "Let the city lights blur and the world go dim / I'm finding my center in the middle of him", bestLyrics: "Best Lyrics: \"It ain't about the clout the flash the scene / It's the concrete under our feet and the space between.\" WHY: This line serves as the song's thesis. It explicitly rejects modern performative culture.", img: "/assets/covers/concrete-under-our-feet-cover-art.jpg"
+            id: 9, title: "CONCRETE UNDER OUR FEET", pillar: "Cinematic Storytelling", genre1: "Rock", genre2: "Alternative", subGenre: "Urban Rock", 
+            moods: ["Introspective", "Cool", "Grounded"], feelings: ["Streetwise", "Connected"],
+            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Conversational"],
+            placements: ["Urban Drama", "City Montage"], hashtags: ["#CityLife", "#RealLove", "#NoClout"],
+            potential: "Critical Acclaim", rating: 8.7,
+            description: `This track explores the search for authentic connection within a 'digital blur,' prioritizing physical presence over online clout.`,
+            snippet: "It ain't about the clout the flash the scene / It's the concrete under our feet and the space between", 
+            bestLyrics: "Let the city lights blur and the world go dim / I'm finding my center in the middle of him.", 
+            img: "/assets/covers/concrete-under-our-feet-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 10, title: "CRAVING THOSE CRUMBS", genre1: "Country", genre2: "Pop", subGenre: "Contemporary Ballad", 
-            moods: ["Confident", "Disenchanted", "Strong"], feelings: ["Vulnerable", "Exhausted", "Wise"],
-            types: ["Breakup Song", "Empowerment Ballad"], tempos: ["Slow", "Steady", "Flowing"],
-            povs: ["First Person", "Direct Address", "Done", "Reflective"],
-            placements: ["Toxic Relationship Scene", "Dramedy", "Reality TV", "Breakup Montage", "End Credits", "Commercial", "Coming of Age", "Bar Scene"],
-            hashtags: ["#KnowYourWorth", "#NoMoreCrumbs", "#MovingOn", "#SelfLove", "#CountryBreakup"],
-            seoKeywords: ["Songs about not settling for crumbs", "Toxic relationship country lyrics", "Breaking the cycle of lies song", "Strong woman breakup ballad", "Empowerment sync country pop"],
-            description: `A raw dissection of the exhaustion that follows a toxic relationship cycle. The lyrics describe an ex-partner who 'pops in' to start fights, creating a 'pure hell' atmosphere where the protagonist is pushed from 'sadness into madness.' It highlights the moment of taking back worth and refusing to survive on 'crumbs' of affection from a 'man-child' who refuses to engage in honest conversation.`,
-            snippet1: "Too much thinking I gotta stop craving those crumbs / From a man-child who leaves me numb", snippet2: "Reclaiming my light from the shade you were throwing / I'm finally gone and I'm finally growing", bestLyrics: "Best Lyrics: \"I gotta stop craving those crumbs / From a man-child who leaves me numb.\" WHY: The 'crumbs' metaphor perfectly captures the bread-crumbing phenomenon in modern dating.", img: "/assets/covers/craving-those-crumbs-cover-art.jpg"
+            id: 10, title: "CRAVING THOSE CRUMBS", pillar: "Raw Emotional Narrative", genre1: "Country", genre2: "Pop", subGenre: "Contemporary Ballad", 
+            moods: ["Confident", "Disenchanted", "Strong"], feelings: ["Vulnerable", "Exhausted"],
+            tempos: ["Slow", "Steady"], povs: ["First Person", "Direct Address"],
+            placements: ["Toxic Relationship Scene", "Dramedy"], hashtags: ["#KnowYourWorth", "#NoMoreCrumbs", "#MovingOn"],
+            potential: "Top Radio Hit", rating: 8.6,
+            description: `A raw dissection of the exhaustion that follows a toxic relationship cycle and the moment of taking back self-worth.`,
+            snippet: "Too much thinking I gotta stop craving those crumbs / From a man-child who leaves me numb", 
+            bestLyrics: "Reclaiming my light from the shade you were throwing / I'm finally gone and I'm finally growing.", 
+            img: "/assets/covers/craving-those-crumbs-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 11, title: "DON'T BE JELLY", genre1: "Country", genre2: "Dance", subGenre: "Contemporary Upbeat", 
-            moods: ["Fun", "Playful", "Confident"], feelings: ["Sassy", "Happy", "Energetic"],
-            types: ["Party Anthem", "Viral Track"], tempos: ["Fast", "Bouncy", "Driving"],
-            povs: ["First Person", "Direct Address", "Leader", "Youthful"],
-            placements: ["Viral Dance", "Reality TV Intro", "Teen Comedy", "Summer Montage", "Lifestyle Commercial", "Club Scene", "Party", "Podcast Intro"],
-            hashtags: ["#DontBeJelly", "#PureEnergy", "#SassyCountry", "#LineDance", "#Confidence"],
-            seoKeywords: ["Upbeat sassy country lyrics", "Fun party pop country", "Songs about confidence and sass", "Viral dance song country pop", "Empowering fun music sync"],
-            description: `An assertive manifesto on self-confidence and the refusal to be held down by drama or rodeo clowns. The narrative describes a 'wild untamed machine' who lives her truth unapologetically and has 'no room for that petty scene.' It utilizes dance metaphors (hips left, stomp, kick, slide) as a physical rejection of insecurity and establishes synergy as 'pure energy.' The tone is high-octane and infectious.`,
-            snippet1: "I live my truth un-freakin'-apologetically / Don't be jelly of my energy", snippet2: "Hips to the left now stomp and slide / I'm taking this world for a beautiful ride", bestLyrics: "Best Lyrics: \"I live my truth un-freakin'-apologetically / Don't be jelly of my energy.\" WHY: The use of 'un-freakin'-apologetically' adds a conversational, gritty texture.", img: "/assets/covers/dont-be-jelly-cover-art.jpg"
+            id: 11, title: "DON'T BE JELLY", pillar: "Kinetic Energy / Fun", genre1: "Country", genre2: "Dance", subGenre: "Contemporary Upbeat", 
+            moods: ["Fun", "Playful", "Confident"], feelings: ["Happy", "Energetic"],
+            tempos: ["Fast", "Bouncy"], povs: ["First Person", "Direct Address"],
+            placements: ["Viral Dance", "Reality TV Intro"], hashtags: ["#DontBeJelly", "#PureEnergy", "#SassyCountry"],
+            potential: "Top Radio Hit", rating: 9.0,
+            description: `An assertive manifesto on self-confidence and the refusal to be held down by drama or rodeo clowns.`,
+            snippet: "I live my truth un-freakin'-apologetically / Don't be jelly of my energy", 
+            bestLyrics: "Hips to the left now stomp and slide / I'm taking this world for a beautiful ride.", 
+            img: "/assets/covers/dont-be-jelly-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 12, title: "EPHEMERAL MOMENT", genre1: "Pop", genre2: "Folk", subGenre: "Contemporary Acoustic", 
-            moods: ["Romantic", "Dreamy", "Sweet"], feelings: ["Love", "Longing", "Connected"],
-            types: ["Love Song", "Ballad"], tempos: ["Slow", "Flowing", "Atmospheric"],
-            povs: ["First Person", "Enamored", "Partner", "Direct Address"],
-            placements: ["Meet Cute", "Wedding Scene", "Romance Scene", "Summer Movie", "Indie Film", "Travel Montage", "Lifestyle Commercial", "Intro Credits"],
-            hashtags: ["#LoveSong", "#SweetMoments", "#Connected", "#RomanticPop", "#HeartBeat"],
-            seoKeywords: ["Sweet love song lyrics", "Contemporary acoustic pop sync", "Romantic meet cute music", "Songs about missing someone", "Indie love ballad sync"],
-            description: `Ephemeral Moment is a sweet, rhythmic expression of the 'butterfly' phase of a relationship. The lyrics focus on the simple desire to be in the same space as a partner, waiting for the dawn to say how much they were missed. It uses a playful heartbeat motif ('boom boom boom') to mimic the physical sensation of love. The narrative is innocent and sincere, capturing a world where time away is a burden.`,
-            snippet1: "I don't want to be away from you longer than I have to / My heart plays a beautiful beat", snippet2: "Just so I can hear you say that you missed me too / All mine da boom boom boom", bestLyrics: "Best Lyrics: \"I don't want to be away from you longer than I have to / My heart plays a beautiful beat.\" WHY: These lines express a universal romantic sentiment with simple, effective clarity.", img: "/assets/covers/ephemeral-moment-cover-art.jpg"
+            id: 12, title: "EPHEMERAL MOMENT", pillar: "Kinetic Energy / Fun", genre1: "Pop", genre2: "Folk", subGenre: "Contemporary Acoustic", 
+            moods: ["Romantic", "Dreamy", "Sweet"], feelings: ["Love", "Longing"],
+            tempos: ["Slow", "Flowing"], povs: ["First Person", "Enamored"],
+            placements: ["Meet Cute", "Wedding Scene"], hashtags: ["#LoveSong", "#SweetMoments", "#Connected"],
+            potential: "Top Radio Hit", rating: 8.2,
+            description: `Ephemeral Moment is a sweet, rhythmic expression of the 'butterfly' phase of a relationship and waiting for the dawn.`,
+            snippet: "I don't want to be away from you longer than I have to / My heart plays a beautiful beat", 
+            bestLyrics: "Just so I can hear you say that you missed me too / All mine da boom boom boom.", 
+            img: "/assets/covers/ephemeral-moment-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 13, title: "ETCHED IN EVERY SPACE", genre1: "Country", genre2: "Contemporary", subGenre: "Cinematic Ballad", 
-            moods: ["Mournful", "Sad", "Haunting"], feelings: ["Broken", "Anxious", "Longing"],
-            types: ["Grief Song", "Ballad"], tempos: ["Slow", "Static", "Plaintive"],
-            povs: ["First Person", "Bereaved", "Isolated", "Grieving"],
-            placements: ["Grief Scene", "Funeral Scene", "Empty House Montage", "Internal Crisis", "Hospital Drama", "Indie Film", "End Credits", "Sad Trailer"],
-            hashtags: ["#Grief", "#Memory", "#EtchedInSpace", "#Heartbreak", "#CountryBallad"],
-            seoKeywords: ["Songs about grieving a partner", "Sinking sand grief lyrics", "Empty house sad songs", "Mournful country ballad sync", "Grief and anxiety lyrics"],
-            description: `A deeply personal exploration of grief and the sensory haunting of a home following the loss of a loved one. The narrative contrasts vivid, sweet memories—a quirky smile and stories that went for days—with the reality of a 'barren land' where the protagonist feels like they are in 'sinking sand.' It captures the stress and anxiety that burn like fire in the veins when a steady flame is gone.`,
-            snippet1: "Oh I miss your stupid face! It’s etched in every space / I feel like I'm in sinking sand", snippet2: "Stress and anxiety burning like fire / While the world goes dim and my heart grows tired", bestLyrics: "Best Lyrics: \"Oh I miss your stupid face! It’s etched in every space.\" WHY: The term 'stupid face' is a brilliant lyrical choice—it’s an affectionate, real-world detail that makes the grief feel authentic.", img: "/assets/covers/etched-in-every-space-cover-art.jpg"
+            id: 13, title: "ETCHED IN EVERY SPACE", pillar: "Raw Emotional Narrative", genre1: "Country", genre2: "Contemporary", subGenre: "Cinematic Ballad", 
+            moods: ["Mournful", "Sad", "Haunting"], feelings: ["Broken", "Anxious"],
+            tempos: ["Slow", "Static"], povs: ["First Person", "Bereaved"],
+            placements: ["Grief Scene", "Funeral Scene"], hashtags: ["#Grief", "#Memory", "#EtchedInSpace"],
+            potential: "Critical Acclaim", rating: 9.3,
+            description: `A deeply personal exploration of grief and the sensory haunting of a home following the loss of a loved one.`,
+            snippet: "Oh I miss your stupid face! It’s etched in every space / I feel like I'm in sinking sand", 
+            bestLyrics: "Stress and anxiety burning like fire / While the world goes dim and my heart grows tired.", 
+            img: "/assets/covers/etched-in-every-space-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 14, title: "FURY (I'M THE MONSTER)", genre1: "Rock", genre2: "Metal", subGenre: "Cinematic Metal", 
-            moods: ["Heavy", "Bitter", "Intense"], feelings: ["Angry", "Furious", "Resilient"],
-            types: ["Revenge Track", "Escape Anthem"], tempos: ["Fast", "Driving", "Aggressive"],
-            povs: ["First Person", "Survivor", "Aggressor for Survival", "Direct Address"],
-            placements: ["Action Scene", "Domestic Thriller", "Revenge Arc", "Escape Sequence", "Trailer", "Gritty Promo", "Fight Montage", "Character Reveal"],
-            hashtags: ["#Fury", "#ImTheMonster", "#BreakingPoint", "#Survivor", "#IntenseRock"],
-            seoKeywords: ["Aggressive rock songs for survivors", "Fury cinematic metal lyrics", "Songs about domestic escape", "Intense female revenge music", "Escaping a monster lyrics"],
-            description: `A visceral and intense narrative focusing on the escape from domestic violence and the reclamation of power through a 'monster' persona. The lyrics describe a cycle of fists, screams, and insults, moving toward a moment of clarity where the protagonist decides to 'roll right over your body and run right out the door.' It captures the pivot from being property under someone's control to adopting a protective, aggressive persona for survival.`,
-            snippet1: "Your fists a never-ending show / Now I'm the monster that you used to know", snippet2: "Roll right over your body and run / Finally finished and finally done", bestLyrics: "Best Lyrics: \"Now I'm the monster that you used to know... Roll right over your body and run.\" WHY: These lines subvert the roles of victim and aggressor.", img: "/assets/covers/fury-im-the-monster-cover-art.jpg"
+            id: 14, title: "FURY (I'M THE MONSTER)", pillar: "Anthemic Empowerment", genre1: "Rock", genre2: "Metal", subGenre: "Cinematic Metal", 
+            moods: ["Heavy", "Bitter", "Intense"], feelings: ["Furious", "Resilient"],
+            tempos: ["Fast", "Aggressive"], povs: ["First Person", "Survivor"],
+            placements: ["Action Scene", "Domestic Thriller"], hashtags: ["#Fury", "#ImTheMonster", "#BreakingPoint"],
+            potential: "Top Radio Hit", rating: 9.6,
+            description: `A visceral and intense narrative focusing on the escape from domestic violence and the reclamation of power through a 'monster' persona.`,
+            snippet: "Your fists a never-ending show / Now I'm the monster that you used to know", 
+            bestLyrics: "Roll right over your body and run / Finally finished and finally done.", 
+            img: "/assets/covers/fury-im-the-monster-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 15, title: "HEARTBREAK AND TROUBLE", genre1: "Pop", genre2: "R&B", subGenre: "Contemporary", 
-            moods: ["Sad", "Exhausted", "Disillusioned"], feelings: ["Heartbroken", "Trapped", "Stuck"],
-            types: ["Breakup Song", "Ballad"], tempos: ["Mid Tempo", "Static", "Steady"],
-            povs: ["First Person", "Direct Address", "Exhausted Partner", "Observer"],
-            placements: ["Breakup Scene", "Dramedy", "Empty House Montage", "Night Scene", "Romance Drama", "Transition", "Crisis", "End Credits"],
-            hashtags: ["#Heartbreak", "#Trouble", "#BubbleOfSadness", "#MovingOn", "#ExhaustedLove"],
-            seoKeywords: ["Songs about heartbreak and trouble", "Bubble of sadness lyrics", "Exhausted breakup pop song", "Thief of my peace lyrics", "Cinematic pop R&B for sync"],
-            description: `The narrative centers on the realization that a partner is nothing but a 'thief of peace' and a 'thief of heart.' The protagonist describes being stuck in a bubble of sadness, blowing bubbles alone while the partner pops in and out of their life like an unreliable ghost. It highlights the exhaustion of trying to figure out a 'tired story' that is getting too old, utilizing specific, mundane details like Hubba Bubba gum.`,
-            snippet1: "I must really love nothing I'm stuck In a bubble / BlowIng bubbles alone no fire to light my way", snippet2: "You're a thief of my peace a thief of my heart / poppIng In and out boy you're trouble", bestLyrics: "Best Lyrics: \"I'm stuck in a bubble... blowing bubbles alone no fire to light my way.\" WHY: The 'bubble' metaphor is a beautiful way to describe isolation and fragility.", img: "/assets/covers/heartbreak-and-trouble-cover-art.jpg"
+            id: 15, title: "HEARTBREAK AND TROUBLE", pillar: "Kinetic Energy / Fun", genre1: "Pop", genre2: "R&B", subGenre: "Contemporary", 
+            moods: ["Sad", "Exhausted", "Disillusioned"], feelings: ["Heartbroken", "Trapped"],
+            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Exhausted Partner"],
+            placements: ["Breakup Scene", "Dramedy"], hashtags: ["#Heartbreak", "#Trouble", "#BubbleOfSadness"],
+            potential: "Top Radio Hit", rating: 8.4,
+            description: `The narrative centers on the realization that a partner is nothing but a 'thief of peace' and a 'thief of heart.'`,
+            snippet: "I must really love nothing I'm stuck In a bubble / BlowIng bubbles alone no fire to light my way", 
+            bestLyrics: "You're a thief of my peace a thief of my heart / poppIng In and out boy you're trouble.", 
+            img: "/assets/covers/heartbreak-and-trouble-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 16, title: "HIT THE ROAD", genre1: "Pop", genre2: "Rock", subGenre: "Anthem", 
-            moods: ["Empowered", "Strong", "Defiant"], feelings: ["Done", "Relieved", "Resilient"],
-            types: ["Empowerment Anthem", "Breakup Track"], tempos: ["Up Tempo", "Fast", "Driving"],
-            povs: ["First Person", "Direct Address", "Self-Actualized", "Survivor"],
-            placements: ["Breakup Montage", "Coming of Age", "TV Series Promo", "End Credits", "Commercial", "Glow-up Arc", "Action Romance", "Divorce Drama"],
-            hashtags: ["#HitTheRoad", "#BlockedEx", "#NoLuck", "#MovingForward", "#StrongWoman"],
-            seoKeywords: ["Strong female breakup anthem", "Songs about blocking an ex", "Hit the road Jack modern lyrics", "Empowering rock pop for sync", "Glow up scene music"],
-            description: `An empowering anthem about finally kicking a toxic partner out and embracing the relief of their absence. The protagonist recalls nights of lies and mental games, declaring that the time for being a 'fool' is officially over. With a definitive 'Hit the road, Jack,' she rejects any attempts at reconciliation, laughing at the idea of a DM and celebrating the fact that her friends always despised the partner anyway.`,
-            snippet1: "Don't stop don't look back / HIt the road Jack / I don't want you back", snippet2: "Haha I blocked you on all that stuff / You thInk I stIll have feelIngs Haha you're out of luck", bestLyrics: "Best Lyrics: \"Haha I blocked you on all that stuff... you're out of luck.\" WHY: The conversational 'haha' and the reference to 'blocking' ground the song in modern digital relationship dynamics.", img: "/assets/covers/hit-the-road-cover-art.jpg"
+            id: 16, title: "HIT THE ROAD", pillar: "Anthemic Empowerment", genre1: "Pop", genre2: "Rock", subGenre: "Anthem", 
+            moods: ["Empowered", "Strong", "Defiant"], feelings: ["Done", "Relieved"],
+            tempos: ["Up Tempo", "Fast"], povs: ["First Person", "Self-Actualized"],
+            placements: ["Breakup Montage", "Coming of Age"], hashtags: ["#HitTheRoad", "#BlockedEx", "#NoLuck"],
+            potential: "Top Radio Hit", rating: 8.9,
+            description: `An empowering anthem about finally kicking a toxic partner out and embracing the relief of their absence.`,
+            snippet: "Don't stop don't look back / HIt the road Jack / I don't want you back", 
+            bestLyrics: "Haha I blocked you on all that stuff / You thInk I stIll have feelIngs Haha you're out of luck.", 
+            img: "/assets/covers/hit-the-road-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         },
         { 
-            id: 17, title: "HOW'S IT FEEL, BRO?", genre1: "Pop", genre2: "Hip-Hop", subGenre: "Contemporary", 
-            moods: ["Confident", "Revenge-oriented", "Confrontational"], feelings: ["Spiteful", "Vindicated", "Unbothered"],
-            types: ["Confrontation Song", "Lifestyle Track"], tempos: ["Mid Tempo", "Steady", "Groovy"],
-            povs: ["First Person", "Direct Address", "Whistleblower", "Cynical"],
-            placements: ["Confrontation Scene", "Urban Drama", "Revenge", "Comedy", "Reality TV", "Club Scene", "Transition", "End Credits"],
-            hashtags: ["#HowsItFeel", "#Karma", "#Boomerang", "#NoMoreLies", "#UrbanPop"],
-            seoKeywords: ["Songs about reversing manipulation", "Confronting an ex hip hop pop", "Karma lyrics for ex bro", "Boomerang of karma song", "Lies and flat tire excuses lyrics"],
-            description: `A sharp, confrontational narrative centering on the reversal of manipulative tactics within a relationship built on weak excuses. The protagonist calls out 'whack' stories about flat tires and dead batteries, contrasting them with the reality of 'creeping all night long.' It explores the hypocrisy of an antagonist who gets 'hostile' when questioned, even though he was the one 'spinning that s**t' in the first place.`,
-            snippet1: "You're always spinning that sht but I'm boomeranging it back and like glue it sticks", snippet2: "Even my shadow is standing different while I’m calling out your future admissions", bestLyrics: "Best Lyrics: \"Even my shadow is standing different while I’m calling out your future admissions.\" WHY: This is a visually evocative line that suggests a deep, cellular change in the protagonist.", img: "/assets/covers/hows-it-feel-bro-cover-art.jpg"
+            id: 17, title: "HOW'S IT FEEL, BRO?", pillar: "Anthemic Empowerment", genre1: "Pop", genre2: "Hip-Hop", subGenre: "Contemporary", 
+            moods: ["Confident", "Revenge-oriented", "Confrontational"], feelings: ["Spiteful", "Vindicated"],
+            tempos: ["Mid Tempo", "Groovy"], povs: ["First Person", "Whistleblower"],
+            placements: ["Confrontation Scene", "Urban Drama"], hashtags: ["#HowsItFeel", "#Karma", "#Boomerang"],
+            potential: "Top Radio Hit", rating: 8.7,
+            description: `A sharp, confrontational narrative centering on the reversal of manipulative tactics within a relationship built on weak excuses.`,
+            snippet: "You're always spinning that sht but I'm boomeranging it back and like glue it sticks", 
+            bestLyrics: "Even my shadow is standing different while I’m calling out your future admissions.", 
+            img: "/assets/covers/hows-it-feel-bro-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 18, title: "I KNOW YOUR DAMN PIN CODE", pillar: "Anthemic Empowerment", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic Rock", 
+            moods: ["Bitter", "Confident", "Intense"], feelings: ["Aggressive", "Vindicated"],
+            tempos: ["Fast", "Driving"], povs: ["First Person", "Investigative"],
+            placements: ["Revenge Scene", "Thriller Montage"], hashtags: ["#PINCode", "#Justice", "#DigitalBetrayal"],
+            potential: "Top Radio Hit", rating: 9.1,
+            description: `A visceral exploration of digital betrayal and the reclamation of power through the breach of a partner's smartphone security.`,
+            snippet: "Think you're clever / I know your damn pin code / Gave me bullets for my gun I named Justice", 
+            bestLyrics: "Eff off get gone I'm slamming the door / I don't care about reasons excuses or why's.", 
+            img: "/assets/covers/i-know-your-damn-pin-code-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 19, title: "I'M A BROKEN RECORD", pillar: "Raw Emotional Narrative", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic Rock", 
+            moods: ["Raw", "Honest", "Resilient"], feelings: ["Stuck", "Frustrated"],
+            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Introspective"],
+            placements: ["Character Breakdown", "Therapy Scene"], hashtags: ["#BrokenRecord", "#MentalHealth", "#BreakingTheCycle"],
+            potential: "Critical Acclaim", rating: 8.5,
+            description: `This narrative explores the 'bitter taste of defeat' and the cyclical nature of self-sabotage within a 'one-sided youth.'`,
+            snippet: "Cause I'm a broken record skipping on repeat / Watching everyone else land on their feet", 
+            bestLyrics: "Cutting the ties to the ghosts of the past / Found a new light that is destined to last.", 
+            img: "/assets/covers/im-a-broken-record-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 20, title: "IN MY DREAMS (WHEN I WAKE)", pillar: "Raw Emotional Narrative", genre1: "Pop", genre2: "Ballad", subGenre: "Contemporary Ballad", 
+            moods: ["Sad", "Mournful", "Dreamy"], feelings: ["Heartbroken", "Longing"],
+            tempos: ["Slow", "Atmospheric"], povs: ["First Person", "Grieving"],
+            placements: ["Grief Scene", "Funeral Montage"], hashtags: ["#Grief", "#InMyDreams", "#Loss"],
+            potential: "Critical Acclaim", rating: 9.0,
+            description: `A heartbreaking ballad about the sharp contrast between the perfection of dreams and the gray, color-fading reality of waking up alone.`,
+            snippet: "In my dreams you are here and you kiss my cheek / But when I wake you're not here and I feel loneliness and fear", 
+            bestLyrics: "But when I wake everything is gray / all the world's colors seem to fade.", 
+            img: "/assets/covers/in-my-dreams-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 21, title: "JUST A LITTLE LONELY", pillar: "Raw Emotional Narrative", genre1: "Pop", genre2: "Ballad", subGenre: "Contemporary", 
+            moods: ["Sad", "Questioning", "Melancholy"], feelings: ["Lonely", "Wistful"],
+            tempos: ["Slow", "Flowing"], povs: ["First Person", "Vulnerable"],
+            placements: ["Emotional Breakup", "Character Intro"], hashtags: ["#LonelyHeart", "#AfterTheBreakup", "#PopBallad"],
+            potential: "Top Radio Hit", rating: 8.3,
+            description: `A poignant breakup ballad exploring the lingering pain of separation and the contrast between the protagonist's isolation and the ex's apparent freedom.`,
+            snippet: "Streetlights paint a lonely picture on my wall / Each car that passes, I'm always hoping it's your call", 
+            bestLyrics: "You say it feels like you're dying... are you just a little lonely? Or just a little sorry.", 
+            img: "/assets/covers/just-a-little-lonely-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 22, title: "MARRIED TO THE DRUG", pillar: "Cinematic Storytelling", genre1: "Rock", genre2: "Alternative", subGenre: "Gritty Cinematic", 
+            moods: ["Dark", "Intense", "Resilient"], feelings: ["Betrayed", "Strong"],
+            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Survivor"],
+            placements: ["Addiction Drama", "Rehab Arc"], hashtags: ["#AddictionAwareness", "#BreakingFree", "#MrsFetty"],
+            potential: "Critical Acclaim", rating: 9.7,
+            description: `A raw, metaphorical dissection of addiction as a competing lover. The protagonist addresses the addict who has 'signed the papers in white powder.'`,
+            snippet: "Married to the drug, Mrs. Fetty, hand in hand / Signed the papers in white powder, you’re a submissive man", 
+            bestLyrics: "I’m cutting down the Tree Shade that kept me in the cold / I’m reclaiming the pieces of the soul that you stole.", 
+            img: "/assets/covers/married-to-the-drug-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 23, title: "MURDERER'S HEART", pillar: "Cinematic Storytelling", genre1: "Country", genre2: "Narrative", subGenre: "Murder Ballad", 
+            moods: ["Dark", "Shocking", "Cinematic"], feelings: ["Vengeful", "Broken"],
+            tempos: ["Mid Tempo", "Steady"], povs: ["Third Person", "Narrator"],
+            placements: ["Crime Drama", "Southern Gothic"], hashtags: ["#MurderBallad", "#ColdJustice", "#CountryCrime"],
+            potential: "Critical Acclaim", rating: 9.1,
+            description: `A shocking narrative murder ballad detailing the collapse of a marriage under the weight of an unthinkable betrayal.`,
+            snippet: "Mary pulled out what her Daddy gave her, a big ole Colt .22", 
+            bestLyrics: "Mary loved Dan too much to kill him... but her sister met her demise.", 
+            img: "/assets/covers/murderers-heart-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 24, title: "MY GIRL KARMA", pillar: "Anthemic Empowerment", genre1: "Pop", genre2: "Country", subGenre: "Sassy Pop", 
+            moods: ["Sassy", "Confident", "Upbeat"], feelings: ["Vindicated", "Playful"],
+            tempos: ["Mid Tempo", "Bouncy"], povs: ["First Person", "Wise Narrator"],
+            placements: ["Revenge Montage", "Teen Drama"], hashtags: ["#Karma", "#WhatGoesAround", "#SassyPop"],
+            potential: "Top Radio Hit", rating: 8.8,
+            description: `A sassy warning about the inevitability of cosmic justice, personifying Karma as a reliable friend who always collects her debts.`,
+            snippet: "My girl karma is coming your way / You'll meet her in a year, a month, or maybe even today", 
+            bestLyrics: "She has no menu / Your order’s been on reserve / So trust she will serve what you truly deserve.", 
+            img: "/assets/covers/my-girl-karma-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 25, title: "MY WORDS STILL MATTER", pillar: "Anthemic Empowerment", genre1: "Country", genre2: "Cinematic", subGenre: "Contemporary", 
+            moods: ["Confident", "Grounded", "Quietly Strong"], feelings: ["Wise", "Patient"],
+            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Silent Victor"],
+            placements: ["Bar Scene", "Character Study"], hashtags: ["#SelfWorth", "#SilentStrength", "#CountryLyrics"],
+            potential: "Critical Acclaim", rating: 9.0,
+            description: `A complex exploration of silent victory during a high-tension bar confrontation. The protagonist realizes that shouting is the sound of defeat.`,
+            snippet: "My words still matter even when I'm lit / Shouting your truth is the sound of defeat", 
+            bestLyrics: "I choose to protect the drunk sinner / Keeping my truth makes me the winner.", 
+            img: "/assets/covers/my-words-matter-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 26, title: "NOT THAT GIRL FROM BEFORE", pillar: "Anthemic Empowerment", genre1: "Pop", genre2: "Rock", subGenre: "Anthem", 
+            moods: ["Strong", "Transformed", "Independent"], feelings: ["Free", "New"],
+            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Self-Actualized"],
+            placements: ["Makeover Montage", "Character Glow-up"], hashtags: ["#Transformation", "#NewMe", "#SelfLove"],
+            potential: "Top Radio Hit", rating: 8.6,
+            description: `A definitive character-growth anthem about shedding a past identity shaped by a toxic partner.`,
+            snippet: "I was so blinded so into you I lost myself it's true / Thank God you're gone 'cause they say it's darkest before the dawn", 
+            bestLyrics: "I'm not the girl you used to know from before / Time for you to get gone.", 
+            img: "/assets/covers/not-that-girl-from-before-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 27, title: "ONE SMALL WRONG", pillar: "Raw Emotional Narrative", genre1: "Pop", genre2: "R&B", subGenre: "Dramatic Duet", 
+            moods: ["Conflicted", "Dramatic", "Tense"], feelings: ["Regret", "Betrayed"],
+            tempos: ["Mid Tempo", "Syncopated"], povs: ["Dual First Person", "Conversational"],
+            placements: ["Relationship Conflict", "Argument Scene"], hashtags: ["#RelationshipIssues", "#TitForTat", "#OneSmallWrong"],
+            potential: "Top Radio Hit", rating: 8.4,
+            description: `A dramatic duet exploring a 'tit for tat' relationship dynamic that spiraled out of control.`,
+            snippet: "Gone with the wind you left me here in dread / Put an 'L' in my head where intrusive thoughts are bred", 
+            bestLyrics: "Ran to your ex for sex you can't be trusted / My heart is busted.", 
+            img: "/assets/covers/one-small-wrong-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 28, title: "SHOT BY CUPID'S DART", pillar: "Kinetic Energy / Fun", genre1: "Pop", genre2: "Contemporary", subGenre: "Romantic Pop", 
+            moods: ["Romantic", "Surprised", "Dreamy"], feelings: ["Love", "Awe"],
+            tempos: ["Mid Tempo", "Flowing"], povs: ["First Person", "Enamored"],
+            placements: ["First Look", "Meet Cute"], hashtags: ["#Cupid", "#LoveAtFirstSight", "#ShotByCupid"],
+            potential: "Top Radio Hit", rating: 8.5,
+            description: `An atmospheric celebration of the sudden, undeniable impact of a 'mind-blowing' first meeting.`,
+            snippet: "When I first saw you I thought damn he's so fine / Then I talked to you and you really blew my mind", 
+            bestLyrics: "Together forever shot by Cupid's dart / Oh baby baby you have my heart.", 
+            img: "/assets/covers/shot-by-cupids-dart-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 29, title: "SHOWDOWN AT MY DOOR", pillar: "Anthemic Empowerment", genre1: "Country", genre2: "Rock", subGenre: "Cinematic Western", 
+            moods: ["Strong", "Feisty", "Defiant"], feelings: ["Unyielding", "Done"],
+            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Boundary Setter"],
+            placements: ["Confrontation Scene", "Modern Western"], hashtags: ["#NoTrespassing", "#Boundaries", "#CountryRock"],
+            potential: "Critical Acclaim", rating: 8.9,
+            description: `A defiant narrative about setting unyielding boundaries against an ex attempting to 'mosey' back into the protagonist's life.`,
+            snippet: "Don't you dare think 'bout a showdown at my door / Used to cry those tears but the river don't flow no more", 
+            bestLyrics: "You can kick your rocks I'm changing the locks I'm so done with you / Thought you could slide into my dms playing it cool.", 
+            img: "/assets/covers/showdown-at-my-door-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 30, title: "SICK ONE (S1C)", pillar: "Raw Emotional Narrative", genre1: "Pop", genre2: "Urban", subGenre: "Gritty Contemporary", 
+            moods: ["Conflicted", "Toxic", "Intense"], feelings: ["Addicted", "Sus"],
+            tempos: ["Mid Tempo", "Groovy"], povs: ["First Person", "Self-Aware Victim"],
+            placements: ["Urban Drama", "Club Scene"], hashtags: ["#ToxicLove", "#OnASickOne", "#UrbanPop"],
+            potential: "Top Radio Hit", rating: 8.7,
+            description: `A raw, rhythmic look at a toxic, addictive relationship described as being 'on a sick one.'`,
+            snippet: "Our love is on a sick one / It's good for no one", 
+            bestLyrics: "I couldn't believe all the lies you told / You were sus so I looked through your phone.", 
+            img: "/assets/covers/sick-one-s1c-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 31, title: "SILVER AND THE GRAY", pillar: "Raw Emotional Narrative", genre1: "Country", genre2: "Ballad", subGenre: "Cinematic Ballad", 
+            moods: ["Reflective", "Melancholic", "Vulnerable"], feelings: ["Wistful", "Hoping"],
+            tempos: ["Slow", "Sweeping"], povs: ["First Person", "Long-term Partner"],
+            placements: ["Family Drama", "Maturation Arc"], hashtags: ["#LongTermLove", "#AgingGracefully", "#SilverAndGray"],
+            potential: "Critical Acclaim", rating: 9.1,
+            description: `A poignant ballad about mature love and the passage of time within a long-term commitment.`,
+            snippet: "I’m reaching through the silver and the gray / Do you still choose the woman I’ve become today?", 
+            bestLyrics: "We built this nest with hands and heart / But time has a way of pulling at the parts.", 
+            img: "/assets/covers/silver-and-gray-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 32, title: "SOLID SHIFTING GROUND", pillar: "Raw Emotional Narrative", genre1: "Country", genre2: "Folk", subGenre: "Americana", 
+            moods: ["Hopeful", "Reflective", "Inspirational"], feelings: ["Resilient", "Determined"],
+            tempos: ["Mid Tempo", "Steady"], povs: ["Third Person", "Philosophical"],
+            placements: ["Inspirational Montage", "End Credits"], hashtags: ["#Resilience", "#LifeLessons", "#SolidShiftingGround"],
+            potential: "Critical Acclaim", rating: 9.3,
+            description: `A philosophical anthem exploring the duality of life's highs and lows through naturalistic imagery of storm clouds and flowers.`,
+            snippet: "A heart can be heavy, weighted down by dreams / Like a storm cloud gatherin', it silently screams", 
+            bestLyrics: "And it's worth it every time it comes around / This crazy, beautiful life on solid, shifting ground.", 
+            img: "/assets/covers/solid-shifting-ground-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 33, title: "STOOD BY MY SIDE", pillar: "Cinematic Storytelling", genre1: "Christian", genre2: "Gospel", subGenre: "Contemporary Inspirational", 
+            moods: ["Grateful", "Spiritual", "Peaceful"], feelings: ["Saved", "Loved"],
+            tempos: ["Slow", "Building"], povs: ["First Person", "Worshiper"],
+            placements: ["Faith-Based Film", "Redemption Scene"], hashtags: ["#Faith", "#GodsLove", "#StoodByMySide"],
+            potential: "Critical Acclaim", rating: 8.8,
+            description: `A spiritual song of deep gratitude for a presence that offered strength when the world walked away.`,
+            snippet: "When the world walked away you stood by my side / My constant companion nowhere to hide", 
+            bestLyrics: "The urge to end it it weakens and flees / Drowned out by hope finding inner ease.", 
+            img: "/assets/covers/stood-by-my-side-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 34, title: "TAKE THAT FIRST STEP", pillar: "Anthemic Empowerment", genre1: "Country", genre2: "Contemporary", subGenre: "Motivational", 
+            moods: ["Hopeful", "Urgent", "Empathetic"], feelings: ["Encouraged", "Concerned"],
+            tempos: ["Mid Tempo", "Driving"], povs: ["First Person", "Supportive Friend"],
+            placements: ["Intervention Scene", "Social Advocacy"], hashtags: ["#TakeTheFirstStep", "#Recovery", "#MentalHealth"],
+            potential: "Top Radio Hit", rating: 9.4,
+            description: `A moving narrative intervention focusing on saving a loved one from self-destruction through drugs or high-risk street life.`,
+            snippet: "Everything broken trust me it's only bent / Every single second is a second well spent", 
+            bestLyrics: "Don't want to say goodbye at a casket / Take that first step before you're in a basket.", 
+            img: "/assets/covers/take-that-first-step-audio.mp3", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 35, title: "THE AFTERMATH", pillar: "Raw Emotional Narrative", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic Rock", 
+            moods: ["Dark", "Intense", "Empowered"], feelings: ["Conflicted", "Angry"],
+            tempos: ["Mid Tempo", "Pulsing"], povs: ["First Person", "Self-Aware Victim"],
+            placements: ["Post-Breakup Montage", "Character Growth"], hashtags: ["#TheAftermath", "#ToxicWithdrawal", "#PurifyingFire"],
+            potential: "Critical Acclaim", rating: 9.0,
+            description: `A raw, cinematic exploration of the 'withdrawal' period that follows the end of a chaotic, toxic relationship.`,
+            snippet: "Can't breathe in this quiet, / Not used to the silence. / Hooked on the drama", 
+            bestLyrics: "The anger burns, a purifying fire / Fueling my escape from this toxic mire.", 
+            img: "/assets/covers/the-aftermath-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 36, title: "THE BACK OF ME", pillar: "Anthemic Empowerment", genre1: "R&B", genre2: "Rock", subGenre: "Cinematic Soul", 
+            moods: ["Strong", "Decisive", "Bitter"], feelings: ["Done", "Cold"],
+            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Empowered Walk-out"],
+            placements: ["Final Frame", "Divorce Finale"], hashtags: ["#TheBackOfMe", "#FinalFrame", "#WalkingOut"],
+            potential: "Critical Acclaim", rating: 9.2,
+            description: `A decisive narrative capturing the 'final frame' of a relationship's end. The protagonist deconstructs her partner's confidence as an 'illusion.'`,
+            snippet: "All you will see when you turn back to look is the back of me", 
+            bestLyrics: "That confidence you're feeling inside / Is an illusion created—a mere imitation of a man I made you.", 
+            img: "/assets/covers/the-back-of-me-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 37, title: "THE POCKET WATCH", pillar: "Raw Emotional Narrative", genre1: "Cinematic", genre2: "Piano Ballad", subGenre: "Dark Cinematic", 
+            moods: ["Dark", "Melancholic", "Haunted"], feelings: ["Anxious", "Trapped"],
+            tempos: ["Slow", "Ticking"], povs: ["First Person", "Ghostly"],
+            placements: ["Period Drama", "Grief Scene"], hashtags: ["#PocketWatch", "#DarkBallad", "#TimeMetaphor"],
+            potential: "Critical Acclaim", rating: 8.8,
+            description: `A haunting exploration of memory and the physical weight of time, set at a misty waterfront.`,
+            snippet: "My only comfort is the sound of your pocket watch as it just ticks", 
+            bestLyrics: "Even though I remain in my watery grave... the tick tick tick will always haunt me.", 
+            img: "/assets/covers/the-pocket-watch-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 38, title: "THE REAL DREAM TEAM", pillar: "Kinetic Energy / Fun", genre1: "Pop", genre2: "Dancehall", subGenre: "Contemporary Anthem", 
+            moods: ["Playful", "Confident", "Bouncy"], feelings: ["Loyal", "Strong"],
+            tempos: ["Fast", "Rhythmic"], povs: ["First Person", "Partner"],
+            placements: ["Wedding Scene", "Sports Promo"], hashtags: ["#RealDreamTeam", "#PowerCouple", "#Loyalty"],
+            potential: "Top Radio Hit", rating: 8.5,
+            description: `A celebratory loyalty anthem detailing a battle-ready alliance against 'haters' and 'naysayers.'`,
+            snippet: "Into battle we will go you shoot high and I shoot low / I've got your back when haters attack", 
+            bestLyrics: "We are the real dream team everyone can see / I tie the knot and say I Do.", 
+            img: "/assets/covers/the-real-dream-team-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 39, title: "THE SHOW IS THROUGH", pillar: "Raw Emotional Narrative", genre1: "Pop", genre2: "Theatrical", subGenre: "Dramatic Pop", 
+            moods: ["Sarcastic", "Final", "Bold"], feelings: ["Done", "Disappointed"],
+            tempos: ["Mid Tempo", "Dramatic"], povs: ["First Person", "Direct Address"],
+            placements: ["Breakup Scene", "Dramedy"], hashtags: ["#TheShowIsThrough", "#NoFourthAct", "#TakeABow"],
+            potential: "Top Radio Hit", rating: 8.6,
+            description: `A theatrical breakup track using stage metaphors to dismantle a partner's performative behavior.`,
+            snippet: "My heart your prop now shattered to pieces / The act is over and the torment ceases", 
+            bestLyrics: "Exit stage left 'cause the show is through / By the way you're a damn fine terrible actor.", 
+            img: "/assets/covers/the-show-is-through-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 40, title: "THOUGHT YOU SHOULD KNOW", pillar: "Anthemic Empowerment", genre1: "Pop", genre2: "Upbeat", subGenre: "Contemporary Pop", 
+            moods: ["Happy", "Confident", "Positive"], feelings: ["Free", "Vibrant"],
+            tempos: ["Up Tempo", "Driving"], povs: ["First Person", "Direct Address"],
+            placements: ["Glow Up Montage", "Post-Breakup Healing"], hashtags: ["#GlowUp", "#BestLife", "#MovingForward"],
+            potential: "Top Radio Hit", rating: 9.3,
+            description: `An uplifting anthem of total recovery and triumphant moving on. The protagonist celebrates a 'brand new future.'`,
+            snippet: "Sun in my eyes, new day takes hold / No more shadows, stories untold", 
+            bestLyrics: "I'm alright, I'm fine, having the most fun, on cloud nine / Out with the girls, we paint the town red.", 
+            img: "/assets/covers/thought-you-should-know-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 41, title: "TOP SHELF QUEEN", pillar: "Kinetic Energy / Fun", genre1: "Country", genre2: "Pop", subGenre: "Contemporary Country", 
+            moods: ["Confident", "Sassy", "High-Value"], feelings: ["Worth-it", "Strong"],
+            tempos: ["Mid Tempo", "Strut"], povs: ["First Person", "Direct Address"],
+            placements: ["Makeover Scene", "Dating Show"], hashtags: ["#TopShelf", "#KnowYourWorth", "#NoDiscountBin"],
+            potential: "Top Radio Hit", rating: 8.7,
+            description: `A confident declaration of self-worth and high standards, rejecting settling for anything less than the best.`,
+            snippet: "I'm a top shelf queen not a discount bin / If you can't afford the price then you can't come in", 
+            bestLyrics: "Keep your cheap talk and your dollar store lines / I'm looking for diamonds and vintage wines.", 
+            img: "/assets/covers/top-shelf-queen-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 42, title: "WELCOME TO JUKES", pillar: "Cinematic Storytelling", genre1: "Country", genre2: "Rock", subGenre: "Southern Rock", 
+            moods: ["Gritty", "Rowdy", "Welcoming"], feelings: ["Loose", "Wild"],
+            tempos: ["Mid Tempo", "Stomp"], povs: ["First Person", "Host"],
+            placements: ["Bar Scene", "Fight Scene"], hashtags: ["#DiveBar", "#JukeJoint", "#ColdBeer"],
+            potential: "Critical Acclaim", rating: 8.1,
+            description: `An atmospheric dive bar anthem that sets the scene for a rowdy night of forgetting troubles.`,
+            snippet: "Leave your troubles at the door and step inside / Welcome to Jukes where there's nowhere to hide", 
+            bestLyrics: "The neon buzzes and the whiskey flows / Where the night will end nobody knows.", 
+            img: "/assets/covers/welcome-to-jukes-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 43, title: "WILDFLOWER", pillar: "Cinematic Storytelling", genre1: "Country", genre2: "Folk", subGenre: "Americana", 
+            moods: ["Free", "Resilient", "Organic"], feelings: ["Natural", "Strong"],
+            tempos: ["Mid Tempo", "Breezy"], povs: ["Third Person", "Observational"],
+            placements: ["Nature Scene", "Indie Film"], hashtags: ["#Wildflower", "#FreeSpirit", "#NaturalBeauty"],
+            potential: "Critical Acclaim", rating: 9.5,
+            description: `A song about resilience and beauty growing in unlikely places, much like a wildflower in the cracks of pavement.`,
+            snippet: "She's a wildflower growing in the cracks / No garden can hold her there's no turning back", 
+            bestLyrics: "Dancing with the wind and drinking up the rain / Beauty born of sunshine and a little bit of pain.", 
+            img: "/assets/covers/wildflower-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 44, title: "YEAR IN THE REARVIEW", pillar: "Raw Emotional Narrative", genre1: "Country", genre2: "Folk", subGenre: "Cinematic", 
+            moods: ["Melancholic", "Resilient", "Reflective"], feelings: ["Hopeful", "Strong"],
+            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Survivor"],
+            placements: ["Healing Montage", "Season Finale"], hashtags: ["#Healing", "#MovingOn", "#RearviewMirror"],
+            potential: "Critical Acclaim", rating: 8.9,
+            description: `A methodical examination of the healing process following a 'shattering crash' and emotional betrayal.`,
+            snippet: "A year in the rearview since that shattering crash / Glue the broken pieces from the ash", 
+            bestLyrics: "Peeling back the layers like bark from a wounded tree / Finding the person that I used to be.", 
+            img: "/assets/covers/year-in-the-rearview-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 45, title: "YOUR FOREVER MAN", pillar: "Cinematic Storytelling", genre1: "Country", genre2: "Romance", subGenre: "Wedding Song", 
+            moods: ["Devoted", "Warm", "Protective"], feelings: ["Loved", "Safe"],
+            tempos: ["Slow", "Flowing"], povs: ["First Person", "Male Perspective"],
+            placements: ["Wedding Scene", "Proposal"], hashtags: ["#WeddingSong", "#ForeverMan", "#TrueLove"],
+            potential: "Critical Acclaim", rating: 8.7,
+            description: `A heartfelt male perspective commitment song promising to be the steady anchor in a storm.`,
+            snippet: "I'm the anchor, her helping hand / She's my future, I'm her forever man", 
+            bestLyrics: "When the storm subsides and the hurricane blows away her disguise / I see within her eyes strength that won't die.", 
+            img: "/assets/covers/your-forever-man-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
+        },
+        { 
+            id: 46, title: "YOUR MASK", pillar: "Anthemic Empowerment", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", 
+            moods: ["Angry", "Betrayed", "Dark"], feelings: ["Vindicated", "Disgusted"],
+            tempos: ["Fast", "Driving"], povs: ["First Person", "Whistleblower"],
+            placements: ["Political Thriller", "Corruption Drama"], hashtags: ["#Corruption", "#FakeNews", "#YourMask"],
+            potential: "Top Radio Hit", rating: 9.0,
+            description: `A biting social commentary on scapegoating and corruption. The lyrics address a figure who appears on screens as a 'monster in the news.'`,
+            snippet: "You see me on the screen a monster in the news / But I know the truth and I refuse to lose", 
+            bestLyrics: "Your mask is slipping showing the rot / You think you're a king but you're really not.", 
+            img: "/assets/covers/your-mask-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
         }
     ];
-<script>
+    </script>
+    <script>
         // --- 1. SEARCH & FILTER ENGINE ---
         function runFilters() {
             const q = document.getElementById('vault-search-box').value.toLowerCase();
@@ -350,11 +625,12 @@
             const pot = document.getElementById('potential-pull').value;
 
             const filtered = VAULT_DATA.filter(song => {
-                // Deep Search: Title, Description, Snippet, Hashtags, Keywords
+                // Deep Search: Title, Description, Snippet, Hashtags, Keywords, Pillar
                 const matchesSearch = !q || 
                     song.title.toLowerCase().includes(q) || 
                     song.description.toLowerCase().includes(q) || 
                     song.snippet.toLowerCase().includes(q) ||
+                    song.pillar.toLowerCase().includes(q) ||
                     (song.hashtags && song.hashtags.some(h => h.toLowerCase().includes(q))) ||
                     (song.seoKeywords && song.seoKeywords.some(k => k.toLowerCase().includes(q)));
 
@@ -379,13 +655,15 @@
             const grid = document.getElementById('vault-grid-display');
             grid.innerHTML = data.map(s => `
                 <div class="song-card p-6 shadow-xl relative group">
+                    ${s.rating >= 8.0 ? `<div class="rating-badge">A&R: ${s.rating}</div>` : ''}
+                    
                     <img src="${s.img}" class="w-full max-w-[140px] mx-auto rounded-lg mb-4 border border-slate-700 object-cover aspect-square" onerror="this.src='/assets/images/logo/verseandchorus-logo-med-photo.jpg'">
                     <h3 class="metallic-gold-title text-xl mb-1 cursor-pointer hover:text-white transition" onclick="window.location.href='${s.link || 'https://songbay.co/portfolio/111887/'}'">${s.title}</h3>
                     
                     <div class="text-[10px] text-slate-400 font-bold uppercase mb-4 flex flex-wrap justify-center gap-2">
                         <span class="bg-slate-800 px-2 py-1 rounded border border-slate-600">${s.genre1}</span>
                         ${s.moods ? `<span class="bg-slate-800 px-2 py-1 rounded border border-slate-600">${s.moods[0]}</span>` : ''}
-                        ${s.placements ? `<span class="bg-slate-800 px-2 py-1 rounded text-[var(--sunset-orange)] border border-slate-600">${s.placements[0]}</span>` : ''}
+                        ${s.potential ? `<span class="bg-slate-800 px-2 py-1 rounded text-[var(--sunset-orange)] border border-slate-600">${s.potential}</span>` : ''}
                     </div>
 
                     <p class="text-sm text-slate-200 italic mb-4">"${s.snippet}"</p>
@@ -417,361 +695,6 @@
                 return song[field] && song[field].includes(value);
             });
             renderVault(filtered);
-       <script>
-    const VAULT_DATA_PART_2 = [
-        { 
-            id: 18, title: "I KNOW YOUR DAMN PIN CODE", pillar: "Anthemic Empowerment", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic Rock", 
-            moods: ["Bitter", "Confident", "Intense"], feelings: ["Aggressive", "Vindicated"],
-            tempos: ["Fast", "Driving"], povs: ["First Person", "Investigative"],
-            placements: ["Revenge Scene", "Thriller Montage", "Action Drama", "Mystery Reveal"],
-            hashtags: ["#PINCode", "#Justice", "#DigitalBetrayal", "#RockAnthem", "#TheTruthUnfolds"],
-            potential: "Top Radio Hit",
-            description: `A visceral exploration of digital betrayal and the reclamation of power through the breach of a partner's smartphone security. The narrative describes an antagonist who thinks they are 'clever' but has actually provided 'bullets for my gun I named Justice.'`,
-            snippet: "Think you're clever / I know your damn pin code / Gave me bullets for my gun I named Justice", 
-            bestLyrics: "Best Lyric: \"Eff off get gone I'm slamming the door / I don't care about reasons excuses or why's.\" (Total rejection).", 
-            img: "/assets/covers/i-know-your-damn-pin-code-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 19, title: "I'M A BROKEN RECORD", pillar: "Raw Emotional Narrative", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic Rock", 
-            moods: ["Raw", "Honest", "Resilient"], feelings: ["Stuck", "Frustrated"],
-            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Introspective"],
-            placements: ["Character Breakdown", "Therapy Scene", "Internal Conflict", "Road Trip"],
-            hashtags: ["#BrokenRecord", "#MentalHealth", "#BreakingTheCycle", "#RockLyrics", "#Reflection"],
-            potential: "Critical Acclaim",
-            description: `This narrative explores the 'bitter taste of defeat' and the cyclical nature of self-sabotage within a 'one-sided youth.' The protagonist is surrounded by 'ghosts' and 'eyes like lasers judging every flaw,' eventually choosing the silence of an empty table for one over an 'unclean picture.'`,
-            snippet: "Cause I'm a broken record skipping on repeat / Watching everyone else land on their feet", 
-            bestLyrics: "Best Lyric: \"Cutting the ties to the ghosts of the past / Found a new light that is destined to last.\" (Breaking the cycle).", 
-            img: "/assets/covers/im-a-broken-record-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 20, title: "IN MY DREAMS (WHEN I WAKE)", pillar: "Raw Emotional Narrative", genre1: "Pop", genre2: "Ballad", subGenre: "Contemporary Ballad", 
-            moods: ["Sad", "Mournful", "Dreamy"], feelings: ["Heartbroken", "Longing"],
-            tempos: ["Slow", "Atmospheric"], povs: ["First Person", "Grieving"],
-            placements: ["Grief Scene", "Funeral Montage", "Empty Bed Scene", "Depression Arc"],
-            hashtags: ["#Grief", "#InMyDreams", "#Loss", "#PopBallad", "#Mourning"],
-            potential: "Critical Acclaim",
-            description: `A heartbreaking ballad about the sharp contrast between the perfection of dreams and the gray, color-fading reality of waking up alone. In the dream, the partner is present, tucking hair behind ears and gazing into the protagonist's eyes; however, waking brings only 'loneliness and fear.'`,
-            snippet: "In my dreams you are here and you kiss my cheek / But when I wake you're not here and I feel loneliness and fear", 
-            bestLyrics: "Best Lyric: \"But when I wake everything is gray / all the world's colors seem to fade.\" (Depressive realism).", 
-            img: "/assets/covers/in-my-dreams-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 21, title: "JUST A LITTLE LONELY", pillar: "Raw Emotional Narrative", genre1: "Pop", genre2: "Ballad", subGenre: "Contemporary", 
-            moods: ["Sad", "Questioning", "Melancholy"], feelings: ["Lonely", "Wistful"],
-            tempos: ["Slow", "Flowing"], povs: ["First Person", "Vulnerable"],
-            placements: ["Emotional Breakup", "Character Intro", "Night Scene", "Romance Drama"],
-            hashtags: ["#LonelyHeart", "#AfterTheBreakup", "#PopBallad", "#Wandering", "#MemoryLane"],
-            potential: "Top Radio Hit",
-            description: `A poignant breakup ballad exploring the lingering pain of separation and the contrast between the protagonist's isolation and the ex's apparent freedom. The lyrics paint a vivid picture of watching a former lover pace beneath moonlight from a window, questioning if their apparent liberty is actually masked misery.`,
-            snippet: "Streetlights paint a lonely picture on my wall / Each car that passes, I'm always hoping it's your call", 
-            bestLyrics: "Best Lyric: \"You say it feels like you're dying... are you just a little lonely? Or just a little sorry.\" (The cutting question).", 
-            img: "/assets/covers/just-a-little-lonely-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 22, title: "MARRIED TO THE DRUG", pillar: "Cinematic Storytelling", genre1: "Rock", genre2: "Alternative", subGenre: "Gritty Cinematic", 
-            moods: ["Dark", "Intense", "Resilient"], feelings: ["Betrayed", "Strong"],
-            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Survivor"],
-            placements: ["Addiction Drama", "Rehab Arc", "Crime Thriller", "Character Escape"],
-            hashtags: ["#AddictionAwareness", "#BreakingFree", "#MrsFetty", "#TreeShade", "#RockEmpowerment"],
-            potential: "Critical Acclaim",
-            description: `A raw, metaphorical dissection of addiction as a competing lover. The protagonist addresses the addict who has 'signed the papers in white powder' and become a 'submissive man' to his new wife, Mrs. Fetty. It uses the visceral imagery of a 'November pumpkin'—hollowed out and frail.`,
-            snippet: "Married to the drug, Mrs. Fetty, hand in hand / Signed the papers in white powder, you’re a submissive man", 
-            bestLyrics: "Best Lyric: \"I’m cutting down the Tree Shade that kept me in the cold / I’m reclaiming the pieces of the soul that you stole.\" (Reclaiming self).", 
-            img: "/assets/covers/married-to-the-drug-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 23, title: "MURDERER'S HEART", pillar: "Cinematic Storytelling", genre1: "Country", genre2: "Narrative", subGenre: "Murder Ballad", 
-            moods: ["Dark", "Shocking", "Cinematic"], feelings: ["Vengeful", "Broken"],
-            tempos: ["Mid Tempo", "Steady"], povs: ["Third Person", "Narrator"],
-            placements: ["Crime Drama", "Southern Gothic", "Mystery Series", "Thriller Trailer"],
-            hashtags: ["#MurderBallad", "#ColdJustice", "#CountryCrime", "#SisterBetrayal", "#TwistEnding"],
-            potential: "Critical Acclaim",
-            description: `A shocking narrative murder ballad detailing the collapse of a marriage under the weight of an unthinkable betrayal. Mary tracks her husband Dan to a bar after sensing something 'amiss' in therapy, only to find him with her own sister.`,
-            snippet: "Mary pulled out what her Daddy gave her, a big ole Colt .22", 
-            bestLyrics: "Best Lyric: \"Mary loved Dan too much to kill him... but her sister met her demise.\" (The subverted revenge twist).", 
-            img: "/assets/covers/murderers-heart-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 24, title: "MY GIRL KARMA", pillar: "Anthemic Empowerment", genre1: "Pop", genre2: "Country", subGenre: "Sassy Pop", 
-            moods: ["Sassy", "Confident", "Upbeat"], feelings: ["Vindicated", "Playful"],
-            tempos: ["Mid Tempo", "Bouncy"], povs: ["First Person", "Wise Narrator"],
-            placements: ["Revenge Montage", "Teen Drama", "Reality TV", "Fashion Commercial"],
-            hashtags: ["#Karma", "#WhatGoesAround", "#SassyPop", "#Vindication", "#MyGirlKarma"],
-            potential: "Top Radio Hit",
-            description: `A sassy warning about the inevitability of cosmic justice, personifying Karma as a reliable friend who always collects her debts. The protagonist speaks directly to an antagonist, promising that their actions are currently 'on reserve' and will be served without a menu.`,
-            snippet: "My girl karma is coming your way / You'll meet her in a year, a month, or maybe even today", 
-            bestLyrics: "Best Lyric: \"She has no menu / Your order’s been on reserve / So trust she will serve what you truly deserve.\" (The dining metaphor).", 
-            img: "/assets/covers/my-girl-karma-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 25, title: "MY WORDS STILL MATTER", pillar: "Anthemic Empowerment", genre1: "Country", genre2: "Cinematic", subGenre: "Contemporary", 
-            moods: ["Confident", "Grounded", "Quietly Strong"], feelings: ["Wise", "Patient"],
-            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Silent Victor"],
-            placements: ["Bar Scene", "Character Study", "Internal Monologue", "Drama"],
-            hashtags: ["#SelfWorth", "#SilentStrength", "#CountryLyrics", "#InnerPeace", "#Truth"],
-            potential: "Critical Acclaim",
-            description: `A complex exploration of silent victory during a high-tension bar confrontation. The protagonist realizes that 'shouting your truth is the sound of defeat' when facing a 'man-child' who refuses to listen.`,
-            snippet: "My words still matter even when I'm lit / Shouting your truth is the sound of defeat", 
-            bestLyrics: "Best Lyric: \"I choose to protect the drunk sinner / Keeping my truth makes me the winner.\" (Internal victory).", 
-            img: "/assets/covers/my-words-matter-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 26, title: "NOT THAT GIRL FROM BEFORE", pillar: "Anthemic Empowerment", genre1: "Pop", genre2: "Rock", subGenre: "Anthem", 
-            moods: ["Strong", "Transformed", "Independent"], feelings: ["Free", "New"],
-            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Self-Actualized"],
-            placements: ["Makeover Montage", "Character Glow-up", "TV Series Promo", "End Credits"],
-            hashtags: ["#Transformation", "#NewMe", "#SelfLove", "#PopRockAnthem", "#StrongWomen"],
-            potential: "Top Radio Hit",
-            description: `A definitive character-growth anthem about shedding a past identity shaped by a toxic partner. The protagonist declares she is no longer the girl who was 'blinded' and lost herself, celebrating the dawn that follows the darkest hours.`,
-            snippet: "I was so blinded so into you I lost myself it's true / Thank God you're gone 'cause they say it's darkest before the dawn", 
-            bestLyrics: "Best Lyric: \"I'm not the girl you used to know from before / Time for you to get gone.\" (Declaration of new identity).", 
-            img: "/assets/covers/not-that-girl-from-before-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 27, title: "ONE SMALL WRONG", pillar: "Raw Emotional Narrative", genre1: "Pop", genre2: "R&B", subGenre: "Dramatic Duet", 
-            moods: ["Conflicted", "Dramatic", "Tense"], feelings: ["Regret", "Betrayed"],
-            tempos: ["Mid Tempo", "Syncopated"], povs: ["Dual First Person", "Conversational"],
-            placements: ["Relationship Conflict", "Argument Scene", "TV Drama", "Melodrama"],
-            hashtags: ["#RelationshipIssues", "#TitForTat", "#OneSmallWrong", "#PopDuet", "#Heartbreak"],
-            potential: "Top Radio Hit",
-            description: `A dramatic duet exploring a 'tit for tat' relationship dynamic that spiraled out of control. The male and female perspectives trade blame, with one small wrong leading to a 'major slip' involving an ex.`,
-            snippet: "Gone with the wind you left me here in dread / Put an 'L' in my head where intrusive thoughts are bred", 
-            bestLyrics: "Best Lyric: \"Ran to your ex for sex you can't be trusted / My heart is busted.\" (The breaking point).", 
-            img: "/assets/covers/one-small-wrong-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 28, title: "SHOT BY CUPID'S DART", pillar: "Kinetic Energy / Fun", genre1: "Pop", genre2: "Contemporary", subGenre: "Romantic Pop", 
-            moods: ["Romantic", "Surprised", "Dreamy"], feelings: ["Love", "Awe"],
-            tempos: ["Mid Tempo", "Flowing"], povs: ["First Person", "Enamored"],
-            placements: ["First Look", "Meet Cute", "Wedding Scene", "Romance Promo"],
-            hashtags: ["#Cupid", "#LoveAtFirstSight", "#ShotByCupid", "#Soulmates", "#PopRomance"],
-            potential: "Top Radio Hit",
-            description: `An atmospheric celebration of the sudden, undeniable impact of a 'mind-blowing' first meeting. The narrative centers on the realization that a new connection is 'one of a kind,' framing the arrival of love as a fated strike 'right between the eyes' that promises a 'together forever' start.`,
-            snippet: "When I first saw you I thought damn he's so fine / Then I talked to you and you really blew my mind", 
-            bestLyrics: "Best Lyric: \"Together forever shot by Cupid's dart / Oh baby baby you have my heart.\" (Classic pop hook).", 
-            img: "/assets/covers/shot-by-cupids-dart-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 29, title: "SHOWDOWN AT MY DOOR", pillar: "Anthemic Empowerment", genre1: "Country", genre2: "Rock", subGenre: "Cinematic Western", 
-            moods: ["Strong", "Feisty", "Defiant"], feelings: ["Unyielding", "Done"],
-            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Boundary Setter"],
-            placements: ["Confrontation Scene", "Modern Western", "Trailer", "Action Montage"],
-            hashtags: ["#NoTrespassing", "#Boundaries", "#CountryRock", "#Showdown", "#BlockedEx"],
-            potential: "Critical Acclaim",
-            description: `A defiant narrative about setting unyielding boundaries against an ex attempting to 'mosey' back into the protagonist's life. The lyrics detail a history of being blamed for debt and laziness, emphasizing that 'the river don't flow no more.'`,
-            snippet: "Don't you dare think 'bout a showdown at my door / Used to cry those tears but the river don't flow no more", 
-            bestLyrics: "Best Lyric: \"You can kick your rocks I'm changing the locks I'm so done with you / Thought you could slide into my dms playing it cool.\" (Modern rejection).", 
-            img: "/assets/covers/showdown-at-my-door-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 30, title: "SICK ONE (S1C)", pillar: "Raw Emotional Narrative", genre1: "Pop", genre2: "Urban", subGenre: "Gritty Contemporary", 
-            moods: ["Conflicted", "Toxic", "Intense"], feelings: ["Addicted", "Sus"],
-            tempos: ["Mid Tempo", "Groovy"], povs: ["First Person", "Self-Aware Victim"],
-            placements: ["Urban Drama", "Club Scene", "Toxic Romance", "Trailer"],
-            hashtags: ["#ToxicLove", "#OnASickOne", "#UrbanPop", "#Heartbreak", "#LoveIsADrug"],
-            potential: "Top Radio Hit",
-            description: `A raw, rhythmic look at a toxic, addictive relationship described as being 'on a sick one.' The protagonist acknowledges that the fighting is 'so dumb' but admits they are 'never done' because making up is their primary drug.`,
-            snippet: "Our love is on a sick one / It's good for no one", 
-            bestLyrics: "Best Lyric: \"I couldn't believe all the lies you told / You were sus so I looked through your phone.\" (Modern trust issues).", 
-            img: "/assets/covers/sick-one-s1c-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 31, title: "SILVER AND THE GRAY", pillar: "Raw Emotional Narrative", genre1: "Country", genre2: "Ballad", subGenre: "Cinematic Ballad", 
-            moods: ["Reflective", "Melancholic", "Vulnerable"], feelings: ["Wistful", "Hoping"],
-            tempos: ["Slow", "Sweeping"], povs: ["First Person", "Long-term Partner"],
-            placements: ["Family Drama", "Maturation Arc", "Romance Scene", "Life Reflection"],
-            hashtags: ["#LongTermLove", "#AgingGracefully", "#SilverAndGray", "#MaturingLove", "#CountryBallad"],
-            potential: "Critical Acclaim",
-            description: `A poignant ballad about mature love and the passage of time within a long-term commitment. The protagonist contrasts the 'shade of red' of their youth with the 'silver and gray' of the present, asking a partner if they still choose the woman she has become.`,
-            snippet: "I’m reaching through the silver and the gray / Do you still choose the woman I’ve become today?", 
-            bestLyrics: "Best Lyric: \"We built this nest with hands and heart / But time has a way of pulling at the parts.\" (Aging metaphor).", 
-            img: "/assets/covers/silver-and-gray-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 32, title: "SOLID SHIFTING GROUND", pillar: "Raw Emotional Narrative", genre1: "Country", genre2: "Folk", subGenre: "Americana", 
-            moods: ["Hopeful", "Reflective", "Inspirational"], feelings: ["Resilient", "Determined"],
-            tempos: ["Mid Tempo", "Steady"], povs: ["Third Person", "Philosophical"],
-            placements: ["Inspirational Montage", "End Credits", "Lifestyle Commercial", "Nature Documentary"],
-            hashtags: ["#Resilience", "#LifeLessons", "#SolidShiftingGround", "#Hope", "#Americana"],
-            potential: "Critical Acclaim",
-            description: `A philosophical anthem exploring the duality of life's highs and lows through naturalistic imagery of storm clouds and unfurling flowers. It argues that for every 'up' there is a 'down,' and that this 'crazy, beautiful life' is worth the struggle.`,
-            snippet: "A heart can be heavy, weighted down by dreams / Like a storm cloud gatherin', it silently screams", 
-            bestLyrics: "Best Lyric: \"And it's worth it every time it comes around / This crazy, beautiful life on solid, shifting ground.\" (The inspirational payoff).", 
-            img: "/assets/covers/solid-shifting-ground-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 33, title: "STOOD BY MY SIDE", pillar: "Cinematic Storytelling", genre1: "Christian", genre2: "Gospel", subGenre: "Contemporary Inspirational", 
-            moods: ["Grateful", "Spiritual", "Peaceful"], feelings: ["Saved", "Loved"],
-            tempos: ["Slow", "Building"], povs: ["First Person", "Worshiper"],
-            placements: ["Faith-Based Film", "Redemption Scene", "Therapy Arc", "Crisis Resolution"],
-            hashtags: ["#Faith", "#GodsLove", "#StoodByMySide", "#SpiritualGrowth", "#Redemption"],
-            potential: "Critical Acclaim",
-            description: `A spiritual song of deep gratitude for a presence that offered strength when the world walked away. The lyrics describe a time of intense darkness and 'whispers' to quit, which were eventually silenced by a love that 'stood by my side.'`,
-            snippet: "When the world walked away you stood by my side / My constant companion nowhere to hide", 
-            bestLyrics: "Best Lyric: \"The urge to end it it weakens and flees / Drowned out by hope finding inner ease.\" (Overcoming despair).", 
-            img: "/assets/covers/stood-by-my-side-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 34, title: "TAKE THAT FIRST STEP", pillar: "Anthemic Empowerment", genre1: "Country", genre2: "Contemporary", subGenre: "Motivational", 
-            moods: ["Hopeful", "Urgent", "Empathetic"], feelings: ["Encouraged", "Concerned"],
-            tempos: ["Mid Tempo", "Driving"], povs: ["First Person", "Supportive Friend"],
-            placements: ["Intervention Scene", "Social Advocacy", "Rehab Montage", "Documentary"],
-            hashtags: ["#TakeTheFirstStep", "#Recovery", "#MentalHealth", "#Intervention", "#Hope"],
-            potential: "Top Radio Hit",
-            description: `A moving narrative intervention focusing on saving a loved one from self-destruction through drugs or high-risk street life. The protagonist refuses to 'enable' but offers unconditional support, emphasizing that 'everything broken is only bent.'`,
-            snippet: "Everything broken trust me it's only bent / Every single second is a second well spent", 
-            bestLyrics: "Best Lyric: \"Don't want to say goodbye at a casket / Take that first step before you're in a basket.\" (Urgent reality).", 
-            img: "/assets/covers/take-that-first-step-audio.mp3", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 35, title: "THE AFTERMATH", pillar: "Anthemic Empowerment", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic Rock", 
-            moods: ["Dark", "Intense", "Empowered"], feelings: ["Conflicted", "Angry"],
-            tempos: ["Mid Tempo", "Pulsing"], povs: ["First Person", "Self-Aware Victim"],
-            placements: ["Post-Breakup Montage", "Character Growth", "Psychological Drama", "Trailer"],
-            hashtags: ["#TheAftermath", "#ToxicWithdrawal", "#PurifyingFire", "#BreakingFree", "#AlternativeRock"],
-            potential: "Critical Acclaim",
-            description: `A raw, cinematic exploration of the 'withdrawal' period that follows the end of a chaotic, toxic relationship. The protagonist initially struggles with the 'suffocating quiet,' admitting an addiction to the 'raw violence' and drama that once defined their life.`,
-            snippet: "Can't breathe in this quiet, / Not used to the silence. / Hooked on the drama", 
-            bestLyrics: "Best Lyric: \"The anger burns, a purifying fire / Fueling my escape from this toxic mire.\" (Transformation through fire).", 
-            img: "/assets/covers/the-aftermath-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 36, title: "THE BACK OF ME", pillar: "Anthemic Empowerment", genre1: "R&B", genre2: "Rock", subGenre: "Cinematic Soul", 
-            moods: ["Strong", "Decisive", "Bitter"], feelings: ["Done", "Cold"],
-            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Empowered Walk-out"],
-            placements: ["Final Frame", "Divorce Finale", "Walk-out Scene", "Closing Credits"],
-            hashtags: ["#TheBackOfMe", "#FinalFrame", "#WalkingOut", "#CinematicSoul", "#Done"],
-            potential: "Critical Acclaim",
-            description: `A decisive narrative capturing the 'final frame' of a relationship's end. The protagonist deconstructs her partner's confidence as an 'illusion'—a mere imitation of a man she actually built through her own emotional labor.`,
-            snippet: "All you will see when you turn back to look is the back of me", 
-            bestLyrics: "Best Lyric: \"That confidence you're feeling inside / Is an illusion created—a mere imitation of a man I made you.\" (The power flip).", 
-            img: "/assets/covers/the-back-of-me-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 37, title: "THE POCKET WATCH", pillar: "Raw Emotional Narrative", genre1: "Cinematic", genre2: "Piano Ballad", subGenre: "Dark Cinematic", 
-            moods: ["Dark", "Melancholic", "Haunted"], feelings: ["Anxious", "Trapped"],
-            tempos: ["Slow", "Ticking"], povs: ["First Person", "Ghostly"],
-            placements: ["Period Drama", "Grief Scene", "Thriller Montage", "Lonely Waterfront"],
-            hashtags: ["#PocketWatch", "#DarkBallad", "#TimeMetaphor", "#WateryGrave", "#CinematicSadness"],
-            potential: "Critical Acclaim",
-            description: `A haunting exploration of memory and the physical weight of time, set at a misty waterfront. The 'pocket watch' serves as a somatic anchor, its relentless 'tick-ticking' representing the counting of moments spent in isolation after becoming 'you and me' instead of 'us.'`,
-            snippet: "My only comfort is the sound of your pocket watch as it just ticks", 
-            bestLyrics: "Best Lyric: \"Even though I remain in my watery grave... the tick tick tick will always haunt me.\" (Gothic atmosphere).", 
-            img: "/assets/covers/the-pocket-watch-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 38, title: "THE REAL DREAM TEAM", pillar: "Kinetic Energy / Fun", genre1: "Pop", genre2: "Dancehall", subGenre: "Contemporary Anthem", 
-            moods: ["Playful", "Confident", "Bouncy"], feelings: ["Loyal", "Strong"],
-            tempos: ["Fast", "Rhythmic"], povs: ["First Person", "Partner"],
-            placements: ["Wedding Scene", "Sports Promo", "Loyalty Montage", "Summer Party"],
-            hashtags: ["#RealDreamTeam", "#PowerCouple", "#Loyalty", "#PopAnthem", "#RideOrDie"],
-            potential: "Top Radio Hit",
-            description: `A celebratory loyalty anthem detailing a battle-ready alliance against 'haters' and 'naysayers.' The narrative moves from romantic mesmerization to a vow of protective action, promising to conquer worlds together and 'shoot high and low' in battle.`,
-            snippet: "Into battle we will go you shoot high and I shoot low / I've got your back when haters attack", 
-            bestLyrics: "Best Lyric: \"We are the real dream team everyone can see / I tie the knot and say I Do.\" (Partnership manifesto).", 
-            img: "/assets/covers/the-real-dream-team-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 39, title: "THE SHOW IS THROUGH", pillar: "Raw Emotional Narrative", genre1: "Pop", genre2: "Theatrical", subGenre: "Dramatic Pop", 
-            moods: ["Sarcastic", "Final", "Bold"], feelings: ["Done", "Disappointed"],
-            tempos: ["Mid Tempo", "Dramatic"], povs: ["First Person", "Direct Address"],
-            placements: ["Breakup Scene", "Dramedy", "Curtain Call", "Transition Montage"],
-            hashtags: ["#TheShowIsThrough", "#NoFourthAct", "#TakeABow", "#TheatricalBreakup", "#DoneWithDrama"],
-            potential: "Top Radio Hit",
-            description: `A theatrical breakup track using stage metaphors to dismantle a partner's performative behavior. The protagonist refers to her heart as a 'prop' and the relationship as a 'show' that has finally closed. With a sarcastic 'break a leg' to the ex—described as a 'terrible actor and human.'`,
-            snippet: "My heart your prop now shattered to pieces / The act is over and the torment ceases", 
-            bestLyrics: "Best Lyric: \"Exit stage left 'cause the show is through / By the way you're a damn fine terrible actor.\" (Sarcastic finality).", 
-            img: "/assets/covers/the-show-is-through-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 40, title: "THOUGHT YOU SHOULD KNOW", pillar: "Anthemic Empowerment", genre1: "Pop", genre2: "Upbeat", subGenre: "Contemporary Pop", 
-            moods: ["Happy", "Confident", "Positive"], feelings: ["Free", "Vibrant"],
-            tempos: ["Up Tempo", "Driving"], povs: ["First Person", "Direct Address"],
-            placements: ["Glow Up Montage", "Post-Breakup Healing", "Lifestyle Brand", "Summer Movie"],
-            hashtags: ["#GlowUp", "#BestLife", "#MovingForward", "#CloudNine", "#PopAnthem"],
-            potential: "Top Radio Hit",
-            description: `An uplifting anthem of total recovery and triumphant moving on. The protagonist celebrates a 'brand new future' and a 'slate wiped so clean,' informing an ex—who was apparently asking about her—that she is 'on cloud nine.'`,
-            snippet: "Sun in my eyes, new day takes hold / No more shadows, stories untold", 
-            bestLyrics: "Best Lyric: \"I'm alright, I'm fine, having the most fun, on cloud nine / Out with the girls, we paint the town red.\" (Total recovery).", 
-            img: "/assets/covers/thought-you-should-know-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 41, title: "TOP SHELF QUEEN", pillar: "Kinetic Energy / Fun", genre1: "Country", genre2: "Pop", subGenre: "Contemporary Country", 
-            moods: ["Confident", "Sassy", "High-Value"], feelings: ["Worth-it", "Strong"],
-            tempos: ["Mid Tempo", "Strut"], povs: ["First Person", "Direct Address"],
-            placements: ["Makeover Scene", "Dating Show", "Reality TV", "Fashion Commercial"],
-            hashtags: ["#TopShelf", "#KnowYourWorth", "#NoDiscountBin", "#CountryQueen", "#HighStandards"],
-            potential: "Top Radio Hit",
-            description: `A confident declaration of self-worth and high standards, rejecting settling for anything less than the best. The protagonist compares herself to 'top shelf' liquor, refusing to be found in a 'discount bin.'`,
-            snippet: "I'm a top shelf queen not a discount bin / If you can't afford the price then you can't come in", 
-            bestLyrics: "Best Lyric: \"Keep your cheap talk and your dollar store lines / I'm looking for diamonds and vintage wines.\" (Standard setting).", 
-            img: "/assets/covers/top-shelf-queen-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 42, title: "WELCOME TO JUKES", pillar: "Cinematic Storytelling", genre1: "Country", genre2: "Rock", subGenre: "Southern Rock", 
-            moods: ["Gritty", "Rowdy", "Welcoming"], feelings: ["Loose", "Wild"],
-            tempos: ["Mid Tempo", "Stomp"], povs: ["First Person", "Host"],
-            placements: ["Bar Scene", "Fight Scene", "Movie Intro", "Southern Drama"],
-            hashtags: ["#DiveBar", "#JukeJoint", "#ColdBeer", "#Rowdy", "#SouthernRock"],
-            potential: "Critical Acclaim",
-            description: `An atmospheric dive bar anthem that sets the scene for a rowdy night of forgetting troubles. The lyrics welcome the listener to 'Jukes,' a place where the beer is cold, the music is loud, and 'nobody knows your name.'`,
-            snippet: "Leave your troubles at the door and step inside / Welcome to Jukes where there's nowhere to hide", 
-            bestLyrics: "Best Lyric: \"The neon buzzes and the whiskey flows / Where the night will end nobody knows.\" (Setting the scene).", 
-            img: "/assets/covers/welcome-to-jukes-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 43, title: "WILDFLOWER", pillar: "Cinematic Storytelling", genre1: "Country", genre2: "Folk", subGenre: "Americana", 
-            moods: ["Free", "Resilient", "Organic"], feelings: ["Natural", "Strong"],
-            tempos: ["Mid Tempo", "Breezy"], povs: ["Third Person", "Observational"],
-            placements: ["Nature Scene", "Indie Film", "Road Trip", "Documentary"],
-            hashtags: ["#Wildflower", "#FreeSpirit", "#NaturalBeauty", "#Resilience", "#FolkVibes"],
-            potential: "Critical Acclaim",
-            description: `A song about resilience and beauty growing in unlikely places, much like a wildflower in the cracks of pavement. The lyrics celebrate a free spirit who refuses to be tamed or cultivated, thriving in the wild rather than a garden.`,
-            snippet: "She's a wildflower growing in the cracks / No garden can hold her there's no turning back", 
-            bestLyrics: "Best Lyric: \"Dancing with the wind and drinking up the rain / Beauty born of sunshine and a little bit of pain.\" (Organic metaphor).", 
-            img: "/assets/covers/wildflower-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 44, title: "YEAR IN THE REARVIEW", pillar: "Raw Emotional Narrative", genre1: "Country", genre2: "Folk", subGenre: "Cinematic", 
-            moods: ["Melancholic", "Resilient", "Reflective"], feelings: ["Hopeful", "Strong"],
-            tempos: ["Mid Tempo", "Steady"], povs: ["First Person", "Survivor"],
-            placements: ["Healing Montage", "Season Finale", "Character Arc", "Indie Drama"],
-            hashtags: ["#Healing", "#MovingOn", "#RearviewMirror", "#NewBeginnings", "#Resilience"],
-            potential: "Critical Acclaim",
-            description: `A methodical examination of the healing process following a 'shattering crash' and emotional betrayal. The lyrics use a calendar as 'heavy stones' to build a fortress, before transitioning into 'peeling back layers' like bark from a wounded tree to reclaim silence.`,
-            snippet: "A year in the rearview since that shattering crash / Glue the broken pieces from the ash", 
-            bestLyrics: "Best Lyric: \"Peeling back the layers like bark from a wounded tree / Finding the person that I used to be.\" (Restoration).", 
-            img: "/assets/covers/year-in-the-rearview-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 45, title: "YOUR FOREVER MAN", pillar: "Cinematic Storytelling", genre1: "Country", genre2: "Romance", subGenre: "Wedding Song", 
-            moods: ["Devoted", "Warm", "Protective"], feelings: ["Loved", "Safe"],
-            tempos: ["Slow", "Flowing"], povs: ["First Person", "Male Perspective"],
-            placements: ["Wedding Scene", "Proposal", "Romantic Drama", "Anniversary"],
-            hashtags: ["#WeddingSong", "#ForeverMan", "#TrueLove", "#Commitment", "#CountryRomance"],
-            potential: "Critical Acclaim",
-            description: `A heartfelt male perspective commitment song promising to be the steady anchor in a storm. The lyrics describe a deep, unwavering love that sees past 'disguises' and 'demons,' offering a safe harbor. It culminates in a vow to be the 'forever man.'`,
-            snippet: "I'm the anchor, her helping hand / She's my future, I'm her forever man", 
-            bestLyrics: "Best Lyric: \"When the storm subsides and the hurricane blows away her disguise / I see within her eyes strength that won't die.\" (True intimacy).", 
-            img: "/assets/covers/your-forever-man-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        },
-        { 
-            id: 46, title: "YOUR MASK", pillar: "Anthemic Empowerment", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", 
-            moods: ["Angry", "Betrayed", "Dark"], feelings: ["Vindicated", "Disgusted"],
-            tempos: ["Fast", "Driving"], povs: ["First Person", "Whistleblower"],
-            placements: ["Political Thriller", "Corruption Drama", "Protest Montage", "Trailer"],
-            hashtags: ["#Corruption", "#FakeNews", "#YourMask", "#Exposed", "#RockProtest"],
-            potential: "Top Radio Hit",
-            description: `A biting social commentary on scapegoating and corruption. The lyrics address a figure who appears on screens as a 'monster in the news,' but the protagonist sees through the 'mask' to the rot underneath.`,
-            snippet: "You see me on the screen a monster in the news / But I know the truth and I refuse to lose", 
-            bestLyrics: "Best Lyric: \"Your mask is slipping showing the rot / You think you're a king but you're really not.\" (The reveal).", 
-            img: "/assets/covers/your-mask-cover-art.jpg", link: "https://songbay.co/portfolio/111887/"
-        }
-    ];
-    
-    // Concatenate Parts 1 and 2 for the full dataset
-    const VAULT_DATA = VAULT_DATA_PART_1.concat(VAULT_DATA_PART_2);
-    </script>
         }
 
         function resetVaultFilters() {
@@ -808,12 +731,103 @@
             document.getElementById('modal-song-audio-asset').pause();
         }
 
-        function printFromId(id) {
+        async function printFromId(id) {
             const s = VAULT_DATA.find(x => x.id === id);
+            const slug = getSongSlug(s.title);
+            let fullLyrics = "Lyrics loading...";
+            
+            // Try to fetch real lyrics for Page 2
+            try {
+                const response = await fetch(`/assets/lyrics/${slug}.html`);
+                if(response.ok) {
+                    // Extract text from HTML to remove tags
+                    const html = await response.text();
+                    const doc = new DOMParser().parseFromString(html, 'text/html');
+                    fullLyrics = doc.body.innerText; 
+                } else {
+                    fullLyrics = "Full lyrics available in official package.\n\n" + s.snippet;
+                }
+            } catch (e) {
+                fullLyrics = "Full lyrics available in official package.\n\n" + s.snippet;
+            }
+
             const win = window.open('', '_blank');
-            win.document.write(`<html><head><title>A&R Report: ${s.title}</title><style>body{font-family:sans-serif;padding:40px;}.header{border-bottom:2px solid #D4AF37;padding-bottom:20px;margin-bottom:30px;}h1{text-transform:uppercase;}</style></head><body><div class="header"><h1>INDUSTRY REPORT: ${s.title}</h1><p><strong>Writer:</strong> Kellie Larson</p></div><p><strong>Description:</strong> ${s.description}</p><p><strong>Best Lyric:</strong> "${s.bestLyrics}"</p></body></html>`);
+            win.document.write(`
+                <html>
+                <head>
+                    <title>A&R Report: ${s.title}</title>
+                    <style>
+                        @media print { 
+                            .page-break { page-break-after: always; } 
+                            body { font-family: 'Helvetica', sans-serif; padding: 40px; color: #000; line-height: 1.4; }
+                        }
+                        body { font-family: 'Helvetica', sans-serif; padding: 40px; color: #000; line-height: 1.4; max-width: 800px; margin: 0 auto; }
+                        h1 { font-size: 24px; text-transform: uppercase; border-bottom: 2px solid #D4AF37; padding-bottom: 10px; margin-bottom: 20px; }
+                        h2 { font-size: 18px; color: #333; margin-top: 30px; text-transform: uppercase; }
+                        .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; background: #f9f9f9; padding: 20px; border-radius: 8px; font-size: 12px; }
+                        .legal-box { border: 1px solid #ccc; padding: 15px; margin-top: 30px; font-size: 11px; color: #555; }
+                        .footer { margin-top: 50px; text-align: center; font-size: 10px; color: #666; border-top: 1px solid #D4AF37; padding-top: 15px; }
+                        .lyrics-text { white-space: pre-wrap; font-family: 'Georgia', serif; font-size: 12px; line-height: 1.1; margin-top: 20px; }
+                        .highlight { color: #D4AF37; font-weight: bold; }
+                    </style>
+                </head>
+                <body>
+                    <div>
+                        <div style="text-align:right; font-size:10px;">Date: ${new Date().toLocaleDateString()}</div>
+                        <h1>Song Title: ${s.title}</h1>
+                        <p><strong>Lyricist:</strong> Kellie Larson | <strong>Copyright:</strong> © 2024 Kellie Larson | <strong>Licensing:</strong> One-Stop (VerseandChorus.com)</p>
+                        
+                        <div class="meta-grid">
+                            <div><strong>Genre:</strong> ${s.genre1} / ${s.genre2}</div>
+                            <div><strong>Mood:</strong> ${s.moods.join(', ')}</div>
+                            <div><strong>Tempo:</strong> ${s.tempos[0]}</div>
+                            <div><strong>Potential:</strong> ${s.potential}</div>
+                            <div><strong>Rating:</strong> ${s.rating}/10</div>
+                            <div><strong>Placement:</strong> ${s.placements.join(', ')}</div>
+                        </div>
+
+                        <div class="legal-box">
+                            <strong>LEGAL ASSURANCE:</strong> This work is 100% human-authored by Kellie Larson. Any AI tools used during the demo process were strictly for vocal/instrumental modeling; the underlying composition and lyrical content are original human creations. Cleared for commercial sync.
+                        </div>
+
+                        <h2>A&R Description</h2>
+                        <p>${s.description} This narrative is crafted to deliver high emotional impact without relying on specific instrumentation, focusing purely on the universal themes of ${s.category}. Ideally suited for scenes involving ${s.placements[0]} or ${s.placements[1]}.</p>
+
+                        <h2>About the Lyricist</h2>
+                        <p>Kellie Larson is a Cinematic Songwriter specializing in narrative-driven lyrics for film and television. Her work focuses on high-stakes emotional arcs, from gritty urban dramas to anthemic empowerment. She offers pre-cleared, one-stop licensing for immediate industry use.</p>
+
+                        <p style="margin-top:30px;">Thank you for your interest in this catalog. We look forward to collaborating on your next project.</p>
+
+                        <div class="footer">
+                            Kellie Larson Cinematic Songwriter and Lyricist - info@verseandchorus.com -(760) 420-4553<br>
+                            200 S. Emerald Dr. SPC 37 Vista, CA 92081<br>
+                            © 2024 Kellie Larson. All Rights Reserved. Use of this document is for professional review only.
+                        </div>
+                    </div>
+
+                    <div class="page-break"></div>
+
+                    <div style="margin-top:50px;">
+                        <div style="text-align:right; font-size:10px;">Date: ${new Date().toLocaleDateString()}</div>
+                        <h1>${s.title}</h1>
+                        <p><strong>Lyricist:</strong> Kellie Larson</p>
+                        
+                        <div class="lyrics-text">
+                            ${fullLyrics}
+                        </div>
+
+                        <div class="footer">
+                            Kellie Larson Cinematic Songwriter and Lyricist - info@verseandchorus.com -(760) 420-4553<br>
+                            200 S. Emerald Dr. SPC 37 Vista, CA 92081<br>
+                            © 2024 Kellie Larson. All Rights Reserved. Use of this document is for professional review only.
+                        </div>
+                    </div>
+                </body>
+                </html>
+            `);
             win.document.close();
-            win.print();
+            // Wait a moment for the new window to load before printing
+            setTimeout(() => { win.print(); }, 500);
         }
 
         // --- 5. INIT ---
@@ -837,22 +851,16 @@
         </div>
     </div>
 
-    <section class="bg-[#1e293b] py-16 px-6 text-center border-t-2 border-[var(--sunset-orange)] mt-20">
+    <section class="testimonial-section">
         <div class="max-w-4xl mx-auto text-white italic text-lg leading-relaxed mb-8">
-            <p>"The emotional weight in Kellie's lyrics is exactly what we look for in high-stakes sync licensing."</p>
-            <p class="mt-4">"Her cinematic storytelling creates a vivid world before the music even starts."</p>
+            <p>"The emotional weight in Kellie's lyrics is exactly what we look for in high-stakes sync licensing." - Industry Supervisor</p>
+            <p class="mt-4">"Her cinematic storytelling creates a vivid world before the music even starts." - A&R Rep</p>
         </div>
-        <a href="lyric-critique.html" class="inline-block border-2 border-[var(--sunset-orange)] text-[var(--sunset-orange)] font-bold text-xl px-8 py-4 rounded hover:bg-[var(--sunset-orange)] hover:text-white transition">CLICK HERE FOR PROFESSIONAL LYRIC CRITIQUE - $499</a>
-    </section>
-
-    <section class="flex justify-center items-center gap-6 py-10 bg-[#0f172a] border-t border-slate-800">
-        <a href="/bio.html" class="border border-[var(--metallic-gold)] px-6 py-2 text-white font-bold rounded hover:bg-[var(--metallic-gold)] hover:text-black transition">BIO</a>
-        <div class="bg-[#1e293b] p-4 rounded-lg flex gap-2">
-            <input type="text" placeholder="Name" class="p-2 rounded text-black text-sm">
-            <input type="email" placeholder="Email" class="p-2 rounded text-black text-sm">
-            <button class="bg-[var(--sunset-orange)] text-white px-4 py-2 rounded font-bold hover:bg-red-600">SUBSCRIBE</button>
+        
+        <div class="flex justify-center gap-6 mt-8">
+            <a href="/bio.html" class="text-[var(--metallic-gold)] border border-[var(--metallic-gold)] px-6 py-2 rounded hover:bg-[var(--metallic-gold)] hover:text-black transition uppercase font-bold text-sm">Artist Spotlight</a>
+            <a href="lyric-critque.html" class="text-[var(--sunset-orange)] border border-[var(--sunset-orange)] px-6 py-2 rounded hover:bg-[var(--sunset-orange)] hover:text-white transition uppercase font-bold text-sm">Lyric Critique</a>
         </div>
-        <a href="/contact.html" class="border border-[var(--metallic-gold)] px-6 py-2 text-white font-bold rounded hover:bg-[var(--metallic-gold)] hover:text-black transition">CONTACT</a>
     </section>
 
     <footer class="site-footer no-print">
@@ -860,9 +868,11 @@
         <p>✍️ Cinematic Songwriter & Lyricist 🎹</p>
         <p>🧑‍🎤 www.VerseandChorus.com 🎙️</p>
         <p>© 2024 Kellie Larson. All Rights Reserved.</p>
-        <p>✉️ info@verseandchorus.com 📨</p>
-        <p>☎️ 760-537-0222 📲</p>
+        <p>✉️ info@verseandchorus.com | ☎️ 760-537-0222</p>
+        <hr class="footer-line">
     </footer>
     <button id="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
 </body>
 </html>
+    
+    
