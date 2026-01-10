@@ -1,3 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Pro Vault | Cinematic Songwriter Kellie Larson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root { --metallic-gold: #D4AF37; --sunset-orange: #FD5E53; --white: #FFFFFF; --black: #000000; --burgundy: #800020; }
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f1f5f9; scroll-behavior: smooth; }
+        .hero-box { text-align: center; padding: 80px 20px; background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('/assets/covers/industry-vault-bg.jpg'); background-size: cover; border-bottom: 2px solid var(--metallic-gold); }
+        .hero-script { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 2.2rem; }
+        .hero-title { font-size: 4.5rem; font-weight: 900; color: var(--white); text-transform: uppercase; line-height: 1; margin-top: 10px; }
+        
+        /* Pillars */
+        .pillar { border-left: 4px solid var(--metallic-gold); padding-left: 20px; }
+        .pillar-h { color: var(--metallic-gold); font-weight: 900; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+        .pillar-t { font-size: 0.75rem; color: #94a3b8; line-height: 1.4; }
+
+        /* Thematic Rectangles */
+        .theme-rect { border: 1px solid #334155; padding: 20px; font-size: 0.8rem; color: var(--white); background: rgba(0,0,0,0.4); border-radius: 4px; text-align: center; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
+
+        .vault-select { background: #000; border: 1px solid #334155; color: #cbd5e1; padding: 12px; border-radius: 8px; width: 100%; cursor: pointer; font-size: 0.7rem; text-transform: uppercase; font-weight: bold; }
+        .vault-select:hover { border-color: var(--sunset-orange); }
+        
+        .song-card { border: 2px solid #334155; background: #1e293b; transition: 0.3s; border-radius: 12px; padding: 1.5rem; height: 100%; display: flex; flex-direction: column; position: relative; }
+        .song-card:hover { border-color: var(--sunset-orange); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        .data-label { font-size: 0.6rem; font-weight: 800; color: var(--metallic-gold); text-transform: uppercase; margin-top: 0.5rem; letter-spacing: 0.5px; }
+        .data-value { font-size: 0.7rem; color: #cbd5e1; margin-bottom: 0.2rem; line-height: 1.2; }
+
+        /* Lyric Display Engine */
+        #modal-song-lyrics-full { line-height: 1; white-space: pre-line; font-family: serif; font-size: 1.25rem; }
+    </style>
+</head>
+<body>
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #000; border-bottom: 2px solid #D4AF37;">
+        <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Logo" style="max-width: 250px;">
+        <nav style="display: flex; gap: 20px;">
+            <a href="/bio.html" style="color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 12px;">Spotlight</a>
+            <a href="/industry-pros.html" style="color: #FD5E53; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 12px;">Industry Pro</a>
+            <a href="/lyrics.html" style="color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 12px;">Lyrics</a>
+            <a href="/green-room.html" style="color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 12px;">Green Room</a>
+            <a href="/contact.html" style="color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 12px;">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero-box">
+        <p class="hero-script">VerseandChorus.com Presents</p>
+        <h1 class="hero-title">Industry Pro's</h1>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mt-12 text-left">
+            <div class="pillar"><p class="pillar-h">Cinematic</p><p class="pillar-t">Designed for visual storytelling and high-stakes sync.</p></div>
+            <div class="pillar"><p class="pillar-h">Human-Authored</p><p class="pillar-t">Pure emotional depth created without the use of AI.</p></div>
+            <div class="pillar"><p class="pillar-h">Pre-Cleared</p><p class="pillar-t">One-stop licensing path for rapid industry turnaround.</p></div>
+            <div class="pillar"><p class="pillar-h">Traditional</p><p class="pillar-t">Rooted in authentic songwriting craftsmanship.</p></div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div class="theme-rect">Cinematic Narratives</div>
+            <div class="theme-rect">Atmospheric Textures</div>
+            <div class="theme-rect">Lyrical Precision</div>
+            <div class="theme-rect">High-Stakes Emotion</div>
+            <div class="theme-rect">Human Connection</div>
+            <div class="theme-rect">Sync Ready Concepts</div>
+        </div>
+
+
 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
     <div class="pillar-card group hover:border-[var(--sunset-orange)] hover:bg-[var(--sunset-orange)] transition" onclick="applyHardFilter('pillar', 'Anthemic Empowerment', this)">
         <h3 class="text-[var(--metallic-gold)] group-hover:text-white font-bold uppercase text-sm mb-1">1. Anthemic Empowerment</h3>
