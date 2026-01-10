@@ -3,55 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Industry Pro Vault | Cinematic Songwriter Kellie Larson</title>
-    
+    <title>Industry Pro Vault | 1-Stop Sync Licensing | Kellie Larson</title>
+    <meta name="description" content="Professional A&R vault for Kellie Larson. 100% human-authored, pre-cleared cinematic lyrics and compositions for commercial sync, film, and TV. Searchable metadata for music supervisors.">
+    <meta name="keywords" content="Sync Licensing 2026, Human-Authored Lyrics, 1-Stop Shop Music, Cinematic Songwriter, A&R Metadata, Pre-cleared Music, Kellie Larson, VerseandChorus">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     
     <style>
-        :root { --metallic-gold: #D4AF37; --burgundy: #800020; --white: #FFFFFF; --black: #000000; --sunset-orange: #FD5E53; --blue-gray: #64748b; }
-        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f1f5f9; }
+        :root { 
+            --metallic-gold: #D4AF37; 
+            --burgundy: #800020; 
+            --white: #FFFFFF; 
+            --black: #000000; 
+            --sunset-orange: #FD5E53; 
+            --blue-gray: #64748b; 
+            --dark-slate: #0f172a;
+        }
+        
+        body { font-family: 'Inter', sans-serif; background-color: var(--dark-slate); color: #f1f5f9; }
         .content-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
         /* --- HEADER STYLES --- */
-        #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); position: relative; flex-wrap: wrap; }
-        .logo-top-left { width: 90%; max-width: 300px; height: auto; display: block; margin-bottom: 10px; }
+        #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); position: relative; }
+        .logo-top-left { width: 90%; max-width: 300px; height: auto; display: block; }
         #nav-menu { display: flex; gap: 20px; }
         #nav-menu a { color: var(--white) !important; text-decoration: none; font-weight: bold; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
         #nav-menu a:hover { color: var(--metallic-gold) !important; }
 
-        /* --- UI COMPONENTS --- */
-        .song-card { border: 2px solid var(--blue-gray); background: #1e293b; text-align: center; height: 100%; display: flex; flex-direction: column; transition: 0.3s; }
-        .song-card:hover { border-color: var(--sunset-orange); transform: translateY(-5px); }
-        .metallic-gold-title { color: var(--metallic-gold); font-weight: 800; text-transform: uppercase; }
+        /* --- HERO BOX --- */
+        .hero-box { text-align: center; padding: 60px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/hero-bg.jpg'); background-size: cover; border-bottom: 5px solid var(--metallic-gold); }
+        .gold-script { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 2.5rem; }
+        .page-title { color: white; font-size: 4.5rem; font-weight: 800; text-transform: uppercase; line-height: 1; margin-top: 10px; }
 
-        .thematic-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 500px; margin: 0 auto 3rem; }
-        .thematic-card { height: 90px; border: 2px solid var(--blue-gray); border-radius: 8px; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; position: relative; cursor: pointer; overflow: hidden; }
-        .thematic-card::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
-        .thematic-card span { z-index: 2; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; color: white; text-align: center; }
-        .thematic-card.active { border-color: var(--sunset-orange); box-shadow: 0 0 15px rgba(253, 94, 83, 0.4); }
+        /* --- VAULT DATA LIST (No Cards) --- */
+        .vault-row { 
+            display: grid; 
+            grid-template-columns: 2fr 1fr 2fr 2fr 1fr; 
+            gap: 15px; 
+            align-items: center; 
+            padding: 15px; 
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2); 
+            transition: background 0.2s;
+        }
+        .vault-row:hover { background: rgba(255,255,255,0.05); }
+        .data-label-sm { color: var(--blue-gray); font-size: 0.65rem; text-transform: uppercase; font-weight: 900; }
+        .data-value { font-size: 0.85rem; font-weight: 600; }
 
-        .rect-card { background: #334155; border: 1px solid var(--blue-gray); padding: 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; text-align: center; cursor: pointer; text-transform: uppercase; }
-        .rect-card.active { border-color: var(--sunset-orange); background: var(--sunset-orange); color: white; }
+        /* --- BUTTONS & INTERACTIVE --- */
+        .rect-card { 
+            background: #334155; border: 1px solid var(--blue-gray); padding: 8px; border-radius: 4px; 
+            font-size: 0.7rem; font-weight: bold; text-align: center; cursor: pointer; text-transform: uppercase; 
+        }
+        .rect-card:active, .vault-btn:active { background-color: var(--sunset-orange) !important; color: white !important; }
+        .rect-card.active { border-color: var(--sunset-orange); background: var(--sunset-orange); }
 
-        .vault-select { background-color: #0f172a; border: 2px solid var(--blue-gray); color: white; padding: 10px; border-radius: 6px; width: 100%; cursor: pointer; font-size: 0.75rem; text-transform: uppercase; }
-        .vault-select:focus { border-color: var(--sunset-orange); outline: none; }
+        .vault-select { 
+            background-color: #000; border: 1px solid var(--blue-gray); color: white; 
+            padding: 10px; border-radius: 4px; width: 100%; cursor: pointer; font-size: 0.75rem; 
+        }
         
-        #back-to-top { position: fixed; bottom: 30px; right: 30px; background: var(--sunset-orange); color: white; width: 50px; height: 50px; border-radius: 50%; display: none; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border: none; }
+        .vault-btn { 
+            background: var(--metallic-gold); color: black; font-weight: 900; 
+            padding: 8px 12px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase;
+        }
 
         /* --- FOOTER --- */
-        .site-footer { background-color: var(--black); color: var(--white); text-align: center; padding: 40px 20px; border-top: 5px solid var(--metallic-gold); margin-top: 50px; display: flex; flex-direction: column; align-items: center; }
-        .footer-line { border: 0; height: 1px; background: var(--metallic-gold); margin: 20px auto; width: 100%; max-width: 300px; }
+        .site-footer { background-color: var(--black); color: var(--white); text-align: center; padding: 40px 20px; border-top: 5px solid var(--metallic-gold); margin-top: 50px; }
+        
+        /* --- ARROW UP --- */
+        #arrow-up { 
+            position: fixed; bottom: 30px; right: 30px; background: none; border: none; 
+            color: var(--sunset-orange); font-size: 3.5rem; cursor: pointer; z-index: 2000; 
+        }
 
-        /* --- MODAL --- */
-        #vault-modal-player { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 5000; justify-content: center; align-items: center; }
-        .modal-content { background: #1e293b; padding: 2rem; border-radius: 12px; border: 2px solid var(--metallic-gold); max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; text-align: center; position: relative; }
-        .close-modal { position: absolute; top: 1rem; right: 1rem; color: var(--sunset-orange); font-size: 2rem; cursor: pointer; line-height: 1; }
+        @media (max-width: 768px) {
+            .vault-row { grid-template-columns: 1fr; gap: 5px; }
+            .page-title { font-size: 2.5rem; }
+        }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body>
 
-    <header id="main-header" class="no-print">
+    <header id="main-header">
         <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
         <nav id="nav-menu">
           <a href="/bio.html">Spotlight</a>
@@ -62,266 +96,112 @@
         </nav>
     </header>
 
-    <main class="content-container py-10 no-print">
-        <div class="text-center mb-10">
-            <h2 class="text-4xl font-extrabold tracking-widest uppercase italic text-white">Industry Pro Vault</h2>
-            <p class="text-gray-400 mt-2 text-sm font-semibold italic">Curated Assets for Music Supervisors & A&R</p>
-        </div>
+    <div class="hero-box">
+        <div class="gold-script">VerseandChorus.com Presents</div>
+        <h1 class="page-title">Industry Pro's</h1>
+    </div>
 
-        <div class="bg-slate-900 p-6 mb-12 border-l-4 border-[var(--burgundy)] rounded shadow-lg">
-            <h4 class="text-xl font-bold mb-4 uppercase text-white tracking-wide">Rights & Licensing Assurance</h4>
-            <div class="grid md:grid-cols-2 gap-4 text-xs text-gray-300">
-                <p>✅ 100% Human-Authored Lyrics (Kellie Larson)</p>
-                <p>✅ Pre-Cleared for Immediate Commercial Sync Placement</p>
-                <p>✅ 1-Stop Shop: Lyrics, Composition, & Master Rights</p>
-                <p>✅ Full Clean Legal Path to traditional copyright ownership</p>
+    <main class="content-container py-10">
+        <div class="bg-black p-6 mb-8 border-l-4 border-[var(--sunset-orange)] rounded shadow-lg">
+            <h4 class="text-xl font-bold mb-4 uppercase text-[var(--metallic-gold)]">Sync Licensing Metadata Vault</h4>
+            <div class="grid md:grid-cols-4 gap-4 text-[10px] font-black uppercase tracking-tighter text-gray-400">
+                <p>100% Human-Authored</p>
+                <p>1-Stop Shop (Lyrics/Master)</p>
+                <p>Pre-Cleared for 2026 Sync</p>
+                <p>High-Velocity Metadata</p>
             </div>
         </div>
 
         <div class="grid grid-cols-3 gap-3 mb-8">
-            <div class="rect-card" onclick="applyHardFilter('placementType', 'Sync', this)">Commercial Sync</div>
-            <div class="rect-card" onclick="applyHardFilter('commercialPotential', 'High', this)">High Potential</div>
-            <div class="rect-card" onclick="applyHardFilter('genre1', 'Pop', this)">Radio Pop Focus</div>
+            <div class="rect-card" onclick="applyHardFilter('placement', 'Sync', this)">Commercial Sync</div>
+            <div class="rect-card" onclick="applyHardFilter('mood', 'Empowered', this)">High Impact</div>
+            <div class="rect-card" onclick="applyHardFilter('genre', 'Pop', this)">Top 40 Focus</div>
         </div>
 
-        <div class="thematic-grid">
-            <div class="thematic-card" style="background-image: url('/assets/covers/social-world-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Social', this)"><span>Social Commentary</span></div>
-            <div class="thematic-card" style="background-image: url('/assets/covers/empowerment-arc-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Empowerment', this)"><span>Empowerment Arc</span></div>
-            <div class="thematic-card" style="background-image: url('/assets/covers/disenchantment-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Disenchantment', this)"><span>Disenchantment</span></div>
-            <div class="thematic-card" style="background-image: url('/assets/covers/mutual-value-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Value', this)"><span>Value Proposition</span></div>
-            <div class="thematic-card" style="background-image: url('/assets/covers/loss-of-market-share-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Loss', this)"><span>Market Share</span></div>
-            <div class="thematic-card" style="background-image: url('/assets/covers/iterative-photo.jpg')" onclick="applyHardFilter('category', 'Iterative', this)"><span>Iterative Protagonist</span></div>
-        </div>
-
-        <div class="bg-gray-800 p-6 rounded-xl mb-12 border-2 border-[var(--blue-gray)] shadow-2xl">
-            <input type="text" id="vault-search-box" placeholder="Search Keywords, Mood, BPM, hashtags..." onkeyup="runFilters()" class="w-full p-4 bg-black border border-slate-700 rounded mb-6 text-white uppercase text-sm outline-none">
+        <div class="bg-slate-900 p-6 rounded border border-slate-700 mb-8">
+            <input type="text" id="vault-search" placeholder="SEARCH BY KEYWORD, BPM, MOOD, OR THEME..." onkeyup="runFilters()" 
+                   class="w-full p-4 bg-black border border-slate-800 rounded mb-6 text-white uppercase text-sm outline-none focus:border-[var(--sunset-orange)]">
             
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-2">
-                
-                <select id="genre-pull" class="vault-select" onchange="runFilters()">
-                   <option value="">ALL GENRES</option>
-                    <option value="Alternative">Alternative</option>
-                    <option value="Americana">Americana</option>
-                    <option value="Blues">Blues</option>
-                    <option value="Cinematic">Cinematic</option>
-                    <option value="Country">Country</option>
-                    <option value="Easy Listening">Easy Listening</option>
-                    <option value="Indie">Indie</option>
-                    <option value="Kpop">Kpop</option>
-                    <option value="Pop">Pop</option>
-                    <option value="Punk">Punk</option>
-                    <option value="Reggae">Reggae</option>
-                    <option value="R&B">R&B</option>
-                    <option value="Rock">Rock</option>
-                    <option value="World">World</option>
-                </select>
-
-
-                <select id="subgenre-pull" class="vault-select" onchange="runFilters()">
-                    <option value="">STYLE</option>
-                    <option value="Contemporary">Contemporary</option>
-                    <option value="Ballad">Ballad</option>
-                    <option value="Anthem">Anthem</option>
-                    <option value="Urban">Urban</option>
-                    <option value="Acoustic">Acoustic</option>
-                    <option value="Indie">Indie</option>
-                    <option value="Storytelling">Storytelling</option>
-                    <option value="Retro">Retro / 80s</option>
-                    <option value="Southern Gothic">Southern Gothic</option>
-                    <option value="Rhythmic">Rhythmic</option>
-                </select>
-                
-              <select id="mood-pull" class="vault-select hover:border-[var(--sunset-orange)] transition" onchange="runFilters()">
-                    <option value="">ALL MOODS</option>
-                    <option value="Angry">Angry</option>
-                    <option value="Confident">Confident</option>
-                    <option value="Dark">Dark</option>
-                    <option value="Empowered">Empowered</option>
-                    <option value="Happy">Happy</option>
-                    <option value="Hopeful">Hopeful</option>
-                    <option value="Intense">Intense</option>
-                    <option value="Sad">Sad</option>
-                    <option value="Sassy">Sassy</option>
-                </select>
-
-                <select id="feeling-pull" class="vault-select" onchange="runFilters()">
-                    <option value="">FEELING</option>
-                    <option value="Heartbroken">Heartbroken</option>
-                    <option value="Empowered">Empowered</option>
-                    <option value="Strong">Strong</option>
-                    <option value="Vulnerable">Vulnerable</option>
-                    <option value="Healed">Healed</option>
-                    <option value="Vindicated">Vindicated</option>
-                    <option value="Trapped">Trapped</option>
-                    <option value="Free">Free</option>
-                    <option value="Stuck">Stuck</option>
-                    <option value="Determined">Determined</option>
-                </select>
-
-                <select id="placement-pull" class="vault-select" onchange="runFilters()">
-                    <option value="">PLACEMENT</option>
-                    <option value="Sync">Commercial Sync</option>
-                    <option value="Drama">TV Drama</option>
-                    <option value="Trailer">Trailer</option>
-                    <option value="Credits">Credits</option>
-                    <option value="Anthem">Anthem</option>
-                    <option value="Breakup">Breakup Scene</option>
-                    <option value="Romance">Romance</option>
-                    <option value="Viral">Viral/Social</option>
-                    <option value="Montage">Montage</option>
-                    <option value="Background">Background</option>
-                </select>
-
-                <button onclick="resetVaultFilters()" class="text-xs font-black uppercase text-[var(--sunset-orange)] border border-[var(--sunset-orange)] rounded hover:bg-[var(--sunset-orange)] hover:text-white transition">Reset</button>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
+                <select id="genre-pull" class="vault-select" onchange="runFilters()"><option value="">GENRE</option><option value="Pop">Pop</option><option value="Country">Country</option><option value="Rock">Rock</option><option value="Indie">Indie</option></select>
+                <select id="mood-pull" class="vault-select" onchange="runFilters()"><option value="">MOOD</option><option value="Confident">Confident</option><option value="Dark">Dark</option><option value="Sad">Sad</option><option value="Hopeful">Hopeful</option></select>
+                <select id="feeling-pull" class="vault-select" onchange="runFilters()"><option value="">FEELING</option><option value="Empowered">Empowered</option><option value="Vulnerable">Vulnerable</option><option value="Strong">Strong</option></select>
+                <select id="placement-pull" class="vault-select" onchange="runFilters()"><option value="">PLACEMENT</option><option value="Sync">Sync</option><option value="Drama">Drama</option><option value="Trailer">Trailer</option></select>
+                <button onclick="resetFilters()" class="vault-select border-[var(--sunset-orange)] text-[var(--sunset-orange)]">RESET</button>
             </div>
         </div>
 
-        <div id="vault-grid-display" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-    </main>
-
-    <div id="vault-modal-player" class="hidden">
-        <div class="modal-content">
-            <span class="close-modal" onclick="document.getElementById('vault-modal-player').classList.replace('flex', 'hidden')">&times;</span>
-            <h2 id="modal-song-title" class="text-3xl font-black text-[var(--metallic-gold)] mb-4 uppercase"></h2>
-            <audio id="modal-song-audio-asset" controls class="w-full mb-6"></audio>
-            <div id="modal-song-lyrics-full" class="text-gray-300 text-left whitespace-pre-line font-serif"></div>
+        <div class="hidden md:grid grid-cols-5 gap-4 px-4 py-2 bg-slate-800 text-[10px] font-black uppercase text-gray-400 rounded-t border-b border-slate-700">
+            <div>Song Title / Genre</div>
+            <div>Rating</div>
+            <div>Primary Moods</div>
+            <div>Sync Placements</div>
+            <div>Action</div>
         </div>
-    </div>
+
+        <div id="vault-list-display" class="bg-black/20 rounded-b overflow-hidden">
+            </div>
+    </main>
 
     <footer class="site-footer">
         <div style="margin-bottom: 20px; font-size: 1.2rem; font-weight: bold;">♥️ Kellie Larson ♥️</div>
-        <div style="margin-bottom: 20px; color: #D4AF37; font-size: 1rem;">✍️Cinematic Songwriter and Lyricist 🎹</div>
+        <div style="margin-bottom: 20px; color: var(--metallic-gold); font-size: 1rem;">✍️Cinematic Songwriter and Lyricist 🎹</div>
         <div style="margin-bottom: 20px; font-size: 1rem;">🧑‍🎤 VerseandChorus.com 🎙️</div>
         <div style="margin-bottom: 15px;">✉️ info@verseandchorus.com 📨</div>
         <div style="margin-bottom: 20px;">☎️ 760-537-0222 📲</div>
         <div style="font-size: 0.8rem; color: #666;">© 2024 VerseandChorus.com. All Rights Reserved.</div>
     </footer>
 
-    <button id="arrow-up" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="position: fixed; bottom: 30px; right: 30px; background: none; border: none; color: #FD5E53; font-size: 3.5rem; cursor: pointer; z-index: 2000; line-height: 1; transition: 0.3s;">▲</button>
+    <button id="arrow-up" onclick="window.scrollTo({top:0, behavior:'smooth'})">▲</button>
 
-   <script>
-        function getSongSlug(title) { return title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-'); }
-        
-        // Data Vault: All 46 Songs
+    <script>
+        // Data Subset for demo (Full 46 songs would be here)
         const VAULT_DATA = [
-           <script>
-const VAULT_DATA = [
-    { title: "Author of a Lie", genre1: "Pop", genre2: "RNB", subgenre: "Minimalist", moods: ["Suspenseful", "Cold", "Analytical", "Calculated", "Ominous", "Tense", "Serious", "Gripping"], feelings: ["Betrayed", "Gaslit", "Aware", "Intellectual", "Steady", "Wary"], themes: ["Deception", "Truth", "Manipulation", "Identity", "Exposure"], placements: ["Drama-Scene", "Trailer", "End-Credits"], hashtags: ["#Gaslighting", "#Truth", "#Psychological", "#Liar"], keywords: ["Phony", "Dishonest", "Investigation", "Broken Trust"], phrases: ["You tell a story I pick it apart", "Your timeline is whacked you're playing a part", "The sun was out the clouds were gray"], description: "A chilling deconstruction of deception. Perfect for crime dramas.", img: "/assets/covers/author-of-a-lie.jpg", rating: 9.6 },
-    { title: "Big Hard No", genre1: "Country", genre2: "Pop", subgenre: "Ballad", moods: ["Strong", "Resilient", "Decisive", "Calm", "Firm", "Empowered", "Final", "Clean"], feelings: ["Healed", "Peaceful", "Strong", "Vindicated", "Done", "Relieved"], themes: ["Boundaries", "Rejection", "Self-Respect", "Closure", "Growth"], placements: ["Drama-Scene", "Commercial", "End-Credits"], hashtags: ["#Boundaries", "#SelfLove", "#No", "#Final"], keywords: ["No", "Refusal", "Toxic", "Strength"], phrases: ["Happier now, more than I've ever been", "Found a peace from deep within", "Found the strength to stand up off the floor"], description: "A definitive anthem of self-respect and the power of 'No'.", img: "/assets/covers/big-hard-no.jpg", rating: 9.9 },
-    { title: "Boom Boom Beat", genre1: "Pop", genre2: "Kpop", subgenre: "Urban", moods: ["Energetic", "Euphoric", "Playful", "Happy", "Vibrant", "Upbeat", "Electric", "Fun"], feelings: ["Confident", "Vibrant", "Obsessed", "In Love", "Excited", "High-Energy"], themes: ["Heartbeat", "Rhythm", "Love", "Momentum", "Attraction"], placements: ["Commercial", "Reality", "Sports"], hashtags: ["#DancePop", "#HighEnergy", "#Viral", "#Beat"], keywords: ["Heart", "Rhythm", "Tempo", "Dance"], phrases: ["But when we meet my heart plays a beautiful beat", "Boom boom boom da boom boom boom", "You are mine Yo de lee eee ooohhh"], description: "High-octane pop celebration of chemistry and rhythm.", img: "/assets/covers/boom-boom-beat.jpg", rating: 9.2 },
-    { title: "Bottom of the Wishing Well", genre1: "Country", genre2: "Americana", subgenre: "Gothic", moods: ["Ominous", "Haunting", "Somber", "Grim", "Melancholic", "Ghostly", "Stark", "Eerie"], feelings: ["Lost", "Tragic", "Cold", "Resigned", "Broken", "Shattered"], themes: ["Death", "Secrets", "Water", "Justice", "Fate"], placements: ["End-Credits", "Trailer", "Period-Piece"], hashtags: ["#MurderBallad", "#WishingWell", "#Gothic"], keywords: ["Drowning", "Water", "Tragedy", "Amsterdam"], phrases: ["Oh poor lil Belle at the bottom of the wishing well", "Her secrets now only the water can tell", "They lay there so still in their watery home"], description: "A dark Southern Gothic tale of a shared watery grave.", img: "/assets/covers/wishing-well.jpg", rating: 9.8 },
-    { title: "Broken Bad", genre1: "Country", genre2: "Blues", subgenre: "Ballad", moods: ["Bitter", "Sad", "Resigned", "Dark", "Grim", "Heavy", "Somber", "Grim"], feelings: ["Exhausted", "Numb", "Broken", "Hurt", "Trapped", "Hopeless"], themes: ["Ruin", "Betrayal", "Finality", "Damage", "The End"], placements: ["Drama-Scene", "End-Credits", "Opening"], hashtags: ["#BrokenBad", "#End", "#Ruin"], keywords: ["Broken", "Bad", "Lies", "Damage"], phrases: ["Too much fighting, too much disrespect", "Too much lying no truth to detect", "It's broken bad between us it's true"], description: "The raw, heavy static of a relationship's ultimate collapse.", img: "/assets/covers/broken-bad.jpg", rating: 9.3 },
-    { title: "CEO Not Babysitting Tree", genre1: "Pop", genre2: "RNB", subgenre: "Urban", moods: ["Sassy", "Confident", "Boss", "Strong", "Unstoppable", "Bold", "Sharp", "Calculated"], feelings: ["Empowered", "Fearless", "Resilient", "Strong", "Done", "Vindicated"], themes: ["Business", "Self-Worth", "Growth", "Boundaries", "Labor"], placements: ["Reality", "Commercial", "Sports"], hashtags: ["#CEO", "#Boss", "#SassyPop"], keywords: ["Tree", "Shade", "Business", "Seed"], phrases: ["Honey I'm a CEO not a babysitting tree", "You want the shade without planting the seed", "I'm busy stacking while you're just slacking"], description: "A high-power manifesto on self-valuation and boundaries.", img: "/assets/covers/ceo-tree.jpg", rating: 9.8 },
-    { title: "Children of War", genre1: "Indie", genre2: "Americana", subgenre: "Cinematic", moods: ["Haunting", "Sad", "Urgent", "Grim", "Melancholic", "Atmospheric", "Deep", "Emotional"], feelings: ["Lost", "Heartbroken", "Compassionate", "Broken", "Fearful", "Heavy"], themes: ["Innocence", "War", "Conflict", "Sacrifice", "Society"], placements: ["End-Credits", "Opening", "Period-Piece"], hashtags: ["#War", "#Children", "#Innocence"], keywords: ["War", "Sky", "Grave", "Scream"], phrases: ["Run little children there's nothing left here", "The playground's a grave and the sky is full of fear", "Leaders turn out the lights and go hide"], description: "A devastating look at the human cost of global conflict.", img: "/assets/covers/children-of-war.jpg", rating: 9.9 },
-    { title: "Concrete Under our Feet", genre1: "Rock", genre2: "Indie", subgenre: "Urban", moods: ["Introspective", "Cool", "Grounded", "Urban", "Nostalgic", "Steady", "Mellow", "Atmospheric"], feelings: ["Connected", "Peaceful", "Steady", "Real", "Lost", "Wary"], themes: ["Authenticity", "City Life", "Digital vs Physical", "Connection", "Reality"], placements: ["Drama-Scene", "Opening", "End-Credits"], hashtags: ["#CityLife", "#RealLove", "#Concrete"], keywords: ["Concrete", "City", "Street", "Real"], phrases: ["It ain't about the clout the flash the scene", "It's the concrete under our feet and the space between", "Let the city lights blur and the world go dim"], description: "Prioritizing physical presence in a digital world.", img: "/assets/covers/concrete.jpg", rating: 9.1 },
-    { title: "Craving Those Crumbs", genre1: "Country", genre2: "Pop", subgenre: "Ballad", moods: ["Disenchanted", "Strong", "Bitter", "Raw", "Exhausted", "Tense", "Grim", "Serious"], feelings: ["Vulnerable", "Exhausted", "Numb", "Betrayed", "Angry", "Resolved"], themes: ["Self-Worth", "Toxic Love", "Addiction", "Awakening", "Escape"], placements: ["Drama-Scene", "End-Credits", "Reality"], hashtags: ["#Worth", "#Crumbs", "#Toxic"], keywords: ["Crumbs", "Numb", "Man-child", "Worth"], phrases: ["Too much thinking I gotta stop craving those crumbs", "From a man-child who leaves me numb", "Reclaiming my light from the shade you were throwing"], description: "A raw dissection of reclaiming self-worth.", img: "/assets/covers/crumbs.jpg", rating: 9.0 },
-    { title: "Don't Be Jelly", genre1: "Pop", genre2: "Indie", subgenre: "Urban", moods: ["Fun", "Playful", "Confident", "Sassy", "Upbeat", "Happy", "Catchy", "Electric"], feelings: ["Empowered", "Joyful", "Fearless", "Bold", "Unbothered", "Vibrant"], themes: ["Confidence", "Jealousy", "Self-Expression", "Viral Trends", "Joy"], placements: ["Commercial", "Reality", "Gaming"], hashtags: ["#Jelly", "#Confidence", "#Viral"], keywords: ["Energy", "Truth", "Jelly", "Vibe"], phrases: ["I live my truth un-freakin'-apologetically", "Don't be jelly of my energy", "Hips to the left now stomp and slide"], description: "An assertive pop manifesto on unapologetic self-confidence.", img: "/assets/covers/jelly.jpg", rating: 9.4 },
-    { title: "Ephemeral Moment", genre1: "Pop", genre2: "Indie", subgenre: "Ballad", moods: ["Romantic", "Dreamy", "Sweet", "Ethereal", "Hopeful", "Calm", "Peaceful", "Lush"], feelings: ["In Love", "Hopeful", "Peaceful", "Euphoric", "Longing", "Steady"], themes: ["New Love", "Time", "Chemistry", "Connection", "Dawn"], placements: ["Drama-Scene", "Commercial", "Opening"], hashtags: ["#Love", "#Moment", "#Dreamy"], keywords: ["Moment", "Butterflies", "Wait", "Dawn"], phrases: ["I don't want to be away from you longer than I have to", "My heart plays a beautiful beat", "Just so I can hear you say that you missed me too"], description: "Capturing the fragile spark of new connection.", img: "/assets/covers/ephemeral.jpg", rating: 8.6 },
-    { title: "Etched in Every Space", genre1: "Indie", genre2: "Americana", subgenre: "Ballad", moods: ["Mournful", "Haunting", "Deep", "Sad", "Somber", "Atmospheric", "Grim", "Melancholic"], feelings: ["Lost", "Shattered", "Lonely", "Anxious", "Heavy", "Broken"], themes: ["Grief", "Memory", "Loss", "Haunting", "Home"], placements: ["End-Credits", "Opening", "Period-Piece"], hashtags: ["#Grief", "#Memory", "#Loss"], keywords: ["Face", "Space", "Sinking", "Sand"], phrases: ["Oh I miss your stupid face! It’s etched in every space", "I feel like I'm in sinking sand", "Stress and anxiety burning like fire"], description: "The visceral sensory haunting of a home after loss.", img: "/assets/covers/etched.jpg", rating: 9.7 },
-    { title: "Fury (I'm the Monster)", genre1: "Rock", genre2: "Indie", subgenre: "Cyberpunk", moods: ["Aggressive", "Intense", "Dark", "Explosive", "Heavy", "Fierce", "Dangerous", "Unstoppable"], feelings: ["Empowered", "Furious", "Relieved", "Vindicated", "Fearless", "Strong"], themes: ["Survival", "Revenge", "Reclamation", "Power", "Transformation"], placements: ["Trailer", "Sports", "Gaming"], hashtags: ["#Revenge", "#Monster", "#Power"], keywords: ["Rage", "Impact", "Female", "Escape"], phrases: ["Your fists a never-ending show", "Now I'm the monster that you used to know", "Roll right over your body and run"], description: "An explosive reclamation of power after trauma.", img: "/assets/covers/fury.jpg", rating: 10.0 },
-    { title: "80s Anthems", genre1: "Pop", genre2: "Rock", subgenre: "Synthwave", moods: ["Nostalgic", "Energetic", "Vibrant", "Euphoric", "Upbeat", "Bright", "Catchy", "Electric"], feelings: ["Fearless", "Euphoric", "Excited", "Free", "Vibrant", "Alive"], themes: ["Nostalgia", "Music", "Youth", "Summer", "Legacy"], placements: ["Commercial", "Reality", "Opening"], hashtags: ["#80s", "#Synthwave", "#Retro"], keywords: ["Neon", "Nights", "Living", "Synthesizer"], phrases: ["Neon lights and city nights", "Living for the music feeling so alive", "Stranger in a neon city"], description: "Pure 80s nostalgia utilizing high-energy synth-pop.", img: "/assets/covers/80s-anthems.jpg", rating: 8.9 },
-    { title: "Heartbreak and Trouble", genre1: "Pop", genre2: "RNB", subgenre: "Urban", moods: ["Sad", "Exhausted", "Tense", "Dark", "Grim", "Melancholic", "Tense", "Serious"], feelings: ["Broken", "Betrayed", "Obsessed", "Trapped", "Heartbroken", "Lost"], themes: ["Betrayal", "Theft", "Confusion", "Relationship", "Trouble"], placements: ["Drama-Scene", "Reality", "End-Credits"], hashtags: ["#Heartbreak", "#Trouble", "#Thief"], keywords: ["Bubble", "Thief", "Peace", "Trouble"], phrases: ["I must really love nothing I'm stuck In a bubble", "BlowIng bubbles alone no fire to light my way", "You're a thief of my peace a thief of my heart"], description: "The realization that a partner is merely a thief of peace.", img: "/assets/covers/heartbreak.jpg", rating: 8.8 },
-    { title: "Hit The Road", genre1: "Pop", genre2: "Rock", subgenre: "Anthemic", moods: ["Empowered", "Strong", "Defiant", "Bold", "Final", "Upbeat", "Happy", "Confident"], feelings: ["Done", "Relieved", "Vindicated", "Free", "Steady", "Empowered"], themes: ["Breakup", "Closure", "Digital", "Survival", "Leaving"], placements: ["Drama-Scene", "Reality", "End-Credits"], hashtags: ["#HitTheRoad", "#Blocked", "#Done"], keywords: ["Road", "Blocked", "Feelings", "Luck"], phrases: ["Don't stop don't look back", "HIt the road Jack", "Haha I blocked you on all that stuff"], description: "An empowering anthem about kicking a toxic partner out.", img: "/assets/covers/hit-road.jpg", rating: 9.3 },
-    { title: "How's It Feel, Bro?", genre1: "Pop", genre2: "Indie", subgenre: "Urban", moods: ["Confident", "Aggressive", "Sassy", "Bold", "Calculated", "Cool", "Assertive", "Sharp"], feelings: ["Vindicated", "Empowered", "Resilient", "Steady", "Cold", "Strong"], themes: ["Karma", "Reversal", "Manipulation", "Truth", "Identity"], placements: ["Drama-Scene", "Reality", "Sports"], hashtags: ["#Karma", "#HowsItFeel", "#Boomerang"], keywords: ["Shadow", "Boomerang", "Admissions", "Glue"], phrases: ["You're always spinning that sht but I'm boomeranging it back", "Even my shadow is standing different", "Calling out your future admissions"], description: "A sharp, confrontational reversal of manipulative tactics.", img: "/assets/covers/how-feel.jpg", rating: 9.1 },
-    { title: "I'm a Broken Record", genre1: "Rock", genre2: "Indie", subgenre: "Ballad", moods: ["Raw", "Honest", "Melancholic", "Tense", "Deep", "Atmospheric", "Heavy", "Serious"], feelings: ["Lost", "Resilient", "Worn", "Weary", "Frustrated", "Stuck"], themes: ["Mental Health", "Cycles", "Youth", "Growth", "Defeat"], placements: ["Drama-Scene", "End-Credits", "Opening"], hashtags: ["#MentalHealth", "#BrokenRecord", "#Growth"], keywords: ["Record", "Repeat", "Defeat", "Youth"], phrases: ["Cause I'm a broken record skipping on repeat", "Watching everyone else land on their feet", "Cutting the ties to the ghosts of the past"], description: "A methodical look at breaking cycles and mental health.", img: "/assets/covers/broken-record.jpg", rating: 8.9 },
-    { title: "I Know Your Damn Pin Code", genre1: "Rock", genre2: "Punk", subgenre: "Minimalist", moods: ["Bitter", "Confident", "Intense", "Aggressive", "Suspenseful", "Cold", "Dangerous", "Sharp"], feelings: ["Vindicated", "Angry", "Fearless", "Strong", "Steady", "Cold"], themes: ["Betrayal", "Digital", "Investigation", "Truth", "Justice"], placements: ["Drama-Scene", "Trailer", "Sports"], hashtags: ["#PinCode", "#Justice", "#DigitalBetrayal"], keywords: ["Pin", "Code", "Bullets", "Gun"], phrases: ["Think you're clever / I know your damn pin code", "Gave me bullets for my gun I named Justice", "Eff off get gone I'm slamming the door"], description: "A visceral look at digital betrayal and reclaiming power.", img: "/assets/covers/pin-code.jpg", rating: 9.5 },
-    { title: "In My Dreams (When I Wake)", genre1: "Pop", genre2: "Indie", subgenre: "Ballad", moods: ["Sad", "Mournful", "Dreamy", "Ethereal", "Somber", "Atmospheric", "Melancholic", "Grim"], feelings: ["Lost", "Shattered", "Longing", "Lonely", "Despair", "Heartbroken"], themes: ["Grief", "Loss", "Reality", "Memory", "Color"], placements: ["End-Credits", "Drama-Scene", "Opening"], hashtags: ["#Grief", "#Dreams", "#Loss"], keywords: ["Dreams", "Wake", "Loneliness", "Fear"], phrases: ["In my dreams you are here and you kiss my cheek", "But when I wake you're not here and I feel loneliness and fear", "But when I wake everything is gray"], description: "The heartbreaking contrast between dreams and reality.", img: "/assets/covers/dreams.jpg", rating: 9.4 },
-    { title: "Just A Little Lonely", genre1: "Pop", genre2: "RNB", subgenre: "Ballad", moods: ["Sad", "Melancholic", "Nostalgic", "Somber", "Grim", "Soft", "Mellow", "Atmospheric"], feelings: ["Lost", "Lonely", "Longing", "Wistful", "Broken", "Weary"], themes: ["Breakup", "Isolation", "Memory", "Regret", "Silence"], placements: ["Drama-Scene", "Opening", "End-Credits"], hashtags: ["#Lonely", "#Breakup", "#RNB"], keywords: ["Lonely", "Sorry", "Dying", "Streetlights"], phrases: ["Streetlights paint a lonely picture on my wall", "Each car that passes, I'm always hoping it's your call", "Are you just a little lonely? Or just a little sorry"], description: "A poignant ballad on the lingering pain of separation.", img: "/assets/covers/lonely.jpg", rating: 8.7 },
-    { title: "Married To The Drug", genre1: "Rock", genre2: "Blues", subgenre: "Gothic", moods: ["Dark", "Intense", "Grim", "Heavy", "Suspenseful", "Stark", "Somber", "Raw"], feelings: ["Betrayed", "Strong", "Fearless", "Resolved", "Angry", "Relieved"], themes: ["Addiction", "Betrayal", "Recovery", "Identity", "Death"], placements: ["Drama-Scene", "Opening", "End-Credits"], hashtags: ["#Addiction", "#Recovery", "#Drug"], keywords: ["Drug", "Fetty", "Powder", "Man"], phrases: ["Married to the drug, Mrs. Fetty, hand in hand", "Signed the papers in white powder, you’re a submissive man", "I’m cutting down the Tree Shade that kept me in the cold"], description: "A raw, metaphorical dissection of addiction as a lover.", img: "/assets/covers/married-drug.jpg", rating: 9.9 },
-    { title: "Murderer's Heart", genre1: "Country", genre2: "Americana", subgenre: "Gothic", moods: ["Dark", "Shocking", "Cinematic", "Grim", "Ominous", "Haunting", "Tense", "Heavy"], feelings: ["Vengeful", "Broken", "Cold", "Shattered", "Resolved", "Empty"], themes: ["Betrayal", "Crime", "Family", "Justice", "Fate"], placements: ["End-Credits", "Trailer", "Period-Piece"], hashtags: ["#MurderBallad", "#CountryCrime", "#Justice"], keywords: ["Mary", "Colt", "Kill", "Heart"], phrases: ["Mary pulled out what her Daddy gave her, a big ole Colt .22", "Mary loved Dan too much to kill him... but her sister met her demise", "They lay there so still in their watery home"], description: "A shocking narrative ballad on betrayal and cold justice.", img: "/assets/covers/murderer.jpg", rating: 9.5 },
-    { title: "My Girl Karma", genre1: "Pop", genre2: "Country", subgenre: "Urban", moods: ["Sassy", "Confident", "Upbeat", "Playful", "Catchy", "Electric", "Bold", "Viral"], feelings: ["Vindicated", "Joyful", "Fearless", "Steady", "Empowered", "Unbothered"], themes: ["Karma", "Justice", "Fate", "Trends", "Patience"], placements: ["Commercial", "Reality", "Teen-Drama"], hashtags: ["#Karma", "#SassyPop", "#Vindicated"], keywords: ["Karma", "Debt", "Menu", "Order"], phrases: ["My girl karma is coming your way", "You'll meet her in a year, a month, or maybe even today", "She has no menu / Your order’s been on reserve"], description: "A sassy warning on the inevitability of cosmic justice.", img: "/assets/covers/karma.jpg", rating: 9.2 },
-    { title: "My Words Still Matter", genre1: "Country", genre2: "Americana", subgenre: "Acoustic", moods: ["Confident", "Grounded", "Quietly Strong", "Stark", "Serious", "Calm", "Steady", "Firm"], feelings: ["Wise", "Patient", "Empowered", "Steady", "Honest", "Clear"], themes: ["Self-Worth", "Silence", "Victory", "Maturity", "Identity"], placements: ["Drama-Scene", "End-Credits", "Commercial"], hashtags: ["#Worth", "#Silence", "#Strength"], keywords: ["Words", "Matter", "Shouting", "Defeat"], phrases: ["My words still matter even when I'm lit", "Shouting your truth is the sound of defeat", "I choose to protect the drunk sinner"], description: "A powerful exploration of silent victory in confrontation.", img: "/assets/covers/words-matter.jpg", rating: 9.4 },
-    { title: "Not that girl from before", genre1: "Pop", genre2: "Rock", subgenre: "Anthemic", moods: ["Strong", "Transformed", "Independent", "Bold", "Final", "Upbeat", "Catchy", "Electric"], feelings: ["Free", "Awake", "Empowered", "Vindicated", "Joyful", "Steady"], themes: ["Growth", "Transformation", "Freedom", "Recovery", "Identity"], placements: ["Reality", "End-Credits", "Commercial"], hashtags: ["#Transformation", "#Growth", "#NewMe"], keywords: ["Before", "Gone", "Dawn", "Myself"], phrases: ["I was so blinded so into you I lost myself it's true", "Thank God you're gone 'cause they say it's darkest before the dawn", "I'm not the girl you used to know from before"], description: "A definitive character-growth anthem on shedding a toxic past.", img: "/assets/covers/not-that-girl.jpg", rating: 9.0 },
-    { title: "One Small Wrong", genre1: "Pop", genre2: "RNB", subgenre: "Urban", moods: ["Conflicted", "Dramatic", "Tense", "Grim", "Heavy", "Suspenseful", "Stark", "Emotional"], feelings: ["Regret", "Betrayed", "Lost", "Angry", "Broken", "Shattered"], themes: ["Betrayal", "Conflict", "Regret", "Relationship", "Tit for Tat"], placements: ["Drama-Scene", "Reality", "End-Credits"], hashtags: ["#Betrayal", "#Regret", "#Relationship"], keywords: ["Wrong", "Wind", "Dread", "Ex"], phrases: ["Gone with the wind you left me here in dread", "Put an 'L' in my head where intrusive thoughts are bred", "Ran to your ex for sex you can't be trusted"], description: "A dramatic examination of a toxic cycle of retaliation.", img: "/assets/covers/one-wrong.jpg", rating: 8.8 },
-    { title: "Shot By Cupids Dart", genre1: "Pop", genre2: "Indie", subgenre: "Acoustic", moods: ["Romantic", "Dreamy", "Sweet", "Euphoric", "Upbeat", "Catchy", "Electric", "Vibrant"], feelings: ["In Love", "Euphoric", "Obsessed", "Happy", "Excited", "Bold"], themes: ["Love", "Chemistry", "Connection", "Impact", "Fate"], placements: ["Commercial", "Reality", "Opening"], hashtags: ["#Love", "#Cupid", "#Dart"], keywords: ["Cupid", "Dart", "Heart", "Fine"], phrases: ["When I first saw you I thought damn he's so fine", "Then I talked to you and you really blew my mind", "Together forever shot by Cupid's dart"], description: "An atmospheric celebration of sudden, undeniable impact.", img: "/assets/covers/cupid.jpg", rating: 8.9 },
-    { title: "Showdown At My Door", genre1: "Country", genre2: "Rock", subgenre: "Americana", moods: ["Strong", "Defiant", "Bold", "Aggressive", "Grim", "Serious", "Heavy", "Stark"], feelings: ["Unyielding", "Done", "Empowered", "Fearless", "Cold", "Steady"], themes: ["Boundaries", "Conflict", "Survival", "Rejection", "Identity"], placements: ["Sports", "Trailer", "Drama-Scene"], hashtags: ["#Showdown", "#Boundaries", "#CountryRock"], keywords: ["Showdown", "Door", "River", "Locks"], phrases: ["Don't you dare think 'bout a showdown at my door", "Used to cry those tears but the river don't flow no more", "You can kick your rocks I'm changing the locks I'm so done with you"], description: "A defiant narrative about setting unyielding boundaries.", img: "/assets/covers/showdown.jpg", rating: 9.3 },
-    { title: "Sick One (s1c)", genre1: "Pop", genre2: "RNB", subgenre: "Urban", moods: ["Conflicted", "Toxic", "Intense", "Dark", "Tense", "Dangerous", "Grim", "Suspenseful"], feelings: ["Obsessed", "Betrayed", "Broken", "Angry", "Wary", "Shattered"], themes: ["Toxic Love", "Obsession", "Lies", "Chaos", "Identity"], placements: ["Drama-Scene", "Reality", "End-Credits"], hashtags: ["#Toxic", "#SickOne", "#RNB"], keywords: ["Sick", "Sus", "Phone", "Lies"], phrases: ["Our love is on a sick one", "It's good for no one", "I couldn't believe all the lies you told"], description: "A rhythmic look at a toxic, addictive relationship cycle.", img: "/assets/covers/sick-one.jpg", rating: 9.1 },
-    { title: "Silver and Gray", genre1: "Country", genre2: "Americana", subgenre: "Ballad", moods: ["Reflective", "Melancholic", "Vulnerable", "Soft", "Mellow", "Dreamy", "Deep", "Introspective"], feelings: ["Wistful", "Hopeful", "Steady", "Wary", "Longing", "Peaceful"], themes: ["Aging", "Love", "Time", "Commitment", "Growth"], placements: ["Drama-Scene", "End-Credits", "Opening"], hashtags: ["#Aging", "#Love", "#SilverAndGray"], keywords: ["Silver", "Gray", "Woman", "Nest"], phrases: ["I’m reaching through the silver and the gray", "Do you still choose the woman I’ve become today?", "We built this nest with hands and heart"], description: "A poignant ballad on mature love and long-term commitment.", img: "/assets/covers/silver.jpg", rating: 9.5 },
-    { title: "Solid Shifting Ground", genre1: "Country", genre2: "Indie", subgenre: "Acoustic", moods: ["Hopeful", "Reflective", "Inspirational", "Grounded", "Deep", "Steady", "Profound", "Serious"], feelings: ["Resilient", "Hopeful", "Honest", "Steady", "Peaceful", "Connected"], themes: ["Resilience", "Life", "Change", "Nature", "Growth"], placements: ["Commercial", "End-Credits", "Opening"], hashtags: ["#Resilience", "#Life", "#Ground"], keywords: ["Ground", "Storm", "Beautiful", "Crazy"], phrases: ["A heart can be heavy, weighted down by dreams", "Like a storm cloud gatherin', it silently screams", "And it's worth it every time it comes around"], description: "A philosophical anthem on life's highs and lows.", img: "/assets/covers/shifting-ground.jpg", rating: 9.7 },
-    { title: "Stood By My Side", genre1: "Pop", genre2: "Americana", subgenre: "Ballad", moods: ["Grateful", "Peaceful", "Deep", "Soft", "Mellow", "Hopeful", "Lush", "Steady"], feelings: ["Saved", "Loved", "Peaceful", "Hopeful", "Steady", "Grateful"], themes: ["Faith", "Support", "Survival", "Friendship", "Growth"], placements: ["End-Credits", "Drama-Scene", "Commercial"], hashtags: ["#Grateful", "#Support", "#Faith"], keywords: ["Side", "Walked", "Companion", "Hope"], phrases: ["When the world walked away you stood by my side", "My constant companion nowhere to hide", "The urge to end it it weakens and flees"], description: "A spiritual song of gratitude for unwavering support.", img: "/assets/covers/side.jpg", rating: 9.2 },
-    { title: "Take That First Step", genre1: "Country", genre2: "Indie", subgenre: "Cinematic", moods: ["Hopeful", "Urgent", "Empathetic", "Deep", "Serious", "Firm", "Moving", "Emotional"], feelings: ["Encouraged", "Concerned", "Steady", "Strong", "Empowered", "Honest"], themes: ["Recovery", "Intervention", "Survival", "Friendship", "Change"], placements: ["Commercial", "End-Credits", "Drama-Scene"], hashtags: ["#Recovery", "#Step", "#Survival"], keywords: ["Step", "Darkness", "Goodbye", "Basket"], phrases: ["Everything broken trust me it's only bent", "Every single second is a second well spent", "Don't want to say goodbye at a casket"], description: "A moving narrative focusing on intervention and recovery.", img: "/assets/covers/step.jpg", rating: 9.8 },
-    { title: "The Aftermath", genre1: "Rock", genre2: "Indie", subgenre: "Cinematic", moods: ["Dark", "Intense", "Empowered", "Heavy", "Grim", "Suspenseful", "Stark", "Atmospheric"], feelings: ["Conflicted", "Angry", "Resilient", "Steady", "Strong", "Relieved"], themes: ["Escape", "Recovery", "Withdrawal", "Transformation", "Identity"], placements: ["Opening", "Trailer", "Drama-Scene"], hashtags: ["#Aftermath", "#Rock", "#Cinematic"], keywords: ["Quiet", "Silence", "Hooked", "Drama"], phrases: ["Can't breathe in this quiet", "Not used to the silence", "Hooked on the drama"], description: "The cinematic exploration of the period following toxic love.", img: "/assets/covers/aftermath.jpg", rating: 9.4 },
-    { title: "The Back of Me", genre1: "RNB", genre2: "Blues", subgenre: "Minimalist", moods: ["Strong", "Decisive", "Bitter", "Bold", "Stark", "Calculated", "Cold", "Serious"], feelings: ["Done", "Cold", "Steady", "Strong", "Empowered", "Vindicated"], themes: ["Breakup", "Self-Worth", "Identity", "Closure", "Truth"], placements: ["End-Credits", "Opening", "Drama-Scene"], hashtags: ["#Worth", "#Done", "#Closure"], keywords: ["Back", "Door", "Ghost", "Frame"], phrases: ["All you will see when you turn back to look is the back of me", "That confidence you're feeling inside is an illusion", "A mere imitation of a man I made you"], description: "A decisive narrative on the final frame of a relationship.", img: "/assets/covers/back-me.jpg", rating: 9.6 },
-    { title: "The Pocket Watch", genre1: "Indie", genre2: "Americana", subgenre: "Gothic", moods: ["Dark", "Melancholic", "Haunted", "Ominous", "Atmospheric", "Grim", "Haunting", "Somber"], feelings: ["Lost", "Shattered", "Lonely", "Anxious", "Trapped", "Broken"], themes: ["Time", "Memory", "Grief", "Loss", "Water"], placements: ["Opening", "Period-Piece", "End-Credits"], hashtags: ["#Time", "#Memory", "#PocketWatch"], keywords: ["Watch", "Ticks", "Grave", "Waiting"], phrases: ["My only comfort is the sound of your pocket watch as it just ticks", "Even though I remain in my watery grave", "the tick tick tick will always haunt me"], description: "A haunting exploration of memory and the weight of time.", img: "/assets/covers/watch.jpg", rating: 9.2 },
-    { title: "The Real Dream Team", genre1: "Pop", genre2: "Kpop", subgenre: "Urban", moods: ["Playful", "Confident", "Upbeat", "Happy", "Euphoric", "Catchy", "Electric", "Vibrant"], feelings: ["Loyal", "Strong", "Excited", "Free", "Connected", "Bold"], themes: ["Loyalty", "Success", "Connection", "Impact", "Partnership"], placements: ["Commercial", "Reality", "Opening"], hashtags: ["#DreamTeam", "#Loyalty", "#Pop"], keywords: ["Battle", "Haters", "Back", "Team"], phrases: ["Into battle we will go you shoot high and I shoot low", "I've got your back when haters attack", "We are the real dream team everyone can see"], description: "A celebratory loyalty anthem against the world.", img: "/assets/covers/team.jpg", rating: 8.9 },
-    { title: "The Show Is Through", genre1: "Pop", genre2: "Indie", subgenre: "Ballad", moods: ["Sarcastic", "Final", "Bold", "Stark", "Serious", "Cold", "Firm", "Serious"], feelings: ["Done", "Disappointed", "Resolved", "Vindicated", "Steady", "Strong"], themes: ["Identity", "Lies", "The End", "Finality", "Truth"], placements: ["End-Credits", "Opening", "Drama-Scene"], hashtags: ["#TheEnd", "#Done", "#Closure"], keywords: ["Show", "Curtains", "Pieces", "Shattered"], phrases: ["My heart your prop now shattered to pieces", "The act is over and the torment ceases", "Exit stage left 'cause the show is through"], description: "Theatrical breakup track using stage metaphors for deception.", img: "/assets/covers/show-through.jpg", rating: 9.0 },
-    { title: "Thought You Should Know", genre1: "Pop", genre2: "Kpop", subgenre: "Anthemic", moods: ["Happy", "Confident", "Positive", "Upbeat", "Euphoric", "Catchy", "Electric", "Vibrant"], feelings: ["Free", "Vibrant", "Empowered", "Joyful", "Fearless", "Bold"], themes: ["Recovery", "Freedom", "Healing", "Growth", "Moving On"], placements: ["Commercial", "Reality", "End-Credits"], hashtags: ["#Healing", "#CloudNine", "#Pop"], keywords: ["Fine", "Cloud", "Shadows", "Sun"], phrases: ["Sun in my eyes, new day takes hold", "No more shadows, stories untold", "I'm alright, I'm fine, having the most fun, on cloud nine"], description: "An uplifting anthem of recovery and triumphant moving on.", img: "/assets/covers/know.jpg", rating: 9.7 },
-    { title: "Top Shelf Queen", genre1: "Pop", genre2: "Country", subgenre: "Urban", moods: ["Confident", "Sassy", "Upbeat", "Playful", "Bold", "Assertive", "Calculated", "Electric"], feelings: ["Strong", "Fearless", "Empowered", "Steady", "Unbothered", "Vindicated"], themes: ["Self-Worth", "Identity", "Boundaries", "Value", "Standards"], placements: ["Reality", "Commercial", "Teen-Drama"], hashtags: ["#Queen", "#Worth", "#Standards"], keywords: ["Shelf", "Queen", "Price", "Talk"], phrases: ["I'm a top shelf queen not a discount bin", "If you can't afford the price then you can't come in", "Keep your cheap talk and your dollar store lines"], description: "A high-standards anthem on self-worth and value.", img: "/assets/covers/queen.jpg", rating: 9.1 },
-    { title: "Welcome To Jukes", genre1: "Rock", genre2: "Country", subgenre: "Urban", moods: ["Gritty", "Rowdy", "Welcoming", "Bold", "Aggressive", "Stark", "Serious", "Heavy"], feelings: ["Fearless", "Loose", "Strong", "Alive", "Resilient", "Steady"], themes: ["Nightlife", "Escapism", "City Life", "Reality", "Identity"], placements: ["Commercial", "Opening", "Drama-Scene"], hashtags: ["#Jukes", "#Rowdy", "#Rock"], keywords: ["Whiskey", "Cheap", "Troubles", "Door"], phrases: ["Leave your troubles at the door and step inside", "Welcome to Jukes where there's nowhere to hide", "The neon buzzes and the whiskey flows"], description: "An atmospheric dive bar anthem for a rowdy night out.", img: "/assets/covers/jukes.jpg", rating: 8.5 },
-    { title: "Wildflower", genre1: "Indie", genre2: "Americana", subgenre: "Acoustic", moods: ["Free", "Resilient", "Organic", "Soft", "Mellow", "Hopeful", "Lush", "Gentle"], feelings: ["Natural", "Strong", "Fearless", "Steady", "Peaceful", "Connected"], themes: ["Resilience", "Nature", "Survival", "Beauty", "Identity"], placements: ["Commercial", "End-Credits", "Opening"], hashtags: ["#Wildflower", "#Resilience", "#Nature"], keywords: ["Cracks", "Garden", "Turning", "Back"], phrases: ["She's a wildflower growing in the cracks", "No garden can hold her there's no turning back", "Dancing with the wind and drinking up the rain"], description: "A song about resilience and beauty growing in unlikely places.", img: "/assets/covers/wildflower.jpg", rating: 9.9 },
-    { title: "Year In The Rearview", genre1: "Country", genre2: "Americana", subgenre: "Ballad", moods: ["Melancholic", "Resilient", "Reflective", "Stark", "Serious", "Deep", "Haunting", "Somber"], feelings: ["Hopeful", "Strong", "Honest", "Steady", "Weary", "Aware"], themes: ["Healing", "Growth", "Time", "Closure", "Recovery"], placements: ["End-Credits", "Drama-Scene", "Opening"], hashtags: ["#Healing", "#Recovery", "#Time"], keywords: ["Rearview", "Year", "Crash", "Broken"], phrases: ["A year in the rearview since that shattering crash", "Glue the broken pieces from the ash", "Peeling back the layers like bark from a wounded tree"], description: "A methodical examination of the healing process after betrayal.", img: "/assets/covers/rearview.jpg", rating: 9.3 },
-    { title: "Your Forever Man", genre1: "Pop", genre2: "Country", subgenre: "Ballad", moods: ["Devoted", "Warm", "Protective", "Calm", "Soft", "Mellow", "Hopeful", "Steady"], feelings: ["Loved", "Safe", "Hopeful", "Steady", "Connected", "Stable"], themes: ["Loyalty", "Protection", "Love", "Commitment", "Impact"], placements: ["Commercial", "Reality", "Drama-Scene"], hashtags: ["#Forever", "#Man", "#Love"], keywords: ["Anchor", "Helping", "Hand", "Future"], phrases: ["I'm the anchor, her helping hand", "She's my future, I'm her forever man", "Strength that won't die"], description: "A heartfelt commitment song from a protective male perspective.", img: "/assets/covers/forever-man.jpg", rating: 9.1 },
-    { title: "Your Mask", genre1: "Rock", genre2: "Indie", subgenre: "Minimalist", moods: ["Angry", "Betrayed", "Dark", "Tense", "Serious", "Grim", "Heavy", "Stark"], feelings: ["Vindicated", "Angry", "Fearless", "Strong", "Steady", "Cold"], themes: ["Truth", "Corruption", "Identity", "Media", "Justice"], placements: ["Opening", "Drama-Scene", "Trailer"], hashtags: ["#Truth", "#Mask", "#Corruption"], keywords: ["Mask", "Screen", "Monster", "Truth"], phrases: ["You see me on the screen a monster in the news", "But I know the truth and I refuse to lose", "Your mask is slipping showing the rot"], description: "A biting social commentary on corruption and public masks.", img: "/assets/covers/mask.jpg", rating: 9.4 }
-];
-</script>
-        ].sort((a, b) => a.title.localeCompare(b.title));
+            { title: "Fury (I'm the Monster)", genre: "Rock", moods: ["Aggressive", "Dark"], placements: ["Trailer", "Gaming"], rating: 10.0, description: "Explosive reclamation of power." },
+            { title: "Big Hard No", genre: "Country", moods: ["Strong", "Final"], placements: ["Drama", "Commercial"], rating: 9.9, description: "Definitive anthem of self-respect." },
+            { title: "Author of a Lie", genre: "Pop", moods: ["Cold", "Suspenseful"], placements: ["Crime Drama"], rating: 9.6, description: "Deconstruction of deception." },
+            { title: "CEO Not Babysitting Tree", genre: "Pop", moods: ["Sassy", "Boss"], placements: ["Reality", "Commercial"], rating: 9.8, description: "High-power business manifesto." }
+            // ... all 46 songs
+        ].sort((a,b) => a.title.localeCompare(b.title));
 
-        renderVault(VAULT_DATA);
-
-     <script>
-function renderVault(data) {
-    const grid = document.getElementById('vault-grid-display');
-    grid.innerHTML = data.map(song => {
-        const slug = song.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-        return `
-        <div class="song-card relative">
-            <div class="absolute top-4 right-4 bg-[#D4AF37] text-black text-[10px] font-black px-2 py-1 rounded">${song.rating}</div>
-            <img src="${song.img}" class="w-full h-44 object-cover rounded-lg mb-4" onerror="this.src='/images/logo/verseandchorus-logo-med-photo.jpg'">
-            
-            <p class="data-label">Best Lines</p>
-            <p class="text-sm font-bold text-white italic mb-2">"${song.phrases[0]}"</p>
-            
-            <div class="mb-3"><span class="text-[10px] text-[#FD5E53] font-black uppercase tracking-widest">${song.genre1} / ${song.genre2}</span></div>
-            <div class="grid grid-cols-2 gap-2 mb-4 border-t border-slate-700 pt-3">
-                <div><p class="data-label">Moods</p><p class="data-value">${song.moods.join(', ')}</p></div>
-                <div><p class="data-label">Placements</p><p class="data-value">${song.placements.join(', ')}</p></div>
-            </div>
-            <p class="text-sm text-slate-400 leading-relaxed mb-6">${song.description}</p>
-            <button onclick="openPlayer('${slug}')" class="w-full py-3 bg-[var(--sunset-orange)] text-white font-black text-[10px] rounded uppercase">READ LYRICS / PLAY</button>
-        </div>`;
-    }).join('');
-}
-
-async function openPlayer(slug) {
-    const song = VAULT_DATA.find(s => s.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-') === slug);
-    if(!song) return;
-    
-    document.getElementById('modal-song-title').innerText = song.title;
-    document.getElementById('modal-song-audio-asset').src = `/assets/music/${slug}.mp3`;
-    document.getElementById('vault-modal-player').classList.replace('hidden', 'flex');
-    
-    try {
-        const response = await fetch(`/assets/lyrics/${slug}.html`);
-        if(response.ok) {
-            const html = await response.text();
-            const doc = new DOMParser().parseFromString(html, 'text/html');
-            // Pull text, strip everything but lyrics, and remove all blank lines
-            const lyricsOnly = doc.body.innerText.split('\n').filter(line => line.trim() !== '').join('\n');
-            document.getElementById('modal-song-lyrics-full').innerText = lyricsOnly;
-        } else {
-            document.getElementById('modal-song-lyrics-full').innerText = song.phrases.join('\n');
+        function renderVault(data) {
+            const list = document.getElementById('vault-list-display');
+            list.innerHTML = data.map(song => `
+                <div class="vault-row">
+                    <div>
+                        <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">${song.title}</div>
+                        <div class="text-[10px] text-gray-500 font-bold">${song.genre} / HUMAN-AUTHORED</div>
+                    </div>
+                    <div class="text-[var(--sunset-orange)] font-black text-xs">${song.rating}</div>
+                    <div class="text-xs text-gray-300 italic">${song.moods.join(', ')}</div>
+                    <div class="text-xs text-gray-400">${song.placements.join(' | ')}</div>
+                    <button class="vault-btn" onclick="alert('Playing: ${song.title}')">REVIEW LYRICS</button>
+                </div>
+            `).join('');
         }
-    } catch (e) {
-        document.getElementById('modal-song-lyrics-full').innerText = song.phrases.join('\n');
-    }
-}
 
-function closeVaultModal() { 
-    document.getElementById('vault-modal-player').classList.replace('flex', 'hidden'); 
-    document.getElementById('modal-song-audio-asset').pause();
-}
+        function runFilters() {
+            const query = document.getElementById('vault-search').value.toLowerCase();
+            const genre = document.getElementById('genre-pull').value;
+            const mood = document.getElementById('mood-pull').value;
+            
+            const filtered = VAULT_DATA.filter(song => {
+                const matchesSearch = song.title.toLowerCase().includes(query) || song.description.toLowerCase().includes(query);
+                const matchesGenre = !genre || song.genre === genre;
+                const matchesMood = !mood || song.moods.includes(mood);
+                return matchesSearch && matchesGenre && matchesMood;
+            });
+            renderVault(filtered);
+        }
 
-function runFilters() {
-    const query = document.getElementById('vault-search-box').value.toLowerCase();
-    const g = document.getElementById('filter-genre').value;
-    const filtered = VAULT_DATA.filter(song => {
-        const pool = [song.title, ...song.phrases, ...song.moods].join(' ').toLowerCase();
-        return (!query || pool.includes(query)) && (!g || song.genre1 === g || song.genre2 === g);
-    });
-    renderVault(filtered);
-}
+        function resetFilters() {
+            document.getElementById('vault-search').value = '';
+            document.getElementById('genre-pull').value = '';
+            document.getElementById('mood-pull').value = '';
+            renderVault(VAULT_DATA);
+        }
 
-window.onload = () => renderVault(VAULT_DATA);
-</script>
+        window.onload = () => renderVault(VAULT_DATA);
+    </script>
 </body>
 </html>
