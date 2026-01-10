@@ -34,7 +34,9 @@
         .rect-card { background: #334155; border: 1px solid var(--blue-gray); padding: 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; text-align: center; cursor: pointer; text-transform: uppercase; }
         .rect-card.active { border-color: var(--sunset-orange); background: var(--sunset-orange); color: white; }
 
-        .vault-select { background-color: #0f172a; border: 2px solid var(--blue-gray); color: white; padding: 10px; border-radius: 6px; width: 100%; cursor: pointer; }
+        .vault-select { background-color: #0f172a; border: 2px solid var(--blue-gray); color: white; padding: 10px; border-radius: 6px; width: 100%; cursor: pointer; font-size: 0.75rem; text-transform: uppercase; }
+        .vault-select:focus { border-color: var(--sunset-orange); outline: none; }
+        
         #back-to-top { position: fixed; bottom: 30px; right: 30px; background: var(--sunset-orange); color: white; width: 50px; height: 50px; border-radius: 50%; display: none; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border: none; }
 
         /* --- FOOTER --- */
@@ -93,30 +95,80 @@
 
         <div class="bg-gray-800 p-6 rounded-xl mb-12 border-2 border-[var(--blue-gray)] shadow-2xl">
             <input type="text" id="vault-search-box" placeholder="Search Keywords, Mood, BPM, hashtags..." onkeyup="runFilters()" class="w-full p-4 bg-black border border-slate-700 rounded mb-6 text-white uppercase text-sm outline-none">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-2">
+                
                 <select id="genre-pull" class="vault-select" onchange="runFilters()">
                     <option value="">GENRE</option>
-                    <option value="Country">Country</option>
                     <option value="Pop">Pop</option>
+                    <option value="Country">Country</option>
                     <option value="Rock">Rock</option>
-                    <option value="Alternative">Alternative</option>
                     <option value="R&B">R&B</option>
+                    <option value="Cinematic">Cinematic</option>
+                    <option value="Alternative">Alternative</option>
+                    <option value="Americana">Americana</option>
+                    <option value="Blues">Blues</option>
+                    <option value="Folk">Folk</option>
+                    <option value="Reggae">Reggae</option>
                 </select>
+
+                <select id="subgenre-pull" class="vault-select" onchange="runFilters()">
+                    <option value="">STYLE</option>
+                    <option value="Contemporary">Contemporary</option>
+                    <option value="Ballad">Ballad</option>
+                    <option value="Anthem">Anthem</option>
+                    <option value="Urban">Urban</option>
+                    <option value="Acoustic">Acoustic</option>
+                    <option value="Indie">Indie</option>
+                    <option value="Storytelling">Storytelling</option>
+                    <option value="Retro">Retro / 80s</option>
+                    <option value="Southern Gothic">Southern Gothic</option>
+                    <option value="Rhythmic">Rhythmic</option>
+                </select>
+
                 <select id="mood-pull" class="vault-select" onchange="runFilters()">
                     <option value="">MOOD</option>
                     <option value="Happy">Happy</option>
                     <option value="Sad">Sad</option>
                     <option value="Confident">Confident</option>
-                    <option value="Aggressive">Aggressive</option>
+                    <option value="Angry">Angry</option>
                     <option value="Dark">Dark</option>
+                    <option value="Hopeful">Hopeful</option>
+                    <option value="Intense">Intense</option>
+                    <option value="Relaxed">Relaxed</option>
+                    <option value="Eerie">Eerie</option>
+                    <option value="Sassy">Sassy</option>
                 </select>
-                <select id="subgenre-pull" class="vault-select" onchange="runFilters()">
-                    <option value="">STYLE</option>
-                    <option value="Contemporary">Contemporary</option>
-                    <option value="Cinematic">Cinematic</option>
-                    <option value="Ballad">Ballad</option>
+
+                <select id="feeling-pull" class="vault-select" onchange="runFilters()">
+                    <option value="">FEELING</option>
+                    <option value="Heartbroken">Heartbroken</option>
+                    <option value="Empowered">Empowered</option>
+                    <option value="Strong">Strong</option>
+                    <option value="Vulnerable">Vulnerable</option>
+                    <option value="Healed">Healed</option>
+                    <option value="Vindicated">Vindicated</option>
+                    <option value="Trapped">Trapped</option>
+                    <option value="Free">Free</option>
+                    <option value="Stuck">Stuck</option>
+                    <option value="Determined">Determined</option>
                 </select>
-                <button onclick="resetVaultFilters()" class="text-xs font-black uppercase text-[var(--sunset-orange)]">Reset Filters</button>
+
+                <select id="placement-pull" class="vault-select" onchange="runFilters()">
+                    <option value="">PLACEMENT</option>
+                    <option value="Sync">Commercial Sync</option>
+                    <option value="Drama">TV Drama</option>
+                    <option value="Trailer">Trailer</option>
+                    <option value="Credits">Credits</option>
+                    <option value="Anthem">Anthem</option>
+                    <option value="Breakup">Breakup Scene</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Viral">Viral/Social</option>
+                    <option value="Montage">Montage</option>
+                    <option value="Background">Background</option>
+                </select>
+
+                <button onclick="resetVaultFilters()" class="text-xs font-black uppercase text-[var(--sunset-orange)] border border-[var(--sunset-orange)] rounded hover:bg-[var(--sunset-orange)] hover:text-white transition">Reset</button>
             </div>
         </div>
 
@@ -146,10 +198,10 @@
    <script>
         function getSongSlug(title) { return title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-'); }
         
-        // Data Vault: Reconstructed to include all 46 songs
+        // Data Vault: All 46 Songs
         const VAULT_DATA = [
-          { 
-              id: 1, title: "AUTHOR OF A LIE", genre1: "Pop", genre2: "R&B", subGenre: "Rhythmic Pop", pov: "First Person", moodTone: "Confident, Confrontational", feeling: "Strong", category: "Disenchantment", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/author-of-a-lie-cover-art.jpg", snippetA: "You tell a story I pick it apart...",
+            { 
+              id: 1, title: "AUTHOR OF A LIE", genre1: "Pop", genre2: "R&B", subGenre: "Rhythmic", pov: "First Person", moodTone: "Confident, Confrontational", feeling: "Strong", category: "Disenchantment", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/author-of-a-lie-cover-art.jpg", snippetA: "You tell a story I pick it apart...",
                 description: `This narrative deconstructs the architecture of deception by contrasting specific, fabricated timelines against physical reality. The protagonist methodically picks apart a partner's whacked timeline, calling out inconsistencies such as a supposed trip to the beach in July versus the reality of gray clouds. The story captures the definitive transition from being gaslit to enlightened. BEST PLACEMENT: Psychological Thrillers.`
             },
             { 
@@ -157,51 +209,51 @@
                 description: `The narrative centers on a firm, empowered rejection of a former partner attempting to manipulate their way back into the protagonist's life. It details a history of betrayal, remembering the moment the antagonist walked out for someone else. The lyrics describe a journey from weakness to finding a peace from deep within, guided by a desire for something bigger and better. BEST PLACEMENT: Character Pivot Anthem.`
             },
             {
-                id: 3, title: "BOOM BOOM BEAT", genre1: "Placeholder", genre2: "Placeholder", subGenre: "Placeholder", pov: "Placeholder", moodTone: "Placeholder", feeling: "Placeholder", category: "Placeholder", placementType: "Placeholder", tempo: "Placeholder", img: "/assets/covers/boom-boom-beat-cover-art.jpg", snippetA: "Placeholder",
+                id: 3, title: "BOOM BOOM BEAT", genre1: "Pop", genre2: "Dance", subGenre: "Anthem", pov: "First Person", moodTone: "Happy", feeling: "Free", category: "Empowerment", placementType: "Commercial", tempo: "Fast", img: "/assets/covers/boom-boom-beat-cover-art.jpg", snippetA: "Placeholder",
                 description: `Placeholder.`
             },
             { 
-                id: 4, title: "BOTTOM OF THE WISHING WELL", genre1: "Country", genre2: "Narrative", subGenre: "Murder Ballad", pov: "Third Person", moodTone: "Dark, Dramatic", feeling: "Eerie", category: "Social", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/bottom-of-the-wishing-well-cover-art.jpg", snippetA: "Oh poor lil Belle at the bottom of the wishing well...",
+                id: 4, title: "BOTTOM OF THE WISHING WELL", genre1: "Country", genre2: "Narrative", subGenre: "Southern Gothic", pov: "Third Person", moodTone: "Dark, Dramatic", feeling: "Eerie", category: "Social", placementType: "Drama", tempo: "Mid Tempo", img: "/assets/covers/bottom-of-the-wishing-well-cover-art.jpg", snippetA: "Oh poor lil Belle at the bottom of the wishing well...",
                 description: `A dark narrative murder ballad following Belle as she hurries to meet her lover on the streets of Amsterdam. The narrative subverts the tradition of a 'wishing well' for luck, turning it into a grave where both Belle and her lover lay motionless after a violent plunge. Irony is heavy as 'both of their wishes came true' in a shared grave. BEST PLACEMENT: True Crime Documentaries.`
             },
             {
-                id: 5, title: "BROKEN BAD", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Raw, Honest, Resilient", feeling: "Stuck", category: "Loss", placementType: "Emotional Breakdown", tempo: "Mid Tempo", img: "/assets/covers/broken-bad-cover-art.jpg", snippetA: "Cause I'm a broken record skipping on repeat...",
+                id: 5, title: "BROKEN BAD", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Raw, Honest, Resilient", feeling: "Stuck", category: "Loss", placementType: "Breakup", tempo: "Mid Tempo", img: "/assets/covers/broken-bad-cover-art.jpg", snippetA: "Cause I'm a broken record skipping on repeat...",
                 description: `This narrative explores the 'bitter taste of defeat' and the cyclical nature of self-sabotage within a 'one-sided youth'. The protagonist is surrounded by 'ghosts' and eyes judging every flaw, eventually choosing the silence of an empty table for one over an 'unclean picture'. It captures the moment ties are cut to step into the 'fading light'. BEST PLACEMENT: Character 'Breaking Point' Scenes.`
             },
             { 
-                id: 6, title: "CEO NOT BABYSITTING TREE", genre1: "Pop", genre2: "R&B", subGenre: "Urban Pop", pov: "First Person", moodTone: "Sassy, Confident, Boss", feeling: "Powerful", category: "Value", placementType: "Viral Hit", tempo: "Fast", img: "/assets/covers/ceo-not-babysitting-tree-cover-art.jpg", snippetA: "Honey I'm a CEO not a babysitting tree...",
+                id: 6, title: "CEO NOT BABYSITTING TREE", genre1: "Pop", genre2: "R&B", subGenre: "Urban", pov: "First Person", moodTone: "Sassy, Confident, Boss", feeling: "Powerful", category: "Value", placementType: "Viral", tempo: "Fast", img: "/assets/covers/ceo-not-babysitting-tree-cover-art.jpg", snippetA: "Honey I'm a CEO not a babysitting tree...",
                 description: `A sharp manifesto on self-valuation and the refusal to provide emotional labor for those who do not contribute to growth. The 'babysitting tree' metaphor critiques those who want the 'shade' of success without planting the 'seed' of effort. The narrative contrasts a protagonist who is 'hustling' with an antagonist asking to 'chill at my crib'. BEST PLACEMENT: Powerhouse 'Walk-in' Anthem.`
             },
             { 
-                id: 7, title: "CHILDREN OF WAR", genre1: "Cinematic", genre2: "Folk", subGenre: "Cinematic", pov: "Third Person", moodTone: "Haunting, Sad, Urgent", feeling: "Heartbroken", category: "Social", placementType: "Soundtrack", tempo: "Slow", img: "/assets/covers/children-of-war-cover-art.jpg", snippetA: "Run little children there's nothing left here...",
+                id: 7, title: "CHILDREN OF WAR", genre1: "Cinematic", genre2: "Folk", subGenre: "Acoustic", pov: "Third Person", moodTone: "Haunting, Sad, Urgent", feeling: "Heartbroken", category: "Social", placementType: "Drama", tempo: "Slow", img: "/assets/covers/children-of-war-cover-art.jpg", snippetA: "Run little children there's nothing left here...",
                 description: `A devastating examination of the human cost of conflict, focusing on the loss of innocence and the physical destruction of the familiar. The lyrics describe playgrounds becoming graveyards and small feet running from blasts in 'broken-down houses'. It critiques the failure of peace talks, emphasizing how the 'helpless and small' carry the burden. BEST PLACEMENT: Social Advocacy Documentaries.`
             },
             { 
-                id: 8, title: "CONCRETE UNDER OUR FEET", genre1: "Rock", genre2: "Alternative", subGenre: "Urban Rock", pov: "First Person", moodTone: "Introspective, Cool", feeling: "Streetwise", category: "Social", placementType: "Urban Drama", tempo: "Mid Tempo", img: "/assets/covers/concrete-under-our-feet-cover-art.jpg", snippetA: "It ain't about the clout the flash the scene...",
+                id: 8, title: "CONCRETE UNDER OUR FEET", genre1: "Rock", genre2: "Alternative", subGenre: "Urban", pov: "First Person", moodTone: "Introspective, Cool", feeling: "Determined", category: "Social", placementType: "Drama", tempo: "Mid Tempo", img: "/assets/covers/concrete-under-our-feet-cover-art.jpg", snippetA: "It ain't about the clout the flash the scene...",
                 description: `This track explores the search for authentic connection within a 'digital blur,' prioritizing physical presence over online clout. It utilizes the 'concrete under our feet' as a grounding metaphor for reality. The narrative moves from the 'flash' of a squad to a private rooftop conversation where two people build something real. BEST PLACEMENT: Urban Drama Series.`
             },
             { 
-                id: 9, title: "CRAVING THOSE CRUMBS", genre1: "Country", genre2: "Pop", subGenre: "Contemporary", pov: "First Person", moodTone: "Confident, Disenchanted", feeling: "Vulnerable", category: "Disenchantment", placementType: "Toxic Relationship", tempo: "Slow", img: "/assets/covers/craving-those-crumbs-cover-art.jpg", snippetA: "Too much thinking I gotta stop craving those crumbs...",
+                id: 9, title: "CRAVING THOSE CRUMBS", genre1: "Country", genre2: "Pop", subGenre: "Contemporary", pov: "First Person", moodTone: "Confident, Disenchanted", feeling: "Vulnerable", category: "Disenchantment", placementType: "Drama", tempo: "Slow", img: "/assets/covers/craving-those-crumbs-cover-art.jpg", snippetA: "Too much thinking I gotta stop craving those crumbs...",
                 description: `A raw dissection of the exhaustion that follows a toxic relationship cycle. The lyrics describe an ex-partner who 'pops in' to start fights, creating a 'pure hell' atmosphere where the protagonist is pushed from 'sadness into madness'. It highlights the moment of taking back worth and refusing to survive on 'crumbs' of affection. BEST PLACEMENT: Late-Night Emotional Dramas.`
             },
             { 
-                id: 10, title: "DON'T BE JELLY", genre1: "Country", genre2: "Dance", subGenre: "Contemporary", pov: "First Person", moodTone: "Fun, Playful, Confident", feeling: "Sassy", category: "Empowerment", placementType: "Viral Dance", tempo: "Fast", img: "/assets/covers/dont-be-jelly-cover-art.jpg", snippetA: "I live my truth un-freakin'-apologetically...",
+                id: 10, title: "DON'T BE JELLY", genre1: "Country", genre2: "Dance", subGenre: "Contemporary", pov: "First Person", moodTone: "Fun, Playful, Confident", feeling: "Sassy", category: "Empowerment", placementType: "Viral", tempo: "Fast", img: "/assets/covers/dont-be-jelly-cover-art.jpg", snippetA: "I live my truth un-freakin'-apologetically...",
                 description: `An assertive manifesto on self-confidence and the refusal to be held down by drama or rodeo clowns. The narrative describes a 'wild untamed machine' who lives her truth unapologetically and has 'no room for that petty scene'. It utilizes dance metaphors as a physical rejection of insecurity and establishes synergy as 'pure energy'. BEST PLACEMENT: Viral Dance promos.`
             },
             {
-               id: 11, title: "EPHEMERAL MOMENT", genre1: "Pop", genre2: "Folk", subGenre: "Yodel", pov: "First Person", moodTone: "Romantic, Playful", feeling: "Love", category: "Iterative", placementType: "Romance", tempo: "Mid Tempo", img: "/assets/covers/ephemeral-moment-cover-art.jpg", snippetA: "You are mine Yo de lee eee ooohhh boom boom boom...",
+               id: 11, title: "EPHEMERAL MOMENT", genre1: "Pop", genre2: "Folk", subGenre: "Storytelling", pov: "First Person", moodTone: "Romantic, Playful", feeling: "Love", category: "Iterative", placementType: "Romance", tempo: "Mid Tempo", img: "/assets/covers/ephemeral-moment-cover-art.jpg", snippetA: "You are mine Yo de lee eee ooohhh boom boom boom...",
                 description: `A playful and rhythmic expression of longing and connection. The protagonist describes the desire to not be away from their partner for a moment longer than necessary, waiting for the day to reunite. The heartbeat is mimicked by the 'boom boom boom' motif, creating a sense of anticipation and joy. BEST PLACEMENT: Lighthearted Romantic Scenes.`
             },
             { 
-                id: 12, title: "ETCHED IN EVERY SPACE", genre1: "Country", subGenre: "Contemporary", moodTone: "Mournful, Sad", category: "Disenchantment", img: "/assets/covers/etched-in-every-space-cover-art.jpg", snippetA: "Oh I miss your stupid face! It’s etched in every space...",
+                id: 12, title: "ETCHED IN EVERY SPACE", genre1: "Country", subGenre: "Contemporary", moodTone: "Mournful, Sad", feeling: "Heartbroken", category: "Disenchantment", placementType: "Drama", img: "/assets/covers/etched-in-every-space-cover-art.jpg", snippetA: "Oh I miss your stupid face! It’s etched in every space...",
                 description: `A deeply personal exploration of grief and the sensory haunting of a home following the loss of a loved one. It contrasts vivid, sweet memories—a quirky smile and stories that went for days—with the reality of a 'barren land' where the protagonist feels like they are in 'sinking sand'. It captures the stress and anxiety that burn when a steady flame is gone. BEST PLACEMENT: Grief-focused Drama Series.`
             },
             { 
-                id: 13, title: "FURY (I'M THE MONSTER)", genre1: "Rock", genre2: "Metal", subGenre: "Cinematic", pov: "First Person", moodTone: "Heavy, Bitter, Intense", feeling: "Intense", category: "Social", placementType: "Domestic Drama", tempo: "Fast", img: "/assets/covers/fury-im-the-monster-cover-art.jpg", snippetA: "Your fists a never-ending show...",
+                id: 13, title: "FURY (I'M THE MONSTER)", genre1: "Rock", genre2: "Metal", subGenre: "Cinematic", pov: "First Person", moodTone: "Heavy, Bitter, Intense", feeling: "Trapped", category: "Social", placementType: "Drama", tempo: "Fast", img: "/assets/covers/fury-im-the-monster-cover-art.jpg", snippetA: "Your fists a never-ending show...",
                 description: `A visceral and intense narrative focusing on the escape from domestic violence. The lyrics describe a cycle of fists, screams, and insults, moving toward a moment of clarity where the protagonist decides to 'roll right over your body and run right out the door'. It captures the pivot from being property to adopting a 'monster' persona for survival. BEST PLACEMENT: High-Intensity Domestic Dramas.`
             },
             {
-                id: 14, title: "80S ANTHEMS", genre1: "Placeholder", genre2: "Placeholder", subGenre: "Placeholder", pov: "Placeholder", moodTone: "Placeholder", feeling: "Placeholder", category: "Placeholder", placementType: "Placeholder", tempo: "Placeholder", img: "/assets/covers/80s-anthems-cover-art.jpg", snippetA: "Placeholder",
+                id: 14, title: "80S ANTHEMS", genre1: "Pop", genre2: "Rock", subGenre: "Retro", pov: "Placeholder", moodTone: "Happy", feeling: "Free", category: "Placeholder", placementType: "Anthem", tempo: "Placeholder", img: "/assets/covers/80s-anthems-cover-art.jpg", snippetA: "Placeholder",
                 description: `Placeholder.`
             },
             {
@@ -209,66 +261,66 @@
                 description: `The narrative centers on the realization that a partner is nothing but a 'thief of peace' and a 'thief of heart.' The protagonist describes being stuck in a bubble of sadness, blowing bubbles alone while the partner pops in and out of their life. It highlights the exhaustion of trying to figure out a 'tired story' that is getting too old. BEST PLACEMENT: Breakup Scenes.`
             },
             {
-                id: 16, title: "HIT THE ROAD", genre1: "Pop", genre2: "Rock", subGenre: "Anthem", pov: "First Person", moodTone: "Empowered, Strong", feeling: "Done", category: "Empowerment", placementType: "Breakup Anthem", tempo: "Up Tempo", img: "/assets/covers/hit-the-road-cover-art.jpg", snippetA: "All those nights you laId In my bed / All those times you messed wIth my head...",
+                id: 16, title: "HIT THE ROAD", genre1: "Pop", genre2: "Rock", subGenre: "Anthem", pov: "First Person", moodTone: "Empowered, Strong", feeling: "Done", category: "Empowerment", placementType: "Anthem", tempo: "Up Tempo", img: "/assets/covers/hit-the-road-cover-art.jpg", snippetA: "All those nights you laId In my bed / All those times you messed wIth my head...",
                 description: `An empowering anthem about finally kicking a toxic partner out. The protagonist recalls nights of lies and crying, but now declares their tears are dry. With a definitive 'Hit the road, Jack,' they reject any attempts at reconciliation, celebrating the fact that friends are glad the partner is gone and that they can finally move on. BEST PLACEMENT: Empowered Breakup Montages.`
             },
             { 
-                id: 17, title: "HOW'S IT FEEL, BRO?", genre1: "Pop", genre2: "Hip-Hop", subGenre: "Contemporary", pov: "First Person", moodTone: "Confident, Revenge", feeling: "Spiteful", category: "Loss", placementType: "Confrontation", tempo: "Mid Tempo", img: "/assets/covers/hows-it-feel-bro-cover-art.jpg", snippetA: "Yo. You're always spinning that sht*, but I'm boomeranging it back...",
+                id: 17, title: "HOW'S IT FEEL, BRO?", genre1: "Pop", genre2: "Hip-Hop", subGenre: "Contemporary", pov: "First Person", moodTone: "Confident, Revenge", feeling: "Vindicated", category: "Loss", placementType: "Viral", tempo: "Mid Tempo", img: "/assets/covers/hows-it-feel-bro-cover-art.jpg", snippetA: "Yo. You're always spinning that sht*, but I'm boomeranging it back...",
                 description: `A sharp, confrontational narrative centering on the reversal of manipulative tactics. The protagonist calls out 'whack' stories about flat tires and dead batteries, contrasting them with the reality of 'creeping all night long'. It explores the hypocrisy of an antagonist viewed from the 'outside looking in' who earned this boomerang of karma. BEST PLACEMENT: Confrontation Scenes.`
             },
             { 
-                id: 18, title: "I'M A BROKEN RECORD", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Raw, Honest, Resilient", feeling: "Stuck", category: "Loss", placementType: "Emotional Breakdown", tempo: "Mid Tempo", img: "/assets/covers/im-a-broken-record-cover-art.jpg", snippetA: "Cause I'm a broken record skipping on repeat...", description: "Placeholder."
+                id: 18, title: "I'M A BROKEN RECORD", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Raw, Honest, Resilient", feeling: "Stuck", category: "Loss", placementType: "Drama", tempo: "Mid Tempo", img: "/assets/covers/im-a-broken-record-cover-art.jpg", snippetA: "Cause I'm a broken record skipping on repeat...", description: "Placeholder."
             },
             { 
-                id: 19, title: "I KNOW YOUR DAMN PIN CODE", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Bitter, Confident, Revenge", feeling: "Aggressive", category: "Loss", placementType: "Anthem", tempo: "Fast", img: "/assets/covers/i-know-your-damn-pin-code-cover-art.jpg", snippetA: "Think you're clever / I know your damn pin code...",
+                id: 19, title: "I KNOW YOUR DAMN PIN CODE", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Bitter, Confident, Revenge", feeling: "Vindicated", category: "Loss", placementType: "Anthem", tempo: "Fast", img: "/assets/covers/i-know-your-damn-pin-code-cover-art.jpg", snippetA: "Think you're clever / I know your damn pin code...",
                 description: `A visceral exploration of digital betrayal and the reclamation of power through the breach of a partner's smartphone security. The narrative describes an antagonist who thinks they are 'clever' but has provided 'bullets for my gun I named Justice'. It captures the moment the 'truth unfolds' as the protagonist realizes they are nothing like the 'dumb girls' of the past. BEST PLACEMENT: Modern Revenge Dramas.`
             },
             {
-                id: 20, title: "IN MY DREAMS (WHEN I WAKE)", genre1: "Pop", genre2: "Ballad", subGenre: "Contemporary", pov: "First Person", moodTone: "Sad, Longing", feeling: "Heartbroken", category: "Disenchantment", placementType: "Grief", tempo: "Slow", img: "/assets/covers/in-my-dreams-cover-art.jpg", snippetA: "In my dreams you are here and you kiss my cheek...",
+                id: 20, title: "IN MY DREAMS (WHEN I WAKE)", genre1: "Pop", genre2: "Ballad", subGenre: "Contemporary", pov: "First Person", moodTone: "Sad, Longing", feeling: "Heartbroken", category: "Disenchantment", placementType: "Credits", tempo: "Slow", img: "/assets/covers/in-my-dreams-cover-art.jpg", snippetA: "In my dreams you are here and you kiss my cheek...",
                 description: `A heartbreaking ballad about the sharp contrast between the perfection of dreams and the gray reality of waking up alone. In dreams, the partner is present, smiling, and dancing, but waking brings loneliness and fear. The protagonist begs God to take the pain until they can be together again. BEST PLACEMENT: Scenes of Loss or Longing.`
             },
-            { id: 21, title: "JUST A LITTLE LONELY", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 22, title: "MARRIED TO THE DRUG", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 23, title: "MURDERER'S HEART", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 24, title: "MY GIRL KARMA", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 25, title: "MY WORDS STILL MATTER", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 26, title: "NOT THAT GIRL FROM BEFORE", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 27, title: "ONE SMALL WRONG", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 28, title: "SHOT BY CUPIDS DART", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 29, title: "SHOWDOWN AT MY DOOR", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 30, title: "SICK ONE (S1C)", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 31, title: "SILVER AND GRAY", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 32, title: "SOLID SHIFTING GROUND", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 33, title: "STOOD BY MY SIDE", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 34, title: "TAKE THAT FIRST STEP", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 35, title: "THE AFTERMATH", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 36, title: "THE BACK OF ME", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 37, title: "THE POCKET WATCH", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 38, title: "THE REAL DREAM TEAM", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 39, title: "THE SHOW IS THROUGH", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 39, title: "THOUGHT YOU SHOULD KNOW", genre1: "Placeholder", subGenre: "Placeholder", moodTone: "Placeholder", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 21, title: "JUST A LITTLE LONELY", genre1: "Country", subGenre: "Ballad", moodTone: "Sad", feeling: "Heartbroken", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 22, title: "MARRIED TO THE DRUG", genre1: "Alternative", subGenre: "Cinematic", moodTone: "Dark", feeling: "Trapped", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 23, title: "MURDERER'S HEART", genre1: "Cinematic", subGenre: "Southern Gothic", moodTone: "Dark", feeling: "Eerie", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 24, title: "MY GIRL KARMA", genre1: "Pop", subGenre: "Anthem", moodTone: "Sassy", feeling: "Vindicated", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 25, title: "MY WORDS STILL MATTER", genre1: "Cinematic", subGenre: "Anthem", moodTone: "Empowered", feeling: "Strong", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 26, title: "NOT THAT GIRL FROM BEFORE", genre1: "Pop", subGenre: "Anthem", moodTone: "Empowered", feeling: "Healed", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 27, title: "ONE SMALL WRONG", genre1: "Americana", subGenre: "Storytelling", moodTone: "Sad", feeling: "Stuck", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 28, title: "SHOT BY CUPIDS DART", genre1: "Pop", subGenre: "Contemporary", moodTone: "Happy", feeling: "Love", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 29, title: "SHOWDOWN AT MY DOOR", genre1: "Rock", subGenre: "Cinematic", moodTone: "Intense", feeling: "Determined", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 30, title: "SICK ONE (S1C)", genre1: "Rock", subGenre: "Cinematic", moodTone: "Dark", feeling: "Trapped", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 31, title: "SILVER AND GRAY", genre1: "Cinematic", subGenre: "Ballad", moodTone: "Sad", feeling: "Heartbroken", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 32, title: "SOLID SHIFTING GROUND", genre1: "Alternative", subGenre: "Cinematic", moodTone: "Intense", feeling: "Stuck", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 33, title: "STOOD BY MY SIDE", genre1: "Country", subGenre: "Ballad", moodTone: "Hopeful", feeling: "Grateful", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 34, title: "TAKE THAT FIRST STEP", genre1: "Pop", subGenre: "Anthem", moodTone: "Empowered", feeling: "Free", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 35, title: "THE AFTERMATH", genre1: "Cinematic", subGenre: "Drama", moodTone: "Dark", feeling: "Heartbroken", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 36, title: "THE BACK OF ME", genre1: "Pop", subGenre: "Anthem", moodTone: "Confident", feeling: "Done", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 37, title: "THE POCKET WATCH", genre1: "Americana", subGenre: "Storytelling", moodTone: "Sad", feeling: "Nostalgic", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 38, title: "THE REAL DREAM TEAM", genre1: "Pop", subGenre: "Contemporary", moodTone: "Confident", feeling: "Strong", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 39, title: "THE SHOW IS THROUGH", genre1: "Cinematic", subGenre: "Ballad", moodTone: "Sad", feeling: "Done", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
+            { id: 39, title: "THOUGHT YOU SHOULD KNOW", genre1: "Country", subGenre: "Contemporary", moodTone: "Sassy", feeling: "Done", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
             {
-                id: 40, title: "TOP SHELF QUEEN", genre1: "Reggae", genre2: "Pop", subGenre: "Chill", pov: "First Person", moodTone: "Relaxed, Admiring", feeling: "Good Vibes", category: "Iterative", placementType: "Lifestyle", tempo: "Mid Tempo", img: "/assets/covers/top-shelf-queen-cover-art.jpg", snippetA: "She's a top-shelf queen my number one prime / Mary Jane my perfect mate...",
+                id: 40, title: "TOP SHELF QUEEN", genre1: "Reggae", genre2: "Pop", subGenre: "Chill", pov: "First Person", moodTone: "Relaxed, Admiring", feeling: "Chill", category: "Iterative", placementType: "Viral", tempo: "Mid Tempo", img: "/assets/covers/top-shelf-queen-cover-art.jpg", snippetA: "She's a top-shelf queen my number one prime / Mary Jane my perfect mate...",
                 description: `A chilled-out ode to 'Mary Jane,' personified as a 'top-shelf queen' and perfect mate. The lyrics celebrate the ritual of de-stressing after a long week, traveling to 'Zion,' and 'eating feelings' while wiping away worries. It captures a specific vibe of relaxation and good vibrations. BEST PLACEMENT: Stoner Comedies or Lifestyle Content.`
             },
             {
-                id: 41, title: "WELCOME TO JUKES", genre1: "Blues", genre2: "Rock", subGenre: "Cinematic", pov: "Third Person", moodTone: "Eerie, Mysterious", feeling: "Trapped", category: "Social", placementType: "Atmospheric", tempo: "Slow", img: "/assets/covers/welcome-to-jukes-cover-art.jpg", snippetA: "At Jukes the singer's voice is harsh and sweet / A crowded room where every soul will meet...",
+                id: 41, title: "WELCOME TO JUKES", genre1: "Blues", genre2: "Rock", subGenre: "Southern Gothic", pov: "Third Person", moodTone: "Eerie, Mysterious", feeling: "Trapped", category: "Social", placementType: "Drama", tempo: "Slow", img: "/assets/covers/welcome-to-jukes-cover-art.jpg", snippetA: "At Jukes the singer's voice is harsh and sweet / A crowded room where every soul will meet...",
                 description: `An atmospheric Southern Gothic track set in a mysterious bayou juke joint. The lyrics paint a picture of smoke, free liquor, and a 'secret dark romance' between the living and the spirits. It carries a supernatural twist reminiscent of 'Hotel California,' revealing that 'no one leaves Jukes when day breaks.' BEST PLACEMENT: Supernatural Thrillers or Southern Gothic Series.`
             },
             {
-                id: 42, title: "WILDFLOWER", genre1: "Country", genre2: "Folk", subGenre: "Americana", pov: "Third Person", moodTone: "Free, Rebellious, Hopeful", feeling: "Determined", category: "Empowerment", placementType: "Character Intro", tempo: "Mid Tempo", img: "/assets/covers/wildflower-cover-art.jpg", snippetA: "Oh, she's Wildflower, dancing in the wind / She's got the spirit of a rebel, never gonna bend...",
+                id: 42, title: "WILDFLOWER", genre1: "Country", genre2: "Folk", subGenre: "Americana", pov: "Third Person", moodTone: "Hopeful", feeling: "Free", category: "Empowerment", placementType: "Montage", tempo: "Mid Tempo", img: "/assets/covers/wildflower-cover-art.jpg", snippetA: "Oh, she's Wildflower, dancing in the wind / She's got the spirit of a rebel, never gonna bend...",
                 description: `A character-driven narrative about a girl named Wildflower growing up in a conformist small town with a difficult family history. Despite local gossip and dusty roads, she maintains a rebellious spirit and a determination to leave the town behind and carve her own path. BEST PLACEMENT: Character Introduction or 'Leaving Home' Montage.`
             },
             { 
-                id: 43, title: "YEAR IN THE REARVIEW", genre1: "Country", subGenre: "Cinematic", pov: "First Person", moodTone: "Melancholic, Resilient", feeling: "Reflective", category: "Empowerment", placementType: "Healing Journey", tempo: "Mid Tempo", img: "/assets/covers/year-in-the-rearview-cover-art.jpg", snippetA: "A year in the rearview since that shattering crash / Glue the broken pieces from the ash",
+                id: 43, title: "YEAR IN THE REARVIEW", genre1: "Country", subGenre: "Cinematic", pov: "First Person", moodTone: "Melancholic, Resilient", feeling: "Healed", category: "Empowerment", placementType: "Montage", tempo: "Mid Tempo", img: "/assets/covers/year-in-the-rearview-cover-art.jpg", snippetA: "A year in the rearview since that shattering crash / Glue the broken pieces from the ash",
                 description: `A methodical examination of the healing process following a 'shattering crash' and emotional betrayal. The lyrics use a calendar as 'heavy stones' to build a fortress, before transitioning into 'peeling back layers' like bark from a wounded tree to reclaim silence. It captures the shift from the 'bitter sting' of poison to planting new seeds in a garden, stepping into sunlight with a 'hopeful steady gaze'. BEST PLACEMENT: Healing Journey montages.`
             },
             { 
-                id: 44, title: "YOUR FOREVER MAN", genre1: "Country", subGenre: "Cinematic", pov: "First Person", moodTone: "Supportive, Loving", feeling: "Protective", category: "Empowerment", placementType: "Romance", tempo: "Mid Tempo", img: "/assets/covers/your-forever-man-cover-art.jpg", snippetA: "When Misty cries the tears fall like rain from her eyes...",
+                id: 44, title: "YOUR FOREVER MAN", genre1: "Country", subGenre: "Cinematic", pov: "First Person", moodTone: "Supportive, Loving", feeling: "Strong", category: "Empowerment", placementType: "Romance", tempo: "Mid Tempo", img: "/assets/covers/your-forever-man-cover-art.jpg", snippetA: "When Misty cries the tears fall like rain from her eyes...",
                 description: `A tender, protective ballad told from the perspective of a partner supporting a woman named Misty through deep-seated trauma and 'dark childhood memories.' The narrator positions himself as the 'anchor' and 'forever man,' providing a safe space until the storm subsides and she can stand free of fear. BEST PLACEMENT: Romantic Dramas with emotional depth.`
             },
             {
-                id: 45, title: "YOUR MASK", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Angry, Betrayed", feeling: "Vindicated", category: "Social", placementType: "Political Drama", tempo: "Fast", img: "/assets/covers/your-mask-cover-art.jpg", snippetA: "You see me on the screen a monster in the news / A headline and a mugshot singing all the blues...",
+                id: 45, title: "YOUR MASK", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Angry, Betrayed", feeling: "Vindicated", category: "Social", placementType: "Drama", tempo: "Fast", img: "/assets/covers/your-mask-cover-art.jpg", snippetA: "You see me on the screen a monster in the news / A headline and a mugshot singing all the blues...",
                 description: `A biting social commentary on scapegoating and corruption. The protagonist, painted as a 'monster' in the media, turns the tables on the true manipulator who 'pulled the strings' from the shadows. It demands the removal of the antagonist's mask to reveal the 'nefarious actions' underneath, emphasizing that the system's collapse is due to their greed, not the scapegoat. BEST PLACEMENT: Political Thrillers or Corruption Dramas.`
             }
         ].sort((a, b) => a.title.localeCompare(b.title));
@@ -298,26 +350,29 @@
         function runFilters() {
             const search = document.getElementById('vault-search-box').value.toLowerCase();
             const genre = document.getElementById('genre-pull').value;
-            const mood = document.getElementById('mood-pull').value;
             const sub = document.getElementById('subgenre-pull').value;
+            const mood = document.getElementById('mood-pull').value;
+            const feeling = document.getElementById('feeling-pull').value;
+            const placement = document.getElementById('placement-pull').value;
 
             const filtered = VAULT_DATA.filter(s => {
                 const matchesSearch = s.title.toLowerCase().includes(search) || 
                                       s.description.toLowerCase().includes(search) || 
                                       s.snippetA.toLowerCase().includes(search);
                 const matchesGenre = genre === "" || s.genre1 === genre || s.genre2 === genre;
-                const matchesMood = mood === "" || s.moodTone.includes(mood);
-                const matchesSub = sub === "" || s.subGenre === sub;
-                return matchesSearch && matchesGenre && matchesMood && matchesSub;
+                const matchesSub = sub === "" || (s.subGenre && s.subGenre.includes(sub));
+                const matchesMood = mood === "" || (s.moodTone && s.moodTone.includes(mood));
+                const matchesFeeling = feeling === "" || (s.feeling && s.feeling.includes(feeling));
+                const matchesPlacement = placement === "" || (s.placementType && s.placementType.includes(placement));
+
+                return matchesSearch && matchesGenre && matchesSub && matchesMood && matchesFeeling && matchesPlacement;
             });
             renderVault(filtered);
         }
 
         function applyHardFilter(key, value, el) {
             document.getElementById('vault-search-box').value = "";
-            document.getElementById('genre-pull').value = "";
-            document.getElementById('mood-pull').value = "";
-            document.getElementById('subgenre-pull').value = "";
+            document.querySelectorAll('select').forEach(s => s.value = "");
             
             // Visual active state
             document.querySelectorAll('.thematic-card, .rect-card').forEach(c => c.classList.remove('active'));
@@ -326,7 +381,7 @@
             const filtered = VAULT_DATA.filter(s => {
                 if(key === 'category') return s.category.includes(value);
                 if(key === 'placementType') return s.placementType.includes(value);
-                if(key === 'commercialPotential') return true; // Show all for potential
+                if(key === 'commercialPotential') return true; 
                 if(key === 'genre1') return s.genre1 === value;
                 return true;
             });
@@ -347,7 +402,6 @@
             document.getElementById('vault-modal-player').classList.replace('hidden', 'flex');
             document.getElementById('modal-song-lyrics-full').innerText = "Loading lyrics...";
             try {
-                // In a real scenario, fetch from file. Here we simulate or use placeholder if file missing
                 const response = await fetch(`/assets/lyrics/${slug}.html`);
                 if(response.ok) {
                     const html = await response.text();
