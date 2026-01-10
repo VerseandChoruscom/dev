@@ -9,21 +9,21 @@
     <style>
         :root { --metallic-gold: #D4AF37; --sunset-orange: #FD5E53; --white: #FFFFFF; --black: #000000; --burgundy: #800020; }
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f1f5f9; scroll-behavior: smooth; }
+        
         .hero-box { text-align: center; padding: 80px 20px; background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('/assets/covers/industry-vault-bg.jpg'); background-size: cover; border-bottom: 2px solid var(--metallic-gold); }
         .hero-script { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 2.2rem; }
         .hero-title { font-size: 4.5rem; font-weight: 900; color: var(--white); text-transform: uppercase; line-height: 1; margin-top: 10px; }
         
-        /* Pillars */
+        /* Pillars Text in Hero */
         .pillar { border-left: 4px solid var(--metallic-gold); padding-left: 20px; }
         .pillar-h { color: var(--metallic-gold); font-weight: 900; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
         .pillar-t { font-size: 0.75rem; color: #94a3b8; line-height: 1.4; }
 
-        /* Thematic Rectangles */
-        .theme-rect { border: 1px solid #334155; padding: 20px; font-size: 0.8rem; color: var(--white); background: rgba(0,0,0,0.4); border-radius: 4px; text-align: center; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
-
+        /* Search Inputs */
         .vault-select { background: #000; border: 1px solid #334155; color: #cbd5e1; padding: 12px; border-radius: 8px; width: 100%; cursor: pointer; font-size: 0.7rem; text-transform: uppercase; font-weight: bold; }
         .vault-select:hover { border-color: var(--sunset-orange); }
         
+        /* Song Cards */
         .song-card { border: 2px solid #334155; background: #1e293b; transition: 0.3s; border-radius: 12px; padding: 1.5rem; height: 100%; display: flex; flex-direction: column; position: relative; }
         .song-card:hover { border-color: var(--sunset-orange); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         
@@ -63,56 +63,7 @@
     </section>
 
     <main class="max-w-7xl mx-auto px-6 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <div class="theme-rect">Cinematic Narratives</div>
-            <div class="theme-rect">Atmospheric Textures</div>
-            <div class="theme-rect">Lyrical Precision</div>
-            <div class="theme-rect">High-Stakes Emotion</div>
-            <div class="theme-rect">Human Connection</div>
-            <div class="theme-rect">Sync Ready Concepts</div>
-        </div>
-
-
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
-            <div class="pillar-card group hover:border-[var(--sunset-orange)] hover:bg-[var(--sunset-orange)] transition" onclick="applyHardFilter('pillar', 'Anthemic Empowerment', this)">
-                <h3 class="text-[var(--metallic-gold)] group-hover:text-white font-bold uppercase text-sm mb-1">1. Anthemic Empowerment</h3>
-                <p class="text-xs text-gray-400 group-hover:text-white">The "Phoenix" Narratives. High-energy reclamation.</p>
-            </div>
-            <div class="pillar-card group hover:border-[var(--sunset-orange)] hover:bg-[var(--sunset-orange)] transition" onclick="applyHardFilter('pillar', 'Raw Emotional Narrative', this)">
-                <h3 class="text-[var(--metallic-gold)] group-hover:text-white font-bold uppercase text-sm mb-1">2. Raw Emotional Narrative</h3>
-                <p class="text-xs text-gray-400 group-hover:text-white">Psychological Realism. Drama Sync.</p>
-            </div>
-            <div class="pillar-card group hover:border-[var(--sunset-orange)] hover:bg-[var(--sunset-orange)] transition" onclick="applyHardFilter('pillar', 'Kinetic Energy / Fun', this)">
-                <h3 class="text-[var(--metallic-gold)] group-hover:text-white font-bold uppercase text-sm mb-1">3. Kinetic Energy / Fun</h3>
-                <p class="text-xs text-gray-400 group-hover:text-white">The "Vibe" Collection. Viral trends.</p>
-            </div>
-            <div class="pillar-card group hover:border-[var(--sunset-orange)] hover:bg-[var(--sunset-orange)] transition" onclick="applyHardFilter('pillar', 'Cinematic Storytelling', this)">
-                <h3 class="text-[var(--metallic-gold)] group-hover:text-white font-bold uppercase text-sm mb-1">4. Cinematic Storytelling</h3>
-                <p class="text-xs text-gray-400 group-hover:text-white">The "Movie Scene" Collection. World-building.</p>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-10 thematic-grid">
-            <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/social-world-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Social', this)">
-                <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Social Commentary</span>
-            </div>
-            <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/empowerment-arc-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Empowerment', this)">
-                <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Anthemic Empowerment</span>
-            </div>
-            <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/disenchantment-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Disenchantment', this)">
-                <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Raw Disenchantment</span>
-            </div>
-            <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/mutual-value-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Value', this)">
-                <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">High Value Proposition</span>
-            </div>
-            <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/loss-of-market-share-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Grief', this)">
-                <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Loss & Grief</span>
-            </div>
-            <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/iterative-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Story', this)">
-                <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Iterative Storytelling</span>
-            </div>
-        </div>
-
+        
         <div class="bg-gray-800 p-6 rounded-xl mb-12 border border-slate-700 shadow-2xl">
             <p class="text-[10px] text-gray-400 uppercase font-bold mb-2 tracking-widest">Advanced Metadata Search</p>
             <input type="text" id="vault-search-box" onkeyup="runFilters()" placeholder="SEARCH: Keyword, Lyric snippet, Song Title, Emotion..." class="w-full p-4 bg-black border border-slate-700 rounded mb-6 text-white text-sm outline-none focus:border-[var(--sunset-orange)] transition">
@@ -159,12 +110,6 @@
 
                 <button onclick="resetVaultFilters()" class="text-xs font-black uppercase text-[var(--sunset-orange)] border border-[var(--sunset-orange)] p-3 rounded hover:bg-[var(--sunset-orange)] hover:text-white transition col-span-2">Reset All Filters</button>
             </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-12">
-            <div class="rect-card border border-blue-gray p-4 rounded text-xs font-bold uppercase text-center hover:bg-[var(--sunset-orange)] hover:text-white transition">✅ 100% Human-Authored Lyrics</div>
-            <div class="rect-card border border-blue-gray p-4 rounded text-xs font-bold uppercase text-center hover:bg-[var(--sunset-orange)] hover:text-white transition">✅ Pre-Cleared Commercial Sync</div>
-            <div class="rect-card border border-blue-gray p-4 rounded text-xs font-bold uppercase text-center hover:bg-[var(--sunset-orange)] hover:text-white transition">✅ Clean Legal Copyright Path</div>
         </div>
 
         <div id="vault-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -303,48 +248,12 @@
             renderSongs(filtered);
         }
 
-        function applyHardFilter(type, value, element) {
-            // Reset dropdowns first for clarity
-            document.getElementById('genre-pull').value = "";
-            document.getElementById('mood-pull').value = "";
-            document.getElementById('placement-pull').value = "";
-            document.getElementById('vault-search-box').value = ""; // Optional: Clear text search or keep it? Clearing usually better for buttons.
-
-            let filtered = [];
-
-            if(type === 'pillar') {
-                // Map the 4 pillars to internal logic or generic search
-                if(value === 'Anthemic Empowerment') {
-                    filtered = songs.filter(s => s.hashtags === 'Empowerment' || s.mood === 'Confident');
-                } else if (value === 'Raw Emotional Narrative') {
-                    filtered = songs.filter(s => s.genre === 'Cinematic' || s.mood === 'Sad' || s.mood === 'Dark');
-                } else if (value === 'Kinetic Energy / Fun') {
-                    filtered = songs.filter(s => s.mood === 'Happy' || s.mood === 'Sassy' || s.mood === 'Intense');
-                } else if (value === 'Cinematic Storytelling') {
-                    filtered = songs.filter(s => s.placement === 'Drama' || s.placement === 'Trailer');
-                }
-            } else if (type === 'hashtags') {
-                filtered = songs.filter(s => s.hashtags === value || s.mood.includes(value) || s.placement.includes(value));
-            }
-
-            renderSongs(filtered);
-            
-            // Visual Feedback for click
-            const allCards = document.querySelectorAll('.pillar-card, .thematic-card');
-            allCards.forEach(c => c.style.borderColor = ''); // Reset others
-            element.style.borderColor = '#FD5E53'; // Highlight active
-        }
-
         function resetVaultFilters() {
             document.getElementById('vault-search-box').value = "";
             document.getElementById('genre-pull').value = "";
             document.getElementById('mood-pull').value = "";
             document.getElementById('placement-pull').value = "";
             renderSongs(songs);
-            
-            // Remove highlight from hard filters
-            const allCards = document.querySelectorAll('.pillar-card, .thematic-card');
-            allCards.forEach(c => c.style.borderColor = '');
         }
 
         // Modal Logic
