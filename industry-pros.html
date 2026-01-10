@@ -32,6 +32,11 @@
 
         /* Lyric Display Engine */
         #modal-song-lyrics-full { line-height: 1; white-space: pre-line; font-family: serif; font-size: 1.25rem; }
+        
+        /* Modal Styles */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 3000; display: none; justify-content: center; align-items: center; padding: 20px; }
+        .modal-content { background: #1e293b; border: 2px solid var(--metallic-gold); max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 40px; border-radius: 12px; position: relative; }
+        .close-modal { position: absolute; top: 20px; right: 20px; font-size: 2rem; color: var(--sunset-orange); cursor: pointer; }
     </style>
 </head>
 <body>
@@ -68,98 +73,295 @@
         </div>
 
 
-<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
-    <div class="pillar-card group hover:border-[var(--sunset-orange)] hover:bg-[var(--sunset-orange)] transition" onclick="applyHardFilter('pillar', 'Anthemic Empowerment', this)">
-        <h3 class="text-[var(--metallic-gold)] group-hover:text-white font-bold uppercase text-sm mb-1">1. Anthemic Empowerment</h3>
-        <p class="text-xs text-gray-400 group-hover:text-white">The "Phoenix" Narratives. High-energy reclamation.</p>
-    </div>
-    <div class="pillar-card group hover:border-[var(--sunset-orange)] hover:bg-[var(--sunset-orange)] transition" onclick="applyHardFilter('pillar', 'Raw Emotional Narrative', this)">
-        <h3 class="text-[var(--metallic-gold)] group-hover:text-white font-bold uppercase text-sm mb-1">2. Raw Emotional Narrative</h3>
-        <p class="text-xs text-gray-400 group-hover:text-white">Psychological Realism. Drama Sync.</p>
-    </div>
-    <div class="pillar-card group hover:border-[var(--sunset-orange)] hover:bg-[var(--sunset-orange)] transition" onclick="applyHardFilter('pillar', 'Kinetic Energy / Fun', this)">
-        <h3 class="text-[var(--metallic-gold)] group-hover:text-white font-bold uppercase text-sm mb-1">3. Kinetic Energy / Fun</h3>
-        <p class="text-xs text-gray-400 group-hover:text-white">The "Vibe" Collection. Viral trends.</p>
-    </div>
-    <div class="pillar-card group hover:border-[var(--sunset-orange)] hover:bg-[var(--sunset-orange)] transition" onclick="applyHardFilter('pillar', 'Cinematic Storytelling', this)">
-        <h3 class="text-[var(--metallic-gold)] group-hover:text-white font-bold uppercase text-sm mb-1">4. Cinematic Storytelling</h3>
-        <p class="text-xs text-gray-400 group-hover:text-white">The "Movie Scene" Collection. World-building.</p>
-    </div>
-</div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
+            <div class="pillar-card group hover:border-[var(--sunset-orange)] hover:bg-[var(--sunset-orange)] transition" onclick="applyHardFilter('pillar', 'Anthemic Empowerment', this)">
+                <h3 class="text-[var(--metallic-gold)] group-hover:text-white font-bold uppercase text-sm mb-1">1. Anthemic Empowerment</h3>
+                <p class="text-xs text-gray-400 group-hover:text-white">The "Phoenix" Narratives. High-energy reclamation.</p>
+            </div>
+            <div class="pillar-card group hover:border-[var(--sunset-orange)] hover:bg-[var(--sunset-orange)] transition" onclick="applyHardFilter('pillar', 'Raw Emotional Narrative', this)">
+                <h3 class="text-[var(--metallic-gold)] group-hover:text-white font-bold uppercase text-sm mb-1">2. Raw Emotional Narrative</h3>
+                <p class="text-xs text-gray-400 group-hover:text-white">Psychological Realism. Drama Sync.</p>
+            </div>
+            <div class="pillar-card group hover:border-[var(--sunset-orange)] hover:bg-[var(--sunset-orange)] transition" onclick="applyHardFilter('pillar', 'Kinetic Energy / Fun', this)">
+                <h3 class="text-[var(--metallic-gold)] group-hover:text-white font-bold uppercase text-sm mb-1">3. Kinetic Energy / Fun</h3>
+                <p class="text-xs text-gray-400 group-hover:text-white">The "Vibe" Collection. Viral trends.</p>
+            </div>
+            <div class="pillar-card group hover:border-[var(--sunset-orange)] hover:bg-[var(--sunset-orange)] transition" onclick="applyHardFilter('pillar', 'Cinematic Storytelling', this)">
+                <h3 class="text-[var(--metallic-gold)] group-hover:text-white font-bold uppercase text-sm mb-1">4. Cinematic Storytelling</h3>
+                <p class="text-xs text-gray-400 group-hover:text-white">The "Movie Scene" Collection. World-building.</p>
+            </div>
+        </div>
 
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-10 thematic-grid">
-    <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/social-world-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Social', this)">
-        <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Social Commentary</span>
-    </div>
-    <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/empowerment-arc-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Empowerment', this)">
-        <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Anthemic Empowerment</span>
-    </div>
-    <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/disenchantment-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Disenchantment', this)">
-        <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Raw Disenchantment</span>
-    </div>
-    <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/mutual-value-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Value', this)">
-        <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">High Value Proposition</span>
-    </div>
-    <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/loss-of-market-share-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Grief', this)">
-        <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Loss & Grief</span>
-    </div>
-    <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/iterative-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Story', this)">
-        <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Iterative Storytelling</span>
-    </div>
-</div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-10 thematic-grid">
+            <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/social-world-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Social', this)">
+                <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Social Commentary</span>
+            </div>
+            <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/empowerment-arc-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Empowerment', this)">
+                <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Anthemic Empowerment</span>
+            </div>
+            <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/disenchantment-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Disenchantment', this)">
+                <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Raw Disenchantment</span>
+            </div>
+            <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/mutual-value-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Value', this)">
+                <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">High Value Proposition</span>
+            </div>
+            <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/loss-of-market-share-lyrics-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Grief', this)">
+                <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Loss & Grief</span>
+            </div>
+            <div class="thematic-card border-2 border-blue-gray hover:border-[var(--sunset-orange)] rounded-lg h-24 flex items-center justify-center relative overflow-hidden cursor-pointer" style="background-image: url('/assets/covers/iterative-photo.jpg'); background-size: cover;" onclick="applyHardFilter('hashtags', 'Story', this)">
+                <span class="z-10 text-white font-black text-[10px] uppercase text-center bg-black/60 w-full py-1">Iterative Storytelling</span>
+            </div>
+        </div>
 
-<div class="bg-gray-800 p-6 rounded-xl mb-12 border border-slate-700 shadow-2xl">
-    <p class="text-[10px] text-gray-400 uppercase font-bold mb-2 tracking-widest">Advanced Metadata Search</p>
-    <input type="text" id="vault-search-box" onkeyup="runFilters()" placeholder="SEARCH: Keyword, Lyric snippet, Song Title, Emotion..." class="w-full p-4 bg-black border border-slate-700 rounded mb-6 text-white text-sm outline-none focus:border-[var(--sunset-orange)] transition">
-    
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
-        <select id="genre-pull" class="vault-select hover:border-[var(--sunset-orange)] transition" onchange="runFilters()">
-            <option value="">ALL GENRES</option>
-            <option value="Alternative">Alternative</option>
-            <option value="Americana">Americana</option>
-            <option value="Blues">Blues</option>
-            <option value="Cinematic">Cinematic</option>
-            <option value="Country">Country</option>
-            <option value="Easy Listening">Easy Listening</option>
-            <option value="Indie">Indie</option>
-            <option value="Kpop">Kpop</option>
-            <option value="Pop">Pop</option>
-            <option value="Punk">Punk</option>
-            <option value="Reggae">Reggae</option>
-            <option value="R&B">R&B</option>
-            <option value="Rock">Rock</option>
-            <option value="World">World</option>
-        </select>
+        <div class="bg-gray-800 p-6 rounded-xl mb-12 border border-slate-700 shadow-2xl">
+            <p class="text-[10px] text-gray-400 uppercase font-bold mb-2 tracking-widest">Advanced Metadata Search</p>
+            <input type="text" id="vault-search-box" onkeyup="runFilters()" placeholder="SEARCH: Keyword, Lyric snippet, Song Title, Emotion..." class="w-full p-4 bg-black border border-slate-700 rounded mb-6 text-white text-sm outline-none focus:border-[var(--sunset-orange)] transition">
+            
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                <select id="genre-pull" class="vault-select hover:border-[var(--sunset-orange)] transition" onchange="runFilters()">
+                    <option value="">ALL GENRES</option>
+                    <option value="Alternative">Alternative</option>
+                    <option value="Americana">Americana</option>
+                    <option value="Blues">Blues</option>
+                    <option value="Cinematic">Cinematic</option>
+                    <option value="Country">Country</option>
+                    <option value="Easy Listening">Easy Listening</option>
+                    <option value="Indie">Indie</option>
+                    <option value="Kpop">Kpop</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Punk">Punk</option>
+                    <option value="Reggae">Reggae</option>
+                    <option value="R&B">R&B</option>
+                    <option value="Rock">Rock</option>
+                    <option value="World">World</option>
+                </select>
 
-        <select id="mood-pull" class="vault-select hover:border-[var(--sunset-orange)] transition" onchange="runFilters()">
-            <option value="">ALL MOODS</option>
-            <option value="Angry">Angry</option>
-            <option value="Confident">Confident</option>
-            <option value="Dark">Dark</option>
-            <option value="Empowered">Empowered</option>
-            <option value="Happy">Happy</option>
-            <option value="Hopeful">Hopeful</option>
-            <option value="Intense">Intense</option>
-            <option value="Sad">Sad</option>
-            <option value="Sassy">Sassy</option>
-        </select>
+                <select id="mood-pull" class="vault-select hover:border-[var(--sunset-orange)] transition" onchange="runFilters()">
+                    <option value="">ALL MOODS</option>
+                    <option value="Angry">Angry</option>
+                    <option value="Confident">Confident</option>
+                    <option value="Dark">Dark</option>
+                    <option value="Empowered">Empowered</option>
+                    <option value="Happy">Happy</option>
+                    <option value="Hopeful">Hopeful</option>
+                    <option value="Intense">Intense</option>
+                    <option value="Sad">Sad</option>
+                    <option value="Sassy">Sassy</option>
+                </select>
 
-        <select id="placement-pull" class="vault-select hover:border-[var(--sunset-orange)] transition" onchange="runFilters()">
-            <option value="">PLACEMENT TYPE</option>
-            <option value="Commercial">Commercial</option>
-            <option value="Credits">Credits</option>
-            <option value="Drama">Drama Scene</option>
-            <option value="Trailer">Trailer</option>
-        </select>
+                <select id="placement-pull" class="vault-select hover:border-[var(--sunset-orange)] transition" onchange="runFilters()">
+                    <option value="">PLACEMENT TYPE</option>
+                    <option value="Commercial">Commercial</option>
+                    <option value="Credits">Credits</option>
+                    <option value="Drama">Drama Scene</option>
+                    <option value="Trailer">Trailer</option>
+                </select>
 
-        <button onclick="resetVaultFilters()" class="text-xs font-black uppercase text-[var(--sunset-orange)] border border-[var(--sunset-orange)] p-3 rounded hover:bg-[var(--sunset-orange)] hover:text-white transition col-span-2">Reset All Filters</button>
+                <button onclick="resetVaultFilters()" class="text-xs font-black uppercase text-[var(--sunset-orange)] border border-[var(--sunset-orange)] p-3 rounded hover:bg-[var(--sunset-orange)] hover:text-white transition col-span-2">Reset All Filters</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-12">
+            <div class="rect-card border border-blue-gray p-4 rounded text-xs font-bold uppercase text-center hover:bg-[var(--sunset-orange)] hover:text-white transition">✅ 100% Human-Authored Lyrics</div>
+            <div class="rect-card border border-blue-gray p-4 rounded text-xs font-bold uppercase text-center hover:bg-[var(--sunset-orange)] hover:text-white transition">✅ Pre-Cleared Commercial Sync</div>
+            <div class="rect-card border border-blue-gray p-4 rounded text-xs font-bold uppercase text-center hover:bg-[var(--sunset-orange)] hover:text-white transition">✅ Clean Legal Copyright Path</div>
+        </div>
+
+        <div id="vault-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            </div>
+
+    </main>
+
+    <button id="arrow-up" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="position: fixed; bottom: 30px; right: 30px; background: none; border: none; color: #FD5E53; font-size: 3.5rem; cursor: pointer; z-index: 2000; line-height: 1; transition: 0.3s;">▲</button>
+
+    <div id="lyric-modal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-modal" onclick="closeModal(event)">&times;</span>
+            <h2 id="modal-song-title" class="text-3xl font-black text-[var(--metallic-gold)] mb-4 uppercase"></h2>
+            <div id="modal-song-lyrics-full" class="text-gray-300"></div>
+        </div>
     </div>
-</div>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-12">
-    <div class="rect-card border border-blue-gray p-4 rounded text-xs font-bold uppercase text-center hover:bg-[var(--sunset-orange)] hover:text-white transition">✅ 100% Human-Authored Lyrics</div>
-    <div class="rect-card border border-blue-gray p-4 rounded text-xs font-bold uppercase text-center hover:bg-[var(--sunset-orange)] hover:text-white transition">✅ Pre-Cleared Commercial Sync</div>
-    <div class="rect-card border border-blue-gray p-4 rounded text-xs font-bold uppercase text-center hover:bg-[var(--sunset-orange)] hover:text-white transition">✅ Clean Legal Copyright Path</div>
-</div>
+    <footer style="background-color: #000; color: white; padding: 40px 20px; text-align: center; border-top: 2px solid #D4AF37;">
+        <div style="margin-bottom: 20px; font-size: 1.2rem; font-weight: bold;">
+            ♥️ Kellie Larson ♥️
+        </div>
+        <div style="margin-bottom: 20px; color: #D4AF37; font-size: 1rem;">
+            ✍️Cinematic Songwriter and Lyricist 🎹
+        </div>
+        <div style="margin-bottom: 20px; font-size: 1rem;">
+            🧑‍🎤 VerseandChorus.com 🎙️
+        </div>
+        <div style="margin-bottom: 15px;">
+            ✉️ info@verseandchorus.com 📨
+        </div>
+        <div style="margin-bottom: 20px;">
+            ☎️ 760-537-0222 📲
+        </div>
+        <div style="font-size: 0.8rem; color: #666;">
+            © 2024 VerseandChorus.com. All Rights Reserved.
+        </div>
+    </footer>
 
-<button id="arrow-up" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="position: fixed; bottom: 30px; right: 30px; background: none; border: none; color: #FD5E53; font-size: 3.5rem; cursor: pointer; z-index: 2000; line-height: 1; transition: 0.3s;">▲</button>
+    <script>
+        // Data Vault: 46 Songs
+        const songs = [
+            { title: "Author of a Lie", genre: "Cinematic", mood: "Dark", placement: "Drama", hashtags: "Disenchantment", lyrics: "Placeholder" },
+            { title: "Big Hard No", genre: "Pop", mood: "Confident", placement: "Commercial", hashtags: "Empowerment", lyrics: "Placeholder" },
+            { title: "Boom Boom Beat", genre: "Pop", mood: "Happy", placement: "Commercial", hashtags: "Fun", lyrics: "Placeholder" },
+            { title: "Bottom of the Wishing Well", genre: "Americana", mood: "Sad", placement: "Drama", hashtags: "Grief", lyrics: "Placeholder" },
+            { title: "Broken Bad", genre: "Rock", mood: "Angry", placement: "Trailer", hashtags: "Disenchantment", lyrics: "Placeholder" },
+            { title: "CEO Not Babysitting Tree", genre: "Pop", mood: "Sassy", placement: "Commercial", hashtags: "Value", lyrics: "Placeholder" },
+            { title: "Children of War", genre: "Cinematic", mood: "Sad", placement: "Drama", hashtags: "Social", lyrics: "Placeholder" },
+            { title: "Concrete Under our Feet", genre: "Rock", mood: "Intense", placement: "Trailer", hashtags: "Empowerment", lyrics: "Placeholder" },
+            { title: "Craving Those Crumbs", genre: "Country", mood: "Sad", placement: "Drama", hashtags: "Disenchantment", lyrics: "Placeholder" },
+            { title: "Don't Be Jelly", genre: "Pop", mood: "Sassy", placement: "Commercial", hashtags: "Fun", lyrics: "Placeholder" },
+            { title: "Ephemeral Moment", genre: "Easy Listening", mood: "Hopeful", placement: "Credits", hashtags: "Story", lyrics: "Placeholder" },
+            { title: "Etched in Every Space", genre: "Cinematic", mood: "Sad", placement: "Drama", hashtags: "Grief", lyrics: "Placeholder" },
+            { title: "Fury (I'm the Monster)", genre: "Rock", mood: "Angry", placement: "Trailer", hashtags: "Disenchantment", lyrics: "Placeholder" },
+            { title: "80s Anthems", genre: "Pop", mood: "Happy", placement: "Commercial", hashtags: "Fun", lyrics: "Placeholder" },
+            { title: "Heartbreak and Trouble", genre: "Country", mood: "Sad", placement: "Drama", hashtags: "Grief", lyrics: "Placeholder" },
+            { title: "Hit The Road", genre: "Rock", mood: "Confident", placement: "Commercial", hashtags: "Empowerment", lyrics: "Placeholder" },
+            { title: "How's It Feel, Bro?", genre: "Pop", mood: "Sassy", placement: "Commercial", hashtags: "Value", lyrics: "Placeholder" },
+            { title: "I'm a Broken Record", genre: "Alternative", mood: "Sad", placement: "Drama", hashtags: "Grief", lyrics: "Placeholder" },
+            { title: "I Know Your Damn Pin Code", genre: "Country", mood: "Sassy", placement: "Commercial", hashtags: "Fun", lyrics: "Placeholder" },
+            { title: "In My Dreams (When I Wake)", genre: "Cinematic", mood: "Hopeful", placement: "Credits", hashtags: "Story", lyrics: "Placeholder" },
+            { title: "Just A Little Lonely", genre: "Country", mood: "Sad", placement: "Drama", hashtags: "Grief", lyrics: "Placeholder" },
+            { title: "Married To The Drug", genre: "Alternative", mood: "Dark", placement: "Drama", hashtags: "Social", lyrics: "Placeholder" },
+            { title: "Murderer's Heart", genre: "Cinematic", mood: "Dark", placement: "Trailer", hashtags: "Disenchantment", lyrics: "Placeholder" },
+            { title: "My Girl Karma", genre: "Pop", mood: "Sassy", placement: "Commercial", hashtags: "Fun", lyrics: "Placeholder" },
+            { title: "My Words Still Matter", genre: "Cinematic", mood: "Empowered", placement: "Credits", hashtags: "Social", lyrics: "Placeholder" },
+            { title: "Not that girl from before", genre: "Pop", mood: "Empowered", placement: "Commercial", hashtags: "Empowerment", lyrics: "Placeholder" },
+            { title: "One Small Wrong", genre: "Americana", mood: "Sad", placement: "Drama", hashtags: "Story", lyrics: "Placeholder" },
+            { title: "Shot By Cupids Dart", genre: "Pop", mood: "Happy", placement: "Commercial", hashtags: "Fun", lyrics: "Placeholder" },
+            { title: "Showdown At My Door", genre: "Rock", mood: "Intense", placement: "Trailer", hashtags: "Story", lyrics: "Placeholder" },
+            { title: "Sick One (s1c)", genre: "Rock", mood: "Dark", placement: "Trailer", hashtags: "Disenchantment", lyrics: "Placeholder" },
+            { title: "Silver and Gray", genre: "Cinematic", mood: "Sad", placement: "Drama", hashtags: "Grief", lyrics: "Placeholder" },
+            { title: "Solid Shifting Ground", genre: "Alternative", mood: "Intense", placement: "Drama", hashtags: "Story", lyrics: "Placeholder" },
+            { title: "Stood By My Side", genre: "Country", mood: "Hopeful", placement: "Credits", hashtags: "Value", lyrics: "Placeholder" },
+            { title: "Take That First Step", genre: "Pop", mood: "Empowered", placement: "Commercial", hashtags: "Empowerment", lyrics: "Placeholder" },
+            { title: "The Aftermath", genre: "Cinematic", mood: "Dark", placement: "Drama", hashtags: "Disenchantment", lyrics: "Placeholder" },
+            { title: "The Back of Me", genre: "Pop", mood: "Confident", placement: "Commercial", hashtags: "Empowerment", lyrics: "Placeholder" },
+            { title: "The Pocket Watch", genre: "Americana", mood: "Sad", placement: "Drama", hashtags: "Grief", lyrics: "Placeholder" },
+            { title: "The Real Dream Team", genre: "Pop", mood: "Confident", placement: "Commercial", hashtags: "Value", lyrics: "Placeholder" },
+            { title: "The Show Is Through", genre: "Cinematic", mood: "Sad", placement: "Credits", hashtags: "Disenchantment", lyrics: "Placeholder" },
+            { title: "Thought You Should Know", genre: "Country", mood: "Sassy", placement: "Commercial", hashtags: "Value", lyrics: "Placeholder" },
+            { title: "Top Shelf Queen", genre: "Country", mood: "Confident", placement: "Commercial", hashtags: "Value", lyrics: "Placeholder" },
+            { title: "Welcome To Jukes", genre: "Rock", mood: "Intense", placement: "Trailer", hashtags: "Story", lyrics: "Placeholder" },
+            { title: "Wildflower", genre: "Americana", mood: "Hopeful", placement: "Credits", hashtags: "Story", lyrics: "Placeholder" },
+            { title: "Year In The Rearview", genre: "Country", mood: "Hopeful", placement: "Credits", hashtags: "Story", lyrics: "Placeholder" },
+            { title: "Your Forever Man", genre: "Country", mood: "Happy", placement: "Commercial", hashtags: "Value", lyrics: "Placeholder" },
+            { title: "Your Mask", genre: "Rock", mood: "Angry", placement: "Trailer", hashtags: "Disenchantment", lyrics: "Placeholder" }
+        ];
+
+        // Initial Render
+        const vaultGrid = document.getElementById('vault-grid');
+        renderSongs(songs);
+
+        function renderSongs(list) {
+            vaultGrid.innerHTML = "";
+            if(list.length === 0) {
+                vaultGrid.innerHTML = `<div class="col-span-3 text-center text-gray-400 py-10">No matches found for your criteria.</div>`;
+                return;
+            }
+            list.forEach(song => {
+                const card = document.createElement('div');
+                card.className = "song-card";
+                card.innerHTML = `
+                    <h3 class="text-xl font-bold text-white mb-2">${song.title}</h3>
+                    <div class="mt-auto">
+                        <div class="data-label">Genre</div>
+                        <div class="data-value">${song.genre}</div>
+                        <div class="data-label">Mood</div>
+                        <div class="data-value">${song.mood}</div>
+                        <div class="data-label">Placement</div>
+                        <div class="data-value">${song.placement}</div>
+                        <button onclick="openLyrics('${song.title}')" class="w-full mt-4 border border-[var(--metallic-gold)] text-[var(--metallic-gold)] text-xs font-bold uppercase py-2 rounded hover:bg-[var(--metallic-gold)] hover:text-black transition">
+                            View Lyrics
+                        </button>
+                    </div>
+                `;
+                vaultGrid.appendChild(card);
+            });
+        }
+
+        function runFilters() {
+            const searchVal = document.getElementById('vault-search-box').value.toLowerCase();
+            const genreVal = document.getElementById('genre-pull').value;
+            const moodVal = document.getElementById('mood-pull').value;
+            const placeVal = document.getElementById('placement-pull').value;
+
+            const filtered = songs.filter(song => {
+                const matchesSearch = song.title.toLowerCase().includes(searchVal) || song.lyrics.toLowerCase().includes(searchVal) || song.hashtags.toLowerCase().includes(searchVal);
+                const matchesGenre = genreVal === "" || song.genre === genreVal;
+                const matchesMood = moodVal === "" || song.mood === moodVal;
+                const matchesPlace = placeVal === "" || song.placement === placeVal;
+
+                return matchesSearch && matchesGenre && matchesMood && matchesPlace;
+            });
+
+            renderSongs(filtered);
+        }
+
+        function applyHardFilter(type, value, element) {
+            // Reset dropdowns first for clarity
+            document.getElementById('genre-pull').value = "";
+            document.getElementById('mood-pull').value = "";
+            document.getElementById('placement-pull').value = "";
+            document.getElementById('vault-search-box').value = ""; // Optional: Clear text search or keep it? Clearing usually better for buttons.
+
+            let filtered = [];
+
+            if(type === 'pillar') {
+                // Map the 4 pillars to internal logic or generic search
+                if(value === 'Anthemic Empowerment') {
+                    filtered = songs.filter(s => s.hashtags === 'Empowerment' || s.mood === 'Confident');
+                } else if (value === 'Raw Emotional Narrative') {
+                    filtered = songs.filter(s => s.genre === 'Cinematic' || s.mood === 'Sad' || s.mood === 'Dark');
+                } else if (value === 'Kinetic Energy / Fun') {
+                    filtered = songs.filter(s => s.mood === 'Happy' || s.mood === 'Sassy' || s.mood === 'Intense');
+                } else if (value === 'Cinematic Storytelling') {
+                    filtered = songs.filter(s => s.placement === 'Drama' || s.placement === 'Trailer');
+                }
+            } else if (type === 'hashtags') {
+                filtered = songs.filter(s => s.hashtags === value || s.mood.includes(value) || s.placement.includes(value));
+            }
+
+            renderSongs(filtered);
+            
+            // Visual Feedback for click
+            const allCards = document.querySelectorAll('.pillar-card, .thematic-card');
+            allCards.forEach(c => c.style.borderColor = ''); // Reset others
+            element.style.borderColor = '#FD5E53'; // Highlight active
+        }
+
+        function resetVaultFilters() {
+            document.getElementById('vault-search-box').value = "";
+            document.getElementById('genre-pull').value = "";
+            document.getElementById('mood-pull').value = "";
+            document.getElementById('placement-pull').value = "";
+            renderSongs(songs);
+            
+            // Remove highlight from hard filters
+            const allCards = document.querySelectorAll('.pillar-card, .thematic-card');
+            allCards.forEach(c => c.style.borderColor = '');
+        }
+
+        // Modal Logic
+        function openLyrics(title) {
+            const song = songs.find(s => s.title === title);
+            if(song) {
+                document.getElementById('modal-song-title').innerText = song.title;
+                document.getElementById('modal-song-lyrics-full').innerText = song.lyrics;
+                document.getElementById('lyric-modal').style.display = 'flex';
+            }
+        }
+
+        function closeModal(e) {
+            if (e.target.id === 'lyric-modal' || e.target.classList.contains('close-modal')) {
+                document.getElementById('lyric-modal').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
