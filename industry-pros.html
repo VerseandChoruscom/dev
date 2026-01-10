@@ -12,26 +12,17 @@
         .hero-box { text-align: center; padding: 80px 20px; background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('/assets/covers/industry-vault-bg.jpg'); background-size: cover; border-bottom: 2px solid var(--metallic-gold); }
         .hero-script { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 2.2rem; }
         .hero-title { font-size: 4.5rem; font-weight: 900; color: var(--white); text-transform: uppercase; line-height: 1; margin-top: 10px; }
-        
-        /* Pillars */
-        .pillar-row { display: grid; grid-cols-4 gap-4 max-w-6xl mx-auto mt-12; }
         .pillar { border-left: 4px solid var(--metallic-gold); padding-left: 20px; }
         .pillar-h { color: var(--metallic-gold); font-weight: 900; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
         .pillar-t { font-size: 0.75rem; color: #94a3b8; line-height: 1.4; }
-
         .vault-select { background: #000; border: 1px solid #334155; color: #cbd5e1; padding: 12px; border-radius: 8px; width: 100%; cursor: pointer; font-size: 0.7rem; text-transform: uppercase; font-weight: bold; }
         .vault-select:hover { border-color: var(--sunset-orange); }
-        
         .song-card { border: 2px solid #334155; background: #1e293b; transition: 0.3s; border-radius: 12px; padding: 1.5rem; height: 100%; display: flex; flex-direction: column; position: relative; }
         .song-card:hover { border-color: var(--sunset-orange); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        
         .data-label { font-size: 0.6rem; font-weight: 800; color: var(--metallic-gold); text-transform: uppercase; margin-top: 0.5rem; letter-spacing: 0.5px; }
         .data-value { font-size: 0.7rem; color: #cbd5e1; margin-bottom: 0.2rem; line-height: 1.2; }
-        
-        .legal-rect { border: 1px solid #334155; padding: 15px; font-size: 0.7rem; color: #94a3b8; background: rgba(0,0,0,0.2); }
-        
-        /* Continuous Lyrics Fix */
-        #modal-song-lyrics-full p, #modal-song-lyrics-full br { display: block; margin: 0 !important; padding: 0 !important; }
+        .legal-rect { border: 1px solid #334155; padding: 15px; font-size: 0.7rem; color: #94a3b8; background: rgba(0,0,0,0.2); border-radius: 4px; }
+        #modal-song-lyrics-full { line-height: 1; }
     </style>
 </head>
 <body>
@@ -48,11 +39,10 @@
 
     <section class="hero-box">
         <p class="hero-script">VerseandChorus.com Presents</p>
-        <h1 class="hero-title">THE CINEMATIC LYRICS VAULT</h1>
-        
+        <h1 class="hero-title">KELLIE LARSON LYRICS/ THE VAULT</h1>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mt-12 text-left">
-            <div class="pillar"><p class="pillar-h">Cinematic</p><p class="pillar-t">Kellie Larson's Cinematic Lyrics /Designed for visual storytelling and high-stakes sync.</p></div>
-            <div class="pillar"><p class="pillar-h">Human-Authored</p><p class="pillar-t">Kellie Larson's Lyrics were created with Zero AI. Pure emotional depth and legal safety.</p></div>
+            <div class="pillar"><p class="pillar-h">Cinematic</p><p class="pillar-t">Kellie Larson's Cinematic Lyrics Designed for visual storytelling and sync.</p></div>
+            <div class="pillar"><p class="pillar-h">Human-Authored</p><p class="pillar-t">Created with Zero AI. Pure emotional depth and legal safety.</p></div>
             <div class="pillar"><p class="pillar-h">Pre-Cleared</p><p class="pillar-t">One-stop licensing path for rapid turnarounds.</p></div>
             <div class="pillar"><p class="pillar-h">Traditional</p><p class="pillar-t">Rooted in authentic songwriting craftsmanship.</p></div>
         </div>
@@ -67,34 +57,43 @@
             <div class="legal-rect">✅ Authentic Lyrical Narratives</div>
             <div class="legal-rect">✅ Industry Standard Deliverables</div>
         </div>
+
         <div class="bg-slate-900 p-8 rounded-2xl mb-12 border border-slate-700 shadow-2xl">
             <input type="text" id="vault-search-box" onkeyup="runFilters()" placeholder="Search vibes, hooks, or synonyms..." class="w-full p-5 bg-black border-2 border-slate-700 rounded-xl text-white mb-8 focus:border-[#D4AF37] outline-none text-lg">
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 <select id="filter-genre" class="vault-select" onchange="runFilters()">
                     <option value="">Genres</option>
-                    <option value="Alternative">Alternative</option><option value="Americana">Americana</option>
-                    <option value="Blues">Blues</option><option value="Cinematic">Cinematic</option>
-                    <option value="Country">Country</option><option value="Easy Listening">Easy Listening</option>
-                    <option value="Indie">Indie</option><option value="Pop">Pop</option>
-                    <option value="Punk">Punk</option><option value="Reggae">Reggae</option>
-                    <option value="RNB">RNB</option><option value="Rock">Rock</option>
+                    <option value="Alternative">Alternative</option>
+                    <option value="Americana">Americana</option>
+                    <option value="Blues">Blues</option>
+                    <option value="Cinematic">Cinematic</option>
+                    <option value="Country">Country</option>
+                    <option value="Easy Listening">Easy Listening</option>
+                    <option value="Indie">Indie</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Punk">Punk</option>
+                    <option value="Reggae">Reggae</option>
+                    <option value="RNB">RNB</option>
+                    <option value="Rock">Rock</option>
                     <option value="World">World</option>
                 </select>
-                </div>
+                <select id="filter-mood" class="vault-select" onchange="runFilters()"><option value="">Moods</option><option value="Aggressive">Aggressive</option><option value="Dark">Dark</option><option value="Hopeful">Hopeful</option><option value="Suspenseful">Suspenseful</option></select>
+                <select id="filter-feeling" class="vault-select" onchange="runFilters()"><option value="">Feelings</option><option value="Empowered">Empowered</option><option value="Lost">Lost</option><option value="Vindicated">Vindicated</option></select>
+            </div>
         </div>
 
         <div id="vault-grid-display" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </main>
 
     <div id="vault-modal-player" class="fixed inset-0 bg-black/95 z-50 hidden flex justify-center items-center p-4">
-        <div class="bg-slate-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col border-2 border-slate-700 shadow-2xl">
+        <div class="bg-slate-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col border-2 border-slate-700">
             <div class="p-4 bg-[var(--burgundy)] flex justify-between items-center">
-                <h2 id="modal-song-title" class="text-xl font-bold uppercase tracking-widest text-white italic"></h2>
-                <button onclick="closeVaultModal()" class="text-white text-4xl hover:text-amber-400 transition">&times;</button>
+                <h2 id="modal-song-title" class="text-xl font-bold uppercase text-white"></h2>
+                <button onclick="closeVaultModal()" class="text-white text-4xl">&times;</button>
             </div>
             <div class="p-10 overflow-y-auto">
-                <div id="modal-song-lyrics-full" class="whitespace-pre-wrap font-serif text-lg text-slate-100 text-center"></div>
+                <div id="modal-song-lyrics-full" class="whitespace-pre text-lg text-slate-100 text-center"></div>
             </div>
         </div>
     </div>
@@ -102,11 +101,10 @@
     <footer style="background: #000; color: #FFF; text-align: center; padding: 60px 20px; border-top: 5px solid #D4AF37;">
         <button onclick="window.scrollTo({top:0, behavior:'smooth'})" style="color: #FD5E53; font-size: 3rem; background: none; border: none; cursor: pointer;">▲</button>
         <p style="margin-top: 20px;">♥️ Kellie Larson ♥️</p>
-        <p>✍️ Cinematic Songwriter & Lyricist 🎹</p>
-        <p>🧑‍🎤 www.VerseandChorus.com 🎙️</p>
         <p>© 2026 Kellie Larson. All Rights Reserved.</p>
     </footer>
-<script>
+    <script>
+
 const VAULT_DATA = [
     { title: "Author of a Lie", genre1: "Pop", genre2: "RNB", subgenre: "Minimalist", moods: ["Suspenseful", "Cold", "Analytical", "Calculated", "Ominous", "Tense", "Serious", "Gripping"], feelings: ["Betrayed", "Gaslit", "Aware", "Intellectual", "Steady", "Wary"], themes: ["Deception", "Truth", "Manipulation", "Identity", "Exposure"], placements: ["Drama-Scene", "Trailer", "End-Credits"], hashtags: ["#Gaslighting", "#Truth", "#Psychological", "#Liar"], keywords: ["Phony", "Dishonest", "Investigation", "Broken Trust"], phrases: ["You tell a story I pick it apart", "Your timeline is whacked you're playing a part", "The sun was out the clouds were gray"], description: "A chilling deconstruction of deception. Perfect for crime dramas.", img: "/assets/covers/author-of-a-lie.jpg", rating: 9.6 },
     { title: "Big Hard No", genre1: "Country", genre2: "Pop", subgenre: "Ballad", moods: ["Strong", "Resilient", "Decisive", "Calm", "Firm", "Empowered", "Final", "Clean"], feelings: ["Healed", "Peaceful", "Strong", "Vindicated", "Done", "Relieved"], themes: ["Boundaries", "Rejection", "Self-Respect", "Closure", "Growth"], placements: ["Drama-Scene", "Commercial", "End-Credits"], hashtags: ["#Boundaries", "#SelfLove", "#No", "#Final"], keywords: ["No", "Refusal", "Toxic", "Strength"], phrases: ["Happier now, more than I've ever been", "Found a peace from deep within", "Found the strength to stand up off the floor"], description: "A definitive anthem of self-respect and the power of 'No'.", img: "/assets/covers/big-hard-no.jpg", rating: 9.9 },
@@ -157,6 +155,22 @@ const VAULT_DATA = [
 ];
 </script>
 <script>
+function runFilters() {
+    const query = document.getElementById('vault-search-box').value.toLowerCase();
+    const g = document.getElementById('filter-genre').value;
+    const m = document.getElementById('filter-mood').value;
+    const f = document.getElementById('filter-feeling').value;
+
+    const filtered = VAULT_DATA.filter(song => {
+        const searchPool = [song.title, ...song.phrases, ...song.moods, ...song.feelings].join(' ').toLowerCase();
+        return (!query || searchPool.includes(query)) &&
+               (!g || song.genre1 === g || song.genre2 === g) &&
+               (!m || song.moods.includes(m)) &&
+               (!f || song.feelings.includes(f));
+    });
+    renderVault(filtered);
+}
+
 function renderVault(data) {
     const grid = document.getElementById('vault-grid-display');
     grid.innerHTML = data.map(song => {
@@ -165,25 +179,15 @@ function renderVault(data) {
         <div class="song-card relative">
             <div class="absolute top-4 right-4 bg-[#D4AF37] text-black text-[10px] font-black px-2 py-1 rounded">${song.rating}</div>
             <img src="${song.img}" class="w-full h-44 object-cover rounded-lg mb-4" onerror="this.src='/images/logo/verseandchorus-logo-med-photo.jpg'">
-            
             <p class="data-label">Best Lines</p>
             <p class="text-sm font-bold text-white italic mb-2">"${song.phrases[0]}"</p>
-            
-            <div class="mb-3">
-                <span class="text-[10px] text-[#FD5E53] font-black uppercase tracking-widest">${song.genre1} / ${song.genre2}</span>
-            </div>
-            <div class="grid grid-cols-2 gap-x-4 mb-4 border-t border-slate-700 pt-3">
-                <div>
-                    <p class="data-label">Moods</p>
-                    <p class="data-value">${song.moods.slice(0, 3).join(', ')}</p>
-                </div>
-                <div>
-                    <p class="data-label">Placements</p>
-                    <p class="data-value">${song.placements.join(', ')}</p>
-                </div>
+            <div class="mb-3"><span class="text-[10px] text-[#FD5E53] font-black uppercase tracking-widest">${song.genre1} / ${song.genre2}</span></div>
+            <div class="grid grid-cols-2 gap-2 mb-4 border-t border-slate-700 pt-3">
+                <div><p class="data-label">Moods</p><p class="data-value">${song.moods.join(', ')}</p></div>
+                <div><p class="data-label">Placements</p><p class="data-value">${song.placements.join(', ')}</p></div>
             </div>
             <p class="text-sm text-slate-400 leading-relaxed mb-6">${song.description}</p>
-            <button onclick="openPlayer('${slug}')" class="w-full py-3 bg-[var(--sunset-orange)] text-white font-black text-[10px] rounded uppercase hover:bg-red-600 transition">READ LYRICS / PLAY</button>
+            <button onclick="openPlayer('${slug}')" class="w-full py-3 bg-[var(--sunset-orange)] text-white font-black text-[10px] rounded uppercase">READ LYRICS / PLAY</button>
         </div>`;
     }).join('');
 }
@@ -193,24 +197,16 @@ async function openPlayer(slug) {
     if(!song) return;
     document.getElementById('modal-song-title').innerText = song.title;
     document.getElementById('vault-modal-player').classList.replace('hidden', 'flex');
-    
     try {
-        const response = await fetch(`/assets/lyrics/${slug}.html`);
-        if(response.ok) {
-            const html = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            // Remove spacing and strip everything but the raw text
-            const cleanLyrics = doc.body.innerText.replace(/\n\s*\n/g, '\n');
-            document.getElementById('modal-song-lyrics-full').innerText = cleanLyrics;
-        } else {
-            document.getElementById('modal-song-lyrics-full').innerText = song.phrases.join('\n');
-        }
-    } catch (e) {
-        document.getElementById('modal-song-lyrics-full').innerText = song.phrases.join('\n');
-    }
+        const res = await fetch(`/assets/lyrics/${slug}.html`);
+        const html = res.ok ? await res.text() : song.phrases.join('\n');
+        const clean = new DOMParser().parseFromString(html, 'text/html').body.innerText.replace(/\n\s*\n/g, '\n');
+        document.getElementById('modal-song-lyrics-full').innerText = clean;
+    } catch (e) { document.getElementById('modal-song-lyrics-full').innerText = song.phrases.join('\n'); }
 }
 
 function closeVaultModal() { document.getElementById('vault-modal-player').classList.replace('flex', 'hidden'); }
 window.onload = () => renderVault(VAULT_DATA);
 </script>
+</body>
+</html>
