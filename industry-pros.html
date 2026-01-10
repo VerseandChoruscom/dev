@@ -99,18 +99,23 @@
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-2">
                 
                 <select id="genre-pull" class="vault-select" onchange="runFilters()">
-                    <option value="">GENRE</option>
-                    <option value="Pop">Pop</option>
-                    <option value="Country">Country</option>
-                    <option value="Rock">Rock</option>
-                    <option value="R&B">R&B</option>
-                    <option value="Cinematic">Cinematic</option>
+                   <option value="">ALL GENRES</option>
                     <option value="Alternative">Alternative</option>
                     <option value="Americana">Americana</option>
                     <option value="Blues">Blues</option>
-                    <option value="Folk">Folk</option>
+                    <option value="Cinematic">Cinematic</option>
+                    <option value="Country">Country</option>
+                    <option value="Easy Listening">Easy Listening</option>
+                    <option value="Indie">Indie</option>
+                    <option value="Kpop">Kpop</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Punk">Punk</option>
                     <option value="Reggae">Reggae</option>
+                    <option value="R&B">R&B</option>
+                    <option value="Rock">Rock</option>
+                    <option value="World">World</option>
                 </select>
+
 
                 <select id="subgenre-pull" class="vault-select" onchange="runFilters()">
                     <option value="">STYLE</option>
@@ -125,18 +130,17 @@
                     <option value="Southern Gothic">Southern Gothic</option>
                     <option value="Rhythmic">Rhythmic</option>
                 </select>
-
-                <select id="mood-pull" class="vault-select" onchange="runFilters()">
-                    <option value="">MOOD</option>
-                    <option value="Happy">Happy</option>
-                    <option value="Sad">Sad</option>
-                    <option value="Confident">Confident</option>
+                
+              <select id="mood-pull" class="vault-select hover:border-[var(--sunset-orange)] transition" onchange="runFilters()">
+                    <option value="">ALL MOODS</option>
                     <option value="Angry">Angry</option>
+                    <option value="Confident">Confident</option>
                     <option value="Dark">Dark</option>
+                    <option value="Empowered">Empowered</option>
+                    <option value="Happy">Happy</option>
                     <option value="Hopeful">Hopeful</option>
                     <option value="Intense">Intense</option>
-                    <option value="Relaxed">Relaxed</option>
-                    <option value="Eerie">Eerie</option>
+                    <option value="Sad">Sad</option>
                     <option value="Sassy">Sassy</option>
                 </select>
 
@@ -200,268 +204,124 @@
         
         // Data Vault: All 46 Songs
         const VAULT_DATA = [
-            { 
-              id: 1, title: "AUTHOR OF A LIE", genre1: "Pop", genre2: "R&B", subGenre: "Rhythmic", pov: "First Person", moodTone: "Confident, Confrontational", feeling: "Strong", category: "Disenchantment", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/author-of-a-lie-cover-art.jpg", snippetA: "You tell a story I pick it apart...",
-                description: `This narrative deconstructs the architecture of deception by contrasting specific, fabricated timelines against physical reality. The protagonist methodically picks apart a partner's whacked timeline, calling out inconsistencies such as a supposed trip to the beach in July versus the reality of gray clouds. The story captures the definitive transition from being gaslit to enlightened. BEST PLACEMENT: Psychological Thrillers.`
-            },
-            { 
-                id: 2, title: "BIG HARD NO", genre1: "Country", genre2: "Ballad", subGenre: "Contemporary", pov: "First Person", moodTone: "Strong, Resilient", feeling: "Healed", category: "Empowerment", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/big-hard-no-cover-art.jpg", snippetA: "Happier now, more than I've ever been...",
-                description: `The narrative centers on a firm, empowered rejection of a former partner attempting to manipulate their way back into the protagonist's life. It details a history of betrayal, remembering the moment the antagonist walked out for someone else. The lyrics describe a journey from weakness to finding a peace from deep within, guided by a desire for something bigger and better. BEST PLACEMENT: Character Pivot Anthem.`
-            },
-            {
-                id: 3, title: "BOOM BOOM BEAT", genre1: "Pop", genre2: "Dance", subGenre: "Anthem", pov: "First Person", moodTone: "Happy", feeling: "Free", category: "Empowerment", placementType: "Commercial", tempo: "Fast", img: "/assets/covers/boom-boom-beat-cover-art.jpg", snippetA: "Placeholder",
-                description: `Placeholder.`
-            },
-            { 
-                id: 4, title: "BOTTOM OF THE WISHING WELL", genre1: "Country", genre2: "Narrative", subGenre: "Southern Gothic", pov: "Third Person", moodTone: "Dark, Dramatic", feeling: "Eerie", category: "Social", placementType: "Drama", tempo: "Mid Tempo", img: "/assets/covers/bottom-of-the-wishing-well-cover-art.jpg", snippetA: "Oh poor lil Belle at the bottom of the wishing well...",
-                description: `A dark narrative murder ballad following Belle as she hurries to meet her lover on the streets of Amsterdam. The narrative subverts the tradition of a 'wishing well' for luck, turning it into a grave where both Belle and her lover lay motionless after a violent plunge. Irony is heavy as 'both of their wishes came true' in a shared grave. BEST PLACEMENT: True Crime Documentaries.`
-            },
-            {
-                id: 5, title: "BROKEN BAD", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Raw, Honest, Resilient", feeling: "Stuck", category: "Loss", placementType: "Breakup", tempo: "Mid Tempo", img: "/assets/covers/broken-bad-cover-art.jpg", snippetA: "Cause I'm a broken record skipping on repeat...",
-                description: `This narrative explores the 'bitter taste of defeat' and the cyclical nature of self-sabotage within a 'one-sided youth'. The protagonist is surrounded by 'ghosts' and eyes judging every flaw, eventually choosing the silence of an empty table for one over an 'unclean picture'. It captures the moment ties are cut to step into the 'fading light'. BEST PLACEMENT: Character 'Breaking Point' Scenes.`
-            },
-            { 
-                id: 6, title: "CEO NOT BABYSITTING TREE", genre1: "Pop", genre2: "R&B", subGenre: "Urban", pov: "First Person", moodTone: "Sassy, Confident, Boss", feeling: "Powerful", category: "Value", placementType: "Viral", tempo: "Fast", img: "/assets/covers/ceo-not-babysitting-tree-cover-art.jpg", snippetA: "Honey I'm a CEO not a babysitting tree...",
-                description: `A sharp manifesto on self-valuation and the refusal to provide emotional labor for those who do not contribute to growth. The 'babysitting tree' metaphor critiques those who want the 'shade' of success without planting the 'seed' of effort. The narrative contrasts a protagonist who is 'hustling' with an antagonist asking to 'chill at my crib'. BEST PLACEMENT: Powerhouse 'Walk-in' Anthem.`
-            },
-            { 
-                id: 7, title: "CHILDREN OF WAR", genre1: "Cinematic", genre2: "Folk", subGenre: "Acoustic", pov: "Third Person", moodTone: "Haunting, Sad, Urgent", feeling: "Heartbroken", category: "Social", placementType: "Drama", tempo: "Slow", img: "/assets/covers/children-of-war-cover-art.jpg", snippetA: "Run little children there's nothing left here...",
-                description: `A devastating examination of the human cost of conflict, focusing on the loss of innocence and the physical destruction of the familiar. The lyrics describe playgrounds becoming graveyards and small feet running from blasts in 'broken-down houses'. It critiques the failure of peace talks, emphasizing how the 'helpless and small' carry the burden. BEST PLACEMENT: Social Advocacy Documentaries.`
-            },
-            { 
-                id: 8, title: "CONCRETE UNDER OUR FEET", genre1: "Rock", genre2: "Alternative", subGenre: "Urban", pov: "First Person", moodTone: "Introspective, Cool", feeling: "Determined", category: "Social", placementType: "Drama", tempo: "Mid Tempo", img: "/assets/covers/concrete-under-our-feet-cover-art.jpg", snippetA: "It ain't about the clout the flash the scene...",
-                description: `This track explores the search for authentic connection within a 'digital blur,' prioritizing physical presence over online clout. It utilizes the 'concrete under our feet' as a grounding metaphor for reality. The narrative moves from the 'flash' of a squad to a private rooftop conversation where two people build something real. BEST PLACEMENT: Urban Drama Series.`
-            },
-            { 
-                id: 9, title: "CRAVING THOSE CRUMBS", genre1: "Country", genre2: "Pop", subGenre: "Contemporary", pov: "First Person", moodTone: "Confident, Disenchanted", feeling: "Vulnerable", category: "Disenchantment", placementType: "Drama", tempo: "Slow", img: "/assets/covers/craving-those-crumbs-cover-art.jpg", snippetA: "Too much thinking I gotta stop craving those crumbs...",
-                description: `A raw dissection of the exhaustion that follows a toxic relationship cycle. The lyrics describe an ex-partner who 'pops in' to start fights, creating a 'pure hell' atmosphere where the protagonist is pushed from 'sadness into madness'. It highlights the moment of taking back worth and refusing to survive on 'crumbs' of affection. BEST PLACEMENT: Late-Night Emotional Dramas.`
-            },
-            { 
-                id: 10, title: "DON'T BE JELLY", genre1: "Country", genre2: "Dance", subGenre: "Contemporary", pov: "First Person", moodTone: "Fun, Playful, Confident", feeling: "Sassy", category: "Empowerment", placementType: "Viral", tempo: "Fast", img: "/assets/covers/dont-be-jelly-cover-art.jpg", snippetA: "I live my truth un-freakin'-apologetically...",
-                description: `An assertive manifesto on self-confidence and the refusal to be held down by drama or rodeo clowns. The narrative describes a 'wild untamed machine' who lives her truth unapologetically and has 'no room for that petty scene'. It utilizes dance metaphors as a physical rejection of insecurity and establishes synergy as 'pure energy'. BEST PLACEMENT: Viral Dance promos.`
-            },
-            {
-               id: 11, title: "EPHEMERAL MOMENT", genre1: "Pop", genre2: "Folk", subGenre: "Storytelling", pov: "First Person", moodTone: "Romantic, Playful", feeling: "Love", category: "Iterative", placementType: "Romance", tempo: "Mid Tempo", img: "/assets/covers/ephemeral-moment-cover-art.jpg", snippetA: "You are mine Yo de lee eee ooohhh boom boom boom...",
-                description: `A playful and rhythmic expression of longing and connection. The protagonist describes the desire to not be away from their partner for a moment longer than necessary, waiting for the day to reunite. The heartbeat is mimicked by the 'boom boom boom' motif, creating a sense of anticipation and joy. BEST PLACEMENT: Lighthearted Romantic Scenes.`
-            },
-            { 
-                id: 12, title: "ETCHED IN EVERY SPACE", genre1: "Country", subGenre: "Contemporary", moodTone: "Mournful, Sad", feeling: "Heartbroken", category: "Disenchantment", placementType: "Drama", img: "/assets/covers/etched-in-every-space-cover-art.jpg", snippetA: "Oh I miss your stupid face! It’s etched in every space...",
-                description: `A deeply personal exploration of grief and the sensory haunting of a home following the loss of a loved one. It contrasts vivid, sweet memories—a quirky smile and stories that went for days—with the reality of a 'barren land' where the protagonist feels like they are in 'sinking sand'. It captures the stress and anxiety that burn when a steady flame is gone. BEST PLACEMENT: Grief-focused Drama Series.`
-            },
-            { 
-                id: 13, title: "FURY (I'M THE MONSTER)", genre1: "Rock", genre2: "Metal", subGenre: "Cinematic", pov: "First Person", moodTone: "Heavy, Bitter, Intense", feeling: "Trapped", category: "Social", placementType: "Drama", tempo: "Fast", img: "/assets/covers/fury-im-the-monster-cover-art.jpg", snippetA: "Your fists a never-ending show...",
-                description: `A visceral and intense narrative focusing on the escape from domestic violence. The lyrics describe a cycle of fists, screams, and insults, moving toward a moment of clarity where the protagonist decides to 'roll right over your body and run right out the door'. It captures the pivot from being property to adopting a 'monster' persona for survival. BEST PLACEMENT: High-Intensity Domestic Dramas.`
-            },
-            {
-                id: 14, title: "80S ANTHEMS", genre1: "Pop", genre2: "Rock", subGenre: "Retro", pov: "Placeholder", moodTone: "Happy", feeling: "Free", category: "Placeholder", placementType: "Anthem", tempo: "Placeholder", img: "/assets/covers/80s-anthems-cover-art.jpg", snippetA: "Placeholder",
-                description: `Placeholder.`
-            },
-            {
-                id: 15, title: "HEARTBREAK AND TROUBLE", genre1: "Pop", genre2: "R&B", subGenre: "Contemporary", pov: "First Person", moodTone: "Sad, Exhausted", feeling: "Heartbroken", category: "Disenchantment", placementType: "Breakup", tempo: "Mid Tempo", img: "/assets/covers/heartbreak-and-trouble-cover-art.jpg", snippetA: "Cause all you are Is heartbreak and trouble...",
-                description: `The narrative centers on the realization that a partner is nothing but a 'thief of peace' and a 'thief of heart.' The protagonist describes being stuck in a bubble of sadness, blowing bubbles alone while the partner pops in and out of their life. It highlights the exhaustion of trying to figure out a 'tired story' that is getting too old. BEST PLACEMENT: Breakup Scenes.`
-            },
-            {
-                id: 16, title: "HIT THE ROAD", genre1: "Pop", genre2: "Rock", subGenre: "Anthem", pov: "First Person", moodTone: "Empowered, Strong", feeling: "Done", category: "Empowerment", placementType: "Anthem", tempo: "Up Tempo", img: "/assets/covers/hit-the-road-cover-art.jpg", snippetA: "All those nights you laId In my bed / All those times you messed wIth my head...",
-                description: `An empowering anthem about finally kicking a toxic partner out. The protagonist recalls nights of lies and crying, but now declares their tears are dry. With a definitive 'Hit the road, Jack,' they reject any attempts at reconciliation, celebrating the fact that friends are glad the partner is gone and that they can finally move on. BEST PLACEMENT: Empowered Breakup Montages.`
-            },
-            { 
-                id: 17, title: "HOW'S IT FEEL, BRO?", genre1: "Pop", genre2: "Hip-Hop", subGenre: "Contemporary", pov: "First Person", moodTone: "Confident, Revenge", feeling: "Vindicated", category: "Loss", placementType: "Viral", tempo: "Mid Tempo", img: "/assets/covers/hows-it-feel-bro-cover-art.jpg", snippetA: "Yo. You're always spinning that sht*, but I'm boomeranging it back...",
-                description: `A sharp, confrontational narrative centering on the reversal of manipulative tactics. The protagonist calls out 'whack' stories about flat tires and dead batteries, contrasting them with the reality of 'creeping all night long'. It explores the hypocrisy of an antagonist viewed from the 'outside looking in' who earned this boomerang of karma. BEST PLACEMENT: Confrontation Scenes.`
-            },
-            { 
-                id: 18, title: "I'M A BROKEN RECORD", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Raw, Honest, Resilient", feeling: "Stuck", category: "Loss", placementType: "Drama", tempo: "Mid Tempo", img: "/assets/covers/im-a-broken-record-cover-art.jpg", snippetA: "Cause I'm a broken record skipping on repeat...", description: "Placeholder."
-            },
-            { 
-                id: 19, title: "I KNOW YOUR DAMN PIN CODE", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Bitter, Confident, Revenge", feeling: "Vindicated", category: "Loss", placementType: "Anthem", tempo: "Fast", img: "/assets/covers/i-know-your-damn-pin-code-cover-art.jpg", snippetA: "Think you're clever / I know your damn pin code...",
-                description: `A visceral exploration of digital betrayal and the reclamation of power through the breach of a partner's smartphone security. The narrative describes an antagonist who thinks they are 'clever' but has provided 'bullets for my gun I named Justice'. It captures the moment the 'truth unfolds' as the protagonist realizes they are nothing like the 'dumb girls' of the past. BEST PLACEMENT: Modern Revenge Dramas.`
-            },
-            {
-                id: 20, title: "IN MY DREAMS (WHEN I WAKE)", genre1: "Pop", genre2: "Ballad", subGenre: "Contemporary", pov: "First Person", moodTone: "Sad, Longing", feeling: "Heartbroken", category: "Disenchantment", placementType: "Credits", tempo: "Slow", img: "/assets/covers/in-my-dreams-cover-art.jpg", snippetA: "In my dreams you are here and you kiss my cheek...",
-                description: `A heartbreaking ballad about the sharp contrast between the perfection of dreams and the gray reality of waking up alone. In dreams, the partner is present, smiling, and dancing, but waking brings loneliness and fear. The protagonist begs God to take the pain until they can be together again. BEST PLACEMENT: Scenes of Loss or Longing.`
-            },
-            { id: 21, title: "JUST A LITTLE LONELY", genre1: "Country", subGenre: "Ballad", moodTone: "Sad", feeling: "Heartbroken", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 22, title: "MARRIED TO THE DRUG", genre1: "Alternative", subGenre: "Cinematic", moodTone: "Dark", feeling: "Trapped", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 23, title: "MURDERER'S HEART", genre1: "Cinematic", subGenre: "Southern Gothic", moodTone: "Dark", feeling: "Eerie", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 24, title: "MY GIRL KARMA", genre1: "Pop", subGenre: "Anthem", moodTone: "Sassy", feeling: "Vindicated", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 25, title: "MY WORDS STILL MATTER", genre1: "Cinematic", subGenre: "Anthem", moodTone: "Empowered", feeling: "Strong", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 26, title: "NOT THAT GIRL FROM BEFORE", genre1: "Pop", subGenre: "Anthem", moodTone: "Empowered", feeling: "Healed", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 27, title: "ONE SMALL WRONG", genre1: "Americana", subGenre: "Storytelling", moodTone: "Sad", feeling: "Stuck", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 28, title: "SHOT BY CUPIDS DART", genre1: "Pop", subGenre: "Contemporary", moodTone: "Happy", feeling: "Love", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 29, title: "SHOWDOWN AT MY DOOR", genre1: "Rock", subGenre: "Cinematic", moodTone: "Intense", feeling: "Determined", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 30, title: "SICK ONE (S1C)", genre1: "Rock", subGenre: "Cinematic", moodTone: "Dark", feeling: "Trapped", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 31, title: "SILVER AND GRAY", genre1: "Cinematic", subGenre: "Ballad", moodTone: "Sad", feeling: "Heartbroken", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 32, title: "SOLID SHIFTING GROUND", genre1: "Alternative", subGenre: "Cinematic", moodTone: "Intense", feeling: "Stuck", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 33, title: "STOOD BY MY SIDE", genre1: "Country", subGenre: "Ballad", moodTone: "Hopeful", feeling: "Grateful", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 34, title: "TAKE THAT FIRST STEP", genre1: "Pop", subGenre: "Anthem", moodTone: "Empowered", feeling: "Free", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 35, title: "THE AFTERMATH", genre1: "Cinematic", subGenre: "Drama", moodTone: "Dark", feeling: "Heartbroken", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 36, title: "THE BACK OF ME", genre1: "Pop", subGenre: "Anthem", moodTone: "Confident", feeling: "Done", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 37, title: "THE POCKET WATCH", genre1: "Americana", subGenre: "Storytelling", moodTone: "Sad", feeling: "Nostalgic", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 38, title: "THE REAL DREAM TEAM", genre1: "Pop", subGenre: "Contemporary", moodTone: "Confident", feeling: "Strong", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 39, title: "THE SHOW IS THROUGH", genre1: "Cinematic", subGenre: "Ballad", moodTone: "Sad", feeling: "Done", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            { id: 39, title: "THOUGHT YOU SHOULD KNOW", genre1: "Country", subGenre: "Contemporary", moodTone: "Sassy", feeling: "Done", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder" },
-            {
-                id: 40, title: "TOP SHELF QUEEN", genre1: "Reggae", genre2: "Pop", subGenre: "Chill", pov: "First Person", moodTone: "Relaxed, Admiring", feeling: "Chill", category: "Iterative", placementType: "Viral", tempo: "Mid Tempo", img: "/assets/covers/top-shelf-queen-cover-art.jpg", snippetA: "She's a top-shelf queen my number one prime / Mary Jane my perfect mate...",
-                description: `A chilled-out ode to 'Mary Jane,' personified as a 'top-shelf queen' and perfect mate. The lyrics celebrate the ritual of de-stressing after a long week, traveling to 'Zion,' and 'eating feelings' while wiping away worries. It captures a specific vibe of relaxation and good vibrations. BEST PLACEMENT: Stoner Comedies or Lifestyle Content.`
-            },
-            {
-                id: 41, title: "WELCOME TO JUKES", genre1: "Blues", genre2: "Rock", subGenre: "Southern Gothic", pov: "Third Person", moodTone: "Eerie, Mysterious", feeling: "Trapped", category: "Social", placementType: "Drama", tempo: "Slow", img: "/assets/covers/welcome-to-jukes-cover-art.jpg", snippetA: "At Jukes the singer's voice is harsh and sweet / A crowded room where every soul will meet...",
-                description: `An atmospheric Southern Gothic track set in a mysterious bayou juke joint. The lyrics paint a picture of smoke, free liquor, and a 'secret dark romance' between the living and the spirits. It carries a supernatural twist reminiscent of 'Hotel California,' revealing that 'no one leaves Jukes when day breaks.' BEST PLACEMENT: Supernatural Thrillers or Southern Gothic Series.`
-            },
-            {
-                id: 42, title: "WILDFLOWER", genre1: "Country", genre2: "Folk", subGenre: "Americana", pov: "Third Person", moodTone: "Hopeful", feeling: "Free", category: "Empowerment", placementType: "Montage", tempo: "Mid Tempo", img: "/assets/covers/wildflower-cover-art.jpg", snippetA: "Oh, she's Wildflower, dancing in the wind / She's got the spirit of a rebel, never gonna bend...",
-                description: `A character-driven narrative about a girl named Wildflower growing up in a conformist small town with a difficult family history. Despite local gossip and dusty roads, she maintains a rebellious spirit and a determination to leave the town behind and carve her own path. BEST PLACEMENT: Character Introduction or 'Leaving Home' Montage.`
-            },
-            { 
-                id: 43, title: "YEAR IN THE REARVIEW", genre1: "Country", subGenre: "Cinematic", pov: "First Person", moodTone: "Melancholic, Resilient", feeling: "Healed", category: "Empowerment", placementType: "Montage", tempo: "Mid Tempo", img: "/assets/covers/year-in-the-rearview-cover-art.jpg", snippetA: "A year in the rearview since that shattering crash / Glue the broken pieces from the ash",
-                description: `A methodical examination of the healing process following a 'shattering crash' and emotional betrayal. The lyrics use a calendar as 'heavy stones' to build a fortress, before transitioning into 'peeling back layers' like bark from a wounded tree to reclaim silence. It captures the shift from the 'bitter sting' of poison to planting new seeds in a garden, stepping into sunlight with a 'hopeful steady gaze'. BEST PLACEMENT: Healing Journey montages.`
-            },
-            { 
-                id: 44, title: "YOUR FOREVER MAN", genre1: "Country", subGenre: "Cinematic", pov: "First Person", moodTone: "Supportive, Loving", feeling: "Strong", category: "Empowerment", placementType: "Romance", tempo: "Mid Tempo", img: "/assets/covers/your-forever-man-cover-art.jpg", snippetA: "When Misty cries the tears fall like rain from her eyes...",
-                description: `A tender, protective ballad told from the perspective of a partner supporting a woman named Misty through deep-seated trauma and 'dark childhood memories.' The narrator positions himself as the 'anchor' and 'forever man,' providing a safe space until the storm subsides and she can stand free of fear. BEST PLACEMENT: Romantic Dramas with emotional depth.`
-            },
-            {
-                id: 45, title: "YOUR MASK", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Angry, Betrayed", feeling: "Vindicated", category: "Social", placementType: "Drama", tempo: "Fast", img: "/assets/covers/your-mask-cover-art.jpg", snippetA: "You see me on the screen a monster in the news / A headline and a mugshot singing all the blues...",
-                description: `A biting social commentary on scapegoating and corruption. The protagonist, painted as a 'monster' in the media, turns the tables on the true manipulator who 'pulled the strings' from the shadows. It demands the removal of the antagonist's mask to reveal the 'nefarious actions' underneath, emphasizing that the system's collapse is due to their greed, not the scapegoat. BEST PLACEMENT: Political Thrillers or Corruption Dramas.`
-            }
+           <script>
+const VAULT_DATA = [
+    { title: "Author of a Lie", genre1: "Pop", genre2: "RNB", subgenre: "Minimalist", moods: ["Suspenseful", "Cold", "Analytical", "Calculated", "Ominous", "Tense", "Serious", "Gripping"], feelings: ["Betrayed", "Gaslit", "Aware", "Intellectual", "Steady", "Wary"], themes: ["Deception", "Truth", "Manipulation", "Identity", "Exposure"], placements: ["Drama-Scene", "Trailer", "End-Credits"], hashtags: ["#Gaslighting", "#Truth", "#Psychological", "#Liar"], keywords: ["Phony", "Dishonest", "Investigation", "Broken Trust"], phrases: ["You tell a story I pick it apart", "Your timeline is whacked you're playing a part", "The sun was out the clouds were gray"], description: "A chilling deconstruction of deception. Perfect for crime dramas.", img: "/assets/covers/author-of-a-lie.jpg", rating: 9.6 },
+    { title: "Big Hard No", genre1: "Country", genre2: "Pop", subgenre: "Ballad", moods: ["Strong", "Resilient", "Decisive", "Calm", "Firm", "Empowered", "Final", "Clean"], feelings: ["Healed", "Peaceful", "Strong", "Vindicated", "Done", "Relieved"], themes: ["Boundaries", "Rejection", "Self-Respect", "Closure", "Growth"], placements: ["Drama-Scene", "Commercial", "End-Credits"], hashtags: ["#Boundaries", "#SelfLove", "#No", "#Final"], keywords: ["No", "Refusal", "Toxic", "Strength"], phrases: ["Happier now, more than I've ever been", "Found a peace from deep within", "Found the strength to stand up off the floor"], description: "A definitive anthem of self-respect and the power of 'No'.", img: "/assets/covers/big-hard-no.jpg", rating: 9.9 },
+    { title: "Boom Boom Beat", genre1: "Pop", genre2: "Kpop", subgenre: "Urban", moods: ["Energetic", "Euphoric", "Playful", "Happy", "Vibrant", "Upbeat", "Electric", "Fun"], feelings: ["Confident", "Vibrant", "Obsessed", "In Love", "Excited", "High-Energy"], themes: ["Heartbeat", "Rhythm", "Love", "Momentum", "Attraction"], placements: ["Commercial", "Reality", "Sports"], hashtags: ["#DancePop", "#HighEnergy", "#Viral", "#Beat"], keywords: ["Heart", "Rhythm", "Tempo", "Dance"], phrases: ["But when we meet my heart plays a beautiful beat", "Boom boom boom da boom boom boom", "You are mine Yo de lee eee ooohhh"], description: "High-octane pop celebration of chemistry and rhythm.", img: "/assets/covers/boom-boom-beat.jpg", rating: 9.2 },
+    { title: "Bottom of the Wishing Well", genre1: "Country", genre2: "Americana", subgenre: "Gothic", moods: ["Ominous", "Haunting", "Somber", "Grim", "Melancholic", "Ghostly", "Stark", "Eerie"], feelings: ["Lost", "Tragic", "Cold", "Resigned", "Broken", "Shattered"], themes: ["Death", "Secrets", "Water", "Justice", "Fate"], placements: ["End-Credits", "Trailer", "Period-Piece"], hashtags: ["#MurderBallad", "#WishingWell", "#Gothic"], keywords: ["Drowning", "Water", "Tragedy", "Amsterdam"], phrases: ["Oh poor lil Belle at the bottom of the wishing well", "Her secrets now only the water can tell", "They lay there so still in their watery home"], description: "A dark Southern Gothic tale of a shared watery grave.", img: "/assets/covers/wishing-well.jpg", rating: 9.8 },
+    { title: "Broken Bad", genre1: "Country", genre2: "Blues", subgenre: "Ballad", moods: ["Bitter", "Sad", "Resigned", "Dark", "Grim", "Heavy", "Somber", "Grim"], feelings: ["Exhausted", "Numb", "Broken", "Hurt", "Trapped", "Hopeless"], themes: ["Ruin", "Betrayal", "Finality", "Damage", "The End"], placements: ["Drama-Scene", "End-Credits", "Opening"], hashtags: ["#BrokenBad", "#End", "#Ruin"], keywords: ["Broken", "Bad", "Lies", "Damage"], phrases: ["Too much fighting, too much disrespect", "Too much lying no truth to detect", "It's broken bad between us it's true"], description: "The raw, heavy static of a relationship's ultimate collapse.", img: "/assets/covers/broken-bad.jpg", rating: 9.3 },
+    { title: "CEO Not Babysitting Tree", genre1: "Pop", genre2: "RNB", subgenre: "Urban", moods: ["Sassy", "Confident", "Boss", "Strong", "Unstoppable", "Bold", "Sharp", "Calculated"], feelings: ["Empowered", "Fearless", "Resilient", "Strong", "Done", "Vindicated"], themes: ["Business", "Self-Worth", "Growth", "Boundaries", "Labor"], placements: ["Reality", "Commercial", "Sports"], hashtags: ["#CEO", "#Boss", "#SassyPop"], keywords: ["Tree", "Shade", "Business", "Seed"], phrases: ["Honey I'm a CEO not a babysitting tree", "You want the shade without planting the seed", "I'm busy stacking while you're just slacking"], description: "A high-power manifesto on self-valuation and boundaries.", img: "/assets/covers/ceo-tree.jpg", rating: 9.8 },
+    { title: "Children of War", genre1: "Indie", genre2: "Americana", subgenre: "Cinematic", moods: ["Haunting", "Sad", "Urgent", "Grim", "Melancholic", "Atmospheric", "Deep", "Emotional"], feelings: ["Lost", "Heartbroken", "Compassionate", "Broken", "Fearful", "Heavy"], themes: ["Innocence", "War", "Conflict", "Sacrifice", "Society"], placements: ["End-Credits", "Opening", "Period-Piece"], hashtags: ["#War", "#Children", "#Innocence"], keywords: ["War", "Sky", "Grave", "Scream"], phrases: ["Run little children there's nothing left here", "The playground's a grave and the sky is full of fear", "Leaders turn out the lights and go hide"], description: "A devastating look at the human cost of global conflict.", img: "/assets/covers/children-of-war.jpg", rating: 9.9 },
+    { title: "Concrete Under our Feet", genre1: "Rock", genre2: "Indie", subgenre: "Urban", moods: ["Introspective", "Cool", "Grounded", "Urban", "Nostalgic", "Steady", "Mellow", "Atmospheric"], feelings: ["Connected", "Peaceful", "Steady", "Real", "Lost", "Wary"], themes: ["Authenticity", "City Life", "Digital vs Physical", "Connection", "Reality"], placements: ["Drama-Scene", "Opening", "End-Credits"], hashtags: ["#CityLife", "#RealLove", "#Concrete"], keywords: ["Concrete", "City", "Street", "Real"], phrases: ["It ain't about the clout the flash the scene", "It's the concrete under our feet and the space between", "Let the city lights blur and the world go dim"], description: "Prioritizing physical presence in a digital world.", img: "/assets/covers/concrete.jpg", rating: 9.1 },
+    { title: "Craving Those Crumbs", genre1: "Country", genre2: "Pop", subgenre: "Ballad", moods: ["Disenchanted", "Strong", "Bitter", "Raw", "Exhausted", "Tense", "Grim", "Serious"], feelings: ["Vulnerable", "Exhausted", "Numb", "Betrayed", "Angry", "Resolved"], themes: ["Self-Worth", "Toxic Love", "Addiction", "Awakening", "Escape"], placements: ["Drama-Scene", "End-Credits", "Reality"], hashtags: ["#Worth", "#Crumbs", "#Toxic"], keywords: ["Crumbs", "Numb", "Man-child", "Worth"], phrases: ["Too much thinking I gotta stop craving those crumbs", "From a man-child who leaves me numb", "Reclaiming my light from the shade you were throwing"], description: "A raw dissection of reclaiming self-worth.", img: "/assets/covers/crumbs.jpg", rating: 9.0 },
+    { title: "Don't Be Jelly", genre1: "Pop", genre2: "Indie", subgenre: "Urban", moods: ["Fun", "Playful", "Confident", "Sassy", "Upbeat", "Happy", "Catchy", "Electric"], feelings: ["Empowered", "Joyful", "Fearless", "Bold", "Unbothered", "Vibrant"], themes: ["Confidence", "Jealousy", "Self-Expression", "Viral Trends", "Joy"], placements: ["Commercial", "Reality", "Gaming"], hashtags: ["#Jelly", "#Confidence", "#Viral"], keywords: ["Energy", "Truth", "Jelly", "Vibe"], phrases: ["I live my truth un-freakin'-apologetically", "Don't be jelly of my energy", "Hips to the left now stomp and slide"], description: "An assertive pop manifesto on unapologetic self-confidence.", img: "/assets/covers/jelly.jpg", rating: 9.4 },
+    { title: "Ephemeral Moment", genre1: "Pop", genre2: "Indie", subgenre: "Ballad", moods: ["Romantic", "Dreamy", "Sweet", "Ethereal", "Hopeful", "Calm", "Peaceful", "Lush"], feelings: ["In Love", "Hopeful", "Peaceful", "Euphoric", "Longing", "Steady"], themes: ["New Love", "Time", "Chemistry", "Connection", "Dawn"], placements: ["Drama-Scene", "Commercial", "Opening"], hashtags: ["#Love", "#Moment", "#Dreamy"], keywords: ["Moment", "Butterflies", "Wait", "Dawn"], phrases: ["I don't want to be away from you longer than I have to", "My heart plays a beautiful beat", "Just so I can hear you say that you missed me too"], description: "Capturing the fragile spark of new connection.", img: "/assets/covers/ephemeral.jpg", rating: 8.6 },
+    { title: "Etched in Every Space", genre1: "Indie", genre2: "Americana", subgenre: "Ballad", moods: ["Mournful", "Haunting", "Deep", "Sad", "Somber", "Atmospheric", "Grim", "Melancholic"], feelings: ["Lost", "Shattered", "Lonely", "Anxious", "Heavy", "Broken"], themes: ["Grief", "Memory", "Loss", "Haunting", "Home"], placements: ["End-Credits", "Opening", "Period-Piece"], hashtags: ["#Grief", "#Memory", "#Loss"], keywords: ["Face", "Space", "Sinking", "Sand"], phrases: ["Oh I miss your stupid face! It’s etched in every space", "I feel like I'm in sinking sand", "Stress and anxiety burning like fire"], description: "The visceral sensory haunting of a home after loss.", img: "/assets/covers/etched.jpg", rating: 9.7 },
+    { title: "Fury (I'm the Monster)", genre1: "Rock", genre2: "Indie", subgenre: "Cyberpunk", moods: ["Aggressive", "Intense", "Dark", "Explosive", "Heavy", "Fierce", "Dangerous", "Unstoppable"], feelings: ["Empowered", "Furious", "Relieved", "Vindicated", "Fearless", "Strong"], themes: ["Survival", "Revenge", "Reclamation", "Power", "Transformation"], placements: ["Trailer", "Sports", "Gaming"], hashtags: ["#Revenge", "#Monster", "#Power"], keywords: ["Rage", "Impact", "Female", "Escape"], phrases: ["Your fists a never-ending show", "Now I'm the monster that you used to know", "Roll right over your body and run"], description: "An explosive reclamation of power after trauma.", img: "/assets/covers/fury.jpg", rating: 10.0 },
+    { title: "80s Anthems", genre1: "Pop", genre2: "Rock", subgenre: "Synthwave", moods: ["Nostalgic", "Energetic", "Vibrant", "Euphoric", "Upbeat", "Bright", "Catchy", "Electric"], feelings: ["Fearless", "Euphoric", "Excited", "Free", "Vibrant", "Alive"], themes: ["Nostalgia", "Music", "Youth", "Summer", "Legacy"], placements: ["Commercial", "Reality", "Opening"], hashtags: ["#80s", "#Synthwave", "#Retro"], keywords: ["Neon", "Nights", "Living", "Synthesizer"], phrases: ["Neon lights and city nights", "Living for the music feeling so alive", "Stranger in a neon city"], description: "Pure 80s nostalgia utilizing high-energy synth-pop.", img: "/assets/covers/80s-anthems.jpg", rating: 8.9 },
+    { title: "Heartbreak and Trouble", genre1: "Pop", genre2: "RNB", subgenre: "Urban", moods: ["Sad", "Exhausted", "Tense", "Dark", "Grim", "Melancholic", "Tense", "Serious"], feelings: ["Broken", "Betrayed", "Obsessed", "Trapped", "Heartbroken", "Lost"], themes: ["Betrayal", "Theft", "Confusion", "Relationship", "Trouble"], placements: ["Drama-Scene", "Reality", "End-Credits"], hashtags: ["#Heartbreak", "#Trouble", "#Thief"], keywords: ["Bubble", "Thief", "Peace", "Trouble"], phrases: ["I must really love nothing I'm stuck In a bubble", "BlowIng bubbles alone no fire to light my way", "You're a thief of my peace a thief of my heart"], description: "The realization that a partner is merely a thief of peace.", img: "/assets/covers/heartbreak.jpg", rating: 8.8 },
+    { title: "Hit The Road", genre1: "Pop", genre2: "Rock", subgenre: "Anthemic", moods: ["Empowered", "Strong", "Defiant", "Bold", "Final", "Upbeat", "Happy", "Confident"], feelings: ["Done", "Relieved", "Vindicated", "Free", "Steady", "Empowered"], themes: ["Breakup", "Closure", "Digital", "Survival", "Leaving"], placements: ["Drama-Scene", "Reality", "End-Credits"], hashtags: ["#HitTheRoad", "#Blocked", "#Done"], keywords: ["Road", "Blocked", "Feelings", "Luck"], phrases: ["Don't stop don't look back", "HIt the road Jack", "Haha I blocked you on all that stuff"], description: "An empowering anthem about kicking a toxic partner out.", img: "/assets/covers/hit-road.jpg", rating: 9.3 },
+    { title: "How's It Feel, Bro?", genre1: "Pop", genre2: "Indie", subgenre: "Urban", moods: ["Confident", "Aggressive", "Sassy", "Bold", "Calculated", "Cool", "Assertive", "Sharp"], feelings: ["Vindicated", "Empowered", "Resilient", "Steady", "Cold", "Strong"], themes: ["Karma", "Reversal", "Manipulation", "Truth", "Identity"], placements: ["Drama-Scene", "Reality", "Sports"], hashtags: ["#Karma", "#HowsItFeel", "#Boomerang"], keywords: ["Shadow", "Boomerang", "Admissions", "Glue"], phrases: ["You're always spinning that sht but I'm boomeranging it back", "Even my shadow is standing different", "Calling out your future admissions"], description: "A sharp, confrontational reversal of manipulative tactics.", img: "/assets/covers/how-feel.jpg", rating: 9.1 },
+    { title: "I'm a Broken Record", genre1: "Rock", genre2: "Indie", subgenre: "Ballad", moods: ["Raw", "Honest", "Melancholic", "Tense", "Deep", "Atmospheric", "Heavy", "Serious"], feelings: ["Lost", "Resilient", "Worn", "Weary", "Frustrated", "Stuck"], themes: ["Mental Health", "Cycles", "Youth", "Growth", "Defeat"], placements: ["Drama-Scene", "End-Credits", "Opening"], hashtags: ["#MentalHealth", "#BrokenRecord", "#Growth"], keywords: ["Record", "Repeat", "Defeat", "Youth"], phrases: ["Cause I'm a broken record skipping on repeat", "Watching everyone else land on their feet", "Cutting the ties to the ghosts of the past"], description: "A methodical look at breaking cycles and mental health.", img: "/assets/covers/broken-record.jpg", rating: 8.9 },
+    { title: "I Know Your Damn Pin Code", genre1: "Rock", genre2: "Punk", subgenre: "Minimalist", moods: ["Bitter", "Confident", "Intense", "Aggressive", "Suspenseful", "Cold", "Dangerous", "Sharp"], feelings: ["Vindicated", "Angry", "Fearless", "Strong", "Steady", "Cold"], themes: ["Betrayal", "Digital", "Investigation", "Truth", "Justice"], placements: ["Drama-Scene", "Trailer", "Sports"], hashtags: ["#PinCode", "#Justice", "#DigitalBetrayal"], keywords: ["Pin", "Code", "Bullets", "Gun"], phrases: ["Think you're clever / I know your damn pin code", "Gave me bullets for my gun I named Justice", "Eff off get gone I'm slamming the door"], description: "A visceral look at digital betrayal and reclaiming power.", img: "/assets/covers/pin-code.jpg", rating: 9.5 },
+    { title: "In My Dreams (When I Wake)", genre1: "Pop", genre2: "Indie", subgenre: "Ballad", moods: ["Sad", "Mournful", "Dreamy", "Ethereal", "Somber", "Atmospheric", "Melancholic", "Grim"], feelings: ["Lost", "Shattered", "Longing", "Lonely", "Despair", "Heartbroken"], themes: ["Grief", "Loss", "Reality", "Memory", "Color"], placements: ["End-Credits", "Drama-Scene", "Opening"], hashtags: ["#Grief", "#Dreams", "#Loss"], keywords: ["Dreams", "Wake", "Loneliness", "Fear"], phrases: ["In my dreams you are here and you kiss my cheek", "But when I wake you're not here and I feel loneliness and fear", "But when I wake everything is gray"], description: "The heartbreaking contrast between dreams and reality.", img: "/assets/covers/dreams.jpg", rating: 9.4 },
+    { title: "Just A Little Lonely", genre1: "Pop", genre2: "RNB", subgenre: "Ballad", moods: ["Sad", "Melancholic", "Nostalgic", "Somber", "Grim", "Soft", "Mellow", "Atmospheric"], feelings: ["Lost", "Lonely", "Longing", "Wistful", "Broken", "Weary"], themes: ["Breakup", "Isolation", "Memory", "Regret", "Silence"], placements: ["Drama-Scene", "Opening", "End-Credits"], hashtags: ["#Lonely", "#Breakup", "#RNB"], keywords: ["Lonely", "Sorry", "Dying", "Streetlights"], phrases: ["Streetlights paint a lonely picture on my wall", "Each car that passes, I'm always hoping it's your call", "Are you just a little lonely? Or just a little sorry"], description: "A poignant ballad on the lingering pain of separation.", img: "/assets/covers/lonely.jpg", rating: 8.7 },
+    { title: "Married To The Drug", genre1: "Rock", genre2: "Blues", subgenre: "Gothic", moods: ["Dark", "Intense", "Grim", "Heavy", "Suspenseful", "Stark", "Somber", "Raw"], feelings: ["Betrayed", "Strong", "Fearless", "Resolved", "Angry", "Relieved"], themes: ["Addiction", "Betrayal", "Recovery", "Identity", "Death"], placements: ["Drama-Scene", "Opening", "End-Credits"], hashtags: ["#Addiction", "#Recovery", "#Drug"], keywords: ["Drug", "Fetty", "Powder", "Man"], phrases: ["Married to the drug, Mrs. Fetty, hand in hand", "Signed the papers in white powder, you’re a submissive man", "I’m cutting down the Tree Shade that kept me in the cold"], description: "A raw, metaphorical dissection of addiction as a lover.", img: "/assets/covers/married-drug.jpg", rating: 9.9 },
+    { title: "Murderer's Heart", genre1: "Country", genre2: "Americana", subgenre: "Gothic", moods: ["Dark", "Shocking", "Cinematic", "Grim", "Ominous", "Haunting", "Tense", "Heavy"], feelings: ["Vengeful", "Broken", "Cold", "Shattered", "Resolved", "Empty"], themes: ["Betrayal", "Crime", "Family", "Justice", "Fate"], placements: ["End-Credits", "Trailer", "Period-Piece"], hashtags: ["#MurderBallad", "#CountryCrime", "#Justice"], keywords: ["Mary", "Colt", "Kill", "Heart"], phrases: ["Mary pulled out what her Daddy gave her, a big ole Colt .22", "Mary loved Dan too much to kill him... but her sister met her demise", "They lay there so still in their watery home"], description: "A shocking narrative ballad on betrayal and cold justice.", img: "/assets/covers/murderer.jpg", rating: 9.5 },
+    { title: "My Girl Karma", genre1: "Pop", genre2: "Country", subgenre: "Urban", moods: ["Sassy", "Confident", "Upbeat", "Playful", "Catchy", "Electric", "Bold", "Viral"], feelings: ["Vindicated", "Joyful", "Fearless", "Steady", "Empowered", "Unbothered"], themes: ["Karma", "Justice", "Fate", "Trends", "Patience"], placements: ["Commercial", "Reality", "Teen-Drama"], hashtags: ["#Karma", "#SassyPop", "#Vindicated"], keywords: ["Karma", "Debt", "Menu", "Order"], phrases: ["My girl karma is coming your way", "You'll meet her in a year, a month, or maybe even today", "She has no menu / Your order’s been on reserve"], description: "A sassy warning on the inevitability of cosmic justice.", img: "/assets/covers/karma.jpg", rating: 9.2 },
+    { title: "My Words Still Matter", genre1: "Country", genre2: "Americana", subgenre: "Acoustic", moods: ["Confident", "Grounded", "Quietly Strong", "Stark", "Serious", "Calm", "Steady", "Firm"], feelings: ["Wise", "Patient", "Empowered", "Steady", "Honest", "Clear"], themes: ["Self-Worth", "Silence", "Victory", "Maturity", "Identity"], placements: ["Drama-Scene", "End-Credits", "Commercial"], hashtags: ["#Worth", "#Silence", "#Strength"], keywords: ["Words", "Matter", "Shouting", "Defeat"], phrases: ["My words still matter even when I'm lit", "Shouting your truth is the sound of defeat", "I choose to protect the drunk sinner"], description: "A powerful exploration of silent victory in confrontation.", img: "/assets/covers/words-matter.jpg", rating: 9.4 },
+    { title: "Not that girl from before", genre1: "Pop", genre2: "Rock", subgenre: "Anthemic", moods: ["Strong", "Transformed", "Independent", "Bold", "Final", "Upbeat", "Catchy", "Electric"], feelings: ["Free", "Awake", "Empowered", "Vindicated", "Joyful", "Steady"], themes: ["Growth", "Transformation", "Freedom", "Recovery", "Identity"], placements: ["Reality", "End-Credits", "Commercial"], hashtags: ["#Transformation", "#Growth", "#NewMe"], keywords: ["Before", "Gone", "Dawn", "Myself"], phrases: ["I was so blinded so into you I lost myself it's true", "Thank God you're gone 'cause they say it's darkest before the dawn", "I'm not the girl you used to know from before"], description: "A definitive character-growth anthem on shedding a toxic past.", img: "/assets/covers/not-that-girl.jpg", rating: 9.0 },
+    { title: "One Small Wrong", genre1: "Pop", genre2: "RNB", subgenre: "Urban", moods: ["Conflicted", "Dramatic", "Tense", "Grim", "Heavy", "Suspenseful", "Stark", "Emotional"], feelings: ["Regret", "Betrayed", "Lost", "Angry", "Broken", "Shattered"], themes: ["Betrayal", "Conflict", "Regret", "Relationship", "Tit for Tat"], placements: ["Drama-Scene", "Reality", "End-Credits"], hashtags: ["#Betrayal", "#Regret", "#Relationship"], keywords: ["Wrong", "Wind", "Dread", "Ex"], phrases: ["Gone with the wind you left me here in dread", "Put an 'L' in my head where intrusive thoughts are bred", "Ran to your ex for sex you can't be trusted"], description: "A dramatic examination of a toxic cycle of retaliation.", img: "/assets/covers/one-wrong.jpg", rating: 8.8 },
+    { title: "Shot By Cupids Dart", genre1: "Pop", genre2: "Indie", subgenre: "Acoustic", moods: ["Romantic", "Dreamy", "Sweet", "Euphoric", "Upbeat", "Catchy", "Electric", "Vibrant"], feelings: ["In Love", "Euphoric", "Obsessed", "Happy", "Excited", "Bold"], themes: ["Love", "Chemistry", "Connection", "Impact", "Fate"], placements: ["Commercial", "Reality", "Opening"], hashtags: ["#Love", "#Cupid", "#Dart"], keywords: ["Cupid", "Dart", "Heart", "Fine"], phrases: ["When I first saw you I thought damn he's so fine", "Then I talked to you and you really blew my mind", "Together forever shot by Cupid's dart"], description: "An atmospheric celebration of sudden, undeniable impact.", img: "/assets/covers/cupid.jpg", rating: 8.9 },
+    { title: "Showdown At My Door", genre1: "Country", genre2: "Rock", subgenre: "Americana", moods: ["Strong", "Defiant", "Bold", "Aggressive", "Grim", "Serious", "Heavy", "Stark"], feelings: ["Unyielding", "Done", "Empowered", "Fearless", "Cold", "Steady"], themes: ["Boundaries", "Conflict", "Survival", "Rejection", "Identity"], placements: ["Sports", "Trailer", "Drama-Scene"], hashtags: ["#Showdown", "#Boundaries", "#CountryRock"], keywords: ["Showdown", "Door", "River", "Locks"], phrases: ["Don't you dare think 'bout a showdown at my door", "Used to cry those tears but the river don't flow no more", "You can kick your rocks I'm changing the locks I'm so done with you"], description: "A defiant narrative about setting unyielding boundaries.", img: "/assets/covers/showdown.jpg", rating: 9.3 },
+    { title: "Sick One (s1c)", genre1: "Pop", genre2: "RNB", subgenre: "Urban", moods: ["Conflicted", "Toxic", "Intense", "Dark", "Tense", "Dangerous", "Grim", "Suspenseful"], feelings: ["Obsessed", "Betrayed", "Broken", "Angry", "Wary", "Shattered"], themes: ["Toxic Love", "Obsession", "Lies", "Chaos", "Identity"], placements: ["Drama-Scene", "Reality", "End-Credits"], hashtags: ["#Toxic", "#SickOne", "#RNB"], keywords: ["Sick", "Sus", "Phone", "Lies"], phrases: ["Our love is on a sick one", "It's good for no one", "I couldn't believe all the lies you told"], description: "A rhythmic look at a toxic, addictive relationship cycle.", img: "/assets/covers/sick-one.jpg", rating: 9.1 },
+    { title: "Silver and Gray", genre1: "Country", genre2: "Americana", subgenre: "Ballad", moods: ["Reflective", "Melancholic", "Vulnerable", "Soft", "Mellow", "Dreamy", "Deep", "Introspective"], feelings: ["Wistful", "Hopeful", "Steady", "Wary", "Longing", "Peaceful"], themes: ["Aging", "Love", "Time", "Commitment", "Growth"], placements: ["Drama-Scene", "End-Credits", "Opening"], hashtags: ["#Aging", "#Love", "#SilverAndGray"], keywords: ["Silver", "Gray", "Woman", "Nest"], phrases: ["I’m reaching through the silver and the gray", "Do you still choose the woman I’ve become today?", "We built this nest with hands and heart"], description: "A poignant ballad on mature love and long-term commitment.", img: "/assets/covers/silver.jpg", rating: 9.5 },
+    { title: "Solid Shifting Ground", genre1: "Country", genre2: "Indie", subgenre: "Acoustic", moods: ["Hopeful", "Reflective", "Inspirational", "Grounded", "Deep", "Steady", "Profound", "Serious"], feelings: ["Resilient", "Hopeful", "Honest", "Steady", "Peaceful", "Connected"], themes: ["Resilience", "Life", "Change", "Nature", "Growth"], placements: ["Commercial", "End-Credits", "Opening"], hashtags: ["#Resilience", "#Life", "#Ground"], keywords: ["Ground", "Storm", "Beautiful", "Crazy"], phrases: ["A heart can be heavy, weighted down by dreams", "Like a storm cloud gatherin', it silently screams", "And it's worth it every time it comes around"], description: "A philosophical anthem on life's highs and lows.", img: "/assets/covers/shifting-ground.jpg", rating: 9.7 },
+    { title: "Stood By My Side", genre1: "Pop", genre2: "Americana", subgenre: "Ballad", moods: ["Grateful", "Peaceful", "Deep", "Soft", "Mellow", "Hopeful", "Lush", "Steady"], feelings: ["Saved", "Loved", "Peaceful", "Hopeful", "Steady", "Grateful"], themes: ["Faith", "Support", "Survival", "Friendship", "Growth"], placements: ["End-Credits", "Drama-Scene", "Commercial"], hashtags: ["#Grateful", "#Support", "#Faith"], keywords: ["Side", "Walked", "Companion", "Hope"], phrases: ["When the world walked away you stood by my side", "My constant companion nowhere to hide", "The urge to end it it weakens and flees"], description: "A spiritual song of gratitude for unwavering support.", img: "/assets/covers/side.jpg", rating: 9.2 },
+    { title: "Take That First Step", genre1: "Country", genre2: "Indie", subgenre: "Cinematic", moods: ["Hopeful", "Urgent", "Empathetic", "Deep", "Serious", "Firm", "Moving", "Emotional"], feelings: ["Encouraged", "Concerned", "Steady", "Strong", "Empowered", "Honest"], themes: ["Recovery", "Intervention", "Survival", "Friendship", "Change"], placements: ["Commercial", "End-Credits", "Drama-Scene"], hashtags: ["#Recovery", "#Step", "#Survival"], keywords: ["Step", "Darkness", "Goodbye", "Basket"], phrases: ["Everything broken trust me it's only bent", "Every single second is a second well spent", "Don't want to say goodbye at a casket"], description: "A moving narrative focusing on intervention and recovery.", img: "/assets/covers/step.jpg", rating: 9.8 },
+    { title: "The Aftermath", genre1: "Rock", genre2: "Indie", subgenre: "Cinematic", moods: ["Dark", "Intense", "Empowered", "Heavy", "Grim", "Suspenseful", "Stark", "Atmospheric"], feelings: ["Conflicted", "Angry", "Resilient", "Steady", "Strong", "Relieved"], themes: ["Escape", "Recovery", "Withdrawal", "Transformation", "Identity"], placements: ["Opening", "Trailer", "Drama-Scene"], hashtags: ["#Aftermath", "#Rock", "#Cinematic"], keywords: ["Quiet", "Silence", "Hooked", "Drama"], phrases: ["Can't breathe in this quiet", "Not used to the silence", "Hooked on the drama"], description: "The cinematic exploration of the period following toxic love.", img: "/assets/covers/aftermath.jpg", rating: 9.4 },
+    { title: "The Back of Me", genre1: "RNB", genre2: "Blues", subgenre: "Minimalist", moods: ["Strong", "Decisive", "Bitter", "Bold", "Stark", "Calculated", "Cold", "Serious"], feelings: ["Done", "Cold", "Steady", "Strong", "Empowered", "Vindicated"], themes: ["Breakup", "Self-Worth", "Identity", "Closure", "Truth"], placements: ["End-Credits", "Opening", "Drama-Scene"], hashtags: ["#Worth", "#Done", "#Closure"], keywords: ["Back", "Door", "Ghost", "Frame"], phrases: ["All you will see when you turn back to look is the back of me", "That confidence you're feeling inside is an illusion", "A mere imitation of a man I made you"], description: "A decisive narrative on the final frame of a relationship.", img: "/assets/covers/back-me.jpg", rating: 9.6 },
+    { title: "The Pocket Watch", genre1: "Indie", genre2: "Americana", subgenre: "Gothic", moods: ["Dark", "Melancholic", "Haunted", "Ominous", "Atmospheric", "Grim", "Haunting", "Somber"], feelings: ["Lost", "Shattered", "Lonely", "Anxious", "Trapped", "Broken"], themes: ["Time", "Memory", "Grief", "Loss", "Water"], placements: ["Opening", "Period-Piece", "End-Credits"], hashtags: ["#Time", "#Memory", "#PocketWatch"], keywords: ["Watch", "Ticks", "Grave", "Waiting"], phrases: ["My only comfort is the sound of your pocket watch as it just ticks", "Even though I remain in my watery grave", "the tick tick tick will always haunt me"], description: "A haunting exploration of memory and the weight of time.", img: "/assets/covers/watch.jpg", rating: 9.2 },
+    { title: "The Real Dream Team", genre1: "Pop", genre2: "Kpop", subgenre: "Urban", moods: ["Playful", "Confident", "Upbeat", "Happy", "Euphoric", "Catchy", "Electric", "Vibrant"], feelings: ["Loyal", "Strong", "Excited", "Free", "Connected", "Bold"], themes: ["Loyalty", "Success", "Connection", "Impact", "Partnership"], placements: ["Commercial", "Reality", "Opening"], hashtags: ["#DreamTeam", "#Loyalty", "#Pop"], keywords: ["Battle", "Haters", "Back", "Team"], phrases: ["Into battle we will go you shoot high and I shoot low", "I've got your back when haters attack", "We are the real dream team everyone can see"], description: "A celebratory loyalty anthem against the world.", img: "/assets/covers/team.jpg", rating: 8.9 },
+    { title: "The Show Is Through", genre1: "Pop", genre2: "Indie", subgenre: "Ballad", moods: ["Sarcastic", "Final", "Bold", "Stark", "Serious", "Cold", "Firm", "Serious"], feelings: ["Done", "Disappointed", "Resolved", "Vindicated", "Steady", "Strong"], themes: ["Identity", "Lies", "The End", "Finality", "Truth"], placements: ["End-Credits", "Opening", "Drama-Scene"], hashtags: ["#TheEnd", "#Done", "#Closure"], keywords: ["Show", "Curtains", "Pieces", "Shattered"], phrases: ["My heart your prop now shattered to pieces", "The act is over and the torment ceases", "Exit stage left 'cause the show is through"], description: "Theatrical breakup track using stage metaphors for deception.", img: "/assets/covers/show-through.jpg", rating: 9.0 },
+    { title: "Thought You Should Know", genre1: "Pop", genre2: "Kpop", subgenre: "Anthemic", moods: ["Happy", "Confident", "Positive", "Upbeat", "Euphoric", "Catchy", "Electric", "Vibrant"], feelings: ["Free", "Vibrant", "Empowered", "Joyful", "Fearless", "Bold"], themes: ["Recovery", "Freedom", "Healing", "Growth", "Moving On"], placements: ["Commercial", "Reality", "End-Credits"], hashtags: ["#Healing", "#CloudNine", "#Pop"], keywords: ["Fine", "Cloud", "Shadows", "Sun"], phrases: ["Sun in my eyes, new day takes hold", "No more shadows, stories untold", "I'm alright, I'm fine, having the most fun, on cloud nine"], description: "An uplifting anthem of recovery and triumphant moving on.", img: "/assets/covers/know.jpg", rating: 9.7 },
+    { title: "Top Shelf Queen", genre1: "Pop", genre2: "Country", subgenre: "Urban", moods: ["Confident", "Sassy", "Upbeat", "Playful", "Bold", "Assertive", "Calculated", "Electric"], feelings: ["Strong", "Fearless", "Empowered", "Steady", "Unbothered", "Vindicated"], themes: ["Self-Worth", "Identity", "Boundaries", "Value", "Standards"], placements: ["Reality", "Commercial", "Teen-Drama"], hashtags: ["#Queen", "#Worth", "#Standards"], keywords: ["Shelf", "Queen", "Price", "Talk"], phrases: ["I'm a top shelf queen not a discount bin", "If you can't afford the price then you can't come in", "Keep your cheap talk and your dollar store lines"], description: "A high-standards anthem on self-worth and value.", img: "/assets/covers/queen.jpg", rating: 9.1 },
+    { title: "Welcome To Jukes", genre1: "Rock", genre2: "Country", subgenre: "Urban", moods: ["Gritty", "Rowdy", "Welcoming", "Bold", "Aggressive", "Stark", "Serious", "Heavy"], feelings: ["Fearless", "Loose", "Strong", "Alive", "Resilient", "Steady"], themes: ["Nightlife", "Escapism", "City Life", "Reality", "Identity"], placements: ["Commercial", "Opening", "Drama-Scene"], hashtags: ["#Jukes", "#Rowdy", "#Rock"], keywords: ["Whiskey", "Cheap", "Troubles", "Door"], phrases: ["Leave your troubles at the door and step inside", "Welcome to Jukes where there's nowhere to hide", "The neon buzzes and the whiskey flows"], description: "An atmospheric dive bar anthem for a rowdy night out.", img: "/assets/covers/jukes.jpg", rating: 8.5 },
+    { title: "Wildflower", genre1: "Indie", genre2: "Americana", subgenre: "Acoustic", moods: ["Free", "Resilient", "Organic", "Soft", "Mellow", "Hopeful", "Lush", "Gentle"], feelings: ["Natural", "Strong", "Fearless", "Steady", "Peaceful", "Connected"], themes: ["Resilience", "Nature", "Survival", "Beauty", "Identity"], placements: ["Commercial", "End-Credits", "Opening"], hashtags: ["#Wildflower", "#Resilience", "#Nature"], keywords: ["Cracks", "Garden", "Turning", "Back"], phrases: ["She's a wildflower growing in the cracks", "No garden can hold her there's no turning back", "Dancing with the wind and drinking up the rain"], description: "A song about resilience and beauty growing in unlikely places.", img: "/assets/covers/wildflower.jpg", rating: 9.9 },
+    { title: "Year In The Rearview", genre1: "Country", genre2: "Americana", subgenre: "Ballad", moods: ["Melancholic", "Resilient", "Reflective", "Stark", "Serious", "Deep", "Haunting", "Somber"], feelings: ["Hopeful", "Strong", "Honest", "Steady", "Weary", "Aware"], themes: ["Healing", "Growth", "Time", "Closure", "Recovery"], placements: ["End-Credits", "Drama-Scene", "Opening"], hashtags: ["#Healing", "#Recovery", "#Time"], keywords: ["Rearview", "Year", "Crash", "Broken"], phrases: ["A year in the rearview since that shattering crash", "Glue the broken pieces from the ash", "Peeling back the layers like bark from a wounded tree"], description: "A methodical examination of the healing process after betrayal.", img: "/assets/covers/rearview.jpg", rating: 9.3 },
+    { title: "Your Forever Man", genre1: "Pop", genre2: "Country", subgenre: "Ballad", moods: ["Devoted", "Warm", "Protective", "Calm", "Soft", "Mellow", "Hopeful", "Steady"], feelings: ["Loved", "Safe", "Hopeful", "Steady", "Connected", "Stable"], themes: ["Loyalty", "Protection", "Love", "Commitment", "Impact"], placements: ["Commercial", "Reality", "Drama-Scene"], hashtags: ["#Forever", "#Man", "#Love"], keywords: ["Anchor", "Helping", "Hand", "Future"], phrases: ["I'm the anchor, her helping hand", "She's my future, I'm her forever man", "Strength that won't die"], description: "A heartfelt commitment song from a protective male perspective.", img: "/assets/covers/forever-man.jpg", rating: 9.1 },
+    { title: "Your Mask", genre1: "Rock", genre2: "Indie", subgenre: "Minimalist", moods: ["Angry", "Betrayed", "Dark", "Tense", "Serious", "Grim", "Heavy", "Stark"], feelings: ["Vindicated", "Angry", "Fearless", "Strong", "Steady", "Cold"], themes: ["Truth", "Corruption", "Identity", "Media", "Justice"], placements: ["Opening", "Drama-Scene", "Trailer"], hashtags: ["#Truth", "#Mask", "#Corruption"], keywords: ["Mask", "Screen", "Monster", "Truth"], phrases: ["You see me on the screen a monster in the news", "But I know the truth and I refuse to lose", "Your mask is slipping showing the rot"], description: "A biting social commentary on corruption and public masks.", img: "/assets/covers/mask.jpg", rating: 9.4 }
+];
+</script>
         ].sort((a, b) => a.title.localeCompare(b.title));
 
         renderVault(VAULT_DATA);
 
-        function renderVault(data) {
-            const grid = document.getElementById('vault-grid-display');
-            if (data.length === 0) {
-                grid.innerHTML = `<div class="col-span-3 text-center text-gray-400 py-10">No matches found.</div>`;
-                return;
-            }
-            grid.innerHTML = data.map(s => `
-                <div class="song-card p-6 rounded-lg shadow-xl">
-                    <img src="${s.img}" class="w-full max-w-[140px] mx-auto rounded-lg mb-4 border border-slate-700">
-                    <h3 class="metallic-gold-title text-xl mb-1">${s.title}</h3>
-                    <p class="text-[10px] text-slate-400 font-bold uppercase mb-4">${s.genre1} | ${s.moodTone.split(',')[0]} | ${s.category}</p>
-                    <p class="text-sm text-slate-200 italic mb-8 flex-grow">"${s.snippetA}"</p>
-                    <div class="grid grid-cols-2 gap-2 mt-auto">
-                        <button onclick="openPlayer(${s.id})" class="py-3 bg-[var(--sunset-orange)] text-white font-black text-[10px] rounded uppercase active:scale-95">READ / PLAY</button>
-                        <button onclick="printFromId(${s.id})" class="py-3 bg-slate-700 text-white font-black text-[10px] rounded uppercase active:scale-95">PRINT REPORT</button>
-                    </div>
-                </div>
-            `).join('');
-         }
-
-        function runFilters() {
-            const search = document.getElementById('vault-search-box').value.toLowerCase();
-            const genre = document.getElementById('genre-pull').value;
-            const sub = document.getElementById('subgenre-pull').value;
-            const mood = document.getElementById('mood-pull').value;
-            const feeling = document.getElementById('feeling-pull').value;
-            const placement = document.getElementById('placement-pull').value;
-
-            const filtered = VAULT_DATA.filter(s => {
-                const matchesSearch = s.title.toLowerCase().includes(search) || 
-                                      s.description.toLowerCase().includes(search) || 
-                                      s.snippetA.toLowerCase().includes(search);
-                const matchesGenre = genre === "" || s.genre1 === genre || s.genre2 === genre;
-                const matchesSub = sub === "" || (s.subGenre && s.subGenre.includes(sub));
-                const matchesMood = mood === "" || (s.moodTone && s.moodTone.includes(mood));
-                const matchesFeeling = feeling === "" || (s.feeling && s.feeling.includes(feeling));
-                const matchesPlacement = placement === "" || (s.placementType && s.placementType.includes(placement));
-
-                return matchesSearch && matchesGenre && matchesSub && matchesMood && matchesFeeling && matchesPlacement;
-            });
-            renderVault(filtered);
-        }
-
-        function applyHardFilter(key, value, el) {
-            document.getElementById('vault-search-box').value = "";
-            document.querySelectorAll('select').forEach(s => s.value = "");
+     <script>
+function renderVault(data) {
+    const grid = document.getElementById('vault-grid-display');
+    grid.innerHTML = data.map(song => {
+        const slug = song.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+        return `
+        <div class="song-card relative">
+            <div class="absolute top-4 right-4 bg-[#D4AF37] text-black text-[10px] font-black px-2 py-1 rounded">${song.rating}</div>
+            <img src="${song.img}" class="w-full h-44 object-cover rounded-lg mb-4" onerror="this.src='/images/logo/verseandchorus-logo-med-photo.jpg'">
             
-            // Visual active state
-            document.querySelectorAll('.thematic-card, .rect-card').forEach(c => c.classList.remove('active'));
-            if(el) el.classList.add('active');
+            <p class="data-label">Best Lines</p>
+            <p class="text-sm font-bold text-white italic mb-2">"${song.phrases[0]}"</p>
+            
+            <div class="mb-3"><span class="text-[10px] text-[#FD5E53] font-black uppercase tracking-widest">${song.genre1} / ${song.genre2}</span></div>
+            <div class="grid grid-cols-2 gap-2 mb-4 border-t border-slate-700 pt-3">
+                <div><p class="data-label">Moods</p><p class="data-value">${song.moods.join(', ')}</p></div>
+                <div><p class="data-label">Placements</p><p class="data-value">${song.placements.join(', ')}</p></div>
+            </div>
+            <p class="text-sm text-slate-400 leading-relaxed mb-6">${song.description}</p>
+            <button onclick="openPlayer('${slug}')" class="w-full py-3 bg-[var(--sunset-orange)] text-white font-black text-[10px] rounded uppercase">READ LYRICS / PLAY</button>
+        </div>`;
+    }).join('');
+}
 
-            const filtered = VAULT_DATA.filter(s => {
-                if(key === 'category') return s.category.includes(value);
-                if(key === 'placementType') return s.placementType.includes(value);
-                if(key === 'commercialPotential') return true; 
-                if(key === 'genre1') return s.genre1 === value;
-                return true;
-            });
-            renderVault(filtered);
+async function openPlayer(slug) {
+    const song = VAULT_DATA.find(s => s.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-') === slug);
+    if(!song) return;
+    
+    document.getElementById('modal-song-title').innerText = song.title;
+    document.getElementById('modal-song-audio-asset').src = `/assets/music/${slug}.mp3`;
+    document.getElementById('vault-modal-player').classList.replace('hidden', 'flex');
+    
+    try {
+        const response = await fetch(`/assets/lyrics/${slug}.html`);
+        if(response.ok) {
+            const html = await response.text();
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            // Pull text, strip everything but lyrics, and remove all blank lines
+            const lyricsOnly = doc.body.innerText.split('\n').filter(line => line.trim() !== '').join('\n');
+            document.getElementById('modal-song-lyrics-full').innerText = lyricsOnly;
+        } else {
+            document.getElementById('modal-song-lyrics-full').innerText = song.phrases.join('\n');
         }
+    } catch (e) {
+        document.getElementById('modal-song-lyrics-full').innerText = song.phrases.join('\n');
+    }
+}
 
-        function resetVaultFilters() {
-            document.getElementById('vault-search-box').value = "";
-            document.querySelectorAll('select').forEach(s => s.value = "");
-            document.querySelectorAll('.thematic-card, .rect-card').forEach(c => c.classList.remove('active'));
-            renderVault(VAULT_DATA);
-        }
+function closeVaultModal() { 
+    document.getElementById('vault-modal-player').classList.replace('flex', 'hidden'); 
+    document.getElementById('modal-song-audio-asset').pause();
+}
 
-        async function openPlayer(id) {
-            const s = VAULT_DATA.find(x => x.id === id);
-            document.getElementById('modal-song-title').innerText = s.title;
-            const slug = getSongSlug(s.title);
-            document.getElementById('vault-modal-player').classList.replace('hidden', 'flex');
-            document.getElementById('modal-song-lyrics-full').innerText = "Loading lyrics...";
-            try {
-                const response = await fetch(`/assets/lyrics/${slug}.html`);
-                if(response.ok) {
-                    const html = await response.text();
-                    document.getElementById('modal-song-lyrics-full').innerText = new DOMParser().parseFromString(html, 'text/html').body.innerText.trim();
-                } else {
-                     throw new Error('Not found');
-                }
-            } catch (e) { 
-                document.getElementById('modal-song-lyrics-full').innerText = s.description + "\n\n(Full lyrics available in authorized file)"; 
-            }
-            document.getElementById('modal-song-audio-asset').src = `/assets/music/${slug}.mp3`;
-        }
+function runFilters() {
+    const query = document.getElementById('vault-search-box').value.toLowerCase();
+    const g = document.getElementById('filter-genre').value;
+    const filtered = VAULT_DATA.filter(song => {
+        const pool = [song.title, ...song.phrases, ...song.moods].join(' ').toLowerCase();
+        return (!query || pool.includes(query)) && (!g || song.genre1 === g || song.genre2 === g);
+    });
+    renderVault(filtered);
+}
 
-        async function printFromId(id) {
-            const s = VAULT_DATA.find(x => x.id === id);
-            const slug = getSongSlug(s.title);
-            let lyrics = "Full lyrics available on request.";
-            try {
-                const response = await fetch(`/assets/lyrics/${slug}.html`);
-                if(response.ok) {
-                    const html = await response.text();
-                    lyrics = new DOMParser().parseFromString(html, 'text/html').body.innerText.trim();
-                }
-            } catch (e) {}
-
-            const win = window.open('', '_blank');
-            win.document.write(`
-                <html><head><title>Report: ${s.title}</title><style>
-                    @media print { .pg { page-break-after: always; } }
-                    body { font-family: sans-serif; padding: 40px; color: black; line-height: 1.6; }
-                    .header-print { background: black; padding: 20px; border-bottom: 3px solid #D4AF37; display: flex; align-items: center; justify-content: space-between; }
-                    .header-print img { max-width: 250px; }
-                    .footer-print { background: black; color: white; text-align: center; padding: 20px; border-top: 5px solid #D4AF37; margin-top: 40px; }
-                    .meta-box { background: #f1f5f9; padding: 20px; border-radius: 8px; margin: 20px 0; font-weight: bold; border: 1px solid #ccc; }
-                    .bio-box { border-top: 1px solid #ccc; padding-top: 20px; margin-top: 20px; font-style: italic; color: #555; }
-                    h1 { text-transform: uppercase; color: #333; border-bottom: 2px solid #D4AF37; padding-bottom: 10px; }
-                    pre { white-space: pre-wrap; font-family: serif; font-size: 14px; margin-top: 30px; background: #fafafa; padding: 20px; border-left: 5px solid #D4AF37; }
-                </style></head><body>
-                    <div class="pg">
-                        <div class="header-print"><img src="/images/logo/verseandchorus-logo-med-photo.jpg"></div>
-                        <h1>INDUSTRY REPORT: ${s.title}</h1>
-                        <div class="meta-box">
-                            <p>GENRE: ${s.genre1} / ${s.genre2 || 'N/A'} | STYLE: ${s.subGenre}</p>
-                            <p>POV: ${s.pov || 'N/A'} | MOOD: ${s.moodTone}</p>
-                            <p>THEME: ${s.category} | PLACEMENT: ${s.placementType || 'Sync Ready'}</p>
-                        </div>
-                        <p><strong>SYNOPSIS:</strong> ${s.description}</p>
-                        <pre>${lyrics}</pre>
-                        <div class="bio-box">
-                            Original Work by Cinematic Songwriter Kellie Larson.<br>
-                            Representation: VerseandChorus.com | info@verseandchorus.com
-                        </div>
-                        <div class="footer-print">
-                            Confidential Industry Report. Do Not Distribute without Authorization.
-                        </div>
-                    </div>
-                </body></html>
-            `);
-            win.document.close();
-        }
-    </script>
+window.onload = () => renderVault(VAULT_DATA);
+</script>
 </body>
 </html>
