@@ -3,89 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Industry Pro Vault | 1-Stop Sync Licensing | Kellie Larson</title>
-    <meta name="description" content="Professional A&R vault for Kellie Larson. 100% human-authored, pre-cleared cinematic lyrics and compositions for commercial sync, film, and TV. Searchable metadata for music supervisors.">
-    <meta name="keywords" content="Sync Licensing 2026, Human-Authored Lyrics, 1-Stop Shop Music, Cinematic Songwriter, A&R Metadata, Pre-cleared Music, Kellie Larson, VerseandChorus">
-
+    <title>Industry Pro Vault | Cinematic Songwriter Kellie Larson</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     
     <style>
-        :root { 
-            --metallic-gold: #D4AF37; 
-            --burgundy: #800020; 
-            --white: #FFFFFF; 
-            --black: #000000; 
-            --sunset-orange: #FD5E53; 
-            --blue-gray: #64748b; 
-            --dark-slate: #0f172a;
-        }
-        
-        body { font-family: 'Inter', sans-serif; background-color: var(--dark-slate); color: #f1f5f9; }
+        :root { --metallic-gold: #D4AF37; --burgundy: #800020; --white: #FFFFFF; --black: #000000; --sunset-orange: #FD5E53; --blue-gray: #64748b; }
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f1f5f9; }
         .content-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
         /* --- HEADER STYLES --- */
-        #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); position: relative; }
-        .logo-top-left { width: 90%; max-width: 300px; height: auto; display: block; }
+        #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); position: relative; flex-wrap: wrap; }
+        .logo-top-left { width: 90%; max-width: 300px; height: auto; display: block; margin-bottom: 10px; }
         #nav-menu { display: flex; gap: 20px; }
         #nav-menu a { color: var(--white) !important; text-decoration: none; font-weight: bold; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
         #nav-menu a:hover { color: var(--metallic-gold) !important; }
 
-        /* --- HERO BOX --- */
-        .hero-box { text-align: center; padding: 60px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/hero-bg.jpg'); background-size: cover; border-bottom: 5px solid var(--metallic-gold); }
-        .gold-script { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 2.5rem; }
-        .page-title { color: white; font-size: 4.5rem; font-weight: 800; text-transform: uppercase; line-height: 1; margin-top: 10px; }
+        /* --- UI COMPONENTS --- */
+        .song-card { border: 2px solid var(--blue-gray); background: #1e293b; text-align: center; height: 100%; display: flex; flex-direction: column; transition: 0.3s; }
+        .song-card:hover { border-color: var(--sunset-orange); transform: translateY(-5px); }
+        .metallic-gold-title { color: var(--metallic-gold); font-weight: 800; text-transform: uppercase; }
 
-        /* --- VAULT DATA LIST (No Cards) --- */
-        .vault-row { 
-            display: grid; 
-            grid-template-columns: 2fr 1fr 2fr 2fr 1fr; 
-            gap: 15px; 
-            align-items: center; 
-            padding: 15px; 
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2); 
-            transition: background 0.2s;
-        }
-        .vault-row:hover { background: rgba(255,255,255,0.05); }
-        .data-label-sm { color: var(--blue-gray); font-size: 0.65rem; text-transform: uppercase; font-weight: 900; }
-        .data-value { font-size: 0.85rem; font-weight: 600; }
+        .thematic-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 500px; margin: 0 auto 3rem; }
+        .thematic-card { height: 90px; border: 2px solid var(--blue-gray); border-radius: 8px; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; position: relative; cursor: pointer; overflow: hidden; }
+        .thematic-card::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+        .thematic-card span { z-index: 2; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; color: white; text-align: center; }
+        .thematic-card.active { border-color: var(--sunset-orange); box-shadow: 0 0 15px rgba(253, 94, 83, 0.4); }
 
-        /* --- BUTTONS & INTERACTIVE --- */
-        .rect-card { 
-            background: #334155; border: 1px solid var(--blue-gray); padding: 8px; border-radius: 4px; 
-            font-size: 0.7rem; font-weight: bold; text-align: center; cursor: pointer; text-transform: uppercase; 
-        }
-        .rect-card:active, .vault-btn:active { background-color: var(--sunset-orange) !important; color: white !important; }
-        .rect-card.active { border-color: var(--sunset-orange); background: var(--sunset-orange); }
+        .rect-card { background: #334155; border: 1px solid var(--blue-gray); padding: 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; text-align: center; cursor: pointer; text-transform: uppercase; }
+        .rect-card.active { border-color: var(--sunset-orange); background: var(--sunset-orange); color: white; }
 
-        .vault-select { 
-            background-color: #000; border: 1px solid var(--blue-gray); color: white; 
-            padding: 10px; border-radius: 4px; width: 100%; cursor: pointer; font-size: 0.75rem; 
-        }
+        .vault-select { background-color: #0f172a; border: 2px solid var(--blue-gray); color: white; padding: 10px; border-radius: 6px; width: 100%; cursor: pointer; font-size: 0.75rem; text-transform: uppercase; }
+        .vault-select:focus { border-color: var(--sunset-orange); outline: none; }
         
-        .vault-btn { 
-            background: var(--metallic-gold); color: black; font-weight: 900; 
-            padding: 8px 12px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase;
-        }
+        #back-to-top { position: fixed; bottom: 30px; right: 30px; background: var(--sunset-orange); color: white; width: 50px; height: 50px; border-radius: 50%; display: none; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border: none; }
 
         /* --- FOOTER --- */
-        .site-footer { background-color: var(--black); color: var(--white); text-align: center; padding: 40px 20px; border-top: 5px solid var(--metallic-gold); margin-top: 50px; }
-        
-        /* --- ARROW UP --- */
-        #arrow-up { 
-            position: fixed; bottom: 30px; right: 30px; background: none; border: none; 
-            color: var(--sunset-orange); font-size: 3.5rem; cursor: pointer; z-index: 2000; 
-        }
+        .site-footer { background-color: var(--black); color: var(--white); text-align: center; padding: 40px 20px; border-top: 5px solid var(--metallic-gold); margin-top: 50px; display: flex; flex-direction: column; align-items: center; }
+        .footer-line { border: 0; height: 1px; background: var(--metallic-gold); margin: 20px auto; width: 100%; max-width: 300px; }
 
-        @media (max-width: 768px) {
-            .vault-row { grid-template-columns: 1fr; gap: 5px; }
-            .page-title { font-size: 2.5rem; }
-        }
+        /* --- MODAL --- */
+        #vault-modal-player { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 5000; justify-content: center; align-items: center; }
+        .modal-content { background: #1e293b; padding: 2rem; border-radius: 12px; border: 2px solid var(--metallic-gold); max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; text-align: center; position: relative; }
+        .close-modal { position: absolute; top: 1rem; right: 1rem; color: var(--sunset-orange); font-size: 2rem; cursor: pointer; line-height: 1; }
     </style>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
 
-    <header id="main-header">
+    <header id="main-header" class="no-print">
         <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
         <nav id="nav-menu">
           <a href="/bio.html">Spotlight</a>
@@ -96,112 +62,869 @@
         </nav>
     </header>
 
-    <div class="hero-box">
-        <div class="gold-script">VerseandChorus.com Presents</div>
-        <h1 class="page-title">Industry Pro's</h1>
-    </div>
+    <main class="content-container py-10 no-print">
+        <div class="text-center mb-10">
+            <h2 class="text-4xl font-extrabold tracking-widest uppercase italic text-white">Industry Pro Vault</h2>
+            <p class="text-gray-400 mt-2 text-sm font-semibold italic">Curated Assets for Music Supervisors & A&R</p>
+        </div>
 
-    <main class="content-container py-10">
-        <div class="bg-black p-6 mb-8 border-l-4 border-[var(--sunset-orange)] rounded shadow-lg">
-            <h4 class="text-xl font-bold mb-4 uppercase text-[var(--metallic-gold)]">Sync Licensing Metadata Vault</h4>
-            <div class="grid md:grid-cols-4 gap-4 text-[10px] font-black uppercase tracking-tighter text-gray-400">
-                <p>100% Human-Authored</p>
-                <p>1-Stop Shop (Lyrics/Master)</p>
-                <p>Pre-Cleared for 2026 Sync</p>
-                <p>High-Velocity Metadata</p>
+        <div class="bg-slate-900 p-6 mb-12 border-l-4 border-[var(--burgundy)] rounded shadow-lg">
+            <h4 class="text-xl font-bold mb-4 uppercase text-white tracking-wide">Rights & Licensing Assurance</h4>
+            <div class="grid md:grid-cols-2 gap-4 text-xs text-gray-300">
+                <p>✅ 100% Human-Authored Lyrics (Kellie Larson)</p>
+                <p>✅ Pre-Cleared for Immediate Commercial Sync Placement</p>
+                <p>✅ 1-Stop Shop: Lyrics, Composition, & Master Rights</p>
+                <p>✅ Full Clean Legal Path to traditional copyright ownership</p>
             </div>
         </div>
 
         <div class="grid grid-cols-3 gap-3 mb-8">
-            <div class="rect-card" onclick="applyHardFilter('placement', 'Sync', this)">Commercial Sync</div>
-            <div class="rect-card" onclick="applyHardFilter('mood', 'Empowered', this)">High Impact</div>
-            <div class="rect-card" onclick="applyHardFilter('genre', 'Pop', this)">Top 40 Focus</div>
+            <div class="rect-card" onclick="applyHardFilter('placementType', 'Sync', this)">Commercial Sync</div>
+            <div class="rect-card" onclick="applyHardFilter('commercialPotential', 'High', this)">High Potential</div>
+            <div class="rect-card" onclick="applyHardFilter('genre1', 'Pop', this)">Radio Pop Focus</div>
         </div>
 
-        <div class="bg-slate-900 p-6 rounded border border-slate-700 mb-8">
-            <input type="text" id="vault-search" placeholder="SEARCH BY KEYWORD, BPM, MOOD, OR THEME..." onkeyup="runFilters()" 
-                   class="w-full p-4 bg-black border border-slate-800 rounded mb-6 text-white uppercase text-sm outline-none focus:border-[var(--sunset-orange)]">
+        <div class="thematic-grid">
+            <div class="thematic-card" style="background-image: url('/assets/covers/social-world-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Social', this)"><span>Social Commentary</span></div>
+            <div class="thematic-card" style="background-image: url('/assets/covers/empowerment-arc-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Empowerment', this)"><span>Empowerment Arc</span></div>
+            <div class="thematic-card" style="background-image: url('/assets/covers/disenchantment-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Disenchantment', this)"><span>Disenchantment</span></div>
+            <div class="thematic-card" style="background-image: url('/assets/covers/mutual-value-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Value', this)"><span>Value Proposition</span></div>
+            <div class="thematic-card" style="background-image: url('/assets/covers/loss-of-market-share-lyrics-photo.jpg')" onclick="applyHardFilter('category', 'Loss', this)"><span>Market Share</span></div>
+            <div class="thematic-card" style="background-image: url('/assets/covers/iterative-photo.jpg')" onclick="applyHardFilter('category', 'Iterative', this)"><span>Iterative Protagonist</span></div>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-xl mb-12 border-2 border-[var(--blue-gray)] shadow-2xl">
+            <input type="text" id="vault-search-box" placeholder="Search Keywords, Mood, BPM, hashtags..." onkeyup="runFilters()" class="w-full p-4 bg-black border border-slate-700 rounded mb-6 text-white uppercase text-sm outline-none">
             
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
-                <select id="genre-pull" class="vault-select" onchange="runFilters()"><option value="">GENRE</option><option value="Pop">Pop</option><option value="Country">Country</option><option value="Rock">Rock</option><option value="Indie">Indie</option></select>
-                <select id="mood-pull" class="vault-select" onchange="runFilters()"><option value="">MOOD</option><option value="Confident">Confident</option><option value="Dark">Dark</option><option value="Sad">Sad</option><option value="Hopeful">Hopeful</option></select>
-                <select id="feeling-pull" class="vault-select" onchange="runFilters()"><option value="">FEELING</option><option value="Empowered">Empowered</option><option value="Vulnerable">Vulnerable</option><option value="Strong">Strong</option></select>
-                <select id="placement-pull" class="vault-select" onchange="runFilters()"><option value="">PLACEMENT</option><option value="Sync">Sync</option><option value="Drama">Drama</option><option value="Trailer">Trailer</option></select>
-                <button onclick="resetFilters()" class="vault-select border-[var(--sunset-orange)] text-[var(--sunset-orange)]">RESET</button>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-2">
+                <select id="genre-pull" class="vault-select" onchange="runFilters()">
+                    <option value="">GENRE</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Country">Country</option>
+                    <option value="Rock">Rock</option>
+                    <option value="R&B">R&B</option>
+                    <option value="Cinematic">Cinematic</option>
+                    <option value="Alternative">Alternative</option>
+                    <option value="Americana">Americana</option>
+                    <option value="Blues">Blues</option>
+                    <option value="Folk">Folk</option>
+                    <option value="Reggae">Reggae</option>
+                </select>
+
+                <select id="subgenre-pull" class="vault-select" onchange="runFilters()">
+                    <option value="">STYLE</option>
+                    <option value="Contemporary">Contemporary</option>
+                    <option value="Ballad">Ballad</option>
+                    <option value="Anthem">Anthem</option>
+                    <option value="Urban">Urban</option>
+                    <option value="Acoustic">Acoustic</option>
+                    <option value="Indie">Indie</option>
+                    <option value="Storytelling">Storytelling</option>
+                    <option value="Retro">Retro / 80s</option>
+                    <option value="Southern Gothic">Southern Gothic</option>
+                    <option value="Rhythmic">Rhythmic</option>
+                </select>
+
+                <select id="mood-pull" class="vault-select" onchange="runFilters()">
+                    <option value="">MOOD</option>
+                    <option value="Happy">Happy</option>
+                    <option value="Sad">Sad</option>
+                    <option value="Confident">Confident</option>
+                    <option value="Angry">Angry</option>
+                    <option value="Dark">Dark</option>
+                    <option value="Hopeful">Hopeful</option>
+                    <option value="Intense">Intense</option>
+                    <option value="Relaxed">Relaxed</option>
+                    <option value="Eerie">Eerie</option>
+                    <option value="Sassy">Sassy</option>
+                </select>
+
+                <select id="feeling-pull" class="vault-select" onchange="runFilters()">
+                    <option value="">FEELING</option>
+                    <option value="Heartbroken">Heartbroken</option>
+                    <option value="Empowered">Empowered</option>
+                    <option value="Strong">Strong</option>
+                    <option value="Vulnerable">Vulnerable</option>
+                    <option value="Healed">Healed</option>
+                    <option value="Vindicated">Vindicated</option>
+                    <option value="Trapped">Trapped</option>
+                    <option value="Free">Free</option>
+                    <option value="Stuck">Stuck</option>
+                    <option value="Determined">Determined</option>
+                </select>
+
+                <select id="placement-pull" class="vault-select" onchange="runFilters()">
+                    <option value="">PLACEMENT</option>
+                    <option value="Sync">Commercial Sync</option>
+                    <option value="Drama">TV Drama</option>
+                    <option value="Trailer">Trailer</option>
+                    <option value="Credits">Credits</option>
+                    <option value="Anthem">Anthem</option>
+                    <option value="Breakup">Breakup Scene</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Viral">Viral/Social</option>
+                    <option value="Montage">Montage</option>
+                    <option value="Background">Background</option>
+                </select>
+
+                <button onclick="resetVaultFilters()" class="text-xs font-black uppercase text-[var(--sunset-orange)] border border-[var(--sunset-orange)] rounded hover:bg-[var(--sunset-orange)] hover:text-white transition">Reset</button>
             </div>
         </div>
 
-        <div class="hidden md:grid grid-cols-5 gap-4 px-4 py-2 bg-slate-800 text-[10px] font-black uppercase text-gray-400 rounded-t border-b border-slate-700">
-            <div>Song Title / Genre</div>
-            <div>Rating</div>
-            <div>Primary Moods</div>
-            <div>Sync Placements</div>
-            <div>Action</div>
-        </div>
-
-        <div id="vault-list-display" class="bg-black/20 rounded-b overflow-hidden">
-            </div>
+        <div id="vault-grid-display" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </main>
+
+    <div id="vault-modal-player" class="hidden">
+        <div class="modal-content">
+            <span class="close-modal" onclick="document.getElementById('vault-modal-player').classList.replace('flex', 'hidden')">&times;</span>
+            <h2 id="modal-song-title" class="text-3xl font-black text-[var(--metallic-gold)] mb-4 uppercase"></h2>
+            <audio id="modal-song-audio-asset" controls class="w-full mb-6"></audio>
+            <div id="modal-song-lyrics-full" class="text-gray-300 text-left whitespace-pre-line font-serif"></div>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div style="margin-bottom: 20px; font-size: 1.2rem; font-weight: bold;">♥️ Kellie Larson ♥️</div>
-        <div style="margin-bottom: 20px; color: var(--metallic-gold); font-size: 1rem;">✍️Cinematic Songwriter and Lyricist 🎹</div>
+        <div style="margin-bottom: 20px; color: #D4AF37; font-size: 1rem;">✍️Cinematic Songwriter and Lyricist 🎹</div>
         <div style="margin-bottom: 20px; font-size: 1rem;">🧑‍🎤 VerseandChorus.com 🎙️</div>
         <div style="margin-bottom: 15px;">✉️ info@verseandchorus.com 📨</div>
         <div style="margin-bottom: 20px;">☎️ 760-537-0222 📲</div>
         <div style="font-size: 0.8rem; color: #666;">© 2024 VerseandChorus.com. All Rights Reserved.</div>
     </footer>
 
-    <button id="arrow-up" onclick="window.scrollTo({top:0, behavior:'smooth'})">▲</button>
+    <button id="arrow-up" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="position: fixed; bottom: 30px; right: 30px; background: none; border: none; color: #FD5E53; font-size: 3.5rem; cursor: pointer; z-index: 2000; line-height: 1; transition: 0.3s;">▲</button>
 
-    <script>
-        // Data Subset for demo (Full 46 songs would be here)
+   <script>
+        function getSongSlug(title) { return title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-'); }
+        
+        // Data Vault: All 46 Songs with Updated Lyrics from Files
         const VAULT_DATA = [
-            { title: "Fury (I'm the Monster)", genre: "Rock", moods: ["Aggressive", "Dark"], placements: ["Trailer", "Gaming"], rating: 10.0, description: "Explosive reclamation of power." },
-            { title: "Big Hard No", genre: "Country", moods: ["Strong", "Final"], placements: ["Drama", "Commercial"], rating: 9.9, description: "Definitive anthem of self-respect." },
-            { title: "Author of a Lie", genre: "Pop", moods: ["Cold", "Suspenseful"], placements: ["Crime Drama"], rating: 9.6, description: "Deconstruction of deception." },
-            { title: "CEO Not Babysitting Tree", genre: "Pop", moods: ["Sassy", "Boss"], placements: ["Reality", "Commercial"], rating: 9.8, description: "High-power business manifesto." }
-            // ... all 46 songs
-        ].sort((a,b) => a.title.localeCompare(b.title));
+            { 
+              id: 1, title: "AUTHOR OF A LIE", genre1: "Pop", genre2: "R&B", subGenre: "Rhythmic", pov: "First Person", moodTone: "Confident, Confrontational", feeling: "Strong", category: "Disenchantment", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/author-of-a-lie-cover-art.jpg", snippetA: "You tell a story I pick it apart...",
+                description: `This narrative deconstructs the architecture of deception by contrasting specific, fabricated timelines against physical reality. BEST PLACEMENT: Psychological Thrillers.`,
+                fullLyrics: `(TITLE: AUTHOR OF A LIE)
+(VERSE)
+You tell a story I pick it apart
+Like a vulture preying on a dying heart
+You say you were at the beach in July
+But the clouds were gray and the tide was high
+(CHORUS)
+You're the author of a lie
+Writing fiction in the blink of an eye
+But I've read the book and I know the end
+You lose the girl and you lose the friend
+(VERSE)
+You claim you were working late that night
+But I saw your car under the neon light
+Parked outside that bar on 4th and Main
+Trying to drown your guilt in the pouring rain
+(BRIDGE)
+Every word you speak is a tangled web
+Caught in the lies that you freely spread
+But the truth has a way of coming to light
+And you'll be left alone in the dead of night` 
+            },
+            { 
+                id: 2, title: "BIG HARD NO", genre1: "Country", genre2: "Ballad", subGenre: "Contemporary", pov: "First Person", moodTone: "Strong, Resilient", feeling: "Healed", category: "Empowerment", placementType: "Sync", tempo: "Mid Tempo", img: "/assets/covers/big-hard-no-cover-art.jpg", snippetA: "Happier now, more than I've ever been...",
+                description: `The narrative centers on a firm, empowered rejection of a former partner attempting to manipulate their way back into the protagonist's life. BEST PLACEMENT: Character Pivot Anthem.`,
+                fullLyrics: `(TITLE: BIG HARD NO)
+(VERSE)
+So sad, heard she had enough, "don't want ya anymore," and you're taking it rough
+That's too bad, I know what you're going through, yeah, it's tough
+Now you're here, with that sad look on your face,
+Trying to get back in my good grace
+You wanna apologize? Talkin' 'bout a second chance?
+Honestly, I'm past that desperate dance
+(CHORUS)
+But now you're back, knocking on my door
+Saying you made a mistake, wanting something more
+Well I've got three words, clear as they can go
+It's a Big, Hard, No
+(VERSE)
+I remember the nights I cried myself to sleep
+Praying for a promise you couldn't keep
+You chose her then, so choose her now
+Don't come around here expecting a bow`
+            },
+            {
+                id: 3, title: "BOOM BOOM BEAT", genre1: "Pop", genre2: "Dance", subGenre: "Anthem", pov: "First Person", moodTone: "Happy", feeling: "Free", category: "Empowerment", placementType: "Commercial", tempo: "Fast", img: "/assets/covers/boom-boom-beat-cover-art.jpg", snippetA: "Placeholder",
+                description: `Placeholder.`,
+                fullLyrics: `Placeholder.`
+            },
+            { 
+                id: 4, title: "BOTTOM OF THE WISHING WELL", genre1: "Country", genre2: "Narrative", subGenre: "Southern Gothic", pov: "Third Person", moodTone: "Dark, Dramatic", feeling: "Eerie", category: "Social", placementType: "Drama", tempo: "Mid Tempo", img: "/assets/covers/bottom-of-the-wishing-well-cover-art.jpg", snippetA: "Oh poor lil Belle at the bottom of the wishing well...",
+                description: `A dark narrative murder ballad following Belle as she hurries to meet her lover on the streets of Amsterdam. BEST PLACEMENT: True Crime Documentaries.`,
+                fullLyrics: `(TITLE: BOTTOM OF THE WISHING WELL)
+(VERSE)
+Oh poor lil Belle at the bottom of the wishing well
+She fell for a man with a story to tell
+He promised her gold and a life so grand
+But led her to the edge of the dark, wet land
+(CHORUS)
+Now she sleeps where the pennies are tossed
+A life and a love that was tragically lost
+At the bottom of the wishing well, silent and deep
+Her secrets and dreams are hers to keep
+(OUTRO)
+He didn't trip, nothing could loosen her grip,
+She’s stuck like glue, and both their wishes came true.
+Oh, what a mess, they lay motionless,
+At the bottom of the wishing well.`
+            },
+            {
+                id: 5, title: "BROKEN BAD", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Raw, Honest, Resilient", feeling: "Stuck", category: "Loss", placementType: "Breakup", tempo: "Mid Tempo", img: "/assets/covers/broken-bad-cover-art.jpg", snippetA: "The ties that bound us, they've come undone...",
+                description: `A raw look at betrayal, disrespect, and a relationship that has reached its breaking point. BEST PLACEMENT: Character 'Breaking Point' Scenes.`,
+                fullLyrics: `(TITLE: BROKEN BAD)
+(VERSE)
+The ties that bound us, they've come undone
+Betrayed and hurt, the trust is gone
+No use in trying, there's no repair
+Just relax now, don't you dare
+Try to fix it, it's too far gone
+Too much crying since the early morn'
+(CHORUS)
+Too much fighting, too much disrespect
+Too much lying, no truth to detect
+Too much blame, and too much shame
+For all the damage, we can't reclaim
+(BRIDGE)
+Just too much, and just too many
+Bad memories that haunt, a broken touch
+Feelings of distrust, a heavy cost
+Everything we built, completely lost`
+            },
+            { 
+                id: 6, title: "CEO NOT BABYSITTING TREE", genre1: "Pop", genre2: "R&B", subGenre: "Urban", pov: "First Person", moodTone: "Sassy, Confident, Boss", feeling: "Powerful", category: "Value", placementType: "Viral", tempo: "Fast", img: "/assets/covers/ceo-not-babysitting-tree-cover-art.jpg", snippetA: "Honey I'm a CEO not a babysitting tree...",
+                description: `A sharp manifesto on self-valuation and the refusal to provide emotional labor for those who do not contribute to growth. BEST PLACEMENT: Powerhouse 'Walk-in' Anthem.`,
+                fullLyrics: `(TITLE: CEO NOT BABYSITTING TREE)
+(VERSE)
+Honey I'm a CEO not a babysitting tree
+You want the shade but you won't pay the fee
+I'm building empires while you're playing games
+We are not the same, no we are not the same
+(CHORUS)
+I'm climbing up the ladder, reaching for the sky
+You're sitting on the bottom, asking me why
+I ain't got the time to nurse your little bruise
+I'm making power moves, I've got nothing to lose
+(BRIDGE)
+I need a man who can fix a sink and then fix me you know
+A little bit of dirty talk and a really strong glow
+I need a man who knows his wine and knows just how to tease
+Not someone asking are you sure when I'm begging on my knees`
+            },
+            { 
+                id: 7, title: "CHILDREN OF WAR", genre1: "Cinematic", genre2: "Folk", subGenre: "Acoustic", pov: "Third Person", moodTone: "Haunting, Sad, Urgent", feeling: "Heartbroken", category: "Social", placementType: "Drama", tempo: "Slow", img: "/assets/covers/children-of-war-cover-art.jpg", snippetA: "Run little children there's nothing left here...",
+                description: `A devastating examination of the human cost of conflict, focusing on the loss of innocence and the physical destruction of the familiar. BEST PLACEMENT: Social Advocacy Documentaries.`,
+                fullLyrics: `(TITLE: CHILDREN OF WAR)
+(VERSE)
+Run little children there's nothing left here
+Just the echo of a scream and the taste of fear
+The playground is silent, the swings are all still
+Shadows are dancing on top of the hill
+(CHORUS)
+Children of war, with eyes old and gray
+Watching their childhood just fade away
+Broken down houses and broken down dreams
+Nothing is ever as safe as it seems`
+            },
+            { 
+                id: 8, title: "CONCRETE UNDER OUR FEET", genre1: "Rock", genre2: "Alternative", subGenre: "Urban", pov: "First Person", moodTone: "Introspective, Cool", feeling: "Determined", category: "Social", placementType: "Drama", tempo: "Mid Tempo", img: "/assets/covers/concrete-under-our-feet-cover-art.jpg", snippetA: "It ain't about the clout the flash the scene...",
+                description: `This track explores the search for authentic connection within a 'digital blur,' prioritizing physical presence over online clout. BEST PLACEMENT: Urban Drama Series.`,
+                fullLyrics: `(TITLE: CONCRETE UNDER OUR FEET)
+(VERSE)
+It ain't about the clout the flash the scene
+Or the filtered photos on a tiny screen
+It's about the grit, the dirt, the real
+The concrete under our feet, the way we feel
+(CHORUS)
+Solid ground in a world that spins
+Where the story ends and the real begins
+No more fake smiles, no more lies
+Just the truth reflected in your eyes
+(BRIDGE)
+Don't need a fancy club or a VIP
+Just good vibes good conversation and you with me
+We can find a rooftop watch the city lights glow
+Let the rest of the world just fade and go slow`
+            },
+            { 
+                id: 9, title: "CRAVING THOSE CRUMBS", genre1: "Country", genre2: "Pop", subGenre: "Contemporary", pov: "First Person", moodTone: "Confident, Disenchanted", feeling: "Vulnerable", category: "Disenchantment", placementType: "Drama", tempo: "Slow", img: "/assets/covers/craving-those-crumbs-cover-art.jpg", snippetA: "Too much thinking I gotta stop craving those crumbs...",
+                description: `A raw dissection of the exhaustion that follows a toxic relationship cycle. BEST PLACEMENT: Late-Night Emotional Dramas.`,
+                fullLyrics: `(TITLE: CRAVING THOSE CRUMBS)
+(VERSE)
+Too much thinking I gotta stop craving those crumbs
+Listening to the beat of your distant drums
+You toss me a morsel, a little bit of hope
+But I'm choking to death on the end of your rope
+(CHORUS)
+I'm starving for love, for a feast, for a meal
+Something substantial, something that's real
+But you only give crumbs, falling down on the floor
+And I'm not gonna beg at your table no more
+(BRIDGE)
+Don't stop here no more you don't belong here
+Don't try to hang out don't come and stand near
+You're losing your mind trying to get me back
+I already crossed that line there's no turning back`
+            },
+            { 
+                id: 10, title: "DON'T BE JELLY", genre1: "Country", genre2: "Dance", subGenre: "Contemporary", pov: "First Person", moodTone: "Fun, Playful, Confident", feeling: "Sassy", category: "Empowerment", placementType: "Viral", tempo: "Fast", img: "/assets/covers/dont-be-jelly-cover-art.jpg", snippetA: "I live my truth un-freakin'-apologetically...",
+                description: `An assertive manifesto on self-confidence and the refusal to be held down by drama or rodeo clowns. BEST PLACEMENT: Viral Dance promos.`,
+                fullLyrics: `(TITLE: DON'T BE JELLY)
+(VERSE)
+I live my truth un-freakin'-apologetically
+A wild untamed machine, running free
+Got no time for drama, for your rodeo clowns
+I'm taking my throne, I'm wearing my crowns
+(CHORUS)
+Don't be jelly cause I shine so bright
+Don't be mad cause I own the night
+Just get on the floor and move your feet
+Feel the rhythm, feel the beat
+(OUTRO)
+Hips left then hips right stomp kick and then slide
+Knees in kick back smack make hips attack
+Left right left Then right left right
+Take a step back and shoulders fight`
+            },
+            {
+               id: 11, title: "EPHEMERAL MOMENT", genre1: "Pop", genre2: "Folk", subGenre: "Storytelling", pov: "First Person", moodTone: "Romantic, Playful", feeling: "Love", category: "Iterative", placementType: "Romance", tempo: "Mid Tempo", img: "/assets/covers/ephemeral-moment-cover-art.jpg", snippetA: "You are mine Yo de lee eee ooohhh boom boom boom...",
+                description: `A playful and rhythmic expression of longing and connection. BEST PLACEMENT: Lighthearted Romantic Scenes.`,
+                fullLyrics: `(TITLE: EPHEMERAL MOMENT)
+(VERSE)
+You are mine Yo de lee eee ooohhh boom boom boom
+Like a flower blooming in a quiet room
+My heart beats fast when you are near
+Every doubt and worry disappears
+(CHORUS)
+It's an ephemeral moment, passing us by
+Like a shooting star in the midnight sky
+But I'll hold onto it, tight as I can
+You're my woman and I'm your man`
+            },
+            { 
+                id: 12, title: "ETCHED IN EVERY SPACE", genre1: "Country", subGenre: "Contemporary", moodTone: "Mournful, Sad", feeling: "Heartbroken", category: "Disenchantment", placementType: "Drama", img: "/assets/covers/etched-in-every-space-cover-art.jpg", snippetA: "Oh I miss your stupid face! It’s etched in every space...",
+                description: `A deeply personal exploration of grief and the sensory haunting of a home following the loss of a loved one. BEST PLACEMENT: Grief-focused Drama Series.`,
+                fullLyrics: `(TITLE: ETCHED IN EVERY SPACE)
+(VERSE)
+Oh I miss your stupid face! It’s etched in every space
+In the hallway mirror, in the empty vase
+Your quirky smile that lit up the room
+Now replaced by silence and a heavy gloom
+(CHORUS)
+Every corner holds a memory of you
+The laughter we shared, the love that was true
+But now it's a barren land, sinking sand
+Without the touch of your steady hand`
+            },
+            { 
+                id: 13, title: "FURY (I'M THE MONSTER)", genre1: "Rock", genre2: "Metal", subGenre: "Cinematic", pov: "First Person", moodTone: "Heavy, Bitter, Intense", feeling: "Trapped", category: "Social", placementType: "Drama", tempo: "Fast", img: "/assets/covers/fury-im-the-monster-cover-art.jpg", snippetA: "Your fists a never-ending show...",
+                description: `A visceral and intense narrative focusing on the escape from domestic violence. BEST PLACEMENT: High-Intensity Domestic Dramas.`,
+                fullLyrics: `(TITLE: FURY (I'M THE MONSTER))
+(VERSE)
+Your fists a never-ending show
+Every scream every insult and having to fill so many holes in the walls after you unload
+Your fists every blow echoes in my mind
+And the violence is witnessed on my backside
+(CHORUS)
+You pierce me through the flesh you pierce me through the heart
+You say you love me after you hit
+Then you always throw another fit
+Oh the fury Please save me Help me hurry
+(BRIDGE)
+I'm not your property I'm done with your control
+It's time to get out of this It's time to go Go Go GO
+I'm about to roll roll right over your body and run run right out the door`
+            },
+            {
+                id: 14, title: "80S ANTHEMS", genre1: "Pop", genre2: "Rock", subGenre: "Retro", pov: "Placeholder", moodTone: "Happy", feeling: "Free", category: "Placeholder", placementType: "Anthem", tempo: "Placeholder", img: "/assets/covers/80s-anthems-cover-art.jpg", snippetA: "Placeholder",
+                description: `Placeholder.`,
+                fullLyrics: `Placeholder.`
+            },
+            {
+                id: 15, title: "HEARTBREAK AND TROUBLE", genre1: "Pop", genre2: "R&B", subGenre: "Contemporary", pov: "First Person", moodTone: "Sad, Exhausted", feeling: "Heartbroken", category: "Disenchantment", placementType: "Breakup", tempo: "Mid Tempo", img: "/assets/covers/heartbreak-and-trouble-cover-art.jpg", snippetA: "Cause all you are Is heartbreak and trouble...",
+                description: `The narrative centers on the realization that a partner is nothing but a 'thief of peace' and a 'thief of heart.' BEST PLACEMENT: Breakup Scenes.`,
+                fullLyrics: `(TITLE: HEARTBREAK AND TROUBLE)
+(VERSE)
+You pop in and out like Hubba Bubba
+My heart strung out like Why do I love ya
+I turn around and you're nothing again
+You stayed a minute then you dipped my friend
+(CHORUS)
+Cause all you are is heartbreak and trouble
+I must really love nothing I'm stuck in a bubble
+Blowing bubbles alone no fire to light my way
+Cause you stole that too and now I gotta say
+(OUTRO)
+Come back
+And don't forget to bring my damn lighter back
+Just come back`
+            },
+            {
+                id: 16, title: "HIT THE ROAD", genre1: "Pop", genre2: "Rock", subGenre: "Anthem", pov: "First Person", moodTone: "Empowered, Strong", feeling: "Done", category: "Empowerment", placementType: "Anthem", tempo: "Up Tempo", img: "/assets/covers/hit-the-road-cover-art.jpg", snippetA: "All those nights you laId In my bed / All those times you messed wIth my head...",
+                description: `An empowering anthem about finally kicking a toxic partner out. BEST PLACEMENT: Empowered Breakup Montages.`,
+                fullLyrics: `(TITLE: HIT THE ROAD)
+(VERSE)
+All those nights you laid in my bed
+All those times you messed with my head
+Lies and crying, tears on the pillow
+Weeping like a sad, lonely willow
+(CHORUS)
+But now I'm dry, my eyes are clear
+Get your stuff and get out of here
+Hit the road, Jack, and don't come back
+I'm taking my life on a brand new track`
+            },
+            { 
+                id: 17, title: "HOW'S IT FEEL, BRO?", genre1: "Pop", genre2: "Hip-Hop", subGenre: "Contemporary", pov: "First Person", moodTone: "Confident, Revenge", feeling: "Vindicated", category: "Loss", placementType: "Viral", tempo: "Mid Tempo", img: "/assets/covers/hows-it-feel-bro-cover-art.jpg", snippetA: "Yo. You're always spinning that sht*, but I'm boomeranging it back...",
+                description: `A sharp, confrontational narrative centering on the reversal of manipulative tactics. BEST PLACEMENT: Confrontation Scenes.`,
+                fullLyrics: `(TITLE: HOW'S IT FEEL, BRO?)
+(INTRO)
+Yo
+You're always spinning that sht but I'm boomeranging it back and like glue it sticks
+How's it feel bro
+You earned this one
+(VERSE)
+Before you dip it’s now your turn
+Don’t tell me you didn't make it home cause you fell asleep in the car
+That weak line I've already heard before
+Then find out you never slept cause all night long you were creeping
+(CHORUS)
+You're just like all the others always hanging with your bros
+But getting all hostile when it's me though
+How's it feel bro`
+            },
+            { 
+                id: 18, title: "I'M A BROKEN RECORD", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Raw, Honest, Resilient", feeling: "Stuck", category: "Loss", placementType: "Drama", tempo: "Mid Tempo", img: "/assets/covers/im-a-broken-record-cover-art.jpg", snippetA: "Cause I'm a broken record skipping on repeat...", 
+                description: "This narrative explores the 'bitter taste of defeat' and the cyclical nature of self-sabotage within a 'one-sided youth'.",
+                fullLyrics: `(TITLE: I'M A BROKEN RECORD)
+(VERSE)
+Yeah a goddamn mess that's the headline news
+Worthless ain't a feeling it's the air I choose
+To breathe these days Table's set for one it's true
+Surrounded by the ghosts of me and you
+(CHORUS)
+Cause I'm a broken record skipping on repeat
+This ain't a cry for help it's the bitter taste of defeat
+Yeah my eyes are open now the venom starts to fade
+I'm cutting all the ties a promise I have made`
+            },
+            { 
+                id: 19, title: "I KNOW YOUR DAMN PIN CODE", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Bitter, Confident, Revenge", feeling: "Vindicated", category: "Loss", placementType: "Anthem", tempo: "Fast", img: "/assets/covers/i-know-your-damn-pin-code-cover-art.jpg", snippetA: "Think you're clever / I know your damn pin code...",
+                description: `A visceral exploration of digital betrayal and the reclamation of power through the breach of a partner's smartphone security. BEST PLACEMENT: Modern Revenge Dramas.`,
+                fullLyrics: `(TITLE: I KNOW YOUR DAMN PIN CODE)
+(VERSE)
+Think you're clever
+I've been through this and even more
+You're not clever
+Been through this too many times before
+I know what to look for and I know where to snoop
+I know what to open
+Yep found it swish through the hoop
+(CHORUS)
+You think you're clever
+And I can't get in your phone
+You're not clever
+I know your damn pin code
+(BRIDGE)
+No room in this silly girl's heart anymore you hear
+You won't have what's between my thighs not even near`
+            },
+            {
+                id: 20, title: "IN MY DREAMS (WHEN I WAKE)", genre1: "Pop", genre2: "Ballad", subGenre: "Contemporary", pov: "First Person", moodTone: "Sad, Longing", feeling: "Heartbroken", category: "Disenchantment", placementType: "Credits", tempo: "Slow", img: "/assets/covers/in-my-dreams-cover-art.jpg", snippetA: "In my dreams you are here and you kiss my cheek...",
+                description: `A heartbreaking ballad about the sharp contrast between the perfection of dreams and the gray reality of waking up alone. BEST PLACEMENT: Scenes of Loss or Longing.`,
+                fullLyrics: `(TITLE: IN MY DREAMS (WHEN I WAKE))
+(VERSE)
+In my dreams you are here and you kiss my cheek
+The love that we share makes me feel so weak
+You smile and you dance, everything is right
+Bathing in the glow of a golden light
+(CHORUS)
+But then I wake up and the room is so cold
+The reality hits me, truth to be told
+You're gone, you're gone, and I'm here alone
+Chilled to the marrow, deep in the bone`
+            },
+            { id: 21, title: "JUST A LITTLE LONELY", genre1: "Country", subGenre: "Ballad", moodTone: "Sad", feeling: "Heartbroken", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder", fullLyrics: "Placeholder" },
+            { 
+                id: 22, title: "MARRIED TO THE DRUG", genre1: "Alternative", subGenre: "Cinematic", moodTone: "Dark", feeling: "Trapped", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Married to the drug, Mrs. Fetty, hand in hand...", 
+                description: "Cinematic songwriter and lyricist Kellie Larson explores themes of addiction and liberation.", 
+                fullLyrics: `(TITLE: MARRIED TO THE DRUG)
+(VERSE)
+Why did you knock on my life's door
+What did you come here for
+Always on survival mode, a game you shouldn't have played
+I don't need a friend who's a fiend, a leech, a Tree Shade
+(CHORUS)
+Married to the drug, Mrs. Fetty, hand in hand
+Signed the papers in white powder, you’re a submissive man
+She’s a black widow, demanding your life
+You made your choice, now leave my light`
+            },
+            { 
+                id: 23, title: "MURDERER'S HEART", genre1: "Cinematic", subGenre: "Southern Gothic", moodTone: "Dark", feeling: "Eerie", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "He was playing games with a murderer's heart...", 
+                description: "A dark, storytelling narrative of betrayal and vengeance.", 
+                fullLyrics: `(TITLE: MURDERER'S HEART)
+(VERSE)
+Mary and Dan in therapy sat, their marriage they tried to mend
+Mary gave it all her heart, but Dan, he wouldn't bend
+Another day, nothing changed, they fought, he left, she'd weep
+He made no noise when he came back home, not a knock, bang, or a peep
+(CHORUS)
+And you might think she didn't even blink, before she fired one between his eyes
+But Mary loved Dan too much to kill him but her sister met her demise
+(OUTRO)
+He was playing games with a murderer's heart`
+            },
+            { id: 24, title: "MY GIRL KARMA", genre1: "Pop", subGenre: "Anthem", moodTone: "Sassy", feeling: "Vindicated", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder", fullLyrics: "Placeholder" },
+            { 
+                id: 25, title: "MY WORDS STILL MATTER", genre1: "Cinematic", subGenre: "Anthem", moodTone: "Empowered", feeling: "Strong", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "My words still matter even when I'm lit...", 
+                description: "Genre: Pop/Anthemic. Mood: Confident. Placement: Self-Empowerment. Theme: Empowerment Arc.", 
+                fullLyrics: `(TITLE: MY WORDS STILL MATTER)
+(VERSE)
+I tell you what's bothering me and you say I'm bothering you
+You don't want to listen I mouth that we're through
+Then I grab my purse I find my phone and put on lipstick
+As I walk toward the exit door
+(CHORUS)
+So I turn from the exit and I walk back to my seat cause I'll be the winner by protecting the drunk sinner
+Because shouting your truth is the sound of defeat and I will find my victory back at my seat
+My words still matter even when I'm lit`
+            },
+            { id: 26, title: "NOT THAT GIRL FROM BEFORE", genre1: "Pop", subGenre: "Anthem", moodTone: "Empowered", feeling: "Healed", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder", fullLyrics: "Placeholder" },
+            { id: 27, title: "ONE SMALL WRONG", genre1: "Americana", subGenre: "Storytelling", moodTone: "Sad", feeling: "Stuck", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder", fullLyrics: "Placeholder" },
+            { 
+                id: 28, title: "SHOT BY CUPIDS DART", genre1: "Pop", subGenre: "Contemporary", moodTone: "Happy", feeling: "Love", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Together forever shot by Cupid's dart...", 
+                description: "Genre: Pop/Bedroom Pop. Mood: Romantic. Placement: Falling in Love. Theme: Iterative Protagonist.", 
+                fullLyrics: `(TITLE: SHOT BY CUPIDS DART)
+(VERSE)
+When I first saw you I thought Damn he's so fine
+Then I talked to you and you really blew my mind
+In that moment I knew another like you I'd never find
+So I had to have you cause you're truly one of a kind
+(CHORUS)
+Oh baby baby you have my heart
+Oh my baby baby it's time to start
+A life together I'll be yours forever
+Together forever shot by Cupid's dart`
+            },
+            { 
+                id: 29, title: "SHOWDOWN AT MY DOOR", genre1: "Rock", subGenre: "Cinematic", moodTone: "Intense", feeling: "Determined", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Don't you dare think 'bout a showdown at my door...", 
+                description: "Genre: Country / Rock. Mood: Strong, Feisty, Defiant. Placement: Empowerment / Confrontation.", 
+                fullLyrics: `(TITLE: SHOWDOWN AT MY DOOR)
+(VERSE)
+Layin' here in bed prayin' when you get home
+You don't start a fight leave my soul alone
+Accusin' me of bein' lazy puttin' us in debt
+Blamin' me for everything you can't forget
+(CHORUS)
+Don't you dare think 'bout a showdown at my door
+Been down that dusty road a hundred times before
+You're no good to me yeah the truth is plain to see
+So it's time to move on don't stop don't look back just get gone
+Cause I don't want you you're not welcome anymore`
+            },
+            { id: 30, title: "SICK ONE (S1C)", genre1: "Rock", subGenre: "Cinematic", moodTone: "Dark", feeling: "Trapped", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder", fullLyrics: "Placeholder" },
+            { id: 31, title: "SILVER AND GRAY", genre1: "Cinematic", subGenre: "Ballad", moodTone: "Sad", feeling: "Heartbroken", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder", fullLyrics: "Placeholder" },
+            { 
+                id: 32, title: "SOLID SHIFTING GROUND", genre1: "Alternative", subGenre: "Cinematic", moodTone: "Intense", feeling: "Stuck", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "This crazy, beautiful life on solid, shifting ground...", 
+                description: "Cinematic songwriter and lyricist Kellie Larson explores the duality of life, love, and resilience.", 
+                fullLyrics: `(TITLE: SOLID SHIFTING GROUND)
+(VERSE)
+A heart can be heavy, weighted down by dreams
+Like a storm cloud gathering, It silently screams
+A heart can be shattered, splintered on the floor
+Leaving you in pieces, wanting something more
+(CHORUS)
+But for every up there is a down, yeah It's true
+Like the tide that rushes in, then pulls away from you
+And It's worth it every time It comes around
+This crazy, beautiful life on solid, shifting ground`
+            },
+            { id: 33, title: "STOOD BY MY SIDE", genre1: "Country", subGenre: "Ballad", moodTone: "Hopeful", feeling: "Grateful", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder", fullLyrics: "Placeholder" },
+            { 
+                id: 34, title: "TAKE THAT FIRST STEP", genre1: "Pop", subGenre: "Anthem", moodTone: "Empowered", feeling: "Free", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Just take the first step and give this a real try...", 
+                description: "Genre: Pop/Anthemic. Mood: Hopeful, Resilient. Placement: Self-Empowerment. Theme: Empowerment Arc.", 
+                fullLyrics: `(TITLE: TAKE THAT FIRST STEP)
+(VERSE)
+It hurts my heart to watch you go through this
+I wanna take your pain away but feel so helpless
+For years it's been hard to watch you stray
+And I pray that healing starts and ends your pain today
+(CHORUS)
+Cause I love you and I don't want you to die No
+Not from the drugs or from running the streets high
+So I'm begging you now let's save your life
+Just take the first step and give this a real try`
+            },
+            { id: 35, title: "THE AFTERMATH", genre1: "Cinematic", subGenre: "Drama", moodTone: "Dark", feeling: "Heartbroken", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder", fullLyrics: "Placeholder" },
+            { 
+                id: 36, title: "THE BACK OF ME", genre1: "Pop", subGenre: "Anthem", moodTone: "Confident", feeling: "Done", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "And all you will see is the back of me when you leave...", 
+                description: "Genre: Cinematic Pop / Rock. Mood: Strong, Decisive, Bitter. Placement: Final Breakup / Empowered Exit.", 
+                fullLyrics: `(TITLE: THE BACK OF ME)
+(VERSE)
+Stop Before you go too far now there's no turning back
+You better change your direction you've got to reverse the whole track
+(CHORUS)
+You should not stick with this plan I don't know what to say or do
+I just don't understand why you aren't fighting for us
+But I don't want to make a huge fuss I'm doing the best that I can
+You’re so wrong it’s a bad idea really—
+Destroying us is the heart of your plan
+You won't have me no no no
+And I won't come running and all you will see is the back of me when you leave`
+            },
+            { 
+                id: 37, title: "THE POCKET WATCH", genre1: "Americana", subGenre: "Storytelling", moodTone: "Sad", feeling: "Nostalgic", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "My only comfort is the sound of your pocket watch as it just ticks...", 
+                description: "Genre: Easy Listening/Piano Ballad. Mood: Dark, Melancholic, Sad. Placement: Emotional Soundtrack / Dark Ballad.", 
+                fullLyrics: `(TITLE: THE POCKET WATCH)
+(VERSE)
+Just chilling on a bench at the waterfront
+Intrusive thoughts swimming in my head feeling drunk
+The mist slowly drifts through the trees and settles over the water making it hard to see anything but the ghost of you and me
+But the reality of sitting alone here really sticks
+My only comfort is the sound of your pocket watch as it just ticks
+(CHORUS)
+Tick Tick
+Just your pocket watch tick ticking away
+Counting down the moments you've been away`
+            },
+            { 
+                id: 38, title: "THE REAL DREAM TEAM", genre1: "Pop", subGenre: "Contemporary", moodTone: "Confident", feeling: "Strong", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "We are the real dream team everyone can see...", 
+                description: "Genre: Pop/Dancehall. Mood: Playful, Confident. Placement: Loyalty Anthem. Theme: Value Proposition.", 
+                fullLyrics: `(TITLE: THE REAL DREAM TEAM)
+(VERSE)
+You love me and I love you too
+Been blessed since the day I met you
+You give me courage and you give me strength
+I know I can conquer almost anything
+(CHORUS)
+Tick Tock the clock time never stops
+Like my love you are my rock
+And forever we will be
+Together baby just you and me`
+            },
+            { id: 39, title: "THE SHOW IS THROUGH", genre1: "Cinematic", subGenre: "Ballad", moodTone: "Sad", feeling: "Done", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Placeholder", description: "Placeholder", fullLyrics: "Placeholder" },
+            { 
+                id: 40, title: "THOUGHT YOU SHOULD KNOW", genre1: "Country", subGenre: "Contemporary", moodTone: "Sassy", feeling: "Done", category: "Placeholder", img: "/assets/covers/placeholder.jpg", snippetA: "Heard you were asking so I thought you should know...", 
+                description: "Cinematic songwriter and lyricist Kellie Larson explores an anthemic empowerment arc and joyful transformation.", 
+                fullLyrics: `(TITLE: THOUGHT YOU SHOULD KNOW)
+(VERSE)
+Sun in my eyes new day takes hold
+No more shadows stories untold
+The world's spinning fast through moments I fly
+Just letting the old feelings softly die
+(CHORUS)
+Oh I'm alright I'm fine I'm good
+Having the most fun on cloud nine
+Out with the girls we paint the town red
+Hardly ever sleeping in my own bed`
+            },
+            {
+                id: 41, title: "TOP SHELF QUEEN", genre1: "Reggae", genre2: "Pop", subGenre: "Chill", pov: "First Person", moodTone: "Relaxed, Admiring", feeling: "Chill", category: "Iterative", placementType: "Viral", tempo: "Mid Tempo", img: "/assets/covers/top-shelf-queen-cover-art.jpg", snippetA: "She's a top-shelf queen my number one prime / Mary Jane my perfect mate...",
+                description: `A chilled-out ode to 'Mary Jane,' personified as a 'top-shelf queen' and perfect mate. BEST PLACEMENT: Stoner Comedies or Lifestyle Content.`,
+                fullLyrics: `(TITLE: TOP SHELF QUEEN)
+(VERSE)
+She's a top-shelf queen my number one prime
+Mary Jane my perfect mate, relaxing my mind
+(CHORUS)
+She's a top-shelf queen, the best I've ever seen
+Taking me to Zion, living in a dream`
+            },
+            {
+                id: 42, title: "WELCOME TO JUKES", genre1: "Blues", genre2: "Rock", subGenre: "Southern Gothic", pov: "Third Person", moodTone: "Eerie, Mysterious", feeling: "Trapped", category: "Social", placementType: "Drama", tempo: "Slow", img: "/assets/covers/welcome-to-jukes-cover-art.jpg", snippetA: "At Jukes the singer's voice is harsh and sweet / A crowded room where every soul will meet...",
+                description: `An atmospheric Southern Gothic track set in a mysterious bayou juke joint. BEST PLACEMENT: Supernatural Thrillers or Southern Gothic Series.`,
+                fullLyrics: `(TITLE: WELCOME TO JUKES)
+(VERSE)
+At Jukes the singer's voice is harsh and sweet
+A crowded room where every soul will meet
+Smoke hangs low, the liquor flows for free
+But there's a price for this dark jubilee`
+            },
+            {
+                id: 43, title: "WILDFLOWER", genre1: "Country", genre2: "Folk", subGenre: "Americana", pov: "Third Person", moodTone: "Hopeful", feeling: "Free", category: "Empowerment", placementType: "Montage", tempo: "Mid Tempo", img: "/assets/covers/wildflower-cover-art.jpg", snippetA: "Oh, she's Wildflower, dancing in the wind...",
+                description: `A character-driven narrative about a girl named Wildflower growing up in a conformist small town with a difficult family history. BEST PLACEMENT: Character Introduction or 'Leaving Home' Montage.`,
+                fullLyrics: `(TITLE: WILDFLOWER)
+(CHORUS)
+Oh, she's Wildflower, dancing in the wind
+she's got the spirit of a rebel, never gonna bend
+With every step she takes, she's breaking free
+Oh she's a Wildflower, just watch and see
+(VERSE)
+In a small town, with dusty roads and faded signs
+In a row of houses all the same design
+A girl named Wildflower does reside`
+            },
+            { 
+                id: 44, title: "YEAR IN THE REARVIEW", genre1: "Country", subGenre: "Cinematic", pov: "First Person", moodTone: "Melancholic, Resilient", feeling: "Healed", category: "Empowerment", placementType: "Montage", tempo: "Mid Tempo", img: "/assets/covers/year-in-the-rearview-cover-art.jpg", snippetA: "A year in the rearview since that shattering crash...",
+                description: `A methodical examination of the healing process following a 'shattering crash' and emotional betrayal. BEST PLACEMENT: Healing Journey montages.`,
+                fullLyrics: `(TITLE: YEAR IN THE REARVIEW)
+(VERSE)
+Three hundred sixty-five sunsets bled into the night
+Since the slammed door echoed stealing all the light
+A calendar circled each day a heavy stone
+Building this fortress standing here alone
+(CHORUS)
+A year in the rearview since that shattering crash
+A year just to glue the broken pieces from the ash
+Washing away the bitterness letting the hurt unwind
+Guess it'll take another year to truly leave the poison behind`
+            },
+            { 
+                id: 45, title: "YOUR FOREVER MAN", genre1: "Country", subGenre: "Cinematic", pov: "First Person", moodTone: "Supportive, Loving", feeling: "Strong", category: "Empowerment", placementType: "Romance", tempo: "Mid Tempo", img: "/assets/covers/your-forever-man-cover-art.jpg", snippetA: "When Misty cries the tears fall like rain from her eyes...",
+                description: `A tender, protective ballad told from the perspective of a partner supporting a woman named Misty through deep-seated trauma. BEST PLACEMENT: Romantic Dramas with emotional depth.`,
+                fullLyrics: `(TITLE: YOUR FOREVER MAN)
+(VERSE)
+When Misty cries, the tears fall like rain from her eyes
+And the pain, buried deep inside starts to rise
+With nowhere to hide
+(VERSE)
+When the storm subsides, and the hurricane blown away her disguise
+I see, within her eyes, strength that won't die
+No longer paralyzed
+(CHORUS)
+she knows how much I love her, and I'm always thinking of her
+we'll be together forever
+Misty knows, I can see it in her eyes`
+            },
+            {
+                id: 46, title: "YOUR MASK", genre1: "Rock", genre2: "Alternative", subGenre: "Cinematic", pov: "First Person", moodTone: "Angry, Betrayed", feeling: "Vindicated", category: "Social", placementType: "Drama", tempo: "Fast", img: "/assets/covers/your-mask-cover-art.jpg", snippetA: "You see me on the screen a monster in the news...",
+                description: `A biting social commentary on scapegoating and corruption. BEST PLACEMENT: Political Thrillers or Corruption Dramas.`,
+                fullLyrics: `(TITLE: YOUR MASK)
+(VERSE)
+You see me on the screen a monster in the news
+A headline and a mugshot singing all the blues
+But behind the curtain the puppeteer stands tall
+Pulling all the strings watching the kingdom fall`
+            }
+        ].sort((a, b) => a.title.localeCompare(b.title));
+
+        renderVault(VAULT_DATA);
 
         function renderVault(data) {
-            const list = document.getElementById('vault-list-display');
-            list.innerHTML = data.map(song => `
-                <div class="vault-row">
-                    <div>
-                        <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">${song.title}</div>
-                        <div class="text-[10px] text-gray-500 font-bold">${song.genre} / HUMAN-AUTHORED</div>
+            const grid = document.getElementById('vault-grid-display');
+            if (data.length === 0) {
+                grid.innerHTML = `<div class="col-span-3 text-center text-gray-400 py-10">No matches found.</div>`;
+                return;
+            }
+            grid.innerHTML = data.map(s => `
+                <div class="song-card p-6 rounded-lg shadow-xl">
+                    <img src="${s.img}" class="w-full max-w-[140px] mx-auto rounded-lg mb-4 border border-slate-700">
+                    <h3 class="metallic-gold-title text-xl mb-1">${s.title}</h3>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase mb-4">${s.genre1} | ${s.moodTone.split(',')[0]} | ${s.category}</p>
+                    <p class="text-sm text-slate-200 italic mb-8 flex-grow">"${s.snippetA}"</p>
+                    <div class="grid grid-cols-2 gap-2 mt-auto">
+                        <button onclick="openPlayer(${s.id})" class="py-3 bg-[var(--sunset-orange)] text-white font-black text-[10px] rounded uppercase active:scale-95">READ / PLAY</button>
+                        <button onclick="printFromId(${s.id})" class="py-3 bg-slate-700 text-white font-black text-[10px] rounded uppercase active:scale-95">PRINT REPORT</button>
                     </div>
-                    <div class="text-[var(--sunset-orange)] font-black text-xs">${song.rating}</div>
-                    <div class="text-xs text-gray-300 italic">${song.moods.join(', ')}</div>
-                    <div class="text-xs text-gray-400">${song.placements.join(' | ')}</div>
-                    <button class="vault-btn" onclick="alert('Playing: ${song.title}')">REVIEW LYRICS</button>
                 </div>
             `).join('');
-        }
+         }
 
         function runFilters() {
-            const query = document.getElementById('vault-search').value.toLowerCase();
+            const search = document.getElementById('vault-search-box').value.toLowerCase();
             const genre = document.getElementById('genre-pull').value;
+            const sub = document.getElementById('subgenre-pull').value;
             const mood = document.getElementById('mood-pull').value;
-            
-            const filtered = VAULT_DATA.filter(song => {
-                const matchesSearch = song.title.toLowerCase().includes(query) || song.description.toLowerCase().includes(query);
-                const matchesGenre = !genre || song.genre === genre;
-                const matchesMood = !mood || song.moods.includes(mood);
-                return matchesSearch && matchesGenre && matchesMood;
+            const feeling = document.getElementById('feeling-pull').value;
+            const placement = document.getElementById('placement-pull').value;
+
+            const filtered = VAULT_DATA.filter(s => {
+                const matchesSearch = s.title.toLowerCase().includes(search) || 
+                                      s.description.toLowerCase().includes(search) || 
+                                      s.snippetA.toLowerCase().includes(search);
+                const matchesGenre = genre === "" || s.genre1 === genre || s.genre2 === genre;
+                const matchesSub = sub === "" || (s.subGenre && s.subGenre.includes(sub));
+                const matchesMood = mood === "" || (s.moodTone && s.moodTone.includes(mood));
+                const matchesFeeling = feeling === "" || (s.feeling && s.feeling.includes(feeling));
+                const matchesPlacement = placement === "" || (s.placementType && s.placementType.includes(placement));
+
+                return matchesSearch && matchesGenre && matchesSub && matchesMood && matchesFeeling && matchesPlacement;
             });
             renderVault(filtered);
         }
 
-        function resetFilters() {
-            document.getElementById('vault-search').value = '';
-            document.getElementById('genre-pull').value = '';
-            document.getElementById('mood-pull').value = '';
+        function applyHardFilter(key, value, el) {
+            document.getElementById('vault-search-box').value = "";
+            document.querySelectorAll('select').forEach(s => s.value = "");
+            
+            // Visual active state
+            document.querySelectorAll('.thematic-card, .rect-card').forEach(c => c.classList.remove('active'));
+            if(el) el.classList.add('active');
+
+            const filtered = VAULT_DATA.filter(s => {
+                if(key === 'category') return s.category.includes(value);
+                if(key === 'placementType') return s.placementType.includes(value);
+                if(key === 'commercialPotential') return true; 
+                if(key === 'genre1') return s.genre1 === value;
+                return true;
+            });
+            renderVault(filtered);
+        }
+
+        function resetVaultFilters() {
+            document.getElementById('vault-search-box').value = "";
+            document.querySelectorAll('select').forEach(s => s.value = "");
+            document.querySelectorAll('.thematic-card, .rect-card').forEach(c => c.classList.remove('active'));
             renderVault(VAULT_DATA);
         }
 
-        window.onload = () => renderVault(VAULT_DATA);
+        async function openPlayer(id) {
+            const s = VAULT_DATA.find(x => x.id === id);
+            document.getElementById('modal-song-title').innerText = s.title;
+            const slug = getSongSlug(s.title);
+            document.getElementById('vault-modal-player').classList.replace('hidden', 'flex');
+            
+            // Load Full Lyrics from Data Object (Prioritizing User Files)
+            const lyricsContent = s.fullLyrics ? s.fullLyrics : (s.description + "\n\n(Lyrics available upon request from VerseandChorus.com)");
+            document.getElementById('modal-song-lyrics-full').innerText = lyricsContent;
+            
+            document.getElementById('modal-song-audio-asset').src = `/assets/music/${slug}.mp3`;
+        }
+
+        async function printFromId(id) {
+            const s = VAULT_DATA.find(x => x.id === id);
+            const slug = getSongSlug(s.title);
+            
+            // Load Full Lyrics from Data Object for Print
+            const lyrics = s.fullLyrics ? s.fullLyrics : "Full lyrics available on request.";
+
+            const win = window.open('', '_blank');
+            win.document.write(`
+                <html><head><title>Report: ${s.title}</title><style>
+                    @media print { .pg { page-break-after: always; } }
+                    body { font-family: sans-serif; padding: 40px; color: black; line-height: 1.6; }
+                    .header-print { background: black; padding: 20px; border-bottom: 3px solid #D4AF37; display: flex; align-items: center; justify-content: space-between; }
+                    .header-print img { max-width: 250px; }
+                    .footer-print { background: black; color: white; text-align: center; padding: 20px; border-top: 5px solid #D4AF37; margin-top: 40px; }
+                    .meta-box { background: #f1f5f9; padding: 20px; border-radius: 8px; margin: 20px 0; font-weight: bold; border: 1px solid #ccc; }
+                    .bio-box { border-top: 1px solid #ccc; padding-top: 20px; margin-top: 20px; font-style: italic; color: #555; }
+                    h1 { text-transform: uppercase; color: #333; border-bottom: 2px solid #D4AF37; padding-bottom: 10px; }
+                    pre { white-space: pre-wrap; font-family: serif; font-size: 14px; margin-top: 30px; background: #fafafa; padding: 20px; border-left: 5px solid #D4AF37; }
+                </style></head><body>
+                    <div class="pg">
+                        <div class="header-print"><img src="/images/logo/verseandchorus-logo-med-photo.jpg"></div>
+                        <h1>INDUSTRY REPORT: ${s.title}</h1>
+                        <div class="meta-box">
+                            <p>GENRE: ${s.genre1} / ${s.genre2 || 'N/A'} | STYLE: ${s.subGenre}</p>
+                            <p>POV: ${s.pov || 'N/A'} | MOOD: ${s.moodTone}</p>
+                            <p>THEME: ${s.category} | PLACEMENT: ${s.placementType || 'Sync Ready'}</p>
+                        </div>
+                        <p><strong>SYNOPSIS:</strong> ${s.description}</p>
+                        <pre>${lyrics}</pre>
+                        <div class="bio-box">
+                            Original Work by Cinematic Songwriter Kellie Larson.<br>
+                            Representation: VerseandChorus.com | info@verseandchorus.com
+                        </div>
+                        <div class="footer-print">
+                            Confidential Industry Report. Do Not Distribute without Authorization.
+                        </div>
+                    </div>
+                </body></html>
+            `);
+            win.document.close();
+        }
     </script>
 </body>
 </html>
