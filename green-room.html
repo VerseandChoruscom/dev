@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Green Room | Verse and Chorus</title>
+  <title>Green Room | Songwriter's Playground</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
   <style>
     :root { --mint: #98fb98; --dark-mint: #3eb489; --bg: #121212; --card: #1e1e1e; }
@@ -18,13 +18,9 @@
     .game-card h2 { color: var(--mint); font-family: sans-serif; font-size: 1rem; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 0; text-transform: uppercase; }
     
     .game-btn { background: var(--mint); color: #000; border: none; padding: 10px; width: 100%; font-weight: bold; cursor: pointer; margin-top: 10px; text-transform: uppercase; }
-    .result-box { background: #000; padding: 15px; margin-top: 10px; border-radius: 4px; border-left: 3px solid var(--dark-mint); min-height: 50px; font-size: 0.9rem; color: #ddd; white-space: pre-line; }
+    .result-box { background: #000; padding: 15px; margin-top: 10px; border-radius: 4px; border-left: 3px solid var(--dark-mint); min-height: 40px; font-size: 0.85rem; color: #ddd; white-space: pre-line; }
 
-    .pad-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
-    .pad { height: 40px; border-radius: 2px; cursor: pointer; border: 1px solid #444; }
-    .row-1 { background: #1a3a1a; } .row-2 { background: #2d5a27; } .row-3 { background: #3eb489; }
-    
-    input, select, textarea { width: 100%; background: #000; border: 1px solid #333; color: #fff; padding: 8px; box-sizing: border-box; margin-top: 5px; }
+    input { width: 100%; background: #000; border: 1px solid #333; color: #fff; padding: 10px; box-sizing: border-box; margin-top: 5px; }
   </style>
 </head>
 <body>
@@ -35,70 +31,119 @@
         <a href="index.html">home</a>
         <a href="bio.html">bio</a>
         <a href="catalog.html">catalog</a>
-        <a href="#contact">contact</a>
+        <a href="lyric-critique.html">critique</a>
     </div>
 </nav>
 
 <div class="game-grid">
   <div class="game-card">
-    <h2>1. Lyrical Mad Libs</h2>
-    <input type="text" id="ml-noun" placeholder="noun">
-    <input type="text" id="ml-verb" placeholder="verb">
-    <button class="game-btn" onclick="runMadLib()">generate</button>
-    <div id="ml-res" class="result-box">...</div>
+    <h2>1. Lyric Cartographer</h2>
+    <p style="font-size:0.75rem;">select a setting to generate a cinematic plot line.</p>
+    <select id="map-select" style="width:100%; padding:8px; background:#000; color:var(--mint); border:1px solid #444;">
+        <option value="london">Victorian London Fog</option>
+        <option value="desert">High Desert Standoff</option>
+        <option value="bayou">The Sunken Bayou</option>
+        <option value="paris">Midnight in Paris</option>
+    </select>
+    <button class="game-btn" onclick="runMap()">scout location</button>
+    <div id="map-res" class="result-box">awaiting coordinates...</div>
   </div>
 
   <div class="game-card">
     <h2>2. Rhythm Racer</h2>
+    <p style="font-size:0.75rem;">hit 120 bpm (every 0.5s) to stay in sync.</p>
     <div style="text-align: center; font-size: 1.5rem;" id="racer-icon">📸</div>
-    <button class="game-btn" onmousedown="tapBeat()">tap 120bpm</button>
-    <div id="racer-res" class="result-box">score: 0/5</div>
-  </div>
-
-  <div class="game-card">
-    <h2>3. Bloodline Bridge</h2>
-    <button class="game-btn" onclick="buildBridge('scotland')">scotland</button>
-    <button class="game-btn" onclick="buildBridge('duarte')">california</button>
-    <div id="bridge-res" class="result-box">...</div>
+    <button class="game-btn" onmousedown="tapBeat()">capture the frame</button>
+    <div id="racer-res" class="result-box">score: 0/5 perfect taps</div>
   </div>
 
   <div class="game-card">
     <h2>4. Lightning Lyrics</h2>
-    <button class="game-btn" onclick="runLightning()">strike vault</button>
+    <p style="font-size:0.75rem;">choose your story vault.</p>
+    <button class="game-btn" onclick="runLightning('mary')">Mary & Dan</button>
+    <button class="game-btn" onclick="runLightning('scotland')">The MacLean Oath</button>
+    <button class="game-btn" onclick="runLightning('ghosts')">The 117 Billion</button>
     <div id="ll-res" class="result-box">...</div>
   </div>
 
   <div class="game-card">
-    <h2>5. Scramble Vault</h2>
-    <p id="scramble-hint" style="color: var(--mint); text-align: center; font-weight: bold;"></p>
-    <input type="text" id="pc-input" placeholder="unscramble">
-    <button class="game-btn" onclick="runUnlock()">verify</button>
-    <div id="pc-res" class="result-box">locked</div>
+    <h2>5. Vault Unscramble</h2>
+    <p style="font-size:0.75rem;">level: <span id="vault-lvl">1</span></p>
+    <p id="scramble-hint" style="color: var(--mint); font-weight: bold; letter-spacing: 2px; text-align:center;"></p>
+    <input type="text" id="vault-input" placeholder="unscramble">
+    <button class="game-btn" onclick="unlock()">verify</button>
+    <div id="vault-res" class="result-box">...</div>
   </div>
+</div>
 
-  <div class="game-card">
-    <h2>6. The Lyric Lab</h2>
-    <select id="lab-select">
-        <option value="smoke">smoke</option>
-        <option value="shattered glass">shattered glass</option>
-    </select>
-    <button class="game-btn" onclick="runLab()">process</button>
-    <div id="lab-res" class="result-box">...</div>
-  </div>
+<script>
+// #1 MAP LOGIC
+function runMap() {
+    const loc = document.getElementById('map-select').value;
+    const stories = {
+        'london': "A top hat left on the cobblestone\nA secret kept by the Queen alone",
+        'desert': "The Colt .22 reflected the sun\nBefore the morning he'd be on the run",
+        'bayou': "Moss hanging low like a velvet shroud\nThe thunder above was getting too loud",
+        'paris': "Lipstick stains on a crystal glass\nWatching the ghosts of the century pass"
+    };
+    document.getElementById('map-res').innerText = stories[loc];
+}
 
-  <div class="game-card">
-    <h2>7. Spin the Decks</h2>
-    <button class="game-btn" onclick="runSpin()">merge lyrics</button>
-    <div id="spin-res" class="result-box">...</div>
-  </div>
+// #2 RACER LOGIC
+let lastTap = 0, score = 0;
+function tapBeat() {
+    const now = Date.now();
+    const diff = now - lastTap;
+    if (Math.abs(diff - 500) < 80) {
+        score++;
+        document.getElementById('racer-icon').style.transform = "scale(1.3)";
+        setTimeout(() => document.getElementById('racer-icon').style.transform = "scale(1)", 100);
+    } else { score = 0; }
+    lastTap = now;
+    document.getElementById('racer-res').innerText = `score: ${score}/5 taps (at ${Math.round(60000/diff) || 0} bpm)`;
+}
 
-  <div class="game-card">
-    <h2>8. Vision Palette</h2>
-    <div id="viz-box" style="height: 40px; display: flex; margin-bottom: 5px;"></div>
-    <button class="game-btn" onclick="genPalette()">generate colors</button>
-  </div>
+// #4 LIGHTNING LOGIC
+function runLightning(type) {
+    const l = {
+        'mary': "Mary pulled out what her Daddy gave her a big ole Colt .22\nDan dropped his beer placed that hand to shield his little man",
+        'scotland': "I am the son of the spear from the isle of mull\nWhere the ancient tides make the voices go dull",
+        'ghosts': "Every second two more ghosts join the 117 billion\nStanding on the shoulders of a lonely civilian"
+    };
+    document.getElementById('ll-res').innerText = l[type];
+}
 
-  <div class="game-card">
-    <h2>9. Sound Sequencer</h2>
-    <div class="pad-grid">
-      <div class="pad row-1" onclick="playSnd('C2')"></div><div class="pad row-1"
+// #5 UNSCRAMBLE LOGIC
+const levels = [
+    {word: "bayou", hint: "UYOAB"},
+    {word: "nefarious", hint: "SURAIFONE"},
+    {word: "ephemeral", hint: "LAREMEPHE"},
+    {word: "amsterdam", hint: "MADRETSMA"}
+];
+let curLvl = 0;
+function initVault() {
+    document.getElementById('scramble-hint').innerText = levels[curLvl].hint;
+    document.getElementById('vault-lvl').innerText = curLvl + 1;
+}
+function unlock() {
+    const val = document.getElementById('vault-input').value.toLowerCase().trim();
+    if(val === levels[curLvl].word) {
+        curLvl++;
+        if(curLvl >= levels.length) {
+            document.getElementById('vault-res').innerText = "🏆 MASTER LYRICIST UNLOCKED";
+            curLvl = 0;
+        } else {
+            document.getElementById('vault-res').innerText = "Correct! Moving to next level...";
+            initVault();
+        }
+    } else { document.getElementById('vault-res').innerText = "Incorrect. Try again."; }
+}
+
+window.onload = initVault;
+</script>
+
+<footer style="text-align:center; padding:3rem; font-size: 0.7rem; color: #444; background:#000;">
+    Kellie Larson - VerseandChorus.com Cinematic Songwriter and Lyricist - @ 2024 Kellie Larson. All rights reserved. info@VerseandChorus.com - 760-420-4553 - 200 S. Emerald Drive Spc 37, Vista, CA 92081
+</footer>
+</body>
+</html>
