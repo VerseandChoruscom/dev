@@ -1,569 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Articles & Podcasts | Kellie Larson</title>
-  
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  
-  <style>
-    :root {
-      --bg-color: #000000;
-      --burgundy: #800020;
-      --gold: #D4AF37;
-      --sunset-orange: #FD5E53;
-      --text-white: #ffffff;
-      --text-off-white: #e5e5e5;
-    }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-white);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-
-    /* --- STANDARD HEADER STYLES --- */
-    #main-header {
-        background-color: #000;
-        padding: 10px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid var(--gold);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
-
-    .logo-top-left {
-        width: 89px; /* Exact width per instructions */
-        height: auto;
-    }
-
-    /* Hamburger Icon */
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        gap: 5px;
-    }
-
-    .hamburger div {
-        width: 25px;
-        height: 3px;
-        background-color: #FFFFFF;
-        transition: all 0.3s ease;
-    }
-
-    /* Navigation */
-    #nav-menu {
-        display: flex;
-        gap: 20px;
-    }
-
-    #nav-menu a {
-        color: #FFFFFF !important;
-        text-decoration: none;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 0.9rem;
-        transition: color 0.3s;
-    }
-
-    #nav-menu a:hover {
-        color: var(--gold) !important;
-    }
-
-    /* Mobile Nav Styles */
-    @media (max-width: 900px) {
-        .hamburger {
-            display: flex;
-        }
-
-        #nav-menu {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: #000;
-            padding: 20px 0;
-            border-bottom: 2px solid var(--gold);
-            text-align: center;
-        }
-
-        #nav-menu.active {
-            display: flex;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Room | Songwriter's Playground</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <style>
+        :root { --mint: #98fb98; --dark-mint: #3eb489; --black: #000000; --gold: #D4AF37; }
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f1f5f9; margin: 0; }
         
-        #nav-menu a {
-            padding: 10px 0;
-            border-bottom: 1px solid #333;
-            width: 100%;
-            display: block;
-        }
-    }
+        /* HEADER STYLE */
+        #main-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background: var(--black); border-bottom: 2px solid var(--gold); }
+        .logo-top-left { max-width: 250px; height: auto; }
+        #nav-menu a { color: #fff !important; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; margin-left: 20px; }
 
-    /* --- PAGE SPECIFIC STYLES --- */
-    a {
-      color: #ffccd5;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    a:hover {
-      color: var(--gold);
-    }
+        .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; padding: 2rem; background: #111; }
+        .game-card { background: #1e1e1e; border: 1px solid var(--mint); padding: 1.5rem; border-radius: 4px; display: flex; flex-direction: column; min-height: 400px; }
+        .game-card h2 { color: var(--mint); font-size: 1rem; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 15px; text-transform: uppercase; font-weight: 800; }
+        
+        .game-btn { background: var(--mint); color: #000; border: none; padding: 12px; width: 100%; font-weight: bold; cursor: pointer; margin-top: 10px; text-transform: uppercase; }
+        .game-btn:hover { background: #fff; box-shadow: 0 0 10px var(--mint); }
+        .result-box { background: #000; padding: 15px; margin-top: 10px; border-radius: 4px; border-left: 3px solid var(--dark-mint); font-size: 0.85rem; color: #ddd; overflow: visible; }
+        
+        input, select, textarea { width: 100%; background: #000; border: 1px solid #333; color: #fff; padding: 10px; margin-top: 5px; }
+        
+        /* SEQUENCER 3x3 */
+        .pad-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+        .pad { height: 60px; background: #1a3a1a; border: 1px solid var(--mint); cursor: pointer; transition: 0.1s; }
+        .pad:active { background: var(--mint); transform: scale(0.95); }
 
-    /* Outline Section */
-    .outline {
-      max-width: 800px;
-      margin: 40px auto 20px;
-      padding: 20px;
-      border: 1px solid #333;
-      border-radius: 8px;
-      background-color: #111;
-    }
-    .outline h3 {
-      color: var(--gold); /* Feature Articles Title in Gold */
-      margin-top: 0;
-      margin-bottom: 15px;
-      font-size: 1.5rem;
-      border-bottom: 1px solid #444;
-      padding-bottom: 10px;
-    }
-    .outline ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .outline li {
-      margin-bottom: 10px;
-    }
-    /* Underlined Links for Featured Articles */
-    .outline li a {
-        text-decoration: underline; 
-        color: var(--text-white);
-        font-size: 1.1rem;
-    }
-    .outline li a:hover {
-        color: var(--sunset-orange);
-    }
-
-    /* Articles */
-    .feature-article {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      border-bottom: 1px solid #333;
-    }
-    .byline {
-      font-style: italic;
-      color: #888;
-      margin-bottom: 20px;
-    }
-    
-    .article-title {
-        color: var(--gold)
-        font-family: 'Georgia', serif;
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-    }
-
-    h3 { color: var(--gold); margin-top: 1.5rem; }
-    
-    .sync-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-    .sync-table th, .sync-table td {
-      border: 1px solid #444;
-      padding: 12px;
-      text-align: left;
-    }
-    .sync-table th {
-      background-color: #222;
-      color: var(--gold);
-    }
-    .sync-table td {
-      background-color: #111;
-      color: #ddd;
-    }
-    blockquote {
-      margin: 30px auto;
-      max-width: 700px;
-      font-style: italic;
-      border-left: 4px solid var(--burgundy);
-      padding-left: 20px;
-      color: #ccc;
-    }
-
-    /* Back to Top Links */
-    .back-to-top-container {
-        text-align: center;
-        margin: 40px 0;
-    }
-    .back-to-top-link {
-        color: var(--sunset-orange) !important; /* Sunset Orange */
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 0.9rem;
-        text-decoration: none;
-        border: 1px solid var(--sunset-orange);
-        padding: 5px 10px;
-        border-radius: 4px;
-        transition: 0.3s;
-    }
-    .back-to-top-link:hover {
-        background-color: var(--sunset-orange);
-        color: #000 !important;
-    }
-
-    /* --- FOOTER STYLES --- */
-    .site-footer {
-        background-color: #000;
-        color: #fff;
-        text-align: center;
-        padding: 2rem;
-        margin-top: 4rem;
-        border-top: 1px solid var(--gold);
-    }
-
-    .site-footer a {
-        color: var(--gold);
-        text-decoration: none;
-    }
-  </style>
-
-  <script>
-    // Toggle Hamburger Menu
-    function toggleMenu() {
-        const navMenu = document.getElementById('nav-menu');
-        navMenu.classList.toggle('active'); 
-    }
-  </script>
+        .site-footer { background-color: var(--black); color: #fff; text-align: center; padding: 40px 20px; border-top: 5px solid var(--gold); }
+    </style>
 </head>
 <body>
 
-  <header id="main-header">
-    <a href="index.html">
-        <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
-    </a>
-    
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div><div></div><div></div>
+    <header id="main-header">
+        <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Logo" class="logo-top-left" />
+        <nav id="nav-menu">
+          <a href="/bio.html">bio</a><a href="/industry-pros.html">pro</a><a href="/lyrics.html">lyrics</a><a href="/contact.html">contact</a>
+        </nav>
+    </header>
+
+    <div class="game-grid">
+        <div class="game-card">
+            <h2>1. Lyric Labyrinth</h2>
+            <p style="font-size:0.8rem;">Collect 3 hidden items to unlock a discount.</p>
+            <div id="item-counter" style="color:var(--mint); font-weight:bold; margin: 10px 0;">Items: 0/3</div>
+            <div class="result-box" id="lab-reward">find the quill, the pick, and the tape.</div>
+            <button class="game-btn" onclick="addLabItem()">Simulate Item Find</button>
+        </div>
+
+        <div class="game-card">
+            <h2>2. Lyric Mad Libs</h2>
+            <p style="font-size:0.7rem;">mary pulled out her daddy's [noun]...</p>
+            <input type="text" id="lib-noun" placeholder="noun (weapon)">
+            <input type="text" id="lib-adj" placeholder="adjective (scary)">
+            <button class="game-btn" onclick="runLib()">Generate Lyric</button>
+            <div id="lib-res" class="result-box">awaiting your words...</div>
+        </div>
+
+        <div class="game-card">
+            <h2>3. 3x3 Synth Sequencer</h2>
+            <div class="pad-grid">
+                <div class="pad" onclick="playSnd('C2')"></div><div class="pad" onclick="playSnd('D2')"></div><div class="pad" onclick="playSnd('E2')"></div>
+                <div class="pad" onclick="playSnd('F2')"></div><div class="pad" onclick="playSnd('G2')"></div><div class="pad" onclick="playSnd('A2')"></div>
+                <div class="pad" onclick="playSnd('B2')"></div><div class="pad" onclick="playSnd('C3')"></div><div class="pad" onclick="playSnd('D3')"></div>
+            </div>
+            <p style="font-size:0.6rem; margin-top:15px; text-align:center;">tap pads to trigger cinematic swells.</p>
+        </div>
+
+        <div class="game-card">
+            <h2>4. Word Vault Leveler</h2>
+            <p style="font-size:0.75rem;">Solve 5 to get 25% off a Lyric Critique.</p>
+            <p id="scramble-hint" style="color: var(--mint); letter-spacing:3px; text-align:center; font-weight:bold; margin:10px 0;"></p>
+            <input type="text" id="v2-input" placeholder="answer">
+            <button class="game-btn" onclick="unlockV2()">Verify</button>
+            <div id="v2-res" class="result-box">Level: 1/5</div>
+        </div>
+
+        <div class="game-card">
+            <h2>5. The Exclusive Vault</h2>
+            <p style="font-size:0.8rem;">Enter the master password to unlock the studio demos.</p>
+            <input type="text" id="master-pass" placeholder="Enter Password">
+            <button class="game-btn" onclick="checkMaster()">Unlock Vault</button>
+            <div id="master-res" class="result-box">Vault is currently Locked.</div>
+        </div>
+
+        <div class="game-card">
+            <h2>6. Stem Balance</h2>
+            <label style="font-size:0.7rem">VOX (CEO NOT A BABYSITTING TREE)</label>
+            <input type="range" style="width:100%; accent-color:var(--mint);">
+            <label style="font-size:0.7rem">BEATS (BOOM BOOM BEAT)</label>
+            <input type="range" style="width:100%; accent-color:var(--mint);">
+            <button class="game-btn" onclick="alert('Balance Saved.')">Lock Stems</button>
+        </div>
     </div>
 
-    <nav id="nav-menu">
-      <a href="/bio.html">Bio</a>
-      <a href="/industry-pros.html">Industry Pro</a>
-      <a href="/lyrics.html">Lyrics</a>
-      <a href="/green-room.html">Green Room</a>
-      <a href="/articles.html">Articles</a>
-      <a href="/reports.html">Reports</a>
-      <a href="/collab.html">Collab</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/legal.html">Legal</a>
-    </nav>
-  </header>
+    <footer class="site-footer">
+        <p>© 2024 Kellie Larson. info@VerseandChorus.com</p>
+        <p>760-420-4553 - 200 S. Emerald Drive Spc 37, Vista, CA 92081</p>
+    </footer>
 
-  <section class="outline">
-    <h3>Featured Articles</h3>
-    <ul>
-      <li><a href="#formatting">Beyond the Rhyme: Formatting Guide</a></li>
-      <li><a href="#cinematic">Deconstructing the Cinematic Lyric</a></li>
-      <li><a href="#sync-guide">Crafting Sync-Ready Lyrics</a></li>
-      <li><a href="#audit">Is Your Song Ready for a Deal?</a></li>
-      <li><a href="#prestige">The Exceptional and Tier-One Prestige Lyrics</a></li>
-      <li><a href="#article7">Masterclass Lyric Analysis: Wildflower</a></li>
-      <li><a href="#article8">The Sonic Blueprint: AI as Placeholder</a></li>
-    </ul>
-  </section>
+    <script>
+        // LABYRINTH LOGIC
+        let items = 0;
+        function addLabItem() {
+            if(items < 3) items++;
+            document.getElementById('item-counter').innerText = `Items: ${items}/3`;
+            if(items === 3) {
+                document.getElementById('lab-reward').innerHTML = "🔓 <b>UNLOCKED!</b> Use code: <b>SONGWRITER10</b> for 10% off.";
+            }
+        }
 
-  <main id="articles-top"> 
-    
-    <article class="feature-article" id="formatting">
-      <h2 class="article-title">Beyond the Rhyme: How to Professionally Format Lyrics for Producers</h2>
-      <p class="byline">By Kellie Larson, 2025</p>
-      <p>You've poured your heart into a song, meticulously crafted melodies, and polished every line. Now it's time to share your lyrical genius with a producer. But before you hit "send," understand that a well-formatted lyric sheet is more than just words on a page – it's a professional calling card.</p>
+        // MAD LIBS
+        function runLib() {
+            const n = document.getElementById('lib-noun').value || "[noun]";
+            const a = document.getElementById('lib-adj').value || "[adj]";
+            document.getElementById('lib-res').innerText = `mary pulled out her daddy's ${n} and looked ${a}. she knew then it was time to make a stand.`;
+        }
 
-      <h3>What to Include</h3>
-      <ul>
-        <li><strong>Title:</strong> Centered at the top, bolded.</li>
-        <li><strong>Section Labels:</strong> Use clear headers like Verse 1, Chorus, Bridge.</li>
-        <li><strong>Consistent Indentation:</strong> Keep spacing uniform for readability.</li>
-        <li><strong>Line Breaks:</strong> Separate each lyrical line for clarity.</li>
-        <li><strong>Optional Notes:</strong> If needed, add brief parenthetical notes (e.g., “(whispered)” or “(repeat 2x)”).</li>
-      </ul>
+        // SCRAMBLE REWARD
+        const lvls = [{w:"sticks", h:"KSTCIS"}, {w:"bayou", h:"UYOAB"}, {w:"boomerang", h:"MARENGOBD"}, {w:"concrete", h:"NCRETECO"}, {w:"fury", h:"YRUF"}];
+        let cur = 0;
+        function initV2() { document.getElementById('scramble-hint').innerText = lvls[cur].h; }
+        function unlockV2() {
+            if(document.getElementById('v2-input').value.toLowerCase().trim() === lvls[cur].w) {
+                cur++;
+                if(cur < 5) {
+                    document.getElementById('v2-res').innerText = `Level: ${cur+1}/5 - Correct!`;
+                    document.getElementById('v2-input').value = "";
+                    initV2();
+                } else {
+                    document.getElementById('v2-res').innerHTML = "🏆 <b>MASTER!</b> Use code: <b>MASTERLYRICIST25</b> for 25% off Critique.";
+                }
+            }
+        }
 
-      <h3>What to Absolutely Avoid</h3>
-      <ul>
-        <li><strong>Chords, Key, or Tempo (BPM):</strong> Unless specifically requested for a separate chord chart, a lyric sheet is not the place for musical notation.</li>
-        <li><strong>Descriptive Narratives:</strong> Don’t include notes about the song’s genre, mood, or what it “sounds like.”</li>
-        <li><strong>All Caps:</strong> Unless stylistically necessary, avoid writing entire sections in all caps.</li>
-        <li><strong>Line Numbers:</strong> These clutter the visual flow.</li>
-        <li><strong>Clutter:</strong> Fancy borders, clip art, colored text, or multiple fonts distract from professionalism.</li>
-      </ul>
+        // MASTER VAULT
+        function checkMaster() {
+            const p = document.getElementById('master-pass').value.trim();
+            if(p === "CEO Not Babysitting Tree") {
+                document.getElementById('master-res').innerHTML = "🔓 <b>ACCESS GRANTED.</b> Loading 'CEO Not a Babysitting Tree' demo...";
+            } else {
+                document.getElementById('master-res').innerText = "Access Denied. Hint: Check the song title list.";
+            }
+        }
 
-      <h3>The Final Review</h3>
-      <p>Before sending, proofread everything meticulously. A typo-free lyric sheet reinforces your attention to detail. Listen to your demo while reading the lyric sheet to ensure everything aligns.</p>
-
-      <p>By following these guidelines, you'll present your lyrics in a professional, clear, and easy-to-digest format — allowing the producer to focus on your artistry rather than deciphering a messy document. This small effort can make a significant difference in how your work is received and ultimately, how your song comes to life.</p>
-    </article>
-
-    <article class="feature-article" id="cinematic">
-      <h2 class="article-title">Deconstructing the Cinematic Lyric: Why Kellie Larson's Work is a Sync Supervisor’s Dream</h2>
-      <p class="byline">By Kellie Larson, 2025</p>
-
-      <p>In the modern music landscape, a creative's value is measured not only by artistic depth but by commercial agility. Sync supervisors, producers, and licensing agents are no longer just looking for “great songs”—they’re looking for strategic assets. Kellie Larson’s lyric catalog is a prime example of how cinematic songwriting can be structured for maximum sync viability.</p>
-
-      <h3>Theme-Based Market Value</h3>
-      <table class="sync-table">
-        <thead>
-          <tr>
-            <th>Target Market</th>
-            <th>Strategic Fit & Justification</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Film & Television (Cinema/Streaming)</td>
-            <td>Emotionally specific lyrics are perfect for scoring pivotal scenes in Dramas, Rom-Coms, and Biopics.</td>
-          </tr>
-          <tr>
-            <td>Advertising (Commercials/Branding)</td>
-            <td>The concise, memorable nature of the hooks is ideal for creating an instant connection with a product or brand.</td>
-          </tr>
-          <tr>
-            <td>Artist & Producer Acquisition</td>
-            <td>The strong narrative core provides a robust foundation for vocalists and producers seeking authentic material.</td>
-          </tr>
-          <tr>
-            <td>Trailers & Promotional Media</td>
-            <td>Lyrical themes of aspiration and climax build anticipation in trailers and sizzle reels.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3>Middle Theme Category</h3>
-      <table class="sync-table">
-        <thead>
-          <tr>
-            <th>Theme</th>
-            <th>Sync Market Demand</th>
-            <th>Commercial Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Aspiration & Adventure</td>
-            <td>High demand for trailers, sports branding, and automotive campaigns.</td>
-            <td>Critical Value</td>
-          </tr>
-          <tr>
-            <td>Modern Romance</td>
-            <td>Consistent demand for Rom-Coms, premium TV series, and tech/lifestyle advertisements.</td>
-            <td>Very High Value</td>
-          </tr>
-          <tr>
-            <td>Introspection & Growth</td>
-            <td>Steady demand for dramatic film montages and inspirational commercial spots.</td>
-            <td>High Value</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p>This structure allows a music supervisor to search the catalogue based on the mood or purpose of their scene (e.g., “Need a song for a final montage about a new beginning”), not a genre they may not yet have decided on.</p>
-
-      <p>By designing her catalog around emotional clarity, lyrical flexibility, and sync-friendly structure, Kellie Larson has positioned herself not just as a songwriter, but as a strategic partner for media creators. Her work is a blueprint for how cinematic lyricism can meet commercial demand without sacrificing artistic integrity.</p>
-    </article>
-
-    <div class="back-to-top-container">
-        <a href="#articles-top" class="back-to-top-link">**^ Back to Top ^**</a>
-    </div>
-
-    <article class="feature-article" id="sync-guide">
-      <h2 class="article-title">Crafting Sync-Ready Lyrics: A Songwriter's Guide to Commercial Placement</h2>
-      <p class="byline">By Kellie Larson, 2025</p>
-
-      <p>In today's media landscape, a song's sync potential (synchronization with visual media like film, TV, and advertising) is a key measure of its commercial viability. For songwriters, mastering the art of the "syncable" lyric is crucial for maximizing income and exposure. This article provides essential instructions on how to tailor your words for high-value media placements.</p>
-
-      <h3>1. Support the Narrative, Don't Steal It</h3>
-      <p>When a song is placed in a TV show or commercial, the visual story is paramount. Your lyric's job is to support the scene's emotional tone, not to be a competing script.</p>
-      <ul>
-        <li><strong>Avoid Overly Specific Names and Places:</strong> A lyric like "I drove my Ford Focus to the coffee shop on Elm Street" severely limits placement. Change it to: "I drove through this tired town to that place where we first met."</li>
-        <li><strong>Focus on Emotion Over Detail:</strong> Instead of narrating an entire story arc, focus your lyrics on the emotional climax or the universal feeling that scene is trying to evoke (e.g., loss, liberation, aspiration, tension).</li>
-      </ul>
-
-      <h3>2. Embrace Lyrical Agnosticism for Genre Flexibility</h3>
-      <p>The most versatile lyrics are often genre-agnostic. This means they can be easily interpreted over a pop beat, an acoustic guitar, or a cinematic string arrangement.</p>
-      <ul>
-        <li><strong>Prioritize Rhythm and Cadence:</strong> Ensure your verses and choruses have a strong, natural rhythmic flow.</li>
-        <li><strong>Write for the Hook:</strong> In sync, the chorus hook is the most valuable asset. It must be instantly memorable and clearly communicate the emotional core.</li>
-      </ul>
-
-      <h3>3. Maintain Absolute Professionalism and Clearance Readiness</h3>
-      <p>Legal and ethical cleanliness is non-negotiable in sync licensing. A single complication can kill a six-figure placement.</p>
-      <ul>
-        <li><strong>Keep it Clean:</strong> Avoid profanity and highly suggestive or offensive content for non-explicit markets.</li>
-        <li><strong>Secure All Splits:</strong> Ensure you have a signed split sheet outlining ownership percentages for all contributors.</li>
-        <li><strong>Be Accessible:</strong> Provide clear contact information and be ready to respond quickly.</li>
-      </ul>
-
-      <h3>Final Thoughts</h3>
-      <p>By adhering to these instructions—prioritizing emotional support over literal storytelling, crafting genre-flexible hooks, and ensuring complete professional and legal readiness—a songwriter significantly increases the commercial potential of their catalogue, turning individual lyrics into highly valuable media assets.</p>
-    </article>
-    <div class="back-to-top-container">
-        <a href="#articles-top" class="back-to-top-link">**^ Back to Top ^**</a>
-    </div>
-
-    <article class="feature-article" id="audit">
-      <h2 class="article-title">Is Your Song Ready for a Deal? Why a Strategic Lyric Audit is Your Next Essential Step ✍️</h2>
-      <p class="byline">By Kellie Larson, 2025</p>
-
-      <p>Your lyrics are your most valuable Intellectual Property (IP). But in today's fiercely competitive music market, raw talent isn't enough. Publishers and A&R teams demand material that demonstrates immediate market readiness and structural integrity. That's why having your lyrics analyzed is the single most important action you can take to move from an emerging writer to a commercially viable professional.</p>
-
-      <p>Here at <strong>VerseAndChorus.com</strong>, we specialize in the kind of Comprehensive Strategic and A&R Audit that was used to assess top cinematic songwriter and lyricist Kellie Larson's portfolio. We don't just offer subjective critique; we provide the **quantifiable data** needed for smart monetization.</p>
-
-      <h3>1. Close the Gap Between Creativity and Commercial Success</h3>
-      <p>The biggest challenge facing talented writers is often not creativity, but inconsistent structural optimization. A strategic lyric audit helps you:</p>
-      <ul>
-        <li>**Ensure Radio Readiness:** Commercial songs must be concise, averaging between 2.5 and 3.5 minutes. Our analysis pinpoints overly long verses or weak bridges that cause rhythmic drag and push your song past the commercially viable runtime.</li>
-        <li>**Maximize Melodic Potential:** We assess the inherent rhythmic quality, flow, and stress patterns of your lyrics to ensure they support strong melodic phrasing across multiple genres.</li>
-      </ul>
-      
-      <blockquote>
-        “The audit I received from Verse and Chorus completely changed how I approach my lyrics. It wasn’t just feedback — it was a roadmap to commercial clarity. Kellie’s insights helped me tighten my structure, elevate my hooks, and finally land my first sync deal.”
-        <br><br>
-        **— J. Rivera, Independent Artist & Sync Client**
-      </blockquote>
-
-      <p><a href="report.html" style="color:#ffccd5; text-decoration:underline;">🔍 Learn more about our Lyric Critique & Strategic Audit →</a></p>
-    </article>
-    <div class="back-to-top-container">
-        <a href="#articles-top" class="back-to-top-link">**^ Back to Top ^**</a>
-    </div>
-
-    <article class="feature-article" id="prestige">
-      <h2 class="article-title">The Exceptional and Tier-One Prestige Lyrics</h2>
-      <p class="byline">By Kellie Larson, 2025</p>
-
-      <p>**The Prestige Measure:** Kellie Larson on Lyrical Depth and Cinematic Narrative</p>
-      <p>Critical Acclaim is granted to lyricists who demonstrate technical depth, structural innovation, and complex storytelling that successfully fulfills its artistic intention. This work often targets niche genres or high-concept sync placements where emotional depth and layered interpretation are expected and rewarded over structural predictability.</p>
-
-      <p>As a cinematic songwriter and lyricist, Kellie Larson is a creator of emotional, narrative-driven lyrics that thrive in this space. Lyrics reaching the Exceptional or Tier-One Prestige standard prioritize The Prestige Measure by showcasing complex themes, unique narrative structures, and profound emotional fidelity.</p>
-
-      <h3>The Exceptional & Tier-One Prestige Roster</h3>
-      <table class="sync-table">
-        <thead>
-          <tr>
-            <th>Song Title</th>
-            <th>Primary Market Target</th>
-            <th>Critical Acclaim Tier</th>
-            <th>Critique Summary</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Welcome to Jukes</td><td>Sync / Cinematic Blues / Horror</td><td>Exceptional</td><td>Dark Southern Gothic. High sync value.</td></tr>
-          <tr><td>Take that First Step</td><td>Inspirational Pop / Alt-Folk</td><td>Exceptional</td><td>Addresses addiction with maturity. Strong vulnerability.</td></tr>
-          <tr><td>Fury (I'm the Monster)</td><td>Alternative Rock / Metal</td><td>Tier-One Prestige</td><td>Raw domestic violence narrative. High emotional intensity.</td></tr>
-          <tr><td>Just a Littke Lonely</td><td>Adult Contemporary Ballad</td><td>Tier-One Prestige</td><td>Grief through domestic loss. Deep resonance.</td></tr>
-          <tr><td>Etched in Every Space</td><td>Pop Ballad / Grief</td><td>Tier-One Prestige</td><td>Humorous grief details. Elevated emotional impact.</td></tr>
-          <tr><td>The Aftermath</td><td>Alt-Pop / Emo-Pop</td><td>Tier-One Prestige</td><td>Post-chaos struggle. Strong resolution arc.</td></tr>
-          <tr><td>One Small Wrong</td><td>Pop / R&B / Hip-Hop Dialogue</td><td>Tier-One Prestige</td><td>Alternating voices. Complex betrayal story.</td></tr>
-          <tr><td>In My Dreams</td><td>Adult Contemporary Ballad</td><td>Tier-One Prestige</td><td>Grief and escapism. High emotional fidelity.</td></tr>
-          <tr><td>The Back of Me</td><td>Pop Ballad / R&B</td><td>Tier-One Prestige</td><td>Dramatic plea. Strong unrequited desire theme.</td></tr>
-        </tbody>
-      </table>
-    </article>
-    <div class="back-to-top-container">
-        <a href="#articles-top" class="back-to-top-link">**^ Back to Top ^**</a>
-    </div>
-
-    <article class="feature-article" id="article7">
-        <h2 class="article-title">**Masterclass Lyric Analysis: How "Wildflower" Defines the Commercial Redemptive Narrative**</h2>
-        <p class="byline">By Kellie Larson, Cinematic Songwriter and Lyricist</p>
-        
-        <p>In the modern music industry, a lyric’s value is often measured by its commercial utility and its ability to deliver an immediate, universally resonant narrative. The track "Wildflower" from the VerseandChorus catalog serves as a **Masterclass example** of how to engineer a lyric for maximum **Hit Potential and Sync Licensing appeal**, particularly within the lucrative Country Crossover and Pop-Empowerment genres.</p>
-
-        <h3>The Power of Phonetic and Structural Efficiency</h3>
-        <p>For a commercial lyric to succeed, the **"Sound-First" principle** must be paramount. The words are chosen not just for meaning, but for how they sound and feel when sung at volume.</p>
-
-        <p>The chorus of "Wildflower" is built for massive stadium and radio appeal:</p>
-
-        <blockquote>
-            <p>Chorus:</p>
-            <p>Oh, she's Wildflower, dancing in the wind.</p>
-            <p>She's got the spirit of a rebel, never gonna bend.</p>
-            <p>With every step she takes, she's breaking free.</p>
-            <p>Oh she's a Wildflower, just watch and see.</p>
-        </blockquote>
-
-        <p>The phrase **"Oh she's Wildflower, dancing in the wind"** is the central hook, placing the most resonant image and title directly at the start, ensuring immediate memory recall. The repetition of the central image (Wildflower) and the clear, rhythmic consonants in phrases like "rebel, never gonna bend" give the chorus an explosive, professional punch built for high-energy performance. The structure provides a clear answer—she is free and unstoppable—to the tensions established in the verses.</p>
-
-        <h3>Emotional Narrative: Wound to Wisdom</h3>
-        <p>The cinematic value of this lyric lies in its powerful, concise narrative structure. This is where the work of a cinematic songwriter creates high-value assets for Music Supervisors:</p>
-        <ul>
-            <li><strong>Establishing a Specific Setting:</strong> The opening lines, "In a small town, with dusty roads and faded signs," immediately set a familiar, visual scene. The use of "dusty roads" is not a cliché; it is a universally understood metaphor for hardship and limited opportunity, instantly anchoring the song in the Country Crossover context.</li>
-            <li><strong>Introducing High Stakes:</strong> The lyric delivers deep emotional context with remarkable brevity: "Her Mommas light dimmed when she turned just 8, went to live with Granny cause her Daddys a inmate of the state." These two lines deliver a complete, compelling backstory of trauma and loss, transforming the protagonist into an instant underdog.</li>
-            <li><strong>The Aspirational Climax:</strong> The protagonist’s defiance, "She holds her head high with a big ole smile, Wildflowers one of a kind," coupled with the aspirational climax of the chorus, creates the quintessential **Redemptive Narrative**. This emotional arc is currently the most valuable trend in mainstream music and is perfect for cinematic placement.</li>
-        </ul>
-        
-        <h3>Sync and Commercial Placement Value</h3>
-        <p>The visual language and emotional arc of "Wildflower" make it a **Tier-One Commercial sync asset**.</p>
-        <ul>
-            <li><strong>TV and Film:</strong> The lyric is ideal for rom-com climaxes, dramatic TV series focused on coming-of-age, or sports-related montages. Any scene depicting an emotional breakthrough, a fresh start, or an assertion of independence is perfectly scored by the high-energy determination of this track.</li>
-            <li><strong>Commercials:</strong> The lyric's themes of empowerment, resilience, and freedom make it a perfect fit for aspirational advertising campaigns—from automotive brands to insurance or beauty products—that aim to connect with a determined, youthful, and primarily female demographic.</li>
-        </ul>
-
-        <p>By merging high-impact phonetic design with an instantly relatable, narrative-driven story, "Wildflower" represents the gold standard in commercially engineered songwriting, ready to be the next major single for a Touring Artist or the foundation of a successful Music Producer's next big project.</p>
-    </article>
-    <div class="back-to-top-container">
-        <a href="#articles-top" class="back-to-top-link">**^ Back to Top ^**</a>
-    </div>
-    <hr class="story-separator" style="border-color: #333;">
-
-    <article class="feature-article" id="article8">
-        <h2 class="article-title">**The Sonic Blueprint: AI as the Professional Placeholder in Songwriting Demos**</h2>
-        <p class="byline">By Kellie Larson, Cinematic Songwriter and Lyricist</p>
-
-        <p>The role of the demo in the music industry has fundamentally changed. It is no longer a low-fidelity sketch; it is a **rapid prototype** designed to sell a specific vision. Today, generative **Artificial Intelligence (AI) tools** are not replacing the songwriter, but rather serving as the ultimate placeholder—the professional, high-fidelity sonic blueprint that dramatically accelerates a lyric’s path to a cut or a sync placement.</p>
-
-        <p>For top-tier lyricists, the challenge is always speed and presentation. An extraordinary lyric like "Wildflower" deserves a soundscape that immediately captures its Masterclass emotional scope. **AI provides that competitive edge**.</p>
-
-        <h3>Today: The Professional Placeholder</h3>
-        <p>In the current landscape, AI tools like Suno, Udio, and various voice emulators are essential parts of the professional workflow. They transform a text-based asset into a full, emotionally scored track in minutes. This speed is invaluable for:</p>
-        <ul>
-            <li><strong>Rapid Prototyping:</strong> A lyricist can now test a dozen different genre interpretations of a single lyric (e.g., Country-Rock vs. Stadium Pop for "Wildflower") simply by adjusting a text prompt. This instant A/B testing allows a writer to quickly identify the track’s most commercially viable sound.</li>
-            <li><strong>The 'Vocal-First' Presentation:</strong> While no AI vocal can replace a touring artist's unique timbre, the current generation of emulators generates a placeholder vocal that is perfectly in-tune, on-beat, and styled to the target genre. This removes the 'demo distraction' of a poor scratch vocal, allowing music producers and artists to focus 100% on the structural integrity and emotional depth of the human-written lyric.</li>
-            <li><strong>Cost-Effective Quality:</strong> AI eliminates the time and cost barrier of hiring session musicians or studio time for a simple placeholder. This allows a lyricist to maintain a vast, high-quality, and rapidly updated catalog ready for immediate pitching.</li>
-        </ul>
-
-        <h3>The Future: AI as a 'Pre-Mastered' Pitch Asset</h3>
-        <p>Looking ahead, AI is poised to elevate the demo from a placeholder to a **'Pre-Mastered' Pitch Asset**, completely changing the dynamics of sync licensing and publishing:</p>
-        <ul>
-            <li><strong>Hyper-Customization for Sync:</strong> The cinematic songwriter's pitch will become dramatically more effective. Instead of providing a single demo, a writer will use AI to provide hyper-specific versions on demand. A music supervisor asks for a "darker, minor-key trailer version of Wildflower for a drama series"? AI will deliver it in 30 minutes. This speed and precision will make the human-written lyric an indispensable, customizable foundation.</li>
-            <li><strong>Legal Clarity and Human Value:</strong> The industry is moving towards a model where the **Human-Written Lyric and Melody (Composition)** is legally recognized as the core intellectual property, separate from the **AI-Generated Production (Master Recording)**. This separation is crucial: it protects the songwriter's most valuable asset—the unique, narrative arc that AI cannot spontaneously create—while leveraging AI for all the necessary technical and production work.</li>
-            <li><strong>Creative Co-Pilots:</strong> Future AI tools will not just generate music; they will actively suggest structural variations, stronger internal rhymes, or more vivid sensory details to the human writer during the composition phase. This turns the technology into a **Creative Co-Pilot**, speeding up the first draft and allowing the writer to focus on the unique emotional narrative that only human experience can deliver.</li>
-        </ul>
-
-        <p>For the professional lyricist, AI is not a threat to creativity; it is a **radical accelerator for commercial success**, ensuring that high-value, emotionally narrative lyrics—the true currency of the industry—are presented with maximum impact and efficiency.</p>
-    </article>
-
-    <div class="back-to-top-container">
-        <a href="#articles-top" class="back-to-top-link">**^ Back to Top ^**</a>
-    </div>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>
-      Cinematic Songwriter & Lyricist @2025 Kellie Larson 🎙️VerseandChorus.com ☎️ 760-537-0222 ✉️ info@verseandchorus.com 📝 <a href="/legal.html">Legal</a>
-    </p>
-  </footer>
+        // AUDIO
+        function playSnd(n) { const s = new Tone.Synth().toDestination(); s.triggerAttackRelease(n, "4n"); }
+        window.onload = initV2;
+    </script>
 </body>
 </html>
