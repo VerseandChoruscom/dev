@@ -1,412 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Green Room | Verse and Chorus</title>
-    <meta name="description" content="Interactive songwriting tools and lyric games powered by the Verse and Chorus catalog.">
-    
-    <link rel="stylesheet" href="http://verseandchorus.com/assets/css/style.css">
-    
-    <style>
-        /* Green Room Theme Variables */
-        :root { 
-            --winter-green-bg: #5F8575; 
-            --game-card-bg: rgba(255, 255, 255, 0.95); 
-            --burgundy: #800020; 
-            --gold: #D4AF37; 
-            --black: #000000;
-        }
-        body { 
-            background-color: var(--winter-green-bg); 
-            line-height: 1.6; 
-            margin: 0;
-            color: var(--black); /* Default text color */
-        }
-        
-        /* Header Styling */
-        #main-header { 
-            background-color: var(--black); 
-            padding: 10px 20px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            border-bottom: 2px solid var(--gold); 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-        }
-        .logo-top-left { max-height: 60px; width: auto; }
-        #nav-menu { display: flex; gap: 20px; }
-        #nav-menu a { 
-            color: #fff; 
-            text-decoration: none; 
-            font-weight: bold; 
-            text-transform: uppercase; 
-            font-size: 0.9rem; 
-            transition: color 0.3s ease;
-        }
-        #nav-menu a:hover { color: var(--gold); }
+<div class="game-grid">
+  <div class="game-card">
+    <img src="https://image.pollinations.ai/prompt/quill%20and%20ink%20minimalist%20gold%20line%20art" alt="Quill" class="card-image-top-left">
+    <h2>1. Lyrical Madlibs</h2>
+    <p>Rewrite a cinematic line! Fill in the blanks below.</p>
+    <div class="input-group">
+      <input type="text" id="ml-adj" placeholder="Adjective">
+      <input type="text" id="ml-noun" placeholder="Noun">
+      <input type="text" id="ml-verb" placeholder="Verb (Past)">
+      <input type="text" id="ml-place" placeholder="Place">
+    </div>
+    <button class="game-btn" onclick="generateMadlib()">Rewrite Lyric</button>
+    <div id="ml-result" class="result-box">The result will appear here...</div>
+  </div>
 
-        /* Main Content & Game Grid */
-        main.page-content { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 3rem 1rem; 
-        }
-        .page-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative; /* For absolute positioning of images */
-        }
-        .page-header h1 { 
-            color: var(--black); 
-            font-family: Georgia, serif; 
-            font-size: 3.5rem; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            margin-bottom: 0.5rem; 
-        }
-        .page-header p { 
-            font-size: 1.2rem; 
-            font-weight: 500; 
-            margin-bottom: 0;
-        }
+  <div class="game-card">
+    <img src="https://image.pollinations.ai/prompt/vintage%20turntable%20abstract%20stylized%20gold" alt="Turntable" class="card-image-corner">
+    <h2>2. 2-Song Turnstyle</h2>
+    <p><strong>Spin the Decks!</strong> Randomly smash two songs together.</p>
+    <button class="game-btn" onclick="spinDecks()">Mix It Up</button>
+    <div id="ts-result" class="result-box"><strong>Mashup:</strong> Click to spin!</div>
+  </div>
 
-        .game-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
-            gap: 2rem; 
-        }
-        .game-card { 
-            background-color: var(--game-card-bg); 
-            border: 3px solid var(--black); 
-            border-radius: 8px; 
-            padding: 2rem; 
-            box-shadow: 8px 8px 0px rgba(0,0,0,0.2); 
-            display: flex;
-            flex-direction: column;
-            position: relative; /* For image placement within cards */
-            overflow: hidden; /* Hide overflow for images */
-        }
-        .game-card h2 { 
-            margin-top: 0; 
-            color: var(--burgundy); 
-            border-bottom: 2px solid #ccc; 
-            padding-bottom: 10px; 
-            font-size: 1.5rem;
-            position: relative;
-            z-index: 1; /* Ensure text is above image */
-        }
-        .game-card p {
-            position: relative;
-            z-index: 1;
-        }
-        .input-group { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 10px; 
-            margin-bottom: 15px; 
-            position: relative;
-            z-index: 1;
-        }
-        input[type="text"], select { 
-            padding: 10px; 
-            border: 2px solid #ccc; 
-            border-radius: 4px; 
-            width: 100%; 
-            box-sizing: border-box; 
-            font-size: 1rem;
-        }
-        button.game-btn { 
-            background-color: var(--burgundy); 
-            color: #fff; 
-            padding: 12px 24px; 
-            border: none; 
-            border-radius: 4px; 
-            font-size: 1rem; 
-            font-weight: bold; 
-            text-transform: uppercase; 
-            cursor: pointer; 
-            width: 100%; 
-            margin-top: auto;
-            transition: background 0.3s ease, color 0.3s ease;
-            position: relative;
-            z-index: 1;
-        }
-        button.game-btn:hover { 
-            background-color: var(--black); 
-            color: var(--gold); 
-        }
-        .result-box { 
-            margin-top: 20px; 
-            padding: 20px; 
-            background-color: #f4f4f4; 
-            border-left: 5px solid var(--gold); 
-            font-family: Georgia, serif; 
-            font-size: 1.1rem; 
-            display: none; 
-            color: #333; 
-            position: relative;
-            z-index: 1;
-        }
+  <div class="game-card">
+    <img src="https://image.pollinations.ai/prompt/light%20bulb%20spark%20idea%20abstract%20gold%20glow" alt="Light bulb" class="card-image-corner">
+    <h2>3. Lightning Lyrics</h2>
+    <p>Instantly pull a <strong>Commercial Hook</strong> from the Vault.</p>
+    <button class="game-btn" onclick="strikeHook()">Strike Me!</button>
+    <div id="ll-result" class="result-box"></div>
+  </div>
 
-        /* Image Styling */
-        .header-image-left {
-            position: absolute;
-            top: 0;
-            left: -100px; /* Adjust as needed */
-            height: 150px; /* Adjust size */
-            opacity: 0.8;
-            z-index: 0;
-            transform: rotate(-15deg);
-        }
-        .header-image-right {
-            position: absolute;
-            top: 20px;
-            right: -100px; /* Adjust as needed */
-            height: 120px; /* Adjust size */
-            opacity: 0.7;
-            z-index: 0;
-            transform: rotate(10deg);
-        }
-        .card-image-corner {
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            height: 100px; /* Smaller for cards */
-            opacity: 0.6;
-            z-index: 0;
-            transform: rotate(20deg);
-        }
-        .card-image-top-left {
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            height: 80px;
-            opacity: 0.5;
-            z-index: 0;
-            transform: rotate(-10deg);
-        }
+  <div class="game-card">
+    <img src="https://image.pollinations.ai/prompt/vintage%20safe%20dial%20minimalist%20gold%20outline" alt="Safe dial" class="card-image-top-left">
+    <h2>4. Pin Code Unscramble</h2>
+    <p>Unscramble the song title to unlock the vault!</p>
+    <div id="scramble-word" style="font-weight:bold; font-size:1.4rem; text-align:center; margin:15px 0; color:#800020; letter-spacing:4px;">ORENOMANG</div>
+    <div class="input-group" style="grid-template-columns: 1fr;">
+      <input type="text" id="pc-guess" placeholder="Enter Title">
+    </div>
+    <button class="game-btn" onclick="unlockVault()">Unlock</button>
+    <div id="pc-result" class="result-box"></div>
+  </div>
+</div>
 
-        /* Footer Styling */
-        .site-footer { 
-            background-color: var(--black); 
-            color: #fff; 
-            text-align: center; 
-            padding: 2rem; 
-            margin-top: 4rem; 
-            border-top: 1px solid var(--gold); 
-        }
-        .site-footer a { color: var(--gold); text-decoration: none; }
+<script>
+const songCatalog = [
+  "Big Hard No", "Don't Be Jelly", "The Pocket Watch", "Just a Little Lonely", 
+  "What About the Children", "The Back of Me", "Sick One (s1c)", 
+  "Solid Shifting Ground", "My Words Still Matter", "Wildflower", "How Is It Feel Bro"
+];
 
-        /* Hamburger menu for responsiveness if needed */
-        .hamburger { display: none; cursor: pointer; }
-        .hamburger div { width: 25px; height: 3px; background-color: white; margin: 5px 0; }
+const hooks = [
+  "Even my shadow is standing different.",
+  "History repeats, so we know you will.",
+  "You're allergic to good decisions.",
+  "I'm boomeranging it back and like glue it sticks.",
+  "You cannot run on empty if you fill the tank."
+];
 
-        @media (max-width: 768px) {
-            #nav-menu { display: none; flex-direction: column; width: 100%; background-color: #000; position: absolute; top: 70px; left: 0; }
-            #nav-menu.active { display: flex; }
-            .hamburger { display: block; }
-            .page-header h1 { font-size: 2.5rem; }
-            .page-header p { font-size: 1rem; }
-            .game-grid { grid-template-columns: 1fr; }
-            .header-image-left, .header-image-right { display: none; } /* Hide decorative images on small screens */
-            .card-image-corner, .card-image-top-left { height: 60px; }
-        }
-    </style>
-</head>
-<body>
+function generateMadlib() {
+  const adj = document.getElementById('ml-adj').value || "[adjective]";
+  const noun = document.getElementById('ml-noun').value || "[noun]";
+  const verb = document.getElementById('ml-verb').value || "[verb]";
+  const place = document.getElementById('ml-place').value || "[place]";
+  document.getElementById('ml-result').innerText = `Then I found out you were ${verb} with a ${adj} ${noun} in the back of the ${place}.`;
+}
 
-    <header id="main-header">
-        <a href="http://verseandchorus.com/index.html">
-            <img src="http://verseandchorus.com/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left">
-        </a>
-        <div class="hamburger">
-            <div></div><div></div><div></div>
-        </div>
-        <nav id="nav-menu">
-            <a href="http://verseandchorus.com/bio.html">Bio</a>
-            <a href="http://verseandchorus.com/industry-pros.html">Industry Pro</a>
-            <a href="http://verseandchorus.com/lyrics.html">Lyrics</a>
-            <a href="http://verseandchorus.com/green-room.html">Green Room</a>
-            <a href="http://verseandchorus.com/articles.html">Articles</a>
-            <a href="http://verseandchorus.com/reports.html">Reports</a>
-            <a href="http://verseandchorus.com/collab.html">Collab</a>
-            <a href="http://verseandchorus.com/contact.html">Contact</a>
-            <a href="http://verseandchorus.com/legal.html">Legal</a>
-        </nav>
-    </header>
+function spinDecks() {
+  const song1 = songCatalog[Math.floor(Math.random() * songCatalog.length)];
+  const song2 = songCatalog[Math.floor(Math.random() * songCatalog.length)];
+  document.getElementById('ts-result').innerHTML = `<strong>Mashup:</strong> ${song1} x ${song2}`;
+}
 
-    <main class="page-content">
-        <div class="page-header">
-            <h1>The Green Room</h1>
-            <p>Songwriter's Playground &amp; Funhouse. Play with the lyrics!</p>
-            <img src="https://image.pollinations.ai/prompt/elegant%20music%20note%20flair%20gold%20and%20burgundy" alt="Music flair" class="header-image-left">
-            <img src="https://image.pollinations.ai/prompt/cinematic%20reel%20abstract%20gold%20and%20black" alt="Cinematic reel" class="header-image-right">
-        </div>
+function strikeHook() {
+  const hook = hooks[Math.floor(Math.random() * hooks.length)];
+  document.getElementById('ll-result').innerText = hook;
+}
 
-        <div class="game-grid">
-            
-            <div class="game-card">
-                <img src="https://image.pollinations.ai/prompt/quill%20and%20ink%20minimalist%20gold%20line%20art" alt="Quill" class="card-image-top-left">
-                <h2>1. Lyrical Madlibs</h2>
-                <p>Rewrite a cinematic line! Fill in the blanks below.</p>
-                <div class="input-group">
-                    <input type="text" id="ml-adj" placeholder="Adjective">
-                    <input type="text" id="ml-noun" placeholder="Noun">
-                    <input type="text" id="ml-verb" placeholder="Verb (Past)">
-                    <input type="text" id="ml-place" placeholder="Place">
-                </div>
-                <button class="game-btn" onclick="runMadlibs()">Rewrite Lyric</button>
-                <div id="ml-result" class="result-box"></div>
-            </div>
-
-            <div class="game-card">
-                <img src="https://image.pollinations.ai/prompt/vintage%20turntable%20abstract%20stylized%20gold" alt="Turntable" class="card-image-corner">
-                <h2>2. 2-Song Turnstyle</h2>
-                <p><strong>Spin the Decks!</strong> Randomly smash two songs from the catalog together.</p>
-                <button class="game-btn" onclick="runTurnstyle()">Mix It Up</button>
-                <div id="ts-result" class="result-box"></div>
-            </div>
-
-            <div class="game-card">
-                <img src="https://image.pollinations.ai/prompt/film%20strip%20abstract%20cinematic%20gold%20shimmer" alt="Film strip" class="card-image-top-left">
-                <h2>3. Scene Generator</h2>
-                <p>Enter random prompts and generate a unique opening line.</p>
-                <div class="input-group">
-                    <input type="text" id="cs-person" placeholder="Person">
-                    <input type="text" id="cs-place" placeholder="Place">
-                    <input type="text" id="cs-thing" placeholder="Thing">
-                    <input type="text" id="cs-mood" placeholder="Mood">
-                </div>
-                <button class="game-btn" onclick="runScene()">Generate Scene</button>
-                <div id="cs-result" class="result-box"></div>
-            </div>
-
-            <div class="game-card">
-                <img src="https://image.pollinations.ai/prompt/light%20bulb%20spark%20idea%20abstract%20gold%20glow" alt="Light bulb" class="card-image-corner">
-                <h2>4. Lightning Lyrics</h2>
-                <p>Instantly pull a <strong>Commercial Hook</strong> from the Vault.</p>
-                <button class="game-btn" onclick="runLightning()">Strike Me!</button>
-                <div id="ll-result" class="result-box"></div>
-            </div>
-
-            <div class="game-card">
-                <img src="https://image.pollinations.ai/prompt/vintage%20safe%20dial%20minimalist%20gold%20outline" alt="Safe dial" class="card-image-top-left">
-                <h2>5. Pin Code Unscramble</h2>
-                <p>Unscramble the song title to unlock the vault!</p>
-                <div id="scramble-word" style="font-weight:bold; font-size:1.4rem; text-align:center; margin:15px 0; color:var(--burgundy); letter-spacing:4px;">NPI CDEO</div>
-                <div class="input-group" style="grid-template-columns: 1fr;">
-                    <input type="text" id="pc-guess" placeholder="Enter Title">
-                </div>
-                <button class="game-btn" onclick="runPinCode()">Unlock</button>
-                <div id="pc-result" class="result-box"></div>
-            </div>
-
-            <div class="game-card">
-                <img src="https://image.pollinations.ai/prompt/mood%20board%20palette%20abstract%20cinematic%20colors" alt="Mood board" class="card-image-corner">
-                <h2>6. Mood Board Matcher</h2>
-                <p>Pick a cinematic mood to find your songwriting inspiration.</p>
-                <div class="input-group" style="grid-template-columns: 1fr;">
-                    <select id="mood-select">
-                        <option value="">-- Choose a Mood --</option>
-                        <option value="monstrous">Monstrous & Intense</option>
-                        <option value="lonely">Quiet & Melancholy</option>
-                        <option value="executive">Powerful & Direct</option>
-                        <option value="etched">Ethereal & Timeless</option>
-                    </select>
-                </div>
-                <button class="game-btn" onclick="runMoodMatch()">Find My Vibe</button>
-                <div id="mm-result" class="result-box"></div>
-            </div>
-
-        </div>
-    </main>
-
-    <footer class="site-footer">
-        <p>Cinematic Songwriter &amp; Lyricist @2025 Kellie Larson 児ｸ酬erseandChorus.com 笘趣ｸ760-537-0222 笨会ｸinfo@verseandchorus.com 統 <a href="http://verseandchorus.com/legal.html">Legal</a></p>
-    </footer>
-
-    <script>
-        const songCatalog = [
-            "The Real Dream Team",
-            "Heartbreak and Trouble",
-            "Just A Little Lonely",
-            "Just Too Much",
-            "Fury (I'm the Monster)",
-            "Your Forever Man",
-            "Etched in Every Space",
-            "Sick One (s1c)",
-            "I Know Your Damn Pin Code",
-            "CEO NOT A BABYSITTING TREE"
-        ];
-
-        function showBox(id, text) {
-            const box = document.getElementById(id);
-            box.innerHTML = text;
-            box.style.display = 'block';
-        }
-
-        function runMadlibs() {
-            const adj = document.getElementById('ml-adj').value || "dark";
-            const noun = document.getElementById('ml-noun').value || "secret";
-            const verb = document.getElementById('ml-verb').value || "whispered";
-            const place = document.getElementById('ml-place').value || "shadows";
-            showBox('ml-result', `The ${adj} ${noun} ${verb} through the ${place}, leaving a trail of heartbreak and trouble.`);
-        }
-
-        function runTurnstyle() {
-            const s1 = songCatalog[Math.floor(Math.random() * songCatalog.length)];
-            const s2 = songCatalog[Math.floor(Math.random() * songCatalog.length)];
-            showBox('ts-result', `<strong>Mashup:</strong> ${s1} x ${s2}`);
-        }
-
-        function runScene() {
-            const per = document.getElementById('cs-person').value || "stranger";
-            const pla = document.getElementById('cs-place').value || "empty street";
-            const thi = document.getElementById('cs-thing').value || "rusted key";
-            const moo = document.getElementById('cs-mood').value || "eerie";
-            showBox('cs-result', `The ${per} sat alone in the ${pla}, clutching the ${thi} with a ${moo} intent.`);
-        }
-
-        function runLightning() {
-            const hooks = [
-                "Tearing through the memories like a wildfire in the dark.",
-                "You’re the heartbeat in a silent room.",
-                "I’m the monster in the fury, I’m the shadow in the hall.",
-                "CEO of my own life, not a babysitting tree.",
-                "Heartbreak and trouble, that's all you ever bring."
-            ];
-            showBox('ll-result', `<strong>Vault Hook:</strong> "${hooks[Math.floor(Math.random() * hooks.length)]}"`);
-        }
-
-        function runPinCode() {
-            const guess = document.getElementById('pc-guess').value.toLowerCase();
-            if (guess.includes("pin code")) {
-                showBox('pc-result', "<strong>Access Granted:</strong> I Know Your Damn Pin Code unlocked!");
-            } else {
-                showBox('pc-result', "Incorrect code. Try unscrambling 'NPI CDEO'.");
-            }
-        }
-
-        function runMoodMatch() {
-            const mood = document.getElementById('mood-select').value;
-            let result = "";
-            switch(mood) {
-                case "monstrous": result = "Fury (I'm the Monster)"; break;
-                case "lonely": result = "Just A Little Lonely"; break;
-                case "executive": result = "CEO NOT A BABYSITTING TREE"; break;
-                case "etched": result = "Etched in Every Space"; break;
-                default: result = "Please select a mood!";
-            }
-            showBox('mm-result', `<strong>Your Song:</strong> ${result}`);
-        }
-
-        // Toggle mobile nav menu
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.getElementById('nav-menu').classList.toggle('active');
-        });
-    </script>
-</body>
-</html>
+function unlockVault() {
+  const guess = document.getElementById('pc-guess').value.toLowerCase().trim();
+  const res = document.getElementById('pc-result');
+  if(guess === 'boomerang') {
+    res.innerHTML = "🔓 <b>Access Granted:</b> Redirecting to the hit record...";
+    setTimeout(() => { window.location.href = "how-is-it-feel-bro.html"; }, 1500);
+  } else {
+    res.innerText = "Locked. Hint: It sticks like glue.";
+  }
+}
+</script>
