@@ -1,203 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Room | Songwriter's Playground & Funhouse</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root { --mint: #98fb98; --dark-mint: #3eb489; --black: #000000; --gold: #D4AF37; }
-        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f1f5f9; margin: 0; }
-        .script-font { font-family: 'Dancing Script', cursive; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Green Room | Verse and Chorus</title>
+  <meta name="description" content="Interactive songwriting tools, lyric games, and coupons for professional critiques.">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+  
+  <style>
+    /* --- MERGED STYLES FROM INDEX.HTML & GREEN ROOM --- */
+    
+    /* 1. Global Variables & Reset */
+    :root {
+        --metallic-gold: #D4AF37;
+        --burgundy: #800020;
+        --white: #FFFFFF;
+        --black: #000000;
+        --blue-gray-elegant: #5D6D7E;
+        --mint-green-bg: #DFFFE2; /* Mint Green Background */
+        --card-bg: #1a1a1a;
+    }
 
-        /* HEADER */
-        #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--gold); position: sticky; top:0; z-index:100; }
-        .logo-top-left { width: 90%; max-width: 300px; height: auto; }
-        #nav-menu { display: flex; gap: 12px; flex-wrap: wrap; }
-        #nav-menu a { color: #fff !important; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 10px; letter-spacing: 1px; }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, Arial, sans-serif;
+        background-color: var(--mint-green-bg); /* Mint Green Background Applied */
+        color: #333;
+    }
 
-        /* GRID */
-        .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; padding: 2rem; background: #0b1121; }
-        .game-card { background: #1e293b; border: 1px solid var(--mint); padding: 1.2rem; border-radius: 8px; display: flex; flex-direction: column; }
-        .game-card h2 { color: var(--mint); font-size: 0.9rem; border-bottom: 1px solid #334155; padding-bottom: 8px; margin-bottom: 10px; text-transform: uppercase; font-weight: 800; }
-        
-        .game-btn { background: var(--mint); color: #000; border: none; padding: 10px; width: 100%; font-weight: bold; cursor: pointer; margin-top: 8px; text-transform: uppercase; border-radius: 4px; font-size: 0.75rem; }
-        .game-btn:hover { background: #fff; box-shadow: 0 0 10px var(--mint); }
-        
-        /* THE BIG ANSWER BOXES */
-        .result-box { background: #000; padding: 20px; margin-top: 15px; border-radius: 4px; border-left: 4px solid var(--dark-mint); font-size: 1.1rem; color: #f1f5f9; line-height: 1.6; min-height: 200px; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; }
-        
-        input, select { width: 100%; background: #020617; border: 1px solid #334155; color: #fff; padding: 10px; margin-top: 6px; border-radius: 4px; }
-        
-        .pad-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
-        .pad { height: 45px; background: #064e3b; border: 1px solid var(--mint); cursor: pointer; border-radius: 4px; }
+    a { text-decoration: none; }
 
-        .site-footer { background-color: var(--black); color: #fff; text-align: center; padding: 40px 20px; border-top: 5px solid var(--gold); }
-    </style>
+    /* 2. Header & Nav Layout (Identical to Index) */
+    #main-header {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 10px 20px; 
+        background: var(--black);
+        position: relative;
+        flex-wrap: wrap; 
+    }
+
+    .logo-top-left {
+        width: 90%; 
+        max-width: 300px; 
+        height: auto;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #nav-menu {
+        display: flex;
+        gap: 20px;
+    }
+
+    #nav-menu a {
+        color: var(--white) !important;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: var(--white);
+        transition: all 0.3s ease;
+    }
+
+    /* 3. Green Room Specific Game Styles */
+    .page-header {
+        text-align: center;
+        padding: 3rem 1rem;
+        background: rgba(255,255,255,0.5);
+        margin-bottom: 2rem;
+        border-bottom: 2px solid var(--metallic-gold);
+    }
+
+    .page-header h1 {
+        font-family: 'Brush Script MT', 'Cursive', cursive;
+        font-size: 3.5rem;
+        color: var(--burgundy);
+        margin: 0;
+        text-shadow: 1px 1px 0px #fff;
+    }
+
+    .game-grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+        gap: 2rem; 
+        padding: 0 2rem 2rem 2rem; 
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .game-card { 
+        background: var(--card-bg); 
+        border: 2px solid var(--metallic-gold); 
+        padding: 1.5rem; 
+        border-radius: 8px; 
+        position: relative; 
+        overflow: hidden; 
+        color: white;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .game-card h2 {
+        color: var(--metallic-gold);
+        margin-top: 0;
+        border-bottom: 1px solid #333;
+        padding-bottom: 10px;
+        font-size: 1.4rem;
+    }
+
+    .game-btn { 
+        background: var(--metallic-gold); 
+        color: var(--black); 
+        border: none; 
+        padding: 12px; 
+        font-weight: bold; 
+        cursor: pointer; 
+        margin-top: 15px; 
+        width: 100%; 
+        transition: 0.3s; 
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        border-radius: 4px;
+    }
+
+    .game-btn:hover { 
+        background: var(--burgundy); 
+        color: white; 
+    }
+
+    .result-box { 
+        margin-top: 1rem; 
+        padding: 1rem; 
+        background: #000; 
+        border-left: 4px solid var(--burgundy); 
+        min-height: 45px; 
+        font-style: italic;
+        font-size: 0.9rem;
+        color: #eee;
+    }
+
+    .input-group input { 
+        width: 100%; 
+        padding: 10px; 
+        margin-bottom: 0.5rem; 
+        background: #333; 
+        border: 1px solid #555; 
+        color: var(--metallic-gold); 
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+    /* Mood Mixer */
+    .mood-display { 
+        height: 120px; 
+        margin-bottom: 10px; 
+        transition: background 1.5s ease; 
+        border-radius: 4px; 
+        border: 1px solid #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .mood-controls {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+
+    /* Sequencer */
+    .sequencer-grid { 
+        display: grid; 
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 8px; 
+        margin-top: 10px;
+    }
+    .pad { 
+        background: #333; 
+        height: 60px; 
+        border: 1px solid #444;
+        border-radius: 4px; 
+        cursor: pointer; 
+        transition: 0.1s;
+    }
+    .pad.active { 
+        background: var(--metallic-gold); 
+        box-shadow: 0 0 15px var(--metallic-gold); 
+    }
+
+    /* Ad Section */
+    .promo-section {
+        background: var(--black);
+        color: white;
+        text-align: center;
+        padding: 3rem;
+        margin-top: 3rem;
+        border-top: 5px solid var(--burgundy);
+        border-bottom: 5px solid var(--burgundy);
+    }
+    
+    .promo-content {
+        max-width: 800px;
+        margin: 0 auto;
+        border: 2px dashed var(--metallic-gold);
+        padding: 2rem;
+        border-radius: 10px;
+    }
+
+    /* Footer (Identical to Index) */
+    .site-footer {
+        background-color: var(--black);
+        color: var(--white);
+        text-align: center; 
+        padding: 40px 20px;
+        border-top: 5px solid var(--metallic-gold);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .site-footer p { margin: 5px 0; width: 100%; text-align: center; }
+    .footer-line { border: 0; height: 1px; background: var(--metallic-gold); margin: 20px auto; width: 100%; max-width: 300px; }
+    .footer-links a { color: var(--white); margin: 0 10px; font-weight: bold; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hamburger { display: flex; }
+        #nav-menu {
+            display: none; 
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 100%; 
+            left: 0;
+            background-color: var(--black);
+            padding: 20px 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--metallic-gold);
+        }
+        #nav-menu.active { display: flex; }
+        #nav-menu a { padding: 15px 0; text-align: center; width: 100%; border-bottom: 1px solid #333; }
+    }
+  </style>
 </head>
 <body>
 
-    <header id="main-header">
-        <a href="index.html"><img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Logo" class="logo-top-left" /></a>
-        <nav id="nav-menu">
-          <a href="bio.html">Bio</a><a href="industry-pros.html">Pro</a><a href="lyrics.html">Lyrics</a><a href="articles.html">Articles</a><a href="reports.html">Reports</a><a href="collab.html">Collab</a><a href="green-room.html" style="color:var(--mint) !important;">Green-Room</a><a href="contact.html">Contact</a><a href="legal.html">Legal</a>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header id="main-header">
+    <a href="index.html">
+        <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
+    </a>
+    
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+
+    <nav id="nav-menu">
+      <a href="/bio.html">Bio</a>
+      <a href="/industry-pros.html">Industry Pro</a>
+      <a href="/lyrics.html">Lyrics</a>
+      <a href="/green-room.html">Green Room</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/collab.html">Collab</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/legal.html">Legal</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="page-header">
+      <h1>The Green Room</h1>
+      <p style="font-size: 1.2rem; margin-top: 10px;">Songwriter's Playground & Lyric Games</p>
+    </div>
 
     <div class="game-grid">
-        <div class="game-card">
-            <h2>1. Lyric Labyrinth</h2>
-            <div id="item-counter" class="text-xl font-bold text-mint text-center">Items: 0/3</div>
-            <div class="result-box" id="lab-reward">collect your hidden items from the main catalog to unlock your 10% coupon here.</div>
-            <button class="game-btn" onclick="addLabItem()">Found an Item</button>
-        </div>
+      
+      <!-- GAME 1: Lyric Labyrinth -->
+      <div class="game-card">
+        <h2>1. Lyric Labyrinth</h2>
+        <p>Find hidden icons throughout the song catalog to unlock exclusive demos.</p>
+        <div id="hunt-status" class="result-box">Items collected: 0/3</div>
+        <button class="game-btn" onclick="checkHuntProgress()">Check Inventory</button>
+      </div>
 
-        <div class="game-card">
-            <h2>2. Lyric Landscape</h2>
-            <div class="result-box" id="landscape-res">click below to visualize your next song scene.</div>
-            <button class="game-btn" onclick="genLandscape()">Generate Scene</button>
+      <!-- GAME 2: Mood Mixer (Expanded) -->
+      <div class="game-card">
+        <h2>2. Cinematic Mood Mixer</h2>
+        <p>Set the scene for your next writing session.</p>
+        <div id="mood-bg" class="mood-display" style="background: #222;">Select a Mood</div>
+        <div class="mood-controls">
+            <button class="game-btn" style="margin:0; font-size:0.7rem;" onclick="applyMood('Neon Sunset', 'linear-gradient(45deg, #ff00cc, #333399)')">Neon</button>
+            <button class="game-btn" style="margin:0; font-size:0.7rem;" onclick="applyMood('Noir Rain', 'linear-gradient(to bottom, #000000, #434343)')">Noir</button>
+            <button class="game-btn" style="margin:0; font-size:0.7rem;" onclick="applyMood('Chase', 'linear-gradient(90deg, #800020, #000000)')">Chase</button>
+            <button class="game-btn" style="margin:0; font-size:0.7rem;" onclick="applyMood('Forest', 'linear-gradient(to bottom, #134E5E, #71B280)')">Forest</button>
+            <button class="game-btn" style="margin:0; font-size:0.7rem;" onclick="applyMood('Ocean', 'linear-gradient(to top, #00c6ff, #0072ff)')">Ocean</button>
+            <button class="game-btn" style="margin:0; font-size:0.7rem;" onclick="applyMood('Desert', 'linear-gradient(to right, #f12711, #f5af19)')">Desert</button>
         </div>
+      </div>
 
-        <div class="game-card">
-            <h2>3. Lyric Master Quiz</h2>
-            <p class="text-[10px] text-center italic">"i am boomeranging it back and like glue it ____."</p>
-            <div id="quiz-res" class="result-box">awaiting your choice...</div>
-            <div class="flex gap-2"><button class="game-btn" onclick="quiz('sticks')">sticks</button><button class="game-btn" onclick="quiz('clicks')">clicks</button></div>
+      <!-- GAME 3: Madlibs (Expanded) -->
+      <div class="game-card">
+        <h2>3. Madlibs Lyricist</h2>
+        <p>Complete the line from the Verse and Chorus catalog.</p>
+        <p id="quiz-question" style="font-style: italic; color: var(--metallic-gold); min-height: 50px;">"i am boomeranging it back and like glue it ____."</p>
+        
+        <div id="quiz-options" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <button class="game-btn" onclick="submitQuiz('sticks')">sticks</button>
+            <button class="game-btn" onclick="submitQuiz('clicks')">clicks</button>
         </div>
+        <div id="quiz-feedback" class="result-box"></div>
+        <button class="game-btn" style="background: #333; color: #fff; margin-top:5px;" onclick="nextQuestion()">Next Question</button>
+      </div>
 
-        <div class="game-card">
-            <h2>4. 3x3 Studio Sequencer</h2>
-            <div class="pad-grid">
-                <div class="pad" onclick="playSnd('C2')"></div><div class="pad" onclick="playSnd('D2')"></div><div class="pad" onclick="playSnd('E2')"></div>
-                <div class="pad" onclick="playSnd('F2')"></div><div class="pad" onclick="playSnd('G2')"></div><div class="pad" onclick="playSnd('A2')"></div>
-                <div class="pad" onclick="playSnd('B2')"></div><div class="pad" onclick="playSnd('C3')"></div><div class="pad" onclick="playSnd('D3')"></div>
-            </div>
-            <div class="result-box" style="min-height: 80px; margin-top: 10px; font-size: 0.8rem;">tap to trigger cinematic synthesizer swells.</div>
+      <!-- GAME 4: Sequencer -->
+      <div class="game-card">
+        <h2>4. Chord Pad Sequencer</h2>
+        <p>Trigger cinematic synth swells.</p>
+        <div class="sequencer-grid">
+          <div class="pad" onclick="triggerNote(this, 'C3')"></div>
+          <div class="pad" onclick="triggerNote(this, 'Eb3')"></div>
+          <div class="pad" onclick="triggerNote(this, 'G3')"></div>
+          <div class="pad" onclick="triggerNote(this, 'Bb3')"></div>
         </div>
+        <p style="font-size:0.8rem; opacity:0.7; margin-top:10px;">*Audio requires user interaction first.</p>
+      </div>
 
-        <div class="game-card">
-            <h2>5. Mix Balance Simulator</h2>
-            <label class="text-[9px]">VOCALS</label><input type="range" class="accent-mint">
-            <label class="text-[9px]">CINEMATIC DRUMS</label><input type="range" class="accent-mint">
-            <div class="result-box" id="mix-status" style="min-height: 80px; margin-top: 10px;">stems are currently unaligned.</div>
-            <button class="game-btn" onclick="document.getElementById('mix-status').innerText = 'Mix Locked for Master.'">Lock Stems</button>
+      <!-- GAME 5: Unscramble (10% Coupon) -->
+      <div class="game-card" style="border-color: #aaa;">
+        <h2>5. Quick Scramble</h2>
+        <p>Unscramble this common lyric word for a reward.</p>
+        <p style="text-align:center; font-size: 1.5rem; letter-spacing: 3px; font-family: monospace;">RHYMTH</p>
+        <div class="input-group">
+          <input type="text" id="scramble-guess" placeholder="Answer here...">
         </div>
+        <button class="game-btn" onclick="checkScramble()">Check Answer</button>
+        <div id="scramble-status" class="result-box"></div>
+      </div>
 
-        <div class="game-card">
-            <h2>6. Word Vault Unscramble</h2>
-            <div id="v2-res" class="result-box">
-                <div class="text-[10px] uppercase text-gray-500 mb-4 tracking-tighter">unscramble this word:</div>
-                <div id="scramble-hint" class="text-3xl font-bold text-mint tracking-[10px]"></div>
-                <div class="text-xs mt-6 text-gray-600" id="lvl-track">Level: 1/5</div>
-            </div>
-            <input type="text" id="v2-input" placeholder="enter unscrambled word">
-            <button class="game-btn" onclick="unlockV2()">Verify Word</button>
+      <!-- GAME 6: The Vault (25% Coupon) -->
+      <div class="game-card" style="border: 3px solid var(--burgundy);">
+        <h2 style="color: var(--burgundy); background: black; padding: 5px;">6. THE MASTER VAULT</h2>
+        <p>Guess the correct song title to unlock the 25% OFF Code.</p>
+        <p style="font-family: monospace; text-align: center; color: var(--metallic-gold); letter-spacing: 2px;">
+            HINT: CEO...
+        </p>
+        <div class="input-group">
+          <input type="text" id="vault-guess" placeholder="CEO NOT...">
         </div>
+        <button class="game-btn" style="background: var(--burgundy); color: white;" onclick="attemptVaultUnlock()">UNLOCK 25% OFF</button>
+        <div id="vault-status" class="result-box"></div>
+      </div>
 
-        <div class="game-card">
-            <h2>7. The Exclusive Vault</h2>
-            <div id="master-res" class="result-box">vault status: restricted</div>
-            <input type="text" id="master-pass" placeholder="master password">
-            <button class="game-btn" onclick="checkMaster()">Access Vault</button>
-        </div>
+    </div>
 
-        <div class="game-card">
-            <h2>8. Lyric Cartographer</h2>
-            <select id="map-select">
-                <option value="london">Victorian London Fog</option>
-                <option value="desert">High Desert Standoff</option>
-                <option value="bayou">The Sunken Bayou</option>
-                <option value="neon">Neon Rain Alleyway</option>
-                <option value="station">Forgotten Space Station</option>
-                <option value="valley">The Silent Dust Valley</option>
-            </select>
-            <div id="map-res" class="result-box">choose a setting to scout for lyrics...</div>
-            <button class="game-btn" onclick="runMap()">Scout Location</button>
-        </div>
-
-        <div class="game-card">
-            <h2>9. Rhythm Racer</h2>
-            <div class="text-center text-2xl my-2">📸</div>
-            <div id="racer-res" class="result-box">tap to stay at 120 bpm.</div>
-            <button class="game-btn" onmousedown="tapBeat()">Capture Beat</button>
-        </div>
-
-        <div class="game-card">
-            <h2>10. Lyric Mad Libs</h2>
-            <select id="lib-song">
-                <option value="mary">Mary & Dan</option>
-                <option value="bro">How Is It Feel Bro</option>
-                <option value="sick">SICK ONE</option>
-            </select>
-            <input type="text" id="lib-noun" placeholder="noun (weapon/object)">
-            <input type="text" id="lib-adj" placeholder="adjective (feeling)">
-            <button class="game-btn" onclick="runLib()">Generate Lyric</button>
-            <div id="lib-res" class="result-box">awaiting your input...</div>
+    <!-- AD SECTION -->
+    <div class="promo-section">
+        <div class="promo-content">
+            <h2 style="color: var(--metallic-gold); font-family: 'Brush Script MT', cursive; font-size: 3rem;">Need Professional Eyes?</h2>
+            <h3 style="margin: 10px 0;">Lyric Reviews & Critiques</h3>
+            <p>Don't send your songs to A&R until they are polished. Use your <strong>Green Room coupons</strong> to get detailed feedback from Kellie Larson.</p>
+            <a href="/reports.html" class="game-btn" style="display: inline-block; width: auto; padding: 15px 30px; margin-top: 20px; text-decoration: none;">Book a Lyric Review</a>
         </div>
     </div>
 
-    <footer class="site-footer">
-        <p class="script-font text-2xl mb-2">Kellie Larson</p>
-        <p>Kellie Larson - VerseandChorus.com Cinematic Songwriter and Lyricist - @ 2024 Kellie Larson. All rights reserved. info@VerseandChorus.com - 760-420-4553 - 200 S. Emerald Drive Spc 37, Vista, CA 92081</p>
-    </footer>
+  </main>
 
-    <script>
-        let items = 0;
-        function addLabItem() {
-            if(items < 3) items++;
-            document.getElementById('item-counter').innerText = `Items: ${items}/3`;
-            if(items === 3) document.getElementById('lab-reward').innerHTML = "🔓 <b>UNLOCKED!</b><br>Use code: <b>SONGWRITER10</b> for 10% off.";
+  <button onclick="topFunction()" id="scroll-to-top-btn" title="Go to top" style="display:none;">⬆️</button>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>♥️ Kellie Larson ♥️</p>
+    <p>✍️ Cinematic Songwriter & Lyricist 🎹</p>
+    <p>🧑‍🎤 www.VerseandChorus.com 🎙️</p>
+    <p>© 2024 Kellie Larson. All Rights Reserved.</p>
+    <p>✉️ info@verseandchorus.com 📨</p>
+    <p>☎️ 760-420-4553 📲</p>
+    <p>200 S. Emerald Drive Spc 37, Vista, CA 92081</p>
+    <hr class="footer-line">
+    <div class="footer-links">
+        <a href="contact.html">Contact</a> | <a href="legal.html">Legal</a>
+    </div>
+  </footer>
+
+  <script>
+    // --- NAV LOGIC ---
+    function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('active'); 
+    }
+
+    // --- GAME 2: MOOD MIXER ---
+    function applyMood(name, cssValue) {
+        const display = document.getElementById('mood-bg');
+        display.style.background = cssValue;
+        display.innerText = name;
+        display.style.color = '#fff';
+    }
+
+    // --- GAME 3: MADLIBS LOGIC ---
+    const questions = [
+        { q: "\"i am boomeranging it back and like glue it ____.\"", a: "sticks", options: ["sticks", "clicks"] },
+        { q: "\"The neon lights are ____ on the wet pavement.\"", a: "dancing", options: ["dancing", "fading"] },
+        { q: "\"Whispers in the dark, a secret ____ told.\"", a: "never", options: ["never", "always"] }
+    ];
+    let currentQIndex = 0;
+
+    function loadQuestion() {
+        const qData = questions[currentQIndex];
+        document.getElementById('quiz-question').innerText = qData.q;
+        const btnContainer = document.getElementById('quiz-options');
+        btnContainer.innerHTML = '';
+        qData.options.forEach(opt => {
+            btnContainer.innerHTML += `<button class="game-btn" onclick="submitQuiz('${opt}')">${opt}</button>`;
+        });
+        document.getElementById('quiz-feedback').innerHTML = '';
+    }
+
+    function submitQuiz(answer) {
+        const feedback = document.getElementById('quiz-feedback');
+        if (answer === questions[currentQIndex].a) {
+            feedback.innerHTML = "<span style='color:lightgreen'>✅ Correct!</span>";
+        } else {
+            feedback.innerHTML = "<span style='color:red'>❌ Try again.</span>";
         }
+    }
 
-        function genLandscape() {
-            const l = ["A broken piano in a flooded ballroom", "A single flickering light in a desert motel", "A shadow of a bird on a concrete wall", "Rain hitting the windshield of a stolen car"];
-            document.getElementById('landscape-res').innerText = l[Math.floor(Math.random()*l.length)];
+    function nextQuestion() {
+        currentQIndex = (currentQIndex + 1) % questions.length;
+        loadQuestion();
+    }
+    
+    // Initialize Quiz
+    loadQuestion();
+
+
+    // --- GAME 4: AUDIO ---
+    const polySynth = new Tone.PolySynth(Tone.Synth).toDestination();
+    polySynth.set({ oscillator: { type: "sine" }, envelope: { attack: 0.5, release: 1 } });
+
+    function triggerNote(el, note) {
+        Tone.start();
+        polySynth.triggerAttackRelease(note, "2n");
+        el.classList.add('active');
+        setTimeout(() => el.classList.remove('active'), 300);
+    }
+
+    // --- GAME 5: 10% COUPON ---
+    function checkScramble() {
+        const val = document.getElementById('scramble-guess').value.toLowerCase().trim();
+        const res = document.getElementById('scramble-status');
+        if (val === 'rhythm') {
+            res.innerHTML = "🎉 <b>Correct!</b><br>Use Code: <span style='color:var(--metallic-gold); font-size:1.2rem;'>LYRIC10</span> for 10% Off Reports.";
+        } else {
+            res.innerHTML = "❌ Hint: It keeps the beat.";
         }
+    }
 
-        function quiz(ans) { document.getElementById('quiz-res').innerText = ans === 'sticks' ? "Correct! like glue it sticks." : "Try again."; }
-
-        const lvls = [{w:"sticks", h:"KSTCIS"}, {w:"bayou", h:"UYOAB"}, {w:"nefarious", h:"SURAIFONE"}, {w:"ephemeral", h:"LAREMEPHE"}, {w:"concrete", h:"NCRETECO"}];
-        let cur = 0;
-        function initV2() { document.getElementById('scramble-hint').innerText = lvls[cur].h; document.getElementById('lvl-track').innerText = `Level: ${cur+1}/5`; }
-        function unlockV2() {
-            if(document.getElementById('v2-input').value.toLowerCase().trim() === lvls[cur].w) {
-                cur++;
-                if(cur < 5) { document.getElementById('v2-input').value = ""; initV2(); }
-                else document.getElementById('v2-res').innerHTML = "🏆 <b>MASTER LYRICIST!</b><br>Use code: <b>MASTERLYRICIST25</b> for 25% off a Critique.";
-            }
+    // --- GAME 6: 25% COUPON (VAULT) ---
+    function attemptVaultUnlock() {
+        const val = document.getElementById('vault-guess').value.toLowerCase().trim();
+        const res = document.getElementById('vault-status');
+        // Answer: CEO NOT BABYSITTING TREE
+        if (val === 'ceo not babysitting tree') {
+            res.innerHTML = "🔓 <b>VAULT UNLOCKED!</b><br>Use Code: <span style='color:var(--metallic-gold); font-size:1.2rem;'>VAULT25</span> for 25% Off!";
+            res.style.borderLeftColor = "lightgreen";
+        } else {
+            res.innerHTML = "🔒 <b>ACCESS DENIED</b><br>Incorrect Title.";
+            res.style.color = "red";
         }
+    }
 
-        function checkMaster() {
-            if(document.getElementById('master-pass').value === "CEO Not Babysitting Tree") document.getElementById('master-res').innerHTML = "🔓 <b>VAULT OPEN.</b><br>Loading 'CEO Not a Babysitting Tree' demo...";
-            else document.getElementById('master-res').innerText = "access denied.";
-        }
-
-        function runMap() {
-            const s = { london: "Fog on the cobblestones. The story begins in the dark.", desert: "High noon standoff. The Colt .22 is ready.", bayou: "Moss in the water. It knows your name.", neon: "Pink light on wet asphalt.", station: "Oxygen levels at 2%. Silence in the hull.", valley: "Dust in your throat. The valley is silent." };
-            document.getElementById('map-res').innerText = s[document.getElementById('map-select').value];
-        }
-
-        let last = 0, score = 0;
-        function tapBeat() {
-            const now = Date.now();
-            if (Math.abs((now - last) - 500) < 80) score++; else score = 0;
-            last = now;
-            document.getElementById('racer-res').innerText = `score: ${score}/5`;
-        }
-
-        function runLib() {
-            const n = document.getElementById('lib-noun').value || "item";
-            const a = document.getElementById('lib-adj').value || "strange";
-            const s = document.getElementById('lib-song').value;
-            if(s==='mary') document.getElementById('lib-res').innerText = `Mary pulled out her daddy's ${n} and looked ${a}.`;
-            else if(s==='bro') document.getElementById('lib-res').innerText = `how is it feel bro, to be so ${a} with your ${n}?`;
-            else if(s==='sick') document.getElementById('lib-res').innerText = `it's a sick one, a ${a} ${n} that never ends.`;
-        }
-
-        function playSnd(n) { const s = new Tone.Synth().toDestination(); s.triggerAttackRelease(n, "4n"); }
-        window.onload = initV2;
-    </script>
+    // --- SCAVENGER HUNT ---
+    function checkHuntProgress() {
+        const found = JSON.parse(localStorage.getItem('vc_items')) || [];
+        const status = document.getElementById('hunt-status');
+        status.innerText = `Items collected: ${found.length}/3`;
+        if (found.length === 0) alert("Look for hidden icons on other pages!");
+    }
+  </script>
 </body>
 </html>
