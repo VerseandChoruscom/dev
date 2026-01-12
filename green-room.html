@@ -1,26 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Green Room | Verse and Chorus</title>
+  <style>
+    :root { --mint: #98fb98; --dark-mint: #3eb489; --bg: #121212; --card: #1e1e1e; }
+    body { background-color: #f5fffa; color: #fff; font-family: 'Georgia', serif; margin: 0; }
+    
+    /* HAM NAV */
+    .ham-nav { background: #000; padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--mint); position: sticky; top: 0; z-index: 100; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { color: var(--mint); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+
+    .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; padding: 2rem; background: var(--bg); }
+    .game-card { background: var(--card); border: 2px solid var(--mint); padding: 1.5rem; border-radius: 8px; }
+    .game-card h2 { color: var(--mint); font-family: sans-serif; font-size: 1.1rem; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 0; }
+    
+    .game-btn { background: var(--mint); color: #000; border: none; padding: 10px; width: 100%; font-weight: bold; cursor: pointer; margin-top: 10px; text-transform: uppercase; }
+    .result-box { background: #000; padding: 15px; margin-top: 10px; border-radius: 4px; border-left: 3px solid var(--dark-mint); min-height: 40px; font-size: 0.85rem; color: #ddd; white-space: pre-line; }
+
+    /* CHORD PAD 3 ROWS */
+    .pad-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+    .pad { height: 45px; border-radius: 4px; cursor: pointer; border: 1px solid #444; transition: 0.1s; }
+    .row-1 { background: #2d5a27; } .row-2 { background: #3eb489; } .row-3 { background: #98fb98; }
+    .pad:active { filter: brightness(1.5); box-shadow: 0 0 15px var(--mint); }
+  </style>
+</head>
+<body>
+
 <nav class="ham-nav">
-    <div style="font-weight: bold; color: var(--mint);">V&C</div>
+    <div style="font-weight: bold; color: var(--mint); letter-spacing: 2px;">V&C</div>
     <div class="nav-links">
         <a href="index.html">home</a>
-        <a href="bio.html">bio</a> <a href="catalog.html">songs</a>
+        <a href="bio.html">bio</a>
+        <a href="catalog.html">songs</a>
         <a href="#contact">contact</a>
     </div>
 </nav>
 
-<div class="game-card" style="background: linear-gradient(145deg, #1e1e1e, #2d5a27); border: 3px solid var(--mint);">
-    <h2 style="color: #fff;">Need a Second Set of Eyes?</h2>
-    <p style="color: var(--mint); font-family: sans-serif; font-weight: bold;">Professional Lyric Critique</p>
-    <p>I will dive deep into your narrative, rhythm, and cinematic impact to help you find the 'fury' in your writing.</p>
-    <a href="lyric-critique.html" class="game-btn" style="display: block; text-align: center; text-decoration: none;">GET MY CRITIQUE</a>
+<header style="text-align:center; padding: 2rem; background: #000; border-bottom: 1px solid #222;">
+    <h1 style="color: var(--mint); letter-spacing: 8px; margin: 0; font-size: 1.5rem;">THE GREEN ROOM</h1>
+    <p style="color: #666; text-transform: uppercase; font-size: 0.6rem; margin-top: 10px;">interactive cinematic vault</p>
+</header>
+
+<div class="game-grid">
+  <div class="game-card">
+    <h2>1. Bloodline Bridge</h2>
+    <p>select your heritage for a bridge lyric.</p>
+    <div style="display: flex; gap: 5px;">
+        <button class="game-btn" onclick="buildBridge('scotland')">scotland</button>
+        <button class="game-btn" onclick="buildBridge('duarte')">california</button>
+    </div>
+    <div id="bridge-res" class="result-box">awaiting ancestry...</div>
+  </div>
+
+  <div class="game-card">
+    <h2>2. Rhythm Racer</h2>
+    <p>tap to the 120 bpm beat.</p>
+    <div style="text-align: center; font-size: 1.5rem; margin: 5px 0;" id="racer-icon">📸</div>
+    <button class="game-btn" onmousedown="tapBeat()">capture the frame</button>
+    <div id="racer-res" class="result-box">score: 0/5 perfect taps</div>
+  </div>
+
+  <div class="game-card">
+    <h2>4. Lightning Lyrics</h2>
+    <p>strike the vault for a verse from the mary and dan story.</p>
+    <button class="game-btn" onclick="runLightning()">strike the vault</button>
+    <div id="ll-res" class="result-box">...</div>
+  </div>
+
+  <div class="game-card">
+    <h2>5. Scramble Vault</h2>
+    <p id="scramble-hint" style="color: var(--mint); font-weight: bold; letter-spacing: 2px;"></p>
+    <input type="text" id="pc-input" placeholder="unscramble" style="width:90%; background:#000; border:1px solid var(--mint); color:white; padding:10px;">
+    <button class="game-btn" onclick="runUnlock()">verify</button>
+    <div id="pc-res" class="result-box">status: locked</div>
+  </div>
+
+  <div class="game-card">
+    <h2>9. Sound Sequencer</h2>
+    <div class="pad-grid">
+      <div class="pad row-1" onclick="playSnd('C2')"></div><div class="pad row-1" onclick="playSnd('D2')"></div><div class="pad row-1" onclick="playSnd('E2')"></div><div class="pad row-1" onclick="playSnd('F2')"></div>
+      <div class="pad row-2" onclick="playSnd('C3')"></div><div class="pad row-2" onclick="playSnd('D3')"></div><div class="pad row-2" onclick="playSnd('E3')"></div><div class="pad row-2" onclick="playSnd('F3')"></div>
+      <div class="pad row-3" onclick="playSnd('C4')"></div><div class="pad row-3" onclick="playSnd('D4')"></div><div class="pad row-3" onclick="playSnd('E4')"></div><div class="pad row-3" onclick="playSnd('F4')"></div>
+    </div>
+  </div>
+
+  <div class="game-card" style="background: linear-gradient(145deg, #1e1e1e, #2d5a27);">
+    <h2>Lyric Critique</h2>
+    <p>Get a professional narrative breakdown of your songs.</p>
+    <a href="lyric-critique.html" class="game-btn" style="text-decoration:none; display:block; text-align:center;">explore service</a>
+  </div>
+
+  <div id="contact" class="game-card">
+    <h2>Secure Drop</h2>
+    <input type="text" placeholder="name" style="width:90%; background:#000; border:1px solid #444; color:#fff; padding:8px; margin-bottom:5px;">
+    <textarea placeholder="message" style="width:90%; background:#000; border:1px solid #444; color:#fff; padding:8px;"></textarea>
+    <button class="game-btn">send to vault</button>
+  </div>
 </div>
 
-<div id="contact" class="game-card">
-    <h2>The Secure Drop</h2>
-    <p>for sync licensing, collaborations, or custom songwriting inquiries.</p>
-    <form style="display: flex; flex-direction: column; gap: 10px;">
-        <input type="text" placeholder="your name" style="padding: 10px; background: #000; border: 1px solid var(--dark-mint); color: #fff;">
-        <input type="email" placeholder="your email" style="padding: 10px; background: #000; border: 1px solid var(--dark-mint); color: #fff;">
-        <textarea placeholder="your message" rows="4" style="padding: 10px; background: #000; border: 1px solid var(--dark-mint); color: #fff;"></textarea>
-        <button type="submit" class="game-btn">SEND TO THE VAULT</button>
-    </form>
-</div>
+<script>
+// WORD VAULT LOGIC
+const words = ["mallelfous", "nefarious", "amsterdam", "bayou", "ephemeral"];
+let currentWord = "";
+function initScramble() {
+    currentWord = words[Math.floor(Math.random()*words.length)];
+    document.getElementById('scramble-hint').innerText = currentWord.split('').sort(() => 0.5 - Math.random()).join('').toUpperCase();
+}
+
+// BRIDGE LOGIC
+function buildBridge(type) {
+    const res = document.getElementById('bridge-res');
+    res.innerText = type === 'scotland' ? "I am the son of the spear from the isle of mull\nWhere the ancient tides make the voices go dull" : "From the groves of the valley to the california dust\nIn the steel of the weapon is the only one I trust";
+}
+
+// RHYTHM LOGIC
+let lastTap = 0, score = 0;
+function tapBeat() {
+    const now = Date.now();
+    if (Math.abs(now - lastTap - 500) < 100) score++; else score = 0;
+    lastTap = now;
+    document.getElementById('racer-res').innerText = `score: ${score}/5 perfect taps`;
+    if(score >= 5) document.getElementById('racer-res').innerText = "RHYTHM SYNCED";
+}
+
+// LIGHTNING LYRICS
+function runLightning() {
+    const ly = "Mary pulled out what her Daddy gave her a big ole Colt .22\nDan dropped his beer placed that hand to shield his little man\nHe thought he was safe in his selfish desire\nBut her cold justice set the whole damn scene on fire";
+    document.getElementById('ll-res').innerText = ly;
+}
+
+function runUnlock() {
+    if(document.getElementById('pc-input').value.toLowerCase() === currentWord) {
+        document.getElementById('pc-res').innerText = "🔓 authorized";
+        initScramble();
+    } else document.getElementById('pc-res').innerText = "denied";
+}
+
+window.onload = initScramble;
+</script>
+
+<footer style="text-align:center; padding:2rem; font-size: 0.65rem; color: #444; background:#000;">
+    Kellie Larson - VerseandChorus.com Cinematic Songwriter and Lyricist - @ 2024 Kellie Larson. All rights reserved. info@VerseandChorus.com - 760-420-4553 - 200 S. Emerald Drive Spc 37, Vista, CA 92081
+</footer>
+</body>
+</html>
