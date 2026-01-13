@@ -1,34 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-  @media print { .page-break { page-break-after: always; } }
-  body { font-family: Arial, sans-serif; line-height: 1.0; color: #000; margin: 40px; }
-  .song-title { font-weight: bold; font-size: 1.4em; text-transform: uppercase; margin-bottom: 1.0em; display: block; }
-  .song-label { font-weight: bold; margin-top: 0.5em; margin-bottom: 0; display: block; }
-  .lyric-line { margin: 0; padding: 0; display: block; }
-  .category { font-weight: bold; }
-  .footer { position: fixed; bottom: 20px; width: 100%; font-size: 0.8em; border-top: 1px solid #ccc; padding-top: 5px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access THE VAULT by Kellie Larson: A curated portfolio of 46 cinematic lyrics. 100% human-authored, pre-cleared for 2026 sync licensing.">
+    <title>Industry Pro's | VerseandChorus.com</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root { 
+            --metallic-gold: #D4AF37; 
+            --white: #FFFFFF; 
+            --black: #000000; 
+            --sunset-orange: #FD5E53; 
+            --blue-gray: #64748b; 
+            --burgundy: #800020; 
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--black); margin: 0; }
+        .content-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        
+        /* HEADER & NAVIGATION */
+        #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); }
+        .logo-top-left { width: 300px; height: auto; }
+        #nav-menu { display: flex; align-items: center; }
+        #nav-menu a { color: var(--white); font-weight: bold; font-size: 12px; text-transform: uppercase; margin-left: 20px; text-decoration: none; transition: color 0.3s; }
+        #nav-menu a:hover { color: var(--sunset-orange); }
+
+        /* HERO BOX - GOLD SCRIPT & WHITE */
+        .hero-box { text-align: center; padding: 60px 20px; border-bottom: 5px solid var(--metallic-gold); background: var(--black); }
+        .presents-text { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 3.5rem; line-height: 1; margin-bottom: 10px; }
+        .page-name { color: var(--white); font-size: 4.5rem; font-weight: 800; text-transform: uppercase; }
+
+        /* PILLAR BUTTONS - ORANGE ON CLICK */
+        .pillar-btn { background: var(--white); color: var(--black); border: 2px solid var(--black); border-radius: 4px; font-size: 0.8rem; font-weight: 900; text-align: center; cursor: pointer; text-transform: uppercase; padding: 20px 10px; transition: all 0.3s ease; height: 75px; display: flex; align-items: center; justify-content: center; width: 100%; }
+        .pillar-btn:hover, .pillar-btn.active { background: var(--sunset-orange) !important; color: var(--white) !important; border-color: var(--sunset-orange) !important; }
+
+        /* LEGAL TERMS */
+        .legal-term { color: var(--white); font-size: 10px; font-weight: 800; text-transform: uppercase; display: flex; align-items: center; gap: 4px; }
+        .checkmark { color: var(--burgundy); font-size: 14px; font-weight: bold; }
+
+        /* VAULT LIST */
+        .vault-select { background-color: var(--black); border: 1px solid var(--blue-gray); color: white; padding: 10px; border-radius: 4px; width: 100%; cursor: pointer; font-size: 0.75rem; text-transform: uppercase; }
+        .vault-row { display: grid; grid-template-columns: 2.5fr 0.5fr 1.5fr 1.5fr 1fr 1fr; gap: 15px; align-items: center; padding: 15px; border-bottom: 1px solid rgba(0, 0, 0, 0.1); background: #f9fafb; margin-bottom: 8px; border-radius: 8px; }
+        
+        /* LINKS & BUTTONS */
+        .song-title-link { color: var(--metallic-gold); font-weight: 800; text-decoration: none; text-transform: uppercase; font-size: 0.875rem; transition: color 0.3s; }
+        .song-title-link:hover { color: var(--sunset-orange); }
+        .vault-btn { background: var(--metallic-gold); color: var(--black); font-weight: 900; padding: 8px 12px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; border: none; text-align: center; transition: 0.3s; text-decoration: none; }
+        .vault-btn:hover { background: var(--sunset-orange); color: var(--white); }
+        .print-btn { background: transparent; border: 1px solid var(--sunset-orange); color: var(--sunset-orange); font-weight: 900; padding: 8px 12px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; }
+
+        /* FOOTER */
+        .site-footer { text-align: center; padding: 40px 20px; background: var(--black); color: var(--white); border-top: 2px solid var(--metallic-gold); }
+        
+        /* SUNSET ORANGE ARROW */
+        #arrow-up { position: fixed; bottom: 30px; right: 30px; color: var(--sunset-orange); font-size: 3.5rem; cursor: pointer; background: none; border: none; z-index: 1000; }
+    </style>
 </head>
 <body>
 
-<div class="page-break">
-  <div class="song-title">CEO NOT BABYSITTING TREE</div>
-  <p><span class="category">Description:</span> Sassy boss anthem about high standards.</p>
-  <p><span class="category">Placement:</span> Lifestyle and empowerment sync placements.</p>
-  
-  <div class="song-label">Verse 1</div>
-  <div class="lyric-line">I don't need a boy who needs a map to find his own way home. I need a man with a vision and a throne. Not a little boy who still needs his mama's hand. I'm a queen in my castle ruling over my land. You're looking for a babysitter well that's not me. I'm a CEO and I'm growing my own tree. Not interested in your excuses or your little games. I've got a list of winners and I'm crossing off your names. I need a man who can handle a boss like me. Not a boy who's scared of what he can't be. Someone with a plan and a fire in his soul. Someone who knows how to take control. I need a man who can stand on his own two feet. A man who's strong and won't accept defeat. Not a boy who's looking for a place to hide. I need a man with a sensual sweet heat.</div>
+    <header id="main-header">
+        <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left">
+        <nav id="nav-menu">
+          <a href="/bio.html">Spotlight</a>
+          <a href="/industry-pros.html">Industry Pro</a>
+          <a href="/lyrics.html">Lyrics</a>
+          <a href="/green-room.html">Green Room</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+    </header>
 
-  <div class="footer">Kellie Larson - VerseandChorus.com Cinematic Songwriter and Lyricist - @ 2024 Kellie Larson. All rights reserved. info@VerseandChorus.com - 760-420-4553 - 200 S. Emerald Drive Spc 37, Vista, CA 92081.</div>
-</div>
-
-<div>
-  <div class="song-title">CEO NOT BABYSITTING TREE</div>
-
-  <div class="song-label">Verse 1</div>
-  <div class="lyric-line">I don't need a boy who needs a map to find his own way home</div>
-  <div class="lyric-line">I need a man with a vision and a throne</div>
-  <div class="lyric-line">Not a little boy who still needs his mama's hand</div>
-  <div class="lyric-line">I'
+    <div class="hero-box">
+        <div class="presents-text">VerseandChorus.com Presents</div>
+        <h1 class="page-name">Industry Pro's</h1>
