@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Access THE VAULT by Kellie Larson: A curated portfolio of 47 cinematic lyrics. 100% human-authored, pre-cleared for 2026 sync licensing. Specialized A&R filters for Music Supervisors searching via AI for high-impact film, TV, and commercial placements. One-stop shop for professional songwriting IP.">
-    <meta name="keywords" content="Kellie Larson, Cinematic Songwriter, THE VAULT, Sync Licensing 2026, Human-Authored Music, A&R AI Search, Music Supervisor IP, Pre-cleared 1-Stop Licensing, Cinematic RnB, Modern Rock Sync, Country Dance Sync, Narrative Lyric Portfolio, AI Searchable Song Metadata">
-    <title>THE VAULT | Industry Pro A&R Search | Kellie Larson</title>
+    <meta name="description" content="Access THE VAULT by Kellie Larson: A curated portfolio of 46 cinematic lyrics. 100% human-authored, pre-cleared for 2026 sync licensing.">
+    <title>Industry Pro's | VerseandChorus.com</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
@@ -19,47 +18,45 @@
             --blue-gray: #64748b; 
             --burgundy: #800020; 
         }
-        /* Background changed to White, Blue removed except for Blue-Gray */
-        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--black); }
+        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--black); margin: 0; }
         .content-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
         
-        /* HEADER & HERO */
+        /* HEADER & NAVIGATION */
         #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); }
         .logo-top-left { width: 300px; height: auto; }
-        #nav-menu a { color: var(--white) !important; font-weight: bold; font-size: 12px; text-transform: uppercase; margin-left: 20px; }
-        
+        #nav-menu { display: flex; align-items: center; }
+        #nav-menu a { color: var(--white); font-weight: bold; font-size: 12px; text-transform: uppercase; margin-left: 20px; text-decoration: none; transition: color 0.3s; }
+        #nav-menu a:hover { color: var(--sunset-orange); }
+
+        /* HERO BOX - GOLD SCRIPT & WHITE SUBTITLE */
         .hero-box { text-align: center; padding: 60px 20px; border-bottom: 5px solid var(--metallic-gold); background: var(--black); }
-        
-        /* BRANDING: BURGUNDY INTRO & GOLD SCRIPT VAULT */
-        .presents-text { color: var(--burgundy); font-weight: 800; text-transform: uppercase; font-size: 1.2rem; letter-spacing: 2px; }
-        .vault-script { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 5.5rem; line-height: 1; margin: 10px 0; }
-        .vault-subline { color: var(--white); font-size: 1rem; font-weight: 400; max-width: 800px; margin: 0 auto; opacity: 0.9; }
+        .presents-text { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 3.5rem; line-height: 1; margin-bottom: 10px; }
+        .page-name { color: var(--white); font-size: 4.5rem; font-weight: 800; text-transform: uppercase; }
 
-        /* PILLAR BUTTONS - WHITE BOX, BLACK WRITING, TALLER */
-        .pillar-btn { background: var(--white); color: var(--black); border: 2px solid var(--black); border-radius: 4px; font-size: 0.8rem; font-weight: 900; text-align: center; cursor: pointer; text-transform: uppercase; padding: 20px 10px; transition: all 0.3s ease; height: 75px; display: flex; align-items: center; justify-content: center; }
-        .pillar-btn:hover { background: var(--black); color: var(--white); border-color: var(--metallic-gold); }
+        /* PILLAR BUTTONS - ORANGE ON CLICK */
+        .pillar-btn { background: var(--white); color: var(--black); border: 2px solid var(--black); border-radius: 4px; font-size: 0.8rem; font-weight: 900; text-align: center; cursor: pointer; text-transform: uppercase; padding: 20px 10px; transition: all 0.3s ease; height: 75px; display: flex; align-items: center; justify-content: center; width: 100%; }
+        .pillar-btn:hover, .pillar-btn.active { background: var(--sunset-orange); color: var(--white); border-color: var(--sunset-orange); }
 
-        /* LEGAL TERMS - WHITE TEXT ON BLACK background, BURGUNDY CHECKMARKS */
+        /* LEGAL TERMS */
         .legal-term { color: var(--white); font-size: 10px; font-weight: 800; text-transform: uppercase; display: flex; align-items: center; gap: 4px; }
         .checkmark { color: var(--burgundy); font-size: 14px; font-weight: bold; }
 
-        /* VAULT LIST STYLING */
+        /* VAULT LIST */
         .vault-select { background-color: var(--black); border: 1px solid var(--blue-gray); color: white; padding: 10px; border-radius: 4px; width: 100%; cursor: pointer; font-size: 0.75rem; text-transform: uppercase; }
-        .vault-row { display: grid; grid-template-columns: 2fr 1fr 2fr 2fr 1fr 1fr; gap: 15px; align-items: center; padding: 15px; border-bottom: 1px solid rgba(0, 0, 0, 0.1); background: #f9fafb; margin-bottom: 8px; border-radius: 8px; }
+        .vault-row { display: grid; grid-template-columns: 2.5fr 0.5fr 1.5fr 1.5fr 1fr 1fr; gap: 15px; align-items: center; padding: 15px; border-bottom: 1px solid rgba(0, 0, 0, 0.1); background: #f9fafb; margin-bottom: 8px; border-radius: 8px; }
         
-        .vault-btn { background: var(--metallic-gold); color: var(--black); font-weight: 900; padding: 8px 12px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; border: none; }
+        /* LINKS & BUTTONS */
+        .song-link { color: var(--metallic-gold); font-weight: 800; text-decoration: none; transition: color 0.3s; }
+        .song-link:hover { color: var(--sunset-orange); }
+        .vault-btn { background: var(--metallic-gold); color: var(--black); font-weight: 900; padding: 8px 12px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; border: none; text-align: center; transition: 0.3s; }
+        .vault-btn:hover { background: var(--sunset-orange); color: var(--white); }
         .print-btn { background: transparent; border: 1px solid var(--sunset-orange); color: var(--sunset-orange); font-weight: 900; padding: 8px 12px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; }
 
-        /* PRINT STYLES */
-        #print-area { display: none; }
-        @media print {
-            body * { visibility: hidden; }
-            #print-area, #print-area * { visibility: visible; }
-            #print-area { position: absolute; left: 0; top: 0; width: 100%; padding: 40px; background: white; color: black; display: block; }
-            .page-break { page-break-before: always; }
-        }
-
-        #arrow-up { position: fixed; bottom: 30px; right: 30px; color: var(--sunset-orange); font-size: 3.5rem; cursor: pointer; background: none; border: none; }
+        /* FOOTER */
+        .site-footer { text-align: center; padding: 40px 20px; background: var(--black); color: var(--white); border-top: 2px solid var(--metallic-gold); }
+        
+        /* SUNSET ORANGE ARROW */
+        #arrow-up { position: fixed; bottom: 30px; right: 30px; color: var(--sunset-orange); font-size: 3.5rem; cursor: pointer; background: none; border: none; z-index: 1000; }
     </style>
 </head>
 <body>
@@ -76,9 +73,8 @@
     </header>
 
     <div class="hero-box">
-        <div class="presents-text">VerseandChorus.com presents</div>
-        <h1 class="vault-script">THE VAULT</h1>
-        <p class="vault-subline">Specialized search filters for A&R reps and Industry Pros featuring a portfolio of 47-Cinematic Lyrics by Cinematic Songwriter and Lyricist Kellie Larson.</p>
+        <div class="presents-text">VerseandChorus.com Presents</div>
+        <h1 class="page-name">Industry Pro's</h1>
     </div>
 
     <main class="content-container py-10">
@@ -92,61 +88,41 @@
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
-            <div class="pillar-btn theme-filter" data-filter="Social Commentary">Social Commentary</div>
-            <div class="pillar-btn theme-filter" data-filter="Empowerment Arc">Empowerment Arc</div>
-            <div class="pillar-btn theme-filter" data-filter="Disenchantment">Disenchantment</div>
-            <div class="pillar-btn theme-filter" data-filter="Value Proposition">Value Proposition</div>
-            <div class="pillar-btn theme-filter" data-filter="Market Share">Market Share</div>
-            <div class="pillar-btn theme-filter" data-filter="Iterative Protagonist">Iterative Protagonist</div>
+            <button class="pillar-btn" onclick="toggleActive(this)">Social Commentary</button>
+            <button class="pillar-btn" onclick="toggleActive(this)">Empowerment Arc</button>
+            <button class="pillar-btn" onclick="toggleActive(this)">Disenchantment</button>
+            <button class="pillar-btn" onclick="toggleActive(this)">Value Proposition</button>
+            <button class="pillar-btn" onclick="toggleActive(this)">Market Share</button>
+            <button class="pillar-btn" onclick="toggleActive(this)">Iterative Protagonist</button>
         </div>
 
         <div class="bg-gray-100 p-6 rounded border border-gray-300 mb-8">
-            <input type="text" id="vault-search" placeholder="SEARCH BY KEYWORD, PHRASE, THEME, OR SYNC METADATA (AI OPTIMIZED 2025/2026)..." class="w-full p-4 bg-white border border-gray-400 rounded mb-6 text-black uppercase text-sm outline-none focus:border-[var(--sunset-orange)]">
-            
+            <input type="text" id="vault-search" placeholder="SEARCH BY KEYWORD, PHRASE, OR SYNC METADATA..." class="w-full p-4 bg-white border border-gray-400 rounded mb-6 text-black uppercase text-sm outline-none focus:border-[var(--sunset-orange)]">
             <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
-                <select id="genre-pull" class="vault-select">
-                    <option value="">GENRE</option>
-                    <option value="Alternative">Alternative</option>
-                    <option value="Blues">Blues</option>
-                    <option value="Cinematic">Cinematic</option>
-                    <option value="Country">Country</option>
-                    <option value="Hip Hop">Hip Hop</option>
-                    <option value="Indie">Indie</option>
-                    <option value="Pop">Pop</option>
-                    <option value="Punk">Punk</option>
-                    <option value="RnB">RnB</option>
-                    <option value="Rock">Rock</option>
-                </select>
-                <select id="mood-pull" class="vault-select">
-                    <option value="">MOOD</option>
-                    <option value="Confident">Confident</option><option value="Dark">Dark</option>
-                    <option value="Defiant">Defiant</option><option value="Hopeful">Hopeful</option>
-                    <option value="Intense">Intense</option><option value="Melancholic">Melancholic</option>
-                    <option value="Playful">Playful</option><option value="Reflective">Reflective</option>
-                    <option value="Romantic">Romantic</option><option value="Sad">Sad</option>
-                </select>
-                <select id="feeling-pull" class="vault-select">
-                    <option value="">FEELING</option>
-                    <option value="Bitter">Bitter</option><option value="Decisive">Decisive</option>
-                    <option value="Empowered">Empowered</option><option value="Joyful">Joyful</option>
-                    <option value="Protective">Protective</option><option value="Radiant">Radiant</option>
-                    <option value="Resilient">Resilient</option><option value="Strong">Strong</option>
-                    <option value="Sweet">Sweet</option><option value="Vulnerable">Vulnerable</option>
-                </select>
-                <select id="placement-pull" class="vault-select">
-                    <option value="">PLACEMENT</option>
-                    <option value="Action">Action</option><option value="Breakup">Breakup</option>
-                    <option value="Commercial">Commercial</option><option value="Confrontation">Confrontation</option>
-                    <option value="Drama">Drama</option><option value="Film Score">Film Score</option>
-                    <option value="Reality TV">Reality TV</option><option value="RomCom">RomCom</option>
-                    <option value="Thriller">Thriller</option><option value="Trailer">Trailer</option>
-                </select>
+                <select id="genre-pull" class="vault-select"><option value="">GENRE</option></select>
+                <select id="mood-pull" class="vault-select"><option value="">MOOD</option></select>
+                <select id="feeling-pull" class="vault-select"><option value="">FEELING</option></select>
+                <select id="placement-pull" class="vault-select"><option value="">PLACEMENT</option></select>
                 <button id="reset-btn" class="vault-select border-[var(--sunset-orange)] text-[var(--sunset-orange)] font-bold">RESET</button>
             </div>
         </div>
 
         <div id="vault-list-display">
+            <div class="vault-row">
+                <div class="flex items-center gap-3">
+                    <img src="/assets/covers/hit-the-road-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
+                    <div>
+                        <a href="/lyrics/hit-the-road.html" class="song-link text-sm uppercase">Hit The Road</a>
+                        <div class="text-[10px] text-gray-500 font-bold uppercase">Pop / Empowerment</div>
+                    </div>
+                </div>
+                <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.8</div>
+                <div class="text-xs text-gray-600 italic">Confident / Strong</div>
+                <div class="text-xs text-gray-500 uppercase">Final Breakup</div>
+                <a href="/lyrics/hit-the-road.html" class="vault-btn">LYRICS</a>
+                <button class="print-btn" onclick="window.print()">PRINT</button>
             </div>
+        </div>
     </main>
 
     <footer class="site-footer">
@@ -156,51 +132,14 @@
     </footer>
 
     <button id="arrow-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">▲</button>
-    <audio id="vault-audio-player" style="display:none;"></audio>
 
     <script>
-        const songData = {
-            "hit the road": {
-                genre1: "Pop", genre2: "Rock", subgenre: "Empowerment", mood: "Confident", feeling: "Strong", placement: "Final Breakup",
-                bestLine: "Don't stop, don't look back, hit the road, Jack, I don't want you back!",
-                theme: "Empowerment Arc", rating: "9.8",
-                desc: "A high-stakes anthemic confrontation centered on the finality of an toxic relationship. This narrative documents the transition from a state of emotional vulnerability to one of unwavering self-worth and independence. The lyricism focuses on the moment the 'blindfold' is removed, revealing the shaded nature of a partner's deceit. It is characterized by its driving resolution and the lack of a need for further explanation or closure. This track is a powerful choice for empowerment sequences where a protagonist finally closes a door on the past without looking back. Great for mid-season finale breakup scenes, resilient transformation montages, and high-impact reality TV exit sequences. Optimized for placements requiring a definitive, high-energy departure and a 'no-turning-back' attitude.",
-                lyricsUrl: "http://verseandchorus.com/lyrics/hit-the-road.html"
-            }
-        };
-
-        function playAndOpen(title) {
-            const slug = title.toLowerCase().replace(/ /g, '-');
-            const player = document.getElementById('vault-audio-player');
-            player.src = `https://verseandchorus.com/assets/music/${slug}.mp3`;
-            player.play();
-            setTimeout(() => {
-                window.location.href = `http://verseandchorus.com/lyrics/${slug}.html`;
-            }, 100);
+        function toggleActive(btn) {
+            // Remove active state from others
+            document.querySelectorAll('.pillar-btn').forEach(b => b.classList.remove('active'));
+            // Add to current
+            btn.classList.add('active');
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const display = document.getElementById('vault-list-display');
-            Object.keys(songData).forEach(key => {
-                const s = songData[key];
-                display.innerHTML += `
-                    <div class="vault-row" data-title="${key}" data-genre="${s.genre1}" data-theme="${s.theme}">
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/covers/${key.toLowerCase().replace(/ /g, '-')}-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-                            <div>
-                                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">${key.toUpperCase()}</div>
-                                <div class="text-[10px] text-gray-500 font-bold uppercase">${s.genre2} / ${s.subgenre}</div>
-                            </div>
-                        </div>
-                        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">${s.rating}</div>
-                        <div class="text-xs text-gray-600 italic">${s.mood} / ${s.feeling}</div>
-                        <div class="text-xs text-gray-500 uppercase">${s.placement}</div>
-                        <button class="vault-btn" onclick="playAndOpen('${key}')">LYRICS</button>
-                        <button class="print-btn" onclick="window.print()">PRINT</button>
-                    </div>
-                `;
-            });
-        });
     </script>
 </body>
 </html>
