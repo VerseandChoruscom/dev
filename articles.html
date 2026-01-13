@@ -1,133 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official VerseandChorus.com Industry Insights. Explore 2026 sync licensing trends, professional lyric formatting guides, and A&R strategic audits by cinematic songwriter Kellie Larson.">
-    <title>Industry Insights | Lyric Mastery & 2026 Sync Trends | VerseandChorus.com</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore 2026 music sync trends, A&R industry insights, and professional lyric formatting guides. Master the 'Prestige Measure' for cinematic songwriting with Kellie Larson.">
+  <meta name="keywords" content="2026 Sync Licensing Trends, A&R Lyric Audit, Cinematic Songwriting, Music Supervisor AI Search, Human-Authored Lyrics, Kellie Larson, VerseandChorus, Sync Placement Guide">
+  <title>Industry Insights & 2026 Sync Trends | VerseandChorus.com</title>
+  
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-color: #000000;
+      --burgundy: #800020;
+      --gold: #D4AF37;
+      --sunset-orange: #FD5E53;
+      --text-white: #ffffff;
+      --text-off-white: #e5e5e5;
+    }
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-white);
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
 
-    <style>
-        :root { 
-            --metallic-gold: #D4AF37; --white: #FFFFFF; --black: #000000; 
-            --sunset-orange: #FD5E53; --burgundy: #800020; --gray-zinc: #18181b;
-        }
-        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--black); margin: 0; padding: 0; line-height: 1.6; }
-        
-        /* HEADER & NAV - BRAND STANDARD */
-        #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); position: sticky; top: 0; z-index: 1000; }
-        .logo-top-left { width: 300px; height: auto; }
-        .ham-nav { display: flex; gap: 20px; }
-        .ham-nav a { color: var(--white); text-transform: uppercase; font-weight: 700; font-size: 0.8rem; text-decoration: none; transition: color 0.3s; }
-        .ham-nav a:hover { color: var(--metallic-gold); }
+    /* --- STANDARD HEADER STYLES --- */
+    #main-header {
+        background-color: #000;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid var(--gold);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
 
-        /* HERO BOX */
-        .hero-box { text-align: center; padding: 80px 20px; border-bottom: 5px solid var(--metallic-gold); background: var(--black); }
-        .presents-script { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 2.5rem; margin-bottom: 10px; }
-        .page-title-main { color: var(--white); font-size: 5rem; font-weight: 800; text-transform: uppercase; line-height: 1; }
+    .logo-top-left { width: 300px; height: auto; }
 
-        .content-container { max-width: 1000px; margin: 0 auto; padding: 40px 1.5rem; }
-        
-        /* ARTICLE CARDS */
-        .article-card { background: var(--black); color: var(--white); padding: 40px; border-radius: 8px; border-left: 6px solid var(--burgundy); margin-bottom: 40px; }
-        .article-h2 { color: var(--metallic-gold); font-size: 2.2rem; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; }
-        .byline { font-style: italic; color: var(--sunset-orange); font-size: 0.9rem; margin-bottom: 25px; display: block; }
-        
-        h3 { color: var(--metallic-gold); font-weight: 700; margin-top: 25px; margin-bottom: 10px; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 5px; }
-        ul { list-style-type: none; padding-left: 0; }
-        ul li { margin-bottom: 8px; position: relative; padding-left: 20px; }
-        ul li::before { content: "✔"; color: var(--burgundy); position: absolute; left: 0; font-weight: bold; }
-        
-        .sync-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.9rem; }
-        .sync-table th { background: var(--burgundy); color: white; text-align: left; padding: 12px; text-transform: uppercase; }
-        .sync-table td { border-bottom: 1px solid #333; padding: 12px; vertical-align: top; background: rgba(255,255,255,0.05); }
+    #nav-menu { display: flex; gap: 20px; }
+    #nav-menu a {
+        color: #FFFFFF !important;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        transition: color 0.3s;
+    }
+    #nav-menu a:hover { color: var(--gold) !important; }
 
-        /* FOOTER & ACCENTS */
-        #arrow-up { position: fixed; bottom: 30px; right: 30px; color: var(--sunset-orange); font-size: 3.5rem; cursor: pointer; background: none; border: none; z-index: 1000; }
-        footer { background: var(--black); color: var(--white); padding: 60px 20px; text-align: center; border-top: 2px solid var(--metallic-gold); }
-        .trust-badge { display: inline-block; border: 1px solid var(--sunset-orange); color: var(--sunset-orange); padding: 5px 15px; border-radius: 20px; font-size: 10px; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
-    </style>
+    /* --- PAGE SPECIFIC STYLES --- */
+    .hero-box {
+        text-align: center;
+        padding: 80px 20px;
+        border-bottom: 5px solid var(--gold);
+        background: var(--bg-color);
+    }
+    .presents-script {
+        font-family: 'Dancing Script', cursive;
+        color: var(--gold);
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    .page-title-main {
+        color: var(--text-white);
+        font-size: 5rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+
+    .outline {
+      max-width: 800px;
+      margin: 40px auto 20px;
+      padding: 20px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background-color: #111;
+    }
+    .outline h3 {
+      color: var(--gold);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+    }
+    .outline li a { text-decoration: underline; color: var(--text-white); font-size: 1.1rem; }
+
+    .feature-article {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+      border-radius: 8px;
+      background: #0a0a0a;
+      border-left: 6px solid var(--burgundy);
+    }
+    .article-title {
+        color: var(--gold);
+        font-size: 2.2rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    .byline { font-style: italic; color: var(--sunset-orange); margin-bottom: 20px; }
+
+    .sync-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+    .sync-table th, .sync-table td { border: 1px solid #444; padding: 12px; text-align: left; }
+    .sync-table th { background-color: var(--burgundy); color: var(--text-white); text-transform: uppercase; }
+
+    .back-to-top-link {
+        color: var(--sunset-orange) !important;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 1px solid var(--sunset-orange);
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+
+    #arrow-up { position: fixed; bottom: 30px; right: 30px; color: var(--sunset-orange); font-size: 3.5rem; cursor: pointer; background: none; border: none; z-index: 1000; }
+    .site-footer { background: #000; color: #fff; text-align: center; padding: 2rem; border-top: 2px solid var(--gold); }
+  </style>
 </head>
 <body>
 
-    <header id="main-header">
-        <a href="index.html">
-            <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left">
-        </a>
-        <nav class="ham-nav">
-            <a href="bio.html">Spotlight</a>
-            <a href="lyrics.html">Lyrics</a>
-            <a href="industry-pros.html">Industry Pro's</a>
-            <a href="green-room.html">Green Room</a>
-            <a href="articles.html">Articles</a>
-        </nav>
-    </header>
+  <header id="main-header">
+    <a href="index.html">
+        <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
+    </a>
+    <nav id="nav-menu">
+      <a href="/bio.html">Spotlight</a>
+      <a href="/industry-pros.html">Industry Pro</a>
+      <a href="/lyrics.html">Lyrics</a>
+      <a href="/green-room.html">Green Room</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/legal.html">Legal</a>
+    </nav>
+  </header>
 
-    <div class="hero-box">
-        <div class="presents-script">VerseandChorus.com Presents</div>
-        <h1 class="page-title-main">Industry Insights</h1>
-    </div>
+  <div class="hero-box">
+    <div class="presents-script">VerseandChorus.com Presents</div>
+    <h1 class="page-title-main">Industry Insights</h1>
+  </div>
 
-    <main class="content-container">
-        
-        <article class="article-card">
-            <span class="trust-badge">100% Human-Authored Content</span>
-            <h2 class="article-h2">Key 2026 Music Trends for Sync</h2>
-            <span class="byline">By Kellie Larson, Cinematic Songwriter & Lyricist</span>
-            <p class="mb-6 opacity-90 leading-relaxed">
-                As we navigate the 2026 licensing landscape, the shift toward <strong>AI-driven "Prompt Search"</strong> has fundamentally changed discovery. Music Supervisors now use natural language to find the perfect sonic match. To remain relevant, metadata must move beyond generic tags into hyper-specific emotional and cultural narratives.
-            </p>
+  <section class="outline">
+    <h3>Featured Articles</h3>
+    <ul>
+      <li><a href="#sync2026">Key 2026 Music Trends for Sync Licensing</a></li>
+      <li><a href="#formatting">Pro Lyric Formatting for 2026 A&R Discovery</a></li>
+      <li><a href="#prestige">Exceptional & Tier-One Prestige Lyrics</a></li>
+    </ul>
+  </section>
 
-            <table class="sync-table">
-                <thead>
-                    <tr><th>Trend</th><th>The Sonic Blueprint</th><th>AI Search Keywords</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td class="font-bold">PluggnB</td><td>Lush atmospheric trap with '90s R&B vocal harmonies.</td><td>PluggnB, dreamy trap, R&B fusion</td></tr>
-                    <tr><td class="font-bold">Afrofuturism</td><td>Global rhythms merging African percussion with sci-fi synths.</td><td>Afrofuturism, future-tribal, neon-rhythm</td></tr>
-                    <tr><td class="font-bold">Post-Genre</td><td>Radical collisions (e.g., Enya vocals over industrial rap).</td><td>Genre-fluid, hybrid-sonic, experimental</td></tr>
-                </tbody>
-            </table>
-        </article>
+  <main id="articles-top"> 
 
-        <article class="article-card">
-            <h2 class="article-h2">Beyond the Rhyme: Pro Lyric Formatting</h2>
-            <span class="byline">By Kellie Larson, 2025</span>
-            <p>A well-formatted lyric sheet is a professional calling card. Before sharing with a producer, ensure your layout reflects industry standards to focus attention on your artistry.</p>
-            <h3>What to Include</h3>
-            <ul>
-                <li><strong>Centered Title:</strong> Bolded at the top of the page.</li>
-                <li><strong>Clear Section Labels:</strong> Headers for Verse, Chorus, and Bridge.</li>
-                <li><strong>Clean Typography:</strong> Use standard fonts like Arial or Helvetica.</li>
-            </ul>
-        </article>
+    <article class="feature-article" id="sync2026">
+      <h2 class="article-title">Key 2026 Music Trends for Sync & AI Prompt Discovery</h2>
+      <p class="byline">By Kellie Larson, Cinematic Songwriter & Lyricist</p>
+      <p>In the 2026 licensing landscape, <strong>AI-driven "Prompt Search"</strong> has redefined discovery. Music Supervisors no longer search by genre alone; they search for "melancholic euphoria" or "aggressive tenderness". To remain searchable, your metadata must pivot to these hyper-specific emotional narratives.</p>
 
-        <article class="article-card">
-            <h2 class="article-h2">The Exceptional and Tier-One Prestige Roster</h2>
-            <span class="byline">By Kellie Larson, 2025</span>
-            <p>The "Prestige Measure" is granted to lyricists who demonstrate technical depth and structural innovation. Kellie Larson's portfolio includes top-rated assets pre-cleared for the most demanding sync environments.</p>
-            <table class="sync-table">
-                <thead>
-                    <tr><th>Song Title</th><th>Market Target</th><th>Critique Summary</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Fury (I'm the Monster)</td><td>Alt-Rock / Action</td><td>Tier-One Prestige: Raw domestic narrative.</td></tr>
-                    <tr><td>Etched in Every Space</td><td>Pop Ballad / Grief</td><td>Tier-One Prestige: Elevated emotional impact.</td></tr>
-                    <tr><td>Welcome to Jukes</td><td>Cinematic Blues</td><td>Exceptional: Dark Southern Gothic value.</td></tr>
-                </tbody>
-            </table>
-        </article>
+      <table class="sync-table">
+        <thead>
+          <tr><th>Trend</th><th>The Sonic Blueprint</th><th>A&R AI Search Keywords</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>PluggnB</td><td>Atmospheric fusion of "plugg" trap beats with lush '90s R&B harmonies.</td><td>PluggnB, dreamy trap, R&B fusion</td></tr>
+          <tr><td>Afrofuturism</td><td>Global rhythms merging traditional percussion with sci-fi synthesis.</td><td>Afrofuturism, future-tribal, neon-poly-rhythm</td></tr>
+          <tr><td>Adaptive Audio</td><td>Modular audio designed to shift dynamically based on user behavior.</td><td>Modular stems, adaptive audio, interactive</td></tr>
+        </tbody>
+      </table>
 
-    </main>
+      <div style="margin-top: 20px; padding: 15px; background: #111; border-left: 4px solid var(--gold);">
+        <h4 style="color: var(--gold); text-transform: uppercase;">The 2026 Human-Authored Advantage</h4>
+        <p style="font-size: 0.9rem;">A&R teams now filter for <strong>IP Security</strong>. Kellie Larson’s 46-song vault is 100% human-authored, meeting the strict legal transparency requirements for 2026 studio placements.</p>
+      </div>
+    </article>
 
-    <footer>
-        <p class="text-xs uppercase tracking-widest opacity-70">© 2026 VerseandChorus.com | Cinematic Songwriter Kellie Larson</p>
-        <p class="text-[10px] mt-2 opacity-50">760-537-0222 | info@verseandchorus.com | 1-Stop Sync Licensing</p>
-    </footer>
+    <div class="back-to-top-container" style="text-align: center;"><a href="#articles-top" class="back-to-top-link">^ Back to Top ^</a></div>
 
-    <button id="arrow-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">▲</button>
+    <article class="feature-article" id="formatting">
+      <h2 class="article-title">Pro Lyric Formatting for 2026 A&R Submission</h2>
+      <p class="byline">By Kellie Larson, 2025</p>
+      <p>A well-formatted lyric sheet is your professional calling card. Before submitting to a producer or A&R scout, ensure your document allows them to focus on your artistry rather than deciphering a messy file.</p>
+      <h3>The Essentials</h3>
+      <ul>
+        <li><strong>Title:</strong> Centered and Bolded at the top.</li>
+        <li><strong>Section Labels:</strong> Clear headers for Verse, Chorus, and Bridge.</li>
+        <li><strong>Metadata Integration:</strong> Include your unique IPI or artist ID for seamless AI indexing.</li>
+      </ul>
+    </article>
+
+    <article class="feature-article" id="prestige">
+      <h2 class="article-title">The Prestige Measure: Tier-One Cinematic Lyrics</h2>
+      <p class="byline">By Kellie Larson, 2025</p>
+      <p>Critical acclaim is granted to lyricists who demonstrate technical depth and structural innovation. The "Prestige Measure" identifies work targeting high-concept sync placements where emotional fidelity is rewarded.</p>
+
+      <table class="sync-table">
+        <thead>
+          <tr><th>Song Title</th><th>Primary Market</th><th>Acclaim Tier</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Fury (I'm the Monster)</td><td>Rock / Action</td><td>Tier-One Prestige</td></tr>
+          <tr><td>Etched in Every Space</td><td>Pop Ballad / Grief</td><td>Tier-One Prestige</td></tr>
+          <tr><td>Welcome to Jukes</td><td>Cinematic Blues</td><td>Exceptional</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 VerseandChorus.com | Cinematic Songwriter Kellie Larson</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">1-Stop Sync Licensing | Human-Authored Portfolio | <a href="/legal.html">Legal</a></p>
+  </footer>
+
+  <button id="arrow-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">▲</button>
 
 </body>
 </html>
