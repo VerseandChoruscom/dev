@@ -3,78 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Access THE VAULT by Kellie Larson: A curated portfolio of 46 cinematic lyrics. 100% human-authored, pre-cleared for 2026 sync licensing.">
-    <title>Industry Pro's | VerseandChorus.com</title>
+    <meta name="description" content="Access THE VAULT by Kellie Larson: A curated portfolio of cinematic lyrics. 100% human-authored, pre-cleared for 2026 sync licensing. Specialized A&R filters for Music Supervisors searching via AI for high-impact film, TV, and commercial placements.">
+    <meta name="keywords" content="Kellie Larson, Cinematic Songwriter, THE VAULT, Sync Licensing 2026, Human-Authored Music, A&R AI Search, Music Supervisor IP, Pre-cleared 1-Stop Licensing, Cinematic RnB, Modern Rock Sync, Country Dance Sync, Narrative Lyric Portfolio, AI Searchable Song Metadata">
+    <title>THE VAULT | Industry Pro A&R Search | Kellie Larson</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
     <style>
         :root { 
-            --metallic-gold: #D4AF37; 
-            --white: #FFFFFF; 
-            --black: #000000; 
-            --sunset-orange: #FD5E53; 
-            --blue-gray: #64748b; 
-            --burgundy: #800020; 
+            --metallic-gold: #D4AF37; --white: #FFFFFF; --black: #000000; 
+            --sunset-orange: #FD5E53; --blue-gray: #64748b; --burgundy: #800020; 
         }
-        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--black); margin: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--black); }
         .content-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
         
-        /* HEADER & NAVIGATION */
         #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); }
         .logo-top-left { width: 300px; height: auto; }
-        #nav-menu { display: flex; align-items: center; }
-        #nav-menu a { color: var(--white); font-weight: bold; font-size: 12px; text-transform: uppercase; margin-left: 20px; text-decoration: none; transition: color 0.3s; }
-        #nav-menu a:hover { color: var(--sunset-orange); }
-
-        /* HERO BOX - GOLD SCRIPT & WHITE SUBTITLE */
+        
         .hero-box { text-align: center; padding: 60px 20px; border-bottom: 5px solid var(--metallic-gold); background: var(--black); }
-        .presents-text { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 3.5rem; line-height: 1; margin-bottom: 10px; }
-        .page-name { color: var(--white); font-size: 4.5rem; font-weight: 800; text-transform: uppercase; }
+        .presents-text { color: var(--burgundy); font-weight: 800; text-transform: uppercase; font-size: 1.2rem; letter-spacing: 2px; }
+        .vault-script { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 5.5rem; line-height: 1; margin: 10px 0; }
+        .vault-subline { color: var(--white); font-size: 1rem; font-weight: 400; max-width: 800px; margin: 15px auto; opacity: 0.9; }
 
-        /* PILLAR BUTTONS - ORANGE ON CLICK */
-        .pillar-btn { background: var(--white); color: var(--black); border: 2px solid var(--black); border-radius: 4px; font-size: 0.8rem; font-weight: 900; text-align: center; cursor: pointer; text-transform: uppercase; padding: 20px 10px; transition: all 0.3s ease; height: 75px; display: flex; align-items: center; justify-content: center; width: 100%; }
-        .pillar-btn:hover, .pillar-btn.active { background: var(--sunset-orange); color: var(--white); border-color: var(--sunset-orange); }
+        .pillar-btn { background: var(--white); color: var(--black); border: 2px solid var(--black); border-radius: 4px; font-size: 0.8rem; font-weight: 900; text-align: center; cursor: pointer; text-transform: uppercase; padding: 20px 10px; transition: all 0.3s ease; height: 75px; display: flex; align-items: center; justify-content: center; }
+        .pillar-btn:hover { background: var(--black); color: var(--white); border-color: var(--metallic-gold); }
 
-        /* LEGAL TERMS */
         .legal-term { color: var(--white); font-size: 10px; font-weight: 800; text-transform: uppercase; display: flex; align-items: center; gap: 4px; }
         .checkmark { color: var(--burgundy); font-size: 14px; font-weight: bold; }
 
-        /* VAULT LIST */
         .vault-select { background-color: var(--black); border: 1px solid var(--blue-gray); color: white; padding: 10px; border-radius: 4px; width: 100%; cursor: pointer; font-size: 0.75rem; text-transform: uppercase; }
-        .vault-row { display: grid; grid-template-columns: 2.5fr 0.5fr 1.5fr 1.5fr 1fr 1fr; gap: 15px; align-items: center; padding: 15px; border-bottom: 1px solid rgba(0, 0, 0, 0.1); background: #f9fafb; margin-bottom: 8px; border-radius: 8px; }
         
-        /* LINKS & BUTTONS */
-        .song-link { color: var(--metallic-gold); font-weight: 800; text-decoration: none; transition: color 0.3s; }
-        .song-link:hover { color: var(--sunset-orange); }
-        .vault-btn { background: var(--metallic-gold); color: var(--black); font-weight: 900; padding: 8px 12px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; border: none; text-align: center; transition: 0.3s; }
-        .vault-btn:hover { background: var(--sunset-orange); color: var(--white); }
+        /* BLACK BACKGROUND, WHITE WRITING, GOLD TITLES */
+        .vault-row { display: grid; grid-template-columns: 2.5fr 1fr 2fr 2fr 1fr 1fr; gap: 15px; align-items: center; padding: 15px; background: var(--black); color: var(--white); margin-bottom: 10px; border-radius: 4px; border-left: 4px solid var(--metallic-gold); }
+        .song-card-title { color: var(--metallic-gold); font-weight: 800; text-transform: uppercase; font-size: 1rem; }
+        .song-card-meta { color: #ccc; font-size: 0.7rem; text-transform: uppercase; }
+        
+        .vault-btn { background: var(--metallic-gold); color: var(--black); font-weight: 900; padding: 8px 12px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; border: none; }
         .print-btn { background: transparent; border: 1px solid var(--sunset-orange); color: var(--sunset-orange); font-weight: 900; padding: 8px 12px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; }
 
-        /* FOOTER */
-        .site-footer { text-align: center; padding: 40px 20px; background: var(--black); color: var(--white); border-top: 2px solid var(--metallic-gold); }
-        
-        /* SUNSET ORANGE ARROW */
-        #arrow-up { position: fixed; bottom: 30px; right: 30px; color: var(--sunset-orange); font-size: 3.5rem; cursor: pointer; background: none; border: none; z-index: 1000; }
+        #print-area { display: none; }
+        @media print {
+            body * { visibility: hidden; }
+            #print-area, #print-area * { visibility: visible; }
+            #print-area { position: absolute; left: 0; top: 0; width: 100%; padding: 40px; background: white; color: black; display: block; }
+            .page-break { page-break-before: always; }
+        }
+        #arrow-up { position: fixed; bottom: 30px; right: 30px; color: var(--sunset-orange); font-size: 3.5rem; cursor: pointer; background: none; border: none; }
     </style>
 </head>
 <body>
 
     <header id="main-header">
         <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left">
-        <nav id="nav-menu">
-          <a href="/bio.html">Spotlight</a>
-          <a href="/industry-pros.html">Industry Pro</a>
-          <a href="/lyrics.html">Lyrics</a>
-          <a href="/green-room.html">Green Room</a>
-          <a href="/contact.html">Contact</a>
-        </nav>
     </header>
 
     <div class="hero-box">
-        <div class="presents-text">VerseandChorus.com Presents</div>
-        <h1 class="page-name">Industry Pro's</h1>
+        <div class="presents-text">VerseandChorus.com presents</div>
+        <h1 class="vault-script">THE VAULT</h1>
+        <p class="vault-subline">100% human authored 45-Cinematic Lyrics by Kellie Larson Songwriter and Lyricist.</p>
     </div>
 
     <main class="content-container py-10">
@@ -88,479 +75,120 @@
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
-            <button class="pillar-btn" onclick="toggleActive(this)">Social Commentary</button>
-            <button class="pillar-btn" onclick="toggleActive(this)">Empowerment Arc</button>
-            <button class="pillar-btn" onclick="toggleActive(this)">Disenchantment</button>
-            <button class="pillar-btn" onclick="toggleActive(this)">Value Proposition</button>
-            <button class="pillar-btn" onclick="toggleActive(this)">Market Share</button>
-            <button class="pillar-btn" onclick="toggleActive(this)">Iterative Protagonist</button>
+            <div class="pillar-btn theme-filter" data-filter="Social Commentary">Social Commentary</div>
+            <div class="pillar-btn theme-filter" data-filter="Empowerment Arc">Empowerment Arc</div>
+            <div class="pillar-btn theme-filter" data-filter="Disenchantment">Disenchantment</div>
+            <div class="pillar-btn theme-filter" data-filter="Value Proposition">Value Proposition</div>
+            <div class="pillar-btn theme-filter" data-filter="Market Share">Market Share</div>
+            <div class="pillar-btn theme-filter" data-filter="Iterative Protagonist">Iterative Protagonist</div>
         </div>
 
         <div class="bg-gray-100 p-6 rounded border border-gray-300 mb-8">
-            <input type="text" id="vault-search" placeholder="SEARCH BY KEYWORD, PHRASE, OR SYNC METADATA..." class="w-full p-4 bg-white border border-gray-400 rounded mb-6 text-black uppercase text-sm outline-none focus:border-[var(--sunset-orange)]">
+            <input type="text" id="vault-search" placeholder="SEARCH BY KEYWORD, PHRASE, OR THEME (AI OPTIMIZED)..." class="w-full p-4 bg-white border border-gray-400 rounded mb-6 text-black uppercase text-sm outline-none focus:border-[var(--sunset-orange)]">
+            
             <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
-                <select id="genre-pull" class="vault-select"><option value="">GENRE</option></select>
-                <select id="mood-pull" class="vault-select"><option value="">MOOD</option></select>
-                <select id="feeling-pull" class="vault-select"><option value="">FEELING</option></select>
-                <select id="placement-pull" class="vault-select"><option value="">PLACEMENT</option></select>
+                <select id="genre-pull" class="vault-select">
+                    <option value="">GENRE</option>
+                    <option value="Alternative/Punk">Alternative/Punk</option><option value="Blues">Blues</option><option value="Cinematic">Cinematic</option><option value="Country">Country</option><option value="Easy Listening">Easy Listening</option><option value="Indie">Indie</option><option value="Pop">Pop</option><option value="Reggae">Reggae</option><option value="RnB">RnB</option><option value="Rock">Rock</option>
+                </select>
+                <select id="mood-pull" class="vault-select">
+                    <option value="">MOOD</option>
+                    <option value="Confident">Confident</option><option value="Dark">Dark</option><option value="Sad">Sad</option><option value="Hopeful">Hopeful</option><option value="Bitter">Bitter</option><option value="Radiant">Radiant</option><option value="Melancholic">Melancholic</option><option value="Defiant">Defiant</option><option value="Playful">Playful</option><option value="Intense">Intense</option>
+                </select>
+                <select id="feeling-pull" class="vault-select">
+                    <option value="">FEELING</option>
+                    <option value="Empowered">Empowered</option><option value="Vulnerable">Vulnerable</option><option value="Strong">Strong</option><option value="Resilient">Resilient</option><option value="Joyful">Joyful</option><option value="Decisive">Decisive</option><option value="Protective">Protective</option><option value="Honest">Honest</option><option value="Sweet">Sweet</option><option value="Bitter">Bitter</option>
+                </select>
+                <select id="placement-pull" class="vault-select">
+                    <option value="">PLACEMENT</option>
+                    <option value="Action">Action</option><option value="Commercial">Commercial</option><option value="Confrontation">Confrontation</option><option value="Drama">Drama</option><option value="Film Score">Film Score</option><option value="Reality TV">Reality TV</option><option value="RomCom">RomCom</option><option value="Sync">Sync</option><option value="Thriller">Thriller</option><option value="Trailer">Trailer</option>
+                </select>
                 <button id="reset-btn" class="vault-select border-[var(--sunset-orange)] text-[var(--sunset-orange)] font-bold">RESET</button>
             </div>
         </div>
 
-        <div id="vault-list-display">
-            <div class="vault-row">
-                <div class="flex items-center gap-3">
-                    <img src="/assets/covers/hit-the-road-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-                    <div>
-                        <a href="/lyrics/hit-the-road.html" class="song-link text-sm uppercase">Hit The Road</a>
-                        <div class="text-[10px] text-gray-500 font-bold uppercase">Pop / Empowerment</div>
-                    </div>
-                </div>
-                <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.8</div>
-                <div class="text-xs text-gray-600 italic">Confident / Strong</div>
-                <div class="text-xs text-gray-500 uppercase">Final Breakup</div>
-                <a href="/lyrics/hit-the-road.html" class="vault-btn">LYRICS</a>
-                <button class="print-btn" onclick="window.print()">PRINT</button>
-            </div>
-        </div><div id="vault-list-display">
-    <div class="vault-row" data-title="author of a lie" data-genre="Pop" data-theme="Disenchantment">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/author-of-a-lie-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">AUTHOR OF A LIE</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">R&B / Cinematic <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.6</div>
-        <div class="text-xs text-gray-600 italic">Confident / Strong</div>
-        <div class="text-xs text-gray-500 uppercase">Relationship Drama</div>
-        <button class="vault-btn" onclick="playAndOpen('author of a lie')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="big hard no" data-genre="Country" data-theme="Empowerment Arc">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/big-hard-no-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">BIG HARD NO</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Pop / Anthem <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.9</div>
-        <div class="text-xs text-gray-600 italic">Confident / Empowered</div>
-        <div class="text-xs text-gray-500 uppercase">Commercial</div>
-        <button class="vault-btn" onclick="playAndOpen('big hard no')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="bottom of the wishing well" data-genre="Indie" data-theme="Disenchantment">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/bottom-of-the-wishing-well-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">BOTTOM OF THE WISHING WELL</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Folk / Murder Ballad <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.5</div>
-        <div class="text-xs text-gray-600 italic">Dark / Vulnerable</div>
-        <div class="text-xs text-gray-500 uppercase">Thriller</div>
-        <button class="vault-btn" onclick="playAndOpen('bottom of the wishing well')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="broken bad" data-genre="Rock" data-theme="Iterative Protagonist">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/broken-bad-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">BROKEN BAD</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Blues / Swamp Rock <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.8</div>
-        <div class="text-xs text-gray-600 italic">Dark / Strong</div>
-        <div class="text-xs text-gray-500 uppercase">Action</div>
-        <button class="vault-btn" onclick="playAndOpen('broken bad')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="ceo not babysitting tree" data-genre="Pop" data-theme="Value Proposition">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/ceo-not-babysitting-tree-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">CEO NOT BABYSITTING TREE</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Sassy / Anthem <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.8</div>
-        <div class="text-xs text-gray-600 italic">Confident / Empowered</div>
-        <div class="text-xs text-gray-500 uppercase">Reality TV</div>
-        <button class="vault-btn" onclick="playAndOpen('ceo not babysitting tree')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="children of war" data-genre="Indie" data-theme="Social Commentary">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/children-of-war-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">CHILDREN OF WAR</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Orchestral / Cinematic <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">10</div>
-        <div class="text-xs text-gray-600 italic">Sad / Vulnerable</div>
-        <div class="text-xs text-gray-500 uppercase">Film Score</div>
-        <button class="vault-btn" onclick="playAndOpen('children of war')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="concrete under our feet" data-genre="Rock" data-theme="Social Commentary">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/concrete-under-our-feet-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">CONCRETE UNDER OUR FEET</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Alternative / Arena <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.9</div>
-        <div class="text-xs text-gray-600 italic">Confident / Strong</div>
-        <div class="text-xs text-gray-500 uppercase">Urban Drama</div>
-        <button class="vault-btn" onclick="playAndOpen('concrete under our feet')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="craving those crumbs" data-genre="Pop" data-theme="Disenchantment">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/craving-those-crumbs-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">CRAVING THOSE CRUMBS</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">R&B / Ballad <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.7</div>
-        <div class="text-xs text-gray-600 italic">Confident / Strong</div>
-        <div class="text-xs text-gray-500 uppercase">Toxic Relationship</div>
-        <button class="vault-btn" onclick="playAndOpen('craving those crumbs')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="dont be jelly" data-genre="Country" data-theme="Empowerment Arc">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/dont-be-jelly-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">DON'T BE JELLY</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Dance / Viral <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.8</div>
-        <div class="text-xs text-gray-600 italic">Playful / Empowered</div>
-        <div class="text-xs text-gray-500 uppercase">Viral Dance</div>
-        <button class="vault-btn" onclick="playAndOpen('dont be jelly')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="fury im the monster" data-genre="Rock" data-theme="Social Commentary">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/fury-im-the-monster-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">FURY (I'M THE MONSTER)</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Metal / Industrial <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">10</div>
-        <div class="text-xs text-gray-600 italic">Dark / Strong</div>
-        <div class="text-xs text-gray-500 uppercase">Trailer</div>
-        <button class="vault-btn" onclick="playAndOpen('fury im the monster')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="heartbreak and trouble" data-genre="Pop" data-theme="Disenchantment">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/heartbreak-and-trouble-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">HEARTBREAK AND TROUBLE</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">R&B / Introspective <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.6</div>
-        <div class="text-xs text-gray-600 italic">Sad / Vulnerable</div>
-        <div class="text-xs text-gray-500 uppercase">Teen Drama</div>
-        <button class="vault-btn" onclick="playAndOpen('heartbreak and trouble')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="hit the road" data-genre="Pop" data-theme="Empowerment Arc">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/hit-the-road-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">HIT THE ROAD</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Rock / Empowerment <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.8</div>
-        <div class="text-xs text-gray-600 italic">Confident / Strong</div>
-        <div class="text-xs text-gray-500 uppercase">Final Breakup</div>
-        <button class="vault-btn" onclick="playAndOpen('hit the road')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="hows it feel bro" data-genre="Pop" data-theme="Market Share">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/hows-it-feel-bro-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">HOW'S IT FEEL, BRO?</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Hip-Hop / Rhythmic <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.7</div>
-        <div class="text-xs text-gray-600 italic">Confident / Strong</div>
-        <div class="text-xs text-gray-500 uppercase">Confrontation</div>
-        <button class="vault-btn" onclick="playAndOpen('hows it feel bro')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="i know your damn pin code" data-genre="Rock" data-theme="Value Proposition">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/i-know-your-damn-pin-code-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">I KNOW YOUR DAMN PIN CODE</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Punk / Hard Rock <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.7</div>
-        <div class="text-xs text-gray-600 italic">Confident / Strong</div>
-        <div class="text-xs text-gray-500 uppercase">Drama</div>
-        <button class="vault-btn" onclick="playAndOpen('i know your damn pin code')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="im a broken record" data-genre="Rock" data-theme="Empowerment Arc">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/im-a-broken-record-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">I'M A BROKEN RECORD</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Alternative / Ballad <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.8</div>
-        <div class="text-xs text-gray-600 italic">Sad / Strong</div>
-        <div class="text-xs text-gray-500 uppercase">Drama</div>
-        <button class="vault-btn" onclick="playAndOpen('im a broken record')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="married to the drug" data-genre="Cinematic" data-theme="Social Commentary">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/married-to-the-drug-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">MARRIED TO THE DRUG</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Gritty / Dark <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">10</div>
-        <div class="text-xs text-gray-600 italic">Dark / Vulnerable</div>
-        <div class="text-xs text-gray-500 uppercase">Drama</div>
-        <button class="vault-btn" onclick="playAndOpen('married to the drug')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="murderers heart" data-genre="Country" data-theme="Iterative Protagonist">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/murderers-heart-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">MURDERER'S HEART</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Folk / Murder Ballad <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.9</div>
-        <div class="text-xs text-gray-600 italic">Dark / Strong</div>
-        <div class="text-xs text-gray-500 uppercase">Thriller</div>
-        <button class="vault-btn" onclick="playAndOpen('murderers heart')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="my words still matter" data-genre="Pop" data-theme="Empowerment Arc">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/my-words-still-matter-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">MY WORDS STILL MATTER</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Anthemic / Empowerment <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.8</div>
-        <div class="text-xs text-gray-600 italic">Confident / Empowered</div>
-        <div class="text-xs text-gray-500 uppercase">Sync</div>
-        <button class="vault-btn" onclick="playAndOpen('my words still matter')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="shot by cupids dart" data-genre="Pop" data-theme="Iterative Protagonist">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/shot-by-cupids-dart-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">SHOT BY CUPID'S DART</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Bedroom Pop / Romantic <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.7</div>
-        <div class="text-xs text-gray-600 italic">Romantic / Vulnerable</div>
-        <div class="text-xs text-gray-500 uppercase">Sync</div>
-        <button class="vault-btn" onclick="playAndOpen('shot by cupids dart')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="showdown at my door" data-genre="Country" data-theme="Empowerment Arc">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/showdown-at-my-door-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">SHOWDOWN AT MY DOOR</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Rock / Anthem <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.8</div>
-        <div class="text-xs text-gray-600 italic">Confident / Strong</div>
-        <div class="text-xs text-gray-500 uppercase">Drama</div>
-        <button class="vault-btn" onclick="playAndOpen('showdown at my door')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="solid shifting ground" data-genre="Indie" data-theme="Value Proposition">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/solid-shifting-ground-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">SOLID SHIFTING GROUND</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Pop / Ballad <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.7</div>
-        <div class="text-xs text-gray-600 italic">Reflective / Resilient</div>
-        <div class="text-xs text-gray-500 uppercase">Drama</div>
-        <button class="vault-btn" onclick="playAndOpen('solid shifting ground')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="take that first step" data-genre="Pop" data-theme="Empowerment Arc">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/take-that-first-step-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">TAKE THAT FIRST STEP</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Anthemic / Hopeful <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.8</div>
-        <div class="text-xs text-gray-600 italic">Hopeful / Resilient</div>
-        <div class="text-xs text-gray-500 uppercase">Drama</div>
-        <button class="vault-btn" onclick="playAndOpen('take that first step')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="the back of me" data-genre="Pop" data-theme="Empowerment Arc">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/the-back-of-me-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">THE BACK OF ME</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Rock / Cinematic Pop <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.8</div>
-        <div class="text-xs text-gray-600 italic">Strong / Decisive</div>
-        <div class="text-xs text-gray-500 uppercase">Drama</div>
-        <button class="vault-btn" onclick="playAndOpen('the back of me')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="the real dream team" data-genre="Pop" data-theme="Value Proposition">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/the-real-dream-team-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">THE REAL DREAM TEAM</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Dancehall / Loyalty <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.7</div>
-        <div class="text-xs text-gray-600 italic">Playful / Confident</div>
-        <div class="text-xs text-gray-500 uppercase">Sync</div>
-        <button class="vault-btn" onclick="playAndOpen('the real dream team')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="thought you should know" data-genre="Pop" data-theme="Empowerment Arc">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/thought-you-should-know-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">THOUGHT YOU SHOULD KNOW</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Anthemic / Transformation <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.8</div>
-        <div class="text-xs text-gray-600 italic">Confident / Radiant</div>
-        <div class="text-xs text-gray-500 uppercase">Sync</div>
-        <button class="vault-btn" onclick="playAndOpen('thought you should know')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="wildflower" data-genre="Pop" data-theme="Value Proposition">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/wildflower-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">WILDFLOWER</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Country / Storytelling <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.7</div>
-        <div class="text-xs text-gray-600 italic">Resilient / Strong</div>
-        <div class="text-xs text-gray-500 uppercase">Drama</div>
-        <button class="vault-btn" onclick="playAndOpen('wildflower')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="year in the rearview" data-genre="Pop" data-theme="Empowerment Arc">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/year-in-the-rearview-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">YEAR IN THE REARVIEW</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Ballad / Healing <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.7</div>
-        <div class="text-xs text-gray-600 italic">Melancholic / Resilient</div>
-        <div class="text-xs text-gray-500 uppercase">Drama</div>
-        <button class="vault-btn" onclick="playAndOpen('year in the rearview')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-
-    <div class="vault-row" data-title="your forever man" data-genre="Cinematic" data-theme="Value Proposition">
-        <div class="flex items-center gap-3">
-            <img src="/assets/covers/your-forever-man-cover-art.jpg" alt="Cover" class="w-12 h-12 object-cover rounded border border-gray-300">
-            <div>
-                <div class="text-[var(--metallic-gold)] font-bold text-sm uppercase">YOUR FOREVER MAN</div>
-                <div class="text-[10px] text-gray-500 font-bold uppercase">Drama / Trauma Recovery <span class="human-authored-badge ml-2">Human Authored</span></div>
-            </div>
-        </div>
-        <div class="text-[var(--sunset-orange)] font-black text-xs text-center">9.7</div>
-        <div class="text-xs text-gray-600 italic">Protective / Strong</div>
-        <div class="text-xs text-gray-500 uppercase">Drama</div>
-        <button class="vault-btn" onclick="playAndOpen('your forever man')">LYRICS</button>
-        <button class="print-btn" onclick="window.print()">PRINT</button>
-    </div>
-</div>
-
+        <div id="vault-list-display"></div>
     </main>
 
-    <footer class="site-footer">
-        <p class="font-bold text-lg mb-2">♥️ Kellie Larson ♥️</p>
-        <p class="text-[var(--metallic-gold)] mb-2">✍️ Cinematic Songwriter & Lyricist 🎹</p>
-        <p class="mb-4 text-gray-500 uppercase text-xs">Pre-Cleared IP • 2026 Sync Ready • Human Authored Guarantee</p>
-    </footer>
+    <div id="print-area">
+        <div id="p1-content"></div>
+        <div class="page-break"></div>
+        <div id="p2-content"></div>
+    </div>
 
-    <button id="arrow-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">▲</button>
+    <audio id="vault-audio-player" style="display:none;"></audio>
 
     <script>
-        function toggleActive(btn) {
-            // Remove active state from others
-            document.querySelectorAll('.pillar-btn').forEach(b => b.classList.remove('active'));
-            // Add to current
-            btn.classList.add('active');
+        const songData = {
+            "hit the road": { g1: "Pop", g2: "Rock", sub: "Empowerment", mood: "Confident", feel: "Strong", placement: "Breakup", theme: "Empowerment Arc", rate: "9.8", desc: "A high-stakes anthemic confrontation centered on the finality of an toxic relationship. Optimized for placements requiring a definitive, high-energy departure." },
+            "thought you should know": { g1: "Pop", g2: "Cinematic", sub: "Anthemic", mood: "Confident", feel: "Radiant", placement: "Commercial", theme: "Empowerment Arc", rate: "9.8", desc: "A vibrant pop anthem about positive transformation and healing after a breakup. Ideal for post-breakup healing sequences." },
+            "the real dream team": { g1: "Pop", g2: "Reggae", sub: "Dancehall", mood: "Playful", feel: "Confident", placement: "Sync", theme: "Value Proposition", rate: "9.7", desc: "A playful pop/dancehall track about the power of a safe and loving relationship. High-value proposition anthem for committed partnerships." },
+            "the back of me": { g1: "Pop", g2: "Rock", sub: "Cinematic Pop", mood: "Strong", feel: "Decisive", placement: "Drama", theme: "Empowerment Arc", rate: "9.8", desc: "An empowered anthem about setting final boundaries and walking away from a partner who abuses trust. Ideal for final breakup scenes." },
+            "wildflower": { g1: "Pop", g2: "Country", sub: "Storytelling", mood: "Resilient", feel: "Strong", placement: "Drama", theme: "Value Proposition", rate: "9.7", desc: "A narrative of resilience and rebellion in a small-town setting. Ideal for country-pop and indie film sync placements." },
+            "your forever man": { g1: "Cinematic", g2: "Indie", sub: "Trauma Recovery", mood: "Protective", feel: "Strong", placement: "Drama", theme: "Value Proposition", rate: "9.7", desc: "Romantic cinematic drama ready track about being the anchor for a partner healing from a dark past. Ideal for trauma recovery themes." }
+        };
+
+        function handleLyrics(title) {
+            const slug = title.toLowerCase().replace(/ /g, '-');
+            const player = document.getElementById('vault-audio-player');
+            player.src = `https://verseandchorus.com/assets/music/${slug}.mp3`;
+            player.play();
+            setTimeout(() => { window.location.href = `https://verseandchorus.com/lyrics/${slug}.html`; }, 500);
         }
+
+        async function printReport(title) {
+            const song = songData[title];
+            const slug = title.toLowerCase().replace(/ /g, '-');
+            
+            // PAGE 1: A&R METADATA (900 CHARS)
+            document.getElementById('p1-content').innerHTML = `<h1 style="color:#D4AF37; font-weight:800; font-size:24pt; text-transform:uppercase;">${title.toUpperCase()}</h1><p style="font-size:12pt; line-height:1.4;">${song.desc}</p>`;
+            
+            // PAGE 2: FETCH FULL LYRICS FROM /LYRICS/SONG-TITLE.HTML
+            try {
+                const response = await fetch(`https://verseandchorus.com/lyrics/${slug}.html`);
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const lyrics = doc.querySelector('.lyrics-body')?.innerHTML || "Lyrics available at https://verseandchorus.com/lyrics/" + slug + ".html";
+                document.getElementById('p2-content').innerHTML = `<h1 style="text-transform:uppercase; font-size:18pt;">Full Lyrics</h1>${lyrics}`;
+            } catch (e) {
+                document.getElementById('p2-content').innerHTML = `<h1 style="text-transform:uppercase; font-size:18pt;">Full Lyrics</h1><p>Please visit <a href="https://verseandchorus.com/lyrics/${slug}.html">VerseandChorus.com</a> to view full lyrics for ${title}.</p>`;
+            }
+            window.print();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const display = document.getElementById('vault-list-display');
+            const searchInput = document.getElementById('vault-search');
+
+            function render(filterTerm = "") {
+                display.innerHTML = "";
+                Object.keys(songData).forEach(key => {
+                    const s = songData[key];
+                    const searchable = `${key} ${s.g1} ${s.g2} ${s.sub} ${s.mood} ${s.feel} ${s.theme} ${s.placement}`.toLowerCase();
+                    if (searchable.includes(filterTerm.toLowerCase())) {
+                        display.innerHTML += `
+                            <div class="vault-row">
+                                <div class="flex items-center gap-3">
+                                    <img src="/assets/covers/${key.toLowerCase().replace(/ /g, '-')}-cover-art.jpg" class="w-12 h-12 rounded border border-gray-700">
+                                    <div>
+                                        <div class="song-card-title">${key.toUpperCase()}</div>
+                                        <div class="song-card-meta">${s.g2} / ${s.sub}</div>
+                                    </div>
+                                </div>
+                                <div class="text-[var(--sunset-orange)] font-black text-center">${s.rate}</div>
+                                <div class="text-xs italic">${s.mood} / ${s.feel}</div>
+                                <div class="text-xs uppercase">${s.placement}</div>
+                                <button class="vault-btn" onclick="handleLyrics('${key}')">LYRICS</button>
+                                <button class="print-btn" onclick="printReport('${key}')">PRINT</button>
+                            </div>`;
+                    }
+                });
+            }
+            searchInput.addEventListener('input', (e) => render(e.target.value));
+            render();
+        });
     </script>
+    <button id="arrow-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">▲</button>
 </body>
 </html>
