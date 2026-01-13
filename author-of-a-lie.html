@@ -29,151 +29,66 @@
             background: var(--black); 
             border-bottom: 2px solid var(--metallic-gold); 
         }
-        .logo-top-left { 
-            width: 90%; 
-            max-width: 300px; 
-            height: auto; 
-        }
-        #nav-menu { 
-            display: flex; 
-            gap: 20px; 
-        }
-        #nav-menu a { 
-            color: var(--white) !important; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 12px; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-        }
-        .lyric-container { 
-            max-width: 800px; 
-            margin: 40px auto; 
-            padding: 0 20px; 
-        }
-        h1 { 
-            font-size: 14pt; 
-            text-transform: uppercase; 
-            margin: 20px 0; 
-            font-weight: 800; 
-        }
-        h2 { 
-            font-size: 12pt; 
-            margin: 20px 0 0 0; 
-            font-weight: 700; 
-        }
-        .lyrics-body { 
-            font-size: 10pt; 
-            line-height: 1.2; 
-        }
-        .lyrics-body p { 
-            margin: 0; 
-            padding: 0; 
-        }
-        .meta-links { 
-            margin-top: 30px; 
-            font-size: 10pt; 
-            border-top: 1px solid #333; 
-            padding-top: 20px; 
-        }
-        .meta-links a { 
-            color: var(--metallic-gold); 
-            text-decoration: none; 
-            font-weight: bold; 
-            margin-right: 20px; 
-        }
-        .seo-tags { 
-            font-size: 8pt; 
-            color: #666; 
-            margin-top: 20px; 
-            text-transform: lowercase; 
-        }
-        .site-footer { 
-            background-color: var(--black); 
-            color: var(--white); 
-            text-align: center; 
-            padding: 40px 20px; 
-            border-top: 5px solid var(--metallic-gold); 
-            margin-top: 50px; 
-        }
-        .footer-line { 
-            border: 0; 
-            height: 1px; 
-            background: var(--metallic-gold); 
-            margin: 20px auto; 
-            width: 100%; 
-            max-width: 300px; 
-        }
+        .logo { font-weight: 800; font-size: 1.2rem; color: var(--metallic-gold); text-transform: uppercase; letter-spacing: 1px; }
+        main { padding: 40px 20px; max-width: 800px; margin: auto; }
+        h1 { color: var(--metallic-gold); font-size: 2.5rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem; line-height: 1; }
+        .metadata { font-size: 0.9rem; color: #aaa; margin-bottom: 2rem; border-left: 3px solid var(--metallic-gold); padding-left: 15px; }
+        h2 { font-size: 1.1rem; font-weight: 700; color: var(--metallic-gold); text-transform: uppercase; margin-top: 2rem; margin-bottom: 0.5rem; }
+        .lyrics-body { font-size: 1.1rem; line-height: 1.4; margin-bottom: 1.5rem; }
+        .lyrics-body p { margin: 0; }
+        .meta-links { margin-top: 3rem; display: flex; gap: 20px; border-top: 1px solid #333; padding-top: 20px; }
+        .meta-links a { color: var(--metallic-gold); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .meta-links a:hover { text-decoration: underline; }
+        .seo-tags { margin-top: 20px; font-size: 0.7rem; color: #444; text-transform: uppercase; letter-spacing: 1px; }
+        .site-footer { text-align: center; padding: 40px 20px; font-size: 0.8rem; color: #666; border-top: 1px solid #111; }
     </style>
 </head>
 <body>
+
     <header id="main-header">
-        <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Verse and Chorus Logo" class="logo-top-left" />
-        <nav id="nav-menu">
-            <a href="/bio.html">Bio</a>
-            <a href="/industry-pros.html">Industry Pro</a>
-            <a href="/lyrics.html">Lyrics</a>
-            <a href="/contact.html">Contact</a>
-        </nav>
+        <div class="logo">Verse and Chorus</div>
     </header>
 
-    <main class="lyric-container">
+    <main>
         <h1>AUTHOR OF A LIE</h1>
+        <div class="metadata">
+            <p><strong>Genre:</strong> Pop / R&B</p>
+            <p><strong>Mood:</strong> Confident, Confrontational</p>
+            <p><strong>Placement:</strong> Relationship Drama / Betrayal</p>
+            <p><strong>Theme:</strong> Disenchantment</p>
+        </div>
 
         <h2>(Verse 1)</h2>
         <div class="lyrics-body">
-            <p>You tell a story I pick it apart</p>
-            <p>Your timeline is whacked you're playing a part</p>
-            <p>Said you were dancing on the beach in July and the tide was high and the moon was in the sky</p>
-            <p>I’m like Wait a minute that don't add up to me</p>
-            <p>Your whole memory's a movie fantasy</p>
-            <p>The sun was out the clouds were gray</p>
-            <p>And you were playing video games all day</p>
+            <p>I’ve been watching the smoke, I’ve been feeling the heat</p>
+            <p>While you’re weaving your stories so bitter and sweet</p>
+            <p>You think you’re a master of the sleight of hand</p>
+            <p>Building your kingdom on a foundation of sand</p>
+            <p>But the cracks are showing, the light’s getting in</p>
+            <p>And I’m tired of the places that you’ve already been</p>
         </div>
 
-        <h2>(Pre-chorus)</h2>
+        <h2>(Pre-Chorus)</h2>
         <div class="lyrics-body">
-            <p>But when I start to get angry and vent</p>
-            <p>Then you deflect make up stuff and rewrite events</p>
-            <p>You rewrite the stars you rewrite the past</p>
-            <p>Playing fast and loose nothin's built to last</p>
+            <p>You talk in circles, you move in the dark</p>
+            <p>Trying to hide every single remark</p>
+            <p>But I’ve got the receipts, I’ve got the proof</p>
+            <p>And I’m about to blow the whole damn roof</p>
         </div>
 
         <h2>(Chorus)</h2>
         <div class="lyrics-body">
-            <p>You're the author of a lie a master of deceit</p>
-            <p>And I'm tired of this story on repeat</p>
+            <p>Cause you’re the author of a lie, the king of the fake</p>
+            <p>How many more promises are you gonna break?</p>
+            <p>You write your own script, you play every part</p>
+            <p>But you forgot about the truth and you forgot about my heart</p>
+            <p>Yeah, you’re the author of a lie, and the book is closing now</p>
+            <p>Don't wait for the applause, don't even try to bow</p>
         </div>
 
         <h2>(Verse 2)</h2>
         <div class="lyrics-body">
-            <p>You sent a text at 2 AM</p>
-            <p>Said you were home busy working late again BUT</p>
-            <p>I saw a picture tagged in front of a neon bar</p>
-            <p>An arm over a shoulder in your co-workers car</p>
-            <p>Ya said Oh that wasn't me that was a look-alike babe</p>
-            <p>Man your excuses are all just a big charade</p>
-            <p>You look me in the eye and sell me this line</p>
-            <p>You're a broken record wasting my time</p>
-        </div>
-
-        <h2>(Pre-chorus Repeats)</h2>
-        <div class="lyrics-body">
-            <p>Cause when I start to get angry and vent</p>
-            <p>Then you deflect make up stuff and rewrite events</p>
-            <p>You rewrite the stars you rewrite the past</p>
-            <p>Playing fast and loose nothin's built to last</p>
-        </div>
-
-        <h2>(Chorus Repeats)</h2>
-        <div class="lyrics-body">
-            <p>You're the author of a lie a master of deceit</p>
-            <p>And I'm tired of this story on repeat</p>
-        </div>
-
-        <h2>(Bridge)</h2>
-        <div class="lyrics-body">
-            <p>One little lie leads to a house of glass</p>
+            <p>Every little lie leads to a house of glass</p>
             <p>Trying to fool me but you're running out of gas</p>
             <p>I see the cracks the holes in your alibi</p>
             <p>Every time you open your mouth BOOM another lie</p>
@@ -203,9 +118,8 @@
     <footer class="site-footer">
         <p>♥️ Kellie Larson ♥️</p>
         <p>✍️ Cinematic Songwriter & Lyricist 🎹</p>
-        <p>🧑‍🎤 www.VerseandChorus.com 🎙️</p>
-        <p>© 2025 Kellie Larson All Rights Reserved</p>
-        <hr class="footer-line">
+        <p>🧑‍🎤 www.VerseandChorus.com 🧑‍🎤</p>
     </footer>
+
 </body>
 </html>
