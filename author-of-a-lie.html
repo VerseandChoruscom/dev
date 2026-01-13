@@ -3,123 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kellie Larson Cinematic Songwriter - 'Author of a Lie'. Genre: Pop / R&B. Mood: Confident, Confrontational. Placement: Relationship Drama / Betrayal. Theme: Disenchantment.">
-    <meta name="keywords" content="Kellie Larson, Cinematic Lyricist, Author of a Lie, Relationship Drama Lyrics, Pop R&B Sync, Betrayal Songwriting, Sync Ready IP, A&R Search, Music Licensing">
-    <title>AUTHOR OF A LIE | Kellie Larson Cinematic Songwriter</title>
+    <meta name="description" content="Access THE VAULT by Kellie Larson: A curated portfolio of cinematic lyrics. 100% human-authored, pre-cleared for 2026 sync licensing.">
+    <title>Industry Pro's | VerseandChorus.com</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
     <style>
-        :root {
-            --metallic-gold: #D4AF37;
-            --white: #FFFFFF;
-            --black: #000000;
+        :root { 
+            --metallic-gold: #D4AF37; 
+            --white: #FFFFFF; 
+            --black: #000000; 
+            --sunset-orange: #FD5E53; 
+            --blue-gray: #64748b; 
+            --burgundy: #800020; 
         }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--black); 
-            color: var(--white); 
-            margin: 0; 
-            text-align: left; 
-        }
-        #main-header { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 10px 20px; 
-            background: var(--black); 
-            border-bottom: 2px solid var(--metallic-gold); 
-        }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--metallic-gold); text-transform: uppercase; letter-spacing: 1px; }
-        main { padding: 40px 20px; max-width: 800px; margin: auto; }
-        h1 { color: var(--metallic-gold); font-size: 2.5rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem; line-height: 1; }
-        .metadata { font-size: 0.9rem; color: #aaa; margin-bottom: 2rem; border-left: 3px solid var(--metallic-gold); padding-left: 15px; }
-        h2 { font-size: 1.1rem; font-weight: 700; color: var(--metallic-gold); text-transform: uppercase; margin-top: 2rem; margin-bottom: 0.5rem; }
-        .lyrics-body { font-size: 1.1rem; line-height: 1.4; margin-bottom: 1.5rem; }
-        .lyrics-body p { margin: 0; }
-        .meta-links { margin-top: 3rem; display: flex; gap: 20px; border-top: 1px solid #333; padding-top: 20px; }
-        .meta-links a { color: var(--metallic-gold); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-        .meta-links a:hover { text-decoration: underline; }
-        .seo-tags { margin-top: 20px; font-size: 0.7rem; color: #444; text-transform: uppercase; letter-spacing: 1px; }
-        .site-footer { text-align: center; padding: 40px 20px; font-size: 0.8rem; color: #666; border-top: 1px solid #111; }
-    </style>
-</head>
-<body>
+        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--black); margin: 0; }
+        .content-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        
+        /* HEADER & NAVIGATION */
+        #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); }
+        .logo-top-left { width: 300px; height: auto; }
+        #nav-menu { display: flex; align-items: center; }
+        #nav-menu a { color: var(--white); font-weight: bold; font-size: 12px; text-transform: uppercase; margin-left: 20px; text-decoration: none; transition: color 0.3s; }
+        #nav-menu a:hover { color: var(--sunset-orange); }
 
-    <header id="main-header">
-        <div class="logo">Verse and Chorus</div>
-    </header>
+        /* HERO BOX - GOLD SCRIPT & WHITE */
+        .hero-box { text-align: center; padding: 60px 20px; border-bottom: 5px solid var(--metallic-gold); background: var(--black); }
+        .presents-text { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 3.5rem; line-height: 1; margin-bottom: 10px; }
+        .page-name { color: var(--white); font-size: 4.5rem; font-weight: 800; text-transform: uppercase; }
 
-    <main>
-        <h1>AUTHOR OF A LIE</h1>
-        <div class="metadata">
-            <p><strong>Genre:</strong> Pop / R&B</p>
-            <p><strong>Mood:</strong> Confident, Confrontational</p>
-            <p><strong>Placement:</strong> Relationship Drama / Betrayal</p>
-            <p><strong>Theme:</strong> Disenchantment</p>
-        </div>
+        /* PILLAR BUTTONS - ORANGE ON CLICK */
+        .pillar-btn { background: var(--white); color: var(--black); border: 2px solid var(--black); border-radius: 4px; font-size: 0.8rem; font-weight: 900; text-align: center; cursor: pointer; text-transform: uppercase; padding: 20px 10px; transition: all 0.3s ease; height: 75px; display: flex; align-items: center; justify-content: center; width: 100%; }
+        .pillar-btn:hover, .pillar-btn.active { background: var(--sunset-orange) !important; color: var(--white) !important; border-color: var(--sunset-orange) !important; }
 
-        <h2>(Verse 1)</h2>
-        <div class="lyrics-body">
-            <p>I’ve been watching the smoke, I’ve been feeling the heat</p>
-            <p>While you’re weaving your stories so bitter and sweet</p>
-            <p>You think you’re a master of the sleight of hand</p>
-            <p>Building your kingdom on a foundation of sand</p>
-            <p>But the cracks are showing, the light’s getting in</p>
-            <p>And I’m tired of the places that you’ve already been</p>
-        </div>
+        /* LEGAL TERMS */
+        .legal-term { color: var(--white); font-size: 10px; font-weight: 800; text-transform: uppercase; display: flex; align-items: center; gap: 4px; }
+        .checkmark { color: var(--burgundy); font-size: 14px; font-weight: bold; }
 
-        <h2>(Pre-Chorus)</h2>
-        <div class="lyrics-body">
-            <p>You talk in circles, you move in the dark</p>
-            <p>Trying to hide every single remark</p>
-            <p>But I’ve got the receipts, I’ve got the proof</p>
-            <p>And I’m about to blow the whole damn roof</p>
-        </div>
-
-        <h2>(Chorus)</h2>
-        <div class="lyrics-body">
-            <p>Cause you’re the author of a lie, the king of the fake</p>
-            <p>How many more promises are you gonna break?</p>
-            <p>You write your own script, you play every part</p>
-            <p>But you forgot about the truth and you forgot about my heart</p>
-            <p>Yeah, you’re the author of a lie, and the book is closing now</p>
-            <p>Don't wait for the applause, don't even try to bow</p>
-        </div>
-
-        <h2>(Verse 2)</h2>
-        <div class="lyrics-body">
-            <p>Every little lie leads to a house of glass</p>
-            <p>Trying to fool me but you're running out of gas</p>
-            <p>I see the cracks the holes in your alibi</p>
-            <p>Every time you open your mouth BOOM another lie</p>
-            <p>I'm over it I'm done I'm walking away</p>
-            <p>From this little game you're playing every single day</p>
-        </div>
-
-        <h2>(Outro)</h2>
-        <div class="lyrics-body">
-            <p>Yeah tired of this fiction tired of the pretense</p>
-            <p>No more of your stories they all lack common sense</p>
-            <p>Rewrite this rewrite that yeah you rewrite events Looking real bad</p>
-            <p>I'm not buying it no not ever again</p>
-            <p>Not ever again Fantasy world has come to an end</p>
-        </div>
-
-        <div class="meta-links">
-            <a href="/assets/music/author-of-a-lie-audio.mp3">Listen to Audio Preview</a>
-            <a href="https://songbay.co/view-music/235610816/" target="_blank">View on Songbay</a>
-        </div>
-
-        <div class="seo-tags">
-            #KellieLarson #AuthorOfALie #CinematicLyricist #PopRnB #SyncPlacement #MusicSupervisorIP #Disenchantment
-        </div>
-    </main>
-
-    <footer class="site-footer">
-        <p>♥️ Kellie Larson ♥️</p>
-        <p>✍️ Cinematic Songwriter & Lyricist 🎹</p>
-        <p>🧑‍🎤 www.VerseandChorus.com 🧑‍🎤</p>
-    </footer>
-
-</body>
-</html>
+        /* VAULT LIST */
+        .vault-row { display: grid; grid-template-columns: 2.5fr 0.5fr 1.5fr 1.5fr 1fr 1fr; gap: 15px; align-items: center; padding: 15px; border-bottom: 1px solid rgba(0, 0, 0, 0.1); background: #f9fafb; margin-bottom: 8px; border-radius: 8px; }
+        
+        /* LINKS & BUTTONS */
+        .song-title-link { color: var(--metallic-gold); font-weight: 800; text-decoration: none; text-transform: uppercase; font-size: 0.875rem; transition: color 0.3s; }
+        .song-title-link:hover { color: var(--sunset-orange); }
+        .vault-btn { background: var(--metallic-gold); color: var(--black); font-weight: 900; padding: 8px 12px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; border: none; text-align: center; transition: 0.3s; text-decoration: none; }
+        .vault-btn:hover { background: var(--sunset-orange); color: var(--white); }
+        .print-btn { background
