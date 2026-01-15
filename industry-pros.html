@@ -453,7 +453,6 @@
     </div>
 
     <main class="content-container py-10">
-        <!-- Legal Checkmarks -->
         <div class="bg-black p-6 mb-8 border-l-4 border-[var(--sunset-orange)] rounded shadow-lg">
             <div class="grid md:grid-cols-4 gap-4">
                 <div class="legal-term"><span class="checkmark">✔</span> 100% Human-Authored</div>
@@ -463,7 +462,6 @@
             </div>
         </div>
 
-        <!-- Pillar Buttons (Filters) -->
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
             <button class="pillar-btn" onclick="filterByPillar('Social')">Social Commentary</button>
             <button class="pillar-btn" onclick="filterByPillar('Empowerment')">Empowerment Arc</button>
@@ -473,7 +471,6 @@
             <button class="pillar-btn" onclick="filterByPillar('Protagonist')">Iterative Protagonist</button>
         </div>
 
-        <!-- Search & Filter Bar -->
         <div class="bg-gray-100 p-6 rounded border border-gray-300 mb-8">
             <input type="text" id="vault-search" placeholder="SEARCH BY KEYWORD, PHRASE, THEME, OR SYNC METADATA (AI OPTIMIZED 2025/2026)..." class="w-full p-4 bg-white border border-gray-400 rounded mb-6 text-black uppercase text-sm outline-none focus:border-[var(--sunset-orange)]">
             
@@ -541,8 +538,7 @@
         </div>
 
         <div id="vault-list-display">
-            <!-- CARDS INJECTED HERE -->
-        </div>
+            </div>
     </main>
 
     <footer class="site-footer" style="text-align:center; padding: 20px;">
@@ -553,7 +549,6 @@
 
     <button id="arrow-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">▲</button>
 
-    <!-- MUSIC STAND MODAL (Page 1 Left, Page 2 Right) -->
     <div id="music-stand-modal">
         <div class="music-stand-container">
             <span class="close-stand" onclick="closeMusicStand()">×</span>
@@ -566,7 +561,6 @@
             </div>
 
             <div class="music-stand-book">
-                <!-- Page 1: Title Page -->
                 <div class="stand-page-left" id="stand-page-1">
                     <div class="page-1-title" id="p1-title">SONG TITLE</div>
                     <div class="page-1-author">Lyrics by Kellie Larson</div>
@@ -574,7 +568,6 @@
                     <div class="page-1-footer">© 2026 Verse & Chorus | All Rights Reserved</div>
                 </div>
                 
-                <!-- Page 2: Lyrics Iframe -->
                 <div class="stand-page-right" id="stand-page-2">
                     <iframe id="lyrics-frame" src="" title="Lyrics View"></iframe>
                 </div>
@@ -582,7 +575,6 @@
         </div>
     </div>
 
-    <!-- Hidden Iframe for Printing Logic -->
     <iframe id="hidden-print-frame"></iframe>
 
     <script>
@@ -805,7 +797,8 @@
             document.getElementById('p1-art').onerror = function() { this.src = 'https://placehold.co/200x200/800020/FFFFFF?text=No+Cover'; };
             
             const audio = document.getElementById('stand-audio');
-            audio.src = `/assets/music/${slug}-audio.mp3`; 
+            // UPDATED LINE:
+            audio.src = `/assets/music/${slug}.mp3`; 
             
             // Add error listener to log instead of crash, but also handle promise rejection below
             audio.onerror = function() {
@@ -862,27 +855,23 @@
 
                 display.innerHTML += `
                     <div class="vault-card" data-title="${key}" data-genre="${s.genre1}" data-theme="${s.theme}">
-                        <!-- COL 1: Art + Title -->
                         <div class="card-col-title">
                             <img src="/assets/covers/${slug}-cover-art.jpg" alt="${displayTitle} Cover" class="card-art" onerror="this.src='https://placehold.co/60x60/800020/FFFFFF?text=No+Cover'">
                             <div class="card-song-title">${displayTitle}</div>
                         </div>
 
-                        <!-- COL 2: Genres (DESKTOP) -->
                         <div class="card-col-data desktop-data">
                             <div><span class="data-label">G1:</span>${s.genre1}</div>
                             <div><span class="data-label">G2:</span>${s.genre2}</div>
                             <div><span class="data-label">SUB:</span>${s.subgenre}</div>
                         </div>
 
-                        <!-- COL 3: Attributes (DESKTOP) -->
                         <div class="card-col-data desktop-data">
                             <div><span class="data-label">FEEL:</span>${s.feeling}</div>
                             <div><span class="data-label">PLACE:</span>${s.placement}</div>
                             <div><span class="data-label">PILLAR:</span>${s.pillar}</div>
                         </div>
 
-                        <!-- MOBILE DATA BLOCK (Hidden on Desktop) -->
                         <div class="card-col-data mobile-data">
                             <span class="mobile-line"><span class="data-label">GENRES:</span> ${s.genre1} / ${s.genre2}</span>
                             <span class="mobile-line"><span class="data-label">SUB:</span> ${s.subgenre}</span>
@@ -890,10 +879,8 @@
                             <span class="mobile-line"><span class="data-label">FIT:</span> ${s.placement} / ${s.pillar}</span>
                         </div>
                         
-                        <!-- COL 4: Snippet -->
                         <div class="snippet-box">${s.bestLine}</div>
 
-                        <!-- COL 5: Actions -->
                         <div class="card-col-actions">
                             <div class="rating-display">${s.rating}</div>
                             <div class="btn-row">
