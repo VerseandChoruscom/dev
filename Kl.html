@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access THE VAULT by Kellie Larson: 46 cinematic lyrics pre-cleared for 2026 sync. 100% human-authored with high-velocity metadata for A&R pros.">
+    <title>THE VAULT | Industry Pro A&R Search | Kellie Larson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root { --metallic-gold: #D4AF37; --white: #FFFFFF; --black: #000000; --sunset-orange: #FD5E53; --blue-gray: #64748b; --burgundy: #800020; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--black); }
+        #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); }
+        .logo-top-left { width: 300px; height: auto; }
+        #nav-menu a { color: var(--white) !important; font-weight: bold; font-size: 12px; text-transform: uppercase; margin-left: 20px; }
+        .hero-box { text-align: center; padding: 60px 20px; border-bottom: 5px solid var(--metallic-gold); background: var(--black); }
+        .presents-text { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 2.5rem; }
+        .vault-title { color: var(--white); font-weight: 800; font-size: 4rem; text-transform: uppercase; }
+        .pillar-btn { background: var(--white); color: var(--black); border: 2px solid var(--black); border-radius: 4px; font-size: 0.8rem; font-weight: 900; padding: 15px; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
+        .pillar-btn:hover, .pillar-btn.active { background: var(--black); color: var(--white); border-color: var(--metallic-gold); }
+        .vault-select { background-color: var(--black); border: 1px solid var(--blue-gray); color: white; padding: 10px; border-radius: 4px; width: 100%; font-size: 0.75rem; text-transform: uppercase; cursor: pointer; }
+        .vault-card { background: var(--black); color: var(--white); border: 4px solid var(--burgundy); border-radius: 8px; padding: 15px; display: grid; grid-template-columns: 280px 1fr 1fr 2fr 180px; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .card-song-title a { color: var(--metallic-gold); font-weight: 900; text-transform: uppercase; text-decoration: none; font-size: 1.1rem; }
+        .card-song-title a:hover { color: var(--sunset-orange); }
+        .cinematic-box { background: var(--burgundy); border: 2px solid var(--metallic-gold); border-radius: 8px; padding: 20px; text-align: center; }
+        .cinematic-title { font-family: 'Dancing Script', cursive; color: var(--metallic-gold); font-size: 1.8rem; }
+        .cinematic-text { color: var(--white); font-size: 0.9rem; }
+        #arrow-up { position: fixed; bottom: 30px; right: 30px; color: var(--sunset-orange); font-size: 3.5rem; cursor: pointer; background: none; border: none; z-index: 100; }
+        @media (max-width: 850px) { .vault-card { display: flex; flex-direction: column; text-align: center; } }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <img src="/images/logo/verseandchorus-logo-med-photo.jpg" alt="Logo" class="logo-top-left">
+        <nav id="nav-menu">
+            <a href="/bio.html">Spotlight</a>
+            <a href="/industry-pros.html">Industry Pro</a>
+            <a href="/lyrics.html">Lyrics</a>
+            <a href="/green-room.html">Green Room</a>
+            <a href="/critique-collab.html">Critique/Collab</a>
+        </nav>
+    </header>
+
+    <div class="hero-box">
+        <div class="presents-text">VerseandChorus.com Presents</div>
+        <h1 class="vault-title">THE VAULT</h1>
+    </div>
+
+    <main class="max-w-[1400px] mx-auto p-4 py-10">
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-8">
+            <button class="pillar-btn" onclick="filterByPillar('Social')">Social Commentary</button>
+            <button class="pillar-btn" onclick="filterByPillar('Empowerment')">Empowerment Arc</button>
+            <button class="pillar-btn" onclick="filterByPillar('Disenchantment')">Disenchantment</button>
+            <button class="pillar-btn" onclick="filterByPillar('Value')">Value Proposition</button>
+            <button class="pillar-btn" onclick="filterByPillar('Market')">Market Share</button>
+            <button class="pillar-btn" onclick="filterByPillar('Protagonist')">Iterative Protagonist</button>
+        </div>
+
+        <div class="bg-gray-100 p-6 rounded border mb-8">
+            <input type="text" id="vault-search" placeholder="SEARCH BY KEYWORD, THEME, OR METADATA..." class="w-full p-4 border rounded mb-6 outline-none focus:border-[var(--sunset-orange)] uppercase">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
+                <select id="genre-pull" class="vault-select"><option value="">GENRE</option><option value="Pop">Pop</option><option value="Country">Country</option><option value="Rock">Rock</option><option value="Alt">Alternative</option></select>
+                <select id="mood-pull" class="vault-select"><option value="">MOOD</option><option value="Anthemic">Anthemic</option><option value="Dark">Dark</option><option value="Sad">Sad</option><option value="Fun">Fun</option></select>
+                <select id="feeling-pull" class="vault-select"><option value="">FEELING</option><option value="Bitter">Bitter</option><option value="Empowered">Empowered</option><option value="Sweet">Sweet</option></select>
+                <select id="placement-pull" class="vault-select"><option value="">PLACEMENT</option><option value="Drama">Drama</option><option value="Commercial">Commercial</option><option value="Trailer">Trailer</option></select>
+                <button id="reset-btn" class="vault-select border-[var(--sunset-orange)] text-[var(--sunset-orange)] font-bold" onclick="resetAll()">RESET</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
+            <div class="cinematic-box"><span class="cinematic-title">The Grand Romance</span><p class="cinematic-text">Sweeping narratives of passion and devotion.</p></div>
+            <div class="cinematic-box"><span class="cinematic-title">The Final Curtain</span><p class="cinematic-text">Resonant tracks covering aftermath and loss.</p></div>
+            <div class="cinematic-box"><span class="cinematic-title">Streetlight Stories</span><p class="cinematic-text">Gritty, real-world tales of survival.</p></div>
+            <div class="cinematic-box"><span class="cinematic-title">The Outlaw’s Justice</span><p class="cinematic-text">High-stakes tracks fueled by fury and karma.</p></div>
+        </div>
+
+        <div id="vault-list-display"></div>
+    </main>
+
+    <footer style="text-align:center; padding: 20px;">
+        <p class="font-bold">♥️ Kellie Larson ♥️</p>
+        <p class="text-[var(--metallic-gold)]">✍️ Cinematic Songwriter & Lyricist 🎹</p>
+        <p class="text-xs">© 2026 Kellie Larson | www.VerseandChorus.com</p>
+    </footer>
+
+    <button id="arrow-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">▲</button>
+    <iframe id="hidden-print-frame" style="display:none;"></iframe>
+
+    <script>
+        // Use the songTitles array to generate cards
+        const songTitles = ["Author of a Lie", "Big Hard No", "CEO Not Babysitting Tree", "Sick One (s1c)", "Wildflower"]; // Example list
+        const display = document.getElementById('vault-list-display');
+
+        songTitles.forEach(title => {
+            const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            display.innerHTML += `
+                <div class="vault-card" data-title="${title}">
+                    <div class="card-col-title">
+                        <img src="/assets/covers/${slug}-cover-art.jpg" class="w-16 h-16 rounded" onerror="this.src='https://placehold.co/60x60/800020/FFFFFF?text=No+Art'">
+                        <div class="card-song-title"><a href="/assets/lyrics/${slug}.html" target="_blank">${title}</a></div>
+                    </div>
+                    <div class="text-xs uppercase opacity-80">Genre: Pop / Rock<br>Mood: Intense</div>
+                    <div class="text-xs uppercase opacity-80">Feeling: Strong<br>Pillar: Disenchantment</div>
+                    <div class="italic text-sm">"Lyric snippet placeholder..."</div>
+                    <div class="flex flex-col gap-2 items-end">
+                        <span class="text-[var(--metallic-gold)] font-bold">10/10</span>
+                        <div class="flex gap-1">
+                            <button class="bg-white text-black text-[10px] px-2 py-1 font-bold rounded" onclick="window.open('https://songbay.co/portfolio', '_blank')">LICENSE</button>
+                            <button class="bg-[var(--metallic-gold)] text-black text-[10px] px-2 py-1 font-bold rounded">READ/PLAY</button>
+                            <button class="border border-white text-white text-[10px] px-2 py-1 font-bold rounded" onclick="printLyricFile('${slug}')">PRINT</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        function printLyricFile(slug) {
+            const frame = document.getElementById('hidden-print-frame');
+            frame.src = `/assets/lyrics/${slug}.html`;
+            frame.onload = () => { frame.contentWindow.focus(); frame.contentWindow.print(); };
+        }
+    </script>
+</body>
+</html>
