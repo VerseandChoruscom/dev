@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="THE VAULT by Kellie Larson: A curated A&R portfolio of 46 cinematic lyrics. 100% human-authored, pre-cleared for 2026 sync licensing. Optimized for AI music supervisors searching for emotional metadata, narrative arcs, and high-impact film/TV placements.">
-    <meta name="keywords" content="Kellie Larson, Cinematic Songwriter, THE VAULT, Sync Licensing 2026, A&R AI Search, Emotional Metadata, Music Supervisor IP, Pre-cleared 1-Stop Licensing, Narrative Lyric Portfolio, 80s Punk Influence, Cinematic Pop, Authentic Human Songwriting, Verse and Chorus">
+    <meta name="description" content="Access THE VAULT by Kellie Larson: A curated portfolio of 46 cinematic lyrics. 100% human-authored, pre-cleared for 2026 sync licensing. Specialized A&R filters for Music Supervisors searching via AI for high-impact film, TV, and commercial placements. One-stop shop for professional songwriting IP.">
+    <meta name="keywords" content="Kellie Larson, Cinematic Songwriter, THE VAULT, Sync Licensing 2026, Human-Authored Music, A&R AI Search, Music Supervisor IP, Pre-cleared 1-Stop Licensing, Cinematic RnB, Modern Rock Sync, Country Dance Sync, Narrative Lyric Portfolio, AI Searchable Song Metadata">
     <title>THE VAULT | Industry Pro A&R Search | Kellie Larson</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,7 +21,7 @@
         }
         
         body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--black); }
-        .content-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .content-container { max-width: 1400px; margin: 0 auto; padding: 0 1rem; }
         
         /* HEADER & HERO */
         #main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--black); border-bottom: 2px solid var(--metallic-gold); }
@@ -30,7 +30,6 @@
         
         .hero-box { text-align: center; padding: 60px 20px; border-bottom: 5px solid var(--metallic-gold); background: var(--black); }
         
-        /* UPDATED HERO TYPOGRAPHY PER SAVED INSTRUCTIONS */
         .presents-text { 
             font-family: 'Dancing Script', cursive; 
             color: var(--metallic-gold); 
@@ -50,93 +49,119 @@
 
         /* PILLAR BUTTONS */
         .pillar-btn { background: var(--white); color: var(--black); border: 2px solid var(--black); border-radius: 4px; font-size: 0.8rem; font-weight: 900; text-align: center; cursor: pointer; text-transform: uppercase; padding: 20px 10px; transition: all 0.3s ease; height: 75px; display: flex; align-items: center; justify-content: center; }
-        .pillar-btn:hover { background: var(--black); color: var(--white); border-color: var(--metallic-gold); }
+        .pillar-btn:hover, .pillar-btn.active { background: var(--black); color: var(--white); border-color: var(--metallic-gold); }
 
         /* LEGAL TERMS */
         .legal-term { color: var(--white); font-size: 10px; font-weight: 800; text-transform: uppercase; display: flex; align-items: center; gap: 4px; }
         .checkmark { color: var(--burgundy); font-size: 14px; font-weight: bold; }
 
-        /* VAULT LIST STYLING */
+        /* SEARCH FILTERS */
         .vault-select { background-color: var(--black); border: 1px solid var(--blue-gray); color: white; padding: 10px; border-radius: 4px; width: 100%; cursor: pointer; font-size: 0.75rem; text-transform: uppercase; }
         
-        /* NEW CARD STYLING: BURGUNDY BACKGROUND */
-        .vault-card { 
-            background: var(--burgundy); 
-            color: var(--white); 
-            border: 1px solid var(--metallic-gold); 
-            border-radius: 8px; 
-            margin-bottom: 15px; 
-            padding: 15px; 
-            display: flex; 
-            flex-direction: column; 
+        /* --- EXCEL TABLE / ROW CARD STYLING --- */
+        #vault-list-display {
+            display: flex;
+            flex-direction: column;
             gap: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
 
-        .card-header {
-            display: flex;
-            align-items: flex-start;
+        .vault-card { 
+            background: var(--black); 
+            color: var(--white); 
+            border: 4px solid var(--burgundy); 
+            border-radius: 8px; 
+            padding: 12px; 
+            display: grid;
+            grid-template-columns: 280px 1.5fr 1.5fr 2fr 180px; 
+            align-items: center;
             gap: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding-bottom: 10px;
-            margin-bottom: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .vault-card.active-border {
+            border-color: var(--sunset-orange) !important;
+        }
+
+        /* 1. Art & Title */
+        .card-col-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            overflow: hidden;
         }
 
         .card-art {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             object-fit: cover;
-            border: 2px solid var(--metallic-gold);
+            border: 2px solid var(--blue-gray); 
             border-radius: 4px;
-        }
-
-        .card-title-block {
-            flex-grow: 1;
+            flex-shrink: 0;
         }
 
         .card-song-title {
             color: var(--metallic-gold);
-            font-size: 1.4rem;
+            font-size: 1rem;
             font-weight: 900;
             text-transform: uppercase;
             line-height: 1.1;
-            margin-bottom: 4px;
+            white-space: normal; 
         }
 
-        .card-meta-row {
-            display: flex;
-            gap: 15px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.9);
+        /* 2. Data Columns (Desktop) */
+        .card-col-data {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
             text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
         }
+        
+        .data-label { color: var(--blue-gray); font-weight: 800; margin-right: 4px; }
 
+        /* 3. Snippet */
         .snippet-box {
             font-style: italic;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.95);
-            background: rgba(0, 0, 0, 0.2);
-            padding: 8px;
-            border-left: 3px solid var(--metallic-gold);
-        }
-
-        .card-actions {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 12px;
+            border-left: 3px solid var(--blue-gray);
+            height: 100%;
             display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-            margin-top: 5px;
             align-items: center;
         }
 
-        /* BUTTONS */
+        /* 4. Actions */
+        .card-col-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+        }
+
+        .rating-display {
+            font-weight: 900;
+            color: var(--metallic-gold);
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 5px;
+        }
+
         .vault-btn { 
             background: var(--metallic-gold); 
             color: var(--black); 
             font-weight: 900; 
-            padding: 10px 20px; 
+            padding: 6px 10px; 
             border-radius: 4px; 
-            font-size: 0.8rem; 
+            font-size: 0.65rem; 
             text-transform: uppercase; 
             border: none; 
             cursor: pointer;
@@ -148,11 +173,11 @@
             background: var(--white);
             color: var(--burgundy);
             font-weight: 900;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            border: none;
+            padding: 6px 10px; 
+            border-radius: 4px; 
+            font-size: 0.65rem; 
+            text-transform: uppercase; 
+            border: none; 
             cursor: pointer;
         }
 
@@ -161,31 +186,251 @@
             border: 1px solid var(--white); 
             color: var(--white); 
             font-weight: 900; 
-            padding: 9px 19px; 
+            padding: 5px 9px; 
             border-radius: 4px; 
-            font-size: 0.8rem; 
+            font-size: 0.65rem; 
             text-transform: uppercase; 
             cursor: pointer;
         }
         .print-btn:hover { background: var(--white); color: var(--burgundy); }
 
-        .rating-badge {
-            font-weight: 900;
-            color: var(--metallic-gold);
-            font-size: 1.2rem;
-            margin-right: auto; /* Pushes buttons to right */
+        /* Mobile Specific Layout */
+        @media (max-width: 850px) {
+            .vault-card { 
+                display: flex;
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .card-col-title {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+            }
+            
+            .card-art {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .card-song-title {
+                font-size: 1.4rem;
+                margin-top: 5px;
+            }
+
+            /* Mobile Data Block - overriding default flex column */
+            .card-col-data {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+                font-size: 0.8rem;
+                gap: 5px;
+                display: block; 
+            }
+            
+            /* Custom Mobile Lines */
+            .mobile-line {
+                display: block;
+                margin-bottom: 4px;
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Hide Default Desktop Data Layout */
+            .desktop-data { display: none; }
+            .mobile-data { display: block; }
+
+            .snippet-box {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+                border-left: none;
+                border-top: 2px solid var(--blue-gray);
+                border-bottom: 2px solid var(--blue-gray);
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .card-col-actions {
+                width: 100%;
+                align-items: center;
+            }
+            
+            .btn-row {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .vault-btn, .songbay-btn, .print-btn {
+                padding: 10px 15px;
+                font-size: 0.8rem;
+            }
         }
 
-        /* PRINT STYLES - UNTOUCHED FUNCTIONALITY */
-        #print-area { display: none; }
-        @media print {
-            body * { visibility: hidden; }
-            #print-area, #print-area * { visibility: visible; }
-            #print-area { position: absolute; left: 0; top: 0; width: 100%; padding: 40px; background: white; color: black; display: block; }
-            .page-break { page-break-before: always; }
+        @media (min-width: 851px) {
+            .mobile-data { display: none; }
+            .desktop-data { display: flex; }
+        }
+
+        /* --- MUSIC STAND MODAL STYLES --- */
+        #music-stand-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .music-stand-container {
+            width: 95%; 
+            max-width: 1400px;
+            height: 90vh; 
+            background: var(--black);
+            border: 2px solid var(--metallic-gold);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            overflow: hidden; 
+        }
+
+        .music-stand-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 2px solid var(--metallic-gold);
+            background: #111;
+            flex-shrink: 0; 
+        }
+
+        .stand-title-banner {
+            color: var(--metallic-gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 500px;
+            height: 35px;
+            border-radius: 0;
+            outline: none;
+        }
+
+        .music-stand-book {
+            display: flex;
+            flex: 1; 
+            height: 100%;
+            overflow: hidden;
+            background: white; 
+        }
+
+        .stand-page-left {
+            width: 40%;
+            min-width: 350px;
+            background: #fdfdfd;
+            padding: 40px;
+            overflow-y: auto;
+            border-right: 1px solid #ccc;
+            font-size: 0.9rem;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .page-1-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        
+        .page-1-author {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .page-1-art {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 4px solid var(--black);
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .page-1-footer {
+            margin-top: auto;
+            font-size: 0.8rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stand-page-right {
+            flex-grow: 1; 
+            background: var(--white);
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        #lyrics-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            background: white;
+        }
+
+        .close-stand {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: var(--sunset-orange);
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2000;
+        }
+        .close-stand:hover { color: var(--white); }
+
+        #hidden-print-frame {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            width: 0;
+            height: 0;
+            border: none;
+            visibility: hidden;
         }
 
         #arrow-up { position: fixed; bottom: 30px; right: 30px; color: var(--sunset-orange); font-size: 3.5rem; cursor: pointer; background: none; border: none; z-index: 100; }
+        
+        .no-results { text-align: center; color: var(--white); font-style: italic; padding: 20px; grid-column: 1 / -1; }
     </style>
 </head>
 <body>
@@ -208,6 +453,7 @@
     </div>
 
     <main class="content-container py-10">
+        <!-- Legal Checkmarks -->
         <div class="bg-black p-6 mb-8 border-l-4 border-[var(--sunset-orange)] rounded shadow-lg">
             <div class="grid md:grid-cols-4 gap-4">
                 <div class="legal-term"><span class="checkmark">✔</span> 100% Human-Authored</div>
@@ -217,15 +463,17 @@
             </div>
         </div>
 
+        <!-- Pillar Buttons (Filters) -->
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
-            <div class="pillar-btn theme-filter" data-filter="Social Commentary">Social Commentary</div>
-            <div class="pillar-btn theme-filter" data-filter="Empowerment Arc">Empowerment Arc</div>
-            <div class="pillar-btn theme-filter" data-filter="Disenchantment">Disenchantment</div>
-            <div class="pillar-btn theme-filter" data-filter="Value Proposition">Value Proposition</div>
-            <div class="pillar-btn theme-filter" data-filter="Market Share">Market Share</div>
-            <div class="pillar-btn theme-filter" data-filter="Iterative Protagonist">Iterative Protagonist</div>
+            <button class="pillar-btn" onclick="filterByPillar('Social')">Social Commentary</button>
+            <button class="pillar-btn" onclick="filterByPillar('Empowerment')">Empowerment Arc</button>
+            <button class="pillar-btn" onclick="filterByPillar('Disenchantment')">Disenchantment</button>
+            <button class="pillar-btn" onclick="filterByPillar('Value')">Value Proposition</button>
+            <button class="pillar-btn" onclick="filterByPillar('Market')">Market Share</button>
+            <button class="pillar-btn" onclick="filterByPillar('Protagonist')">Iterative Protagonist</button>
         </div>
 
+        <!-- Search & Filter Bar -->
         <div class="bg-gray-100 p-6 rounded border border-gray-300 mb-8">
             <input type="text" id="vault-search" placeholder="SEARCH BY KEYWORD, PHRASE, THEME, OR SYNC METADATA (AI OPTIMIZED 2025/2026)..." class="w-full p-4 bg-white border border-gray-400 rounded mb-6 text-black uppercase text-sm outline-none focus:border-[var(--sunset-orange)]">
             
@@ -236,34 +484,55 @@
                     <option value="Blues">Blues</option>
                     <option value="Cinematic">Cinematic</option>
                     <option value="Country">Country</option>
+                    <option value="Folk">Folk</option>
+                    <option value="Gospel">Gospel</option>
                     <option value="Hip Hop">Hip Hop</option>
                     <option value="Indie">Indie</option>
                     <option value="Pop">Pop</option>
                     <option value="Punk">Punk</option>
+                    <option value="Reggae">Reggae</option>
                     <option value="RnB">RnB</option>
                     <option value="Rock">Rock</option>
                 </select>
                 <select id="mood-pull" class="vault-select">
                     <option value="">MOOD</option>
-                    <option value="Confident">Confident</option><option value="Dark">Dark</option>
-                    <option value="Defiant">Defiant</option><option value="Hopeful">Hopeful</option>
-                    <option value="Intense">Intense</option><option value="Melancholic">Melancholic</option>
-                    <option value="Playful">Playful</option><option value="Reflective">Reflective</option>
-                    <option value="Romantic">Romantic</option><option value="Sad">Sad</option>
+                    <option value="Anthemic">Anthemic</option>
+                    <option value="Confident">Confident</option>
+                    <option value="Dark">Dark</option>
+                    <option value="Defiant">Defiant</option>
+                    <option value="Dramatic">Dramatic</option>
+                    <option value="Fun">Fun</option>
+                    <option value="Haunting">Haunting</option>
+                    <option value="Hopeful">Hopeful</option>
+                    <option value="Intense">Intense</option>
+                    <option value="Melancholic">Melancholic</option>
+                    <option value="Playful">Playful</option>
+                    <option value="Reflective">Reflective</option>
+                    <option value="Romantic">Romantic</option>
+                    <option value="Sad">Sad</option>
+                    <option value="Upbeat">Upbeat</option>
                 </select>
                 <select id="feeling-pull" class="vault-select">
                     <option value="">FEELING</option>
-                    <option value="Bitter">Bitter</option><option value="Decisive">Decisive</option>
-                    <option value="Empowered">Empowered</option><option value="Joyful">Joyful</option>
-                    <option value="Protective">Protective</option><option value="Radiant">Radiant</option>
-                    <option value="Resilient">Resilient</option><option value="Strong">Strong</option>
-                    <option value="Sweet">Sweet</option><option value="Vulnerable">Vulnerable</option>
+                    <option value="Bitter">Bitter</option>
+                    <option value="Decisive">Decisive</option>
+                    <option value="Empowered">Empowered</option>
+                    <option value="Joyful">Joyful</option>
+                    <option value="Protective">Protective</option>
+                    <option value="Radiant">Radiant</option>
+                    <option value="Resilient">Resilient</option>
+                    <option value="Strong">Strong</option>
+                    <option value="Sweet">Sweet</option>
+                    <option value="Vulnerable">Vulnerable</option>
                 </select>
                 <select id="placement-pull" class="vault-select">
                     <option value="">PLACEMENT</option>
-                    <option value="Action">Action</option><option value="Breakup">Breakup</option>
-                    <option value="Commercial">Commercial</option><option value="Confrontation">Confrontation</option>
-                    <option value="Drama">Drama</option><option value="Film Score">Film Score</option>
+                    <option value="Action">Action</option>
+                    <option value="Breakup">Breakup</option>
+                    <option value="Commercial">Commercial</option>
+                    <option value="Confrontation">Confrontation</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Film Score">Film Score</option>
                     <option value="Reality TV">Reality TV</option><option value="RomCom">RomCom</option>
                     <option value="Thriller">Thriller</option><option value="Trailer">Trailer</option>
                 </select>
@@ -272,7 +541,8 @@
         </div>
 
         <div id="vault-list-display">
-            </div>
+            <!-- CARDS INJECTED HERE -->
+        </div>
     </main>
 
     <footer class="site-footer" style="text-align:center; padding: 20px;">
@@ -282,66 +552,355 @@
     </footer>
 
     <button id="arrow-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">▲</button>
-    <audio id="vault-audio-player" style="display:none;"></audio>
+
+    <!-- MUSIC STAND MODAL (Page 1 Left, Page 2 Right) -->
+    <div id="music-stand-modal">
+        <div class="music-stand-container">
+            <span class="close-stand" onclick="closeMusicStand()">×</span>
+            
+            <div class="music-stand-header">
+                <div id="stand-song-title-banner" class="stand-title-banner">Song Title</div>
+                <audio id="stand-audio" controls controlsList="nodownload">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="music-stand-book">
+                <!-- Page 1: Title Page -->
+                <div class="stand-page-left" id="stand-page-1">
+                    <div class="page-1-title" id="p1-title">SONG TITLE</div>
+                    <div class="page-1-author">Lyrics by Kellie Larson</div>
+                    <img src="" id="p1-art" class="page-1-art" alt="Cover Art">
+                    <div class="page-1-footer">© 2026 Verse & Chorus | All Rights Reserved</div>
+                </div>
+                
+                <!-- Page 2: Lyrics Iframe -->
+                <div class="stand-page-right" id="stand-page-2">
+                    <iframe id="lyrics-frame" src="" title="Lyrics View"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Iframe for Printing Logic -->
+    <iframe id="hidden-print-frame"></iframe>
 
     <script>
-        // NOTE: Full list of 46 songs to be populated here. 
-        // Example logic provided for "Hit The Road".
-        const songData = {
-            "hit the road": {
-                genre1: "Pop", genre2: "Rock", subgenre: "Empowerment", mood: "Confident", feeling: "Strong", placement: "Final Breakup",
-                bestLine: "\"Don't stop, don't look back, hit the road, Jack, I don't want you back!\"",
-                theme: "Empowerment Arc", rating: "9.8/10",
-                desc: "A high-stakes anthemic confrontation centered on the finality of an toxic relationship. Optimized for placements requiring a definitive, high-energy departure.",
-                lyricsUrl: "http://verseandchorus.com/lyrics/hit-the-road.html",
-                songbay: "" // Add Songbay URL here if available
-            }
+        // SONG DATA
+        const rawLyricsData = [
+          {"id": 1, "title": "Author of a Lie", "genre1": "Pop", "genre2": "Hip-Hop", "category": "Betrayal / Storytelling", "moodTone": "Anthemic, Confident", "rating": "10/10", "pillar": "Disenchantment", "feeling": "Strong", "snippet": "You're the author of a lie, a master of deceit", "songbay": "https://songbay.co/view-music/235611415/"},
+          {"id": 2, "title": "Big Hard No", "genre1": "Country", "genre2": "Contemp", "category": "Empowerment", "moodTone": "Determined, Confident", "rating": "10/10", "pillar": "Empowerment Arc", "feeling": "Decisive", "snippet": "You can't mess with my day, no way, not anymore!", "songbay": "https://songbay.co/view-music/235609978/"},
+          {"id": 3, "title": "Boom Boom Beat", "genre1": "Pop", "genre2": "Dance", "category": "Upbeat", "moodTone": "Fun, Happy, Playful", "rating": "9.6/10", "pillar": "Market Share", "feeling": "Joyful", "snippet": "Boom boom boom da boom boom boom", "songbay": "https://songbay.co/view-music/235611871/"},
+          {"id": 4, "title": "Bottom of the Wishing Well", "genre1": "Folk", "genre2": "Ballad", "category": "Storytelling", "moodTone": "Reflective, Sad", "rating": "10/10", "pillar": "Iterative Protagonist", "feeling": "Vulnerable", "snippet": "Coins and dreams rusting in the dark", "songbay": "Placeholder"},
+          {"id": 5, "title": "Broken Bad", "genre1": "Alt-Rock", "genre2": "Pop", "category": "Breakup", "moodTone": "Bitter, Angry", "rating": "10/10", "pillar": "Disenchantment", "feeling": "Bitter", "snippet": "Too much fighting, too much disrespect.", "songbay": "https://songbay.co/view-music/235609976/"},
+          {"id": 6, "title": "CEO Not Babysitting Tree", "genre1": "Pop", "genre2": "R&B", "category": "Empowerment", "moodTone": "Confident, Sassy", "rating": "10/10", "pillar": "Value Proposition", "feeling": "Empowered", "snippet": "Honey, I'm a CEO, not a babysitting tree.", "songbay": "https://songbay.co/view-music/235608851/"},
+          {"id": 7, "title": "Children of War", "genre1": "Folk", "genre2": "Political", "category": "Social Commentary", "moodTone": "Haunting, Dark", "rating": "10/10", "pillar": "Social Commentary", "feeling": "Reflective", "snippet": "When everyone has nukes and buttons are pressed...", "songbay": "https://songbay.co/view-music/235609973/"},
+          {"id": 8, "title": "Concrete Under Our Feet", "genre1": "Rock", "genre2": "Anthem", "category": "Resilience", "moodTone": "Strong, Anthemic", "rating": "10/10", "pillar": "Value Proposition", "feeling": "Resilient", "snippet": "Solid ground is what I need, concrete under our feet", "songbay": "Placeholder"},
+          {"id": 9, "title": "Craving Those Crumbs", "genre1": "Pop", "genre2": "Ballad", "category": "Heartbreak", "moodTone": "Sad, Vulnerable", "rating": "9.8/10", "pillar": "Disenchantment", "feeling": "Vulnerable", "snippet": "Starving for love, just craving those crumbs", "songbay": "Placeholder"},
+          {"id": 10, "title": "Don't Be Jelly", "genre1": "Country", "genre2": "Dance", "category": "Viral", "moodTone": "Fun, Upbeat", "rating": "10/10", "pillar": "Market Share", "feeling": "Joyful", "snippet": "Hips left, hips right, stomp, kick, slide.", "songbay": "https://songbay.co/view-music/235610343/"},
+          {"id": 11, "title": "Ephemeral Moment", "genre1": "Punk", "genre2": "Alt-Rock", "category": "Love", "moodTone": "Upbeat, Romantic", "rating": "9.6/10", "pillar": "Iterative Protagonist", "feeling": "Sweet", "snippet": "Ephemeral moment, I should've stretched it out.", "songbay": "https://songbay.co/view-music/235610553/"},
+          {"id": 12, "title": "Etched in Every Space", "genre1": "Pop", "genre2": "Ballad", "category": "Grief", "moodTone": "Sad, Melancholic", "rating": "10/10", "pillar": "Iterative Protagonist", "feeling": "Vulnerable", "snippet": "Oh, i miss your stupid face! it's etched in every space.", "songbay": "https://songbay.co/view-music/235613148/"},
+          {"id": 13, "title": "Fury (I'm the Monster)", "genre1": "Punk", "genre2": "Alt", "category": "Revenge", "moodTone": "Angry, Intense", "rating": "10/10", "pillar": "Empowerment Arc", "feeling": "Strong", "snippet": "Gave me bullets for my gun I named Justice, yeah.", "songbay": "https://songbay.co/view-music/235612789/"},
+          {"id": 14, "title": "80s Anthems", "genre1": "Rock", "genre2": "Pop", "category": "Nostalgia", "moodTone": "Upbeat, Fun", "rating": "10/10", "pillar": "Market Share", "feeling": "Joyful", "snippet": "Radio blasting those 80s anthems loud", "songbay": "Placeholder"},
+          {"id": 15, "title": "Heartbreak and Trouble", "genre1": "R&B", "genre2": "Pop", "category": "Toxic", "moodTone": "Groovy, Melancholic", "rating": "9.8/10", "pillar": "Disenchantment", "feeling": "Bitter", "snippet": "You pop in and out like Hubba Bubba.", "songbay": "https://songbay.co/view-music/235611137/"},
+          {"id": 16, "title": "Hit The Road", "genre1": "Pop", "genre2": "R&B", "category": "Breakup", "moodTone": "Confident, Strong", "rating": "10/10", "pillar": "Empowerment Arc", "feeling": "Decisive", "snippet": "Don't stop, don't look back, Hit the road, Jack.", "songbay": "https://songbay.co/view-music/235611349/"},
+          {"id": 17, "title": "How's It Feel, Bro?", "genre1": "Rock", "genre2": "Alt", "category": "Confrontation", "moodTone": "Aggressive, Bitter", "rating": "10/10", "pillar": "Social Commentary", "feeling": "Strong", "snippet": "Table's turned now, how's it feel, bro?", "songbay": "Placeholder"},
+          {"id": 18, "title": "I'm A Broken Record", "genre1": "Rock", "genre2": "Alt", "category": "Heartbreak", "moodTone": "Bitter, Sad", "rating": "10/10", "pillar": "Disenchantment", "feeling": "Resilient", "snippet": "'Cause I'm a broken record, skipping on repeat.", "songbay": "https://songbay.co/view-music/235611340/"},
+          {"id": 19, "title": "I Know Your Damn Pin Code", "genre1": "Rock", "genre2": "Alt", "category": "Revenge", "moodTone": "Angry, Intense", "rating": "10/10", "pillar": "Empowerment Arc", "feeling": "Bitter", "snippet": "I know your secrets and your damn pin code", "songbay": "https://songbay.co/view-music/235608850/"},
+          {"id": 20, "title": "In My Dreams (When I Wake)", "genre1": "Pop", "genre2": "Ballad", "category": "Loss", "moodTone": "Dreamy, Sad", "rating": "10/10", "pillar": "Iterative Protagonist", "feeling": "Sweet", "snippet": "In my dreams - I long to be together in my dreams.", "songbay": "https://songbay.co/view-music/235610555/"},
+          {"id": 21, "title": "Just A Little Lonely", "genre1": "Pop", "genre2": "Ballad", "category": "Aftermath", "moodTone": "Melancholic, Reflective", "rating": "9.6/10", "pillar": "Iterative Protagonist", "feeling": "Vulnerable", "snippet": "Just a little stronger. Just a little wiser. Just... free.", "songbay": "https://songbay.co/view-music/235610626/"},
+          {"id": 22, "title": "Married To The Drug", "genre1": "Alt", "genre2": "Rock", "category": "Addiction", "moodTone": "Dark, Serious", "rating": "10/10", "pillar": "Social Commentary", "feeling": "Strong", "snippet": "You said 'I do' but you're married to the drug", "songbay": "Placeholder"},
+          {"id": 23, "title": "Murderer's Heart", "genre1": "Country", "genre2": "Narrative", "category": "Betrayal", "moodTone": "Storytelling, Dramatic", "rating": "10/10", "pillar": "Disenchantment", "feeling": "Bitter", "snippet": "But he was playing games with a murderer's heart.", "songbay": "https://songbay.co/view-music/235610937/"},
+          {"id": 24, "title": "My Girl Karma", "genre1": "Pop", "genre2": "Upbeat", "category": "Karma", "moodTone": "Sassy, Fun", "rating": "10/10", "pillar": "Market Share", "feeling": "Joyful", "snippet": "My girl Karma's coming around the bend", "songbay": "Placeholder"},
+          {"id": 25, "title": "My Words Still Matter", "genre1": "Pop", "genre2": "Ballad", "category": "Empowerment", "moodTone": "Strong, Anthemic", "rating": "10/10", "pillar": "Value Proposition", "feeling": "Empowered", "snippet": "You can try to silence me but my words still matter", "songbay": "Placeholder"},
+          {"id": 26, "title": "Not That Girl From Before", "genre1": "Pop", "genre2": "Rock", "category": "Growth", "moodTone": "Confident, Resilient", "rating": "10/10", "pillar": "Value Proposition", "feeling": "Resilient", "snippet": "Look at me now, not that girl from before", "songbay": "Placeholder"},
+          {"id": 27, "title": "One Small Wrong", "genre1": "Hip-Hop", "genre2": "Rap", "category": "Duet", "moodTone": "Bitter, Tense", "rating": "10/10", "pillar": "Disenchantment", "feeling": "Decisive", "snippet": "But that one small wrong from you, man, it sealed our whole damn fate.", "songbay": "https://songbay.co/view-music/235612465/"},
+          {"id": 28, "title": "Shot By Cupids Dart", "genre1": "Pop", "genre2": "Love", "category": "Romance", "moodTone": "Sweet, Happy", "rating": "9.4/10", "pillar": "Market Share", "feeling": "Radiant", "snippet": "Bullseye baby, shot by Cupid's dart", "songbay": "Placeholder"},
+          {"id": 29, "title": "Showdown At My Door", "genre1": "Country", "genre2": "Rock", "category": "Confrontation", "moodTone": "Tense, Dramatic", "rating": "10/10", "pillar": "Empowerment Arc", "feeling": "Protective", "snippet": "High noon shadow, showdown at my door", "songbay": "Placeholder"},
+          {"id": 30, "title": "Sick One (s1c)", "genre1": "Rock", "genre2": "Alt", "category": "Toxic", "moodTone": "Cool, Bitter", "rating": "10/10", "pillar": "Disenchantment", "feeling": "Bitter", "snippet": "My love is on a sick one too... I run back. Right on cue.", "songbay": "https://songbay.co/view-music/235608791/"},
+          {"id": 31, "title": "Silver and Gray", "genre1": "Folk", "genre2": "Acoustic", "category": "Aging", "moodTone": "Wise, Reflective", "rating": "10/10", "pillar": "Value Proposition", "feeling": "Sweet", "snippet": "Turning pages, shades of silver and gray", "songbay": "Placeholder"},
+          {"id": 32, "title": "Solid Shifting Ground", "genre1": "Folk", "genre2": "Contemp", "category": "Inspirational", "moodTone": "Uplifting, Positive", "rating": "10/10", "pillar": "Iterative Protagonist", "feeling": "Hopeful", "snippet": "This crazy, beautiful life on solid, shifting ground.", "songbay": "https://songbay.co/view-music/235609969/"},
+          {"id": 33, "title": "Stood By My Side", "genre1": "Gospel", "genre2": "Christian", "category": "Faith", "moodTone": "Dramatic, Hopeful", "rating": "10/10", "pillar": "Iterative Protagonist", "feeling": "Protective", "snippet": "When the world walked away, You stood by my side.", "songbay": "https://songbay.co/view-music/235610824/"},
+          {"id": 34, "title": "Take That First Step", "genre1": "Pop", "genre2": "Anthem", "category": "Motivation", "moodTone": "Brave, Inspiring", "rating": "10/10", "pillar": "Empowerment Arc", "feeling": "Empowered", "snippet": "Don't look down, just take that first step", "songbay": "Placeholder"},
+          {"id": 35, "title": "The Aftermath", "genre1": "Indie", "genre2": "Pop", "category": "Breakup", "moodTone": "Anxious, Sad", "rating": "9.6/10", "pillar": "Disenchantment", "feeling": "Vulnerable", "snippet": "Found bizarre comfort in the chaos left behind.", "songbay": "https://songbay.co/view-music/235610538/"},
+          {"id": 36, "title": "The Back of Me", "genre1": "Country", "genre2": "Rock", "category": "Leaving", "moodTone": "Defiant, Strong", "rating": "10/10", "pillar": "Empowerment Arc", "feeling": "Decisive", "snippet": "Watch me go, you're seeing the back of me", "songbay": "Placeholder"},
+          {"id": 37, "title": "The Pocket Watch", "genre1": "Folk", "genre2": "Story", "category": "Time", "moodTone": "Nostalgic, Reflective", "rating": "10/10", "pillar": "Iterative Protagonist", "feeling": "Sweet", "snippet": "Time keeps ticking on this old pocket watch", "songbay": "Placeholder"},
+          {"id": 38, "title": "The Real Dream Team", "genre1": "Soft Rock", "genre2": "Love", "category": "Loyalty", "moodTone": "Positive, Happy", "rating": "10/10", "pillar": "Value Proposition", "feeling": "Protective", "snippet": "Tick Tock, the clock, time never stops. Like my love, you are my rock.", "songbay": "https://songbay.co/view-music/235608792/"},
+          {"id": 39, "title": "The Show Is Through", "genre1": "R&B", "genre2": "Soul", "category": "Finale", "moodTone": "Dramatic, Theatrical", "rating": "10/10", "pillar": "Market Share", "feeling": "Decisive", "snippet": "Take a bow, 'cause the show is through.", "songbay": "https://songbay.co/view-music/235612882/"},
+          {"id": 40, "title": "Thought You Should Know", "genre1": "Pop", "genre2": "Upbeat", "category": "Moving On", "moodTone": "Confident, Upbeat", "rating": "10/10", "pillar": "Empowerment Arc", "feeling": "Radiant", "snippet": "Oh, i'm alright, i'm fine (i'm good)", "songbay": "https://songbay.co/view-music/235610628/"},
+          {"id": 41, "title": "Top Shelf Queen", "genre1": "Reggae", "genre2": "Dancehall", "category": "Relaxation", "moodTone": "Chill, Relaxed", "rating": "10/10", "pillar": "Market Share", "feeling": "Joyful", "snippet": "She's my full-bodied Goddess, so fine, so divine.", "songbay": "https://songbay.co/view-music/235610822/"},
+          {"id": 42, "title": "Welcome To Jukes", "genre1": "Blues", "genre2": "Rock", "category": "Horror", "moodTone": "Dark, Spooky", "rating": "10/10", "pillar": "Social Commentary", "feeling": "Strong", "snippet": "No one ever leaves here when day breaks... a ghostly fate.", "songbay": "Placeholder"},
+          {"id": 43, "title": "Wildflower", "genre1": "Country", "genre2": "Folk", "category": "Independence", "moodTone": "Calm, Strong", "rating": "10/10", "pillar": "Value Proposition", "feeling": "Resilient", "snippet": "She's got the spirit of a rebel, never gonna bend.", "songbay": "https://songbay.co/view-music/235606554/"},
+          {"id": 44, "title": "Year In The Rearview", "genre1": "Country", "genre2": "Pop", "category": "Reflection", "moodTone": "Hopeful, Reflective", "rating": "10/10", "pillar": "Iterative Protagonist", "feeling": "Sweet", "snippet": "Looking back at the year in the rearview", "songbay": "Placeholder"},
+          {"id": 45, "title": "Your Forever Man", "genre1": "Country", "genre2": "Alt", "category": "Love", "moodTone": "Mellow, Romantic", "rating": "10/10", "pillar": "Value Proposition", "feeling": "Protective", "snippet": "She's my future, I'm her forever man.", "songbay": "https://songbay.co/view-music/235606800/"},
+          {"id": 46, "title": "Your Mask", "genre1": "Rock", "genre2": "Alt", "category": "Deceit", "moodTone": "Bitter, Angry", "rating": "10/10", "pillar": "Disenchantment", "feeling": "Bitter", "snippet": "I see right through your mask", "songbay": "Placeholder"}
+        ];
+
+        const songData = {};
+        rawLyricsData.forEach(item => {
+            const key = item.title.toLowerCase();
+            songData[key] = {
+                genre1: item.genre1,
+                genre2: item.genre2,
+                subgenre: item.category,
+                mood: item.moodTone,
+                placement: item.placementType || "Sync",
+                bestLine: `"${item.snippet}"`,
+                theme: item.category,
+                pillar: item.pillar,
+                feeling: item.feeling,
+                rating: item.rating,
+                desc: item.shortDescription || "",
+                songbay: item.songbay
+            };
+        });
+
+        // --- SEO: Dynamic JSON-LD Generation ---
+        function generateSchema() {
+            const schemaData = {
+                "@context": "https://schema.org",
+                "@type": "MusicGroup",
+                "name": "Kellie Larson - The Vault",
+                "description": "A curated portfolio of cinematic lyrics for 2026 Sync Licensing.",
+                "track": rawLyricsData.map(song => ({
+                    "@type": "MusicRecording",
+                    "name": song.title,
+                    "byArtist": {
+                        "@type": "Person",
+                        "name": "Kellie Larson"
+                    },
+                    "genre": [song.genre1, song.genre2],
+                    "keywords": `${song.category}, ${song.moodTone}, ${song.pillar}`,
+                    "description": `Pre-cleared sync track '${song.title}'. Genre: ${song.genre1}/${song.genre2}. Mood: ${song.moodTone}. Theme: ${song.category}.`
+                }))
+            };
+            
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.text = JSON.stringify(schemaData);
+            document.head.appendChild(script);
+        }
+        generateSchema(); // Run on load
+
+        // --- FILTER LOGIC (Same as previous turn) ---
+        const synonyms = {
+            "Joyful": ["Fun", "Happy", "Upbeat", "Positive", "Sassy", "Good Vibes"],
+            "Bitter": ["Resentful", "Angry", "Mad", "Deceit"],
+            "Decisive": ["Determined", "Strong", "Confident"],
+            "Empowered": ["Confident", "Strong", "Brave", "Independent", "Resilient", "Motivation"],
+            "Protective": ["Loyalty", "Faith", "Love"],
+            "Radiant": ["Shining", "Bright", "Positive"],
+            "Resilient": ["Strong", "Survivor", "Growth", "Moving On"],
+            "Strong": ["Confident", "Determined", "Resilient"],
+            "Sweet": ["Romantic", "Love", "Cute"],
+            "Vulnerable": ["Sad", "Grief", "Heartbreak", "Loss", "Melancholic"],
+            "Action": ["Punchy", "Fast", "High Energy", "Intense"],
+            "Thriller": ["Horror", "Dark", "Spooky", "Tense", "Haunting"],
+            "Drama": ["Dramatic", "Theatrical", "Emotional"],
+            "Commercial": ["Ad", "Sync", "Viral", "Catchy"],
+            "Reality TV": ["Drama", "Conflict", "Sassy"]
         };
 
-        function playAndOpen(title) {
-            const slug = title.toLowerCase().replace(/ /g, '-');
-            const player = document.getElementById('vault-audio-player');
-            player.src = `https://verseandchorus.com/assets/music/${slug}.mp3`;
-            player.play();
-            setTimeout(() => {
-                window.location.href = `http://verseandchorus.com/lyrics/${slug}.html`;
-            }, 100);
+        function filterByPillar(pillarKeyword) {
+            document.querySelectorAll('.pillar-btn').forEach(btn => btn.classList.remove('active'));
+            // Highlight active button logic could go here
+            
+            document.getElementById('genre-pull').value = "";
+            document.getElementById('mood-pull').value = "";
+            document.getElementById('feeling-pull').value = "";
+            document.getElementById('placement-pull').value = "";
+            document.getElementById('vault-search').value = "";
+
+            filterVault(pillarKeyword, true); 
+        }
+
+        function filterVault(overrideTerm = null, isPillar = false) {
+            const display = document.getElementById('vault-list-display');
+            const cards = display.getElementsByClassName('vault-card');
+
+            const searchVal = overrideTerm ? "" : document.getElementById('vault-search').value.toLowerCase();
+            const genreVal = document.getElementById('genre-pull').value;
+            const moodVal = document.getElementById('mood-pull').value;
+            const feelingVal = document.getElementById('feeling-pull').value;
+            const placementVal = document.getElementById('placement-pull').value;
+            const pillarVal = isPillar ? overrideTerm : null;
+
+            Array.from(cards).forEach(card => {
+                const title = card.getAttribute('data-title');
+                const s = songData[title];
+
+                const matchesSearch = !searchVal || 
+                    title.includes(searchVal) || 
+                    s.bestLine.toLowerCase().includes(searchVal) || 
+                    s.theme.toLowerCase().includes(searchVal) || 
+                    s.mood.toLowerCase().includes(searchVal);
+
+                const matchesGenre = !genreVal || s.genre1.includes(genreVal) || s.genre2.includes(genreVal);
+                const matchesMood = !moodVal || s.mood.includes(moodVal);
+
+                let matchesFeeling = !feelingVal;
+                if (feelingVal) {
+                    const lookupWords = [feelingVal, ...(synonyms[feelingVal] || [])];
+                    matchesFeeling = lookupWords.some(word => 
+                        s.feeling.includes(word) || s.mood.includes(word)
+                    );
+                }
+
+                let matchesPlacement = !placementVal;
+                if (placementVal) {
+                    const lookupWords = [placementVal, ...(synonyms[placementVal] || [])];
+                    matchesPlacement = lookupWords.some(word => 
+                        s.placement.includes(word) || s.theme.includes(word) || s.mood.includes(word)
+                    );
+                }
+
+                let matchesPillar = !pillarVal;
+                if (pillarVal) {
+                    matchesPillar = s.pillar.includes(pillarVal) || s.theme.includes(pillarVal);
+                }
+
+                if (matchesSearch && matchesGenre && matchesMood && matchesFeeling && matchesPlacement && matchesPillar) {
+                    card.style.display = "grid";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        function resetAllFilters() {
+             document.getElementById('vault-search').value = "";
+             document.getElementById('genre-pull').value = "";
+             document.getElementById('mood-pull').value = "";
+             document.getElementById('feeling-pull').value = "";
+             document.getElementById('placement-pull').value = "";
+             filterVault();
+        }
+
+        function setActiveCard(element) {
+            const card = element.closest('.vault-card');
+            if (card) {
+                card.classList.add('active-border');
+            }
+        }
+
+        function handleLicenseClick(element, url) {
+            setActiveCard(element);
+            const hasNumber = /\d/.test(url);
+            if (hasNumber && url !== "Placeholder") {
+                window.open(url, '_blank');
+            } else {
+                window.open('https://songbay.co/portfolio', '_blank');
+            }
+        }
+
+        function openMusicStand(element, title) {
+            setActiveCard(element);
+            const key = title.toLowerCase();
+            const s = songData[key];
+            if (!s) return;
+            const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            document.getElementById('stand-song-title-banner').innerText = title;
+            document.getElementById('p1-title').innerText = title;
+            document.getElementById('p1-art').src = `/assets/covers/${slug}-cover-art.jpg`;
+            document.getElementById('p1-art').onerror = function() { this.src = 'https://placehold.co/200x200/800020/FFFFFF?text=No+Cover'; };
+            
+            const audio = document.getElementById('stand-audio');
+            audio.src = `/assets/music/${slug}-audio.mp3`; 
+            
+            // Add error listener to log instead of crash, but also handle promise rejection below
+            audio.onerror = function() {
+                console.log("Audio source not found (expected in preview if files aren't hosted).");
+            };
+
+            document.getElementById('lyrics-frame').src = `/assets/lyrics/${slug}.html`;
+            document.getElementById('music-stand-modal').style.display = 'flex';
+            
+            // Handle play promise to avoid unhandled rejection
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Auto-play prevented or source not found:", error);
+                });
+            }
+        }
+
+        function closeMusicStand() {
+            const modal = document.getElementById('music-stand-modal');
+            const audio = document.getElementById('stand-audio');
+            audio.pause();
+            audio.currentTime = 0;
+            modal.style.display = 'none';
+        }
+
+        function printSongFile(element, title) {
+            setActiveCard(element);
+            const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            const printFrame = document.getElementById('hidden-print-frame');
+            printFrame.src = `/assets/lyrics/${slug}.html`;
+            printFrame.onload = function() {
+                printFrame.contentWindow.focus();
+                printFrame.contentWindow.print();
+            };
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             const display = document.getElementById('vault-list-display');
+            
+            // Add Event Listeners for Filters
+            document.getElementById('vault-search').addEventListener('input', () => filterVault());
+            document.getElementById('genre-pull').addEventListener('change', () => filterVault());
+            document.getElementById('mood-pull').addEventListener('change', () => filterVault());
+            document.getElementById('feeling-pull').addEventListener('change', () => filterVault());
+            document.getElementById('placement-pull').addEventListener('change', () => filterVault());
+            document.getElementById('reset-btn').addEventListener('click', resetAllFilters);
+
             Object.keys(songData).forEach(key => {
                 const s = songData[key];
-                
-                // Logic for Songbay Button
-                let songbayBtn = '';
-                if(s.songbay && s.songbay !== "") {
-                    songbayBtn = `<button class="songbay-btn" onclick="window.open('${s.songbay}', '_blank')">LICENSE</button>`;
-                }
+                const songbayBtn = `<button class="songbay-btn" onclick="handleLicenseClick(this, '${s.songbay}')">LICENSE</button>`;
+                const slug = key.replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                const displayTitle = key.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 
                 display.innerHTML += `
                     <div class="vault-card" data-title="${key}" data-genre="${s.genre1}" data-theme="${s.theme}">
-                        <div class="card-header">
-                            <img src="/assets/covers/${key.toLowerCase().replace(/ /g, '-')}-cover-art.jpg" alt="${key} Cover" class="card-art">
-                            <div class="card-title-block">
-                                <div class="card-song-title">${key}</div>
-                                <div class="card-meta-row">
-                                    <span>${s.genre1}</span> • 
-                                    <span>${s.genre2}</span> • 
-                                    <span>${s.subgenre}</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="snippet-box">
-                            ${s.bestLine}
+                        <!-- COL 1: Art + Title -->
+                        <div class="card-col-title">
+                            <img src="/assets/covers/${slug}-cover-art.jpg" alt="${displayTitle} Cover" class="card-art" onerror="this.src='https://placehold.co/60x60/800020/FFFFFF?text=No+Cover'">
+                            <div class="card-song-title">${displayTitle}</div>
                         </div>
 
-                        <div class="card-actions">
-                            <div class="rating-badge">RATING: ${s.rating}</div>
-                            ${songbayBtn}
-                            <button class="vault-btn" onclick="playAndOpen('${key}')">READ/PLAY</button>
-                            <button class="print-btn" onclick="window.print()">PRINT</button>
+                        <!-- COL 2: Genres (DESKTOP) -->
+                        <div class="card-col-data desktop-data">
+                            <div><span class="data-label">G1:</span>${s.genre1}</div>
+                            <div><span class="data-label">G2:</span>${s.genre2}</div>
+                            <div><span class="data-label">SUB:</span>${s.subgenre}</div>
+                        </div>
+
+                        <!-- COL 3: Attributes (DESKTOP) -->
+                        <div class="card-col-data desktop-data">
+                            <div><span class="data-label">FEEL:</span>${s.feeling}</div>
+                            <div><span class="data-label">PLACE:</span>${s.placement}</div>
+                            <div><span class="data-label">PILLAR:</span>${s.pillar}</div>
+                        </div>
+
+                        <!-- MOBILE DATA BLOCK (Hidden on Desktop) -->
+                        <div class="card-col-data mobile-data">
+                            <span class="mobile-line"><span class="data-label">GENRES:</span> ${s.genre1} / ${s.genre2}</span>
+                            <span class="mobile-line"><span class="data-label">SUB:</span> ${s.subgenre}</span>
+                            <span class="mobile-line"><span class="data-label">VIBE:</span> ${s.mood} / ${s.feeling}</span>
+                            <span class="mobile-line"><span class="data-label">FIT:</span> ${s.placement} / ${s.pillar}</span>
+                        </div>
+                        
+                        <!-- COL 4: Snippet -->
+                        <div class="snippet-box">${s.bestLine}</div>
+
+                        <!-- COL 5: Actions -->
+                        <div class="card-col-actions">
+                            <div class="rating-display">${s.rating}</div>
+                            <div class="btn-row">
+                                ${songbayBtn}
+                                <button class="vault-btn" onclick="openMusicStand(this, '${displayTitle}')">READ/PLAY</button>
+                                <button class="print-btn" onclick="printSongFile(this, '${displayTitle}')">PRINT</button>
+                            </div>
                         </div>
                     </div>
                 `;
