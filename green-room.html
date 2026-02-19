@@ -6,31 +6,32 @@
     <title>Green Room Activities | Verse and Chorus</title>
     <style>
         :root {
-            /* Metallic Green Gradient Palette */
+            /* Metallic Green Gradient */
             --metallic-green: linear-gradient(135deg, #1e4d3a 0%, #4ade80 25%, #0a2d1d 50%, #4ade80 75%, #1e4d3a 100%);
-            --deep-forest-noir: #04100b;
+            --deep-noir: #04100b;
             --electric-lime: #4ade80;
+            /* Shiny Metallic Gold for "GREEN ROOM ACTIVITIES" */
             --shiny-gold: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-            --metal-border: rgba(74, 222, 128, 0.4);
+            --metal-border: rgba(74, 222, 128, 0.3);
         }
 
         body {
-            background-color: var(--deep-forest-noir);
-            /* This creates a subtle metallic sheen across the whole background */
+            background-color: var(--deep-noir);
             background-image: radial-gradient(circle at 50% -20%, #1a3c2e 0%, #04100b 80%);
             color: #e0f2f1;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
-        /* Navigation */
+        /* Navigation Bar */
         nav {
             background: rgba(0, 0, 0, 0.9);
             padding: 15px 0;
             text-align: center;
             border-bottom: 2px solid var(--electric-lime);
-            box-shadow: 0 2px 15px rgba(0, 255, 127, 0.2);
+            box-shadow: 0 2px 20px rgba(0, 255, 127, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -43,7 +44,8 @@
             font-weight: bold;
             text-transform: uppercase;
             font-size: 0.85rem;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
         }
 
         nav a:hover { color: var(--electric-lime); }
@@ -64,11 +66,10 @@
             text-transform: uppercase;
             margin-bottom: 10px;
             display: block;
-            opacity: 0.9;
         }
 
         .main-title {
-            font-size: clamp(2rem, 8vw, 4rem);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 900;
             text-transform: uppercase;
             background: var(--shiny-gold);
@@ -76,39 +77,26 @@
             -webkit-text-fill-color: transparent;
             display: inline-block;
             margin: 0;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.7));
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.8));
         }
 
-        /* Activity Sections - Metallic Finish */
+        /* Activity Cards - Brushed Metal Green */
         .activity-section {
             background: linear-gradient(145deg, #0d261b, #071610);
             border: 1px solid var(--metal-border);
             border-radius: 12px;
             padding: 35px;
             margin-bottom: 35px;
-            box-shadow: 10px 10px 20px #030a08, -5px -5px 15px rgba(74, 222, 128, 0.05);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 10px 10px 30px #020806, -5px -5px 15px rgba(74, 222, 128, 0.05);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
 
-        /* The "Shiny" Overlay Effect */
-        .activity-section::after {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(74, 222, 128, 0.05), transparent);
-            transform: rotate(45deg);
-            pointer-events: none;
-        }
-
         .activity-section:hover {
-            transform: scale(1.02);
             border-color: var(--electric-lime);
             box-shadow: 0 0 30px rgba(74, 222, 128, 0.2);
+            transform: translateY(-3px);
         }
 
         h2 { 
@@ -116,30 +104,30 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-top: 0; 
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             text-transform: uppercase;
             font-weight: 800;
         }
 
-        /* Shiny Metallic Buttons */
+        /* Interactive Elements */
         .btn-action {
             background: var(--metallic-green);
             background-size: 200% auto;
             color: #05140f;
             border: none;
-            padding: 12px 25px;
+            padding: 12px 28px;
             border-radius: 5px;
             font-weight: 900;
             cursor: pointer;
             text-transform: uppercase;
             transition: 0.5s;
             box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            margin-top: 10px;
         }
 
         .btn-action:hover {
             background-position: right center;
             box-shadow: 0 0 20px var(--electric-lime);
-            transform: translateY(-2px);
         }
 
         .game-input {
@@ -150,39 +138,53 @@
             border-radius: 4px;
             width: 100%;
             margin: 15px 0;
-            box-sizing: border-box;
+            font-size: 1rem;
         }
 
-        /* 15 Button Sequencer - Metallic Pads */
+        /* #4. Chord Pad Sequencer (15 Metallic Pads) */
         .chord-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 12px;
-            margin: 25px 0;
+            gap: 15px;
+            margin: 30px auto;
+            max-width: 650px;
         }
+
         .chord-btn { 
             aspect-ratio: 1; 
             background: linear-gradient(145deg, #1a3a2a, #0d1f16);
             border: 1px solid #2d5a44; 
-            border-radius: 6px; 
+            border-radius: 8px; 
             cursor: pointer; 
             box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5), 3px 3px 10px rgba(0,0,0,0.3);
             transition: all 0.2s;
         }
+
         .chord-btn:hover { 
             background: var(--metallic-green); 
-            box-shadow: 0 0 15px var(--electric-lime); 
+            box-shadow: 0 0 20px var(--electric-lime);
         }
 
+        .chord-btn:active {
+            box-shadow: inset 4px 4px 10px rgba(0,0,0,0.8);
+            transform: scale(0.95);
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 80px 20px;
             border-top: 1px solid rgba(74, 222, 128, 0.1);
             margin-top: 60px;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.4);
         }
 
-        .footer-heart { color: #ff4d4d; }
+        .footer-heart { color: #ff4d4d; margin: 0 5px; }
+
+        @media (max-width: 600px) {
+            .chord-grid { grid-template-columns: repeat(3, 1fr); }
+            .main-title { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
@@ -204,29 +206,32 @@
 
     <div class="activity-section">
         <h2>1. Lyric Labyrinth</h2>
-        <p>Find hidden icons throughout the song catalog to unlock exclusive demos.</p>
+        <p>Hidden icons are scattered across the catalog. Find the "Monster" icon from <em>Fury</em> to unlock the secret vault.</p>
         <button class="btn-action">Check Inventory</button>
     </div>
 
     <div class="activity-section">
         <h2>2. Cinematic Mood Mixer</h2>
-        <p>Set the scene for your next writing session.</p>
+        <p>Select a vibe to match your writing session:</p>
         <select class="game-input">
             <option>Neon Noir (Green Edition)</option>
-            <option>Metallic Jungle</option>
-            <option>Chrome Forest</option>
+            <option>Metallic Jungle (Fury vibe)</option>
+            <option>Chrome Forest (Wildflower vibe)</option>
+            <option>80s Retro (GenX Anthem)</option>
         </select>
     </div>
 
     <div class="activity-section">
         <h2>3. Madlibs: The Pin Code</h2>
+        <p>Complete the line from <em>Not Clever</em>:</p>
         <p><em>"You think you’re clever? And I can’t get in your [Noun]. You’re not clever. I know your damn [Noun] code."</em></p>
-        <button class="btn-action">Check Lyrics</button>
+        <input type="text" class="game-input" placeholder="Enter Noun...">
+        <button class="btn-action">Verify Lyrics</button>
     </div>
 
     <div class="activity-section">
         <h2>4. Chord Pad Sequencer</h2>
-        <p>Trigger cinematic synth swells using our custom metallic interface.</p>
+        <p>Trigger 15 unique cinematic synth swells across our metallic interface.</p>
         <div class="chord-grid">
             <button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button>
             <button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button>
@@ -236,31 +241,30 @@
 
     <div class="activity-section">
         <h2>5. Scramble: The Yodel</h2>
-        <p>Unscramble this word from the yodeling love song:</p>
-        <h3 style="letter-spacing: 5px; color: var(--electric-lime);">PHEMEREAL</h3>
-        <input type="text" class="game-input" placeholder="Your Answer">
+        <p>Unscramble the key emotion from <em>Boom Boom Beat</em>:</p>
+        <h3 style="letter-spacing: 5px; color: var(--electric-lime); text-align: center;">PHEMEREAL</h3>
+        <input type="text" class="game-input" placeholder="Unscramble it...">
         <button class="btn-action">Submit</button>
     </div>
 
     <div class="activity-section" style="border: 2px solid #bf953f;">
         <h2 style="background: var(--shiny-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">6. THE MASTER VAULT</h2>
-        <p>Guess the correct song title to unlock a 25% OFF coupon code.</p>
-        <p><strong>HINT:</strong> Someone who isn't a "babysitting tree"...</p>
-        <input type="text" class="game-input" placeholder="Song Title">
-        <button class="btn-action" style="background: var(--shiny-gold); color: #332200; width: 100%;">Unlock The Gold Vault</button>
+        <p><strong>HINT:</strong> In the song <em>CEO, Not Babysitting Tree</em>, who is the person that "kills the vibe and kills the chill"?</p>
+        <input type="text" class="game-input" placeholder="Who is it?">
+        <button class="btn-action" style="background: var(--shiny-gold); color: #332200; width: 100%;">Unlock 25% OFF Coupon</button>
     </div>
 
     <div class="activity-section">
-        <h2>7. Madlibs: The Goodbye</h2>
+        <h2>7. Madlibs: The Receipt</h2>
+        <p>Complete the line from <em>Hit the Road</em>:</p>
         <p><em>"You told me [Noun] after [Noun], and yeah, I [Verb] a lot back then, but my [Noun] are now dry."</em></p>
-        <button class="btn-action">Submit Answer</button>
+        <button class="btn-action">Check Answer</button>
     </div>
 
     <div class="activity-section">
         <h2>8. Toxic Rhyme Match</h2>
-        <p>Complete this line from "Sick One":</p>
-        <p><em>"Shit we fight about is so [____]. It's our drug, we're never done."</em></p>
-        <div style="display: flex; gap: 10px;">
+        <p>From <em>Sick One</em>: "Shit we fight about is so [____]. It's our drug, we're never done."</p>
+        <div style="display: flex; gap: 15px;">
             <button class="btn-action">Dumb</button>
             <button class="btn-action">Numb</button>
         </div>
@@ -268,16 +272,18 @@
 
     <div class="activity-section">
         <h2>9. Dream Weaver</h2>
-        <p>From "In My Dreams": What does Kellie tuck behind her ears in the dream?</p>
-        <input type="text" class="game-input" placeholder="Your Answer">
-        <button class="btn-action">Verify</button>
+        <p>In the song <em>In My Dreams (When I Wake)</em>, what does Kellie "tuck behind her ears" during the dream sequence?</p>
+        <input type="text" class="game-input" placeholder="Your Answer...">
+        <button class="btn-action">Verify Memory</button>
     </div>
 
     <footer>
         <p><span class="footer-heart">♥️</span> Kellie Larson <span class="footer-heart">♥️</span></p>
         <p>Cinematic Songwriter & Lyricist</p>
-        <p><a href="mailto:info@verseandchorus.com" style="color:var(--electric-lime); text-decoration: none;">info@verseandchorus.com</a> | 760-537-0222</p>
-        <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 20px;">© 2026 Kellie Larson. All Rights Reserved.</p>
+        <p>
+            <a href="mailto:info@verseandchorus.com" style="color:var(--electric-lime); text-decoration: none;">info@verseandchorus.com</a> | 760-537-0222
+        </p>
+        <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 25px;">© 2026 Kellie Larson. All Rights Reserved.</p>
     </footer>
 </div>
 
