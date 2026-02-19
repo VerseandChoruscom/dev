@@ -6,11 +6,9 @@
     <title>Green Room Activities | Verse and Chorus</title>
     <style>
         :root {
-            /* Metallic Green Gradient */
             --metallic-green: linear-gradient(135deg, #1e4d3a 0%, #4ade80 25%, #0a2d1d 50%, #4ade80 75%, #1e4d3a 100%);
             --deep-noir: #04100b;
             --electric-lime: #4ade80;
-            /* Shiny Metallic Gold for "GREEN ROOM ACTIVITIES" */
             --shiny-gold: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
             --metal-border: rgba(74, 222, 128, 0.3);
         }
@@ -19,183 +17,79 @@
             background-color: var(--deep-noir);
             background-image: radial-gradient(circle at 50% -20%, #1a3c2e 0%, #04100b 80%);
             color: #e0f2f1;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0; padding: 0;
         }
 
-        /* Navigation Bar */
         nav {
             background: rgba(0, 0, 0, 0.9);
-            padding: 15px 0;
-            text-align: center;
+            padding: 15px 0; text-align: center;
             border-bottom: 2px solid var(--electric-lime);
-            box-shadow: 0 2px 20px rgba(0, 255, 127, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: sticky; top: 0; z-index: 1000;
         }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            transition: color 0.3s;
+            color: white; text-decoration: none; margin: 0 15px;
+            font-weight: bold; text-transform: uppercase; font-size: 0.85rem;
         }
 
-        nav a:hover { color: var(--electric-lime); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        /* Metallic Headers */
         header { text-align: center; margin-bottom: 60px; }
         
-        .brand-title {
-            color: white;
-            font-size: 1.1rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            display: block;
-        }
+        .brand-title { color: white; letter-spacing: 5px; text-transform: uppercase; display: block; }
 
         .main-title {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 900;
-            text-transform: uppercase;
-            background: var(--shiny-gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-            margin: 0;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.8));
+            font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900;
+            background: var(--shiny-gold); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.8));
         }
 
-        /* Activity Cards - Brushed Metal Green */
         .activity-section {
             background: linear-gradient(145deg, #0d261b, #071610);
             border: 1px solid var(--metal-border);
-            border-radius: 12px;
-            padding: 35px;
-            margin-bottom: 35px;
-            box-shadow: 10px 10px 30px #020806, -5px -5px 15px rgba(74, 222, 128, 0.05);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            border-radius: 12px; padding: 35px; margin-bottom: 35px;
+            box-shadow: 10px 10px 30px #020806; transition: 0.4s;
         }
 
-        .activity-section:hover {
-            border-color: var(--electric-lime);
-            box-shadow: 0 0 30px rgba(74, 222, 128, 0.2);
-            transform: translateY(-3px);
-        }
+        h2 { background: var(--metallic-green); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; }
 
-        h2 { 
-            background: var(--metallic-green);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-top: 0; 
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            font-weight: 800;
-        }
-
-        /* Interactive Elements */
         .btn-action {
-            background: var(--metallic-green);
-            background-size: 200% auto;
-            color: #05140f;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 5px;
-            font-weight: 900;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: 0.5s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            margin-top: 10px;
-        }
-
-        .btn-action:hover {
-            background-position: right center;
-            box-shadow: 0 0 20px var(--electric-lime);
+            background: var(--metallic-green); color: #05140f; border: none;
+            padding: 12px 28px; border-radius: 5px; font-weight: 900;
+            cursor: pointer; text-transform: uppercase; margin-top: 10px;
         }
 
         .game-input {
-            background: rgba(0,0,0,0.6);
-            border: 1px solid #1e4d3a;
-            color: var(--electric-lime);
-            padding: 12px;
-            border-radius: 4px;
-            width: 100%;
-            margin: 15px 0;
-            font-size: 1rem;
+            background: rgba(0,0,0,0.6); border: 1px solid #1e4d3a;
+            color: var(--electric-lime); padding: 12px; border-radius: 4px;
+            width: 100%; margin: 15px 0; box-sizing: border-box;
         }
 
-        /* #4. Chord Pad Sequencer (15 Metallic Pads) */
+        /* 15 Button Sequencer */
         .chord-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
-            margin: 30px auto;
-            max-width: 650px;
+            display: grid; grid-template-columns: repeat(5, 1fr);
+            gap: 15px; margin: 30px auto; max-width: 650px;
         }
 
         .chord-btn { 
-            aspect-ratio: 1; 
-            background: linear-gradient(145deg, #1a3a2a, #0d1f16);
-            border: 1px solid #2d5a44; 
-            border-radius: 8px; 
-            cursor: pointer; 
-            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5), 3px 3px 10px rgba(0,0,0,0.3);
-            transition: all 0.2s;
+            aspect-ratio: 1; background: linear-gradient(145deg, #1a3a2a, #0d1f16);
+            border: 1px solid #2d5a44; border-radius: 8px; cursor: pointer;
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5); transition: 0.2s;
         }
 
-        .chord-btn:hover { 
-            background: var(--metallic-green); 
-            box-shadow: 0 0 20px var(--electric-lime);
-        }
+        .chord-btn:hover { background: var(--metallic-green); box-shadow: 0 0 20px var(--electric-lime); }
+        
+        .chord-btn.playing { background: white; box-shadow: 0 0 30px white; }
 
-        .chord-btn:active {
-            box-shadow: inset 4px 4px 10px rgba(0,0,0,0.8);
-            transform: scale(0.95);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 80px 20px;
-            border-top: 1px solid rgba(74, 222, 128, 0.1);
-            margin-top: 60px;
-            background: rgba(0,0,0,0.4);
-        }
-
-        .footer-heart { color: #ff4d4d; margin: 0 5px; }
-
-        @media (max-width: 600px) {
-            .chord-grid { grid-template-columns: repeat(3, 1fr); }
-            .main-title { font-size: 2.2rem; }
-        }
+        footer { text-align: center; padding: 60px; border-top: 1px solid rgba(74, 222, 128, 0.1); margin-top: 60px; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="bio.html">Bio</a>
-    <a href="lyrics.html">Lyrics</a>
-    <a href="green-room.html">Green Room</a>
-    <a href="reports.html">Reports</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html">Home</a> <a href="bio.html">Bio</a> <a href="lyrics.html">Lyrics</a>
+    <a href="green-room.html">Green Room</a> <a href="reports.html">Reports</a> <a href="contact.html">Contact</a>
 </nav>
 
 <div class="container">
@@ -205,87 +99,105 @@
     </header>
 
     <div class="activity-section">
-        <h2>1. Lyric Labyrinth</h2>
-        <p>Hidden icons are scattered across the catalog. Find the "Monster" icon from <em>Fury</em> to unlock the secret vault.</p>
-        <button class="btn-action">Check Inventory</button>
-    </div>
-
-    <div class="activity-section">
-        <h2>2. Cinematic Mood Mixer</h2>
-        <p>Select a vibe to match your writing session:</p>
-        <select class="game-input">
-            <option>Neon Noir (Green Edition)</option>
-            <option>Metallic Jungle (Fury vibe)</option>
-            <option>Chrome Forest (Wildflower vibe)</option>
-            <option>80s Retro (GenX Anthem)</option>
-        </select>
-    </div>
-
-    <div class="activity-section">
         <h2>3. Madlibs: The Pin Code</h2>
-        <p>Complete the line from <em>Not Clever</em>:</p>
         <p><em>"You think you’re clever? And I can’t get in your [Noun]. You’re not clever. I know your damn [Noun] code."</em></p>
-        <input type="text" class="game-input" placeholder="Enter Noun...">
-        <button class="btn-action">Verify Lyrics</button>
+        <input type="text" id="input-pin" class="game-input" placeholder="What can't I get in?">
+        <button class="btn-action" onclick="checkPin()">Verify Lyrics</button>
+        <p id="result-pin"></p>
     </div>
 
     <div class="activity-section">
         <h2>4. Chord Pad Sequencer</h2>
-        <p>Trigger 15 unique cinematic synth swells across our metallic interface.</p>
+        <p>Click pads to trigger cinematic synth tones.</p>
         <div class="chord-grid">
-            <button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button>
-            <button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button>
-            <button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button><button class="chord-btn"></button>
+            <button class="chord-btn" onclick="playTone(220, this)"></button>
+            <button class="chord-btn" onclick="playTone(246, this)"></button>
+            <button class="chord-btn" onclick="playTone(277, this)"></button>
+            <button class="chord-btn" onclick="playTone(293, this)"></button>
+            <button class="chord-btn" onclick="playTone(329, this)"></button>
+            <button class="chord-btn" onclick="playTone(349, this)"></button>
+            <button class="chord-btn" onclick="playTone(392, this)"></button>
+            <button class="chord-btn" onclick="playTone(440, this)"></button>
+            <button class="chord-btn" onclick="playTone(493, this)"></button>
+            <button class="chord-btn" onclick="playTone(523, this)"></button>
+            <button class="chord-btn" onclick="playTone(587, this)"></button>
+            <button class="chord-btn" onclick="playTone(659, this)"></button>
+            <button class="chord-btn" onclick="playTone(698, this)"></button>
+            <button class="chord-btn" onclick="playTone(783, this)"></button>
+            <button class="chord-btn" onclick="playTone(880, this)"></button>
         </div>
-    </div>
-
-    <div class="activity-section">
-        <h2>5. Scramble: The Yodel</h2>
-        <p>Unscramble the key emotion from <em>Boom Boom Beat</em>:</p>
-        <h3 style="letter-spacing: 5px; color: var(--electric-lime); text-align: center;">PHEMEREAL</h3>
-        <input type="text" class="game-input" placeholder="Unscramble it...">
-        <button class="btn-action">Submit</button>
     </div>
 
     <div class="activity-section" style="border: 2px solid #bf953f;">
         <h2 style="background: var(--shiny-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">6. THE MASTER VAULT</h2>
-        <p><strong>HINT:</strong> In the song <em>CEO, Not Babysitting Tree</em>, who is the person that "kills the vibe and kills the chill"?</p>
-        <input type="text" class="game-input" placeholder="Who is it?">
-        <button class="btn-action" style="background: var(--shiny-gold); color: #332200; width: 100%;">Unlock 25% OFF Coupon</button>
-    </div>
-
-    <div class="activity-section">
-        <h2>7. Madlibs: The Receipt</h2>
-        <p>Complete the line from <em>Hit the Road</em>:</p>
-        <p><em>"You told me [Noun] after [Noun], and yeah, I [Verb] a lot back then, but my [Noun] are now dry."</em></p>
-        <button class="btn-action">Check Answer</button>
-    </div>
-
-    <div class="activity-section">
-        <h2>8. Toxic Rhyme Match</h2>
-        <p>From <em>Sick One</em>: "Shit we fight about is so [____]. It's our drug, we're never done."</p>
-        <div style="display: flex; gap: 15px;">
-            <button class="btn-action">Dumb</button>
-            <button class="btn-action">Numb</button>
-        </div>
-    </div>
-
-    <div class="activity-section">
-        <h2>9. Dream Weaver</h2>
-        <p>In the song <em>In My Dreams (When I Wake)</em>, what does Kellie "tuck behind her ears" during the dream sequence?</p>
-        <input type="text" class="game-input" placeholder="Your Answer...">
-        <button class="btn-action">Verify Memory</button>
+        <p><strong>HINT:</strong> In "CEO, Not Babysitting Tree," who kills the vibe?</p>
+        <input type="text" id="input-vault" class="game-input" placeholder="Answer...">
+        <button class="btn-action" style="background: var(--shiny-gold);" onclick="checkVault()">Unlock Code</button>
+        <p id="result-vault"></p>
     </div>
 
     <footer>
-        <p><span class="footer-heart">♥️</span> Kellie Larson <span class="footer-heart">♥️</span></p>
-        <p>Cinematic Songwriter & Lyricist</p>
-        <p>
-            <a href="mailto:info@verseandchorus.com" style="color:var(--electric-lime); text-decoration: none;">info@verseandchorus.com</a> | 760-537-0222
-        </p>
-        <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 25px;">© 2026 Kellie Larson. All Rights Reserved.</p>
+        <p>♥️ Kellie Larson ♥️</p>
+        <p>info@verseandchorus.com | 760-537-0222</p>
     </footer>
 </div>
+
+<script>
+    // 1. SOUND LOGIC: Audio Context for the 15 Buttons
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function playTone(freq, btn) {
+        // Resume context for browsers that block auto-audio
+        if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'sine'; // Cinematic smooth sound
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+        gain.gain.setValueAtTime(0, audioCtx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.2, audioCtx.currentTime + 0.1); // Fade in
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1); // Fade out
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + 1);
+
+        // Visual feedback
+        btn.classList.add('playing');
+        setTimeout(() => btn.classList.remove('playing'), 200);
+    }
+
+    // 2. GAME LOGIC: Madlibs "Not Clever"
+    function checkPin() {
+        const val = document.getElementById('input-pin').value.toLowerCase();
+        const result = document.getElementById('result-pin');
+        if (val.includes("head") || val.includes("birthday")) {
+            result.innerHTML = "✅ CORRECT! 'I know your damn birthday code.'";
+            result.style.color = "#4ade80";
+        } else {
+            result.innerHTML = "❌ Try again! Hint: It's a date...";
+            result.style.color = "#ff4d4d";
+        }
+    }
+
+    // 3. GAME LOGIC: The Vault
+    function checkVault() {
+        const val = document.getElementById('input-vault').value.toLowerCase();
+        const result = document.getElementById('result-vault');
+        // Based on lyrics: "You used to come around and kill the vibe"
+        if (val.includes("it boy") || val.includes("you")) {
+            result.innerHTML = "🏆 UNLOCKED! Use code: GREENROOM25";
+            result.style.color = "#fcf6ba";
+        } else {
+            result.innerHTML = "❌ Wrong vibe! Check the 'CEO' lyrics.";
+            result.style.color = "#ff4d4d";
+        }
+    }
+</script>
 
 </body>
 </html>
